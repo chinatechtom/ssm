@@ -15,20 +15,16 @@ import org.springframework.web.context.support.WebApplicationContextUtils;
 import com.huet.entity.User;
 import com.huet.service.inter.IUserService;
 
-/**
- * @author gacl
- * @WebServlet是Servlet3.0提供的注解，目的是将一个继承了HttpServlet类的普通java类标注为一个Servlet
- * UserServlet使用了@WebServlet标注之后，就不需要在web.xml中配置了
- */
+ 
 @WebServlet("/UserServlet")
 public class UserServlet extends HttpServlet {
 
-    //处理业务逻辑的userService
+    //锟斤拷锟斤拷业锟斤拷锟竭硷拷锟斤拷userService
     private IUserService userService;
     
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        //获取所有的用户信息
+        //锟斤拷取锟斤拷锟叫碉拷锟矫伙拷锟斤拷息
         List<User> lstUsers = userService.getAllUser();
         request.setAttribute("lstUsers", lstUsers);
         request.getRequestDispatcher("/index.jsp").forward(request, response);
@@ -40,9 +36,9 @@ public class UserServlet extends HttpServlet {
     }
 
     public void init() throws ServletException {
-        //在Servlet初始化时获取Spring上下文对象(ApplicationContext)
+        //锟斤拷Servlet锟斤拷始锟斤拷时锟斤拷取Spring锟斤拷锟斤拷锟侥讹拷锟斤拷(ApplicationContext)
         ApplicationContext ac = WebApplicationContextUtils.getWebApplicationContext(this.getServletContext());
-        //从ApplicationContext中获取userService
+        //锟斤拷ApplicationContext锟叫伙拷取userService
         userService = (IUserService) ac.getBean("userService");
     }
 }

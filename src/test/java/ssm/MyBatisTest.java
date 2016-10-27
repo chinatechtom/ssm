@@ -19,14 +19,14 @@ public class MyBatisTest {
 	private IUserService userService ;
 	private IMenuService menuService ;
 	/**
-	 * 这个before方法在所有的测试方法之前执行，并且只执行一次 所有做Junit单元测试时一些初始化工作可以在这个方法里面进行
-	 * 比如在before方法里面初始化ApplicationContext和userService
+	 * 锟斤拷锟絙efore锟斤拷锟斤拷锟斤拷锟斤拷锟叫的诧拷锟皆凤拷锟斤拷之前执锟叫ｏ拷锟斤拷锟斤拷只执锟斤拷一锟斤拷 锟斤拷锟斤拷锟斤拷Junit锟斤拷元锟斤拷锟斤拷时一些锟斤拷始锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷
+	 * 锟斤拷锟斤拷锟斤拷before锟斤拷锟斤拷锟斤拷锟斤拷锟绞硷拷锟紸pplicationContext锟斤拷userService
 	 */
 	@Before
 	public void before() {
-		// 使用"spring.xml"和"spring-mybatis.xml"这两个配置文件创建Spring上下文
+		// 使锟斤拷"spring.xml"锟斤拷"spring-mybatis.xml"锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟侥硷拷锟斤拷锟斤拷Spring锟斤拷锟斤拷锟斤拷
 		ApplicationContext ac = new ClassPathXmlApplicationContext(new String[] { "spring.xml", "spring-mybatis.xml" });
-		// 从Spring容器中根据bean的id取出我们要使用的userService对象
+		// 锟斤拷Spring锟斤拷锟斤拷锟叫革拷锟斤拷bean锟斤拷id取锟斤拷锟斤拷锟斤拷要使锟矫碉拷userService锟斤拷锟斤拷
 		userService = (IUserService) ac.getBean("userService");
 		menuService = (IMenuService) ac.getBean("menuService");
 	}
@@ -45,7 +45,7 @@ public class MyBatisTest {
 		if(list.size() <= 0){
 			user = new User();
 			user.setUserId(UUID.randomUUID().toString().replaceAll("-", ""));
-			user.setUserName("白虎神皇xdp");
+			user.setUserName("xdp");
 			user.setUserSalary(10000D);
 			userService.addUser(user);
 		}else{

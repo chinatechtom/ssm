@@ -14,7 +14,7 @@ import com.huet.service.inter.IMenuService;
 public class MenuServiceImpl implements IMenuService{
 
     @Autowired
-    private MenuMapper menuMapper;//×¢Èëdao
+    private MenuMapper menuMapper; 
     
  
 	@Override

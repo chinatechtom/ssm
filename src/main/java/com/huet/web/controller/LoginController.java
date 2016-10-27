@@ -38,19 +38,19 @@ public class LoginController {
 		String userName = request.getParameter("userName"); 
 		String password = request.getParameter("password");
 
-		//判断用户名密码
+		
 		User user = userService.getUserById(userName) ;
 		
 		if(null == user || user.getUserStatus() !="0"){
 			request.setAttribute("error_code", "-1");
-			request.setAttribute("error_msg",  "操作员状态错误!");
+			request.setAttribute("error_msg",  "鍛樺伐鐘舵�侀敊璇紒");
 			return "error";
 		}
 		
 		HttpSession session = request.getSession();
 		session.setAttribute("login", true);
 		session.setAttribute("logintime", new Date().toString());
-		//返回菜单信息 
+		 
 		
 		request.setAttribute("menus", "menul_level");
 		

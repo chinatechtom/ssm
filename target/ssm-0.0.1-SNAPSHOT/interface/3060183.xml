@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3060183" name="客户申报信息表查询" >
+	<input>
+		<item type="text"	id="commness_cust_code"	name="普通资金账户"/>
+		<item type="text"	id="cust_code"			name="客户代码"/>
+		<item type="text"	id="cust_name"			name="客户姓名/名称"/>
+		<item type="text"	id="cert_no"			name="证件号码"/>
+		<item type="select" id="source_flag"		name="数据来源" source="604"/>
+	</input>
+	<service type="procedure" id="p_info_declare_query2" implement="p_info_declare_query23060183" process="911" style="77">
+		<param id="user_id"			   type="integer" way="in"/> 
+		<param id="commness_cust_code" type="string" way="in"/>
+		<param id="cust_code"		   type="string" way="in"/>
+		<param id="cust_name"		   type="string" way="in"/>
+		<param id="cert_no"			   type="string" way="in"/>
+		<param id="source_flag"		   type="string" way="in"/>
+	</service> 
+	<output>
+		<column id="cust_id"			type="number" name="客户ID" display="false"/>
+		<column id="cust_code"			type="string" name="客户代码"/>
+		<column id="cust_name"			type="string" name="客户姓名"/>
+		<column id="commness_cust_code" type="string" name="普通资金账户"/>
+		<column id="cert_no"			type="string" name="证件号码"/>
+		<column id="source_flag"		type="string" name="数据来源" display="false"/>
+		<column id="source_flag_name"	type="string" name="数据来源"/>
+		<button id="select"				type="select" name="客户申报明细查询" action="3060184" multiple="0"/>
+	</output>
+</function>

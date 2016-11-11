@@ -13,18 +13,12 @@ import com.huet.service.inter.IUserService;
 @Service("userService")
 public class UserServiceImpl implements IUserService {
 
-    /**
-     * 使用@Autowired注解标注userMapper变量，
-     * 当需要使用UserMapper时，Spring就会自动注入UserMapper
-     */
+     
     @Autowired
-    private UserMapper userMapper;//注入dao
+    private UserMapper userMapper; 
 
-    public void addUser(User user) {
-        userMapper.insert(user);
-    }
-
-    public User getUserById(String userId) {
+  
+    public User getUserByUserCode(String userId) {
         return userMapper.selectByPrimaryKey(userId);
     }
 

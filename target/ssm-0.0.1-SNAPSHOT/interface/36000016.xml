@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="36000016" name="4.4.3质押品" >
+ <input>
+  <item type="select"  id="institution_id"           name="营业部名称" source="95000008"/> 
+  <item type="date"    id="date"                  name="日期"  />
+  <item type="select"  id="order_choice"           name="排序选择" source="371"/> 
+ </input>
+ <service type="procedure" id="P36000016"  implement="P3600001636000016" process="955" style="77">
+  <param id="user_id"         type="integer" way="in"/> 
+  <param id="institution_id" type="integer" way="in"/>
+  <param id="date"         type="string"  way="in"/> 
+  <param id="order_choice"         type="string"  way="in"/>    
+ </service>
+ <output export="true" print="true" unit="元">
+    <group name="期末融资额为0客户担保品市值">
+       <column type="string" id="cust_code1"            name="客户代码"/>
+       <column type="number" id="guarantee_values1"     name="担保品市值"     precision="2"   total="true"  />
+    </group>
+    <group name="期末融券额为0客户担保品市值">
+       <column type="string" id="cust_code2"            name="客户代码"/>
+       <column type="number" id="guarantee_values2"     name="担保品市值"     precision="2"   total="true"  />
+    </group>
+    <!--<group name="期末融资融券额为0客户担保品市值">
+       <column type="string" id="cust_code3"            name="客户代码"/>
+       <column type="number" id="guarantee_values3"     name="担保品市值"     precision="2"     />
+    </group> --> 
+  </output>
+</function>

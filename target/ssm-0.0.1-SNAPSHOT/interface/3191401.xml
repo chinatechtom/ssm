@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3191401" name="到期未还融券明细查询" >	
+  <input>	
+		<item type="select" id="institution_id" name="营业部名称"  source="95000008"/>
+		<item type="text"   id="cust_code"      name="客户代码" />
+  </input>  
+  <service type="procedure" id="p_stock_noback_detail_query" process="911" style="77"> 
+    <param id="user_id"        type="integer" />
+		<param id="institution_id" type="integer"/>
+		<param id="cust_code"      type="string"	way="in"/>
+  </service>  
+  <output export="true">  	
+  <column type="string"  id="institution_name"           name="营业部名称" display="false"/>
+	<column type="string"  id="cust_no"                  	 name="客户代码" display="false"/>
+	<column type="string"  id="cust_name"                  name="客户姓名" display="false"/>
+	<column type="string"  id="serial_no"                  name="流水号" 		display="false"/>
+	<column type="string"  id="HOLDER_ACC_NO"              name="证券账户" display="false"/>
+	<column type="number"  id="product_id"                 name="产品ID"   display="false"/>
+	<column type="string"  id="product_code"               name="产品代码"  display="false"/>
+	<column type="string"  id="OCCUR_DATE"                 name="起始时间"/>    
+	<column type="string"  id="return_time"                name="到期时间"		/>
+	<column type="string"  id="MARKET_CODE"        				 name="市场名称"		/>
+	<column type="string"  id="SEC_CODE"              		 name="证券代码"		/>
+	<column type="number"  id="OCCUR_VOL"           			 name="融券卖出数量"		precision="2"/>	
+	<column type="number"  id="PAYBACK_VOL"      					 name="融券已还数量"	  precision="2"/>
+	<column type="number"  id="PAYBACK_BAL"                name="融券已还金额"	  precision="2"/> 
+	<column type="string"  id="LAST_PAYBACK_DATE"          name="最近偿还日期"	  precision="2"/> 
+	<column type="number"  id="non_pay_fee_sum"            name="融券利息费用总额"    precision="2"/>
+	<column type="number"  id="DONE_AMT"                   name="成交金额"        precision="2"/>
+	<column type="string"  id="note"                       name="备注" />
+  </output>
+</function>

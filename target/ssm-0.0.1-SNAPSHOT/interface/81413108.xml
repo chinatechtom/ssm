@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="81413108" name="同步信用级别担保率" >
+	<description>确定同步信用级别担保率?</description>
+	<input>
+		<item type="hidden" alias="sserial0"	id="credit_level_code"	 name="信用级别代码"/>
+		<item type="hidden" alias="sserial1"	id="instruction"		 name="交易指令"/>
+		<item type="hidden" alias="drate0"		id="guarantee_rate"		 name="担保率"/>
+		<item type="hidden" alias="sbank_acc"	id="credit_level_name"   name="信用级别名称"/>
+		<item type="hidden" alias="damt0"		id="fin_limit_standard"	 name="融资上限标准"/>
+		<item type="hidden" alias="damt1"		id="bs_limit_standard"	 name="融券上限标准"/>
+		<item type="hidden" alias="scusttypes"	id="remark"		         name="备注"/>		
+	</input>
+    <service type="drtp" id="413108"  process="611" style="1"> 		
+		<param id="sserial0"	 type="string"  way="in"/>		
+		<param id="sserial1"	 type="string"	way="in"/>
+		<param id="drate0"	 	 type="double"	way="in"/>	
+		<param id="sbank_acc"	 type="string"	way="in"/>
+		<param id="damt0"	 	 type="double"	way="in"/>
+		<param id="damt1"	 	 type="double"	way="in"/>
+		<param id="scusttypes"	 type="string"	way="in"/>		
+	</service>
+	<output/>
+</function>

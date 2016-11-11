@@ -14,9 +14,9 @@ public class JsonTestController {
 	@ResponseBody
 	public Object test(){
 		User user = new User();
-		user.setUserId("11111");
+		user.setUserCode("11111");
 		user.setUserName("test");
-		user.setUserSalary(1000.0);
+		user.setUserStatus("0");
 		System.out.println("test");
 		return user;
 	}

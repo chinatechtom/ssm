@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3063704" name="合约生效合同" >
+<description>只有审批通过的合约才能生效合同！</description>
+  <input>	   
+  </input>  
+</function>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="60200401" name="业务权限控制表查询" >
+	<input>	
+		<item type="select" id="institution_id" 	name="营业部名称" source="97000001"/>
+		<item type="text" 	id="cust_code" 			name="客户代码" />
+		<item type="hidden" id="cust_name" 			name="客户姓名" />
+        <item type="date" 	id="begin_date" 	    name="起始日期" />
+         <item type="date" 	id="end_date" 	        name="结束日期" />
+		<item type="select" id="market_code" 		name="市场代码" 	source="039"/>
+		<item type="select" id="bslx" 				name="开通情况"		source="842"/>       
+	</input>
+	<service type="procedure" id="P60200401" process="933" style="77">
+		<param id="user_id" 		type="integer"/>
+		<param id="institution_id"	type="integer"/>
+		<param id="cust_code" 		type="string"/>
+		<param id="cust_name" 		type="string"/>
+        <param id="begin_date" 		type="string"/>
+        <param id="end_date" 		type="string"/>
+        <param id="market_code" 	type="string"/>
+        <param id="bslx" 		    type="string"/>
+	</service>
+	<output export="true">
+		<column type="number" id="institution_id"           name="营业部id" display="false"/>  
+		<column type="string" id="institution_name"         name="营业部名称"/>  
+		<column type="string" id="institution_code"         name="营业部代码"/>  
+		<column type="string" id="cust_code"                 name="客户代码"/>
+		<column type="string" id="cust_name"                name="客户姓名"/>
+		<column type="string" id="holder_acc_no"            name="股东号"/>
+		<column type="string" id="market_name"              name="市场代码"/>
+		<column type="string" id="market_code"              name="market_code" display="false"/>
+		<column type="string" id="flag"                     name="开通情况"    display="false" />
+        <column type="string" id="flag_name"                name="开通情况"/>
+		<column type="string" id="operation_date"           name="操作日期"/>
+		<column type="string" id="time"                     name="操作时间"/>
+        <button type="set"    id="set"                      name="一键标识违约处置" 		action="60200403" 	multiple="-1"/>
+		<button type="edit"   id="edit"                     name="开通" 				    action="60200407"   multiple="0"/>		
+		<button type="edit"   id="edit"                     name="关闭" 				    action="60200409"   multiple="0"/>
+        <button type="edit"   id="edit"                     name="修改" 				    action="60200411"   multiple="0"/>			
+	</output>
+</function>

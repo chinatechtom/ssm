@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="306017240" name="申报信息修改" >
+	<description>信息申报状态非申报审核,不可进行申报信息的修改 </description>
+	<input/>
+</function>

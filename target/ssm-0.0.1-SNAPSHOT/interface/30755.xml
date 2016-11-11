@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="30755" name="设置担保率监控记录状态" >
+	<input>
+		<item type="hidden"  id="record_id"	            name="记录id"/>		
+		<item type="select"  id="manage_status"	        name="处理状态"	source="339"	nullable="false"/>
+	</input>
+    <service type="procedure" id="p_guarantee_control_record_status_set"  process="811" style="1">
+		<param id="user_id"	            type="integer" way="in"/> 
+		<param id="record_id"	        type="integer" way="in"/> 
+		<param id="manage_status"	    type="string"  way="in"/>
+    </service>
+    <output/>
+</function>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="31323" name="违约资料查询" >
+  <input/>
+  <service type="procedure" id="p_credit_violation_1_query"   process="911" style="77"> 
+    <param id="user_id"		   type="integer" way="in"/>
+  </service>
+	<output>
+		<column type="string" id="wyxwdm"			   name="席位代码" />
+		<column type="string" id="wyzqmc"			   name="券商名称"/>
+		<column type="string" id="wygddm"			   name="违约者证券账户"/>
+		<column type="string" id="wygdxm"			   name="违约者姓名"/>	
+		<column type="string" id="wysfzh"	   name="身份证号" />
+		<column type="number" id="wywyje"		   name="违约金额" precision="4"/>
+		<column type="string" id="wywylb"				   name="违约金额"/>
+		<column type="string" id="wysblb"			   name="申报类别"/>
+		<column type="string" id="wysbrq"			   name="申报日期"/>
+		<column type="string" id="wyscdm"			   name="市场代码"/>		
+		<button type="set"    id="set"			   name="导入违约资料" action="3074101" multiple="-1"/>
+	</output>
+</function>

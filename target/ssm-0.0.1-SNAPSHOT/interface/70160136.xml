@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70160136" name="红利流水明细数据" >  
+  <input>
+	<item type="date" 	id="trade_date" 	name="发生日期"/>
+  </input>
+  <service type="procedure" id="P70160136" process="922" style="77">
+	<param id="user_id" 		type="integer"/>
+	<param id="trade_date"/>
+  </service> 
+  <output export="true">
+	<column type="number" id="serial_id"		name="流水号"/>
+	<column type="string" id="sys_date"			name="系统日期" />
+	<column type="string" id="institution_code"	name="营业部代码"/>
+	<column type="string" id="cust_code"   			name="客户代码"/>
+	<column type="number" id="bonus_total_amt"   	name="红利总金额"/>
+	<column type="number" id="bonus_tax"   		 	name="红利税" />
+	<column type="number" id="bonus_in_amt"   		name="红利转专户金额"/>
+	<column type="string" id="institution_name"   	name="营业部名称"/>
+	<column type="string" id="cust_name"   			name="客户姓名"/>
+	<column type="string" id="sbond_no" 			name="交易协议书编号" />
+	<column type="string" id="occur_date"   		name="红利入账日期" />
+	<column type="number" id="cust_id" 				name="客户id" display="false"/>   
+	<column type="string" id="flag_name"   			name="导出标识"/>
+	<button type="send" id="edit" name="修改导出标识" action="70160137"/>
+  </output>
+</function>

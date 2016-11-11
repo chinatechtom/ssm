@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70010892" name="批量处理">
+	<input>
+	 <item type="select"  id="institution_id"       name="营业部" source="97000001"/>
+	 <item type="hidden"  id="cust_id"              name="客户id"/>
+	 <item type="text"    id="cust_code"			name="客户代码"/>
+	 <item type="text"    id="cust_name"			name="客户姓名"/>
+	 <item type="text"    id="order_no"	            name="合约编号"/>
+	 <item type="date"    id="begin_date"			name="起始日期" default="last"/>
+	 <item type="date"    id="end_date"	            name="终止日期" default="now"/>
+	 <item type="date"    id="engage_trade_date"	name="初始交易日期" default="now"/>
+	 <item type="select"  id="market_code"			name="市场代码" source="039"/>
+	 <item type="text"    id="product_code"			name="证券代码"/>
+	 <item type="select"  id="order_type"	        name="合约类型" source="97000004"/>
+	 <item type="hidden"  id="order_id"             name="合约id"/>
+  </input>
+  <service type="procedure" id="p70010892" process="922" style="77">
+	<param id="user_id"				type="integer"/>
+    <param id="institution_id"		type="integer"/>
+	<param id="cust_id"				type="ingeter"/>
+	<param id="cust_code"			type="string"/>
+	<param id="cust_name"			type="string"/>
+	<param id="order_no"			type="string"/>
+	<param id="begin_date"			type="string"/>
+	<param id="end_date"			type="string"/>
+	<param id="engage_trade_date"	type="string"/>
+	<param id="market_code"			type="string"/>
+	<param id="product_code"		type="string"/>
+    <param id="order_type"			type="string"/>
+	<param id="manage_status"		type="string" default=",02,06,09,19,"/>
+	<param id="order_id"			type="string"/>
+  </service>
+  <output export="true">
+    <column type="number" id="institution_id"			name="机构id"	display="false"/>
+	<column type="string" id="institution_name"			name="营业部名称"/>	
+	<column type="number" id="cust_id"					name="客户id"	display="false"/>
+	<column type="string" id="cust_code"				name="客户代码"/>
+	<column type="string" id="cust_name"				name="客户姓名"/>	
+	<column type="string" id="order_type"	            name="合约类型id" display="false"/>
+	<column type="string" id="order_type_name"			name="合约类型"/>
+	<column type="string" id="order_id"					name="合约idd"	display="false"/>	
+	<column type="string" id="order_no"					name="合约编号"/>
+	<column type="number" id="sbond_id"					name="交易协议书id"	display="false"/>
+	<column type="string" id="sbond_no"					name="交易协议书编号"/>
+	<column type="string" id="market_code"				name="市场代码" display="false"/>
+	<column type="string" id="market_code_name"			name="市场代码"/>
+	<column type="string" id="product_code"				name="证券代码"/>
+	<column type="string" id="product_name"				name="证券名称"/>
+	<column type="number" id="hg_num"					name="证券数量" precision="0"/>
+	<column type="string" id="hg_num_big"				name="证券数量大写"/>
+	<column type="number" id="first_amt"				name="初始交易金额" precision="2"/>
+	<column type="string" id="first_amt_big"			name="初始交易金额大写"/>
+	<column type="number" id="hg_rate"					name="购回价格(每100元年收益)" precision="4"/>
+	<column type="number" id="fix_rate"					name="固定交易费用比例(%)" precision="4"/>
+	<column type="string" id="engage_trade_date"		name="初始交易日期"/>
+	<column type="number" id="days"						name="原购回期限(天)"/>
+	<column type="string" id="bb_date"					name="原购回交易日期"/>
+	<column type="number" id="days2"					name="最新购回期限(天)"/>
+	<column type="string" id="bb_date2"					name="最新购回交易日期"/>
+	<column type="number" id="manual_chg"				name="购回金额手工调整" precision="2"/>
+	<column type="number" id="app_price"				name="标的证券价格" precision="3" display="false"/>
+	<column type="number" id="prewarning_price"			name="预警履约保障比率(%)" precision="3" />
+	<column type="number" id="lowest_price"				name="最低履约保障比例(%)" precision="3"/>
+	<column type="number" id="hg_convert_rate"			name="折扣比率(%)" precision="4" display="false"/>
+	<column type="number" id="penalty_rate"				name="违约金比率(日利率%)" precision="4"/>
+	<column type="string" id="app_date"					name="生成合约日期"/>
+	<column type="string" id="app_time"					name="生成合约时间"/>
+	<column type="string" id="remarks"					name="备注说明"/>
+	<column type="number" id="bond_id"					name="合同id" display="false"/>
+	<column type="string" id="product_type"				name="证券类型"/>
+	<column type="string" id="manage_status"			name="处理状态id" display="false"/>
+	<column type="string" id="manage_status_name"   	name="处理状态"/>	
+	<button type="view" id="edit" name="查看合约" action="700666" extendaction="order_type" multiple="0"/>
+	<button type="view" id="edit" name="查看合同" action="70055555" multiple="0"/>
+	<button type="refuse" id="edit" name="单笔拒绝" action="70077601" multiple="0"/>
+	<button type="edit" id="edit" name="批量处理通过" action="70010893" multiple="1"/>
+  </output>
+</function>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="30635" name="处理调整信用级别申请" >
+  <input>	
+    <item type="hidden" id="order_id" name="定单id" />    
+	<item type="text" id="approve_credit_level_id" name="审批信用级别号"  nullable="false"/>
+  </input>
+  <service type="procedure" id="p_credit_level_modi" process="811" style="1">
+	<param type="integer" id="user_id" way="in"/>
+	<param type="integer" id="order_id" way="in" />
+	<param type="integer" id="approve_credit_level_id" way="in"/>
+  </service>
+  <output/>
+</function>

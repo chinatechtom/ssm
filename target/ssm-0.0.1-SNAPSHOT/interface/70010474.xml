@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70010474" name="待征信客户检查查询" >  
+	<input>
+		<item type="hidden" id="cust_code" name="客户代码"/>
+	</input>
+	<service type="procedure" id="p70010474" process="922" style="77">
+		<param id="user_id" type="integer"/>
+		<param id="cust_code"/>
+	</service> 
+	<output>
+		<column type="string" id="cust_code"   name="客户代码"/>
+		<column type="string" id="cust_name"   name="客户姓名"/> 		
+		<column type="string" id="institution_code"   name="营业部代码"/>
+		<column type="string" id="institution_name"   name="营业部名称"/>
+	</output>
+</function>

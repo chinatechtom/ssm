@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="36000088" name="融资融券业务盘后维持担保比例汇总表" >
+	<input>	
+	<item type="select" id="institution_id" name="营业部名称" source="95000008"/>
+	<item type="date" id="begin_date" name="起始日期" default="last"/>			
+	<item type="date" id="end_date"   name="终止日期" default="now"/>
+	</input>
+  <service type="procedure" id="P36000088" process="911" style="77">
+	<param id="user_id"        type="integer" way="in"/> 
+	<param id="institution_id" type="integer" way="in"/> 
+	<param id="begin_date"     type="date"    way="in"/> 
+	<param id="end_date"       type="date"    way="in"/> 
+  </service>
+  <output print="true">
+	<column type="string"  id="cur_assure_rate"  name="担保比例" />
+	<column type="number"  id="acc_total"      name="总户数" total="true"/>
+	<column type="number"  id="acc_open"      name="期间开户数" total="true"/>
+	<column type="number"  id="acc_close"      name="期间销户数" total="true"/>
+	<column type="number"  id="acc_add"      name="增减数" total="true"/>
+	<column type="number"  id="asset_value"      name="担保资产余额" total="true"/>
+	<column type="number"  id="guarantee_amt"      name="保证金余额" total="true"/>
+  </output>
+</function>

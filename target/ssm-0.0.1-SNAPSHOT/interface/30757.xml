@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="30757" name="平仓报告详情" >	
+  <input print="30757.jsp">	
+		<group name="客户基本信息">
+			<item type="hidden"	id="cust_id"	name="客户id" action="30101,30728,1888,30119"/>
+			<item type="text"	id="institution_name"	name="营业部名称"	editable="false"/>
+			<item type="text"	id="cust_code"	name="客户代码"	editable="false"/> 
+			<item type="text"	id="cust_name"	name="客户姓名"	editable="false"/>	
+			<item type="text"	id="cust_type"	name="客户类型"	editable="false"/>	
+			<item type="text"	id="cust_sort"	name="客户类别"	editable="false"/>	
+			<item type="text"	id="gender"		name="性别"	editable="false"/>	
+			<item type="text"	id="cert_type"	name="证件类型"	editable="false"/>	
+			<item type="text"	id="cert_number"	name="证件号码"	editable="false"/>	
+			<item type="text"	id="area_code"	name="联系地址"	editable="false"/>	
+			<item type="text"	id="postalcode"	name="邮政编码"	editable="false"/>
+			<item type="text"	id="find_mode_value"	name="主联系方式"	editable="false"/>
+			<item type="text"	id="sh_acc"	name="上海信用证券账户"	editable="false"/>
+			<item type="text"	id="sz_acc"	name="深圳信用证券账户"	editable="false"/>
+		</group>
+		<group name="平仓信息">
+			<item type="text" id="touch_date"	name="触发平仓日期"	editable="false"/>
+			<item type="text" id="ddate"		name="平仓预案制定日期"	editable="false"/>
+			<item type="text" id="pc_begin_date"	name="拟平仓日期"	editable="false"/>
+			<item type="text" id="pc_amt"		name="强制平仓额度"	editable="false"/>
+			<item type="text" id="order_no"		name="合同编号"	editable="false"/>
+		</group>
+		<group name="客户资产信息">
+			<item type="hidden"	id="guarantee_rate_id_ctl"	name="补仓线id" default="14"/>
+			<item type="text"	id="asset_amt"	name="总资产"	editable="false"/> 
+			<item type="text"	id="fund_amt"	name="总资金"	editable="false"/> 
+			<item type="text"	id="stock_amt"	name="证券总市值"	editable="false"/> 
+			<item type="text"	id="stock_convert_amt"	name="证券折算价值"	editable="false"/> 
+			<item type="text"	id="guarantee_amt"	name="担保品总价值"	 editable="false"/>
+			<item type="text"	id="non_guarantee"		name="非担保品市值" editable="false"/>
+			<item type="text"	id="guarantee_rate"		name="触发时担保率"	editable="false"/>
+			<item type="text"	id="real_gua_rate"		name="实时担保率"	editable="false"/>
+			<item type="text"	id="asset_gap"	name="资产差额"	editable="false"/>
+			<item type="grid"	id="stock_asset"	name="证券明细"	source="3020201"/> 
+		</group>
+		<group name = "客户负债信息">
+			<item type="text"	id="debt_amt"	name="总负债"	 editable="false"/> 
+			<item type="text"	id="financing_amt"	name="总融资"	editable="false"/> 
+			<item type="text"	id="borrow_stock_amt"	name="总融券"	editable="false"/> 
+			<item type="text"	id="credit_charge_amt"	name="费用总额"	editable="false"/>
+			<item type="text"	id="credit_num"			name="授信额度"	editable="false"/>
+			<item type="text"	id="margin_used"		name="已使用保证金"	editable="false"/>
+			<item type="text"	id="margin_remain"		name="剩余保证金"	editable="false"/>
+			<item type="text"	id="margin_total"		name="总保证金"	editable="false"/>
+			<item type="grid"	id="financing_asset"	name="融资明细"	source="3190501"/>
+			<item type="grid"	id="bstock_asset"	name="融券明细"	source="3190601"/>
+		</group>
+		<group name="平仓方案">
+			<item type="text"	id="record_id"	name="平仓报告编号"  editable="false"/>
+			<item type="select"	id="pc_mode"	name="平仓顺序"	source="121" editable="false"/> 			
+			<item type="text"	id="pc_reason_name"	name="平仓原因" editable="false"/> 
+			<item type="hidden"	id="pc_reason"	name="平仓原因代码"	editable="false"/> 
+			<item type="grid"	id="sell_stock"	name="应平证券"	source="30753"/> 
+			<item type="grid"	id="buy_stock"	name="应买证券"	source="30754"/> 
+		</group>
+		<group name="审批结果">
+			<item type="textarea" id="approve_idea" name="审批意见"	maxlen="256"	editable="false"/>
+			<item type="date"	id="bc_begin_date"	name="补仓起始日期"	editable="false"/>
+			<item type="date"	id="bc_end_date"	name="补仓截至日期"	editable="false"/>
+		</group>
+		<item type="hidden"	id="product_id"	name="产品id"/> 
+		<item type="hidden"	id="bond_id"	name="合同id"	display="false"/>
+		 
+		<item type="hidden" id="date"     name="打印日期"/>	<!--从1888.xml获得的打印日期-->
+		<item type="hidden" id="user_code"     name="打印柜员代码"/><!--从1888.xml获得的打印柜员代码-->
+		<item type="hidden" id="user_name"     name="打印柜员名称"/><!--从1888.xml获得的打印柜员名称-->
+		<item type="hidden" id="company"    name="券商名称"/><!--从1888.xml获得的券商名称-->
+		<!--<item type="hidden"	id="guarantee_rate_id_ctl"	name="补仓线id1"	display="false"/> 
+		<item type="hidden"	id="pc_reason"	name="平仓原因1"/>--> 			
+  </input>
+  <!--<service type="procedure" id="p_pc_record_generate" process="811" style="1">
+		<param id="user_id" type="integer" way="in"/>
+		<param id="cust_id"	type="hidden"  way="in"/>
+		<param id="guarantee_rate_id_ctl" type="integer" way="in"/>
+		<param id="product_id" type="integer" way="in"/>
+		<param id="bond_id" type="integer" way="in"/>
+		<param id="approve_idea" type="string" way="in"/>
+  </service>--> 
+  <output/>
+</function>

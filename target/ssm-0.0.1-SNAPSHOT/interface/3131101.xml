@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3131101" name="用户增加">
+	<input>
+		<item type="hidden"		id="user_id2"		name="操作员id"/>
+		<item type="text"		id="user_code"		name="用户代码"	nullable="false"	maxlen="20"/>		
+		<item type="text"		id="staff_code"		name="职工工号"	nullable="false"	maxlen="20"/>		
+		<item type="text"		id="user_name"		name="用户名称"	nullable="false"	maxlen="40"/>
+		<item type="select"		id="user_status"	name="用户状态"	nullable="false"	source="398"/>		
+		<item type="password"	id="password"		name="用户密码"	nullable="false"	minlen="6" tip="密码最短6位"/>
+		<item type="password"	id="password2"		name="密码校验"	nullable="false"	minlen="6" tip="密码最短6位"/>
+		<item type="select"		id="dept_id"		name="部    门"	source="90000014"	nullable="false"/>
+		<item type="select"		id="institution_id"	name="机构名称"	source="95000008"	nullable="false"/>
+		<item type="hidden"		id="user_type"		name="用户类型"/>	
+		<item type="hidden"		id="father_node_id"	name="父结点id"/>
+		<item type="select"		id="gender"			name="性    别"	source="069"	/>	
+		<item type="hidden"		id="nation"			name="民    族"/>								
+		<item type="hidden"		id="finish_school"	name="毕业学校"/>								
+		<item type="select"		id="edu_level"		name="学    历"	source="031"	/>		
+		<item type="select"		id="cert_type"		name="证件类型"	source="029"	/>	
+		<item type="text"		id="cert_no"		name="证件号码"	maxlen="20"/>					
+		<item type="select"		id="marr_status"	name="婚姻状况"	source="032"/>	
+		<item type="hidden"		id="dqdm"			name="地区代码"/>								
+		<item type="hidden"		id="area_code"		name="联系地址"/>								
+		<item type="hidden"		id="postalcode"		name="邮政编码"/>
+		<item type="hidden"		id="job_date"		name="入职日期"/>
+		<item type="hidden"		id="change_date"	name="转正日期"/>
+		<item type="hidden"		id="dimission_date"	name="离职日期"/>
+		<item type="hidden"		id="regi_state"		name="记录状态"	default="1"/>
+		<item type="text"		id="telephone"		name="家庭电话" maxlen="50"/>
+		<item type="text"		id="office"			name="办公电话"	maxlen="50"/>
+		<item type="text"		id="mobile"			name="移动电话"	nullable="false"	maxlen="50"/>		
+		<item type="text"		id="email_address"	name="电子邮件"	nullable="false"	maxlen="50"/>
+		<item type="hidden"		id="ip_address"		name="ip地址"/>
+		<item type="hidden"		id="mac_address"	name="mac地址"/>
+	</input>
+	<service type="procedure" id="p_user_set"  process="811" style="1">
+		<param id="user_id"			type="integer"  way="in"/>
+		<param id="user_id2"		type="integer"  way="in"/>
+		<param id="user_code"		type="string"   way="in"/>
+		<param id="user_name"		type="string"   way="in"/>
+		<param id="password"		type="string"   way="in"/>
+		<param id="password2"		type="string"   way="in"/>
+		<param id="dept_id"			type="integer"  way="in"/>
+		<param id="institution_id"  type="integer"  way="in"/>		
+		<param id="user_type"		type="string"   way="in"/>
+		<param id="father_node_id"  type="integer"  way="in"/>
+		<param id="gender"			type="string"   way="in"/>
+		<param id="nation"			type="string"   way="in"/>
+		<param id="finish_school"	type="string"   way="in"/>
+		<param id="edu_level"		type="string"   way="in"/>
+		<param id="cert_type"		type="string"   way="in"/>
+		<param id="cert_no"			type="string"   way="in"/>
+		<param id="marr_status"		type="string"   way="in"/> 
+		<param id="dqdm"			type="string"   way="in"/> 
+		<param id="area_code"		type="string"   way="in"/> 
+		<param id="postalcode"		type="string"   way="in"/> 
+		<param id="job_date"		type="string"   way="in"/> 
+		<param id="change_date"		type="string"   way="in"/> 
+		<param id="dimission_date"	type="string"   way="in"/> 
+		<param id="regi_state"		type="string"   way="in"/> 		
+		<param id="telephone"		type="string"   way="in"/>
+		<param id="office"			type="string"   way="in"/>
+		<param id="mobile"			type="string"   way="in"/>
+		<param id="email_address"   type="string"   way="in"/>
+		<param id="ip_address"		type="string"   way="in"/>
+		<param id="mac_address"		type="string"   way="in"/>
+		<param id="staff_code"		type="string"   way="in"/>	
+		<param id="user_status"		type="string"   way="in"/>	
+		<param id="pwd_expire_date"	type="string"   way="in"/>	
+		<param id="lock_time" 		type="integer"  way="in"/>		
+   	</service> 
+   	<output/>  
+   </function> 
+               

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="96001123" name="质押余款划出至其他协议书申请action" >
+  <input>
+  <item type="text" id="sbond_id" name="sbondid" editable="false"/>
+  <item type="text" id="sbond_id2" name="资金划入协议书编号" editable="false"/>
+  <item type="text" id="second_amt_before" name="变更前最新购回金额" editable="false"/>
+  </input>
+  <service type="procedure" id="p96001123" process="933" style="77">
+	<param type="integer" id="user_id"/>	
+	<param type="integer" id="sbond_id"/>
+	<param type="integer" id="sbond_id2"/>
+	<param type="number" id="second_amt_before"/>
+  </service>
+  <output>  
+    <column type="number" id="second_amt_after" name="变更后最新购回金额"/>
+  </output>
+</function>

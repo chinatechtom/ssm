@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3063228" name="最高授信额度查询" >
+	<input>
+		<item type="hidden"		id="cust_code"				name="客户代码"/>
+		<item type="hidden"		id="commness_cust_code"		name="普通客户号"/>
+		<item type="hidden"		id="institution_code"		name="营业部代码"/>
+		<item type="hidden"		id="currency_type"			name="货币类型"/>
+	</input>
+	<service type="drtp" id="413000" process="711" style="77">
+		<param field="scust_no"			id="cust_code"			type="string"/> 
+		<param field="scust_no2"		id="commness_cust_code"	type="string"/> 
+		<param							id="semp"				type="string" default=""/>
+		<param field="sbranch_code0"	id="institution_code"	type="string"/>
+		<param							id="sstation0"			type="string" default=""/>
+		<param field="scurrency_type"	id="currency_type"		type="string"/>
+		<param							id="lvol9"				type="integer"   default="120961"/>
+	</service>
+	<output>
+		<column name="普通账户实时总资产"	id="damt2"  type="number"/>
+	</output>
+</function>

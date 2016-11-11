@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="6001051210" name="取单笔委托" >
+	<input>
+		<item type="hidden" id="institution_code" name="开户营业部"/>
+		<item type="hidden" id="cust_code" name="客户号"/>
+		<item type="hidden" id="market_code" name="市场"/>
+		<item type="hidden" id="sellacc" name="股东代码"/>
+		<item type="hidden" id="product_code" name="证券代码"/>
+		<item type="hidden" id="cust_id" name="客户id"/>
+		<item type="hidden" id="entrust_date" name="委托日期"/>
+		<item type="hidden" id="sqbh" name="申请编号"/>
+		<item type="hidden" id="sbond_id" name="协议书Id"/>
+	</input>
+    <service type="procedure" id="P6001051210" adapter="psr" process="933" style="77">
+		<param type="integer" id="user_id"/>
+		<param type="string" id="institution_code"/>
+		<param type="string" id="cust_code"/>
+		<param type="string" id="market_code" />
+		<param type="string" id="sellacc" />
+		<param type="string" id="product_code" />
+		<param type="integer" id="cust_id" />
+		<param type="string" id="entrust_date" />
+		<param type="string" id="sqbh"/>
+		<param type="integer" id="sbond_id"/>
+	</service>
+    <output target="6001051211">
+		<column name="客户号"	id="scust_no"  type="string"/>
+		<column name="股东代码"	id="sholder_ac_no" type="string"/>
+		<column name="市场代码"	id="smarket_code"  type="string"/>
+		<column name="业务类别"	id="scust_type"  type="string"/>
+		<column name="证券代码"	id="sstock_code"  type="string"/>
+		<column name="价格"			id="damt0"  type="number"/>
+		<column name="指定佣金率"	id="damt4"  type="number"/>
+		<column name="预增资金"		id="damt5"  type="number"/>
+		<column name="预增股份"		id="damt6"  type="number"/>
+		<column name="最低佣金"		id="damt9"  type="number"/>
+		<column name="最高佣金"		id="damt10" type="number"/>
+		<column name="特殊业务标志"	id="spost_code"  type="string"/>
+		<column name="委托类型"			id="smain_flag2"  type="string"/>
+		<column name="数量"				id="lvol0"  type="number"/>
+		<column name="委托方式"			id="sstatus0"  type="string"/>
+		<column name="发生营业部"		id="sbranch_code0"  type="string"/>
+		<column name="报盘席位"			id="semp_no"  type="string"/>
+		<column name="报盘合同号"		id="sorder2"  type="string"/>
+		<column name="合同号"			id="sorder0"  type="string"/>
+		<column name="职工代码"			id="semp"  type="string"/>
+		<column name="审核标志"			id="lwithdraw_flag"  type="string"/>
+	</output>
+</function>

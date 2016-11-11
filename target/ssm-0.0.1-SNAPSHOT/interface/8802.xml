@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="gbk"?>
+<function id="8802" name="校验融资融券客户交易密码">
+	<input>	
+		<item type="hidden" id="scust_no"  name="客户代码"/>	
+		<item type="hidden" id="stx_pwd" 	name="客户交易密码"/>	
+		<item type="hidden" id="lvol0" 	name="密码类型"/>
+	</input>	
+	<service type="drtp" id="413000" process="711" style="1">	
+		<param id="scust_no" type="string" way="in"/>		
+		<param id="stx_pwd"   type="string" way="in"/>		
+		<param id="lvol0"    type="double" way="in"/>		
+		<param id="lvol9"    type="integer"   default="100102"/>	
+	</service>	
+	<output/></function>

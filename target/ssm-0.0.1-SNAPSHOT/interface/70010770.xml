@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70010770" name="处置委托信息删除" >
+	<description>确定要删除该处置委托信息?</description>
+	<input>
+		<item type="hidden" id="cust_id" name="客户id"/>			
+		<item type="hidden" id="entrust_date" name="委托日期"/>
+		<item type="hidden" id ="entrust_no" name="委托编号"/>
+		<item type="hidden" id ="sbond_id" name="交易协议书编号"/>
+	</input>
+	<service type="procedure" id="P70010770" process="822" style="1">
+		<param type="integer" id="user_id" way="in" />
+		<param type="integer" id="cust_id" way="in" />
+		<param type="string"  id="entrust_date"  way="in"/>
+		<param type="string" id="entrust_no" way="in" />
+		<param type="integer" id="sbond_id" way="in" />
+	</service>
+	<output/>
+</function>

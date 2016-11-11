@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="60010106" name="融出方基本信息设置" >
+  <input>
+	<item type="hidden" id="lender_id" name="融出方id" nullable="false"/>
+	<item type="text" id="lender_code" name="融出方代码" nullable="false" maxlen="6"/>
+	<item type="text" id="lender_name" name="融出方名称" nullable="false" maxlen="100"/>
+	<item type="select" id="lender_type" name="融出方类别" source="800" nullable="false"/>
+	<item type="text" id="link_name" name="联系人姓名"/>	
+	<item type="text" id="link_email" name="联系人邮箱"/>
+	<item type="text" id="link_mobile" name="联系人手机"/>
+	<item type="text" id="fix_phone"  name="固定电话" />
+	<item type="text" id="fax"	name="传 真" />
+	<item type="select" id="bank_code" name="银行代码" source="811"/>
+	<item type="text" id="bank_branch_name" name="银行分支营业部"/>
+	<item type="text" id="bank_account_name" name="银行账户名称"/>
+	<item type="text" id="bank_card_no" name="银行账号"/>
+	<item type="select" id="if_valid" name="是否有效" source="802" nullable="false" default="1"/>
+	<item type="date" id="found_date" name="设立日期" nullable="false"/>
+	<item type="text" id="pt_cust_code" name="集中交易资金账号"/>
+	<item type="text" id="pt_institution_code" name="集中交易营业部代码"/>
+	<item type="text" id="plan_contract" name="资产管理合同号"/>
+	<item type="select" id="lender_type2" name="融出方业务类型" source="919" nullable="false" default="1" editable="false"/>
+  </input>
+  <service type="procedure" id="P60010106" process="833" style="1">
+	<param id="user_id" type="integer"/>
+	<param id="lender_id" type="integer"/>
+	<param id="lender_code" type="string"/>
+	<param id="lender_name" type="string"/>
+	<param id="lender_type" type="string"/>
+	<param id="link_name" type="string"/>
+	<param id="link_email" type="string"/>
+	<param id="link_mobile" type="string"/>
+	<param id="fix_phone" type="string" />
+	<param id="fax" type="string" />
+	<param id="bank_code" type="string"/>
+	<param id="bank_branch_name" type="string"/>
+	<param id="bank_account_name" type="string"/>
+	<param id="bank_card_no" type="string"/>
+	<param id="if_valid" type="string"/>
+	<param id="found_date" type="string"/>
+	<param id="pt_cust_code" type="string"/>
+	<param id="pt_institution_code" type="string"/>
+	<param id="plan_contract" type="string"/>
+	<param id="lender_type2" type="string"/>
+  </service>
+  <output/>
+</function>

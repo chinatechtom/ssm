@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="80880010" name="已质押标的券导出" >
+	<input>
+		<item type="select" id="market_code"    name="市场"	source="039"/>
+	</input>
+	<service type="procedure" id="P60880010" process="933" style="77"> 
+		<param id="user_id"		   type="integer" way="in"/>
+		<param id="market_code"	   type="string" way="in"/>
+	</service>
+	<output export="true">
+		<column type="string" id="market_code_name"	name="市场代码"/>
+		<column type="string" id="product_code"		name="证券代码"/>
+		<column type="string" id="product_name"		name="证券名称"/>
+	</output>
+</function>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70055549" name="合同详细" >
+  <input>  
+  <item type="hidden" id="cust_id"   name="custid"  action="70010101,70010704"/>
+  <group name="合同基本信息" >	
+	<item type="text" id="bond_no"   name="合同编号" editable="false"/>
+    <item type="text" id ="cust_code" name="客户代码" editable="false"/>	
+    <item type="text" id="cust_name"   name="客户姓名" editable="false"/>	
+	<item type="text" id ="cert_type" name="证件类型" editable="false"/>
+	<item type="text" id ="cert_number" name="证件号码" editable="false"/>	    
+	<item type="text" id="date"   name="合同签署日期" editable="false"/>
+	<item type="text" id="time"   name="合同签署时间" editable="false"/>
+	<item type="text" id="begin_time"   name="合同起始日期" editable="false"/>
+	<item type="text" id="return_time"   name="合同到期日期" editable="false"/>
+	<item type="hidden" id="currency_type"   name="货币类型"   editable="false"/>
+	<item type="text" id="currency_type_name"   name="货币类型" editable="false"/>
+  </group>
+  <group name="交易协议书情况">
+	<item type="grid" id="sbond_id" source="70010707" name="交易协议书情况"/>
+  </group>
+  <group name="自然情况">
+	<item type="grid" id="cust_id" source="70030422" name="自然情况"/>	
+  </group>	
+  <group name="信用评估">    
+	<item type="text" id="valuation_score" name="评估总分" editable="false"/>	
+	<item type="text" id="credit_level_name" name="信用级别"   editable="false"/>	
+	<item type="text" id="credit_num" name="信用上限"  editable="false"/>
+  </group> 	
+  <group name="客户联系方式">
+	<item type="text" id="move_tel"   name="移动电话" editable="false"/>
+	<item type="text" id="fix_tel"   name="固定电话" editable="false"/>
+	<item type="hidden" id="meet_tel"   name="应急电话" editable="false"/>
+	<item type="text" id="family_address"   name="联系地址" editable="false"/>
+	<item type="text" id="ps_code"   name="邮政编码" editable="false"/>
+	<item type="text" id="fax"   name="传真" editable="false"/>
+	<item type="text" id="email"   name="电子邮件" editable="false"/>
+	<item type="text" id="find_mode_name"   name="主联系方式" editable="false"/>
+	<item type="hidden" id="find_mode"   name="主联系方式"   editable="false"/> </group>
+  <group name="备注说明">
+	<item type="textarea" id="manage_opinion"   name="处理意见" editable="false"/>
+	<item type="textarea" id="approver_opinion"   name="审核意见" editable="false"/>
+	<item type="textarea" id="assessor_opinion"   name="审批意见" editable="false"/>
+	<item type="textarea" id="double_check_opinion"   name="复核意见" editable="false"/>
+	<item type="textarea" id="remark" name="备注说明" editable="false" />
+  </group>
+ </input> 
+ <output />
+</function>

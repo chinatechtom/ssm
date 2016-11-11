@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70010110" name="客户基本资料修改" >
+  <input>	
+	<item type="hidden" id="cust_id" name="客户号"/>
+	<item type="text" id="cust_code" name="客户代码" editable="false"/>
+	<item type="text" id="cust_name" name="客户姓名" nullable="false"/>
+	<item type="select" id="cert_type" name="证件类型" source="029" nullable="false"/>
+	<item type="text" id="cert_no" name="证件号码" nullable="false"/>
+	<item type="text" id="effective_years" name="有效年限" nullable="false"/>
+	<item type="text" id="cert_start_date" name="证件生效日期" />
+	<item type="text" id="cert_end_date" name="证件失效日期" />
+	<item type="text" id="family_address" name="联系地址" nullable="false"/>
+	<item type="text" id="ps_code" name="邮政编码" nullable="false"/>
+	<item type="select" id="report_status" name="客户使用信息申报状态" source="703" nullable="false"/>
+  </input>
+  <service type="procedure" id="P70010110" process="822" style="1">
+	<param id="user_id" type="integer"/>
+	<param id="cust_id" 			type="integer"/>	
+	<param id="cust_name"			type="string"/>
+	<param id="cert_type"			type="string"/>
+	<param id="cert_no"			type="string"/>
+	<param id="effective_years"		type="integer"/>
+	<param id="cert_start_date"		type="string"/>
+	<param id="cert_end_date"		type="string"/>
+	<param id="family_address"			type="string"/>
+	<param id="ps_code"			type="string"/>
+	<param id="report_status"		type="string"/>
+  </service>
+  <output/>
+</function>

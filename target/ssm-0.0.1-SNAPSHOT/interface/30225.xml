@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="30225" name="利息费用明细" >
+	<input>	
+		<item type="hidden"  id="institution_id"	    name="营业部名称"/>
+		<item type="hidden"  id="cust_id"	            name="客户id"/>		
+		<item type="hidden"  id="cust_code"	            name="客户代码"/>		
+	</input>
+    <service type="procedure" id="p_cust_query_credit_charge_detail" process="911" style="77">
+		<param id="user_id"	            type="integer" way="in"/> 
+		<param id="institution_id"	    type="integer" way="in"/> 
+		<param id="cust_id"	            type="integer" way="in"/> 
+		<param id="cust_code"	        type="string"  way="in"/>		 		
+    </service>
+    <output export="true" detail="true">
+    	<column type="string" id="account_interest_date"  name="计息日期" display="false" />			
+			<column type="number" id="financing_interest"		  name="当日融资利息"	precision="2" />		
+			<column type="number" id="borrow_stock_interest"	name="当日融券利息"	precision="2" />
+			<column type="number" id="financing_fix"	        name="当日融资固定额度费"	precision="2" />
+			<column type="number" id="borrow_stock_fix"	      name="当日融券固定额度费"	precision="2" />
+			<column type="number" id="financing_takeup"	      name="当日融资占用额度费"	precision="2" />
+			<column type="number" id="borrow_stock_takeup"	  name="当日融券占用额度费"	precision="2" />
+			<column type="number" id="financing_bef_rtn"	    name="当日融券违约手续费"	precision="2" />
+			<column type="number" id="borrow_stock_bef_rtn"	  name="当日提前还贷手续费"	precision="2" />
+			<column type="number" id="financing_punish"			  name="当日融资逾期罚息"		precision="2" />
+			<column type="number" id="borrow_stock_punish"		name="当日融券逾期罚息"		precision="2" />
+			<column type="number" id="financing_bad_punish"		name="当日融资坏账罚息"	precision="2" />
+			<column type="number" id="borrow_stock_bad_punish"		name="当日融券坏账罚息"	precision="2" />		
+
+			<column type="number" id="financing_interest_sum"		  name="融资未结利息合计"	precision="2" />		
+			<column type="number" id="borrow_stock_interest_sum"	name="融券未结利息合计"	precision="2" />		
+			<column type="number" id="financing_fix_sum"					name="融资未结固定额度费合计"	precision="2" />		
+			<column type="number" id="borrow_stock_fix_sum"				name="融券未结固定额度费合计"	precision="2" />		
+			<column type="number" id="financing_takeup_sum"				name="融资未结占用额度费合计"	precision="2" />		
+			<column type="number" id="borrow_stock_takeup_sum" 		name="融券未结占用额度费合计"	precision="2" />		
+			<column type="number" id="financing_bef_rtn_sum"			name="融资未结提前还贷手续费合计"	precision="2" />		
+			<column type="number" id="borrow_stock_bef_rtn_sum"		name="融券未结提前还贷手续费合计"	precision="2" />		
+			<column type="number" id="financing_punish_sum"			  name="融资未结逾期罚息合计"		precision="2" />
+			<column type="number" id="borrow_stock_punish_sum"		name="融券未结逾期罚息合计"		precision="2" />
+			<column type="number" id="financing_bad_punish_sum"		name="融资未结坏账罚息合计"	precision="2" />
+			<column type="number" id="borrow_stock_bad_punish_sum"		name="融券未结坏账罚息合计"	precision="2" />
+
+			<column type="number" id="financing_interest_total"		  name="已付融资利息合计"	precision="2" />		
+			<column type="number" id="borrow_stock_interest_total"	name="已付融券利息合计"	precision="2" />		
+			<column type="number" id="financing_fix_total"	        name="已付融资固定额度费合计"	precision="2" />		
+			<column type="number" id="borrow_stock_fix_total"	      name="已付融券固定额度费合计"	precision="2" />		
+			<column type="number" id="financing_takeup_total"	      name="已付融资占用额度费合计"	precision="2" />		
+			<column type="number" id="borrow_stock_takeup_total"    name="已付融券占用额度费合计"	precision="2" />		
+			<column type="number" id="financing_bef_rtn_total"	    name="已付融资提前还贷手续费合计"	precision="2" />		
+			<column type="number" id="borrow_stock_bef_rtn_total"	  name="已付融券提前还贷手续费合计"	precision="2" />		
+			<column type="number" id="financing_punish_total"		    name="已付融资逾期罚息合计"		precision="2" />
+			<column type="number" id="borrow_stock_punish_total"	  name="已付融券逾期罚息合计"	precision="2" />	
+			<column type="number" id="financing_bad_punish_total"		name="已付融资坏账罚息合计"		precision="2" />
+			<column type="number" id="borrow_stock_bad_punish_total"	name="已付融券坏账罚息合计"	precision="2" />
+
+    </output>
+</function>

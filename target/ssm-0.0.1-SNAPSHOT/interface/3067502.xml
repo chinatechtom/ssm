@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3067502" name="合约处理级别新增" >
+	<input>
+		<item type="select" id="order_type"    			name="合约类型"		nullable="false" source="010" action="3067504"/>
+		<item type="select" id="system_id" 				name="系统标识" 	nullable="false" source="608" default="3"/>
+		<item type="hidden" id="if_set" 				name="是否可以设置" default="0"/>
+		<item type="select" id="approve_level" 			name="需要处理级别"	nullable="false" source="151"/>
+		<item type="hidden" id="approve_num"   			name="审批数级" 	nullable="false" default="1"/>
+		<item type="select" id="if_confirm"    			name="是否复核" 	nullable="false" source="155"/>
+		<group name="生效复核控制" > 
+			<item type="select" id="if_direct_confirm"    	name="是否直接进入复核" 		filter="if_set=1"	nullable="false" source="155"/>
+			<item type="select" id="if_audit" 	   			name="是否集中审核"				filter="if_set=1"	nullable="false" source="704" default="0"/>
+			<item type="select" id="if_effect" 	   			name="是否需要生效"				filter="if_set=1"	nullable="false" source="340" default="1"/>	
+			<item type="select" id="if_judge_approve_level" name="直接生效是否判断流程级别"	filter="if_set=1"	nullable="false" source="340" default="1"/>	
+		</group> 
+		<group name="集中审核" > 
+	  		<item type="text" 	id="audit_level"   name="集中审核级别"    filter="if_audit=1"/>	
+	  		<item type="text" 	id="audit_ratio"   name="集中审核比例(%)" filter="if_audit=1"/>	
+		</group>  
+	</input>
+  	<service type="procedure" id="p_approve_process_modify"  implement="p_approve_process_modify3067502"  process="811" style="1">
+		<param type="integer" 	id="user_id"/>
+		<param type="string"	id="order_type"/>
+		<param type="string"	id="approve_level"/>
+		<param type="string"	id="if_confirm"/>	
+		<param type="string"	id="if_audit"/>
+		<param type="string"	id="audit_level"/>
+		<param type="string"	id="audit_ratio"/>
+		<param type="string"	id="if_effect"/>
+		<param type="string"	id="if_direct_confirm"/>
+		<param type="string"	id="if_judge_approve_level"/>
+		<param type="integer"	id="system_id"/>
+  	</service>
+  	<output>      	
+  	</output>
+</function>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="600105123" name="委托报盘" >
+    <description>是否已冻结客户资金或证券？确认要报盘？</description>
+	<input>
+		<item type="hidden" id="cust_id" name="客户号"/>
+		<item type="hidden" id="entrust_date" name="entrust_date" />
+		<item type="hidden" id="sqbh" name="sqbh" />
+	</input>
+    <service type="procedure" id="P600105123"  process="833" style="1">
+		<param id="user_id"		    type="integer" way="in"/>
+		<param id="cust_id"		    type="integer" way="in"/>
+		<param id="entrust_date"	type="string" way="in"/>
+		<param id="sqbh"		    type="string" way="in"/>
+    </service>
+</function>

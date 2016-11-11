@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="30810" name="担保证券账户历史数据查询" >	
+  <input>		
+  	<item type="text" 	id="acc_code" 	    name="账户代码"/>
+  	<item type="text" 	id="product_code" 	name="证券代码"/>
+  	<item type="select" id="market_code" 	  name="市场代码" source="039"/>
+		<item type="date" 	id="date" 			name="日期" default="last" nullable="false"/>
+  </input>  
+  <service type="procedure" id="p_guastk_account_data_hisquery" process="955" style="77">
+		<param id="user_id"	     type="integer" way="in" /> 
+		<param id="acc_code"     type="string"  way="in"/>
+		<param id="product_code" type="string"  way="in"/>		
+		<param id="market_code"  type="string"  way="in"/>
+		<param id="date"        type="string"  way="in"/>
+  </service>  
+  <output export="true">
+			<column type="string" id="ACC_CODE"   				   name="账户代码"/>
+      <column type="string" id="MARKET_CODE_NAME"      name="市场名称"  />			
+			<column type="number" id="PRODUCT_ID"   	       name="证券ID"  display="false"/>
+			<column type="string" id="PRODUCT_CODE"   	     name="证券代码" />
+			<column type="string" id="PRODUCT_NAME"   	     name="证券名称" />
+			<column type="number" id="FUND_BUY_STK_VOL"      name="融资买入证券数量"     precision="0" total="true"/>
+			<column type="number" id="FUND_BUY_STK_RATE"     name="占总股本比例%"        precision="2" display="false"/>
+    	<column type="number" id="FUND_BUY_STK_BAL"      name="融资买入证券市值"     precision="2" total="true"/>
+    	<column type="number" id="CAN_IN_GUA_STK"        name="可充抵保证金证券数量" precision="0" total="true"/>
+    	<column type="number" id="CAN_IN_GUA_STK_RATE"   name="占总股本比例%"		 		 precision="2" display="false"/>
+    	<column type="number" id="CAN_IN_GUA_STK_BAL"    name="可充抵保证金证券市值" precision="2" total="true"/>
+			<column type="number" id="UNGUA_STK"             name="非保证金证券数量"     precision="0" total="true"/>
+			<column type="number" id="UNGUA_STK_RATE"        name="占总股本比例%"        precision="2" display="false"/>
+			<column type="number" id="UNGUA_STK_BAL"         name="非保证金证券市值"     precision="2" total="true"/>
+    	<column type="string" id="DATE"   						   name="日期"/>
+  </output>
+</function>

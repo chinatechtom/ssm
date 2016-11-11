@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70041004" name="删除购回利率产品信息" >
+<description>
+		确定删除？
+</description> 
+ <input>
+    <item type="hidden" id="item_id"     name="产品id"/>
+  </input>
+  <service type="procedure" id="p70041004" process="822" style="1"> 
+    <param id="user_id"		    way="in"/>
+    <param id="item_id"	   way="in"/> 
+  </service>
+  <output/>
+</function>

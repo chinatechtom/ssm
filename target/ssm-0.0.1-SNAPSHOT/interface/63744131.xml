@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="63744131" name="分段计息区间详细" >
+	<input>	
+        <item type="hidden" id="order_id"     name="合约ID"/>
+		<item type="hidden" id="order_no"     name="合约no"/>
+	</input>
+	<service type="procedure" id="P63744131" process="977" style="77">
+		<param type="integer" id="user_id"  way="in" />
+		<param type="integer" id="order_id" way="in" />
+		<param type="string"  id="order_no" way="in"/>
+	</service>
+	<output>
+	    <column type="number" field="sbond_id"		    id="sbond_id"		  name="子合同ID" display="false"/>
+		<column type="number" field="section_id"        id="section_id"        name="区间ID"   display="false"/>
+		<column type="string" field="section_name"      id="section_name"      name="区段"     display="false"/>
+		<column type="string" field="begin_date" 		id="section_begin_date" name="计息起始日期"/>
+		<column type="string" field="end_date" 			id="section_end_date" 	name="计息截至日期"/>
+		<column type="number" field="days" 				id="section_days" 		name="区间天数"/>
+		<column type="number" field="hg_rate" 			id="section_hg_rate" 	name="购回价格(每100元)"	/>
+		<column type="number" field="second_amt_before" id="second_amt_before" 	name="变更前购回交易金额"/>
+		<column type="number" field="second_amt_after" 	id="second_amt_after" 	name="变更后购回交易金额"/>
+		<column type="string" field="remarks"           id="section_remarks"    name="备注"/>
+
+	</output>
+</function>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70220306" name="证券公司约定购回式证券交易月度专项统计表-风险情况" >
+  <input>
+	<item type="year" id="year_id" name="查询年份" nullable="false" default="now"/>
+	<item type="month" id="month_id" name="查询月份" nullable="false" default="last"/>
+  </input>
+  <service type="procedure" id="P70220306" process="922" style="77">
+	<param type="integer" id="user_id"/>
+	<param type="string"  id="year_id"/>
+	<param type="string"  id="month_id"/>
+  </service>
+  <output  export="true">  
+	<column type="string" id="month_id"   name="月份" />
+	<column type="string" id="s_code"   name="项目代码" display="false"/>
+	<column type="string" id="s_name"   name="项目名称" />
+	<column type="string" id="index_code"   name="指标代码 " display="false"/>	
+	<column type="string" id="index_name"   name="名称" precision="0"/>
+	<column type="string" id="index_end_value"   name="期末数" />
+	<column type="string" id="index_begin_value"   name="期初数"/>
+	<column type="number" id="index_yj"   name="预警标准" precision="2"/>
+	<column type="number" id="index_kz"   name="限值标准" precision="2"/>
+  </output>
+</function>

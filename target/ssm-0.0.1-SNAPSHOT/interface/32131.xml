@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="32131" name="担保证券集中度统计" >
+   <input>
+ 		<item type="text" id="product_code" name="产品代码" />
+ 		<item type="select" id="market_code"  name="市场代码" source="039"/>
+ 		<item type="select" id="if_guarantee"   name="担保品标的"	source="304"/>
+ 		<item type="text"   id="control_values" 		name="阀值大于" default="0.2"/> 		
+   </input>
+   <service type="procedure" id="p_information_report_32131_query" process="911" style="77">
+   		<param id="user_id" 		type="integer"/>
+   		<param id="product_code" 	type="string"/>
+   		<param id="market_code" 		type="string"/>
+   		<param id="if_guarantee" 		type="string"/>
+   		<param id="control_values" 		type="double"/>
+   </service>
+   <output export="true" print="true">
+   <column type="string" id="c1"   name="证券代码"  />
+   <column type="string" id="c2"   name="市场名称"  />
+   <column type="string" id="c3"   name="担保证券市值"  precision="2"/>
+   <column type="string" id="c4"   name="该股票总市值"  precision="2"/>
+   <column type="number" id="c5"   name="担保股票市值占总市值比例" precision="4" />
+   </output>
+   </function>

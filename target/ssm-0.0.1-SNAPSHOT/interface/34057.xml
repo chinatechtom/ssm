@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="34057" name="授信变更查询上次授信变更时的净资产" >
+  <input>	 
+	<item type="hidden" id="order_id" name="合约ID" />
+  </input>
+  <service type="procedure" id="P17000048" process="911" style="77">
+	<param id="user_id"  type="integer"/> 
+	<param id="order_id" type="integer"/>
+  </service>
+  <output export="true">   
+	<column type="number" id="net_assets_add"    name="净资产增加值"   precision="4"/> 
+	<column type="number" id="last_net_assets"    name="上次授信净资产"   precision="4"/> 
+  </output>
+</function>

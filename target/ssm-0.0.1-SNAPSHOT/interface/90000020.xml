@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="90000020" name="监控状态过滤" >
+	<input>
+		<item type="text" id="manage_status" name="处理状态"/>
+		<item type="text" id="warning_level" name="等级"/>
+	</input>
+	<service type="procedure" id="p_surveillance_status_filter" process="911" style="77">
+		<param id="manage_status" type="string"		way="in"/>
+		<param id="warning_level" type="string"		way="in"/>
+	</service>
+	<output>
+		<column type="string" id="entry_value"   name="处理状态"/>
+		<column type="string" id="entry_content" name="状态名称"/>
+    </output>
+</function>

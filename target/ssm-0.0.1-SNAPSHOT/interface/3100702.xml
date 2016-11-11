@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3100702" name="指标类—担保率" >  
+  <input>	
+  </input>
+   <service type="procedure" id="p_statistics_3100702_query" process="911" style="77">
+	<param id="user_id" type="integer" way="in" /> 	
+  </service> 
+  <output  print="true">
+    <column type="string" id="c1" name="类别"/> 		
+	<column type="string" id="c2" name="提示参数" />	
+	<column type="string" id="c3" name="执行参数"/>
+  </output>
+</function>

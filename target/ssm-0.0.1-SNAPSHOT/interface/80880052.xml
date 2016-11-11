@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="80880052" name="红利及违约金调整-内部查询" >
+	<input>
+		<item type="hidden" id="order_id" name="order_id"/>		
+	</input>
+	<service type="procedure" id="P60880052" implement="P60880052_80880052" process="933" style="77">
+		<param type="integer" id="user_id"/>
+		<param type="integer" id="order_id"/>
+	</service>
+	<output>
+		<column type="number" id="order_id"	name="order_id"	 display="false"/>
+		<column type="number" id="sbond_id"	name="交易协议书id"	 display="false"/>
+		<column type="number" id="rz_hl_old" name="调整前入账红利"/>
+		<column type="number" id="unreceived_penalty_old"	name="原始已结未付违约金"/>
+		<column type="number" id="real_penalty_old"	name="原始实时违约金"/>
+		<column type="number" id="rz_hl_new" name="调整后入账红利"/>
+		<column type="string" id="penalty_begin_date" name="违约金起始日期"/>
+		<column type="string" id="penalty_end_date" name="违约金结束日期"/>
+		<column type="number" id="unreceived_penalty_new"	name="调整后已结未付违约金"/>
+		<column type="number" id="real_penalty_new"	name="调整后实时违约金"/>
+		<column type="string" id="penalty_change_remark" name="红利及违约金调整备注"/>
+	</output>
+</function>

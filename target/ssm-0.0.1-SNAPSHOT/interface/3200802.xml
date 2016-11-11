@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3200802" name="查看已剔除的股票" >
+  <input>	
+  </input>
+  <service type="procedure" id="p_marked_stock_query" process="911" style="77">
+	<param id="user_id" 		type="integer"		way="in"/>
+  </service>
+  <output export="true">    
+  	<column type="string" id="c1"   name="营业部名称"  />
+    <column type="string" id="c2"   name="证券代码"  />
+	<column type="string" id="c3"   name="证券名称"  />
+    <column type="string" id="c4"   name="市场代码"  />
+    <column type="string" id="c5"   name="用户代码"  />
+    <column type="datetime" id="c6"   name="标记时间"  />
+	</output> 	
+    <assistant/>
+</function>

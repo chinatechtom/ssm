@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70070717" name="邮件模板新增">
+	<input>
+		<item type="select" 	id="cont_meth" 		name="信息通知方式"   source="331"	nullable="false"/>
+		<item type="select" 	id="msg_type" 		name="信息类型"  	source="730"	nullable="false"/>
+		<item type="text"		id="row"			name="行号"		nullable="false"/>
+		<item type="textarea"	id="content"		name="模板内容" maxlen="80"/>
+	</input>
+	<service type="procedure" id="P70070717" process="822" style="1">
+		<param id="user_id"		type="integer"/>
+		<param id="cont_meth"	type="string"/>
+		<param id="msg_type"	type="string"/>
+		<param id="row"			type="integer"/>
+		<param id="content"		type="string"/>
+	</service>
+	<output/>
+</function>
+		
+		

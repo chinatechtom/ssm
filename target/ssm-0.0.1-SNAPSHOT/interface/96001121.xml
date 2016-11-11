@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="96001121" name="质押退还客户违约处置余款action" >
+  <input>
+  <item type="text" id="sbond_id" name="sbondid" editable="false"/>
+  <item type="text" id="fund_chg_amt" name="退还余款金额" nullable="false" number="true" editable="false"/>
+  <item type="text" id="second_amt_before" name="变更前最新购回金额" editable="false"/>
+  </input>
+  <service type="procedure" id="p96001121" process="933" style="77">
+	<param type="integer" id="user_id"/>	
+	<param type="integer" id="sbond_id"/>
+	<param type="number" id="fund_chg_amt"/>
+	<param type="number" id="second_amt_before"/>
+  </service>
+  <output>  
+    <column type="number" id="second_amt_after" name="变更后最新购回金额"/>
+  </output>
+</function>

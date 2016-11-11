@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="80110298" name="取法人信息">
+  <input>
+  	<item type="text" id="scust_no" name="客户号"/>
+  </input>
+  <service type="drtp" id="413000" process="711" style="77">
+	  <param type="string"	id="scust_no"/>
+	  <param type="string"	id="scusttypes"/>
+	  <param type="integer" id="lvol9"  default="110298"/>
+  </service>
+  <output target="81110298">
+	<column id="cust_code"		name="客户代码"	type="string" field="scust_no"/>
+	<column id="spec_msg_code"	name="属性代码"	type="string" field="sroom_no"/>
+	<column id="spec_msg"		name="特殊属性"	type="string" field="sall_name"/>
+	<column id="spec_msg_no"	name="属性序号"	type="string" field="lvol0"/>
+  </output>
+</function>

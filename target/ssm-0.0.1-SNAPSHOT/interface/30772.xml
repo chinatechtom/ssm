@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="30772" name="客户担保率预警监控统计查询" >
+	<input>
+		<item type="select" id="institution_id" name="营业部名称"  source="95000008"/>
+		<item type="text"	id="cust_code" name="客户代码"/>
+		<item type="date"	id="date1" name="起始日期"/>
+		<item type="date"	id="date2" name="结束日期"/>
+	</input>
+    <service type="procedure" id="p_surveillance_guarantee_rate_query"  process="911" style="77">
+		<param id="user_id"		type="integer"	way="in"/>
+		<param id="institution_id"	type="integer"	way="in"/>
+		<param id="cust_code"	type="string"	way="in"/>
+		<param id="date1"		type="string"	way="in"/>
+		<param id="date2"		type="string"	way="in"/>
+    </service>
+    <output export="true">
+		<column type="number"  id="cust_id"			name="客户id"	display="false"/>
+		<column type="number"  id="institution_id"	name="营业部id"	display="false"/>
+		<column type="string"  id="institution_code"	name="营业部代码"/>
+		<column type="string"  id="institution_name"	name="营业部名称"/>
+		<column type="string"  id="cust_code"		name="客户代码"/>
+		<column type="string"  id="cust_name"		name="客户姓名"/>
+		<column type="number"  id="warning_level"	name="级别"	level="true" display="false"/>
+		<column type="string"  id="guarantee_rate_use"	name="预警级别"/>
+		<column type="number"  id="counts"			name="预警次数"	precision="0"/>
+		<column type="number"  id="cur_gua_rate"	name="当前担保率"	precision="6"/>
+		<column type="number"  id="asset_gap"		name="补仓金额"	precision="3"/>
+		<column type="string"  id="begin_date"		name="开始日期" display="false"/>
+		<column type="string"  id="end_date"		name="结束日期" display="false"/>
+    </output>
+	<assistant action="30774">
+		<link src="cust_id" target="cust_id"/>
+		<link src="begin_date" target="begin_date"/>
+		<link src="end_date" target="end_date"/>
+		<link src="warning_level" target="warning_level"/>
+	</assistant>
+</function>

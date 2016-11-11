@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="gbk"?>
+<function id="82420126" name="平仓报告直接还款">
+	<input/>
+  	<service type="drtp" id="413000" process="711" style="1">
+		<param type="string" 	id="sbranch_code0"/>
+	  	<param type="string" 	id="scurrency_type"/>
+	  	<param type="string" 	id="scust_no"/>
+	  	<param type="number" 	id="damt17"/>
+	  	<param type="string" 	id="snote"/>
+	  	<param type="string" 	id="sstation0"/>
+	  	<param type="string" 	id="semp"/>
+	  	<param type="string" 	id="lsafe_level" default="1"/>
+	  	<param type="integer" 	id="lvol9"  default="420126"/>
+  	</service>
+  	<output/>
+</function>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="32325" name="清算后融资对帐报表" >
+	<input>
+		<item type="select"  id="institution_id"	name="营业部名称"	source="95000008"/>	
+		<item type="text"    id="cust_code"			name="客户代码"/>
+		<item type="date"    id="date1"				name="开始时间"/>	
+		<item type="date"    id="date2"				name="结束时间"/>	
+	</input>
+    <service type="procedure" id="p_balance_sheet_financing"  process="911" style="77">
+		<param id="user_id"	        type="integer" way="in"/> 
+		<param id="institution_id"	type="integer" way="in"/>
+		<param id="cust_code"	    type="string"  way="in"/>
+		<param id="date1"			type="string"  way="in"/>
+		<param id="date2"			type="string" way="in"/>		
+    </service>
+    <output export="true" print="true">
+		<column type="string" id="institution_code"	name="营业部代码"/>
+		<column type="string" id="institution_name"	name="营业部名称"/>
+		<column type="string" id="cust_code"		name="客户代码"/>
+		<column type="string" id="cust_name"		name="客户姓名"/>
+		<column type="string" id="begin_date"		name="开始时间"/>
+		<column type="string" id="end_date"			name="结束时间"/>
+		<column type="number" id="last_amt"			name="期初融资余额"	precision="2" total="true"/>
+		<column type="number" id="this_amt"			name="期末融资余额"	precision="2" total="true"/>
+		<column type="number" id="fees_amt"			name="期间费用总额"	precision="2" total="true"/>	
+		<column type="number" id="borrow_amt"		name="期间融资买入"	precision="2" total="true"/>
+		<column type="number" id="return_amt"		name="期间融资还款"	precision="2" total="true"/>
+		<column type="number" id="sell_return"		name="期间卖券还款"	precision="2" total="true"/>
+		<column type="number" id="direct_return"	name="期间直接还款"	precision="2" total="true"/>
+    </output>
+</function>

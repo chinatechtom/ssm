@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="30404" name="查看某个客户的信用级别" >	
+  <input>
+	<item type="hidden" id="cust_id" name="客户id" />
+  </input>
+  <service type="procedure" id="p_cust_credit_level_02_query" process="911" style="77">   
+	<param id="user_id" type="number" way="in" />
+    <param id="cust_id" type="number" way="in"/> 	
+  </service>
+  <output>  
+  		<column type="number" id="cust_id" name="客户id" display="false"/>			
+		<column type="string" id="cust_code" name="客户代码" />	
+		<column type="string" id="cust_name" name="客户姓名" />			
+		<column type="number" id="credit_level_id" name="信用级别id" display="false"/>
+		<column type="string" id="credit_level_code" name="信用级别代码" />	
+		<column type="string" id="credit_level_name" name="信用级别名称" />
+		<column type="string" id="credit_condition" name="授信条件" />	
+		<column type="number" id="financing_interest_rate" name="融资利息率(%)" precision="4"/>
+		<column type="number" id="borrow_stock_interest_rate" name="融券利息率(%)"  precision="4"/>	
+		<column type="number" id="fund_convert_rate" name="资金折算率(%)"  precision="4"/>
+		<column type="number" id="tiptop_credit_num" name="最高信用上限"  precision="2"/>	
+  </output>
+</function>

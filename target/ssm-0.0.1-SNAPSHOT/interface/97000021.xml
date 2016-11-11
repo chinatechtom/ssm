@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="97000021" name="生成大写中文" >
+	<input/>
+	<service type="procedure" id="P97000006"  process="922" style="77">
+		<param id="user_id" type="integer"/>	
+		<!--<param type="integer" id="hg_vol"/>
+		<param type="double" id="app_price"/>
+		<param type="double" id="hg_convert_rate"/>-->
+		<param type="integer" id="hg_num2"/>
+		<param type="double" id="first_amt2"/>
+		<param type="integer" id="days2"/>
+		<param type="double" id="hg_rate2"/>
+		<param type="double" id="manual_chg2" default="0"/>
+	</service>
+	<output export="true">  
+		<column type="number" id="first_amt2"   name="初始交易金额小写" precision="2"/>
+		<column type="number" id="second_amt2"  name="购回交易金额小写" precision="2"/>
+		<column type="string" id="first_amt_big2"  name="购回交易金额大写"/>
+		<column type="string" id="second_amt_big2"  name="购回交易金额大写"/>
+	</output>
+</function>

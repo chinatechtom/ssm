@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="81100319" name="将下一交易日存入数据库">
+  <input>
+	<item type="string"	id="today"		name="当前交易日"/>	
+	<item type="string"	id="next_day"	name="下一交易日"/>	
+  </input>
+  <service type="procedure" id="p_next_business_day_set" process="811" style="1">	 
+	 <param id="user_id"		type="integer"	way="in"/>
+	 <param id="today"			type="string"	way="in"/>
+	 <param id="next_day"		type="string"	way="in"/>
+  </service>
+  <output/>
+</function>

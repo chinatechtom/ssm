@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3063220" name="授信额度查询" >
+	<input >
+		<item type="hidden" id="cust_id" 			name="客户id" />			
+		<item type="text" 	id="net_asset_amt" 		name="在公司内净资产总值"/>
+		<item type="text" 	id="auto_credit_level" 	name="信用级别"/>	
+	</input>
+	<service type="procedure" id="p_credit_limit_query6" implement="p_credit_limit_query63063220" process="911" style="77">
+		<param id="user_id" 				type="integer" 	 	way="in" />
+		<param id="cust_id"					type="integer" 		way="in" />
+		<param id="data_type"				type="string" 		way="in" default="2" />
+		<param id="net_asset_amt" 			type="double" 		way="in"/>
+		<param id="auto_credit_level" 		type="integer" 		way="in"/>
+	</service>
+	<output>
+		<column type="number" id="credit_limit"	    	name="授信额度" />
+		<column type="number" id="credit_limit_c"	    name="授信额度大写" />
+		<column type="number" id="financing_limit"		name="融资上限"	/>
+		<column type="number" id="financing_limit_c"	name="融资上限大写"	/>
+		<column type="number" id="bstock_limit"			name="融券上限"/>
+		<column type="number" id="bstock_limit_c"		name="融券上限大写"/>
+	</output>
+</function>

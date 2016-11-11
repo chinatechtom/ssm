@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="30694" name="融券合约提前终止" >
+ <input print="30694.jsp">
+	<group name="合同情况">
+	<item type="hidden"	id="bond_id"	name="合同id" editable="false" action="1888"/>
+	<item type="hidden"	id="cust_id"	name="custid" action="30119"/>
+	<item type="hidden"	id="company"	name="券商名称"/><!--从1888.xml获得的券商名称-->
+	<item type="text"	id="bond_no"	name="合同编号" editable="false"/>
+	<item type="text"	id ="cust_name"	name="客户姓名" editable="false"/>
+	<item type="text"	id ="cust_code"	name="客户代码" editable="false" action="30101,30102"/>
+	<item type="hidden"	id="bond_name"	name="合同名称" editable="false"/>
+	<item type="text"	id="sh_acc"		name="上海证券账户" editable="false"/>
+	<item type="text"	id="sz_acc"		name="深圳证券账户" editable="false"/>
+	<item type="text"	id="acc_code"		name="信用资金账户" editable="false"/>
+	<item type="text"	id="cert_number"	name="证件号码" editable="false"/>
+	<item type="text"	id="date1"		name="申请日期" editable="false"/>	<!--从1888.xml获得的打印日期-->
+	<item type="hidden"	id="user_code"	name="打印柜员代码"/><!--从1888.xml获得的打印柜员代码-->
+	<item type="hidden"	id="user_name"	name="打印柜员名称"/><!--从1888.xml获得的打印柜员名称-->
+	<item type="hidden"	id="company"	  name="证券公司名称"/><!--从1888.xml获得的证券公司名称名称-->
+	</group>
+	<group name="融券申请情况" scope="group">
+	<item type="grid"	id="bond_id" source="30690" name="融券详细"/> 
+	</group>	
+	<group name="输入要终止的证券代码">
+	<item type="text"	id="stock_code"			name="证券代码" action="30690"/>
+	<item type="text" 	id="product_name"		name="证券名称" editable="false"/>
+	<item type="text" 	id="market_code_name"	name="市场名称" editable="false"/>
+	<item type="text" 	id="model_name"			name="信用使用模式" editable="false"/>
+	<item type="text" 	id="borrow_qty"			name="融券申请总额" editable="false"/>
+	<item type="text" 	id="actual_borrow_qty"	name="实际融券总额" editable="false"/>
+	<item type="text" 	id="return_borrow_qty"	name="融券归还总额" editable="false"/>
+	<item type="text" 	id="surplas_borrow_qty"	name="剩余可使用融券上限" editable="false"/>
+	</group>
+  </input>
+  <service type="procedure" id="p_stop_bond_stock_apply" process="911" style="1">
+	<param type="integer"	id="user_id"/>
+	<param type="integer"	id="bond_id"/>
+	<param type="string"	id="stock_code"/>
+  </service>
+  <output target="80413107">
+	<column type="string" id="cust_code" name="客户代码"/>
+	<column type="string" id="market_code" name="市场代码" display="false"/>
+	<column type="string" id="product_code" name="证券代码"/>
+	<column type="number" id="borrow_qty" name="融券申请上限" precision="2"/>
+	<column type="string" id="begin_time" name="起始日期"/>
+	<column type="string" id="return_time" name="到期日期"/>
+	<column type="string" id="order_no" name="合约编号"/>
+	<column type="number" id="interest_rate" name="利息率" precision="4"/>
+	<column type="string" id="model" name="模式" display="false"/> 
+	<column type="string" id="order_status" name="合约状态"/>
+	<column type="string" id="borrow_stock_product_code" name="融券信用产品代码"/>
+  </output>
+</function>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="90000015" name="前十天备份文件" >
+	<input>		
+	</input>
+	<service type="table" id="vw_db_back_file" process="111" style="12">
+	</service>
+	<output>
+		<column type="string" id="entry_value"  field="id" name="备份记录id"/>
+		<column type="string" id="entry_content" field="name" name="备份文件名称"/>
+    </output>
+</function>

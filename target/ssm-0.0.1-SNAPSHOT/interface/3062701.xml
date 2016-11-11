@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3062701" name="查询定单" >
+  <input>	
+    <item type="hidden" id="cust_id" name="客户id" />
+	<item type="text" id="cust_code" name="客户代码" />
+	<item type="text" id="cust_name" name="客户姓名" />
+	<item type="text" id="cert_no" name="证件号码" />
+	<item type="hidden" id="order_id" name="定单id" />
+    <item type="text" id="order_no" name="定单编号" />
+	<item type="hidden" id="formerly_voucher_no" name="原始凭证号" />
+  </input>
+  <service type="procedure" id="p_order_1_query" process="911" style="77">
+	<param id="user_id" type="integer"/>
+	<param id="cust_id" type="integer"/>
+	<param id="cust_code"/>
+	<param id="cust_name"/>
+	<param id="cert_no" />
+	<param id="order_id" type="integer"/>
+	<param id="order_no" />
+	<param id="formerly_voucher_no"/>
+  </service>
+  <output refresh="600">    
+  	<column type="string" id="order_type"   name="定单类型"/>
+    <column type="string" id="order_type_name"   name="定单类型名称"/>
+    <column type="string" id="manage_status"   name="处理状态"  />	
+  	<column type="string" id="date"   name="日期"/>
+    <column type="string" id="time"   name="时间"  />
+    <column type="number" id="cust_id"   name="客户id"  display="false"/>
+    <column type="string" id="cust_name"   name="客户姓名" /> 
+    <column type="string" id="order_id"     name="定单id"  display="false" />
+    <column type="string" id="order_no" name="定单编号"/>
+	<column type="string" id="formerly_voucher_no"  name="原始凭证号" display="false"/>   
+	<column type="string" id="product_id"  name="产品id"  display="false"/>   
+	<column type="string" id="product_code"  name="产品代码" />   
+	<column type="string" id="product_cyc"  name="产品周期" /> 
+	<column type="string" id="begin_time"  name="起始日期" />   
+	<column type="string" id="return_time"  name="到期日期" />
+	<button type="edit" id="edit" name="处理申请" action="30627" multiple="-1"/>
+  </output>  
+</function>
+
+

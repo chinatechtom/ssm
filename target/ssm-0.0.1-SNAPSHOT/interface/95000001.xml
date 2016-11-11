@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="95000001" name="评级因子名称" >
+	<input>
+
+	</input>
+	<service type="table" id="t_ratingfactor" process="111" style="12">	
+	<param id="ratingfactor_type" field="ratingfactor_type" />
+	</service>
+	<output>
+		<column type="number" id="entry_value"   field="ratingfactor_sort"	name="评级因子id"/>
+		<column type="string" id="entry_content"	 field="ratingfactor_name"    name="评级因子名称"/>
+    </output>
+</function>

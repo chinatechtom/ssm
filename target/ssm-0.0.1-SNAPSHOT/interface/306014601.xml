@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="306014601" name="二次征信统计" >
+  <input>
+    <description>是否进行批量统计
+	</description>  
+	<item type="date"	    id="begin_date"	        name="征信统计起始日期"      nullable="false"/>
+	<item type="date"	    id="end_date"	        name="征信统计结束日期"      nullable="false"/>
+  </input>
+  <service type="procedure" id="p_cust_scd_credit_statis"  implement="p_cust_scd_credit_statis306014601" process="811" style="1">
+	<param type="integer" id="user_id"/>
+	<param type="string" id="begin_date"/>
+	<param type="string" id="end_date"/>
+  </service>
+</function>

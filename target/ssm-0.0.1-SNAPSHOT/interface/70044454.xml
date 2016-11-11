@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70044454" name="补仓信息录入处理" >
+	<input print="70044454.jsp">
+		<group name="合同信息" >
+			<item type="hidden" id="cust_id" name="客户id" />			
+			<item type="text" id="bond_no" name="合同编号" editable="false"/>
+			<item type="text" id ="cust_name" name="客户姓名" editable="false"/>
+			<item type="text" id ="cust_code" name="客户代码" editable="false"/> 	
+		</group>
+        <item type="hidden" id="order_id"     name="合约ID" action="70044554"/>			
+		<item type="hidden" id="date"     name="打印日期"/>	<!--从1888.xml获得的打印日期-->
+		<item type="hidden" id="user_code"     name="打印柜员代码"/><!--从1888.xml获得的打印柜员代码-->
+		<item type="hidden" id="user_name"     name="打印柜员名称"/><!--从1888.xml获得的打印柜员名称-->
+		<item type="hidden" id="company"    name="券商名称"/><!--从1888.xml获得的券商名称-->			
+		<group name="交易协议书信息">
+		    <item type="text" id="sbond_no" name="交易协议书编号" editable="false"/>
+		    <item type="text" id ="hg_code" name="回购交易代码" editable="false"/>
+		    <item type="select" id ="market_code" name="市场代码" editable="false" source="039"/>
+			<item type="text" id ="product_code" name="标的股票代码" editable="false"/>
+			<item type="text" id ="hg_num" name="回购股票数量" editable="false" integer="true"/>
+			<item type="text" id ="first_amt" name="交易金额" editable="false" number="true"/>
+			<item type="date" id="engage_trade_date" name="约定交易日期" 	default="last" editable="false"	/>
+			<item type="text" id ="days" name="回购期限" editable="false" integer="true"/>
+			<item type="text" id ="hg_rate" name="回购利率(%)" editable="false" number="true"/>
+			<item type="text" id ="penalty_rate" name="违约金比率(%)" editable="false" number="true"/>
+			<item type="text" id ="lowest_price" name="最低履约保障比例(%)" editable="false" number="true"/>
+			<item type="text" id ="touch_rate" name="触发比率(%)" editable="false" number="true"/>
+			<item type="textarea" id ="remarks" name="备注" editable="false"/>
+		</group>
+		<group name="补仓信息">
+			<item type="select" id="market_code1" name="场外补仓证券市场" source="039"/>
+			<item type="text" id="product_code1" name="场外补仓证券代码"/>
+			<item type="text" id="stock_vol1" name="场外补仓证券数量" integer="true"/>
+			<item type="textarea" id ="remark" name="备注" />			
+		</group>
+		<group name="处理意见">
+			<item type="textarea" id ="remark1" name="处理意见"/>
+		</group>
+	</input>
+	<service type="procedure" id="p70044454" process="822" style="1">
+		<param type="integer" id="user_id" way="in" />
+		<param type="integer" id="cust_id" way="in" />
+		<param type="integer" id="order_id" way="in" />
+		<param type="string" id="market_code1" way="in" />
+		<param type="string" id="product_code1" way="in" />
+		<param type="integer" id="stock_vol1" way="in" />
+		<param type="string" id="remark1"  way="in"/>
+	</service>
+	<output/>
+</function>

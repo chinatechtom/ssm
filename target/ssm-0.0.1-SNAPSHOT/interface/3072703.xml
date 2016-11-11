@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3072703" name="删除预警" >	
+	<input>		
+		<item type="hidden"   id="record_id"				name="记录id"			editable="false"	/>
+		<item type="textarea" id="remark"					name="备注"			    nullable="false"	/>
+	</input>
+	<service type="procedure" id="p_guarantee_rate_realtime_control_del_warn"  process="811" style="77">
+		<param id="user_id"				type="integer"	way="in"/>
+		<param id="record_id"			type="integer"	way="in"/>、
+		<param id="remark"			    type="string"	way="in"/>
+	</service>
+	<output />		
+</function>

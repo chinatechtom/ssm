@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70070101" name="交易协议书履约保障比率监控" >
+  <input>
+	<item type="select" id="institution_id" name="营业部名称" source="97000001"/>
+ 	<item type="hidden" id="cust_id"        name="客户id"/>
+	<item type="text"   id="cust_code"      name="客户代码" />
+	<item type="text"   id="cust_name"      name="客户姓名"/>
+	<item type="text"   id="cert_no"        name="证件号码"/>
+	<item type="text"   id="bond_no"        name="合同编号"/>
+	<item type="hidden" id="bond_id"        name="合同id"/>	
+	<item type="text"   id="sbond_no"       name="交易协议书编号"/>
+	<item type="hidden" id="sbond_id"       name="交易协议书id"/>
+	<item type="select" id="sbond_status"   name="交易协议书状态" source="700" default="4"/>
+	<item type="select" id="market_code"    name="市场代码" source="039"/>
+	<item type="text"   id="product_code"   name="证券代码"/>
+	<item type="text"   id="guarantee_rate"   name="履约保障比率阀值(%)" default='145'/>
+  </input>
+  <service type="procedure" id="P70070101" process="922" style="77">
+	<param type="integer" id="user_id"/>	
+	<param type="integer" id="institution_id"/>
+ 	<param type="integer" id="cust_id"/>
+	<param type="string"  id="cust_code"/>
+	<param type="string"  id="cust_name"/>
+	<param type="string"  id="cert_no"/>
+	<param type="string"  id="bond_no"/>
+	<param type="integer" id="bond_id"/>
+	<param type="string"  id="sbond_no"/>
+	<param type="integer" id="sbond_id"/>
+	<param type="string"  id="sbond_status"/>
+	<param type="integer" id="product_id"/>
+	<param type="string"  id="market_code"/>
+	<param type="string"  id="product_code"/>
+	<param type="float"  id="guarantee_rate"/>
+  </service>
+  <output  export="true" refresh="300" autoload="true">  
+    <column type="number" id="bond_id"   name="合同id"   display="false"/>
+    <column type="number" id="sbond_id"   name="交易协议书id"   display="false"/>     
+	<column type="number" id="institution_id"   name="机构号" display="false"/>
+	<column type="string" id="institution_code"   name="营业部代码"/>
+	<column type="number" id="cust_id"   name="客户id"  display="false"/>	
+	<column type="string" id="cust_code"   name="客户代码" />
+	<column type="string" id="bond_no"   name="合同编号" display="false"/>
+	<column type="string" id="bond_status"	name="合同状态" display="false"/>	
+	<column type="string" id="sbond_no"   name="交易协议书编号" />
+	<column type="string" id="hg_code" name="回购代码" display="false"/>
+    <column type="number" id="product_id" name="证券id" display="false"/>
+	<column type="string" id="product_code" name="标的证券代码"/>
+	<column type="number" id="hg_num" name="标的证券数量" precision="0"/>
+	<column type="number" id="first_amt" name="初始交易金额" precision="2"/>
+	<column type="number" id="payback_amt" name="本金归还金额" precision="2"/>
+	<column type="number" id="hg_convert_rate" name="折扣比率(%)" precision="2" display="false"/>
+	<column type="number" id="guarantee_rate" name="合并履约保障比率(%)" precision="2"/>
+	<column type="number" id="guarantee_rate1" name="市价合并履约保障比率(%)" precision="2"/>
+	<column type="number" id="guarantee_rate2" name="单独履约保障比率(%)" precision="2"/>
+	<column type="number" id="touch_rate" name="预警履约保障比率(%)" precision="3"/>
+	<column type="number" id="lowest_price" name="最低履约保障比例(%)" precision="3"/>
+	<column type="string" id="institution_name"   name="营业部名称"/>
+  	<column type="string" id="cust_name"   name="客户姓名" />
+	<column type="string" id="sbond_status"	name="交易协议书状态"/>	
+	<column type="string" id="market_code" name="市场代码"/>
+	<column type="string" id="product_name" name="标的证券名称"/>
+	<column type="number" id="last_price" name="证券最新价" precision="3"/>
+	<column type="string" id="engage_trade_date"  name="初始交易日期" />
+	<column type="string" id="bb_trade_date"  name="原购回日期" />
+	<column type="string" id="last_bb_date"  name="最新购回日期" />
+	<column type="string" id="warning_level"	name="报警级别"	level="true"	display="false"/>
+	<column type="string" id="sbond_type"  name="交易类型" />
+	<column type="string" id="RELATED_SBOND_NO"  name="主交易协议书编号" />
+	<button type="view" id="edit" name="查看交易协议书详细" action="70010708" multiple="0"/>
+  </output>
+</function>

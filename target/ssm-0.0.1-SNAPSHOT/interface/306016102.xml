@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="306016102" name="任务执行状态查询" >
+	<input>
+		<description>是否更新执行状态?
+		</description>
+		<item type="hidden"	id="task_id" name="任务代码"/>
+	</input>
+	<service type="procedure" id="kingstar.pr_get_zx_task_status" adapter="newzhengxin"  process="155" style="1">
+		<param type="string" id="task_id"/>
+	</service>
+	<output target="306016108">
+		<column type="string" id="task_id"     name="任务代码"	/>  	
+		<column type="string" id="task_status" name="返回结果"	/>  		
+	</output>
+</function>

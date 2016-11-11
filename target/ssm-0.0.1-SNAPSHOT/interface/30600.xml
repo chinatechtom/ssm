@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="30600" name="应销未销户客户名单查询" >
+	<input>
+		<item type="select" id="institution_id"	name="营业部名称" source="95000008"/>
+		<item type="select" id="reason"			name="应销未销原因"	source="393"/>
+		<item type="text"   id="cust_code"		name="客户代码"/>
+	</input>
+	<service type="procedure" id="p_yxwx_cust_query" process="911" style="77">
+		<param type="integer"	id="user_id"		way="in"/>
+		<param type="integer"	id="institution_id"	way="in"/>
+		<param type="string"	id="reason"			way="in"/>
+		<param type="string"	id="cust_code"		way="in"/>
+	</service>
+	<output>
+		<column type="number" id="institution_id"	name="institution_id" display="false"/>
+		<column type="number" id="cust_id"			name="cust_id" display="false"/>
+		<column type="string" id="institution_code"	name="营业部代码"/>
+		<column type="string" id="institution_name"	name="营业部名称"/>
+		<column type="string" id="cust_code"		name="客户代码"/>
+		<column type="string" id="cust_name"		name="客户姓名"/>
+		<column type="string" id="reason_name"		name="应销未销原因"/>
+	</output>
+</function>

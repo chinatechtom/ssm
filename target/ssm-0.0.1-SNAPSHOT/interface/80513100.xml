@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="GBK" ?>
+<function id="80513100" name="网厅客户信用资金账号同步">
+  <description>确实同步网厅客户信用资金账号么?</description>
+  <input>
+    <!--item type="hidden" id="cust_code" alias="scust_no" name="客户代码" /-->
+    <item type="hidden" id="commness_cust_code" alias="scust_no2" name="普通资金账号" />
+  </input>  
+  <service type="system" id="80513100" process="888" style="1">
+	  <param type="string" id="function_id" default="80130255"/>
+	  <!--param type="string" id="function_id" default="80413101"/>
+	  <param type="string" id="function_id" default="80413102"/>
+	  <param type="string" id="function_id" default="80413103"/>
+	  <param type="string" id="function_id" default="80413104"/>
+	  <param type="string" id="function_id" default="3010101"/>
+	  <param type="string" id="function_id" default="80110298"/>
+	  <param type="string" id="function_id" default="80100108"/-->
+  </service>
+</function>

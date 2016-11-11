@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="30677" name="融券申请" >
+  <input print="30677.jsp">
+    <group name="合同信息">
+	<item type="text" id="bond_no" name="合同编号" editable="false"/>
+	<item type="text" id ="cust_name" name="客户姓名" editable="false"/>
+	<item type="text" id ="cust_code" name="客户代码" editable="false"/>
+	<item type="hidden" id="bond_name" name="合同名称" editable="false"/>
+	<item type="button" id="bond_id" name="融券详情" action="30690"/>
+  </group>   
+  <group name="资产评估" scope="group">
+	<item type="hidden" id="cust_id" name="客户id" action="30631"/>
+	<item type="hidden" id="if_allow" name="是否允许"/>
+	<item type="hidden" id="if_allow_name" name="是否允许"  editable="false"/>
+	<item type="hidden" id="if_blacklist" name="是否黑名单"/>
+	<item type="hidden" id="if_blacklist_name" name="是否黑名单" editable="false"/>
+	<item type="text" id="total_asset" name="总资产"  editable="false"/>
+	<item type="text" id="fund_amt" name="资金余额"  editable="false"/>
+	<item type="text" id="stock_market_value" name="证券市值" editable="false"/>
+	<item type="text" id="stock_convert_amt" name="证券折算金额" editable="false"/>
+	<item type="hidden" id="fund_convert_amt" name="资金折算金额" editable="false"/>
+	<item type="text" id="gage_value" name="担保品折算价值" editable="false"/>
+	<item type="hidden" id="usable_num" name="评估信用上限" editable="false"/>
+	<item type="hidden" id="credit_num" name="信用上限" editable="false"/>
+	<item type="text" id="total_debt" name="总负债" editable="false"/>
+	<item type="text" id="financing_amt" name="实际融资总额" editable="false"/>
+	<item type="text" id="borrow_stock_amt" name="实际融券总额" editable="false"/>
+	<item type="text" id="fee_all" name="总费用" editable="false"/>
+	<item type="text" id="guan_rate" name="维持担保比例" editable="false"/>
+  </group>
+	<group name="可融券范围" scope="group">
+		<item type="grid" id="cust_id" name="可融券范围" source="3067702"/>
+	</group>
+	
+	<group name="融券产品">
+			<item type="select" id="credit_product_id" name="融券产品" source="95000005" nullable="false"/>
+			<item type="button" id="assistant"	name="更多详情" action="305010205" multiple="0"/> 
+	</group>
+	
+   <group name="融券申请">
+	<item type="hidden" id="cust_id" name="客户id" action="1888,3067705"/>
+	<item type="hidden" id="bond_id" name="合同id" />
+	<item type="hidden" id="order_no" name="合约编号" />
+	<item type="hidden" id="formerly_voucher_no" name="原始凭证号"/>
+	<item type="select" id="market_code" name="市场名称" source="039" nullable="false" />
+	<item type="text" id="product_code" name="证券代码" nullable="false" default="600000" action="30301"/>
+	<item type="text" id="product_name" alias="sec_name" name="证券名称" editable="false"/>
+	<item type="hidden" id="begin_time11" name="起始日期"/>
+	<item type="hidden" id="return_time11" name="到期日期"/>	
+	<item type="hidden" id="available_time11" name="有效日期"/>	
+	<item type="select" id="model" name="信用使用模式" source="306" nullable="false" default="2"/>	
+	<item type="hidden" id="rz_or_rq"     name="融券" default="2"/>
+	<item type="text" id="approve_credit_num" name="新增融券数量" action="3065003,3067703" integer="true" nullable="false"/>
+	<item type="text" id="app_days"  name="申请天数" integer="true" nullable="false"/>
+	<item type="text" id="borrow_qty_sum" name="总融券数量" number="true" editable="false"/>	
+	<item type="text" id="cust_factor" name="客户融券费率因子" number="true" default="1.00" nullable="false"/>	
+	<item type="button" id="cust_id" action="30693" name="融券限制"/>
+	<item type="textarea" id ="chinese" name="新增融券上限中文大写" editable="false"/>
+	<item type="textarea" id="remark11" name="备注说明" />
+	<item type="hidden" id="date"     name="打印日期"/>	<!--从1888.xml获得的打印日期-->
+	<item type="hidden" id="user_code"     name="打印柜员代码"/><!--从1888.xml获得的打印柜员代码-->
+	<item type="hidden" id="user_name"     name="打印柜员名称"/><!--从1888.xml获得的打印柜员名称-->
+	<item type="hidden" id="company"    name="券商名称"/><!--从1888.xml获得的券商名称-->
+  </group>
+  <group name="已申请的融券产品">
+	<item type="grid" id="cust_id" name="融券产品" source="305010202"/>
+  </group>
+  </input>
+  <service type="procedure" id="p_borrow_stock_insert" process="811" style="1">
+	<param type="integer" id="user_id" way="in" />
+	<param id="order_no" way="in" />
+	<param id="formerly_voucher_no" way="in" />
+	<param  id="cust_id" />
+	<param id="remark11"/>
+	<param type="integer" id="bond_id" way="in" />
+	<param id="market_code" way="in" />
+	<param id="product_code" way="in" />
+	<param id="model" />
+	<param id="approve_credit_num" way="in" type="integer" />
+	<param id="begin_time11" />
+	<param id="return_time11"/>
+	<param id="return_time11"/>
+	<param id="cust_factor" type="double" way="in"/>
+	<param id="app_days" type="integer" way="in"/>
+	<param id="credit_product_id"	type="integer"	way="in"/>
+  </service>
+  <output/>
+</function>

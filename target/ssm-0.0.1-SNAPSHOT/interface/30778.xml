@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="30778" name="单客户融资总额占公司可融资总额度比例监控" >	
+  <input>
+		<item type="text"	id="rate"	name="比例(%)"	nullable="false"	default="0.1"	number="true"/> 		
+  </input>
+  <service type="procedure" id="p_one_financing_per_total_fc_query" process="911" style="77"> 
+		<param type="integer" id="user_id"	way="in"/>
+		<param type="double"  id="rate"		way="in"/>			
+  </service>
+  <output refresh="120" export="true">
+		<column type="number" id="cust_id"					name="客户id"		display="false"/>
+		<column type="string" id="cust_code"				name="客户代码"/>
+		<column type="string" id="cust_name"				name="客户姓名"/>
+		<column type="number" id="asset_qty"				name="融资总额"		precision="2"/>
+		<column type="number" id="total_fc"				name="公司可融资总额度"	precision="2"/>
+		<column type="number" id="rate"						name="比例(%)"			precision="8"/>	
+		<column type="string" id="warning_level"			name="报警级别"	level="true" display="false"/>
+  </output>
+</function>

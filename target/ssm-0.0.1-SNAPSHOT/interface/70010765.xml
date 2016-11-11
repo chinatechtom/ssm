@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70010765" name="申请编号设置" >
+	<input>
+		<item type="hidden" id="cust_id" name="客户id" />			
+		<item type="text" id="entrust_date" name="委托日期" editable="false"/>
+		<item type="text" id ="entrust_no" name="委托编号" editable="false"/>
+		<item type="text" id ="sqbh" name="申请编号" nullable="false"/>
+	</input>
+	<service type="procedure" id="P70010765" process="822" style="1">
+		<param type="integer" id="user_id" way="in" />
+		<param type="integer" id="cust_id" way="in" />
+		<param type="string"  id="entrust_date"  way="in"/>
+		<param type="string"  id="entrust_no"  way="in"/>
+		<param type="integer" id="sqbh" way="in" />
+	</service>
+	<output/>
+</function>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="96000001" name="维持担保比例" >
+	<input>	
+	</input>
+	<service type="table" id="t_guarantee_rate" process="111" style="12">
+	</service>
+	<output>
+		<column type="number" id="entry_value"   	field="instruction"				name="数据内容id"/>
+		<column type="string" id="entry_content"	 field="guarantee_rate_name"    name="数据内容"/>
+  </output>
+</function>

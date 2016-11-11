@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="34039" name="批量新增信用违约资料" >
+  <input> 
+	<item type="date" id="trade_date" name="申报日期" nullable="false"/>
+  </input>
+  <service type="procedure" id="P17000032"  process="911" style="1"> 
+    <param id="user_id"		   type="integer" way="in"/>
+  	<param id="trade_date"   type="string" way="in"/>   
+  </service>
+	<output target="3090301">
+		<column name="导出方式"			type="string"	id="sstatus0"/>   
+		<column name="路径"				type="string"	id="vsvarstr0"/>  
+		<column name="文件名"			type="string"	id="saddr"/>
+		<column name="数据库表名"			type="integer"	id="saddr2"/>   
+		<column name="数据格式名"			type="string"	id="snote"/>   
+		<column name="融资融券机构代码"	type="string"	id="sstation1"	display="false"/>  
+		<column name="融资融券分支号"		type="string"	id="sdate3"		display="false"/>
+		<column name="融资融券柜员号"		type="string"	id="scheck_emp"	display="false"/>   
+		<column name="融资融券柜员密码"	type="string"	id="semp_pwd"	display="false"/>
+	</output>
+</function>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="95000027" name="杂项内容检索" >
+	<input>
+		<item type="text" id="paraid" name="杂项ID"/>
+	</input>
+	<service type="table" id="mixedconfig" implement="mixedconfig95000027" process="111" style="12">
+		<param field="paraid" type="string" operator="=" default="pc_time"/>
+	</service>
+	<output>
+		<column type="string" id="paraname_pc"  field="paraname" name="杂项名称"/>
+		<column type="string" id="paravalue_pc" field="paravalue" name="杂项参数"/>
+    </output>
+</function>

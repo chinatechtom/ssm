@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="50010601" name="行权标识查询">
+  <input>
+	<item type="hidden" id="institution_id" name="机构id"/>
+ 	<item type="hidden" id="cust_id" 		name="客户id"/>
+	<item type="text" 	id="cust_code" 		name="客户代码"/>
+	<item type="text" 	id="cust_name" 		name="客户姓名"/>
+	<item type="text" 	id="bond_no" 		name="合同编号"/>
+	<item type="select" id="bond_status" 	name="合同状态" source="022"/>
+	<item type="date" 	id="begin_date" 	name="起始日期" default="last"/>
+	<item type="date" 	id="end_date" 		name="终止日期" default="now"/>
+	<item type="hidden" id="bond_id" 		name="合同id"/>	
+	<item type="hidden" id="manage_status"  name="处理状态"/> 
+	<item type="select" id="xq_flag" 		name="行权标识" source="951"/>
+	<item type="select"  id="market_code"   name="市场代码"	source="039" default="2"/>
+  </input>
+  <service type="procedure" id="P50010601" process="966" style="77">
+	<param type="integer" 	id="user_id"/>	
+	<param type="integer" 	id="institution_id"/>
+ 	<param type="integer" 	id="cust_id"/>
+	<param type="string" 	id="cust_code"/>
+	<param type="string" 	id="cust_name"/>
+	<param type="string" 	id="begin_date"/>
+	<param type="string" 	id="end_date"/>
+	<param type="integer" 	id="bond_id"/>
+	<param type="string" 	id="bond_no"/>
+	<param type="string"	id="bond_status"/>
+	<param type="integer" 	id="manage_status"/>
+	<param type="string"	id="xq_flag"/>
+	<param type="string"	id="market_code"/>
+  </service>
+  <output  export="true">  
+    <column type="number" id="bond_id" 			name="合同id" display="false"/>     
+	<column type="string" id="bond_name" 		name="合同名称" display="false"/>
+	<column type="string" id="cust_code" 		name="客户代码"/>
+	<column type="string" id="cust_name" 		name="客户姓名"/>
+	<column type="string" id="bond_no"          name="合同编号"/>
+	<column type="number" id="bond_status"		name="合同状态" display="false"/>	
+	<column type="string" id="bond_status_name"	name="合同状态"/>
+	<column type="string" id="market_code"		name="市场代码" display="false"/>	
+	<column type="string" id="market_code_name"	name="市场代码" />
+	<column type="string" id="holder_ac_no"		name="股东账号"/>
+	<column type="string" id="xq_flag"			name="行权标识" display="false"/>
+	<column type="string" id="xq_flag_name"		name="行权标识"/>
+	<button type="send"   id="edit"	name="开通"	action="50010602"	multiple="0"/>
+  </output>
+</function>

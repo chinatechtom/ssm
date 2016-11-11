@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="gbk"?>
+<function id="27110121" name="新增融资融券情况统计表">
+<input print="27110121.jsp">
+  <item type="text"    id="institution_id"  name="营业部ID"/>
+  <item type="text"    id="start_date"      name="开始日期" />
+  <item type="text"    id="end_date"        name="结束日期" />
+  <item type="grid" id="report1" name="" source="27010119"/>	
+  <item type="grid" id="report2" name="" source="27010121"/>
+</input>
+</function>

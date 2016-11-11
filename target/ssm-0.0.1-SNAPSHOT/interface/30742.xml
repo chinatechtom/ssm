@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="30742" name="补仓通知情况查询" >
+  <input>
+    <item type="text"   id="cust_code"   name="客户代码" nullable="false"/>   
+  </input>
+  <service type="procedure" id="p_bc_notice_search"  process="911" style="77"> 
+    <param id="user_id"		type="integer" way="in"/>
+    <param id="cust_code"   type="string"  way="in"/>  	
+  </service>
+	<output>
+		<column type="number" id="cust_id"		   name="客户id" display="false"/>
+		<column type="string" id="cust_code"	   name="客户代码"/>
+		<column type="string" id="cust_name"	   name="客户姓名"/>
+		<column type="number" id="institution_id"  name="机构id" display="false"/>
+		<column type="string" id="institution_code"	name="机构代码"/>
+		<column type="string" id="institution_name"	name="机构名称"/>			
+		<column type="number" id="asset_amt"	   name="客户总资产"/>
+		<column type="number" id="financing_amt"   name="客户总融资"/>
+		<column type="number" id="bs_amt"		   name="客户总融券"/>
+		<column type="number" id="current_gr"	   name="当前担保率"/>
+		<column type="string" id="date_130"		   name="低于强制平仓线日期"/>
+		<column type="string" id="time_130"		   name="低于强制平仓线时间"/>
+		<column type="string" id="noticed_date"	   name="通知到客户日期"/>
+		<column type="string" id="noticed_time"	   name="通知到客户时间"/>
+		<column type="number" id="noticed_num"	   name="累计通知次数"/>
+		<column type="string" id="add_name"		   name="首次录入人员"/>
+		<column type="string" id="add_date"		   name="首次录入时间"/>
+		<button type="add"    id="add"			   name="增加补仓通知" action="30743" multiple="-1"/>		
+	</output>
+	<assistant action="30744">
+		<link src="cust_id" target="cust_id"/>
+	</assistant>
+</function>

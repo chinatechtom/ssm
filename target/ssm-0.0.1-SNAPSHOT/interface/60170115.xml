@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="60170115" name="产品新股申购查询" >
+  <input>
+	<item type="text" id="project_code" name="产品代码"/>
+	<item type="text" id="project_name" name="产品名称"/>
+	<item type="date" id="begin_date" name="开始日期"/>
+	<item type="date" id="end_date" name="结束日期"/>
+  </input>
+  <service type="procedure" id="P60170116" process="933" style="77">
+	<param id="user_id" type="integer"/>
+	<param id="project_code" type="string"/>
+	<param id="project_name" type="string"/>
+	<param id="begin_date" type="string"/>
+	<param id="end_date" type="string"/>
+  </service>
+  <output export="true">  
+  	<column type="string" id="project_code"   name="产品代码" />
+    <column type="string" id="project_name"   name="产品名称"/>
+    <column type="hidden" id="project_type"   name="产品类型" display="false"/>
+	<column type="hidden" id="project_type_name"   name="产品类型" />
+	<column type="string" id="trade_date"   name="交易日期"/>
+	<column type="hidden" id="market_code"   name="市场代码" display="false"/>
+	<column type="string" id="market_name"   name="市场名称"/>
+	<column type="string" id="product_code"   name="证券代码"/>
+	<column type="string" id="product_name"   name="证券名称" />	
+	<column type="string" id="set_date"   name="设置日期"/>	
+	<column type="hidden" id="user_code"   name="操作人员" display="false"/>
+    <column type="string" id="user_name"   name="操作人员"/>
+    <column type="hidden" id="upd_date"   name="更新日期" />
+	<column type="hidden" id="upd_user"   name="更新操作员" display="false"/>
+    <column type="string" id="upd_user_name"   name="更新操作员"/>
+	<column type="string" id="remark"   name="备注" />
+	</output>
+</function>

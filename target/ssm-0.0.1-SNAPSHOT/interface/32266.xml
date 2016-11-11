@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="gbk"?>
+<function id="32266" name="自定义邮件短信客户信息查询">
+	<input>
+		<item type="text" 	id="msg_id" 			name="信息编号" 	/>
+		<item type="select" id="cont_meth" 			name="发送方式" 		source="331"		/>
+		<item type="date" 	id="msg_date_begin" 	name="信息生成起始日期"	default="last"/>
+		<item type="date" 	id="msg_date_end" 		name="信息生成结束日期"	default="now"/>
+	</input>
+	<service type="procedure" id="p_manual_msg_cust_info_query" implement="p_manual_msg_cust_info_query32266" process="911" style="77">
+		<param id="user_id" 		type="integer" 	way="in"/>
+		<param id="msg_id"  		type="integer" 	way="in"/>
+		<param id="cont_meth" 		type="string" 	way="in"/>
+		<param id="msg_date_begin" 	type="string" 	way="in"/>
+		<param id="msg_date_end" 	type="string" 	way="in"/>
+	</service>
+	<output>
+		<column	type="number"	id="msg_id"			name="信息编号"/>
+		<column	type="string"	id="cust_code"		name="客户代码"/>
+		<column	type="string"	id="cust_name"		name="客户姓名"/>
+		<column	type="string"	id="group_name"		name="组名称"/>
+		<column	type="string"	id="cont_meth_name"	name="发送方式"/>
+		<column	type="string"	id="msg_date"		name="信息生成日期"/>
+		<column	type="string"	id="msg_type2_name"	name="信息类型"/>
+	</output>
+</function>

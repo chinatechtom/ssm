@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="gbk"?>
+<function id="60190119" name="股票质押业务交收数据汇总表">
+	<input>   
+	 <item type="date" id="trade_date" name="查询日期"/>   
+  </input>
+  <service type="procedure" id="P60190119" process="933" style="77">
+	<param id="user_id" type="integer"/>  
+	<param id="trade_date" type="string"/>
+  </service>
+  <output export="true">
+    <column type="string" id="occur_date" name="交易日期"/>
+	<column type="string" id="market_code" name="市场代码"/>
+	<column type="float" id="borrow_amt" name="借款额"/>
+	<column type="float" id="zthz" name="中途汇总"/>
+	<column type="float" id="on_payback_amt" name="中途还本金"/>
+	<column type="float" id="on_interest_amt" name="中途还利息"/>
+	<column type="float" id="on_violate_amt" name="中途还违约"/>
+	<column type="float" id="qtfy" name="中途还其他" />
+	<column type="float" id="zthz1" name="购回汇总"/>
+	<column type="float" id="payback_amt" name="购回还本金" />
+	<column type="float" id="on_interest_amt1" name="购回还利息"/>
+	<column type="float" id="on_violate_amt1" name="购回还违约" />
+	<column type="float" id="qtfy1" name="购回还其他"/>
+  </output>
+</function>

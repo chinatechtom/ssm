@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="81300406" name="取信用产品名称" >  
+  <input>
+		<item type="hidden" id="sname"        name="信用产品代码" />
+		<item type="hidden" id="sall_name"    name="信用产品名称" />
+		<item type="hidden" id="lcert_code"   name="交易数据字典代码"   />		
+  </input>
+  <service type="procedure" id="p300406" process="811" style="1">
+		<param id="user_id"          type="integer"/> 
+		<param id="sname"            type="string"/> 
+		<param id="sall_name"        type="string"/>
+		<param id="lcert_code"       type="string"/>
+  </service> 
+  <output>
+  </output>
+</function>

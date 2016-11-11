@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="60060649" name="对帐单" >
+  <input>	
+	<item type="hidden" id="cust_id" name="客户名称" source="70001888"/>
+	<item type="text"   id="cust_code" 		name="客户代码" /> 
+	<item type="select" id="institution_id" name="营业部名称" source="97000001"/>
+	<item type="date"   id="begin_date" 		name="起始日期"  default="last"/>
+	<item type="date"   id="end_date" 		name="结束日期"  default="now"/>
+  </input>
+  <service type="procedure" id="p60060649" process="933" style="77">
+	<param id="user_id" 		type="integer"/>
+	<param id="cust_id" 		type="integer"/>
+	<param id="cust_code" 		type="string"/>
+   	<param id="institution_id" 	type="integer"/>
+   	<param id="begin_date" 	    type="string"/>
+   	<param id="end_date" 		type="string"/>
+  </service>
+  <output >
+	<column type="number" id="institution_id"   name="营业部ID"    display="false"/>
+    <column type="string" id="institution_code" name="营业部代码"  />
+    <column type="string" id="institution_name" name="营业部名称"  />   
+    <column type="number" id="cust_id"   		name="客户ID"  display="false"/>
+    <column type="string" id="cust_code"        name="客户代码"  />
+    <column type="string" id="cust_name"   		name="客户姓名"    />
+	<column type="string" id="cert_name"   		name="证件类型"    />
+	<column type="string" id="cert_no"   		name="证件代码"    />
+	<column type="string" id="begin_date"            name="起始日期"  />
+    <column type="string" id="end_date"   		    name="结束日期"    />
+	<button type="view"   id="edit" 			name="对帐单"  action="6006064901" multiple="0"/>
+  </output>
+</function>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70010430" name="客户参考总分值" >	
+  <input> 
+        <item type="hidden" id="cust_id" name="客户id"/>
+  </input>
+  <service type="procedure" id="p70010430"  process="922" style="77"> 
+		<param id="user_id"	type="integer"/>
+		<param id="cust_id"	type="integer"/>
+  </service>
+  <output>	
+	<column type="number" id="total_score" name="客户参考总分值"/>
+	<column type="number" id="ratingfactor_remark" name="评级因子备注"/>
+	<column type="string" id="rtfct_active_date" name="评级因子生效日期"/>
+  </output>		
+</function>

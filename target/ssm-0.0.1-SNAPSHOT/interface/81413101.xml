@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="81413101" name="更新客户信息" >
+  <input/>
+  <service type="procedure" id="p_413101_t_cust_info_set" process="811" style="1">
+	<param id="user_id"		type="integer"/>
+	<param id="cust_code"	type="string"/>
+	<param id="cust_code1"	type="string"/>
+	<param id="cust_name"	type="string"/>
+	<param id="full_name"	type="string"/>
+	<param id="cust_type"	type="string"/>
+	<param id="cust_sort"	type="string"/>
+	<param id="gender"		type="string"/>
+	<param id="cert_type"	type="string"/>
+	<param id="cert_no"		type="string"/>
+	<param id="cert_addr"   type="string"/>
+	<param id="area_code"	type="string"/>
+	<param id="postalcode"	type="string"/>
+	<param id="open_oper"	type="string"/>
+	<param id="open_date"	type="string"/>
+	<param id="close_date"	type="string"/>
+	<param id="close_oper"	type="string"/>
+	<param id="regi_state"	type="string"/>
+	<param id="institution_code"	type="string"/>
+	<param id="institution_name"	type="string"/>
+	<param id="move_tel"	type="string"/>
+	<param id="fix_tel"		type="string"/>
+	<param id="meet_tel"	type="string"/>
+	<param id="email"		type="string"/>
+	<param id="fax"			type="string"/>
+	<param id="cust_status"	type="string"/>
+	<param id="effective_years"	type="string"/>
+	<param id="cert_start_date"	type="string"/>
+	<param id="cert_end_date"	type="string"/>
+  </service>
+  <output/>  
+</function>

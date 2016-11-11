@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70010490" name="征信任务明细查询" >  
+	<input>
+		<item type="text"     id="cust_code"   name="客户代码"/>
+		<item type="text"     id="task_id"     name="任务编号"/>
+		<item type="select"   id="task_type"   name="任务类型" source="526" editable="false" default="A"/>
+		<item type="select"   id="add_success_flag"   name="添加成功" source="340"/>
+		<item type="select"   id="zx_success_flag"    name="征信成功" source="340"/>
+		<group name="分页查询" page="true"> 		
+			<item type="text"   id="page_num"       name="页码"     integer="true" default="1"/>
+			<item type="select" id="rows_num"       name="每页行数" integer="true" source="95000012" nullable="false"/>
+		</group>
+	</input>
+	<service type="procedure" id="p70010490" process="922" style="77">
+		<param id="user_id" type="integer"/>
+		<param id="page_num" type="integer"/>
+		<param id="rows_num" type="integer"/>
+		<param id="cust_code" />
+		<param id="task_id" type="integer"/>
+		<param id="task_type" />
+		<param id="add_success_flag" />
+		<param id="zx_success_flag" />
+	</service> 
+	<output>
+	    <column type="number" id="task_id"         name="任务编号"/>
+		<column type="string" id="task_type"       name="任务类型" display="false"/>
+		<column type="string" id="task_type_name"  name="任务类型"/>
+		<column type="number" id="cust_id"         name="客户ID"   display="false"/>
+		<column type="string" id="cust_code"       name="客户代码"/>
+		<column type="string" id="cust_name"       name="客户名称"/>
+		<column type="string" id="add_success_flag" name="添加成功标志" display="false"/>
+		<column type="string" id="add_success_name" name="添加成功标志"/>
+		<column type="string" id="zx_success_flag"  name="征信成功标志" display="false"/>
+		<column type="string" id="zx_success_name"  name="征信成功标志"/>
+		<column type="string" id="begin_date"       name="征信起始日期"/>
+		<column type="string" id="end_date"         name="征信结束日期"/>
+		<column type="string" id="evaluate_date"    name="评定日期"/>
+		<column type="string" id="business_type"    name="业务类别"/>
+		<column type="string" id="app_num"          name="申请额度"/>
+		<column type="string" id="profit_clt_rate"  name="亏损控制比率%"/>
+		<column type="string" id="remark"           name="备注"/>
+		<column type="string" id="redirect_code"    name="重定向标志" />
+		<button type="add"    id="add"              name="任务添加客户" action="70010491" extendaction="redirect_code" multiple="0"/>
+		<button type="mdy"    id="mdy"              name="任务修改客户" action="70010492" extendaction="redirect_code" multiple="0"/>
+		<button type="del"    id="del"              name="任务删除客户" action="70010493" extendaction="redirect_code" multiple="0"/>
+	</output>
+</function>

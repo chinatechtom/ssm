@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="27050137" name="客户融资融券额度集中度" >
+  <input>
+    <item type="select" id="institution_id" name="营业部"   source="95000008"/>
+    <item type="text"   id="cust_code"      name="客户代码"/>
+    <item type="date"   id="query_date"     name="查询日期" nullable="false"/>
+    <item type="select" id="cust_detail"    name="客户明细" source="036" nullable="false"/>
+  </input>
+  <service type="procedure" id="p27050137" process="911" style="77">
+    <param id="user_id"        type="ingeter"	way="in"/>
+    <param id="institution_id" type="ingeter"	way="in"/>
+    <param id="cust_code"      type="string"	way="in"/>
+    <param id="query_date"     type="string"	way="in"/>
+    <param id="cust_detail"    type="string"	way="in"/>
+  </service>
+  <output print="true">
+    <column id="institution_id"   name="营业部id"   type="number"  display="false"/>
+    <column id="institution_code" name="营业部代码" type="string" />
+    <column id="institution_name" name="营业部名称" type="string" />
+    <column id="cust_code"        name="客户代码"   type="string" />
+    <column id="cust_name"        name="客户名称"   type="string" />
+    <column id="fix_qty1"         name="已授固定融资额度"   type="number" precision="2" total="true"/>
+    <column id="fix_qty2"         name="已授非固定融资额度" type="number" precision="2" total="true"/>
+    <column id="fix_qty"          name="已授合计"   type="number" precision="2" total="true"/>
+    <column id="used_fix_qty"     name="已用额度"   type="number" precision="2" total="true"/>
+    <column id="used_fix_rate"    name="已用占已授％"   type="number" precision="2" />
+    <column id="rate1"            name="已授占公司已授融资总额度％" type="number" precision="2"/>
+    <column id="rate2"            name="已用占公司融资总额％" type="number" precision="2"/>
+    <column id="bs_amt"           name="已授融券额度" type="number" precision="2" total="true"/>
+    <column id="used_bs_amt"      name="已用额度" type="number" precision="2" total="true"/>
+    <column id="used_bs_rate"     name="已用占已授％"   type="number" precision="2"/>
+    <column id="rate3"            name="已授占公司已授融券总额度％" type="number" precision="2"/>
+    <column id="rate4"            name="已用占公司融券总额％" type="number" precision="2"/>
+  </output>
+</function>

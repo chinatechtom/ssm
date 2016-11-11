@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3068008" name="查询客户融资费率因子" >
+	<input>
+		<item type="hidden" id="cust_id" name="id"/>
+	</input>
+	<service type="procedure" id="p_cust_factor_financing_query" process="911" style="77">
+		<param type="integer" id="cust_id"/>	
+	</service>
+	<output> 
+		<column type="number" id="cust_id" name="客户ID" display="false"/>
+		<column type="number" id="cust_factor" name="客户融资费率因子"/>
+	</output> 
+</function>

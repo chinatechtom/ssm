@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="97000011" name="信息类型" >
+	<input>	
+	</input>
+	<service type="table" id="vw_msg_type" process="122" style="12">
+	</service>
+	<output>
+		<column type="string" id="entry_value"   	field="data_code"	name="数据内容id"/>
+		<column type="string" id="entry_content"	field="data_name"	name="数据内容"/>
+  </output>
+</function>

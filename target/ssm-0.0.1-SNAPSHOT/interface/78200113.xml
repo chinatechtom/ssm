@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="78200113" name="查询融资融券交易系统国债利息处理是否已完成" >  
+	<input>
+		<item type="hidden" id="lvol1" name="是否已完成" />
+	</input>
+	<service type="procedure" id="P78200113" process="822" style="1" adapter="bbs">
+		<param id="user_id"	type="integer"/>
+		<param id="lvol1"	type="number"/>
+	</service>
+	<output/>
+<!--	
+	<output target="80777778">
+		<column id="market_code"	type="string"	name="市场代码" />
+		<column id="product_code"	type="string"	name="证券代码" />
+		<column id="begin_date"		type="string"	name="开始日期" />
+		<column id="end_date"		type="string"	name="结束日期" />
+		<column id="lvol1"			type="number"	name="国债利息处理是否完成" />
+	</output>
+-->
+</function>

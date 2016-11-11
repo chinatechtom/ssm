@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70070709" name="短信信息的内容" >
+	<input>
+		<item 	type="hidden" 		id="c1" 	name="信息编号"	 		/>
+	</input>
+	<service type="procedure" id="P70070709" process="922" style="77">
+		<param id="user_id" 	type="integer"/>
+		<param id="c1"		/>
+  </service>	
+  	<output export="true">
+	 	<column type="string" 	id="content"   	name="内容"  				/>
+
+	</output>
+</function>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70010415" name="审核通过" >
+  <input>
+	<description>审核通过?
+	</description>
+	<item type="hidden"   	id="cust_id" 		 	name="客户id" action="70010424"/>
+	<item type="hidden"   	id="versionid" 		 	name="versionid" />
+	<item type="textarea"	id="approver_opinion"	name="审核意见"/>
+	<item type="text"		id="total_score"		name="总分"	editable="false"/>
+	<item type="select"		id="crdt_lvl_id" 	name="信用级别" source="97000015" nullable="false"/>
+  </input>
+  <service type="procedure" id="P70010415"  implement="P70010415_70010415" process="822" style="1"> 
+	<param type="integer" 	id="user_id"/>
+	<param type="integer" 	id="cust_id"/>
+	<param type="integer" 	id="versionid"/>
+	<param type="string"	id="status" default="6"/>
+	<param type="string"	id="approver_opinion"/>
+	<param type="float"		id="obj_rate" default="100"/>
+	<param type="float"		id="subj_score" default="0"/>
+	<param type="float"		id="subj_rate" default="0"/>
+	<param type="integer" 	id="crdt_lvl_id"/>
+  </service>
+  <output/>	
+</function>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="30725" name="融券申请到期监控" >
+	<input>			
+		<item type="text"	 id="date"	    name="有效天数" default="10"	number="true"/>		
+	</input>
+    <service type="procedure" id="p_borrow_stock_out_of_date_control"  process="911" style="77">
+		<param id="user_id"	        type="integer" way="in"/> 
+		<param id="date"			type="integer" way="in"/>		
+    </service>
+    <output export="true" autoload="true" refresh="120">
+		<column type="number" id="cust_id"		name="客户id"		display="false"/>
+		<column type="string" id="cust_code"	name="客户代码"/>
+		<column type="string" id="cust_name"	name="客户姓名"/>
+		<column type="number" id="bond_id"		name="合同id"		display="false"/>
+		<column type="string" id="bond_no"		name="合同编号"/>
+		<column type="string" id="bond_name"	name="合同名称"		display="false"/>	
+		<column type="number" id="product_id"	name="产品id"		display="false"/>
+		<column type="string" id="product_code"	name="融券证券代码"/>
+		<column type="string" id="product_name"	name="融券证券名称"/>	
+		<column type="string" id="product_sort"	name="融券产品类型1"	display="false"/>
+		<column type="string" id="product_sort_name"	name="融券证券类型" display="false"/>
+		<column type="string" id="market_code"	name="市场代码1" display="false"/>
+		<column type="string" id="market_code_name"	name="市场代码"/>
+		<column type="number" id="availability_day_num"			name="有效天数"/>	
+		<column type="number" id="reach_date"			          name="预估离到期交易天数"/>	
+		<column type="number" id="application_borrow_qty"	name="申请融券数量"		precision="3"	total="true"/>
+		<column type="number" id="actual_borrow_qty"		name="实际融券数量"		precision="3"	total="true"/>
+		<column type="number" id="return_borrow_qty"		name="归还融券数量"		precision="3"	total="true"/>
+		<column type="number" id="surplas_borrow_qty"		name="剩余融券数量"		precision="3"	total="true"/>
+		<column type="string" id="begin_time"	name="开始时间"/>
+		<column type="string" id="return_time"	name="到期时间"/>
+		<column type="string" id="pc_reason"	name="平仓原因"  display="false"/>	
+		<column type="string" id="pc_reason_name"	name="平仓原因1"  display="false"/>	
+		<column type="string" id="pc_mode"	name="平仓顺序"  display="false"/>
+		<column type="string" id="warning_level"			name="报警级别"	level="true"	display="false"/>
+    <column type="number" id="pc_amt"					name="强制平仓额度"		precision="3"/>
+		<column type="string" id="touch_date"				name="触发平仓日期"/>
+		<column type="string" id="ddate"					name="当前系统日期"/>
+		<column type="string" id="pc_begin_date"			name="拟平仓日期"/>
+		<column type="number" id="current_num"				name="触发时担保率"		precision="6"/>
+		<column type="number" id="cur_gua_rate"				name="实时担保率"	precision="6"/>			
+		<button type="edit"   id="edit" name="生成平仓预案" action="30726" multiple="0"/>	
+    </output>
+	<assistant action="30103,3200301,30102,30104,30109,30111,30201,30202,30208,30673,30672,30667,30668,30669">
+		<link src="cust_id"		target="cust_id"/>
+		<link src="bond_id"		target="bond_id"/>
+    </assistant>
+</function>

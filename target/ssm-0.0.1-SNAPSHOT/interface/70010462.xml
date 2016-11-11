@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70010462" name="征信情况导入" >
+	<description>
+		确定导入该客户征信情况吗？
+	</description>
+	<input>
+		<item type="hidden"	id="capital_account"	name="客户代码"	/>
+		<item type="hidden"	id="asset_sum"			name="客户总资产"	/>
+		<item type="hidden"	id="guarantee_convert_rate"	name="可充抵保证金资产占比(%)"	/>
+		<item type="hidden"	id="sqyd_jc_rate"		name="申请额度与资产比(%)"	/>
+		<item type="hidden"	id="guarantee_rate"		name="客户担保物充足率"	/>
+		<item type="hidden"	id="guarantee_zr_rate"		name="担保物转入能力"	/>
+		<item type="hidden"	id="cust_asset_avg"		name="日均资产规模"	/>
+		<item type="hidden"	id="yield"				name="单次波段收益率(%)"	/>
+		<item type="hidden"	id="kk_rate"			name="亏损控制比例"	/>
+		<item type="hidden"	id="cust_trade_amt_st_rate"	name="高风险投资占比(%)"	/>
+		<item type="hidden"	id="cust_turnover_rate"		name="换手率(%)"	/>
+		<item type="hidden"	id="cust_store_rate"			name="日均证券资产市值比(%)"	/>
+		<item type="hidden"	id="trade_amt"			name="交易量"	/>
+		<item type="hidden"	id="fee_amt"			name="交易佣金"	/>
+		<item type="hidden"	id="year_yield"			name="年化收益率(%)"	/>
+		<item type="hidden"	id="yield_delta"		name="日收益率标准差比例"	/>
+		<item type="hidden"	id="yield_year"			name="年化指数收益"	/>
+	</input>
+	<service type="procedure" id="P70010462" process="822" style="77">
+		<param type="integer"	id="user_id"/>
+		<param type="string"	id="capital_account"	/>
+		<param type="double"	id="asset_sum"			/>
+		<param type="double"	id="guarantee_convert_rate"	/>
+		<param type="double"	id="sqyd_jc_rate"		/>
+		<param type="double"	id="guarantee_rate"		/>
+		<param type="double"	id="guarantee_zr_rate"	/>
+		<param type="double"	id="cust_asset_avg"	/>
+		<param type="double"	id="yield"				/>
+		<param type="double"	id="kk_rate"			/>
+		<param type="double"	id="cust_trade_amt_st_rate"	/>
+		<param type="double"	id="cust_turnover_rate"		/>
+		<param type="double"	id="cust_store_rate"		/>
+		<param type="double"	id="trade_amt"			/>
+		<param type="double"	id="fee_amt"			/>
+		<param type="double"	id="year_yield"			/>
+		<param type="double"	id="yield_delta"		/>
+		<param type="double"	id="yield_year"		/>
+	</service>
+</function>

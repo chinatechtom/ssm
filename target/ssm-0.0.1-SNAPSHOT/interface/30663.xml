@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="30663" name="客户终止合同" >  
+  <input print="30663.jsp">
+	<item type="hidden" id="order_no" name="定单编号"/>
+	<item type="hidden" id="formerly_voucher_no" name="原始凭证号"/>
+	<item type="hidden" id="cust_id" name="客户id"  action="30101" nullable="false"/>
+	<item type="hidden" id="cust_id" name="客户id"  action="1888,30119,3230002" nullable="false"/>
+	<item type="hidden" id="bond_id" name="合同id"  nullable="false"/>
+	<item type="text" id ="cust_name" name="客户姓名" editable="false"/>
+	<item type="text" id ="cust_code" name="客户代码" editable="false"/>
+	<item type="text"	id="cert_number"	name="证件号码" editable="false"/>
+    <item type="text"	id="sh_acc"	  name="上海证券账户" editable="false"/>
+	<item type="text"	id="sz_acc"	  name="深圳证券账户" editable="false"/>	
+	<item type="text" id ="bond_no"   name="合同编号" editable="false"/>
+	<item type="text"	id="pure_financing" name="融资负债" editable="false"/>
+	<item type="text"	id="bs_value"       name="融券负债市值" editable="false"/>	
+	<item type="textarea" id="remark1" name="备注说明" />
+	<item type="hidden" id="date"      name="打印日期"/>	<!--从1888.xml获得的打印日期-->
+	<item type="hidden" id="user_code" name="打印柜员代码"/><!--从1888.xml获得的打印柜员代码-->
+	<item type="hidden" id="user_name" name="打印柜员名称"/><!--从1888.xml获得的打印柜员名称-->
+	<item type="hidden" id="company"   name="券商名称"/><!--从1888.xml获得的券商名称-->
+  </input>
+   <service type="procedure" id="p_beover_bond_insert" process="811" style="1">
+	<param id="user_id" type="integer" way="in" /> 
+	<param id="order_no"/>
+	<param id="formerly_voucher_no"/>
+	<param type="integer" id="cust_id"/>
+	<param id="remark1"/>
+	<param type="integer" id="bond_id"/>
+  </service> 
+  <output >  
+  </output>
+</function>

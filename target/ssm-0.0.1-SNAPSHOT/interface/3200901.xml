@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3200901" name="持有该单只股票客户明细" >
+  <input>	
+	<item type="hidden" id="product_id" name="证券代码" />
+  </input>
+  <service type="procedure" id="p_business_report_3200901_query" process="911" style="77">
+	<param id="user_id" />
+	<param id="product_id" />
+  </service>
+  <output export="true">  
+  	<column type="string" id="c1"   name="营业部名称"  />
+    <column type="string" id="c2"   name="客户姓名"  />
+    <column type="string" id="c3"   name="客户代码"  		/>  
+  	<column type="string" id="c4"   name="证券代码"  />
+    <column type="string" id="c5"   name="证券名称"  />
+    <column type="string" id="c6"   name="市场"  />
+    <column type="number" id="c7"   name="持股数"  		precision="0"/>
+    <column type="number" id="c8"   name="流通股数"  precision="0"/>
+    <column type="number" id="c9"   name="持股集中度" 	precision="6" />
+	</output> 	
+    <assistant/>
+</function>

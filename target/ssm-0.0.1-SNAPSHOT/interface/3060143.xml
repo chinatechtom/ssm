@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3060143" name="客户征信数据人工录入" >
+  <input>
+		<item type="select"	id="insitution_id"		name="营业部"		 source="95000008"/>
+		<item type="text"	id="capital_account"	name="信用资金账号" nullable="false"/>
+		<item type="text"	id="capital_account_pt"	name="普通资金账号" />
+	</input>
+	<service type="procedure" id="p_cust_credit_system_info_query" process="911" style="77">
+		<param type="integer" id="user_id"/>
+		<param type="integer" id="cust_code"/>
+		<param type="string"  id="capital_account"/>
+		<param type="string"  id="capital_account_pt" />
+	</service>
+	<output>
+		<column type="string"	id="institution_code"		    name="营业部代码"	/>
+		<column type="string"	id="institution_name"		    name="营业部名称"	/>
+		<column type="string"	id="capital_account"			name="信用资金账号"	/>
+		<column type="string"	id="related_capital_account"	name="普通资金账号"	/>
+		<column type="string"	id="client_name"				name="客户名称"	/>
+		<column type="string"	id="year_yield"					name="信用交易绝对收益率(%)"	precision="2"/>
+		<column type="string"	id="hs300_yield_year"			name="沪深300年化收益率(%)"	precision="2"/>
+		<column type="string"	id="credit_use_rate"			name="日均授信额度使用率(%)"	precision="2"/>
+		<column type="string"	id="credit_turn_over_rate"		name="授信额度换手率(%)"	precision="2"/>
+		<column type="string"	id="total_rzrq_commission"		name="信用交易佣金(元)"	precision="2"/>
+		<column type="string"	id="itst_ctb"					name="信用交易息费收入(元)"	precision="2"/>
+		<column type="string"	id="start_date"					name="起始日期"	/>
+		<column type="string"	id="end_date"					name="结束日期"	/>
+		<button type="set"		id="edit"			            name="征信数据录入"	action="306014301" multiple="1"	/>
+	</output>
+</function>

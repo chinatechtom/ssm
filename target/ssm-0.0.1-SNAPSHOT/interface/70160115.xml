@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70160115" name="交易规模与标的证券统计" >
+	<input>	
+		<item type="select" id="market_code" name="市场代码" source="039"/>
+		<item type="text" id="product_code" name="证券代码" />
+		<item type="date" id="begin_date" name="开始日期" />
+		<item type="date" id="end_date" name="结束日期" />
+	</input>
+	<service type="procedure" id="P70160115" process="922" style="77">
+		<param id="user_id" type="integer"/>
+		<param id="market_code" type="string"/>
+		<param id="product_code" type="string"/>
+		<param id="begin_date" type="string"/>
+		<param id="end_date" type="string"/>
+	</service>
+	<output export="true">
+		<column type="string" id="product_code" name="标的证券代码"/>  
+		<column type="string" id="product_name" name="标的证券名称"/>  
+		<column type="number" id="ini_done_amt"   name="期初交易规模" precision="2" total="true"/>
+		<column type="number" id="add_done_amt"   name="本期新增交易规模" precision="2" total="true"/>
+		<column type="number" id="re_done_amt"   name="本期减少交易规模" precision="2" total="true"/>
+		<column type="number" id="end_done_amt"   name="期末交易规模" precision="2" total="true"/>
+		<column type="number" id="ini_done_qty"     name="期初标的证券数量"/>
+		<column type="number" id="add_done_qty"     name="本期新增标的证券数量"/>
+		<column type="number" id="re_done_qty"     name="本期减少标的证券数量"/>
+		<column type="number" id="end_done_qty"     name="期末标的证券数量"/>
+		<column type="number" id="ini_market_value"   name="期初标的证券市值" total="true"/>
+		<column type="number" id="add_market_value"   name="本期新增标的证券市值" total="true" precision="2" />
+		<column type="number" id="re_market_value"   name="本期减少标的证券市值" total="true" precision="2" />
+		<column type="number" id="end_market_value"   name="期末标的证券市值" total="true" precision="2" />
+		<column type="number" id="circulated_a"     name="流通股本"/>
+		<column type="number" id="all_stock"     name="总股本"/>
+		<column type="number" id="rate1"     name="期末数占流通股本比例%" precision="2" />
+		<column type="number" id="rate2"     name="期末数占总股本比例%" precision="2" />
+	</output>
+</function>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="97000027" name="活期利率查询" >
+	<input/>
+	<service type="table" id="t_hq_rate" process="122" style="12"/>
+	<output>
+		<column type="string" id="entry_value"   field="hq_code"	name="数据内容id"/>
+		<column type="string" id="entry_content"	 field="hq_code"    name="数据内容"/>
+    </output>
+</function>

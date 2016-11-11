@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70010767" name="中登数据查询" >
+	<input>	
+		<item type="select" id="insitution_id" name="营业部名称" source="97000001"/>
+		<item type="hidden" id="cust_id" name="客户号"/>
+		<item type="text" id="cust_code" name="客户代码" />
+		<item type="text" id="cust_name" name="客户姓名" />
+		<item type="text" id="cert_no" name="证件号码" />
+		<item type="date" id="trade_begin_date" name="成交起始日期" />
+		<item type="date" id="trade_end_date" name="成交结束日期" />
+		<item type="text" id="done_no" name="成交编号" />
+		<item type="text" id="sqbh" name="申请编号" />
+		<item type="select" id="market_code" name="市场代码" source="039"/>
+		<item type="text" id="product_code" name="证券代码" />
+		<item type="select" id="bs" name="买卖方向" source="132"/>
+		<item type="select" id="ywlx" name="回购类型" source="710"/>
+	</input>
+	<service type="procedure" id="p70010767" process="922" style="77">
+		<param id="user_id" type="integer"/>
+		<param id="insitution_id" type="integer"/>
+		<param id="cust_id" type="integer"/>	
+		<param id="cust_code" type="string"/>
+		<param id="cust_name" type="string"/>
+		<param id="cert_no" type="string"/>
+		<param id="trade_begin_date" type="string"/>
+		<param id="trade_end_date" type="string"/>
+		<param id="done_no" type="string"/>
+		<param id="sqbh" type="string"/>
+		<param id="market_code" type="string"/>
+		<param id="product_code" type="string"/>
+		<param id="bs" type="string"/>
+		<param id="ywlx" type="string"/>
+	</service>
+	<output export="true">
+		<column type="number" id="institution_id" name="营业部id" display="false"/>  
+		<column type="string" id="institution_name" name="营业部名称"/>  
+		<column type="string" id="institution_code" name="营业部代码"/>  
+		<column type="number" id="cust_id"   name="客户号"  display="false"/>
+		<column type="string" id="cust_code"   name="客户代码"/>
+		<column type="string" id="cust_name"   name="客户姓名"/>
+		<column type="string" id="trade_date"   name="成交日期"/>
+		<column type="string" id="done_time"   name="成交时间"/>
+		<column type="string" id="done_no"   name="成交编号"/>
+		<column type="string" id="sqbh"   name="申请编号"/>
+		<column type="string" id="qsrq"   name="清算日期"/>
+		<column type="string" id="jsrq"   name="交收日期"/>
+		<column type="string" id="jllx_name"   name="记录类型"/>
+		<column type="string" id="jllx"   name="记录类型1" display="false"/>
+		<column type="string" id="ywlx"   name="业务类型"/>
+		<column type="string" id="currency_type"   name="币种"/>
+		<column type="string" id="stock_holder_acc"   name="证券账户"/>
+		<column type="string" id="market_code"   name="市场代码"/>
+		<column type="string" id="product_code"   name="证券代码"/>
+		<column type="string" id="product_type"   name="证券类别"/>
+		<column type="string" id="bs"   name="买卖方向1" display="false"/>
+		<column type="string" id="bs_name"   name="买卖方向"/>
+		<column type="number" id="done_qty"   name="成交数量" precision="0"/>
+		<column type="number" id="done_amt"   name="成交金额" precision="2"/>
+		<column type="number" id="done_price"   name="成交价格" precision="3"/>
+		<column type="number" id="jssl"   name="交收数量" precision="0"/>
+		<column type="number" id="qsje"   name="清算金额" precision="2"/>
+		<column type="number" id="yhs"   name="印花税" precision="2"/>
+		<column type="number" id="jsf"   name="经手费" precision="2"/>
+		<column type="number" id="ghf"   name="过户费" precision="2"/>
+		<column type="number" id="zgf"   name="证管费" precision="2"/>
+		<column type="number" id="sxf"   name="手续费" precision="2"/>
+		<column type="number" id="qtje1"   name="其他金额1" precision="2"/>
+		<column type="number" id="qtje2"   name="其他金额2" precision="2"/>
+		<column type="number" id="qtje3"   name="其他金额3" precision="2"/>
+		<column type="string" id="jgdm"   name="结果代码"/>
+		<column type="string" id="fjsm"   name="附加说明"/>
+		<column type="string" id="cwdm"   name="错误代码"/>
+		<column type="string" id="cwdm_name"   name="错误代码说明"/>
+		<!--<button type="edit" id="edit" name="结算明细增加" action="70010768" multiple="-1"/>
+		<button type="edit" id="edit" name="结算明细删除" action="70010769" multiple="0"/>-->
+	</output>
+</function>

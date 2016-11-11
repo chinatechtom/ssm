@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="gbk"?>
+<function id="83423135" name="平仓报告直接还券">
+	<input>
+		<item type="hidden" id="record_id" name="平仓报告ID"/>
+	</input>
+	<service type="procedure" id="p_pc_report_status_update" implement="p_pc_report_status_update83423135" process="811" style="1">
+		<param type="integer" id="user_id"/>
+	  	<param type="integer" id="record_id"/>
+	  	<param type="string" id="busi_type" default="2"/>
+	</service>
+	<output/>
+</function>

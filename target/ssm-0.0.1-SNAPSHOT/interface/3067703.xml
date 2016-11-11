@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3067703" name="客户总融券数量" >
+	<input/>
+	<service type="procedure" id="p_cust_sum_borrow_stock_qty" process="911" style="77">
+		<param id="user_id" type="integer"/>
+		<param id="cust_id" type="integer"/>
+		<param id="bond_id" type="integer"/>
+		<param id="product_id" type="integer"/>
+		<param id="product_code" type="string"/>
+		<param id="market_code" type="string"/>
+		<param id="approve_credit_num" type="double"/>
+	</service>
+	<output >    
+		<column type="number" id="borrow_qty_sum"   name="总融券数量"/>
+	</output>  
+</function>

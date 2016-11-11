@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="60660603" name="分段计息区间浏览" >	
+  <input> 
+		<item type="hidden"	id="order_id" name="合约id" />
+		
+  </input>
+  <service type="procedure" id="P60660603"  process="933" style="77"> 
+	    <param id="user_id"	type="integer"/>		
+		<param id="order_id" type="integer"/>	
+	   
+  </service>
+  <output>
+		<column type="string"      id="section_begin_date1"        name="计息起始日期1" 		     />	
+		<column type="string"      id="section_end_date1"        name="计息截止日期1" 		     />				
+		<column type="number" 	   id="section_days1" 		      name="区间天数1"				 />
+		<column type="number" 	   id="section_hg_rate1"	          name="购回价格1(每100元)"	  precision="4"   />
+		
+		<column type="string"      id="section_begin_date2"        name="计息起始日期2" 		     />	
+		<column type="string"      id="section_end_date2"        name="计息截止日期2" 		     />	
+		<column type="number" 	   id="section_days2" 		      name="区间天数2"				 />
+		<column type="number" 	   id="section_hg_rate2"	          name="购回价格2(每100元)"	  precision="4"   />
+		<column type="string"      id="section_begin_date3"        name="计息起始日期3" 		     />	
+		<column type="string"      id="section_end_date3"        name="计息截止日期3" 		     />	
+		<column type="number" 	   id="section_days3" 		      name="区间天数3"				 />
+		<column type="number" 	   id="section_hg_rate3"	          name="购回价格3(每100元)"	  precision="4"  />
+  </output>		
+</function>

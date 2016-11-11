@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="34064" name="删除场外资产抵押记录">
+	<input > 	
+		<item type="hidden" id="mortgage_id" name="质押记录ID"  nullable="false"  /> 
+		<item type="textarea" id="remark" name="备注"  nullable="false"  /> 
+	</input>
+	<service type="procedure" id="P17000056" implement="P17000056_34064" process="811" style="77">
+		<param id="user_id" type="integer"/>
+		<param id="mortgage_id" type="integer"/>
+    <param id="remark" type="string"/>
+  </service> 
+	<output/>  
+</function>
+		
+		

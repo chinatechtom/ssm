@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="33120" name="客户基本资料" >
+  <input>	
+	<item type="text" id="cust_code" name="客户代码" nullable="false"/>
+	<item type="text" id="assure_rate_a" name="担保率A(%)" number="true" nullable="false"/>
+	<item type="text" id="assure_rate_b" name="担保率B(%)" number="true" nullable="false"/>
+  </input>
+  <service type="procedure" id="p_cust_bc_jc_fund_query" process="911" style="77" implement="p_inc_dec_store33120">
+	<param id="user_id" type="integer"/>
+	<param id="cust_code"/>
+	<param id="assure_rate_a" type="integer"/>
+	<param id="assure_rate_b" type="integer"/>
+  </service>
+  <output export="false">
+	<column type="string"  id="institution_code"  name="营业部代码"/>	
+  	<column type="string" id="institution_name"   name="营业部名称" />  
+    <column type="string" id="cust_code"   name="客户代码"  />
+    <column type="number" id="inc_store_a"   name="A线补仓额" precision="2"/>
+    <column type="number" id="dec_store_a"   name="A线减仓额" precision="2"/>
+    <column type="number" id="inc_store_b"   name="B线补仓额" precision="2"/>
+    <column type="number" id="dec_store_b"   name="B线减仓额" precision="2"/>
+	  <column type="number" id="assure_rate"   name="维持担保比例" precision="6"/>
+	  
+	  <column type="number" id="inc_store_a_nomortgage"   name="A线补仓额(不计入场外担保品)" precision="2"/>
+    <column type="number" id="dec_store_a_nomortgage"   name="A线减仓额(不计入场外担保品)" precision="2"/>
+    <column type="number" id="inc_store_b_nomortgage"   name="B线补仓额(不计入场外担保品)" precision="2"/>
+    <column type="number" id="dec_store_b_nomortgage"   name="B线减仓额(不计入场外担保品)" precision="2"/>
+	 <column type="number" id="assure_rate_nomortgage"   name="维持担保比例(不计入场外担保品)" precision="6"/>
+	
+	</output>
+</function>

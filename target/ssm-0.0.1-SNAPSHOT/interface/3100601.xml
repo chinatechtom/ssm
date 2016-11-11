@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="gbk"?>
+<function id="3100601" name="融资融券统计表" >  
+  <input>
+  <item type="select" id="institution_id" name="营业部名称" source="95000008"/>
+	<item type="text" id="cust_code" name="客户代码" />
+  </input>
+  <service type="procedure" id="p_statistics_3100607_query"  process="911" style="77">
+	<param id="user_id" type="integer"/>
+	<param id="institution_id" type="integer"/>	
+	<param id="cust_code"/>
+  </service>
+  <output>
+  <column type="string" id="institution_code"         name="营业部代码 "/>
+  <column type="string" id="institution_name"         name="营业部名称 "/>
+  <column type="string" id="cust_code"                name="客户代码" />
+  <column type="string" id="cust_name"                name="客户姓名" />  
+  <column type="string" id="bond_status"              name="客户状态" />
+  <column type="string" id="credit_level_name"        name="信用等级" />
+  <column type="number" id="finaning"                 name="融资金额" precision="2"        total="true"/>
+  <column type="number" id="borrow_stock"             name="实际融券市值" precision="2"    total="true"/>
+  <column type="number" id="fee"                      name="融资融券费用" precision="2"    total="true" display="false"/>
+  <column type="number" id="credit_limit"             name="授信额度" precision="2"        total="true"/>
+  <column type="number" id="fix_qty"                  name="融资上限" precision="2"        total="true"/>
+  <column type="number" id="application_borrow_qty"   name="融券上限" precision="2"    total="true"/>
+  <column type="number" id="last_qty"                 name="可用授信额度" precision="2"    total="true"/>
+  <column type="number" id="real_guarantee_rate"      name="实时担保率" precision="6" />
+  <column type="number" id="cust_guarantee_rate"      name="平仓担保率" precision="3"/>
+  <column type="number" id="asset"                    name="总资产" precision="2"          total="true"/>
+  <column type="number" id="debt"                      name="总负债" precision="2"          total="true"/>
+  <column type="number" id="asset_gap"                name="应补仓金额" precision="2"      total="true"/>
+  <column type="number" id="alarm_num"                name="平仓预警次数" total="true"/>
+  <column type="number" id="violate_num"              name="违约次数" total="true"/>
+  <column type="number" id="violate_fund"             name="违约金额" precision="2"        total="true"/>  
+  </output>
+</function>

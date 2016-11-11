@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="50550001" name="融资行权参数设置（营业部用）" >
+  <input>
+    <item type="hidden"	  id="product_id"   name="产品id"/>
+	<item type="text"     id="company_no"   name="上市公司编号"/>
+    <item type="text"     id="plan_no"   	name="激励计划编号"/>
+	<item type="text" 	  id="batch_no"     name="批次号"/>
+    <item type="text"     id="cust_no"   	name="客户号"/>
+	<item type="select"	  id="employee_type" name="激励员工类型"  source="950" action="50010505" />
+	<item type="select"	  id="status" name="批次状态"  source="955"/>
+  </input>
+  <service type="procedure" id="P50010501" process="966" style="77"> 
+    <param id="user_id"			type="integer" way="in"/>
+    <param id="product_id"	   way="in"/>
+    <param id="company_no"	    way="in"/>
+    <param id="plan_no"	  		way="in"/>
+    <param id="batch_no" 		way="in"/>
+    <param id="cust_no"      	way="in"/> 
+	<param id="employee_type"   way="in"/> 
+	<param id="status"   way="in"/>
+  </service>
+  <output>
+  	<column type="number" id="product_id"		name="产品id" display="false"/>	
+	<column type="string" id="company_no"		name="上市公司编号"/>
+	<column type="string" id="plan_no"			name="激励计划编号"/>	
+	<column type="number" id="batch_no"			name="批次号"/>	
+	<column type="string" id="status"			name="批次状态" display="false"/>	
+	<column type="string" id="status_name"		name="批次状态"/>	
+	<column type="string" id="cust_no"			name="客户号"/>	
+	<column type="number" id="interest_rate"	name="行权融资利率（%）" 	precision="8"/>	
+	<column type="number" id="gpzy_rate"		name="质押融资利率（%）" 	precision="8"/>	
+	<column type="number" id="comm_rate"		name="质押佣金率（‰）" 	precision="8"/>	
+	<column type="number" id="days"				name="自动质押宽限期限（天）"/>
+	<column type="number" id="gpzy_days"		name="默认股票质押期限（天）"/>	
+	<column type="string" id="employee_type_name" name="激励员工类型"/>	
+	<column type="string" id="employee_type"	name="激励员工类型" display="false"/>		
+	<column type="number" id="touch_rate"		name="预警履约保障比例" precision="4"/>	
+	<column type="number" id="lowest_rate"		name="最低履约保障比例" precision="4"/>
+	<column type="number" id="loan_rate"		name="最高融资比例"	 precision="4"/>
+	<column type="string" id="set_code"			name="设置人员"/>	
+	<column type="string" id="set_date"			name="设置日期"/>	
+	<button type="add"    id="add"				name="增加信息" action="50550002" multiple="-1"/>
+	<button type="edit"   id="edit"				name="修改信息" action="50550003" multiple="0"/>
+	<button type="delete" id="delete"			name="删除信息" action="50010504" multiple="0"/>		
+  </output>
+</function>

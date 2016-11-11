@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="30644444201" name="处理客户融资(券)保证金比例调整申请" >
+	<input print="30644444201.jsp">	
+	<item type="hidden" id="order_id" name="合约ID" action="1889"/>
+	<item type="hidden" id="cust_id" name="客户ID" action="1888,30110,37815012,37422,37425"/>
+		<group name="客户基本情况" >
+			<item type="text"	id="cust_name"					name="客户姓名"				editable="false"/>
+			<item type="text" id="yearsold"						name="客户年龄"				editable="false"/>
+			<item type="hidden"	id="order_no"					name="合约编号"	/>
+			<item type="hidden"	id="user_code"					name="操作员代码"/>
+			<item type="hidden"	id="user_institution_code"			name="操作员机构"/><!--add 20140910-->
+			<item type="hidden" 	id="institution_code" 				name="营业部代码"/><!--add 20140910-->
+			<item type="hidden"	id="institution_code1"				name="营业部代码"/>
+			<item type="text"	id="institution_name"				name="营业部"				editable="false"/>
+			<item type="text"	id="cust_code"					name="信用资金账户"		editable="false"/>
+			<item type="text"	id="commness_cust_code"				name="普通资金账号"		editable="false"/>
+			<item type="text"	id="credit_num"					name="当前授信额度"		editable="false"/> <!--add 20140909-->
+			<item type="hidden"	id="date"					name="报告日期"				editable="false"/>
+			<item type="text"	id="accept_name"				name="申请人"				editable="false"/>	<!--add 20140910-->
+			<item type="text"	id="remark"					name="备注" editable="false"/>
+		</group>
+
+		<group name="当前保证金比例">
+			<item type="text" 	id="now_guarantee_rate_13"	name="当前初始保证金比例"	editable="false"/>
+			<item type="text"	id="now_guarantee_rate_5"	name="当前融券卖出保证金比例"	editable="false"/>
+			<item type="text"	id="now_guarantee_rate_6"	name="当前融资买入保证金比例"	editable="false"/>
+		</group>
+
+		<group name="申请保证金比例">
+			<item type="text"     	id="applay_guarantee_rate_13"	name="申请变更初始保证金比例"	 	editable="false"/>
+			<item type="text" 	id="applay_guarantee_rate_5"	name="申请变更融券卖出保证金比例"	editable="false"/>
+			<item type="text" 	id="applay_guarantee_rate_6"	name="申请变更融资买入保证金比例"	editable="false"/>
+		</group>
+
+		<group name="建议保证金比例">
+			<item type="text"     	id="advise_guarantee_rate_13"	name="建议初始保证金比例"	/>
+			<item type="text" 	id="advise_guarantee_rate_5"	name="建议融券卖出保证金比例"	/>
+			<item type="text" 	id="advise_guarantee_rate_6"	name="建议融资买入保证金比例"	/>
+		</group>
+	
+		<group name="客户交易情况综合评分">
+			<item type="text" id="abs_profit_rate"				name="绝对收益率(%)"				action="37422"/> <!--add 20140909-->
+			<item type="text" id="abs_profit_score"				name="绝对收益率得分"				editable="false"/>
+			<item type="text" id="hs300_year_profit_rate" 		name="同期沪深300年化收益率(%)"	action="37422"/> <!--add 20140909-->
+			<item type="text" id="hs300_year_profit_score"		name="同期沪深300年化收益率得分"	editable="false"/>
+			<item type="text" id="cp_profit_rate"				name="相对收益率(%)"				action="37422"/> <!--add 20140909-->
+			<item type="text" id="cp_profit_score"				name="相对收益率得分"				editable="false"/>
+			<item type="text" id="cur_asset"					name="净资产(万元)"					action="37422"/> <!--add 20140909-->
+			<item type="text" id="cur_asset_score"				name="净资产得分"					editable="false"/>
+			<item type="text" id="rzrq_commission"				name="信用交易佣金(万元)"			action="37422"/> <!--add 20140909-->
+			<item type="text" id="rzrq_commission_score"		name="信用交易佣金得分"			editable="false"/>
+			<item type="text" id="rzrq_fee"						name="信用交易息费收入(万元)"		action="37422"/> <!--add 20140909-->
+			<item type="text" id="rzrq_fee_score"				name="信用交易息费收入得分"		editable="false"/>
+			<item type="text" id="add_score"					name="投资者属性额外加分项" 		default="0" integer="true" action="37426"/>
+			<item type="text" id="total_score"					name="综合得分" 					editable="false"/>
+		</group> 
+		<group name="处理意见">
+			<item type="textarea"	id="manage_opinion"	name="处理意见"/>
+			<item type="hidden"		id="manage_date"	name="处理日期"/> <!--add 20140904-->
+			<item type="hidden"		id="manage_name"	name="处理员"/>	<!--add 20140910-->
+		</group>
+    </input>
+    <service type="procedure" id="p_guarantee_rate_adjust" process="811" style="1" implement="p_guarantee_rate_adjust3064444481">
+	    	<param type="integer" id="user_id"					way="in"/>	
+	   	<param type="integer" id="order_id"					way="in"/>		
+		<param type="double" id="cur_asset"					way="in"/>
+		<param type="double" id="cur_asset_score"				way="in"/>
+		<param type="double" id="hs300_year_profit_rate" 			way="in"/>
+		<param type="double" id="hs300_year_profit_score"			way="in"/>
+		<param type="double" id="abs_profit_rate"				way="in"/>
+		<param type="double" id="abs_profit_score"				way="in"/>
+		<param type="double" id="cp_profit_rate"				way="in"/>
+		<param type="double" id="cp_profit_score"				way="in"/>
+		<param type="double" id="rzrq_commission"				way="in"/>
+		<param type="double" id="rzrq_commission_score"				way="in"/>
+		<param type="double" id="rzrq_fee"					way="in"/>		
+		<param type="double" id="rzrq_fee_score"				way="in"/>	
+		<param type="double"  id="now_guarantee_rate_13"			way="in"/>
+		<param type="double"  id="now_guarantee_rate_5"				way="in"/>
+		<param type="double"  id="now_guarantee_rate_6"				way="in"/>
+		<param type="double"  id="advise_guarantee_rate_13"			way="in"/>
+		<param type="double"  id="advise_guarantee_rate_5"			way="in"/>
+		<param type="double"  id="advise_guarantee_rate_6"			way="in"/>
+		<param type="double"  id="add_score"					way="in"/>
+		<param type="double"  id="total_score"					way="in"/>
+		<param type="double"  id="lower_guarantee_rate"				way="in"/>
+		<param type="double"  id="suggest_lower_guarantee_rate"			way="in"/>
+		<param type="double"  id="adjuest_value"				way="in"/>
+		<param type="string"  id="remark"					way="in"/>
+	    	<param type="string"  id="manage_opinion"				way="in"/>
+    </service>
+    <output/>
+</function>

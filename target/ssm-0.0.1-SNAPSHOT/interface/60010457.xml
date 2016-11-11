@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="60010457" name="客户网上协议签署申请" >
+  <input>
+  	<item type="hidden" id="cust_id" name="客户id" action="1888,70010101,70010430,97000018"/>	
+    <group name="合同基本信息">
+		<item type="text"   id="cust_name" 	name="客户姓名" editable="false"/>
+		<item type="text"   id="cust_code" 	name="客户代码" editable="false"/>
+		<item type="text"   id="cert_type" 	name="证件类型" editable="false"/>
+		<item type="text"   id="cert_no"   	name="证件号码" editable="false"/>
+		<item type="hidden"	id="order_no"   name="合约编号" editable="false"/>
+		<item type="text"   id="bond_no"    name="合同编号" editable="false"/>
+		<item type="select" id="currency"   name="货币类型" source="018" nullable="false"/>
+		<item type="hidden" id="dc_mode"  	name="信用使用模式" source="306" default="1"/>
+		<item type="hidden" id="availability_time" name="生效日期"/>
+		<item type="hidden" id="begin_time" name="起始日期"/>
+		<item type="hidden" id="return_time" name="到期日期"/>
+		<item type="text"   id="app_years" 	name="申请年数" integer="true" nullable="false" default="99"/>
+		<item type="date"   id="over_time" 	name="客户协议签署日期" nullable="false"/>
+		<item type="hidden" id="date"       name="打印日期"/>
+		<item type="hidden" id="user_code"  name="打印柜员代码"/>
+		<item type="hidden" id="user_name"  name="打印柜员名称"/>
+		<item type="hidden" id="company"    name="券商名称"/>
+		<item type="hidden" id="remark1"    name="备注说明"/>
+		<item type="text"   id="agent_name" 	name="代理人姓名" editable="false"/>
+		<item type="text"   id="agent_cert_type" 	name="代理人证件类型" editable="false"/>
+		<item type="text"   id="agent_cert_no"   	name="代理人证件号码" editable="false"/>
+    </group>
+    <group name="融出方信息">
+		<item type="select" id="lender_id" name="融出方" source="97600001" nullable="false" action="60010101"/>
+		<item type="text" id="lender_code" name="融出方代码" editable="false" maxlen="6"/>
+		<item type="text" id="lender_name" name="融出方名称" editable="false" maxlen="100"/>
+		<item type="select" id="lender_type" name="融出方类别" source="800" editable="false"/>
+		<item type="select" id="if_valid" name="是否有效" source="802" editable="false" default="1"/>
+		<item type="date" id="found_date" name="设立日期" editable="false"/>
+    </group>	
+    <group name="信用申请">
+		<item type="text" 	id="total_score" name="申请信用总分" number="true" nullable="false" action="97600030"/>	
+		<item type="select"	id="crdt_lvl_id" name="申请信用级别" source="97000015" nullable="false"/>
+		<item type="text"	id="credit_num" name="申请最大交易额度" editable="false"/>
+		<item type="text"	id="credit_num_net" name="申请网上最大交易额度" editable="false"/>
+		<item type="hidden"	id="end_date" 	name="额度有效截止日" default="29991231"/>
+	</group>
+	<group name="备    注">
+		<item type="textarea" id="remark" name="备注说明" />
+	</group>
+  </input>
+  <service type="procedure" id="P60010457" process="833" style="1">
+	<param type="integer" 	id="user_id" way="in"/>
+	<param type="string" 	id="order_no"  way="in" />
+	<param type="string" 	id="bond_no"  way="in"/>
+	<param type="string" 	id="currency" way="in" />
+	<param type="integer" 	id="cust_id" way="in"  />
+	<param type="string" 	id="availability_time" way="in" />
+	<param type="string" 	id="begin_time" way="in"  />
+	<param type="string" 	id="return_time" way="in" />
+	<param type="string" 	id="over_time" way="in" />
+	<param type="string" 	id="remark" way="in" />
+	<param type="double" 	id="credit_num" way="in" />
+	<param type="double" 	id="total_score" way="in" />
+	<param type="double" 	id="total_score" way="in" />
+	<param type="string" 	id="crdt_lvl_id" way="in"/>
+	<param type="string" 	id="if_allow" way="in" default="1"/>
+	<param type="string" 	id="if_blacklist" way="in" default="2"/>
+	<param type="integer" 	id="app_years" way="in" />
+	<param type="double" 	id="credit_num" way="in" />
+	<param type="string" 	id="end_date" way="in" default="29991231"/>
+	<param type="double"	id="credit_num_net"	way="in" />
+	<param type="integer" 	id="lender_id" way="in"/>
+  </service>
+  <output/>
+</function>

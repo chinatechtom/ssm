@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="31363" name="数据库备份记录查询">
+	<input>
+		<item id="id"	type="hidden" name="id"/>
+		<item id="date" type="date"	name="日期"	 default="last"/>
+	</input>
+	<service type="procedure" id="p_database_backup_record_query"   process="911" style="77">
+		<param id="user_id"		type="integer"  way="in"/>		
+		<param id="id"			type="integer"  way="in"/>
+		<param id="date"		type="string"  way="in"/>
+	</service>
+	<output>
+		<column type="number"  id="id"		name="id"		display="false"/>	
+		<column type="string"  id="name"	name="备份文件名"/>	
+		<column type="string"  id="ddate"	name="日期"/>
+		<column type="string"  id="ttime"	name="时间"/>
+	</output>
+</function>

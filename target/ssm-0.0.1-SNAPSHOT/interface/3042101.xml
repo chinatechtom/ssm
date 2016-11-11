@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3042101" name="新增评级因子名称" >	
+  <input>
+		<item type="select" id="cust_type" name="客户类型" source="027" nullable="false"/>
+		<item type="select" id="ratingfactor_type" name="评级因子类型" source="309" nullable="false"/>
+		<item type="text" id="ratingfactor_name" name="评级因子名称" nullable="false"/>
+		<item type="select" id="is_num"   name="数值型"	source="302" nullable="false"/>	
+  </input>
+  <service type="procedure" id="p_ratingfactor_addname"  process="811" style="1"> 
+		<param id="user_id"	type="integer"/>		
+		<param id="ratingfactor_type" />
+		<param id="ratingfactor_name"/>
+		<param id="cust_type"/>
+		<param id="is_num"/>
+  </service>
+  <output>	
+  </output>		
+</function>

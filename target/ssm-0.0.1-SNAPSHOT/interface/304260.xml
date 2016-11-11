@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="304260" name="个人客户评级因子设置" >	
+	<input> 
+		<item type="text"       id="cust_code"          name="客户代码" editable="false"/> 
+		<item type="text"       id="cust_name"          name="客户姓名" editable="false"/>
+		<item type="hidden" 	id="cust_type" 			name="客户类型"/>
+		<item type="hidden"     id="paraid"             action="32311" default="lrmmjy"/>
+		<item type="hidden"     id="paravalue"          name="是否需要校验密码" default="0"/>
+		<item type="hidden"	id="cust_id"/>
+		<group name="密码校验">
+			<item type="password"   id="chk_cust_pwd" 	name="交易密码" 	pwdtype="2" point="cust_code" filter="paravalue=1"/>
+		</group >
+		<group name="个人自然情况">		
+			<item type="hidden"	id="ratingfactor_sort_1"  default="1"/>
+                                                    
+			<item type="radio"	id="data_code_1"	filter="ratingfactor_sort_1"	name="年龄"               source="95000007" />
+		</group>		
+		<group name="财务情况">		
+			<item type="hidden"	id="ratingfactor_sort_7"  default="22"/>
+			<item type="hidden"	id="ratingfactor_sort_8"  default="23"/>
+			<item type="hidden"	id="ratingfactor_sort_9"  default="24"/>
+			                                                      
+			<item type="radio"	id="data_code_7"	filter="ratingfactor_sort_7"	name="收入情况"             source="95000007" />
+			<item type="radio"	id="data_code_8"	filter="ratingfactor_sort_8"	name="非金融资产"           source="95000007" />
+			<item type="radio"	id="data_code_9"	filter="ratingfactor_sort_9"	name="金融资产"     		source="95000007" />
+		</group>		
+		<group name="证券投资(普通账户)">
+		    <item type="hidden"	id="ratingfactor_sort_10"  default="39"/>
+			<item type="hidden"	id="ratingfactor_sort_13"  default="44"/>
+			<item type="hidden"	id="ratingfactor_sort_22"  default="61"/>
+			
+			<item type="radio"	id="data_code_10"	filter="ratingfactor_sort_10"	name="账户绝对收益水平"     source="95000007" />
+			<item type="radio"	id="data_code_13"	filter="ratingfactor_sort_13"	name="投资经验"   			source="95000007" />
+			<item type="radio"	id="data_code_22"	filter="ratingfactor_sort_22"	name="日均资产规模" 		source="95000007" />
+		</group>		
+		<group name="信用记录">		
+			<item type="hidden"	id="ratingfactor_sort_70"  default="70"/>    
+       <item type="hidden"	id="ratingfactor_sort_71"  default="71"/>			
+			<item type="radio"	id="data_code_70"	filter="ratingfactor_sort_70"	name="其他机构记录"         source="95000007" />
+			<item type="radio"	id="data_code_71"	filter="ratingfactor_sort_71"	name="考试成绩"             source="95000007" />
+		</group>
+	  <group name="10">		
+			<item type="hidden"	id="ratingfactor_sort_77"  default="77"/>
+			<item type="radio"	id="data_code_77"	filter="ratingfactor_sort_77"	name="风险评测级别" source="95000007" />
+		</group>
+		<!--<group name="附加分值">		
+            <item type="hidden"	id="ratingfactor_sort_72"  default="72"/>        			
+	        <item type="radio"	id="data_code_72"	filter="ratingfactor_sort_72"	name="营业部评价"           source="95000007" />
+		</group>
+		-->
+	</input>
+	<service type="procedure" id="304260"  process="888" style="1"> 
+	  <param type="string" id="function_id" default="3042602"/>
+	  <param type="string" id="function_id" default="3042601"/>
+	  <param type="string" id="function_id" default="304262"/>
+	</service>
+	<output/>	
+</function>

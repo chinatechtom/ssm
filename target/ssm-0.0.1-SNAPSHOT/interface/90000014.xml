@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="90000014" name="部门代码">
+	<input/>
+	<service type="table" id="t_department" process="111" style="12">
+	</service>
+	<output>
+		<column type="number" id="entry_value"   field="dept_id"	name="部门id"/>
+		<column type="string" id="entry_content" field="dept_name"  name="部门名称"/>
+    </output>
+</function>

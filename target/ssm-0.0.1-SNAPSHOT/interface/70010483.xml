@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70010483" name="征信任务明细查询" >  
+	<input>
+		<item type="hidden"     id="task_id"     name="任务编号"/>
+	</input>
+	<service type="procedure" id="P70010483" process="922" style="1">
+		<param id="user_id"    type="integer"/>
+		<param id="task_id"    type="integer"/>
+		<param id="cust_code"  type="string"/>
+	</service> 
+	<output target="70010484">
+	    <column type="string" id="task_id"         name="任务编号"/>
+	    <column type="string" id="task_id_out"         name="任务编号out"/>
+		<column type="string" id="institution_code" name="营业部代码"/>
+		<column type="string" id="task_type"       name="任务类型" />
+	<!-- 	<column type="string" id="cust_code"       name="客户代码"/> -->
+		<column type="string" id="commness_cust_code"       name="普通资金账号"/>
+		<column type="string" id="begin_date"       name="征信起始日期"/>
+		<column type="string" id="end_date"         name="征信结束日期"/>
+		<column type="string" id="evaluate_date"    name="评定日期"/>
+		<column type="string" id="business_type"    name="业务类别"/>
+		<column type="string" id="app_num"          name="申请额度"/>
+		<column type="string" id="profit_clt_rate"  name="亏损控制比率%"/>
+	</output>
+</function>

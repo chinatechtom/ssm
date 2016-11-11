@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70010851" name="客户信用状态查询" >
+  <input>
+	<item type="select" id="institution_id" name="营业部名称" source="97000001"/>
+ 	<item type="hidden" id="cust_id" name="客户id"/>
+	<item type="text" id="cust_code" name="客户代码" />
+	<item type="text" id="cust_name" name="客户姓名"/>
+	<item type="select" id="cust_type" name="客户类型" source="027"/>
+	<item type="date" id="begin_date" name="起始日期"/>
+	<item type="date" id="end_date" name="结束日期"/>
+  </input>
+  <service type="procedure" id="P70160103" process="922" style="77">
+	<param type="integer" id="user_id"/>	
+	<param type="integer" id="institution_id"/>
+ 	<param type="integer" id="cust_id"/>
+	<param type="string"  id="cust_code"/>
+	<param type="string"  id="cust_name"/>
+	<param type="string"  id="cust_type"/>
+	<param type="string"  id="begin_date"/>
+	<param type="string"  id="end_date"/>
+  </service>
+  <output  export="true">  
+    <column type="number" id="institution_id"   name="机构号" display="false"/>	
+	<column type="string" id="institution_name"   name="营业部名称"/>
+	<column type="string" id="institution_code"   name="营业部代码"/>
+  	<column type="number" id="cust_id"   name="客户id"  display="false"/>	
+	<column type="string" id="cust_code"   name="客户代码" />
+	<column type="string" id="cust_name"   name="客户姓名" />
+	<column type="string" id="cust_type"   name="客户类型" />
+	<column type="string" id="version_date"   name="评级日期" />
+	<column type="number" id="total_score"   name="资质评分" precision="2"/>
+	<column type="string" id="credit_level_code"   name="信用等级代码" />
+	<column type="string" id="credit_level_name"   name="信用等级名称" />
+	<column type="number" id="credit_num_rate"   name="最大交易额度系数(%)" precision="2"/>
+	<column type="number" id="credit_num"   name="最大交易额度" precision="2" total="true"/>
+	<column type="number" id="credit_num_used"   name="已使用的交易额度" precision="2" total="true"/>
+	<column type="number" id="credit_num_free"   name="剩余额度" precision="2" total="true"/>
+	<column type="string" id="begin_date"   name="最大交易额度起始日期" />
+	<column type="string" id="end_date"   name="最大交易额度截止日期" />
+	<button type="edit"	  id="bat_delay"	name="批量延期"		action="70010852"	multiple="1"/>
+  </output>
+</function>

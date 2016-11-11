@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="60010602" name="批量处理通过" >
+	<input>
+		<item type="hidden" id="order_id" name="合约idd"/>
+		<item type="grid"	id="recipients" name="合约信息" source="60010603"/>
+		<group name="处理意见">
+			<item type="textarea" id="manage_opin" name="处理意见" default="批量处理通过"/>
+		</group>
+	</input>
+	<service type="procedure" id="p60010602" process="833" style="1">
+		<param type="integer" id="user_id" way="in"/>
+		<param type="string" id="order_id"  way="in"/>
+		<param type="string" id="manage_opin" way="in"/>
+	</service>
+	<output/>
+</function>

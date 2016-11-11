@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3065010" name="在公司内净资产总值计算" >
+	<input>	
+	    <item type="hidden" id="total_asset"   name="信用账户资产总值"/>
+		<item type="hidden" id="total_debt"    name="信用账户总负债"/>
+		<item type="text" id="common_fund_amt" name="普通A股账户资产总值"/>
+		<item type="text" id="other_fund_amt"  name="其他金融资产总值"/>
+		<item type="text" id="all_debt_amt"    name="回购等负债总值"/>
+	</input>
+	<service type="procedure" id="p_net_asset_amt"  implement="p_net_asset_amt3065010" process="911" style="77">
+		<param type="integer" id="user_id"/>	
+		<param type="double"  id="total_asset"/>
+		<param type="double"  id="total_debt"/>
+		<param type="double"  id="common_fund_amt"/>
+		<param type="double"  id="other_fund_amt"/>
+		<param type="double"  id="all_debt_amt"/>
+	</service>
+	<output export="true">  
+		<column type="number" id="net_asset_amt"	name="在公司内净资产总值"			precision="2"/>
+		<column type="number" id="net_asset_amt_wy"	name="在公司内净资产总值(万元)"	precision="2"/>
+	</output>
+</function>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3064442701" name="融资合约提前终止处理" >
+  <input>			
+  </input>
+  <service type="procedure" id="p_stop_bond_money_apply_modify" implement="p_stop_bond_money_apply_modify3064442701" process="811" style="1">
+	<param type="integer" id="user_id" way="in"/>
+	<param type="integer" id="order_id"  way="in"  />
+	<param type="string" id="manage_opinion"  way="in"  />	
+  </service>
+  <output/>
+</function>

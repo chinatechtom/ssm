@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="GBK" ?>
+<function id="1003" name="阅读消息">
+  <input/>
+  <service type="procedure" id="p_user_msg_modi" process="911" style="77">
+  	<param id="user_id" type="integer"/>
+  	<param id="date"/>
+  	<param id="status" default="0"/>
+  	<param id="msg_id" type="integer"/>	
+  </service>
+  <output>
+    <column type="string" id="message" name="message"/>
+  </output>
+</function>

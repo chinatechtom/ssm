@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3066666720" name="客户终止合同申请详细" >
+  <input print="3066666720.jsp">	
+	<item type="hidden" id="order_id" name="合约id" action="30673,1888"/>	
+	<item type="text" id ="cust_code" name="客户代码" editable="false"/>
+	<item type="text" id ="cust_name" name="客户姓名" editable="false"/>
+	<item type="text" id="order_no" name="合约编号" editable="false"/>
+	<item type="hidden" id="formerly_voucher_no" name="原始凭证号" editable="false"/>
+	<item type="hidden" id="date"       name="打印日期"   editable="false"/>
+	<item type="hidden" id="user_code"  name="操作员代码" editable="false"/>
+	<item type="hidden" id="user_name"  name="操作员姓名" editable="false"/>
+	<item type="hidden" id="company"    name="证券公司名称" editable="false"/>	
+	<item type="textarea" id="remark" name="备注" editable="false"/>
+	<item type="textarea" id="manage_opinion"   name="处理意见" editable="false"/>
+	<item type="textarea" id="approver_opinion"   name="审核意见" editable="false"/>
+	<item type="textarea" id="assessor_opinion"   name="审批意见" editable="false"/>
+	<item type="textarea" id="double_check_opin"   name="复核意见" editable="false"/>
+  </input>
+
+  <output/>
+</function>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="77200113" name="查询融资融券交易系统国债利息处理是否已完成">
+	<input/>
+	<service type="drtp" id="413000" process="711" style="1">
+		<param id="lvol0"	type="integer"	default="3" />  <!--管理系统查询清算日志专用-->
+		<param id="lvol9"	type="integer"	default="200113" />
+	</service>
+	<output target="78200113">		
+		<column id="lvol1"	type="number"	name="是否已完成" field="lvol1" />
+	</output>
+</function>

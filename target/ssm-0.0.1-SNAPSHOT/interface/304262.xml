@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="304262" name="评级因子录入判断" >	
+	<input> 
+		<item type="hidden" id="cust_code" name="客户代码" /> 
+	</input>
+	<service type="procedure" id="p_cust_ratingfactor_check"  process="811" style="1"> 
+		<param id="user_id"	type="integer"/>		
+		<param id="cust_code" type="string"/>
+	</service>
+	<output/>	
+</function>

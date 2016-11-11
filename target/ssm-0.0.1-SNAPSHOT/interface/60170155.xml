@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="60170155" name="导入申请报价参数的信息" >
+	<input>
+	<description>导入申请报价参数信息将清空原信息，确定导入？</description>
+	</input>
+	<service type="procedure" id="P60170155"  process="833" style="1"> 
+		<param id="user_id" type="integer" way="in"/>	
+	</service>
+	<output/>	
+</function>

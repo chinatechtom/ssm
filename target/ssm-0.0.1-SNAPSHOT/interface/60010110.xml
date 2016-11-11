@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="60010110" name="融出方证券账户设置" >
+  <input>
+	<item type="hidden" id="lender_id" name="融出方id"/>
+	<item type="text" id="lender_code" name="融出方代码"/>
+	<item type="text" id="lender_name" name="融出方名称"/>
+  </input>
+  <service type="procedure" id="P60010107" process="933" style="77">
+	<param id="user_id" type="integer"/>
+	<param id="lender_id" type="integer"/>
+	<param id="lender_code" type="string"/>
+	<param id="lender_name" type="string"/>
+  </service>
+  <output export="true">  
+  	<column type="number" id="lender_id"   name="融出方id"  display="false"/>
+    <column type="string" id="lender_code"   name="融出方代码"/>
+    <column type="string" id="lender_name"   name="融出方名称"/>
+    <column type="string" id="market_code"   name="市场代码" display="false"/>	
+    <column type="string" id="market_code_name"   name="市场代码"/>
+	<column type="string" id="acc_code"   name="证券账户代码"/>
+	<column type="string" id="acc_name"   name="账户名称"/>	
+	<column type="string" id="seat_code"   name="席位代码"/>
+	<column type="string" id="report_status"   name="报备状态id" display="false"/>	
+	<column type="string" id="report_status_name"   name="报备状态"/>	
+	<column type="string" id="report_date"   name="报备日期"/>			
+  <column type="string" id="user_code"   name="设置人员"/>
+  <column type="string" id="time"   name="设置时间"/>
+	<column type="string" id="lender_type_name"   name="融出方类别"/>
+	<column type="string" id="pt_cust_code"   name="集中交易资金账号"/>
+	<column type="string" id="syn_type"  name="同步标识" display="false"/>
+	<column type="string" id="branchid"  name="branchid"/>
+	<button type="set" id="syn" name="客户证券账户同步"   action="6088000"  multiple="0" extendaction="syn_type" />	
+	<button type="add" id="add" name="融出方证券账户增加" action="60010111" multiple="-1"/>
+	<button type="set" id="set" name="融出方证券账户设置" action="60010112" multiple="0"/>	
+	</output>
+</function>

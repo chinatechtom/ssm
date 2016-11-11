@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3063406" name="根据客户评分自动确定信用等级" >
+  <input>	
+  <item type="hidden" id="valuation_score1" name="评估客户总分" precision="2"/>
+  <item type="hidden" id="approve_valuation_score1" name="评估客户总分" precision="2"/>
+  </input>
+  <service type="procedure" id="p_cust_credit_level_auto_select2" process="911" style="77">
+	<param id="user_id" 				type="integer"/>
+	<param id="valuation_score1" 		type="double"/>
+	<param id="approve_valuation_score1" type="double"/>
+  </service>
+  <output export="true">  
+  	<column type="number" id="approve_credit_level_id1"         name="信用级别" />  
+  </output>
+</function>

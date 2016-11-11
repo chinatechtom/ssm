@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3100301" name="资产类—担保证券统计" >  
+  <input>
+  <item type="select" id="institution_id" name="营业部名称"  source="95000008"/>
+	<item type="hidden" id="stock_code" name="证券代码" />
+	<item type="hidden" id="date" name="日期"  default="now"/>	
+  </input>
+   <service type="procedure" id="p_statistics_3100301_query" process="911" style="77">
+	<param id="user_id" type="integer" way="in" /> 
+	<param id="date"/>
+	<param id="institution_id" />
+	<param id="stock_code" />
+  </service> 
+  <output  print="true">
+    <column type="string" id="c1" name="营业部"/>  
+	<column type="string" id="c2" name="证券1"/>
+		<column type="number" id="c21" name="证券1数量"/>
+	<column type="string" id="c3" name="证券2"/>
+			<column type="number" id="c31" name="证券2数量"/>
+	<column type="string" id="c4" name="证券3"/>
+			<column type="number" id="c41" name="证券3数量"/>
+	<column type="string" id="c5" name="证券4"/>
+			<column type="number" id="c51" name="证券4数量"/>
+	<column type="string" id="c6" name="证券5"/>
+			<column type="number" id="c61" name="证券5数量"/>
+	<column type="string" id="c7" name="证券6"/>
+	<column type="number" id="c71" name="证券6数量"/>
+	<column type="string" id="c8" name="证券7"/>
+	<column type="number" id="c81" name="证券7数量"/>
+	<column type="string" id="c9" name="证券8"/>
+		<column type="number" id="c91" name="证券8数量"/>
+	<column type="string" id="c10" name="证券9"/>
+		<column type="number" id="c101" name="证券9数量"/>
+	<column type="string" id="c11" name="证券10"/>
+			<column type="number" id="c111" name="证券10数量"/>
+	<column type="string" id="c12" name="合计" display="false"/>
+  </output>
+</function>

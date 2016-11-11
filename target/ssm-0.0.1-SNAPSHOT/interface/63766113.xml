@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="63766113" name="合约详情" >
+	<input>
+		<item type="hidden" id="order_id"     name="合约ID" action="63744113"/>
+		<item type="hidden" id="sbond_id"     name="合约ID"/>
+		<item type="text" id="sbond_no" name="交易协议书编号" editable="false"/>
+		<item type="text" id="trade_date" name="处置日期" editable="false"/>
+		<item type="text" id="stock_vol" name="处置数量" editable="false"/>
+		<item type="text" id="return_amt1" name="归还金额" editable="false"/>
+		<item type="text" id="jsf" name="经手费" editable="false"/>
+		<item type="text" id="zgf" name="证管费" editable="false"/>
+		<item type="text" id="ghf" name="过户费" editable="false"/>
+		<item type="text" id="yhs" name="印花税" editable="false"/>
+		<item type="text" id="qtfy" name="其他费用" editable="false"/>
+		<item type="textarea" id ="remark_cz" name="处置备注" editable="false"/>
+		<item type="text" id="second_amt_before" name="变更前购回交易金额" editable="false"/>
+		<item type="text" id="second_amt_after" name="变更后购回交易金额" editable="false"/>
+	</input>
+</function>

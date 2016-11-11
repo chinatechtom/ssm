@@ -18,15 +18,12 @@ public class MyBatisTest {
 
 	private IUserService userService ;
 	private IMenuService menuService ;
-	/**
-	 * ���before���������еĲ��Է���֮ǰִ�У�����ִֻ��һ�� ������Junit��Ԫ����ʱһЩ��ʼ��������������������������
-	 * ������before���������ʼ��ApplicationContext��userService
-	 */
+	 
 	@Before
 	public void before() {
-		// ʹ��"spring.xml"��"spring-mybatis.xml"�����������ļ�����Spring������
+		 
 		ApplicationContext ac = new ClassPathXmlApplicationContext(new String[] { "spring.xml", "spring-mybatis.xml" });
-		// ��Spring�����и���bean��idȡ������Ҫʹ�õ�userService����
+	
 		userService = (IUserService) ac.getBean("userService");
 		menuService = (IMenuService) ac.getBean("menuService");
 	}
@@ -42,17 +39,11 @@ public class MyBatisTest {
 		for (User temp : list) {
 			System.out.println(temp.getUserName());
 		}
-		if(list.size() <= 0){
-			user = new User();
-			user.setUserId(UUID.randomUUID().toString().replaceAll("-", ""));
-			user.setUserName("xdp");
-			user.setUserSalary(10000D);
-			userService.addUser(user);
-		}else{
-			userId = list.get(0).getUserId();
-		}
+		 
+		userId = list.get(0).getUserCode();
 		
-		user = userService.getUserById("5cd96eb8854142e6abc09730a072bc09");
+		
+		user = userService.getUserByUserCode("admin");
 
 		System.out.println(user.getUserName());
 		

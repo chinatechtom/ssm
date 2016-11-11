@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3230001" name="对帐单" >
+  <input print="3230001.jsp">	
+		<item type="hidden" id="cust_id"   			name="客户ID"  action="1888,3230002,3230005,3230006"  editable="false"/>
+		<item type="hidden" id="user_code"      	name="打印柜员代码"/><!--从1888.xml获得的打印柜员代码-->
+		<item type="hidden" id="user_name"      	name="打印柜员名称"/><!--从1888.xml获得的打印柜员名称-->
+		<item type="hidden" id="company"            name="券商名称"/><!--从1888.xml获得的券商名称-->
+	<group name="账户资料" >
+		<item type="text" 	id="institution_name"       name="营业部名称"  editable="false"/>  <!--32300.xml获得-->
+		<item type="text" 	id="cust_code"   			name="客户代码"  editable="false"/> <!--32300.xml获得-->
+		<item type="text" 	id="cust_name"   			name="客户名称"  editable="false"/>  <!--32300.xml获得-->
+		<item type="text" 	id="sh_acc"   			    name="上海证券信用账户"  editable="false"/>  <!--3230006.xml获得-->
+		<item type="text" 	id="sz_acc"   			    name="深圳信用证券账户"  editable="false"/>  <!--3230006.xml获得-->
+		<item type="text"   id="date"     				name="对账日期"  editable="false"/>	<!--从1888.xml获得的打印日期-->
+	</group>
+	<group name="客户授信额度情况" ><!--3230002.xml获得-->
+		<item type="text"   id="credit_order_no"    name="合同编号"  editable="false"/>    
+		<item type="text" 	id="credit_num"   		name="授信额度"  editable="false"/>
+		<item type="text" 	id="credit_level_name"  name="信用级别"  editable="false"/>
+		<item type="text" 	id="return_time"        name="截止日期"  editable="false"/>
+		<item type="text" 	id="product_name_fin"   name="融资信用产品"  editable="false"/>		
+		<item type="text"   id="fix_qty"            name="融资额度上限"  editable="false"/>    
+		<item type="text" 	id="pure_financing"     name="已使用融资额度"  editable="false"/>
+		<item type="text" 	id="remain_fix_qty"     name="剩余融资额度"    editable="false"/>
+		<item type="text" 	id="product_name_bs"    name="融券信用产品"    editable="false"/>		
+		<item type="text"   id="application_borrow_qty"    name="融券额度上限"  editable="false"/>    
+		<item type="text" 	id="bs_value"           name="已使用融券额度"  editable="false"/>
+		<item type="text" 	id="remain_bs_qty"      name="剩余融券额度"    editable="false"/>		
+	</group>	
+	<group name="客户信用账户资产负债情况" ><!--3230002.xml获得-->	
+		<item type="text" 	id="money_total"         name="总金额"  editable="false"/>
+		<item type="text" 	id="gua_fund_amt"   	 name="现金保证金"  editable="false"/>
+		<item type="text" 	id="crdt_sell_frzn_amt"  name="融券卖出冻结款"  editable="false"/>
+		<item type="text" 	id="stock_value"   		 name="总市值"  editable="false"/>
+		<item type="text" 	id="stock_convert_value" name="折算后总市值" editable="false" />
+		<item type="text" 	id="fund_amt"   		 name="总资产金额"  editable="false"/>
+		<item type="text"   id="pure_financing"   	 name="融资负债" editable="false" />
+		<item type="text" 	id="bs_value"   		 name="融券负债"  editable="false"/>
+		<item type="text" 	id="intr_fee"   		 name="利息费用(未付)"  editable="false"/>
+		<item type="text" 	id="other_fee"   		 name="其他负债"  editable="false"/>
+		<item type="text" 	id="debt_amt"   		 name="负债合计"  editable="false"/>
+		<item type="text" 	id="assure_rate"   		 name="维持担保比例(%)"    editable="false"/>
+		<item type="text" 	id="can_fund_value"      name="可提取资金总额"  editable="false"/>
+    </group >
+    <group name="时间区间" >
+  		<item type="text" id="sdate" 					name="起始日期"   editable="false"/>
+ 		<item type="text" id="edate" 					name="结束日期"   editable="false"/>
+		<item type="text" id="print_time" 				name="查询时间"   editable="false"/>
+  	</group>
+	<group name="保证金可用余额计算项" >
+    	<item type="text"   id="cust_amt"   			  name="现金"        editable="false"/>
+		<item type="text" 	id="cust_intr"                name="利息及费用"  editable="false"/>
+		<item type="text" 	id="gua_stock_convert_value"  name="充抵保证折算证券市值"     editable="false"/>
+		<item type="text" 	id="financing_profit"   	  name="融资折算盈亏"   editable="false"/>
+		<item type="text"   id="borrow_stock_profit"      name="融券折算盈亏"   editable="false"/>    
+		<item type="text" 	id="financing_occupy"   	  name="融资买入占用"   editable="false"/>
+		<item type="text" 	id="borrow_stock_occupy"      name="融券卖出占用"   editable="false"/>
+		<item type="text" 	id="borrow_stock_over"        name="融券卖出金额"   editable="false"/>
+        <item type="text" 	id="guarantee_amt"   		  name="保证金可用余额" editable="false"/>		
+    </group>
+	
+    <group name="证券资产明细" >
+    	<item type="grid" id="cust_id" source="3230003" name="证券资产明细"/>
+    </group>
+    <group name="融资融券利息费用明细" >
+    	<item type="grid" id="cust_id" 	source="3230004" name="融资融券利息费用明细"/>
+    </group>	
+	
+    <group name="融资明细" >
+    	<item type="grid" id="cust_id,sdate,edate" 	source="3320001" name="融资明细"/>
+    </group>
+    <group name="融券明细" >
+    	<item type="grid" id="cust_id,sdate,edate" 	source="3320301" name="融券明细"/>
+    </group>
+    <group name="查询负债资金流水">
+    	<item type="grid" id="cust_id,sdate,edate" 	source="3191501" name="查询负债资金流水"/>
+    </group>
+    <group name="查询资金流水">
+    	<item type="grid" id="cust_id,sdate,edate" 	source="3011101" name="查询资金流水"/>
+    </group>
+	</input>
+	<output/>
+</function>
+	

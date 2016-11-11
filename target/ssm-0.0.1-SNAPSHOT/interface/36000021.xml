@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="36000021" name="证券标的名单">
+<input>
+  <item type="text"   id="product_code"   name="证券代码"  />
+  <item type="text"   id="product_name"   name="证券名称"  />
+  <item type="select" id="market_code"    name="市场名称" source="039"/>
+  <item type="year"   id="year"        name="年份选择" nullable="false"/>
+  <item type="month"  id="month"       name="月份选择" nullable="false"/>
+  <item type="hidden" id="if_financing"   name="融资标的" source="302"/>
+  <item type="hidden" id="if_borrow_stock" name="融券标的" source="303"/>
+  <item type="hidden" id="if_guarantee"   name="担保品标的" source="304"/>
+</input>
+<service type="procedure" id="P36000021" process="911" style="77">
+  <param id="user_id"     type="integer"/>
+  <param id="product_code"   type="string"/>
+  <param id="product_name" type="string"/>
+  <param id="market_code" type="string"/>
+  <param id="year"     type="integer"/>
+  <param id="month"    type="integer"/>
+  <param id="if_financing" type="string"/>
+  <param id="if_borrow_stock" type="string"/>
+  <param id="if_guarantee" type="string"/>
+  </service>
+<output export="true" >
+  <column type="string" id="c1"   name="序号"  />
+  <column type="string" id="c2"   name="标的证券名称"  />
+  <column type="string" id="c3"   name="标的证券代码"  />
+  <column type="string" id="c4"   name="备注(融资或融券)"  />
+  <column type="string" id="product_code"   name="证券代码"  display="false"/>
+  <column type="string" id="product_name"   name="证券名称"  display="false"/>
+  <column type="string" id="market_code"    name="市场名称"  display="false"/>
+  <column type="string" id="year"           name="年份选择"  display="false"/>
+  <column type="string" id="month"          name="月份选择"  display="false"/>
+  <column type="string" id="if_financing"   name="融资标的"  display="false"/>
+  <column type="string" id="if_borrow_stock"   name="融券标的"  display="false"/>
+  <column type="string" id="if_guarantee"   name="担保品标的"  display="false"/>
+  <column type="string" id="print_date"   name="时间"  display="false"/>
+  <button type="print" id="print" name="打印" action="36110021" multiple="1"/>
+</output>
+</function>

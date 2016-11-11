@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="6001051220" name="取单笔违约处置报盘" >
+	<input>
+		<item type="hidden" id="institution_code" 	name="开户营业部"/>
+		<item type="hidden" id="cust_code" 			name="客户号"/>
+		<item type="hidden" id="market_code"		name="市场"/>
+		<item type="hidden" id="sellacc" 			name="股东代码"/>
+		<item type="hidden" id="product_code" 		name="证券代码"/>
+		<item type="hidden" id="cust_id" 			name="客户id"/>
+		<item type="hidden" id="entrust_date"		name="委托日期"/>
+		<item type="hidden" id="sqbh" 				name="申请编号"/>
+	</input>
+    <service type="procedure" id="P6001051220" adapter="psr" process="933" style="77">
+		<param type="integer" id="user_id"/>
+		<param type="string"  id="institution_code"/>
+		<param type="string"  id="cust_code"/>
+		<param type="string"  id="market_code" />
+		<param type="string"  id="sellacc" />
+		<param type="string"  id="product_code" />
+		<param type="integer" id="cust_id" />
+		<param type="string"  id="entrust_date" />
+		<param type="string"  id="sqbh"/>
+	</service>
+    <output target="6001051221">
+		<column name="客户ID"		id="cust_id"  		type="integer"/>
+		<column name="委托日期"		id="entrust_date"  	type="string"/>
+		<column name="申请编号"		id="sqbh"  		type="string"/>
+	</output>
+</function>

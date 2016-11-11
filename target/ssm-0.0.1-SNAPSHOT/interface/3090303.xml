@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3090303" name="将数据从融资融券系统中导出到BIX服务器">
+	<input>
+		<item type="text"	id="sstatus0"	name="导入方式"		default="0"		 nullable="false"/>
+		<item type="text"	id="vsvarstr0"	name="路径"			nullable="false"/>	
+		<item type="text"	id="saddr"		name="文件名"		nullable="false"/>	
+		<item type="text"	id="saddr2"		name="数据库表名"		nullable="false"/>
+		<item type="text"	id="snote"		name="数据格式名"		nullable="false"/>
+		<item type="hidden"	id="sstation1"	name="融资融券机构代码"/>
+		<item type="hidden"	id="sdate3"		name="融资融券分支号"/>
+		<item type="hidden"	id="scheck_emp"	name="融资融券柜员号"/>
+		<item type="hidden"	id="semp_pwd"	name="融资融券柜员密码"/>
+	</input>
+	<service type="drtp" id="413502" implement="413502_3090303" process="711" style="1">
+		<param id="sstatus0"		type="string" default="0"/>
+		<param id="vsvarstr0"		type="string"/>
+		<param id="saddr"			type="string"/>
+		<param id="saddr2"			type="string"/>
+		<param id="snote"			type="string"/>
+		<param id="sstation1"		type="string"/>
+		<param id="sdate3"			type="string"/>
+		<param id="scheck_emp"		type="string"/>
+		<param id="semp_pwd"		type="string"/>
+	</service>
+	<output/>
+</function>

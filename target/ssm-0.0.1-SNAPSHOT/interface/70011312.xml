@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70011312" name="网上交易业务时间限制参数查询">
+	<input>
+		<item type="hidden" 	id="cust_id" 		name="客户id"  />
+		<item type="text" 		id="cust_code" 		name="客户代码" />
+		<item type="text" 		id="cust_name" 		name="客户名称" />
+		<item type="select" 	id="market_code" 	name="市场代码"  	source="039" />
+		<item type="select" 	id="busi_type" 		name="业务类型"  	source="743" />
+		<item type="select" 	id="limit_type" 	name="限制类型"  	source="742" />
+	</input>
+	<service type="procedure" id="P70011312" process="922" style="77">
+		<param id="user_id"		type="integer"/>
+		<param id="cust_id"		type="integer"/>
+		<param id="cust_code"	type="string"/>
+		<param id="cust_name"	type="string"/>
+		<param id="market_code"	type="string"/>
+		<param id="busi_type"	type="string"/>	
+		<param id="limit_type"	type="string"/>
+	</service>
+	<output export="true">
+		<column type="number" 	id="cust_id"			name="客户ID"	 display="false"/>
+		<column type="string" 	id="cust_code"			name="客户代码" />
+    	<column type="string" 	id="cust_name"			name="客户名称"	/>
+		<column type="string" 	id="cust_type"			name="客户类型"	 display="false"/>
+		<column type="string" 	id="cust_type_name"		name="客户类型"	/>
+		<column type="string" 	id="market_code"		name="市场代码"	 display="false"/>
+		<column type="string" 	id="market_name"		name="市场代码"	/>
+		<column type="string" 	id="busi_type"			name="业务类型"	 display="false"/>
+		<column type="string" 	id="busi_type_name"		name="业务类型"	/>
+		<column type="string" 	id="limit_type"			name="限制类型"	 display="false"/>
+		<column type="string" 	id="limit_type_name"	name="限制类型"	 />
+		<column type="number" 	id="early_days"			name="提前天数" />
+		<column type="string" 	id="limit_time"			name="截止时间" />
+		<column type="string" 	id="limit_time_early"	name="开始时间" />
+    	<button type="add"		id="add" 		  		name="新增"    action="70011309"  multiple="-1"/>
+		<button type="edit"		id="edit" 				name="修改"    action="70011310"  multiple="0"/>
+		<button type="delete"	id="delete"   			name="删除"    action="70011311"  multiple="0"/>
+	</output>
+</function>
+		
+		

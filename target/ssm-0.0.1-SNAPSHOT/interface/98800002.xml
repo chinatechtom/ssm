@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="98800002" name="融出方信息-小额短融融出方">
+	<input/>
+	<service type="table" id="T_LENDER" process="133" style="12">
+		<param id="lender_type2" field="lender_type2" type="string"  operator="=" default="2"/>
+	</service>
+	<output>
+		<column type="number" id="entry_value"   field="lender_id"		name="数据内容id"/>
+		<column type="string" id="entry_content" field="lender_name"    name="数据内容"/>
+    </output>
+</function>

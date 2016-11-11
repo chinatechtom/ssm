@@ -35,5 +35,10 @@
 	</classpathentry>
 	<classpathentry kind="lib" path="E:/javalib/apache-log4j-1.2.17/log4j-1.2.17.jar"/>
 	<classpathentry kind="lib" path="E:/javalib/json-lib-2.4及其依赖jar包/json-lib-2.4-jdk15.jar"/>
+	<classpathentry kind="lib" path="E:/javalib/json-lib-2.4及其依赖jar包/commons-beanutils-1.8.0.jar"/>
+	<classpathentry kind="lib" path="E:/javalib/json-lib-2.4及其依赖jar包/commons-collections-3.1.jar"/>
+	<classpathentry kind="lib" path="E:/javalib/json-lib-2.4及其依赖jar包/commons-lang-2.5.jar"/>
+	<classpathentry kind="lib" path="E:/javalib/json-lib-2.4及其依赖jar包/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="E:/javalib/json-lib-2.4及其依赖jar包/ezmorph-1.0.6.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

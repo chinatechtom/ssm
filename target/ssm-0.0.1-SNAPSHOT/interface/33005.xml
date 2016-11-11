@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="33005" name="白名单客户设置" >
+	<input>	
+		<item type="select" id="institution_id"	name="营业部名称"	source="95000008"/>	
+	    <item type="text" 	id="cust_code" 	name="客户代码" />
+		<item type="select" id="reason_code" 	name="白名单类别" source="519"/>
+		<item type="date"	id="in_date"	name="进入日期"  default="null"/>
+		<item type="date"	id="out_date"	name="退出日期"  default="null"/>
+		<item type="select" id="isvalid"	name="是否有效"  source="392" default="1"/>	
+	</input>
+	<service type="procedure" id="p_white_cust_list_query" implement="p_white_cust_list_query33005" process="911" style="77">
+		<param id="user_id"        type="integer"/>		
+		<param id="institution_id" type="integer"/>
+		<param id="cust_code"/>
+		<param id="reason_code"/>
+		<param id="in_date"/>
+		<param id="out_date"/>
+		<param id="isvalid"/>
+	</service>
+	<output>
+		<column type="string" id="institution_code"    name="营业部代码"/>
+		<column type="string" id="cust_code"           name="客户代码"/>
+    	<column type="string" id="cust_name"   	       name="客户姓名"/>
+		<column type="string" id="reason_code"         name="白名单类别" display="false"/>
+		<column type="string" id="reason_name"         name="白名单类别"/>
+		<column type="string" id="in_date"             name="进入日期"/>
+		<column type="string" id="out_date"            name="退出日期"/>
+        <column type="string" id="is_valid"            name="是否有效1"	display="false"/>
+		<column type="string" id="is_valid_name"       name="是否有效"/>		
+    	<column type="string" id="remark"   	       name="备注"/>
+		<button type="add"    id="add"     name="增加"    action="3300501"  multiple="-1"/>
+		<button type="mdy"    id="mdy"     name="修改"    action="3300502"  multiple="0"/>
+		<button type="del"    id="del"     name="删除"    action="3300503"  multiple="0"/>
+	</output>
+  </function>
+  

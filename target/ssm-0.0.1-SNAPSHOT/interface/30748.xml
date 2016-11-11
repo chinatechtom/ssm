@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="30748" name="风险证券市值占公司总担保证券市值比例监控" >
+	<input>
+		<item type="hidden"  id="product_id"	name="证券id"/>
+		<item type="select"  id="market_code"	name="市场"	   source="039"/>
+		<item type="text"    id="product_code"	name="证券代码"/>	
+		<item type="text"    id="product_name"	name="证券名称"/>
+		<item type="text"    id="rate"			name="比例(%)"	default="0"/>
+	</input>
+    <service type="procedure" id="p_risk_stock_company_control"  process="911" style="77">
+		<param id="user_id"	      type="integer" way="in"/>
+		<param id="market_code"   type="string"  way="in"/> 
+		<param id="product_id"    type="integer" way="in"/>
+		<param id="product_code"  type="string"  way="in"/>
+		<param id="product_name"  type="string"  way="in"/>
+		<param id="rate"		  type="double"  way="in"/>
+    </service>
+    <output export="true" autoload="true" refresh="120">
+		<column type="number" id="product_id"	name="证券id"		display="false"/>
+		<column type="string" id="market_code"	name="市场"/>
+		<column type="string" id="product_code"	name="证券代码"/>
+		<column type="string" id="product_name"	name="证券名称"/>
+		<column type="number" id="stock_value"	name="风险证券市值"	precision="2"/>
+		<column type="number" id="company_vol"	name="公司总担保市值"	precision="2"/>
+		<column type="number" id="rate"			name="比例(%)"	precision="8"/>
+		<column type="string" id="warning_level"	name="报警级别"	level="true"	display="false"/>
+    </output>
+</function>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70010748" name="券商主动调整最大交易额度" >
+  <input print="70010748.jsp">
+    <group name="客户基本信息">
+      <item type="hidden"	id="cust_id" 		name="客户id"	editable="false" action='70010120'/>
+	  <item type="text" 	id="bond_no" 		name="合同编号"	editable="false"/>
+      <item type="text" 	id="cust_code" 		name="客户代码"	editable="false"/>
+      <item type="text" 	id="cust_name" 		name="客户姓名"	editable="false"/>
+      <item type="text" 	id="cust_type_name"	name="客户类型"	editable="false"/>
+      <item type="text" 	id="cust_sort" 		name="客户类别"	editable="false"/>
+      <item type="text" 	id="gender" 		name="性别" 	editable="false"/>
+	  <item type="text" 	id="cert_type" 		name="证件类型"	editable="false"/>
+	  <item type="text" 	id="cert_no" 		name="证件号码"	editable="false"/>
+	  <item type="text" 	id="institution_name" name="营业部名称" editable="false"/>	  
+    </group>
+	<item type="hidden" 	id="cust_id" 	name="客户id"	editable="false" action="1888,70001999"/>	
+    <item type="hidden" 	id="date"     	name="打印日期"/><!--从1888.xml获得的打印日期-->
+    <item type="hidden" 	id="user_code"	name="打印柜员代码"/><!--从1888.xml获得的打印柜员代码-->
+    <item type="hidden" 	id="user_name"	name="打印柜员名称"/><!--从1888.xml获得的打印柜员名称-->
+    <item type="hidden" 	id="company"	name="券商名称"/><!--从1888.xml获得的券商名称-->
+    <group name="征信授信信息">
+      <item type="text"	id="credit_level_score" name="评级因子总分" editable="false"/>
+	  <item type="text"	id="credit_level_name" 	name="信用级别" editable="false"/>
+	  <item type="text"	id="if_credit_num" 		name="是否已经授信" editable="false"/>
+	  <item type="text"	id="credit_num_old" 	name="原最大交易额度" editable="false"/>
+	  <item type="hidden"	id="credit_num_max" 	name="授信上限" editable="false"/>
+	  <item type="text"	id="credit_num_rate" 	name="授信系数(%)" editable="false"/>	  		
+    </group>	
+    <group name="最大交易额度申请与调整">
+	  <item type="grid"	id="cust_id" 	name="证券信息"	source="70010125"/>
+	  <item type="text"		id="cust_num" 		name="客户资产额度" nullable="false" integer="true" action="7003065006,7003065005"/>
+	  <item type="textarea" id="cust_num_c"		name="客户资产额度大写" editable="false"/>
+	  <item type="text"		id="pt_asset" 		name="客户普通账户总资产" editable="false"/>
+	  <item type="text"		id="xy_asset" 		name="客户信用账户总资产" editable="false"/>
+	  <item type="text"		id="xy_debt" 		name="客户信用账户总负债" editable="false"/>
+	  <item type="text"		id="credit_num_rate" name="授信系数(%)" editable="false"/>		  
+      <item type="text" 	id="credit_num"		name="最大交易额度" nullable="false" integer="true" action="7003065005"/>
+      <item type="text" 	id="credit_num_net"		name="网上最大交易额度" nullable="false"/>
+      <item type="textarea" id="credit_num_c"	name="最大交易额度大写" editable="false"/>
+	  <item type="date"	id="end_date" 	name="额度有效截止日" nullable="false"/>
+      <item type="textarea" id="remark" 		name="备注"/>			
+    </group>
+  </input>
+  <service type="procedure" id="P70010722" 	process="822" style="1">
+    <param type="integer" 	id="user_id" 	way="in"/>
+    <param type="integer" 	id="cust_id" 	way="in"/>
+    <param type="float"		id="credit_num" way="in"/>
+    <param type="float"		id="credit_num_net" way="in"/>
+    <param type="string"	id="remark"		way="in"/>
+	<param type="float"		id="cust_num" way="in"/>
+	<param type="float"		id="credit_num_rate" way="in"/>
+	<param type="string"	id="end_date"	way="in"/>
+	<param type="string"	id="change_type"	way="in" default="3"/>
+	<param type="float"		id="pt_asset" way="in"/>
+	<param type="float"		id="xy_asset" way="in"/>
+	<param type="float"		id="xy_debt" way="in"/>
+  </service>
+  <output/>
+</function>

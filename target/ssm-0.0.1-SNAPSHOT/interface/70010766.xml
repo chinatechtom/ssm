@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70010766" name="处置委托信息录入" >
+	<input>
+		<item type="text" id="cust_code" name="客户代码" nullable="false"/>
+		<item type="date" id="entrust_date" name="委托日期" nullable="false"/>
+		<item type="text" id="entrust_time" name="委托时间" nullable="false"/>
+		<item type="text" id ="entrust_no" name="委托编号" />
+		<item type="text" id ="sqbh" name="申请编号" nullable="false"/>
+		<item type="select" id="currency_type"   name="币种" nullable="false"  default="01" editable='false' source="018" />
+		<item type="hidden" id="sbond_id"   name="sbondid" />
+		<item type="text" id="sbond_no"   name="交易协议书编号" nullable="false"/>
+		<item type="select" id="bs"   name="买卖方向" nullable="false" source="132"/>
+		<item type="select" id="market_code"   name="市场代码" nullable="false" source="039"/>
+		<item type="text" id="product_code"   name="证券代码" nullable="false"/>
+		<item type="text" id="entrust_price"   name="委托价格"  number="true" nullable="false"/>
+		<item type="text" id="entrust_qty"   name="委托数量"  number="true" nullable="false"/>
+		<item type="text" id="entrust_amt"   name="委托金额"  number="true" nullable="false"/>
+		<item type="text" id="done_qty"   name="成交数量"  number="true"  nullable="false"/>
+		<item type="text" id="done_amt"   name="成交金额" number="true" nullable="false"/>
+		<item type="select" id="ywlx"   name="业务类型"  nullable="false" source="710"/>
+	</input>
+	<service type="procedure" id="P70010766" process="822" style="1">
+		<param type="integer" id="user_id" way="in" />
+		<param type="string"  id="cust_code" way="in" />
+		<param type="string"  id="entrust_date"  way="in"/>
+		<param type="string"  id="entrust_time"  way="in"/>
+		<param type="string"  id="entrust_no"  way="in"/>
+		<param type="string" id="sqbh" way="in" />
+		<param type="string"  id="currency_type" way="in" />
+		<param type="integer" id="sbond_id" way="in" />
+		<param type="string"  id="sbond_no" way="in" />
+		<param type="string"  id="bs" way="in" />
+		<param type="string"  id="market_code" way="in" />
+		<param type="string"  id="product_code" way="in" />
+		<param type="float"   id="entrust_price" way="in" />
+		<param type="float"   id="entrust_qty" way="in" />
+		<param type="float"   id="entrust_amt" way="in" />
+		<param type="float"   id="done_qty" way="in" />
+		<param type="float"   id="done_amt" way="in" />
+		<param type="string"  id="ywlx" way="in" />
+	</service>
+	<output/>
+</function>

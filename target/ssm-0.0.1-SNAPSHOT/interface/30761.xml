@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="30761" name="担保率监控纪录预处理" >
+	<input>
+		<description>确实要进行预处理？</description>
+		<item type="hidden"  id="record_id"	 name="记录id"/>
+	</input>
+    <service type="procedure" id="p_pc_record_pretreatment"  process="811" style="1">
+		<param id="user_id"	    type="integer" way="in"/> 
+		<param id="record_id"	type="integer" way="in"/> 
+    </service>
+    <output/>
+</function>

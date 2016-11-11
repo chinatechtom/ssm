@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="gbk"?>
+<function	id="3060191" name="保证金比例各项评级因子得分对照关系查询">
+	<input>
+		<item type="text" id="factor_code"	name="评分因子代码"/>
+		<item type="text" id="data_code"	name="子项代码"/>
+		<item type="text" id="data_content"	name="子项名称"/>
+	</input>
+	<service type="produrce" id="p_grade_factor_score_query"	implement="p_grade_factor_score_query3060191" process="911"	style="77">
+		<param id="user_id"			type="integer" way="in"/>
+		<param id="factor_code"		type="string"  way="in"/>
+		<param id="data_code" 		type="string"  way="in"/>
+		<param id="data_content"	type="string"  way="in"/>
+	</service>
+	<output>
+		<column type="string"	id="factor_code"	name="信用级别代码"/>
+		<column type="string"	id="factor_name"	name="信用级别名称"/>
+		<column type="string"	id="data_code"		name="子项代码"/>
+		<column type="string"	id="data_content"	name="子项名称"/>
+		<column type="number"	id="score"			name="得分"	precision="2"/>
+		<column type="number"	id="lower_limit"	name="下限"	precision="2"/>
+		<column type="number"	id="upper_limit"	name="上限"	precision="2"/>
+		<button type="edit"		id="edit"			name="修改评级因子得分关系" multiple="0" action="30601910"/>
+	</output>
+</function>

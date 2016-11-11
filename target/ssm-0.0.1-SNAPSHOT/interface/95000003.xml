@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="95000003" name="操作员" >
+	<input>
+	</input>
+	<service type="table" id="t_user" process="111" style="12">	
+	</service>
+	<output>
+		<column type="number" id="entry_value"   field="user_id"	name="操作员id"/>
+		<column type="string" id="entry_content"	 field="user_name"    name="操作员名称"/>
+    </output>
+</function>

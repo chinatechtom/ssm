@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="30601147" name="评级批量复核生效" >
+  <input>
+    <description>确定批量复核通过正式生效评级因子?
+	</description>  
+		<item type="hidden" id="cust_id" name="客户id"/>
+		<item type="hidden" id="user_version" name="user_version"/>
+
+  </input>
+  <service type="procedure" id="P_CUST_RF_SET_STATUS_3SET"  implement="P_CUST_RF_SET_STATUS_3SET30601147" process="911" style="1">
+		<param id="user_id" 	 		type="integer" way="in"/>
+		<param id="user_version" 		type="string"  way="in"/>
+		<param id="status" 		 	type="string"  way="in" default="7"/>
+		<param id="remark" 		 	type="string"  way="in" />
+		<param id="approver_opinion" 	type="string"  way="in" />
+		<param id="assessor_opinion" 	type="string"  way="in" />
+		<param id="reviser_opinion" 	type="string"  way="in" />
+		<param id="manage_opinion"  	type="string"  way="in"/>
+		<param id="if_remark" 		type="string"  way="in" default="0"/>
+		<param id="force_active_flag" 	type="string"  way="in" default="0"/>
+  </service>
+  <output  target="3060114201">
+		<column type="string"  id="user_id"			name="营业员ID"/>
+		<column type="integer" id="cust_id"         		name="客户代码"/>
+		<column type="integer" id="versionid"         		name="评级因子编号"/>
+		<column type="string" id="status"         		name="状态"/>
+		<column type="string" id="remark"         		name="备注信息"/>
+		<column type="string" id="approver_opinion"         	name="审核意见"/>
+		<column type="string" id="assessor_opinion"         	name="复核意见"/>
+		<column type="string" id="reviser_opinion"         	name="修订意见"/>
+		<column type="string" id="manage_opinion"         	name="处理意见(强制作废时用)"/>		
+		<column type="string" id="if_remark"			name="是否为remark"/>
+		<column type="string" id="force_active_flag"		name="是否强制生效"/> 
+  </output>
+</function>

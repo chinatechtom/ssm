@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="GBK" ?>
+<function id="80777778" name="同步公允价格">
+  <description>确实同步公允价格吗?</description>
+  <input>
+    <!-- modify by SECREQ-2299 20150313 zyt
+	<item type="select" id="market_code"     name="市场代码"   source="039"/>
+	<item type="text"   id="product_code"    name="证券代码"/>
+	<item type="date"   id="begin_date"      name="起始日期"	default="null"/>	
+	<item type="date"   id="end_date"        name="结束日期"	default="null"/> -->
+  </input> 
+  <service type="system" id="80777778" process="888" style="1">
+    <param type="string" id="function_id" default="3032301"/>
+    <param type="string" id="function_id" default="80130154"/>
+    <param type="string" id="function_id" default="3032302"/>
+  </service>
+</function>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="31309" name="机构账户查询">
+	<input>
+		<item type="hidden"	id="institution_id"		name="机构id"/>
+		<item type="text"   id="institution_code"   name="机构代码"/>
+		<item type="text"   id="institution_name"   name="机构名称"/>
+		<item type="hidden"	id="acc_id"				name="账户id"/>
+		<item type="text"	id="acc_code"			name="账户代码"/>
+	</input>
+	<service type="procedure" id="p_institution_acc_1_query" implement="p_institution_acc_1_query31309"  process="911" style="77">
+		<param id="user_id"				type="integer"  way="in"/>
+		<param id="institution_id"		type="integer"  way="in"/>
+		<param id="institution_code"	type="string"   way="in"/>
+		<param id="institution_name"	type="string"   way="in"/>
+		<param id="acc_id"				type="integer"  way="in"/>
+		<param id="acc_code"			type="string"   way="in"/>
+	</service>
+	<output autoload="true">
+		<column type="number"  id="institution_id"		name="机构id" display="false"/>
+		<column type="string"  id="institution_code"	name="机构代码"/>
+		<column type="string"  id="institution_name"	name="机构名称"/>
+		<column type="number"  id="acc_id"				name="账户id" display="false"/>				
+		<column type="string"  id="acc_type_name"		name="账户类型"/>	
+		<column type="string"  id="acc_type"			name="账户类型1" display="false"/>	
+		<column type="string"  id="acc_sort_name"		name="账户类别"/>	
+		<column type="string"  id="acc_sort"			name="账户类别1" display="false"/>	
+		<column type="string"  id="acc_code"			name="账户代码"/>	
+		<column type="string"  id="cert_type_name"		name="证件类型"/>	
+		<column type="string"  id="cert_type"			name="证件类型1" display="false"/>	
+		<column type="string"  id="cert_no"				name="证件号码"/>	
+		<column type="string"  id="acc_status_name"		name="账户状态"/>	
+		<column type="string"  id="acc_status"			name="账户状态1" display="false"/>	
+		<column type="string"  id="open_date"			name="开户日期"/>	
+		<column type="string"  id="open_oper"			name="开户人员"/>	
+		<button type="add"     id="add"					name="增加" action="3130901" multiple="-1"/>
+		<button type="edit"    id="edit"				name="修改" action="3130901" multiple="0"/>
+	</output>
+</function>

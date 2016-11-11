@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="97600041" name="分段计息区间source" >	
+  <input> 
+		<item type="hidden"	id="sbond_id" name="sbond_id" />
+  </input>
+ <service type="table" id="vw_bond_sbond_section_rate_list" process="133" style="12">
+	<param id="sbond_id" field="sbond_id" type="integer"  operator="="/>
+  </service>
+  <output>
+    	<column type="number" id="entry_value"   	field="section_id"		name="数据内容id"/>
+		<column type="string" id="entry_content" 	field="section_name"    	name="数据内容"/>
+  </output>		
+</function>

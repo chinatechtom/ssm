@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="63744101" name="合同签署申请合约查询">
+  <input/>
+  <service type="procedure" id="P63744101" process="977" style="77">
+	<param type="integer" 	id="user_id"/>
+ 	<param type="integer" 	id="order_id"/>
+	<param type="string" 	id="order_no"/>
+  </service>
+  <output  export="true">  
+    <column type="number" id="institution_id" name="机构号" display="false"/>	
+	<column type="string" id="institution_name" name="营业部名称"/>
+	<column type="string" id="institution_code" name="营业部代码"/>
+	<column type="number" id="cust_id" name="客户id" display="false"/>
+	<!--<column type="string" id="cust_code" name="客户代码"/>
+	<column type="string" id="cust_name" name="客户姓名"/>-->
+	<column type="number" id="order_id" name="orderid" display="false"/>
+	<column type="string" id="order_no" name="合约编号"/>
+	<column type="string" id="bond_no" name="合同编号"/>
+	<column type="number" id="lender_id" name="融出方id" display="false"/>     
+	<column type="string" id="lender_code" name="融出方代码"/>
+	<column type="string" id="lender_name" name="融出方名称"/>
+  	<column type="string" id="date" name="合同签署日期"/>
+    <column type="string" id="time" name="合同签署时间"/>    
+	<column type="number" id="currency_type" name="货币类型" display="false"/>
+	<column type="string" id="currency_type_name" name="货币类型"/>
+	<column type="string" id="availability_time" name="合同有效日期" display="false"/>
+    <column type="string" id="begin_time" name="合同起始日期"/>
+	<column type="string" id="return_time" name="合同到期日期"/>   
+	<column type="string" id="remark" name="备注说明"/>
+	<column type="number" id="accept_id" name="受理员id" display="false"/>
+	<column type="string" id="accept_name" name="受理员"/>
+	<column type="string" id="accept_time" name="受理日期"/>
+	<column type="number" id="manage_id" name="处理员id" display="false"/>
+	<column type="string" id="manage_name" name="处理员"/>
+	<column type="string" id="manage_opinion" name="处理意见"/>
+	<column type="string" id="manage_time" name="处理日期"/>
+	<column type="number" id="approver_id" name="审核员id"	display="false"/>
+	<column type="string" id="approver_name" name="审核员"/>
+	<column type="string" id="approver_opinion" name="审核意见"/>
+	<column type="string" id="approver_time" name="审核日期"/>
+	<column type="number" id="assessor_id" name="审批员id" display="false"/>
+	<column type="string" id="assessor_name" name="审批员"/>
+	<column type="string" id="assessor_opinion" name="审批意见"/>
+	<column type="string" id="assessor_time" name="审批日期"/>
+	<column type="number" id="double_check_id" name="复核员id" display="false"/>
+	<column type="string" id="double_check_name" name="复核员"/>
+	<column type="string" id="double_check_opin" name="复核意见"/>
+	<column type="string" id="double_check_time" name="复核日期"/>
+    <column type="number" id="credit_num" name="信用上限" display="false"/>
+    <column type="number" id="credit_level_id" name="信用级别" display="false"/>
+	<column type="string" id="credit_level_name" name="信用级别"/>
+    <!--<column type="string" id="move_tel" name="移动电话"/>
+	<column type="string" id="fix_tel" name="固定电话"/>
+	<column type="string" id="meet_tel" name="应急电话" display="false"/>
+	<column type="string" id="area_code" name="联系地址"/>
+	<column type="string" id="postalcode" name="邮政编码"/>
+	<column type="string" id="fax" name="传真"/>
+	<column type="string" id="email" name="电子邮件"/>-->
+	<column type="number" id="app_years" name="申请年数"/>
+	<column type="string" id="over_time" name="客户协议签署日期"/>
+  </output>
+</function>

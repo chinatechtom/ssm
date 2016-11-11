@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="gbk"?>
+<function id="60190117" name="股票质押业务交收统计表">
+	<input>   
+	 <item type="date" id="trade_date" name="查询日期"/>   
+  </input>
+  <service type="procedure" id="p60190117" process="933" style="77">
+	<param id="user_id" type="integer"/>  
+	<param id="trade_date" type="string"/>
+  </service>
+  <output export="true">
+    <column type="string" id="occur_date" name="交易日期"/>
+    <column type="string" id="cust_code" name="客户代码" />
+	<column type="string" id="cust_name" name="客户姓名"/>
+	<column type="string" id="sbond_no" name="交易协议书"/>
+	<column type="string" id="market_code" name="市场代码"/>
+	<column type="string" id="product_code" name="证券代码"/>
+	<column type="string" id="product_name" name="证券名称" />
+	<column type="string" id="curr_stk_vol" name="证券数量"/>
+	<column type="string" id="hg_rate" name="利率" />
+	<column type="string" id="trade_type" name="交易类型"/>
+	<column type="float" id="borrow_amt" name="借款额"/>
+	<column type="float" id="on_payback_amt" name="中途还本金"/>
+	<column type="float" id="on_interest_amt" name="中途还利息"/>
+	<column type="float" id="on_violate_amt" name="中途还违约"/>
+	<column type="float" id="qtfy" name="中途还其他" />
+	<column type="float" id="second_amt" name="购回金额"/>
+	<column type="float" id="payback_amt" name="购回还本金" />
+	<column type="float" id="on_interest_amt1" name="购回还利息"/>
+	<column type="float" id="on_violate_amt1" name="购回还违约" />
+	<column type="float" id="qtfy1" name="购回还其他"/>
+	<column type="float" id="hl_remain" name="红利金额"/>
+	<column type="string" id="engage_trade_date" name="初始交易日"/>
+  </output>
+</function>

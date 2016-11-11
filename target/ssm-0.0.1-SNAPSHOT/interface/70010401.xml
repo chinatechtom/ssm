@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70010401" name="客户最新评级因子查询">  
+	<input>
+		<item type="select"	id="institution_id" name="营业部名称" source="97000001"/>
+		<item type="hidden" id="cust_id" 		name="客户id"/>
+		<item type="text" 	id="cust_code" 		name="客户代码"/>
+		<item type="date" 	id="begin_date" 	name="开始日期"/>
+		<item type="date" 	id="end_date" 		name="结束日期"/>
+		<item type="hidden" id="cust_type"	  name="客户类型"/>
+		<item type="select" id="credit_invest_type"	  name="征信类别" source="913"/>
+	</input>
+	<service type="procedure" id="p70010401" process="922" style="77">
+		<param id="user_id" 		type="integer"/>
+		<param id="institution_id"	type="integer"/>
+		<param id="cust_id" 		type="integer"/>
+		<param id="cust_code"/>
+		<param id="begin_date"/> 
+		<param id="end_date" />
+		<param id="cust_type" />
+		<param id="credit_invest_type" />
+	</service> 
+	<output>
+		<column type="number" id="cust_id" 			name="客户id" 	display="false" />   
+		<column type="string" id="cust_code"		name="客户代码"/>
+		<column type="string" id="cust_name"		name="客户姓名"/>
+		<column type="string" id="full_name"		name="客户全称"/>
+		<column type="string" id="cust_type"		name="客户类型" display="false" />
+		<column type="number" id="instutition_id"	name="客户id" 	display="false"/>   
+		<column type="string" id="institution_code"	name="营业部代码"/>
+		<column type="string" id="institution_name"	name="营业部名称"/>
+		<column type="number" id="version_id" 		name="版本id" 	display="false" />
+		<column type="string" id="version_date"		name="最新评级日期"/>
+		<column type="string" id="active_date"		name="评级生效日期"/>
+		<column type="string" id="credit_type"		name="业务类别" display="false"/>
+		<column type="string" id="status"  			name="状态" 	display="false"/>
+		<column type="string" id="credit_type_name"	name="业务类别"/>
+		<column type="string" id="status_name"   	name="状态"/>
+		<column type="number" id="score" 			name="评级总分" precision="2"/>
+		<column type="number" id="credit_num" 		name="最大交易额度" precision="2"/>
+		<column type="number" id="credit_level_id" 	name="信用级别id" display="false"/>
+		<column type="string" id="credit_level_code"	name="信用级别代码"/>
+		<column type="string" id="credit_level_name" 	name="信用级别名称"/>
+		<column type="string" id="approver_code" 	name="审核人员代码"/>
+		<column type="string" id="approver_name"	name="审核意见姓名"/>
+		<column type="string" id="approver_opinion" name="审核意见"/>		
+		<column type="string" id="approver_time" 	name="审核时间"/>
+		<column type="string" id="assessor_code" 	name="审批人员代码"/>
+		<column type="string" id="assessor_name" 	name="审批人员姓名"/>
+		<column type="string" id="assessor_opinion" name="审批意见"/>
+		<column type="string" id="assessor_time" 	name="审批时间"/>
+		<column type="string" id="remark" 	name="备注"/>
+		<column type="string" id="credit_invest_type"		name="征信类别id" display="false"/>
+		<column type="string" id="credit_invest_name"	name="征信类别"/>
+		<button type="edit" id="edit" name="打印资质评级报告" action="70010456" extendaction="cust_type" multiple="0"/>
+	</output>
+	<assistant action="70010422">
+		<link src="cust_id" 	target="cust_id"/>
+		<link src="version_id"	target="version_id"/>
+	</assistant>
+</function>

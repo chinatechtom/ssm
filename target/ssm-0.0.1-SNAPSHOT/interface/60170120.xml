@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="60170120" name="股票质押资金信息查询" >
+  <input>
+	<item type="text" id="fund_no" name="资金编号"/>
+	<item type="text" id="fund_name" name="资金名称"/>
+	<item type="date" id="begin_date" name="开始日期"/>
+	<item type="date" id="end_date" name="结束日期"/>
+  </input>
+  <service type="procedure" id="P60170121" process="933" style="77">
+	<param id="user_id" type="integer"/>
+	<param id="fund_no" type="string"/>
+	<param id="fund_name" type="string"/>
+	<param id="begin_date" type="string"/>
+	<param id="end_date" type="string"/>
+  </service>
+  <output export="true">  
+  	<column type="string" id="fund_no"   name="资金编号" />
+    <column type="string" id="fund_name"   name="资金名称"/>
+    <column type="number" id="fund_level"   name="资金层级" />
+	<column type="string" id="set_date"   name="录入日期" />
+	<column type="string" id="begin_date"   name="生效日期"/>
+	<column type="string" id="end_date"   name="到期日期" />
+	<column type="number" id="total_fund"   name="总金额" precision="2"/>
+	<column type="number" id="used_fund"   name="已使用金额" precision="2"/>
+	<column type="number" id="curr_used_fund"   name="当前使用金额" precision="2"/>	
+	<column type="number" id="out_fund"   name="可取金额" precision="2"/>
+    <column type="number" id="balance"   name="可用金额" precision="2"/>
+    <column type="number" id="frz_balance"   name="冻结额度" precision="2"/>
+	<column type="string" id="project_code"   name="专属产品代码" />
+	<column type="string" id="project_name"   name="专属产品名称" />
+	<column type="number" id="lender_id"   name="融出方ID" display="false" />
+	<column type="string" id="lender_code"   name="融出方代码" />
+	<column type="string" id="lender_name"   name="融出方名称" />
+	<column type="string" id="set_date2"   name="设置日期"/>	
+	<column type="hidden" id="user_code"   name="操作人员" display="false"/>
+    <column type="string" id="user_name"   name="操作人员"/>
+	<column type="hidden" id="upd_user"   name="更新操作员" display="false"/>
+    <column type="string" id="upd_user_name"   name="更新操作员"/>
+	<column type="number" id="nsf_fund_credit"   name="当前小额质押的总额度" precision="2"/>
+	<column type="number" id="syje"   name="剩余多少额度未使用" precision="2"/>
+	<column type="string" id="remark"   name="备注" />
+	</output>
+</function>

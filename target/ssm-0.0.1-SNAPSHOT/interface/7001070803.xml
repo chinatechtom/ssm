@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="7001070803" name="交易协议书行权信息查询" >
+  <input>
+	<item type="hidden" id="sbond_id" name="sbond_id"/>
+  </input>
+  <service type="procedure" id="p7001070803" process="922" style="77">
+	<param type="integer" id="user_id"/>
+	<param type="integer" id="sbond_id"/>
+	<param type="string" id="sbond_no"/>
+  </service>
+  <output  export="true">  
+    <column type="string" id="market_code"   name="市场代码"/>
+	<column type="string" id="product_code"   name="证券代码"/>
+	<column type="string" id="product_name"   name="证券名称"/>
+	<column type="string" id="register_date"   name="登记日期"/>
+	<column type="string" id="division_type"   name="权益类型"/>
+	<column type="string" id="begin_date"   name="开始日期"/>
+	<column type="string" id="end_date"   name="结束日期"/>
+	<column type="string" id="arrived"   name="是否已入账"/>
+	<column type="number" id="division_vol"   name="权益数量" precision="0"/>
+	<column type="number" id="total_use_vol"   name="累计已行权数量" precision="0"/>
+	<column type="number" id="remain_vol"   name="剩余权益数量" precision="0"/>
+	<column type="string" id="stock_code"   name="行权代码"/>
+	<column type="number" id="price"   name="行权价格" precision="3"/>
+	<column type="string" id="circulate_date"   name="上市日期"/>
+	<column type="number" id="cust_in_money"   name="客户转入资金余额" precision="2"/>
+	<column type="number" id="remain_vol2"   name="使用客户资金可行权数" precision="0"/>
+  </output>
+</function>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3011702" name="模拟试算" >
+  <input>	
+	<item type="hidden" id="cust_id" name="客户id" />
+	<item type="text" id="bs_fund" name="取钱方向" />
+	<item type="text" id="bs_fund_amount" name="取补金额"/>
+	<item type="text" id="bs_stock" name="证券买卖方向" />
+	<item type="text" id="market" name="市场代码" />
+	<item type="text" id="product_code" name="证券代码"/>
+	<item type="text" id="product_amount" name="证券买卖数量"/>
+	<item type="text" id="product_price" name="证券买卖价格"/>
+  </input>
+  <service type="procedure" id="p_test_calculate_assure_rate_insert" process="911" style="1">
+	<param id="user_id" type="integer"/>
+	<param id="cust_id" type="integer"/>	
+	<param id="bs_fund"/>
+	<param id="bs_fund_amount" type="double"/>
+	<param id="bs_stock"/>
+	<param id="market"/>
+	<param id="product_code"/>
+	<param id="product_amount"/>
+	<param id="product_price" type="double"/>
+  </service>
+  <output print="true">    
+  	<column type="number" id="cust_id"   name="客户号"  display="false" />
+    <column type="string" id="cust_code"   name="客户代码"/>
+    <column type="string" id="cust_name"   name="客户姓名"/>
+	<column type="number" id="test_assure_rate"   name="模拟后维持担保比例" precision="4"/>
+    <column type="string" id="bs_fund"   name="存取钱方向" display="false"/>
+	<column type="string" id="bs_fund_name"   name="存取钱方向"/>
+    <column type="number" id="fund_amount"   name="存取钱金额" precision="2"/>
+    <column type="string" id="bs_stock"   name="买卖证券方向"  display="false"/> 
+	<column type="string" id="bs_stock_name"   name="买卖证券方向"/> 
+    <column type="string" id="market_code"   name="市场代码" display="false"/> 
+	<column type="string" id="market_name"   name="市场名称" /> 
+    <column type="string" id="product_code"     name="证券代码"/>
+    <column type="string" id="product_name"     name="证券名称"/>
+    <column type="number" id="product_price"   name="证券价格" precision="3"/>
+	<column type="number" id="product_amount"   name="证券数量" precision="0"/>  
+	<column type="string" id="time"     name="模拟时间"/>
+  </output>
+</function>

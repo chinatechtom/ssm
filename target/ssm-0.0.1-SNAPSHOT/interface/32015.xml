@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="32015" name="申报数据总账核对" >	
+	<input/>
+	<service type="procedure" id="p_data_declare_check"  process="911" style="77"> 				            
+	</service>
+	<output>
+		<column type="string" id="current_date1"	name="当前日期"/>
+		<column type="number" id="fin_yes"			name="昨日融资余额"/>
+		<column type="number" id="fin_today"		name="今日融资余额"/>
+		<column type="number" id="rzmr"				name="今日融资买入"/>
+		<column type="number" id="rzch"				name="今日融资偿还"/>
+		<column type="number" id="rzpc"				name="今日融资平仓"/>
+		<column type="number" id="bs_yes"			name="昨日融券余量"/>
+		<column type="number" id="bs_today"			name="今日融券余量"/>
+		<column type="number" id="bs_sell"			name="今日融券卖出"/>
+		<column type="number" id="rqch"				name="今日融券偿还"/>
+		<column type="number" id="bs_buy"			name="今日买券还券"/>
+		<column type="number" id="bs_pc"			name="今日融券平仓"/>
+	</output>		
+</function>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3060151" name="自定义群发邮件客户查询">
+	<input>
+		<item type="text" 	id="cust_code"	name="客户代码"/>
+	</input>
+	<service type="procedure" id="p_special_cust_query" implement="p_special_cust_query3060151" process="911" style="77">
+		<param id="user_id"		type="integer"/>
+		<param id="cust_code"	type="string"/>
+	</service>
+	<output>
+		<column type="number" 	id="cust_id"	name="客户ID"	display="false"/>
+		<column type="string" 	id="cust_code"	name="客户代码"/>
+		<column type="string" 	id="cust_name"	name="客户名称"/>
+		<button type="edit"		id="edit"		name="自定义群发邮件客户导入"	action="306015101"	multiple="-1"/>
+	</output>
+</function>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="306014603" name="单个取征信数据" >
+  <input>
+	<item type="text"   id="branch_code_zx"	    name="征信营业部代码"        nullable="false"  editable="false"/>
+	<item type="text"   id="cust_code"	        name="信用资金账号"          nullable="false"  editable="false"/>
+	<item type="text"   id="commness_cust_code"	name="普通资金账号"          nullable="false"  editable="false" action="306014609"/>
+	<item type="text"   id="zx_begin_date"      name="征信统计起始日期"      nullable="false"  editable="false"/>
+	<item type="text"	id="zx_end_date"        name="征信统计结束日期"      nullable="false"  editable="false"/>
+	<item type="text"	id="asset_total_pdr"	name="资产规模(元)"	      nullable="false"/>
+	<item type="text"	id="year_yield"			name="账户整户年化收益率(%)"	 nullable="false"/>
+	<item type="text"	id="hs300_yield_year"	name="沪深300年化收益率(%)"	 nullable="false"/>
+	<item type="text"	id="rz_year_yield"			    name="融资业务年化收益率(%)"	 nullable="false"/>
+	<item type="text"	id="rq_year_yield"			    name="融券业务年化收益率(%)"	 nullable="false"/>
+	<item type="text"	id="min_gurantee_rate"			name="最低维持担保比例(%)"	     nullable="false"/>
+	<item type="text"	id="credit_use_rate"			name="日均授信额度使用率(%)"	 nullable="false"/>
+	<item type="text"	id="itst_ctb"					name="息费贡献(元)"	         nullable="false"/>
+	<item type="text"	id="itst_ctb_rate"				name="息费贡献率(%)"	         nullable="false"/>
+	<item type="text"	id="total_rzrq_commission"		name="总信用交易佣金(元)"	 nullable="false"/>
+	<item type="text"	id="comm_rate"				    name="信用交易佣金贡献率(%)"	 nullable="false"/>
+	<item type="text"	id="turn_over_rate"		        name="信用账户换手率(%)"	     nullable="false"/>
+	<item type="text"	id="credit_turn_over_rate"		name="授信额度换手率(%)"	     nullable="false"/>
+	
+  </input>
+  <service type="procedure" id="p_cust_scd_credit_zx_import"  process="811" style="1">
+	<param type="integer" id="user_id"/>
+	<param type="string" id="cust_code"/>
+	<param type="double" id="asset_total_pdr"/>
+	<param type="double" id="year_yield"/>
+	<param type="double" id="hs300_yield_year"/>
+	<param type="double" id="rz_year_yield"/>
+	<param type="double" id="rq_year_yield"/>
+	<param type="double" id="min_gurantee_rate"/>
+	<param type="double" id="credit_use_rate"/>
+	<param type="double" id="itst_ctb"/>
+	<param type="double" id="itst_ctb_rate"/>
+	<param type="double" id="total_rzrq_commission"/>
+	<param type="double" id="comm_rate"/>
+	<param type="double" id="turn_over_rate"/>
+	<param type="double" id="credit_turn_over_rate"/>
+  </service>
+</function>

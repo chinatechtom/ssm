@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="340144" name="获取机构征信系统数据(日均资产规模,收益率,投资经验)">
+	<input>
+		<item type="hidden" id="cust_code" name="信用资金账号"/> 
+		<item type="hidden" id="date" name="系统日期"/>	
+	</input>
+	<service type="procedure" id="kingstar.P37815013" adapter="newzhengxin" implement="P37815013" process="155" style="77">
+		<param id="cust_code"	type="string" />
+		<param id="user_code"	type="string" default="rzrqgl" />
+	</service>
+	<output> 
+	<column type="string" id="abs_profit_rate"  name="年化收益率(%)" />
+	<column type="string" id="avg_asset" name="日均资产规模(万元)"  />
+	<column type="string" id="tx_date" name="投资经验"/>  
+	<column type="string" id="into_data_240" field="abs_profit_rate"  name="年化收益率(%)"/>
+	<column type="string" id="into_data_245" field="avg_asset"  name="日均资产规模(万元)"/>
+	<column type="string" id="into_data_234" field="tx_date"  name="投资经验"/> 
+	<column type="string" id="into_data_277"  field="evaluate_dict"  name="风险评测"/> 
+	<column type="string" id="into_data_39"  field="abs_profit_rate"  name="年化收益率(%)"/>
+	<column type="string" id="into_data_61"  field="avg_asset"  name="日均资产规模(万元)"/>
+	<column type="string" id="into_data_44"  field="tx_date"  name="投资经验"/> 
+	<column type="string" id="into_data_77"  field="evaluate_dict"  name="风险评测"/> 
+	</output> 
+</function>

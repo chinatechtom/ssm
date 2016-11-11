@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="60100163" name="存客户资金">
+	<input/>
+	<service type="procedure" id="P60100163" process="933" style="77" adapter="psr">
+		<param type="integer" id="user_id"/>
+		<param type="string" id="capital_account"/>
+		<param type="float"  id="balance"/>
+		<param type="float"  id="total_capital"/>
+		<param type="float"  id="avail_fund"/>
+	</service>
+	<output target="60100164">
+		<column type="string" id="sbranch_code1"	name="营业部代码"/>
+		<column type="string" id="scust_no"			name="客户代码"/>
+		<column type="number" id="damt0"			name="扣款金额"/>
+		<column type="string" id="snote"			name="备注"/>
+	</output>
+</function>

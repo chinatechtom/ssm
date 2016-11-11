@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="30666" name="处理客户解冻合同申请" >
+  <input>	
+	<item type="hidden" id="order_id" name="定单id" />	
+  </input>
+  <service type="procedure" id="p_no_frozen_bond_modi" process="811" style="1">
+	<param type="integer" id="user_id" way="in"/>	
+	<param type="integer" id="order_id"  way="in"  />
+  </service>
+  <output/>
+</function>

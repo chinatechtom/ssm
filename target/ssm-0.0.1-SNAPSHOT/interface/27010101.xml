@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="27010101" name="融资融券额度业务汇总统计" >
+	<input>
+    <item type="date"  id="in_date"        name="日期选择" />                     
+  </input>
+  <service type="procedure" id="P27010101"  process="911" style="77">
+		<param id="user_id"               type="integer" way="in"/>
+		<param id="in_date"               type="string"  way="in"/> 
+  </service>
+ <output>
+		<column type="number" id="fin_scale"     name="公司批准融资额度"    precision="2"/>
+		<column type="number" id="fin_app"       name="已发放融资额度"          precision="2"/>        
+		<column type="number" id="fix_fin_app"   name="固定融资额度"            precision="2"/>
+		<column type="number" id="fix_fin_use"   name="固定融资已用金额"        precision="2"/>   
+		<column type="number" id="fix_fin_no_use"   name="固定融资未用金额"     precision="2"/>
+		<column type="number" id="fix_use_rate"     name="固定融资额度使用率"   precision="6"/>        
+		<column type="number" id="unfix_fin_app"    name="非固定融资额度"       precision="2"/>
+		<column type="number" id="unfix_fin_use"    name="非固定融资已用金额"   precision="2"/>             
+		<column type="number" id="unfix_fin_no_use" name="非固定融资未用金额"   precision="2"/>
+		<column type="number" id="unfix_use_rate"   name="非固定融资额度使用率" precision="6"/>        
+		<column type="number" id="fin_app_subtotal" name="发放融资额度小计"     precision="2"/>
+		<column type="number" id="fin_use_subtotal" name="使用融资金额小计"     precision="2"/>             
+		<column type="number" id="fin_no_use_subtotal"   name="未使用融资金额小计" precision="2"/>
+		<column type="number" id="remain_fin_scale" name="剩余融资发放额度"     precision="2"/>   
+		
+        <column type="number" id="bs_scale"     name="公司批准融券额度"    precision="2"/>
+		<column type="number" id="bs_app"       name="已发放融券额度"          precision="2"/>        
+		<column type="number" id="fix_bs_app"   name="固定融券额度"            precision="2"/>
+		<column type="number" id="fix_bs_use"   name="固定融券已用金额"        precision="2"/>   
+		<column type="number" id="fix_bs_no_use"   name="固定融券未用金额"     precision="2"/>
+		<column type="number" id="fix_use_rate_bs"     name="固定融券额度使用率"   precision="6"/>        
+		<column type="number" id="unfix_bs_app"    name="非固定融券额度"       precision="2"/>
+		<column type="number" id="unfix_bs_use"    name="非固定融券已用金额"   precision="2"/>             
+		<column type="number" id="unfix_bs_no_use" name="非固定融券未用金额"   precision="2"/>
+		<column type="number" id="unfix_use_rate_bs"   name="非固定融券额度使用率" precision="6"/>        
+		<column type="number" id="bs_app_subtotal" name="发放融券额度小计"     precision="2"/>
+		<column type="number" id="bs_use_subtotal" name="使用融券金额小计"     precision="2"/>             
+		<column type="number" id="bs_no_use_subtotal"   name="未使用融券金额小计" precision="2"/>
+		<column type="number" id="remain_bs_scale" name="剩余融券发放额度"     precision="2"/>          		
+		<!--<column type="number" id="lack_fund_app"    name="专户资金不足的申请额度"   precision="2"/> -->
+		<column type="string" id="in_date"          name="查询日期"   display="false"/> 
+		<button type="print" id="print" name="打印" action="27110101" multiple="1"/>                 
+</output>
+</function>  

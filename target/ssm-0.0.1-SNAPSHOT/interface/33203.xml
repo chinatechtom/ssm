@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="33203" name="盘后融券明细查询" >
+	<input export="true">
+		<item type="select" id="institution_id" name="营业部名称"  source="95000008"/>
+		<item type="text" 	id="cust_code" 		name="客户代码" nullable="false"/>
+		<item type="text" 	id="product_code" 	name="证券代码"/>
+		<item type="date" 	id="sdate" 			name="起始日期" default="last" />
+		<item type="date" 	id="edate" 			name="结束日期" default="now"  />
+	  <group name="辅助查询">
+	    <item type="date" 	id="payback_sdate"   name="最近偿还起始日期" default="null" />
+		<item type="date" 	id="payback_edate"   name="最近偿还结束日期" default="null"  /> 
+      </group>		
+	  <group name="分页查询" page="true">
+		<item type="text"   id="page_num"       name="页码"     integer="true" default="1"/>
+		<item type="select"   id="rows_num"       name="每页行数" integer="true" source="95000012" nullable="false"/>
+	  </group>	  
+	</input>
+	<service type="procedure" id="p_stock_interest_detail_query" process="911" style="77">
+		<param id="user_id" 	type="integer" way="in" /> 
+		<param id="page_num"    type="integer" />
+		<param id="rows_num"    type="integer" />		
+		<param id="institution_id" type="integer"/>
+		<param id="sdate" 	/>
+		<param id="edate"  	/> 
+		<param id="payback_sdate" 	/>
+		<param id="payback_edate"  	/>			
+		<param id="cust_code" />
+		<param id="product_code" />
+  	</service>
+  	<output print="ture">
+		<column type="string" id="institution_name"   	name="营业部名称"   	/>
+		<column type="string" id="institution_code"   	name="营业部代码"/>
+		<column type="string" id="CUST_NO"   			name="客户代码"  	/>
+		<column type="string" id="cust_name"   			name="客户姓名"  	/>
+		<column type="string" id="HOLDER_ACC_NO"   		name="证券账户"   	/>
+    	<column type="string" id="OCCUR_DATE"   		name="发生日期"   	/>
+    	<column type="string" id="repay_date"   		name="偿还期限"   />
+    	<column type="string" id="MARKET_CODE"   		name="市场"   	/>
+        <column type="string" id="MARKET_CODE2"   		name="市场代码"   	/>
+    	<column type="string" id="SEC_CODE"   			name="证券代码"   	/>
+    	<column type="string" id="SEC_NAME"   			name="证券名称"   	/>
+    	<column type="number" id="OCCUR_VOL"   			name="融券卖出数量"   	precision="2"/>    	
+    	<column type="number" id="price"   				name="卖出价格"			precision="3"	display="false"/>   	
+		<column type="number" id="OCCUR_BAL"   			name="融券卖出金额"		precision="2"	display="false"/>
+    	<column type="number" id="PAYBACK_VOL"   		name="融券已还数量"  	precision="2"/>
+    	<column type="number" id="PAYBACK_BAL" 			name="融券已还金额"  	precision="2"	display="false"/>
+    	<column type="string" id="LAST_PAYBACK_DATE"   	name="最近偿还日期"  	/>
+    	<column type="number" id="fee_sum"    			name="融券利息费用"		precision="2"	display="false"/>    	
+    	<column type="number" id="DONE_AMT"   			name="成交金额"   	/>
+    	<column type="string" id="serial_no"   			name="流水号"   	/>
+  		<column type="string" id="NOTE"   				name="备注"   		precision="2"/>
+	</output>
+</function>

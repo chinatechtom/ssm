@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="34022" name="网厅授信变更营业部提交" >
+	<description>确认批量提交客户网厅授信变更申请吗?</description>
+	<input>
+  		<item  type="hidden" id="order_id" name="请求ID"/>  
+	</input>
+	<service type="procedure" id="P17000024" process="811" style="77">
+		<param id="user_id" type="integer" way="in" />  
+		<param id="order_id" type="string" way="in"/> 
+	</service> 	
+	<output/>
+</function>

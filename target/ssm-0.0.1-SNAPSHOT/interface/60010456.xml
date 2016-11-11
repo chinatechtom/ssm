@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="60010456" name="客户网上协议签署申请">  
+  <input>
+	<item type="text" 	id="cust_code" name="客户代码" nullable="false"/>
+	<item type="hidden" id="cert_no" name="证件号码"/>
+	<item type="select" id="lender_id" name="融出方" source="97600001" nullable="false"/>
+  </input>
+   <service type="procedure" id="P60010456" process="933" style="77">
+	<param type="integer" 	id="user_id"/> 
+	<param type="string"	id="cust_code"/>
+	<param type="string"	id="cert_no"/>
+	<param type="integer" 	id="lender_id"/>
+  </service> 
+  <output>
+    <column type="number" id="cust_id" name="客户id" display="false"/>   
+    <column type="string" id="cust_code" name="客户代码"/>
+	<column type="string" id="cust_name" name="客户姓名"/>
+	<column type="string" id="cert_type" name="证件类型1" display="false"/>
+	<column type="string" id="cert_type_name" name="证件类型"/>
+    <column type="string" id="cert_no" name="证件号码"/>
+	<column type="string" id="cust_type" name="客户类型1" display="false"/>
+	<column type="string" id="cust_type_name" name="客户类型"/>
+	<column type="string" id="move_tel" name="移动电话"/>
+	<column type="string" id="fix_tel" name="固定电话"/>
+	<column type="string" id="family_address" name="家庭地址"/>
+	<column type="string" id="email" name="电子邮箱"/>
+	<column type="string" id="ps_code" name="邮政编码"/>
+	<column type="string" id="fax" name="传真"/>
+	<column type="number" id="credit_num" name="最大交易额度"/>
+	<column type="number" id="credit_num_net" name="最大网上交易额度"/>
+	<column type="number" id="lender_id" name="lender_id"  display="false" />	
+	<button type="edit"   id="edit" name="客户网上协议签署申请" action="60010457" multiple="0"/>
+  </output>
+</function>

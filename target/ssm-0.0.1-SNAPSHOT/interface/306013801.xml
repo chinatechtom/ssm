@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="306013801" name="机构评级因子批量修改" >	
+	<input> 
+		<item type="hidden"   id="versionid" name="评级因子编号" editable="false"/>
+		<item type="text"   id="cust_code" name="客户代码" editable="false"/> 
+		<item type="text"   id="cust_name" name="客户姓名" editable="false"/>
+		<item type="hidden"	id="cust_id" action="306013804"/>
+		<group name="1">		
+			<item type="hidden"	id="ratingfactor_sort_101"  default="201"/>
+			<item type="select"	id="data_code_101"	filter="ratingfactor_sort_101"	name="成立时间" source="95000007" nullable="false"/>
+			<item type="text"   id="into_data_101"  name="客户实际信息"  />
+		</group>
+		<group name="2">	
+			<item type="hidden"	id="ratingfactor_sort_102"  default="204"/>
+			<item type="select"	id="data_code_102"	filter="ratingfactor_sort_102"	name="规模" source="95000007" nullable="false"/>
+			<item type="text"   id="into_data_102"  name="客户实际信息" action="3042234" number="true"/>
+		</group>	
+		<!--group name="3">		
+			<item type="hidden"	id="ratingfactor_sort_104"  default="210"/>
+			<item type="select"	id="data_code_104"	filter="ratingfactor_sort_104"	name="是否上市公司" source="95000007" nullable="false"/>
+			<item type="text"   id="into_data_104"  name="客户实际信息" />
+		</group-->
+		<group name="4">		
+			<item type="hidden"	id="ratingfactor_sort_124"  default="265"/>
+			<item type="select"	id="data_code_124"	filter="ratingfactor_sort_124"	name="财务报表提供情况" source="95000007" nullable="false"/>
+			<item type="text"   id="into_data_124"  name="客户实际信息" />
+		</group>
+		<group name="5">		
+			<item type="hidden"	id="ratingfactor_sort_106"  default="213"/>
+			<item type="select"	id="data_code_106"	filter="ratingfactor_sort_106"	name="上年度净资产收益率" source="95000007" nullable="false"/>
+			<item type="text"   id="into_data_106"  name="客户实际信息" action="3042235" number="true"/>
+		</group>
+		<group name="6">			
+			<item type="hidden"	id="ratingfactor_sort_107"  default="216"/>
+			<item type="select"	id="data_code_107"	filter="ratingfactor_sort_107"	name="最近一年资产负债率" source="95000007" nullable="false"/>
+			<item type="text"   id="into_data_107"  name="客户实际信息" action="3042236" number="true"/>
+		</group>	
+		<group name="7">
+            <item type="hidden"	id="ratingfactor_sort_110"  default="240"/>
+			<item type="select"	id="data_code_110"	filter="ratingfactor_sort_110"	name="账户绝对收益水平" source="95000007" nullable="false"/>
+			<item type="text"   id="into_data_110"  name="客户实际信息" action="3042238" number="true"/>
+		</group>
+		<group name="8">
+			<item type="hidden"	id="ratingfactor_sort_112"  default="234"/>	
+			<item type="select"	id="data_code_112"	filter="ratingfactor_sort_112"	name="投资经验" source="95000007" nullable="false"/>
+			<item type="text"   id="into_data_112"  name="客户实际信息" action="3042240" number="true"/>
+		</group>
+		<group name="9">	
+			<item type="hidden"	id="ratingfactor_sort_118"  default="245"/>	
+			<item type="select"	id="data_code_118"	filter="ratingfactor_sort_118"	name="日均资产规模" source="95000007" nullable="false"/>
+			<item type="text"   id="into_data_118"  name="客户实际信息" action="3042246" number="true"/>
+        </group>	
+		<group name="10">	
+			<item type="hidden"	id="ratingfactor_sort_121"  default="260"/>	
+			<item type="select"	id="data_code_121"	filter="ratingfactor_sort_121"	name="考试成绩" source="95000007" nullable="false"/>
+			<item type="text"   id="into_data_121"  name="客户实际信息" action="3042248" number="true"/>
+		</group>	
+		<group name="11">	
+            <item type="hidden"	id="ratingfactor_sort_120"  default="259"/>	
+			<item type="select"	id="data_code_120"	filter="ratingfactor_sort_120"	name="其他机构记录" source="95000007" nullable="false"/>
+			<item type="text"   id="into_data_120"  name="客户实际信息" />
+		</group>	
+		<group name="12">	
+            <item type="hidden"	id="ratingfactor_sort_123"  default="264"/>
+			<item type="select"	id="data_code_123"	filter="ratingfactor_sort_123"	name="金融资产" source="95000007" nullable="false"/>
+			<item type="text"   id="into_data_123"  name="客户实际信息" action="3042249" number="true"/>
+		</group>
+		<group name="13">	
+            <item type="hidden"	id="ratingfactor_sort_125"  default="277"/>
+			<item type="select"	id="data_code_125"	filter="ratingfactor_sort_125"	name="风险评测级别" source="95000007" nullable="false"/>
+			<item type="text"   id="into_data_125"  name="客户实际信息" action="3042249" number="true"/>
+		</group>
+	</input>
+	<service type="procedure" id="p_cust_ratingfactor_modify"  implement="p_cust_ratingfactor_modify306013802" process="811" style="1"> 
+	    <param id="user_id"	type="integer"/>
+		<param id="cust_id"	type="integer"/>
+		<param id="ratingfactor_type" />
+		<param id="ratingfactor_sort@"/>
+		<param id="ratingfactor_name"/>
+		<param id="into_data@"/>
+		<param id="data_code@"/>
+		<param id="versionid" type="integer"/>
+	</service>
+	<output/>	
+</function>

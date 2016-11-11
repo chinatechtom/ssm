@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3050702" name="客户内控维持担保比例修改" >	
+  <input> 
+		<item type="text"	id="cust_code"		     name="客户代码"/>
+		<item type="text"	id="spec_gua_rate"	     name="内控担保率"/>
+  </input>
+  <service type="procedure" id="p_special_gua_rate_set" implement="p_special_gua_rate_set3050702"  process="811" style="1"> 
+		<param id="user_id"				type="integer" way="in"/>
+		<param id="cust_code"	        type="string"  way="in"/>
+		<param id="spec_gua_rate"	type="double"  way="in"/>
+		<param id="operation_type"	    type="string"  way="in" default="2"/><!-- 1 新增 2 修改 3 删除 -->
+  </service>	
+</function>

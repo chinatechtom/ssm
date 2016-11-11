@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="60070101" name="资金专户额度查询" >
+	<input/>
+    <service type="procedure" id="P60070101"  process="933" style="77">
+		<param id="user_id"	            type="integer" way="in"/> 			
+    </service>
+    <output autoload="true" export="true">
+		<column type="number" id="acc_id"		name="账户id" display="false"/>	
+		<column type="number" id="fund_credit"	name="公司授权业务规模" precision="2"/>
+		<column type="number" id="sh_fund_credit"	name="沪A授权业务规模" precision="2"/>
+		<column type="string" id="grant_date"	name="授权日期"/>
+		<column type="string" id="user_code"	name="设置人员"/>
+		<column type="number" id="credit_amt_1"	name="总合同融出资金" precision="2"/>
+		<column type="number" id="credit_amt_2"	name="总合同预留资金" precision="2"/>
+		<column type="number" id="credit_amt_4"	name="总合约预留未生效资金" precision="2"/>
+		<column type="number" id="credit_amt_3"	name="总合同了结未收回额度" precision="2"/>
+		<column type="number" id="credit_amt_11"	name="自营合同融出资金" precision="2"/>
+		<column type="number" id="credit_amt_21"	name="自营合同预留资金" precision="2"/>
+		<column type="number" id="credit_amt_41"	name="自营合约预留未生效资金" precision="2"/>
+		<column type="number" id="credit_amt_31"	name="自营合同了结未收回额度" precision="2"/>
+		<column type="number" id="one_max"	name="单笔交易协议书最大金额" precision="2"/>
+		<column type="number" id="all_stock_pna"	name="所有协议书金额占竟资本比例(%)" precision="2"/>
+		<column type="number" id="zy_credit"	name="自营授权业务规模" precision="2"/>
+		<column type="number" id="zy_credit_pna"	name="自营授权业务规模占净资本比例(%)" precision="2"/>
+		<column type="number" id="nsf_fund_credit"	name="新股融通授权规模" precision="2"/>
+		<column type="number" id="nsf_daily_credit"	name="当日新股融通可用额度" precision="2"/>
+		<button type="edit" id="edit" name="资金专户额度增加" action="60070102" multiple="-1"/>
+		<button type="edit" id="edit" name="资金专户额度设置" action="60070103" multiple="0"/>
+    </output>
+</function>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="32317" name="融资融券交易账户报备表" >
+  <input export="true">	
+	<item type="hidden" id="insitution_id" name="机构号"/>
+	<item type="hidden" id="cust_id" name="客户号"/>
+	<item type="text" id="cust_code" name="客户代码" />
+	<item type="text" id="cust_name" name="客户姓名" />
+	<item type="text" id="cert_no" name="证件号码" />
+	<item type="text" id="insitution_code" name="机构代码" />
+	<group name="分页查询" page="true">		
+		<item type="text"   id="page_num"       name="页码"     integer="true" default="1"/>
+		<item type="select" id="rows_num"       name="每页行数" integer="true" source="95000012" nullable="false"/>
+	</group>
+  </input>
+  <service type="procedure" id="p_cust_info_browse" process="911" style="77">
+	<param id="user_id" type="integer"/>
+	<param id="page_num" type="integer"/>
+	<param id="rows_num" type="integer"/>	
+	<param type="integer" id="insitution_id"/>
+	<param id="cust_id" type="integer"/>	
+	<param id="cust_code"/>
+	<param id="cust_name"/>
+	<param id="cert_no"/>
+	<param id="insitution_code"/>
+  </service>
+  <output export="true">    
+  	<column type="number" id="cust_id"   name="客户号"  display="false" />
+    <column type="string" id="cust_code"   name="客户代码"  />
+	<column type="string" id="commness_cust_code"   name="普通资金账户"  />
+    <column type="string" id="cust_name"   name="客户姓名"  />
+    <column type="string" id="cust_type"   name="客户类型"  display="false"/>
+    <column type="string" id="cust_sort"   name="客户类别"  />
+    <column type="string" id="gender"   name="性别"  />
+    <column type="string" id="cert_type"   name="证件类型" /> 
+    <column type="string" id="cert_number"   name="证件号码" /> 
+    <column type="string" id="area_code"     name="联系地址"/>
+    <column type="string" id="postalcode" name="邮政编码"/>
+	<column type="string" id="open_oper" name="开户人员"  display="false"/>   
+	<column type="string" id="open_date"  name="开户日期" />   
+	<column type="string" id="close_date"  name="销户日期"  display="false"/>   
+	<column type="string" id="close_oper"  name="销户人员"  display="false"/>   
+	<column type="string" id="regi_state"  name="记录状态" display="false"/>   
+	<button type="view"	   id="view"					name="查看"        action="32138"	multiple="0"/>	
+	</output>
+  
+
+</function>

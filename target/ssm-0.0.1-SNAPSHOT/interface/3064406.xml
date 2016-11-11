@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3064406" name="查询授信申请的得分情况_信用柜台" >
+  <input>	
+	<item type="hidden" id="order_id"   name="合约ID" />
+	<item type="hidden" id="cust_id"	name="cust_id"/>
+  </input>
+  <service type="procedure" id="p_order_credit_report_score_query_2" process="911" style="77">
+	<param id="user_id"    	type="integer"/>
+	<param id="order_id"   	type="integer"/>
+	<param id="cust_id"   	type="integer"/>
+	<param id="cust_code"   type="string"/>
+	<param id="net_assets" type="double"/>
+	<param id="additional_score" type="double"/>
+  </service>
+  <output export="true">  
+    <column type="number" id="credit_abs_benefit_rate"			name="绝对收益率(%)"   				precision="2"/>  
+  	<column type="number" id="market300_rate"   				name="同期沪深300年化收益率（%）"	precision="2"/>  
+	<column type="number" id="relative_benefit_rate"     		name="相对收益率（%）"				precision="2"/>  
+  	<column type="number" id="relative_benefit_get_score"       name="相对收益得分"					precision="2"/>  
+  	<column type="number" id="credit_usage_rate"    			name="日均授信额度使用率（%）"     precision="2"/>
+	<column type="number" id="credit_usage_score"     			name="日均授信额度使用得分" 		precision="2"/>
+	<column type="number" id="credit_exchange_rate"				name="授信额度换手率" 				precision="2"/>
+	<column type="number" id="credit_exchange_score"        	name="授信额度换手率得分"			precision="2"/>
+	<column type="number" id="credit_commission_charge"     	name="信用交易佣金（万元）"   		precision="4"/>
+	<column type="number" id="credit_commission_score"      	name="信用交易佣金得分"   			precision="2"/>
+	<column type="number" id="credit_interest_charge"			name="信用交易息费收入（万元）" 	precision="4"/>
+	<column type="number" id="credit_interest_score"			name="信用交易息费收入得分" 		precision="2"/>
+	<column type="number" id="credit_overall_score"				name="综合得分"   					precision="2"/>
+	<column type="number" id="credit_limit_factor_changed"		name="信用上限系数（变更时）"   	precision="2"/>
+	<column type="number" id="credit_begin_date"                name="以上数据统计起始日期" />
+	<column type="number" id="credit_end_date"       			name="以上数据统计结束日期" />
+	<column type="number" id="net_assets_get_score_4406"        field="net_assets_get_score" name="净资产得分" precision="2" />  
+	</output>
+</function>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="31315" name="用户权限审批">
+	<input>
+		<item type="text"		id="user_code"	name="用户代码" editable="false"/>
+		<item type="text"		id="user_name"	name="用户名称" editable="false"/>
+		<item type="checkbox"   id="role_id"	name="权限名称" source="90000009"/>
+		<item type="radio"		id="type"		name="审批结果" source="305"/>
+	</input>
+	<service type="procedure" id="p_user_approve_role_set_by_step" implement="p_user_approve_role_set_by_step31315"  process="811" style="1">
+		<param id="user_id"		type="integer"  way="in"/>
+		<param id="user_code"	type="string"   way="in"/>
+		<param id="user_name"	type="string"   way="in"/>
+		<param id="role_id"		type="string"   way="in"/>
+		<param id="type"		type="string"   way="in"/>
+	</service>
+	<output/>
+</function>

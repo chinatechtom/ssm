@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="27050135" name="客户资产集中度统计" >
+     <input>
+      <item type="select"  id="institution_id"        name="营业部名称" source="95000008"/> 
+      <item type="text"  id="cust_num"        name="客户数量*" default="1000"/>           
+     </input>
+  <service type="procedure" id="P27050135"  process="911" style="77">
+      <param id="user_id"               type="integer" way="in"/> 
+       <param id="institution_id"      type="integer" way="in"/> 
+       <param id="cust_num"      type="integer" way="in"/>                     
+   </service>
+ <output print="true">
+        <column type="number" id="row_id" name="序号" /> 
+        <column type="string" id="institution_name"   name="营业部名称"/>   
+        <column type="string" id="cust_code" name="客户号" />        
+        <column type="string" id="cust_name"   name="客户姓名"/>
+        <group name="客户资产">
+        <column type="number" id="fund_amt" name="资金" precision="2" /> 
+        <column type="number" id="gua_amt"   name="担保证券市值" precision="2" />   
+        <column type="number" id="total" name="合计" precision="2" />        
+        <column type="number" id="rate"   name="占比" precision="6" />         
+        </group>
+                <group name="已发放融资额度"> 
+        <column type="number" id="fix_fin" name="固定" precision="2" />        
+        <column type="number" id="unfix_fin"   name="非固定" precision="2"/>         
+        </group>
+                        <group name="客户融资额"> 
+        <column type="number" id="used_fix_fin" name="固定" precision="2" />        
+        <column type="number" id="used_unfix_fin"   name="非固定" precision="2"/>         
+        </group>
+                 <column type="number" id="bs_num" name="已发放融券市值" precision="2"/>   
+                 <column type="number" id="bs_value"   name="融券卖出市值" precision="2" />              
+</output>
+</function>  

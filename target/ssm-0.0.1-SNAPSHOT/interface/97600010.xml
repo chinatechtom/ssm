@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="97600010" name="计算初始交易金额">
+	<input/>
+	<service type="procedure" id="P97600010"  process="933" style="77">
+		<param id="user_id" type="integer"/>
+		<param id="smarket_code" type="string"/>
+		<param id="sstock_code" type="string"/>
+		<param id="lvol0" type="integer"/>
+		<param id="damt2" type="double"/>
+		<param id="damt1" type="double"/>
+		<param id="stx_pwd" type="string"/>
+		<param id="sstatus3" type="string"/>
+	</service>
+	<output export="true">  
+		<column type="number" id="first_amt"   name="初始交易金额" precision="2"/>
+	</output>
+</function>

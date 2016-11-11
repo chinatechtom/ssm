@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3064444427" name="融资合约提前终止处理" >
+  <input>
+	<item type="hidden" id ="order_id" name="合约id" editable="false"/>
+	<group name="合约信息">		
+	<item type="text" id ="cust_code" name="客户代码" editable="false"/>
+	<item type="text" id ="cust_name" name="客户姓名" editable="false"/>
+	<item type="text" id="order_no" name="合约编号" editable="false"/>
+	<item type="hidden" id="formerly_voucher_no" name="原始凭证号" editable="false"/>	
+	<item type="grid" id="bond_id" source="30689" name="融资详情"/>
+</group>
+	<group name="要终止的融资信息">
+	 <item type="grid" id="bond_id" source="30689" name="融资详情"/>
+	</group>
+	<group name="处理意见" >	
+	<item type="textarea" id="manage_opinion" name="处理意见" />	
+		</group> 			
+  </input>
+  <service type="procedure" id="3064444427" process="888" style="1">
+	  <param type="string" id="function_id" default="80200102"/>
+	  <param type="string" id="function_id" default="3064442701"/>
+  </service>
+  <output/>
+</function>

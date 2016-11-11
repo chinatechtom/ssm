@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="97800006" name="取产品名称" >
+	<input/>
+	<service type="procedure" id="P97800006"  process="933" style="77">
+		<param type="integer" id="user_id" />	
+		<param type="string" id="project_code"/>
+	</service>
+	<output export="true">  
+		<column type="string" id="project_name"  name="产品名称"/>
+	</output>
+</function>

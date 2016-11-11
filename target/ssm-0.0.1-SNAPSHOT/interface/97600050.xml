@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="97600050" name="质权人查询" >
+	<input>	
+	</input>
+	<service type="procedure" id="P97600050" process="933" style="77">
+		<param id="user_id"		type="integer"    way="in"/>
+		<param id="lender_id" type="integer" way="in"/>
+	</service>
+	<output>
+		<column type="string" id="mortgagee_id"   name="质权人id"/>
+		<column type="string" id="mortgagee_name"   name="质权人名称"/>
+  </output>
+</function>

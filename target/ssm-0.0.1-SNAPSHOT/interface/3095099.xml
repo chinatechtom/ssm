@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3095099" name="温备历史库数据导入前校验">
+	<input>
+		<item type="hidden"	id="sys_date"  name="起始日期"        editable="false"/>	
+	</input>	
+	<service type="procedure" id="p_his_bakdb_input_chk_end"  implement="p_his_bakdb_input_chk_end3095099" process="811" style="1">
+		<param id="user_id"		type="integer"/>	
+		<param id="sys_date"    type="string"/>	
+	</service>
+	<output/>		
+</function>

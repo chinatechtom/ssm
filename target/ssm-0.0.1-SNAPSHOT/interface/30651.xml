@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="30651" name="处理调整信用上限申请" >
+  <input>	
+    <item type="hidden" id="order_id" name="定单id" nullable="false"/>
+	<item type="text" id="approve_credit_num" name="审批信用上限"  nullable="false"/>
+  </input>
+  <service type="procedure" id="p_credit_num_modi" process="811" style="1">
+	<param type="integer" id="user_id" way="in"/>
+	<param type="integer" id="order_id"  way="in"  />
+	<param type="double" id="approve_credit_num" way="in" />
+  </service>
+  <output/>
+</function>

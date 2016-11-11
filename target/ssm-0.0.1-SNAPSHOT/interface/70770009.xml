@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70770009" name="中征码录入-录入" >
+	<input>
+		<group name="客户信息">
+			<item type="text" id="institution_name" name="营业部名称" editable="false"/>
+			<item type="hidden" id="cust_id" name="cust_id"/>
+			<item type="text" id="cust_code" name="客户代码" editable="false"/>
+			<item type="text" id="cust_name" name="客户姓名" editable="false"/>
+			<item type="select" id="cust_type" name="客户类型" source="027" editable="false"/>
+		</group>
+		<group name="录入">
+			<item type="text" id="loancard_code" name="中征码" nullable="false"/>
+			<!--<item type="text" id="national_tax_no" name="国税号" nullable="false"/>-->
+		</group>
+		<group name="提示信息">
+			<item type="textarea" id="attention" name="警告" default="此处录入后将无法在此菜单修改，请确认后再提交!" editable="false" />
+		</group>
+	</input>
+	<service type="procedure" id="P70770009" implement="P70770009_70770009" process="822" style="1">
+		<param id="user_id" type="integer"/>
+		<param id="cust_id" type="integer"/>
+		<param id="loancard_code" type="string"/>
+		<!--<param id="national_tax_no" type="string"/>-->
+	</service>
+	<output/>
+</function>

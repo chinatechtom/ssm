@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="60011304" name="交易协议书到期监控" >
+  <input>
+	<item type="select" id="institution_id" name="营业部名称" source="97000001"/>
+ 	<item type="hidden" id="cust_id"        name="客户id"/>
+	<item type="text"   id="cust_code"      name="客户代码" />
+	<item type="text"   id="cust_name"      name="客户姓名"/>
+	<item type="text"   id="cert_no"        name="证件号码"/>
+	<item type="hidden" id="lender_id"      name="融出方ID"/>
+	<item type="text"   id="lender_code"    name="融出方代码"/>
+	<item type="text"   id="lender_name"    name="融出方名称"/>
+	<item type="text"   id="bond_no"        name="合同编号"/>
+	<item type="hidden" id="bond_id"        name="合同id"/>	
+	<item type="text"   id="sbond_no"       name="交易协议书编号"/>
+	<item type="hidden" id="sbond_id"       name="交易协议书id"/>
+	<item type="select" id="sbond_status"   name="交易协议书状态" source="700" default="4"/>
+	<item type="text"   id="days"       	name="天数阀值" integer="true" nullable="false"  default="15"/>
+  </input>
+  <service type="procedure" id="P60011304" process="933" style="77">
+	<param type="integer" id="user_id"/>	
+	<param type="integer" id="institution_id"/>
+ 	<param type="integer" id="cust_id"/>
+	<param type="string"  id="cust_code"/>
+	<param type="string"  id="cust_name"/>
+	<param type="string"  id="cert_no"/>
+	<param type="integer" id="lender_id"/>
+	<param type="string"  id="lender_code"/>
+	<param type="string"  id="lender_name"/>
+	<param type="string"  id="bond_no"/>
+	<param type="integer" id="bond_id"/>
+	<param type="string"  id="sbond_no"/>
+	<param type="integer" id="sbond_id"/>
+	<param type="string"  id="sbond_status"/>
+	<param type="integer" id="days"/>
+  </service>
+  <output  export="true" autoload="true">  
+    <column type="number" id="bond_id"   name="合同id"   display="false"/>
+    <column type="number" id="sbond_id"   name="交易协议书id"   display="false"/>     
+	<column type="number" id="institution_id"   name="机构号" display="false"/>
+	<column type="string" id="institution_code"   name="营业部代码"/>
+	<column type="string" id="institution_name"   name="营业部名称"/>
+  	<column type="number" id="cust_id"   name="客户id"  display="false"/>	
+	<column type="string" id="cust_code"   name="客户代码" />
+	<column type="string" id="cust_name"   name="客户姓名" />
+	<column type="string" id="sbond_no"   name="交易协议书编号"/>
+	<column type="number" id="remain_days"  name="剩余天数（交易日）" />
+	<column type="number" id="remain_natural_days"  name="剩余天数（自然日）" />
+	<column type="number" id="lender_id"   name="融出方ID" display="false"/>
+	<column type="string" id="lender_code"   name="融出方代码" />
+	<column type="string" id="lender_name"   name="融出方名称" />
+	<column type="string" id="acc_code"   name="融出方证券账户" />
+	<column type="number" id="mortgagee_id"   name="质权人ID" display="false"/>
+	<column type="string" id="mortgagee_name"   name="质权人名称" />
+	<column type="string" id="mortgagee_type"   name="质权人类型" />
+	<column type="string" id="mortgagee_type_name"   name="质权人类型" />
+	<column type="string" id="bond_no"   name="合同编号" />
+	<column type="string" id="bond_status"	name="合同状态"/>	
+	<column type="string" id="sbond_status"	name="交易协议书状态"/>	
+	<column type="string" id="hg_code" name="回购代码"/>
+    <column type="number" id="product_id" name="证券id" display="false"/>
+	<column type="string" id="market_code" name="市场代码"/>
+	<column type="string" id="product_code" name="标的证券代码"/>
+	<column type="string" id="product_name" name="标的证券名称"/>
+	<column type="number" id="hg_num" name="标的证券数量" precision="0"/>
+	<column type="number" id="first_amt" name="初始交易金额" precision="2"/>
+	<column type="string" id="engage_trade_date"  name="初始交易日期" />
+	<column type="string" id="bb_trade_date"  name="购回交易日期" /> 
+	<column type="string" id="warning_level"	name="报警级别"	level="true"	display="false"/>
+	<column type="string" id="project_code"	name="项目编号"/>
+	<button type="view" id="edit" name="查看交易协议书详细" action="60010408" multiple="0"/>
+  </output>
+</function>

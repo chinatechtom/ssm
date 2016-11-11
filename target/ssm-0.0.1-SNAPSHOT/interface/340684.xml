@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="340684" name="当日展期仓单明细" > 
+	<input> 
+		<item  type="text" id="cust_code" name="信用账号"/> 
+	</input>
+	<service type="procedure" id="P17000084" process="911" style="77">
+	<param id="user_id" type="integer" way="in" />
+	<param id="order_id" type="string" way="in"/>  
+  </service>
+ <output > 
+	<column type="string" id="cust_code"  name="客户代码"/>
+	<column type="string" id="cust_name"  name="客户姓名"/>			 
+	<column type="string" id="occur_date" name="发生日期"/>
+	<column type="string" id="serial_no" name="流水号"/>
+  <column type="string" id="order_type" name="仓单类型"/>
+	<column type="string" id="business_code" name="业务代码"/> 
+	<column type="string" id="market_code" name="市场代码"/> 
+	<column type="string" id="sec_code" name="证券代码"/> 
+	<column type="number" id="buy_vol" name="买入数量"/>
+	<column type="number" id="sell_vol" name="卖出数量"/>
+	<column type="string" id="last_sell_date" name="最后卖出日期"/> 
+	<column type="string" id="currency_type" name="币种"/>
+	<column type="number" id="occur_bal" name="发生金额" precision="3"/>
+	<column type="number" id="payback_bal" name="偿还金额" precision="3"/>
+	<column type="string" id="last_payback_date" name="最后偿还日期"/>
+	<column type="string" id="old_expire_date" name="原到期日期"/> 
+	<column type="string" id="new_expire_date" name="新到期日期"/> 
+	<button type="add" id="add" name="同步当日展期仓单" action="340685" multiple="-1"/>
+ </output>	
+</function>

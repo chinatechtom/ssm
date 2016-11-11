@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3042203" name="客户参考总分值" >	
+  <input> 
+        <item type="hidden" id="cust_id" name="客户id"/>
+  </input>
+  <service type="procedure" id="p_cust_ratingfactor_get_totalscore"  process="911" style="77"> 
+		<param id="user_id"	type="integer"/>
+		<param id="cust_id"	type="integer"/>
+  </service>
+  <output>	
+	<column type="number" id="total_score" name="客户参考总分值1"/>
+	<column type="number" id="approve_valuation_score" name="客户参考总分值2"/>
+	<column type="number" id="auto_credit_level" name="信用级别"/>
+	<column type="number" id="auto_credit_num"   name="信用上限"/>
+	<column type="number" id="ratingfactor_remark" name="评级因子备注"/>
+	<column type="string" id="rtfct_active_date" name="评级因子生效日期"/>
+	<column type="string" id="zxgl_user_name"    name="征信管理岗"/>
+	<column type="number" id="yc_credit_level_id" name="预测信用级别ID"/>
+	<column type="string" id="yc_credit_level_code" name="预测信用级别代码"/>
+	<column type="string" id="yc_credit_level_name" name="预测信用级别名称"/>
+  </output>		
+</function>

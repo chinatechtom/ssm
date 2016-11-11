@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="97000010" name="进入风险客户原因" >
+	<input>	
+	</input>
+	<service type="table" id="t_risk_in_reason_bbs" process="122" style="12">
+	</service>
+	<output>
+		<column type="string" id="entry_value"   	field="reason_code"	name="数据内容id"/>
+		<column type="string" id="entry_content"	field="reason_name"	name="数据内容"/>
+  </output>
+</function>

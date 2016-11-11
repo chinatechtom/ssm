@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3300301" name="风险指标增加" >
+	<input>	
+		<item type="select" id="risk_level" name="风险级别"  source="337" nullable="false"/>
+		<item type="select" id="reason_code"	name="进入原因"  source="96000004" nullable="false"/>
+		<item type="text" id="index_value"	name="指标值" number="true" default="0"/>
+	</input>
+	<service type="procedure" id="p_risk_level_in_reason_set" process="811" style="1">
+		<param id="user_id" type="integer"/>
+		<param id="risk_level"/>
+		<param id="reason_code"/>
+		<param id="index_value" type="double"/>
+		<param id="operation_type" default="1"/>		
+	</service>
+	<output/>
+</function>

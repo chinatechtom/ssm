@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70010850" name="调整客户活期利率" >
+	<input>
+		<item type="hidden" id="cust_id" name="客户号"/>
+		<item type="text" id="institution_name" name="营业部名称" editable="false"/>
+		<item type="text" id="cust_code"   name="客户代码"  editable="false"/>
+		<item type="text" id="cust_name"   name="客户姓名"  editable="false"/>
+		<item type="text" id="full_name"   name="客户全称"  editable="false"/>
+		<item type="text" id="cust_type_name"   name="客户类型" editable="false"/>
+		<item type="select" id="hq_code"   name="活期利率代码" source="97000027" nullable="false" action="70040301"/>
+		<item type="text" id="hq_rate"   name="活期年利率(%)" precision="4" editable="false"/>
+		<item type="textarea" id="remark"   name="备注"/>
+	</input>
+    <service type="procedure" id="P70010850"  process="822" style="1">
+		<param id="user_id"	type="integer" way="in"/>
+		<param id="cust_id"	type="integer" way="in"/>
+		<param id="hq_code"	type="string" way="in"/>
+		<param id="remark"	type="string" way="in"/>
+    </service>
+    <output/>
+</function>

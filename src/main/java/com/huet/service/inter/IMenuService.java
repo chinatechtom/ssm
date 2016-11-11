@@ -8,4 +8,6 @@ public interface IMenuService {
  
 	
 	public List<MenuItem> getUserMenus(String userName) ;
+	
+	public String makeJsonMenu(List<MenuItem> menuItemList) ;
 }

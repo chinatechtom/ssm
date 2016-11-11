@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="30104" name="客户信用资料">
+  <input export="true">
+    <item type="hidden" id="institution_id" name="机构id"/>
+  	<item type="hidden" id="cust_id"        name="客户id"/>
+  	<item type="text"   id="cust_code"      name="客户代码"/>
+  	<item type="text"   id="cust_name"      name="客户姓名"/>
+  	<item type="text"   id="cert_no"        name="证件号码"/>
+	<group name="分页查询" page="true">
+		<item type="text"   id="page_num"       name="页码"     integer="true" default="1"/>
+		<item type="select" id="rows_num"       name="每页行数" integer="true" source="95000012" nullable="false"/>
+	</group>
+  </input>
+  <service type="procedure" id="p_cust_credit_info_query" process="911" style="77">
+    <param type="integer"   id="user_id"/>
+	<param type="integer"   id="page_num" />
+	<param type="integer"   id="rows_num" />	
+	<param type="integer"   id="institution_id"/>
+	<param type="integer"   id="cust_id"/>
+	<param type="string"    id="cust_code"/>
+	<param type="string"    id="cust_name"/>
+	<param type="string"    id="cert_no"/>
+  </service>
+  <output detail="true">
+    <column name="有效数据项"	       id="avai_data_item"      type="string"   display="false"/>    
+    <column name="客户代码"	       id="cust_code"           type="string"   />   
+    <column name="营业部代码"	   id="institution_code"    type="string"   />    
+    <column name="信用级别代码"	   id="credit_level_code"   type="string"   />
+	<column name="信用级别名称"	   id="credit_level_name"   type="string"   />    
+    <column name="平仓标志1"	       id="pc_mode"             type="string"   display="false"/>  
+	<column name="平仓标志"	       id="pc_mode_name"        type="string"   />  
+    <column name="信用上限使用模式1"  id="credit_usemode"      type="string"   display="false"/> 
+	<column name="信用上限使用模式"  id="credit_usemode_name"  type="string"   />  
+    <column name="是否黑名单1"	   id="if_blacklist"        type="string"	display="false"/>  
+	<column name="是否黑名单"	       id="if_blacklist_name"   type="string"	/>  
+    <column name="还款模式1"	       id="hk_mode"             type="string"   display="false"/> 
+	<column name="还款模式"	       id="hk_mode_name"        type="string"   /> 
+    <column name="合同编号"	       id="bond_no"             type="string"   />    
+    <column name="合同状态1"	       id="bond_status"         type="string"   display="false"/> 
+	<column name="合同状态"	       id="bond_satus_name"    type="string"   />
+	<column name="起始日期"	       id="begin_date"    type="string"   />
+	<column name="终止日期"	       id="end_date"    type="string"   />
+	<column name="融资产品"	       id="product_code1"    type="string"   />
+	<column name="融券产品"	       id="product_code2"    type="string"   />
+	<column name="信用上限"         id="credit_num2"          type="number"   precision="2"/> 
+    <column name="授信额度"	       id="credit_num"    type="number"   />
+	<column name="融资上限"	       id="financing_amt"    type="number"   />
+	<column name="融券上限"	       id="bstock_amt"    type="number"   />
+  </output>
+</function>

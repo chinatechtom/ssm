@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3100303" name="资产类—非交易过户统计" >  
+  <input>
+  <item type="select" id="institution_id" name="营业部名称"  source="95000008"/>
+	<item type="hidden" id="cust_code" name="客户代码" />
+	<item type="hidden" id="date" name="日期"  default="now"/>	
+  </input>
+   <service type="procedure" id="p_statistics_3100303_query" process="911" style="77">
+	<param id="user_id" type="integer" way="in" /> 
+	<param id="date"/>
+	<param id="institution_id" />
+	<param id="cust_code" />
+  </service>  
+  <output  print="true">
+    <column type="string" id="c1" name="统计日期"/>  
+	<column type="string" id="c2" name="营业部"/>
+	<column type="string" id="c3" name="信用帐号"/>
+	<column type="string" id="c4" name="关联帐号"/>
+	<column type="number" id="c5" name="转移市值" precision="2"/>
+	<column type="string" id="c6" name="资产类别"/>
+	<column type="string" id="c7" name="过户类别"/>
+  </output>
+</function>

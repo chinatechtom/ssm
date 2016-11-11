@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="30644" name="查看合同-信用上限" >
+  <input>
+	<item type="hidden" id="bond_id" name="合同id"/>
+  </input>
+  <service type="procedure" id="p_bond_credit_num_query" process="911" style="77">
+	<param type="integer" id="user_id"/>	
+	<param type="integer" id="bond_id"/>
+  </service>
+  <output>    
+    <column type="number" id="bond_id" name="合同id"   display="false"/>
+    <column type="number" id="credit_num" name="信用上限"  precision="2" />  
+	<column type="string" id="credit_num_chinese" name="信用上限中文大写"  />  
+  </output> 
+</function>

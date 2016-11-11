@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="32118" name="公允价格变更担保比例试算" >
+  <input export="true">	
+	<item type="select" id="institution_id" 	name="营业部代码" 		source="95000008"/>
+	<item type="text" 	id="cust_code" 			name="客户代码" />
+	<group name="分页查询" page="true">		
+		<item type="text"    id="page_num"       name="页码"     integer="true" default="1"/>
+		<item type="select"  id="rows_num"       name="每页行数" integer="true" source="95000012" nullable="false"/>
+	</group>
+  </input>
+  <service type="procedure" id="p_business_report_32118_query" implement="p_business_report_32118_query32118" process="911" style="77">
+	<param id="user_id"			type="integer"	way="in"/>
+	<param id="page_num"		type="integer"  way="in"/> 			
+	<param id="rows_num"		type="integer"  way="in"/>
+	<param id="institution_id" 	type="integer"	way="in"/>
+	<param id="cust_code"		type="string"	way="in"/>	
+  </service>
+  <output export="true">    
+  	<column type="string" id="institution_name"   		name="营业部名称"  />
+    <column type="string" id="cust_code"				name="客户代码"  />
+	<column type="string" id="cust_name"				name="客户姓名"  />
+    <column type="number" id="guan_rate"				name="原维持担保比例"	precision="2"/>
+    <column type="number" id="guan_rate_by_asset_price"	name="变更公允价格后试算的维持担保比例"	precision="2"/>
+    <button type="add" 	  id="add"	name="变更公允价格/取消变更(担保比例试算)"	action="3211801"  multiple="-1"/>
+    <button type="send"   id="send"	name="恢复已变更公允价格(担保比例试算)"		action="3211803"  multiple="-1"/>
+	</output> 	
+</function>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="304444411" name="处理调整费率申请" >
+  <input>   
+    <group name="原合同费率" scope="group">
+	<item type="text" id ="cust_code" name="客户代码" editable="false"/>
+	<item type="text" id ="cust_name" name="客户姓名" editable="false"/>
+	   <item type="hidden" id="bond_id" name="合同id" action="30672"/>
+	 <item type="text"  id="loan_interest_rate" name="申请融资利息率(%)" editable="false"/> 
+	 <item type="text"    id="borrow_stock_interest_rate"  name="申请融券利息率(%)" editable="false"/> 
+	 <item type="text"    id="punish_interest_rate"  name="申请罚息率(%)" editable="false"/>
+	 <item type="text"    id="commission_charge"  name="申请手续费" editable="false"/> 
+	</group>
+ 	<group name="原调整费率申请" scope="group">	
+	 <item type="hidden"  id="order_id"	name="合约id" action="30608"/> 	
+	 <item type="text" id="order_no" name="合约编号" editable="false"/>
+	 <item type="hidden" id="formerly_voucher_no" name="原始凭证号" editable="false"/>
+	 <item type="text"  id="loan_interest_rate" name="申请融资利息率(%)" editable="false"/> 
+	 <item type="text"    id="borrow_stock_interest_rate"  name="申请融券利息率(%)" editable="false"/> 
+	 <item type="text"    id="punish_interest_rate"  name="申请罚息率(%)" editable="false"/>
+	 <item type="text"    id="commission_charge"  name="申请手续费" editable="false"/> 
+	</group>    
+	<group name="处理调整费率申请">
+     <item type="hidden" id="bond_id" name="合同id" action="30672"/>
+	 <item type="hidden"  id="order_id"	name="合约id"/> 	
+	 <item type="text"  id="approve_loan_interest_rate" name="审批融资利息率(%)" nullable="false"/> 
+	 <item type="text"    id="approve_borrow_stock_interest_rate"  name="审批融券利息率(%)" nullable="false"/> 
+	 <item type="text"    id="approve_punish_interest_rate"  name="审批罚息率(%)" nullable="false"/>
+	 <item type="text"    id="approve_commission_charge"  name="审批手续费" nullable="false"/> 
+	</group>
+  </input>
+  <service type="procedure" id="p_fl_modi"  process="811" style="1">
+	<param id="user_id"	type="integer"/>    
+    <param type="integer"  id="order_id"/> 
+	 <param type="double"  id="approve_loan_interest_rate"/> 
+	 <param type="double"  id="approve_borrow_stock_interest_rate"/> 
+	 <param type="double"  id="approve_punish_interest_rate"/>
+	 <param type="double"  id="approve_commission_charge"/> 
+  </service>
+  <output>
+  </output> 
+</function>

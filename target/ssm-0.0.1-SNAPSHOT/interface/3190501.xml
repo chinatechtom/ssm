@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3190501" name="融资明细查询" >	
+  <input>	
+		<item type="text"   id="cust_id"        name="客户ID"  />
+		<item type="text" 	id="cust_code" 		name="客户代码"/>
+  </input>  
+  <service type="procedure" id="p_report_financing_dt_query" process="911" style="77"> 
+		<param id="user_id"	type="integer" way="in"/>
+		<param id="cust_id" type="integer"/> 
+		<param id="cust_code" type="string"/> 
+  </service>  
+  <output export="true">  	
+		<column type="string" id="institution_name"   	name="营业部名称" display="false"/>
+		<column type="string" id="cust_no"   			    name="客户代码" display="false"/>
+		<column type="string" id="cust_name"   			  name="客户姓名" display="false"/>
+    	<column type="string" id="market_code"   		name="市场" />
+    	<column type="string" id="sec_code"   			name="证券代码"/>
+    	<column type="string" id="product_name"     name="证券名称"/>
+		  <column type="number" id="buy_vol"   			    name="融资买入数量"	precision="0" total="true"/>
+    	<column type="number" id="occur_bal"   			name="融资买入金额"	precision="2" total="true"/>
+    	<column type="number" id="payback_bal" 			name="融资偿还金额"	precision="2" total="true"/>
+    	<column type="number" id="non_pay_fee_sum"  name="融资利息费用"	precision="2" display="false"/>
+    	<column type="number" id="done_amt"   			name="成交金额"		precision="2" total="true"/>
+    	<column type="string" id="stock_convert_rate"   			name="折算率"	/>
+  </output>
+</function>

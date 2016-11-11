@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="60370109" name="历史交易流水查询" >
+	<input>	
+		<item type="select" id="institution_id" name="营业部名称" source="97000001"/>
+		<item type="hidden" id="cust_id" name="客户号"/>
+		<item type="text" id="cust_code" name="客户代码" />
+		<item type="text" id="cust_name" name="客户姓名" />
+		<item type="date" id="occur_date" name="开始日期" />
+		<item type="date" id="occur_end_date" name="结束日期" />
+		<item type="text" id="sbond_no" name="交易协议书编号" />
+		<item type="select" id="market_code" name="市场代码" source="039"/>
+		<item type="text" id="product_code" name="证券代码" />
+		<item type="select" id="business_type" name="流水类型" source="806"/>
+		<item type="select" id="jgdm" name="交收结果" source="711"/>
+	</input>
+	<service type="procedure" id="p60370109" process="933" style="77">
+		<param id="user_id" type="integer"/>
+		<param id="institution_id" type="integer"/>
+		<param id="cust_id" type="integer"/>	
+		<param id="cust_code" type="string"/>
+		<param id="cust_name" type="string"/>
+		<param id="occur_date" type="string"/>
+		<param id="occur_end_date" type="string"/>
+		<param id="sbond_no" type="string"/>
+		<param id="market_code" type="string"/>
+		<param id="product_code" type="string"/>
+		<param id="business_type" type="string"/>
+		<param id="jgdm" type="string"/>
+	</service>
+	<output export="true">
+		<column type="number" id="institution_id" name="营业部id" display="false"/>  
+		<column type="string" id="institution_name" name="营业部名称"/>  
+		<column type="string" id="institution_code" name="营业部代码"/>  
+		<column type="number" id="cust_id"   name="客户号"  display="false"/>
+		<column type="string" id="cust_code"   name="客户代码"/>
+		<column type="string" id="cust_name"   name="客户姓名"/>
+		<column type="string" id="occur_date"   name="发生日期"/>
+		<column type="string" id="serial_no"   name="流水号"/>
+		<column type="number" id="sbond_id"   name="sbond_id" display="false"/>
+		<column type="string" id="sbond_no"   name="交易协议书编号"/>
+		<column type="string" id="business_type"   name="流水类型"/>
+		<column type="string" id="market_code"   name="市场代码"/>
+		<column type="string" id="product_code"   name="证券代码"/>
+		<column type="string" id="product_name"   name="证券名称"/>
+		<column type="number" id="stock_vol"   name="证券数量" precision="0"/>
+		<column type="number" id="trade_amt"   name="交易金额" precision="2"/>
+		<column type="number" id="comm_rate"   name="佣金比率" precision="3"/>
+		<column type="number" id="second_fees"   name="二级费用合计" precision="2"/>
+		<column type="number" id="first_fees"   name="一级费用合计" precision="2"/>
+		<column type="number" id="on_delivery_amt"   name="待交收金额" precision="2"/>
+		<column type="number" id="on_delivery_vol"   name="待交收数量" precision="2"/>
+		<column type="number" id="curr_debt_amt"   name="当前负债金额" precision="2"/>
+		<column type="number" id="curr_stk_vol"   name="当前证券数量" precision="2"/>
+		<column type="string" id="jgdm"   name="交收结果"/>
+	</output>
+</function>

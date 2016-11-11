@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="gbk"?>
+<function id="81420126" name="平仓报告直接还款">
+	<input>
+		<item type="hidden" id="record_id" name="平仓报告ID"/>
+	</input>
+	<service type="procedure" id="p_force_payback_value_params_search" implement="p_force_payback_value_params_search81420126" process="911" style="77">
+		<param type="integer" id="user_id"/>
+	  	<param type="integer" id="record_id"/>
+	</service>
+	<output target="82420126">
+		<column type="string" id="sbranch_code0" 	name="发生营业部"/>
+		<column type="string" id="scurrency_type" 	name="货币类型"/>
+		<column type="string" id="scust_no" 		name="客户号"/>
+		<column type="number" id="damt17" 			name="资金发生"/>
+		<column type="string" id="snote" 			name="备注"/>
+		<column type="string" id="sstation0" 		name="网卡号"/>
+		<column type="string" id="semp" 			name="操作职工"/>
+		<column type="string" id="lsafe_level" 		name="调用来源"/>
+	</output>
+</function>

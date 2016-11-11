@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="63744129" name="场外证券补仓归还合约查询" >
+	<input/>
+	<service type="procedure" id="P63744129" process="977" style="77">
+		<param type="integer" id="user_id"/>
+		<param type="integer" id="order_id"/>
+		<param type="string"  id="order_no"/>
+	</service>
+	<output  export="true">  
+		<column type="string" id="sbond_no"   name="交易协议书编号"/>
+		<column type="string" id="product_id1"   name="证券ID"/>
+		<column type="string" id="market_code1"   name="场外补仓证券市场代码"/>
+		<column type="string" id="market_code_name1"   name="场外补仓证券市场名称"/>
+		<column type="string" id="product_code1"   name="场外补仓证券代码"/>
+		<column type="string" id="product_name1"   name="场外补仓证券名称"/>
+		<column type="string" id="stock_vol1"   name="场外补仓证券数量"/>
+		<column type="string" id="remark"   name="备注"/>
+		<column type="number" id="manage_id" name="处理员id" display="false"/>
+		<column type="string" id="manage_name" name="处理员"/>
+		<column type="string" id="manage_opinion" name="处理意见"/>
+		<column type="number" id="approver_id" name="审核员id"	display="false"/>
+		<column type="string" id="approver_opinion" name="审核意见"/>
+		<column type="number" id="assessor_id" name="审批员id" display="false"/>
+		<column type="string" id="assessor_name" name="审批员"/>
+		<column type="string" id="assessor_opinion" name="审批意见"/>
+		<column type="number" id="double_check_id" name="复核员id" display="false"/>
+		<column type="string" id="double_check_name" name="复核员"/>
+		<column type="string" id="double_check_opin" name="复核意见"/>
+	</output>
+</function>

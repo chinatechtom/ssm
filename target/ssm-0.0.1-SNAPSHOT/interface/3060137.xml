@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3060137" name="客户普通账户资料导入" >
+	<input>
+		<item type="select"	id="institution_id"		name="营业部名称"	 source="95000008"/>
+		<item type="text"	id="cust_code"	        name="信用资金账号" />
+		<item type="text"	id="commness_cust_code"	name="普通资金账号" />
+	  <group name="分页查询" page="true">
+		<item type="text"   id="page_num"       name="页码"     integer="true" default="1"/>
+		<item type="select" id="rows_num"       name="每页行数" integer="true" source="95000012" nullable="false"/>
+	  </group>
+	</input>
+	<service type="procedure" id="p_commness_cust_info_query" process="911" style="77">
+	    <param type="integer" id="user_id"/>
+		<param type="integer" id="page_num" />
+	    <param type="integer" id="rows_num" />	
+		<param type="integer" id="institution_id"/>
+		<param type="string"  id="cust_code"/>
+		<param type="string"  id="commness_cust_code"/><!--普通资金账号-->
+	</service>
+	<output>
+		<column type="string"	id="institution_code"		    name="营业部代码"	/>
+		<column type="string"	id="cust_code"          	    name="信用客户资金账号"	/>
+		<column type="string"	id="commness_cust_code"			name="普通客户资金账号"	/>
+		<column type="string"   id="trade_date" field="last_open_date" name="开户日期上一交易日"/>
+		<column type="string"	id="acc_open_date_kssc"              name="普通账户开户日期"	/>
+		<column type="string"	id="asset_sum_kssc"                  name="普通账户昨日总资产"	/>
+		<column type="string"	id="statis_date_kssc"                name="统计日期"	/>
+		<button type="set"		id="single_import"			    name="单客户导入"	action="306013703" multiple="1"	/>
+		<!--<button type="set"		id="batch_import"			name="批量导入"	    action="306013702" multiple="-1"	/>-->
+	</output>
+</function>

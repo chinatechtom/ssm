@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="60880005" name="查询信用客户对应普通客户映射关系表" >
+  <input>
+	<item type="text" id="scust_no" name="信用客户账号"/>
+	<item type="hidden" id="user_id" alias = "semp" />
+  </input>
+  <service type="drtp" id="413000" process="711" style="77">
+	<param type="string" id="scust_no"/>
+	<param id="lvol9" type="integer"   default="130913"/>
+  </service>
+  <output >
+	<column name="信用客户代码"	id="cust_code"      type="string"  field="scust_no"/>
+	<column name="普通客户代码"	id="pt_cust_code"   type="string"  field="scust_no2"/>
+	<column name="修改日期"		id="update_date"    type="string"  field="sdate0"/>
+	<column name="修改人员"		id="emp"	 type="string"	field="sopen_emp"/>
+	<column name="设置日期"		id="set_date"    type="string"  field="sdate1"/>
+	<column name="设置时间"		id="set_time"    type="string"  field="sdate2"/>
+	<button type="set" id="add" name="增加" action="60880007"  multiple="-1" />
+	<button type="set" id="del" name="删除" action="60880008"  multiple="0" />
+	<button type="add" id="update" name="修改" action="60880009"  multiple="0"/>
+   </output>
+</function>

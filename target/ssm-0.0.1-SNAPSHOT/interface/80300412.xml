@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="80300412" name="同步业务代码">
+	<input/>
+	<service type="drtp" id="413000" process="711" style="1">
+		<param type="string" id="spost_code"/>
+		<param type="string" id="spost_code2"/>
+		<param type="string" id="scusttypes"/>
+		<param id="lvol9"    type="integer" default="300412"/>
+	</service>
+
+	<output target="3225001">
+		<column name="业务代码"	id="business_code"   type="string"  field="spost_code"/>
+		<column name="业务名称"	id="business_name"  type="string"  field="sname"/>
+		<column name="变动类别"	id="change_type"  type="string"  field="spost_code2"/>
+		<column name="说明"	id="business_comment" type="string"  field="snote"/>
+		<column name="打印标志"	id="print_flag"  type="string"  field="sstatus0"/>
+	</output>
+</function>

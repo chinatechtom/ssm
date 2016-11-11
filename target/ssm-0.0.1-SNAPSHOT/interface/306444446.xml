@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="306444446" name="处理延长还贷日期申请" >
+  <input>	
+  <group name="原合同的日期" scope="group">
+  <item type="text" id ="cust_code" name="客户代码" editable="false"/>
+	<item type="text" id ="cust_name" name="客户姓名" editable="false"/>
+    <item type="hidden" id="bond_id" name="合同id" action="30672"/>     
+	<item type="text" id="availability_time"   name="有效日期" editable="false"/>
+	<item type="text" id="begin_time"   name="起始日期" editable="false"/>
+	<item type="text" id="return_time"   name="到期日期" editable="false"/>
+	<item type="text" id="over_time"   name="延长日期" editable="false"/>
+   </group>
+   <group name="合约申请延长还贷日期" scope="group">   
+    <item type="hidden" id="order_id" name="合约id" action="30673"/> 
+	<item type="text" id="order_no" name="合约编号" editable="false"/>
+	<item type="hidden" id="formerly_voucher_no" name="原始凭证号" editable="false"/>
+	<item type="text" id="over_time" name="延长日期" editable="false"/>
+	<item type="textarea" id="remark" name="备 注" editable="false"/>
+   </group>    
+  </input>
+  <service type="procedure" id="p_over_time_modi" process="811" style="1">
+	<param type="integer" id="user_id"/>
+	<param type="integer" id="order_id"/>
+	<param id="over_time1"/>
+  </service>
+  <output/>
+</function>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70066666" name="合约详情" >
+	<input>
+		<item type="hidden" id="order_id" name="合约ID" action="70044566"/>
+		<item type="text" id="order_no" name="合约编号" editable="false"/>
+		<item type="hidden" id="bond_id" name="合同id" editable="false"/>   
+		<item type="text" id="institution_name" name="营业部名称" editable="false"/>
+		<item type="text" id="institution_code" name="营业部代码" editable="false"/>
+		<item type="text" id="cust_code" name="客户代码" editable="false"/>
+		<item type="text" id="cust_name" name="客户姓名" editable="false"/>
+		<item type="text" id="bond_no" name="合同编号" editable="false"/>
+		<item type="hidden" id="bond_status" name="合同状态" editable="false"/>	
+		<item type="text" id="bond_status_name"	name="合同状态" editable="false"/>	
+		<item type="text" id="date" name="合同签署日期" editable="false"/>
+		<item type="text" id="time" name="合同签署时间" editable="false"/>    
+		<item type="text" id="begin_time" name="合同起始日期" editable="false"/>
+		<item type="text" id="return_time" name="合同到期日期" editable="false"/>   
+		<item type="textarea" id="remarks" name="备注说明" editable="false"/>
+	</input>
+</function>

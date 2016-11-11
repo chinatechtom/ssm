@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="7001048701" name="征信导入重定向" >  
+	<input>
+		<item type="hidden"     id="task_id"          name="任务编号"/>
+		<item type="hidden"     id="task_id_out"          name="任务编号导出"      action="70010488"/>
+		<item type="hidden"     id="task_type"        name="任务类型"      source="526"     nullable="false"/>
+	    <item type="hidden"     id="task_status"      name="任务执行状态"  />
+	</input>
+	<service type="procedure" id="p7001048701" process="922" style="1">
+		<param id="user_id" type="integer"/>
+		<param id="task_id" type="integer"/>
+		<param id="task_type"   />
+		<param id="task_status" />
+	</service> 
+	<output target="@func_no">
+	    <column type="string" id="task_id"         name="任务编号"/>
+		<column type="string" id="func_no"         name="功能代码" />
+	</output>
+</function>

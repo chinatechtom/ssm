@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3060155" name="二次征信客户名单查询" >
+  <input export="true"> 
+	<item type="select" id="insitution_id" name="营业部名称" source="95000008"/>
+	<item type="date"   id="date"          name="生成日期" />
+	<item type="select" id="cust_type"     name="客户类型" source="027"/>
+	<item type="text"   id="cust_code"     name="客户代码"/>	
+	<group name="分页查询" page="true"> 		
+		<item type="text"   id="page_num"       name="页码"     integer="true" default="1"/>
+		<item type="select" id="rows_num"       name="每页行数" integer="true" source="95000012" nullable="false"/>
+	</group>
+  </input>
+  <service type="procedure" id="p_scd_credit_list_query" implement="p_scd_credit_list_query3060155"  process="911" style="77"> 
+	<param id="user_id"       type="integer"/>
+	<param id="page_num"      type="integer"/>
+	<param id="rows_num"      type="integer"/>
+	<param id="insitution_id" type="integer"/>
+	<param id="date"          type="string"/>
+	<param id="cust_type"     type="string"/>
+	<param id="cust_code"     type="string"/>
+  </service>
+  <output>
+	<column type="string" id="sys_date"  name="生成日期" 	/>
+	<column type="string" id="institution_code"  name="营业部代码"/>
+	<column type="number" id="cust_id"   name="客户ID"	display="false"/>
+	<column type="string" id="cust_code"  name="客户代码" />
+	<column type="string" id="commness_cust_code" name="普通资金账号" />
+	<column type="string" id="cust_type" name="客户类型" display="false"/>
+	<column type="string" id="cust_type_name"  name="客户类型" />
+	<column type="string" id="credit_level_code"  name="信用级别代码" />
+	<column type="string" id="bond_begin_date"  name="合同生效日期" />
+	<column type="string" id="user_code" name="操作员代码"  />
+	<column type="string" id="time" name="操作时间" />
+	<button type="edit"   id="create" name="生成二次征信名单" action="306015501" multiple="-1"/>
+  </output>		
+</function>

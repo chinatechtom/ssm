@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="306016110" name="从数仓导入授信征信数据" >
+	<input>
+	    <description>是否执行授信征信数据导入?
+		</description>
+		<item type="hidden"	id="task_id" name="任务代码"		/>
+	</input>
+	<service type="procedure" id="zx_prod.SP_SXZX_RESULT" adapter="netezza" implement="SP_PJZX_RESULT306016110" process="944" style="1">
+		<param type="string" id="task_id" />
+	</service>
+	<output target="306016111">
+		<column type="string"	id="capital_account"			name="信用资金账号"	/>
+		<column type="string"	id="related_capital_account"	name="普通资金账号"	/>
+		<column type="string"	id="year_yield"					name="信用交易绝对收益率"	/>
+		<column type="string"	id="hs300_yield_year"			name="沪深300年化收益率"	/>
+		<column type="string"	id="credit_use_rate"			name="日均授信额度使用率"	/>
+		<column type="string"	id="credit_turn_over_rate"		name="授信额度换手率"	/>
+		<column type="string"	id="total_rzrq_commission"		name="信用交易佣金"	/>
+		<column type="string"	id="itst_ctb"					name="信用交易息费收入"	/>
+	</output>
+</function>

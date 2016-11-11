@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="80880007" name="股票质押漏单查询" >
+	<input>
+		<item type="select"	id="business_type"	name="业务类别"		source="805"	default="SPR"/>
+		<item type="date"	id="date"			name="选择日期"		default="now"	/>		
+	</input>
+	<service type="procedure" id="P60880007"  process="933" style="77">
+		<param type="integer"	id="user_id"		way="in" />
+		<param type="string"	id="business_type"	way="in" />
+		<param type="string"	id="date"			way="in" />
+	</service>
+	<output export="true">
+		<column type="string" id="cust_code"		name="客户代码"/>
+		<column type="string" id="sbond_no"			name="协议书编号"/>
+		<column type="string" id="extcall_code"		name="外调功能号"/>
+		<column type="string" id="stock_code"		name="证券代码"/>
+		<column type="number" id="occur_qty"		name="数量"/>
+		<column type="string" id="remarks"			name="备注"/>
+		<column type="string" id="entrust_no"   	name="委托合同号"/>
+	</output>
+</function>

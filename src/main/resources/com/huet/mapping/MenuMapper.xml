@@ -11,8 +11,10 @@
   </resultMap>
   
    <select id="getUserMenus" resultMap="BaseResultMap"  parameterType="java.lang.String">
-        select menu_id,menu_level,menu_name, function_id , is_menu,is_function  
+        select  menu_id, ltrim(rtrim(menu_level)) as menu_level ,
+              ltrim(rtrim(menu_name)) as menu_name, function_id , is_menu, ltrim(rtrim(is_function)) as is_function
          from  kssc..vw_user_menu
-         where  user_code =  #{userCode}  
+         where user_code =  #{userName,jdbcType=CHAR}  
+         order by menu_level 
     </select>
 </mapper>

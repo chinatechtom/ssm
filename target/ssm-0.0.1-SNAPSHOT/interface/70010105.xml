@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70010105" name="取客户资料">  
+  <input>
+	<item type="text" id="cust_code" name="客户代码" nullable="false"/>
+  </input>
+  <service type="procedure" id="p70010105" process="922" style="77">
+	<param id="user_id" type="integer" way="in" /> 
+	<param id="cust_code"/>
+  </service> 
+  <output>
+	<column type="number" id="cust_id" display="false" name="客户id"/>
+	<column type="string" id="sbranch_code1"   name="营业部代码"/>
+	<column type="string" id="cust_code"   name="客户代码"/>
+	<column type="string" id="if_exsist"   name="客户是否存在" display="false"/>
+	<column type="string" id="if_exsist_name"   name="客户是否存在"/>
+	<button type="send" id="edit" name="客户基本信息同步" action="70010106" multiple="0"/>
+	<button type="send" id="edit" name="客户后续信息同步" action="70010107" extendaction="if_exsist" multiple="0"/>
+  </output>
+</function>

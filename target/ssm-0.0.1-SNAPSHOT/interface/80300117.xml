@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="80300117" name="取某月交易日">
+	<input>
+		<item type="year"	id="lcert_code"	name="年份" nullable="false"/>
+		<item type="month"	id="lsafe_level"	name="月份" nullable="false"/>			
+	</input>
+	<service type="drtp" id="413000" process="711" style="1">
+		<param id="sbranch_code0"	type="string"	default="000"/>
+		<param id="smarket_code"	type="string"	default="1"/>
+		<param id="lcert_code"	type="string"/>
+		<param id="lsafe_level"		type="string"/>
+		<param id="semp"		type="string"	default="000000"/>
+		<param id="sstation0"		type="string"/>
+		<param type="integer" id="lvol9"  default="300117"/>
+	</service>
+	<output target="81300117">
+		<column type="string" id="smarket_code" name="市场代码"/>
+		<column type="string" id="lcert_code" name="设置年份"/>
+		<column type="string" id="lsafe_level" name="设置月份"/>
+		<column type="number" id="damt0" name="1日"/>
+		<column type="number" id="damt1" name="2日"/>
+		<column type="number" id="damt2" name="3日"/>
+		<column type="number" id="damt3" name="4日"/>
+		<column type="number" id="damt4" name="5日"/>
+		<column type="number" id="damt5" name="6日"/>
+		<column type="number" id="damt6" name="7日"/>
+		<column type="number" id="damt7" name="8日"/>
+		<column type="number" id="damt8" name="9日"/>
+		<column type="number" id="damt9" name="10日"/>
+		<column type="number" id="damt10" name="11日"/>
+		<column type="number" id="damt11" name="12日"/>
+		<column type="number" id="damt12" name="13日"/>
+		<column type="number" id="damt13" name="14日"/>
+		<column type="number" id="damt14" name="15日"/>
+		<column type="number" id="damt15" name="16日"/>
+		<column type="number" id="damt16" name="17日"/>
+		<column type="number" id="damt17" name="18日"/>
+		<column type="number" id="damt18" name="19日"/>
+		<column type="number" id="damt19" name="20日"/>
+		<column type="number" id="damt20" name="21日"/>
+		<column type="number" id="damt21" name="22日"/>
+		<column type="number" id="damt22" name="23日"/>
+		<column type="number" id="damt23" name="24日"/>
+		<column type="number" id="damt24" name="25日"/>
+		<column type="number" id="damt25" name="26日"/>
+		<column type="number" id="damt26" name="27日"/>
+		<column type="number" id="damt27" name="28日"/>
+		<column type="number" id="damt28" name="29日"/>
+		<column type="number" id="damt29" name="30日"/>
+		<column type="number" id="damt30" name="31日"/>
+	</output>
+</function>

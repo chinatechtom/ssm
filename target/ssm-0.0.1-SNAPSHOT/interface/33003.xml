@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="33003" name="风险指标查询" >
+	<input>	
+		<item type="select" id="risk_level" name="风险级别"  source="337"/>
+		<item type="select" id="in_reason"	name="类别"  source="96000004"/>
+	</input>
+	<service type="procedure" id="p_risk_level_in_reason_query" process="911" style="77">
+		<param id="user_id" type="integer"/>
+		<param id="risk_level"/>
+		<param id="in_reason"/>
+	</service>
+	<output autoload="true">
+		<column type="string" id="risk_level"		name="风险级别名称"	display="false"/>
+		<column type="string" id="risk_level_name"	name="风险级别"/>
+		<column type="string" id="reason_code"		name="重点客户分类1" display="false"/>
+		<column type="string" id="reason_name"		name="重点客户分类"/>
+		<column type="string" id="if_valid"		    name="是否生效"/>
+		<column type="string" id="have_index_value"	name="是否有指标值" display="false"/>
+		<column type="string" id="direction"		name="比较符号" display="false"/>
+		<column type="string" id="direction_name"	name="比较符号(右边指标)"/>
+		<column type="number" id="index_value"		name="指标值" precision="2"/>
+		<button type="edit"   id="edit" 		    name="修改风险指标" 	action="3300303"  multiple="0"/>
+	</output>
+</function>

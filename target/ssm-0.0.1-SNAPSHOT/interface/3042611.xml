@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3042611" name="机构客户评级因子设置" >	
+	<input> 
+		<item type="text" id="cust_code" name="客户代码" editable="false"/> 
+		<item type="text" id="cust_name" name="客户姓名" editable="false"/>		
+		<group name="基本情况">		
+			<item type="hidden"	id="ratingfactor_sort_201"  />
+			<item type="hidden"	id="ratingfactor_sort_204"  />
+			<item type="hidden"	id="ratingfactor_sort_207"  />
+			<item type="hidden"	id="ratingfactor_sort_210"  />
+			<item type="hidden"	id="ratingfactor_sort_211"  />
+			<item type="radio"	id="data_code_201"	filter="ratingfactor_sort_201"	name="成立时间"            />
+			<item type="radio"	id="data_code_204"	filter="ratingfactor_sort_204"	name="规模"            />
+			<item type="radio"	id="data_code_207"	filter="ratingfactor_sort_207"	name="行业"            />
+			<item type="radio"	id="data_code_210"	filter="ratingfactor_sort_210"	name="是否上市公司"          />
+			<item type="radio"	id="data_code_211"	filter="ratingfactor_sort_211"	name="高管人员素质"          />
+		</group>
+		<group name="财务状况">			
+			<item type="hidden"	id="ratingfactor_sort_213"  />
+			<item type="hidden"	id="ratingfactor_sort_216"  />
+			<item type="hidden"	id="ratingfactor_sort_219"  />
+			<item type="hidden"	id="ratingfactor_sort_228"  />
+			
+			<item type="radio"	id="data_code_213"	filter="ratingfactor_sort_213"	name="上年度净资产收益率"          />
+			<item type="radio"	id="data_code_216"	filter="ratingfactor_sort_216"	name="最近一年资产负债率"          />
+			<item type="radio"	id="data_code_219"	filter="ratingfactor_sort_219"	name="最近一年速动比例"          />
+			<item type="radio"	id="data_code_228"	filter="ratingfactor_sort_228"	name="经营活动现金净流量"          />
+			
+		</group>	
+		<group name="证券投资(普通账户)">
+            <item type="hidden"	id="ratingfactor_sort_240"  />
+			<item type="hidden"	id="ratingfactor_sort_262"  />		
+			<item type="hidden"	id="ratingfactor_sort_234"  />	
+			<item type="hidden"	id="ratingfactor_sort_263"  />			
+			<item type="hidden"	id="ratingfactor_sort_241"  />
+			<item type="hidden"	id="ratingfactor_sort_242"  />		
+			<item type="hidden"	id="ratingfactor_sort_243"  />	
+			<item type="hidden"	id="ratingfactor_sort_244"  />
+			<item type="hidden"	id="ratingfactor_sort_245"  />	
+			<item type="hidden"	id="ratingfactor_sort_246"  />
+			
+			<item type="radio"	id="data_code_240"	filter="ratingfactor_sort_240"	name="账户绝对收益水平(一年又一期平均年化收益率)"          />
+			<item type="radio"	id="data_code_262"	filter="ratingfactor_sort_262"	name="账户相对收益水平(一年又一期平均年化收益率)"          />			
+			<item type="radio"	id="data_code_234"	filter="ratingfactor_sort_234"	name="投资经验"          />
+			<item type="radio"	id="data_code_263"	filter="ratingfactor_sort_263"	name="资金周转率(一年又一期平均年周转率)"          />
+			<item type="radio"	id="data_code_241"	filter="ratingfactor_sort_241"	name="充抵保证金资产比"          />			
+			<item type="radio"	id="data_code_242"	filter="ratingfactor_sort_242"	name="高风险投资占比(ST股票和权证)"          />
+			<item type="radio"	id="data_code_243"	filter="ratingfactor_sort_243"	name="证券资产占比"          />
+			<item type="radio"	id="data_code_244"	filter="ratingfactor_sort_244"	name="账户年交易量"          />
+			<item type="radio"	id="data_code_245"	filter="ratingfactor_sort_245"	name="日均资产规模"          />
+			<item type="radio"	id="data_code_246"	filter="ratingfactor_sort_246"	name="佣金贡献"          />
+		</group>	
+		<group name="信用记录">	
+			<item type="hidden"	id="ratingfactor_sort_259"  />
+			<item type="hidden"	id="ratingfactor_sort_260"  />	
+            <item type="hidden"	id="ratingfactor_sort_261"  />	
+			
+			<item type="radio"	id="data_code_261"	filter="ratingfactor_sort_261"	name="对外担保情况"          />
+			<item type="radio"	id="data_code_260"	filter="ratingfactor_sort_260"	name="考试成绩"          />
+			<item type="radio"	id="data_code_259"	filter="ratingfactor_sort_259"	name="其他机构记录"          />
+		</group>
+		<group name="附加分值">	
+            <item type="hidden"	id="ratingfactor_sort_264"  />
+			<item type="radio"	id="data_code_264"	filter="ratingfactor_sort_264"	name="营业部评价"          />
+			<item type="hidden"	id="cust_id"/>
+		</group>
+	</input>
+	<service type="procedure" id="p_cust_ratingfactor_init"  process="811" style="1"> 
+		<param id="user_id"	type="integer"/>		
+		<param id="cust_id" type="integer"/>
+		<param id="data_code@" type="string"/>
+		<param id="ratingfactor_sort@" type="string"/>	
+	</service>
+	<output/>	
+</function>

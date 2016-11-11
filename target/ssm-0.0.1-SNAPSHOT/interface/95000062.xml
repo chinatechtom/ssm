@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="95000062" name="评级因子内容" >
+	<input>	
+        <item type="hidden" id="data_code_234" name="数据代码"/>
+	</input>
+	<service type="table" id="t_ratingfactor_code" process="111" style="12">
+	  <param id="ratingfactor_sort" field="ratingfactor_sort" default="234"/>
+	  <param id="data_code_234"     field="data_code"/>
+	</service>
+	<output>
+		<column type="number" id="entry_value"   field="data_code"	name="数据内容id"/>
+		<column type="string" id="entry_content"	 field="data_content"    name="数据内容"/>
+    </output>
+</function>

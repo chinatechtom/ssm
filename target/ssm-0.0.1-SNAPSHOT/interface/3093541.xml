@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3093541" name="历史数据导出">
+	<input/>	
+	<service type="procedure" id="p_history_data_output"  implement="p_history_data_output3093541" process="811" style="1">
+		<param id="user_id"		type="integer"/>	
+		<param id="table_name"  type="string" default="T_DATA_DECLARE_DETAIL"/>
+		<param id="date"        type="string"/>
+	</service>
+	<output/>		
+</function>

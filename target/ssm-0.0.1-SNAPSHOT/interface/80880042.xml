@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="80880042" name="余券返还数据查询">
+	<input>		
+		<item type="text"	id="cust_code" name="客户号"/>
+		<item type="date"	id="begin_date"	name="开始日期" default="last"/>
+		<item type="date"	id="end_date"	name="结束日期" default="now"/>
+	</input>
+	<service type="procedure" id="P60880042" process="933" style="77">
+		<param id="user_id"		type="integer"/>
+		<param id="cust_code"	type="string"/>
+		<param id="begin_date"	type="string"/>
+		<param id="end_date"	type="string"/>
+	</service>
+	<output export="true">
+		<column id="trade_date" name="日期" type="string"/>
+		<column id="origin_sqbh" name="初始交易合同号(22位)" type="string"/>
+		<column id="zyywbh" name="'质押业务编号(J+9位数字)'" type="string"/>
+		<column id="acc_code" name="融入方证券账户号" type="string"/>
+		<column id="cust_name" name="融入方姓名/全称" type="string"/>
+		<column id="company_name" name="融出方姓名/全称" type="string"/>
+		<column id="special_pbu" name="质押特别交易单元" type="string"/>
+		<column id="seat_code" name="席位代码" type="string"/>
+		<column id="product_code" name="证券代码" type="string"/>
+		<column id="ltlx" name="流通类型" type="string"/>
+		<column id="stock_vol" name="返还股数" type="string"/>
+	</output>
+</function>

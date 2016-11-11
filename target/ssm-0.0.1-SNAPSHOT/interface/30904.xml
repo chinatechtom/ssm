@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="30904" name="日终数据导入库">
+	<input>		
+		<item type="text"	id="RequestType"	name="功能号" default="413501"/>	
+		<item type="text"	id="F_SSTATUS0"		name="导入方式" default="1"/>	
+		<item type="text"	id="F_VSVARSTR0"	name="路径"/>	
+		<item type="text"	id="F_SADDR"		name="文件名"/>	
+		<item type="text"	id="F_SADDR2"		name="数据库表名"/>	
+		<item type="text"	id="F_SNOTE"		name="数据格式名"/>	
+	</input>
+	<service type="drtp" id="413501" process="611" style="1">
+		<param id="RequestType"		type="string"/>
+		<param id="F_SSTATUS0"		type="string"/>
+		<param id="F_VSVARSTR0"		type="string"/>
+		<param id="F_SADDR"			type="string"/>	
+		<param id="F_SADDR2"		type="string"/>
+		<param id="F_SNOTE"			type="string"/>
+	</service>
+	<output/>
+</function>

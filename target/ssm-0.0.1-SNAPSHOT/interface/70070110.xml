@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70070110" name="全账户履约保障比率监控" >
+  <input>
+	<item type="select" id="institution_id" name="营业部名称" source="97000001"/>
+ 	<item type="hidden" id="cust_id"        name="客户id"/>
+	<item type="text"   id="cust_code"      name="客户代码"/>
+	<item type="text"   id="guarantee_rate"   name="履约保障比率阀值(%)" default='145'/>
+  </input>
+  <service type="procedure" id="P70070110" process="922" style="77">
+	<param type="integer" id="user_id"/>	
+	<param type="integer" id="institution_id"/>
+ 	<param type="integer" id="cust_id"/>
+	<param type="string"  id="cust_code"/>
+	<param type="float"  id="guarantee_rate"/>
+  </service>
+  <output  export="true" refresh="300" autoload="true">  
+    <column type="string" id="institution_code"   name="营业部代码"/>
+	<column type="number" id="cust_id"   name="客户id"  display="false"/>	
+	<column type="string" id="cust_code"   name="客户代码" />
+	<column type="number" id="total_asset" name="总资产" precision="2"/>
+	<column type="number" id="total_debt" name="总负债" precision="2"/>
+	<column type="number" id="guarantee_rate" name="履约保障比率(%)" precision="2"/>
+	<column type="number" id="yj_line" name="预警履约保障比率(%)" precision="2"/>
+	<column type="number" id="pc_line" name="平仓履约保障比率(%)" precision="2"/>
+	<column type="string" id="institution_name"   name="营业部名称"/>
+  	<column type="string" id="cust_name"   name="客户姓名" />
+	<column type="string" id="warning_level"	name="报警级别"	level="true"	display="false"/>
+  </output>
+</function>

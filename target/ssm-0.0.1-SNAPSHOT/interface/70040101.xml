@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70040101" name="资金专户额度查询" >
+	<input/>
+    <service type="procedure" id="P70040101"  process="922" style="77">
+		<param id="user_id"	            type="integer" way="in"/> 			
+    </service>
+    <output autoload="true" export="true">
+		<column type="number" id="acc_id"		name="账户id" display="false"/>	
+		<column type="number" id="fund_credit"	name="公司授权业务规模" precision="2"/>
+		<column type="string" id="grant_date"	name="授权日期"/>
+		<column type="string" id="user_code"	name="设置人员"/>
+		<column type="number" id="credit_amt_1"	name="合同融出资金" precision="2"/>
+		<column type="number" id="credit_amt_2"	name="合同预留资金" precision="2"/>
+		<column type="number" id="credit_amt_4"	name="合约预留未生效资金" precision="2"/>
+		<column type="number" id="credit_amt_3"	name="合同了结未收回额度" precision="2"/>
+		<column type="number" id="one_max"	name="单笔交易协议书最大金额" precision="2"/>
+		<column type="number" id="all_stock_pna"	name="所有协议书金额占竟资本比例(%)" precision="2"/>
+		<button type="edit" id="edit" name="资金专户额度增加" action="70040103" multiple="-1"/>
+		<button type="edit" id="edit" name="资金专户额度设置" action="70040104" multiple="0"/>
+    </output>
+</function>

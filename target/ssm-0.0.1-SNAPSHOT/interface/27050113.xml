@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="27050113" name="客户融券交易集中度" >
+     <input>
+      <item type="select"  id="institution_id"        name="营业部名称" source="95000008"/> 
+            <item type="text"  id="cust_num"        name="客户数量*" default="1000"/>  
+       <item type="date"  id="start_date"        name="开始日期*" default="last"/>   
+       <item type="date"  id="end_date"        name="结束日期*" default="now"/>             
+     </input>
+  <service type="procedure" id="P27050113"  process="911" style="77">
+      <param id="user_id"               type="integer" way="in"/> 
+       <param id="institution_id"      type="integer" way="in"/> 
+       <param id="cust_num"      type="integer" way="in"/>     
+       <param id="start_date"      type="string" way="in"/>    
+       <param id="end_date"      type="string" way="in"/>                    
+   </service>
+ <output print="true">
+        <column type="string" id="institution_name"   name="营业部名称"/>
+        <column type="string" id="cust_code" name="客户号" />        
+        <column type="string" id="cust_name"   name="客户姓名"/>
+        <column type="number" id="fin_num" name="某段时期融券交易量" precision="2" />   
+        <column type="number" id="fin_total"   name="某段时期单位融券交易量" precision="2"/>   
+        <column type="number" id="rate"   name="占比" precision="6"/>  
+</output>
+</function>  

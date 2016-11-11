@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3063217" name="普通账户总资产查询" >
+	<input >
+		<item type="hidden" id="order_id3"			name="合约id" />
+	</input>
+	<service type="procedure" id="p_total_capital_query" implement="p_total_capital_query3063217"  process="911" style="77">
+		<param id="user_id"				type="integer" 	way="in" />
+		<param id="order_id3"			type="integer"  way="in" />
+	</service>
+	<output>
+		<column type="number" id="total_capital_wy"		name="普通账户总资产"/>
+		<column type="number" id="credit_num2"			name="信用上限"/>
+	</output>
+</function>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="60010524" name="协议书议价">
+	<input/>
+	<service type="drtp" id="777701" process="711" style="1">
+	<param type="string" 	id="scust_no"/>	  			  <!--客户账户-->
+	<param type="string" 	id="sstatus1" default="1"/>	  <!--业务类别-->
+	<param type="string" 	id="sstatus3" default="0"/>	  <!--交易类别-->
+	<param type="string" 	id="sstatus2" default="3"/>	  <!--指令类别-->
+	<param type="string" 	id="smarket_code"/>           <!--市场-->
+	<param type="string" 	id="sstock_code"/>            <!--证券代码-->
+	<param type="number" 	id="lvol0"/>                  <!--数量-->
+	<param type="number" 	id="damt0"/>	              <!--初始交易金额-->
+	<param type="string" 	id="sdate0"/>	              <!--初始交易日期-->
+	<param type="string" 	id="sdate1"/>	              <!--购回交易日期-->
+	<param type="number" 	id="damt4"/>	              <!--购回价格-->
+	<param type="number" 	id="damt1"/>	              <!--交易价格-->
+	<param type="number" 	id="damt2"/>	              <!--折算率-->
+	<param type="number" 	id="damt3"/>	              <!--购回交易金额-->
+	<param type="string" 	id="vsmess"/>	              <!--资金用途-->
+	<param type="string" 	id="scust_auth"/>	          <!--主交易协议书编号-->
+	<param type="string" 	id="sbank_code2" default="GTWT"/>	<!--委托方式-->
+	<param type="string" 	id="sstation0"/>	          <!--委托站点-->
+	<param type="string" 	id="scust_auth2"/>	          <!--交易协议书编号-->
+	<param type="string" 	id="scust_type"/>	          <!--股份性质-->
+	<param type="string" 	id="sdate2"/>	              <!--解除限售日期-->
+	<param type="string" 	id="sstatus4"/>	    		  <!--质权人类型-->
+	<param type="string" 	id="scurrency_type"/>		  <!--证券类别-->
+	<param type="string" 	id="sstatus0"/>               <!--流通类型-->
+	<param type="string" 	id="scurrency_type2"/>        <!--权益类别-->
+	<param type="string" 	id="schange_emp"/>            <!--挂牌年份-->
+	<param type="string" 	id="sname"/>                  <!--合同编号-->
+	<param type="string" 	id="sholder_type"/>           <!--是否允许提前购回-->
+	<param type="string" 	id="sdate3"/>                 <!--被允许的最早购回时点-->
+	<param type="number" 	id="damt5"/>                  <!--提前购回补偿费率-->
+	<param type="string" 	id="sholder_type2"/>          <!--是否允许延期购回-->
+	<param type="string" 	id="stime0"/>                 <!--被允许的最晚购回时点-->
+	<param type="number" 	id="damt6"/>                  <!--延期购回补偿费率-->
+	<param type="number" 	id="damt7"/>                  <!--提取系数-->
+	<param type="number" 	id="lvol2"/>                  <!--区间回购天数1-->
+	<param type="number" 	id="damt8"/>                  <!--购回价格2-->
+	<param type="number" 	id="lvol3"/>                  <!--区间回购天数2-->
+	<param type="number" 	id="damt9"/>                  <!--购回价格3-->
+	<param type="number" 	id="lvol4"/>                  <!--区间回购天数3-->
+	<param type="number" 	id="damt10"/>                 <!--市值折扣率-->
+	<param type="number" 	id="vsvarstr0"/>              <!--个性化结息日-->
+	<param type="number" 	id="stx_pwd"/>                <!--产品代码-->
+  </service>
+  <output target="60010521">
+	<column name="交易协议书编号"	id="scust_auth2"   type="string"  field="scust_auth2"/>
+  </output>
+</function>

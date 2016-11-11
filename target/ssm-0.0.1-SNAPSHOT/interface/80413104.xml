@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="GBK" ?>
+<function id="80413104" name="取客户股份">
+  <input>
+  	<item type="text" id="scust_no" name="客户号"/>
+  </input>
+  <service type="drtp" id="413104" process="711" style="77">
+	  <param type="string" id="scust_no"/>
+  </service>
+  <output target="81413104">
+    <column name="客户代码"       id="cust_code"         type="string" field="scust_no"      />
+    <column name="客户姓名"       id="cust_name"         type="string" field="sname"         />
+    <column name="账户代码"	      id="acc_code"		       type="string" field="sholder_ac_no" />
+    <column name="日期"		        id="date"			         type="string" field="stime3"        />
+    <column name="货币类型"	      id="currency_type"	   type="string" field="scurrency_type"/>
+    <column name="市场代码"	      id="market_code"	     type="string" field="smarket_code"  />
+    <column name="产品类型"	      id="product_type"		   type="string" field="ssectypes"     />
+    <column name="证券代码"	      id="product_code"		   type="string" field="sstock_code"   />
+    <column name="证券余额"	      id="asset_qty"	       type="number" field="lvol0"         />
+    <column name="当日买入数量"	  id="cur_buy_vol"	     type="number" field="lvol1"         />
+    <column name="当日买入金额"	  id="cur_buy_amt"	     type="number" field="damt7"         />
+    <column name="当日卖出数量"	  id="cur_sell_vol"		   type="number" field="lvol2"         />
+    <column name="当日卖出金额"	  id="cur_sell_amt"		   type="number" field="damt8"         />
+    <column name="异常冻结数量"	  id="abnormal_frzn_vol" type="number" field="lvol3"         />
+    <column name="买入解冻数量"	  id="buy_unfrzn_vol"		 type="number" field="lvol11"         />
+    <column name="卖出冻结数量"	  id="sell_frozen_vol"	 type="number" field="lvol12"         />
+    <column name="手工冻结数量"	  id="manual_frozen_vol" type="number" field="lvol5"         />
+    <column name="手工解冻数量"	  id="manual_unfrzn_vol" type="number" field="lvol6"         />
+    <column name="存入数量"	      id="trin_bal"		       type="number" field="lvol7"         />
+    <column name="取出数量"	      id="trout_bal"	       type="number" field="lvol8"        />
+    <column name="买入未过户数量"	id="uncome_buy_vol"		 type="number" field="lvol9"        />
+    <column name="买入未过户金额"	id="uncome_buy_amt"		 type="number" field="damt0"        />
+    <column name="卖出未过户数量"	id="uncome_sell_vol"	 type="number" field="lvol10"        />
+    <column name="卖出未过户金额"	id="uncome_sell_amt"	 type="number" field="damt1"        />
+    <column name="资产价值"	      id="asset_value"	     type="number" field="damt5"        />
+    <column name="持仓成本"	      id="buy_cost_price"		 type="number" field="damt3"        />
+    <column name="浮动盈亏"	      id="profit_loss"	     type="number" field="damt4"         />   
+  </output>
+</function>

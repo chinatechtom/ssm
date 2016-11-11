@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="83130101" name="发送委托指令">
+  <input/>
+  <service type="drtp" id="413000" process="711" style="1">
+	  <param type="string" id="scust_no"/>
+	  <param type="string" id="sholder_ac_no"/>
+	  <param type="string" id="smarket_code"/>
+	  <param type="string" id="scust_type"/>
+	  <param type="string" id="sstock_code"/>
+	  <param type="number" id="damt0"/>
+	  <param type="number" id="lvol0"/>
+	  <param type="string" id="sstatus0"/>
+	  <param type="string" id="sbranch_code0"/>
+	  <param type="string" id="lvol1"/>
+	  <param type="string" id="sbank_code"/>
+	  <param type="string" id="sorder1"/>
+	  <param type="string" id="semp"/>
+	  <param type="string" id="sstation0"/>
+	  <param type="string" id="sorder0"/>
+	  <param type="string" id="sstock_code2"/>
+	  <param type="string" id="lvol2"/>
+	  <param type="string" id="sstatus1"/>
+	  <param type="string" id="sstatus2"/>
+	  <param type="string" id="lsafe_level"	default="1"/>
+	  <param type="integer" id="lvol9"  default="130101"/>
+  </service>
+  <output/>
+</function>

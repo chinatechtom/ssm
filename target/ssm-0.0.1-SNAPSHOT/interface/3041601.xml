@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3041601" name="信用级别担保率浏览" >
+  <input>
+	<item type="select"	id="credit_level_id"		name="信用级别名称"	source="90000002"/>
+    <item type="hidden"	id="guarantee_rate_id"		name="担保率类id"	/>
+	<item type="text"	id="guarantee_rate_name"	name="担保率名称"/>	
+    <item type="select"	id="instruction"			name="交易指令"		source="310"/>	
+  </input>
+  <service type="procedure" id="p_credit_guarantee_rate_browse" implement="p_credit_guarantee_rate_browse41601"  process="911" style="77"> 
+    <param id="user_id"				type="integer" way="in"/> 
+	<param id="credit_level_id"		type="integer" way="in"/>
+    <param id="guarantee_rate_id"	type="integer" way="in"/>
+    <param id="guarantee_rate_name"	type="string"  way="in"/>
+	<param id="instruction"			type="string"  way="in"/>	
+  </service>
+  <output autoload="true" print="true">
+	<column type="number" id="credit_level_id"		name="信用级别id" display="false"/>
+	<column type="string" id="credit_level_code"	name="信用级别代码" display="false"/>	
+	<column type="string" id="credit_level_name"	name="信用级别名称" />
+	<column type="string" id="risk_level"			name="风险级别1"	  display="false"/>
+	<column type="string" id="risk_level_name"		name="风险级别"/>
+	<column type="string" id="if_estop"				name="是否禁止1"  display="false"/>
+	<column type="string" id="if_estop_name"		name="是否禁止"	display="false"/>	
+	<column type="number" id="guarantee_rate_id"	name="担保率类id" display="false"/>	
+	<column type="number" id="guarantee_rate"		name="担保率"	  precision="4"/>	
+	<column type="string" id="guarantee_rate_name"	name="担保率名称"/>
+	<column type="string" id="guarantee_rate_use"	name="担保率说明"/>
+	<column type="string" id="instruction"			name="交易指令1"  display="false"/>
+	<column type="string" id="instruction_name"		name="交易指令"/>	
+  </output>
+</function>

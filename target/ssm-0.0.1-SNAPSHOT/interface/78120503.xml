@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="gbk" ?> 
+ <function id="78120503" name="客户交易佣金信息同步">
+  <input /> 
+  <service type="procedure" id="p78120503" adapter="bbs" process="822" style="1">  
+	<param id="user_id" type="integer"  way="in" /> 
+	<param id="sbranch_code0" type="string"  way="in" /> 
+	<param id="sdate0" type="string"   way="in" /> 
+	<param id="scust_no" type="string"   way="in" /> 
+	<param id="smarket_code" type="string"   way="in" /> 
+	<param id="sholder_ac_no" type="string"   way="in" /> 
+	<param id="stock_code" type="string"   way="in" /> 
+	<param id="lvol0" type="integer"    way="in" /> 
+	<param id="damt0" type="float"    way="in" /> 
+	<param id="sdate1" type="string"    way="in" /> 
+	<param id="sorder1" type="string"  way="in" /> 
+	<param id="spost_code2" type="string"   way="in" /> 
+	<param id="damt6" type="float"   way="in" /> 
+	<param id="damt7" type="float"   way="in" /> 
+	<param id="damt8" type="float"   way="in" /> 
+	<param id="lvol2" type="integer"  way="in" /> 
+  </service>
+  <output /> 
+  </function>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="306701" name="新增调整费率申请" >
+ <description>合同计费模式为产品模式，不能调整费率！</description> 
+  <input>
+  </input>
+</function>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="50077604" name="审核通过" >
+	<input>
+		<item type="hidden" id="order_id" name="定单id" />  
+		<group name="处理意见">
+			<item type="textarea" id="manage_opinion" name="处理意见" editable="false"/>
+		</group>
+		<group name="审核意见">			
+			<item type="textarea" id="approver_opinion" name="审核意见"/>
+		</group>
+	</input>
+	<service type="procedure" id="p50077601" process="866" style="1">
+		<param type="integer" id="user_id" way="in"/>
+		<param type="integer" id="order_id"  way="in"  />
+		<param type="string" id="manage_type" default="3"/>
+		<param type="string" id="manage_status" default="05"/>
+		<param type="string" id="approver_opinion" way="in"/>
+	</service>
+	<output/>
+</function>

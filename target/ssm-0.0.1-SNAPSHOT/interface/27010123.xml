@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="27010123" name="融资业务额度汇总统计表" >
+     <input>     
+     </input>
+  <service type="procedure" id="P27010123"  process="911" style="77">
+      <param id="user_id"               type="integer" way="in"/> 
+   </service>
+ <output print="true">
+        <column type="string" id="row_id" name="序号"/>        
+        <column type="string" id="project_id"   name="项目"/>
+        <column type="number" id="amt"   name="金额" precision="2"/>
+</output>
+</function>  

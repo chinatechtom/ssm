@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="30763" name="客户应买证券查询" >
+	<input>
+		<item type="text"  id="record_id" name="平仓报告编号" integer="true" nullable="false"/>
+	</input>
+    <service type="procedure" id="p_cust_should_buy_stock_query3"  process="911" style="77">
+		<param id="user_id"	            type="integer" way="in"/> 
+		<param id="record_id"	        type="integer" way="in"/>
+    </service>
+    <output export="true">
+		<column type="number"  id="record_id"				name="平仓报告编号"/>
+		<column type="number"  id="cust_id"					name="客户id"	display="false"/>
+		<column type="string"  id="cust_code"				name="客户代码"/>
+		<column type="string"  id="cust_name"				name="客户姓名"/>
+		<column type="number"  id="acc_id"					name="账户id"	display="false"/>        
+		<column type="string"  id="acc_code"				name="账户代码"/>        
+		<column type="number"  id="product_id"				name="证券id"	display="false"/>               
+		<column type="string"  id="product_code"			name="证券代码"/>                     
+		<column type="string"  id="product_name"			name="证券名称"/>
+		<column type="string"  id="market_code"				name="市场1"		display="false"/>
+		<column type="string"  id="market_code_name"		name="市场"/>
+		<column type="number"  id="asset_qty"				name="证券数量"/> 
+		<column type="number"  id="asset_value"				name="证券总价值"	precision="2" total="true"/>
+		<column type="number"  id="buy_qty"					name="买入数量"/> 
+		<column type="number"  id="buy_value"				name="买入总价值"	precision="2" total="true"/>
+		<column type="number"  id="buy_price"				name="买入价格"		precision="3"/>
+		<column type="number"  id="position"				name="位置"	display="false"/>
+		<column type="number"  id="stock_convert_rate"		name="折算率"		precision="4"/>
+		<button type="set"   id="set"	name="设置"	action="30765"		multiple="0"/>
+    </output>
+</function>

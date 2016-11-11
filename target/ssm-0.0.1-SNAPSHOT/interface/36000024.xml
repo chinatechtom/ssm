@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="36000024" name="保证金比例" >
+<input>
+  <item type="select" id="market_code"   name="市场名称" source="039"/>
+  <item type="text"   id="product_code" name="证券代码" />
+  <item type="year"   id="year"        name="年份选择" nullable="false"/>
+  <item type="month"  id="month"       name="月份选择" nullable="false"/>
+</input>
+<service type="procedure" id="P36000024" process="911" style="77">
+  <param id="user_id" type="integer"/>
+  <param id="market_code" type="string"/>
+  <param id="product_code" type="string"/> 
+  <param id="year"     type="integer"/>
+  <param id="month"    type="integer"/>
+</service>
+  <output export="true" >
+  <column type="string" id="c1"   name="序号"  display="false"/>
+ <group name="项目"><column type="string" id="c2"   name=" "/>
+  <column type="string" id="c3"   name=" "  />
+ </group>
+  <column type="number" id="c4"   name="比例" precision="2" />
+  <column type="string" id="c5"   name="备注"  />
+  <column type="string" id="market_code"    name="市场名称"  display="false"/>
+  <column type="string" id="product_code"   name="证券代码"  display="false"/>
+  <column type="string" id="print_date"   name="时间"  display="false"/>
+  <column type="string" id="year"           name="年份选择"  display="false"/>
+  <column type="string" id="month"          name="月份选择"  display="false"/>
+  <button type="print" id="print" name="打印" action="36110024" multiple="1"/>
+</output>
+</function>

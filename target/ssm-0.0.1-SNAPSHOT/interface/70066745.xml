@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70066745" name="合约详情" >
+	<input print="70010504.jsp">
+		<item type="hidden" id="order_id"     name="合约ID" action="70010501"/>
+		<item type="hidden" id="cust_id"     name="合约ID"/>
+		<item type="text" id="institution_code" name="营业部代码" editable="false"/>
+		<item type="text" id="institution_name" name="营业部名称" editable="false"/>
+		<item type="text" id="cust_code" name="客户代码" editable="false"/>
+		<item type="text" id="xy_cust_code" name="信用客户代码" editable="false"/>
+		<item type="text" id="cust_name" name="客户姓名" editable="false"/>
+		<item type="text" id="full_name" name="客户全称" editable="false"/>
+		<item type="text" id="cust_type" name="客户类型" editable="false"/>
+		<item type="text" id="cert_type" name="证件类型" editable="false"/>
+		<item type="text" id="cert_no" name="证件号码" editable="false"/>
+		<item type="text" id="cust_num" name="客户资产(万元)" editable="false"/>
+		<item type="text" id="pt_asset" name="客户普通账户总资产(万元)" editable="false"/>
+		<item type="text" id="xy_asset" name="客户信用账户总资产(万元)" editable="false"/>
+		<item type="text" id="xy_debt" name="客户信用账户总负债(万元)" editable="false"/>
+		<item type="text" id="credit_num_rate" name="最大交易额度系数(%)" editable="false"/>
+		<item type="text" id="credit_calc" name="资产乘额度系数(万元)" editable="false"/>
+		<item type="text" id="approve_num" name="审批最大交易额度(万元)" editable="false"/>
+		<item type="text" id="total_score" name="征信总分" editable="false"/>
+		<item type="text" id="credit_level_code" name="信用级别代码" editable="false"/>
+		<item type="text" id="credit_level_name" name="信用级别名称" editable="false"/>
+		<item type="text" id="fund_credit" name="公司授权规模(万元)" editable="false"/>
+		<item type="text" id="one_max" name="单客户最大交易额度(万元)" editable="false"/>
+		<item type="text" id="total_credit" name="已发放额度(万元)" editable="false"/>
+		<item type="text" id="total_used" name="已使用额度(万元)" editable="false"/>
+		<item type="text" id="total_unused" name="未使用额度(万元)" editable="false"/>
+		<item type="text" id="credit_min" name="计算最大交易额度(万元)" editable="false"/>
+		<item type="text" id="request_date" name="申请日期前一天" editable="false"/>
+		<item type="text" id="system_date" name="系统日期" editable="false"/>
+		<item type="text" id="active_date" name="评级生效日期" editable="false"/>
+		<item type="text" id="begin_date" name="额度开始日期" editable="false"/>
+		<item type="text" id="end_date" name="额度结束日期" editable="false"/>
+		<item type="text" id="credit_type" name="授信类型" editable="false"/>
+		<item type="hidden" id="company" name="公司名称"/>
+		<item type="text" id="asset_date" name="资产日期" editable="false"/>
+	</input>
+</function>

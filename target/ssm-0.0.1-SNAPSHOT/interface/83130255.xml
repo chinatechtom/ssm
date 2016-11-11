@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="83130255" name="更新普通账户信息"> <!--modify by SECREQ-2316 20150319 zyt-->
+	<input/>
+	<service type="procedure" id="p_130255_t_cust_commness_set" implement="p_130255_t_cust_commness_set_83130255" process="811" style="1">
+		<param type="string" id="cust_code"/>
+		<param type="string" id="commness_cust_code"/>
+		<!--<param type="string" id="market_code"/>--> <!--modify by SECGPZY-2568-->
+	</service>
+	<output/>
+</function>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3138102" name="设置下一交易日" >	
+	<description>确定要设置下一交易日?</description>
+  <input> 
+    <item type="text" id="date" name="当前交易日" editable="false"/> 
+    <item type="date" id="next_day"  name="下一交易日" nullable="false"/> 
+  </input>
+  <service type="procedure" id="p_next_day_set"  process="811" style="1"> 
+		<param id="USER_ID"	type="integer"/>
+		<param id="next_day"   type="string"/>    
+  </service>
+  <output>       
+  </output>		
+</function>

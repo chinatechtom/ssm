@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="80880056" name="快融宝延期客户现场回访-内部查询" >
+    <input>
+        <item type="hidden" id="order_id" name="order_id"/>
+    </input>
+    <service type="procedure" id="P60880056" process="933" style="77">
+        <param type="integer" id="user_id"/>	
+        <param type="integer" id="order_id"/>
+    </service>
+	<output export="true">
+		<column type="string" id="cust_id" name="客户id" display="false"/>
+        <column type="string" id="cust_code" name="客户号"/>
+        <column type="string" id="cust_name" name="客户名称"/>
+        <column type="string" id="institution_id" name="营业部id" display="false"/>
+        <column type="string" id="institution_code" name="营业部代码"/>
+        <column type="string" id="institution_name" name="营业部名称"/>
+		<column type="string" id="visit_type" name="回访类型"/>
+        <column type="string" id="visit_type_name" name="回访类型"/>
+		<column type="string" id="begin_date" name="回访日期"/>
+        <column type="string" id="end_date" name="回访有效期截止"/>
+		<column type="string" id="remark" name="回访备注"/>
+	</output>
+</function>

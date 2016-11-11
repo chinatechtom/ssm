@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="60010414" name="交易协议书议价" >
+  <input>
+	<group name="合同信息" >
+		<item type="hidden" id ="cust_id" name="客户id" action="97000013"/>
+		<item type="hidden" id ="institution_id" name="营业部id" />
+		<item type="text" 	id ="institution_name" name="营业部名称" editable="false"/>
+		<item type="text" 	id ="institution_code" name="营业部代码" editable="false"/> 
+		<item type="text" 	id ="bond_no" name="合同编号" editable="false"/>
+		<item type="text" 	id ="cust_name" name="客户姓名" editable="false"/>
+		<item type="text" 	id ="cust_code" name="客户代码" editable="false"/>
+	</group>
+	<group name="融出方信息">
+		<item type="select" id="lender_id" name="融出方" source="97600001" editable="false" action="60010101"/>
+		<item type="text" id="lender_code" name="融出方代码" editable="false" maxlen="6"/>
+		<item type="text" id="lender_name" name="融出方名称" editable="false" maxlen="100"/>
+		<item type="select" id="lender_type" name="融出方类别" source="800" editable="false"/>
+		<item type="select" id="if_valid" name="是否有效" source="802" editable="false" default="1"/>
+		<item type="date" id="found_date" name="设立日期" editable="false"/>
+	</group>
+	<item type="hidden" id="date" name="打印日期"/>	<!--从1888.xml获得的打印日期-->
+	<item type="hidden" id="user_code" name="打印柜员代码"/><!--从1888.xml获得的打印柜员代码-->
+	<item type="hidden" id="user_name" name="打印柜员名称"/><!--从1888.xml获得的打印柜员名称-->
+	<item type="hidden" id="company" name="券商名称"/><!--从1888.xml获得的券商名称-->			
+	<group name="交易协议书要素">
+		<item type="hidden" id ="bond_id" name="bondid"/>
+		<item type="hidden" id ="lender_id" name="lenderid"/>
+		<item type="text" 	id ="sbond_no" name="交易协议书编号" editable="false" nullable="false"/>
+		<item type="select" id ="related_sbond_no" name="主关联交易协议书编号" nullable="false" source="97600019" filter="bond_id"/>
+		<item type="select" id ="mortgagee_id" name="质权人" nullable="false" source="97600007" filter="lender_id"/>
+		<item type="text"   id ="project_code" name="项目编号" nullable="false"/>
+	</group>	
+	<group name="标的证券信息">
+        <item type="hidden"  id ="return_code" name="错误码"/>
+		<item type="select" id ="market_code" name="市场代码" nullable="false" source="039" action="97600012,97600009"/>
+		<item type="text" 	id ="product_code" name="标的证券代码" nullable="false" action="97600012,97600020,97600009,97600005,97600006" minlen="6" maxlen="6" />
+		<item type="text"	id ="product_name" name="标的证券名称" editable="false"/>
+		<item type="text"	id ="product_type" name="标的证券类别" editable="false"/>		
+		<item type="date" 	id ="circ_date" name="流通日期"/>
+		<item type="text" 	id ="hg_num" name="标的证券数量" nullable="false" integer="true" action="97600008,96000006"/>
+		<item type="textarea" id ="hg_num_big" name="标的证券数量大写" editable="false"/>
+		<item type="select" id ="zqlb" name="证券类别" source="816" filter="if_editable=1" action="97600020"/>
+		<item type="select" id ="ltlx" name="流通类型" source="817" filter="if_editable=1" action="97600009"/>
+		<item type="select" id ="qylb" name="权益类别" source="818" filter="if_editable=1"/>
+		<item type="text" 	id ="gpnf" name="挂牌年份" filter="if_editable=1" />
+		<item type="select" id ="stock_property" name="股份性质" source="803" filter="if_editable=1" action="97600009"/>
+		<item type="text" 	id ="hg_convert_rate" name="折扣比率(%)" nullable="false" number="true" action="97600008"/>
+		<item type="text" 	id ="app_price" name="标的证券价格" nullable="false" number="true" action="97600008"/>
+	</group>	
+	<group name="交易要素">				
+		<item type="date" 	id ="engage_trade_date" name="初始交易日期" default="now" nullable="false"  action="97000016,96000016"/>
+		<item type="date" 	id ="bb_date" name="购回交易日期" nullable="false"  action="97000006,97000016"/>
+		<item type="text" 	id ="days" name="购回期限(天)" nullable="false" integer="true" action="96000016"/>
+		<!--<item type="text" 	id ="hg_rate" name="购回价格(每100元年收益)" nullable="false" number="true"  action="97000006"/> -->
+		<item type="text" 	id ="para4046" name="违约金比率(日利率%)" nullable="false" number="true" editable="false"/>
+		<item type="text"	id ="prewarning_price" name="预警履约保障比率(%)" nullable="false" number="true" />
+		<item type="text" 	id ="lowest_price" name="最低履约保障比例(%)" nullable="false" number="true"/>
+		<item type="text" 	id ="mv_discount_rate" name="市值折扣比率(%)" nullable="false" number="true"/>
+		<item type="text" 	id ="first_amt" name="初始交易金额小写" nullable="false" number="true"  action="96000006"/>
+		<item type="textarea" id ="first_amt_big" name="初始交易金额大写" editable="false"/>
+		<item type="text" 	id ="second_amt" name="购回交易金额小写" editable="false"/>
+		<item type="textarea" id ="second_amt_big" name="购回交易金额大写" editable="false"/>
+		<item type="text" 	id ="fix_rate" name="固定交易费用比例(%)" editable="false" number="true" default="0" action="96000006"/>
+		<item type="select" id ="if_before" name="是否允许提前购回" nullable="false" source="813" default="1"/>
+		<item type="date" 	id ="earliest_bb_date" name="被允许的最早购回时点" nullable="false"/>
+		<item type="text"	id ="before_rate" name="提前购回补偿费率(%)" nullable="false" number="true" default="0"/>
+		<item type="select" id ="if_after" name="是否允许延期购回" nullable="false" source="815" default="1"/>
+		<item type="date" 	id ="latest_bb_date" name="被允许的最晚购回时点" nullable="false"/>
+		<item type="text"	id ="after_rate" name="延期购回补偿费率(%)" nullable="false" number="true" default="0"/>
+		<item type="text"	id ="tqxs" name="提取系数" nullable="false" number="true"/>
+		<item type="select"	id ="if_mand_nota" name="是否强制公证" nullable="false" source="827" default="0"/>
+	</group>	
+	<group name="个性化结息">		
+		<item type="select"	id ="if_per_interest" name="是否个性化结息" nullable="false" source="828" default="0"/>
+		<item type="date"	id ="interest_set_dates1" name="个性化结息日期1" default="null"/>
+		<item type="date"	id ="interest_set_dates2" name="个性化结息日期2" default="null"/>	
+		<item type="date"	id ="interest_set_dates3" name="个性化结息日期3" default="null"/>	
+		<item type="date"	id ="interest_set_dates4" name="个性化结息日期4" default="null"/>	
+		<item type="date"	id ="interest_set_dates5" name="个性化结息日期5" default="null"/>	
+		<item type="date"	id ="interest_set_dates6" name="个性化结息日期6" default="null"/>	
+		<item type="date"	id ="interest_set_dates7" name="个性化结息日期7" default="null"/>
+		<item type="date"	id ="interest_set_dates8" name="个性化结息日期8" default="null"/>	
+		<item type="date"	id ="interest_set_dates9" name="个性化结息日期9" default="null"/>	
+		<item type="date"	id ="interest_set_dates10" name="个性化结息日期10" default="null"/>	
+		<item type="date"	id ="interest_set_dates11" name="个性化结息日期11" default="null"/>			
+    </group>
+    <group name="利息要素">		
+		<item type="text" 	id ="section_days1" name="购回期限(天)1" default="0" nullable="false" integer="true" action="96000016,96000006" />
+		<item type="text" 	id ="section_begin_date1" name="起息日期1"  nullable="false" editable="false" />
+		<item type="text" 	id ="section_hg_rate1" name="购回价格1(每100元年收益)" default="0" nullable="false" number="true" action="96000006" />		
+		<item type="text" 	id ="section_days2" name="购回期限(天)2" default="0" integer="true" action="96000016,96000006" />
+		<item type="text" 	id ="section_begin_date2" name="起息日期2"  editable="false"  />
+		<item type="text" 	id ="section_hg_rate2" name="购回价格2(每100元年收益)" default="0" number="true" action="96000006" />		
+		<item type="text" 	id ="section_days3" name="购回期限(天)3" default="0" integer="true" editable="false" action="96000006"/>
+		<item type="text" 	id ="section_begin_date3" name="起息日期3" editable="false" />
+		<item type="text" 	id ="section_hg_rate3" name="购回价格3(每100元年收益)" default="0" number="true" action="96000006" />
+	</group>
+	<group name="资金用途">		
+		<item type="textarea" id ="zjyt" name="资金用途" nullable="false"/>
+		<item type="textarea" id ="remarks" name="备注"/>
+	</group>
+	<item type="hidden" id="abc"	   name="杂项ID"   default="1" action="97600080"/>
+	<item type="hidden"	id="company"   name="公司名称" editable="false" />
+	<item type="hidden" id="para4046"  name="杂项4046" editable="false"/>	
+  </input>
+  <service type="procedure" id="P60010414" process="833" style="1">
+	<param type="integer" 	id="user_id"/>
+	<param type="integer" 	id="cust_id"/>
+	<param type="integer" 	id="bond_id"/>
+	<param type="string" 	id="sbond_no"/>
+	<param type="string"	id="market_code"/>
+	<param type="string"	id="product_code"/>
+	<param type="integer"	id="hg_num"/>
+	<param type="float"		id="hg_convert_rate"/>
+	<param type="float"		id="app_price"/>
+	<param type="string"	id="engage_trade_date"/>
+	<param type="integer"	id="days"/>
+	<param type="float"		id="para4046"/>
+	<param type="float"		id="prewarning_price"/>
+	<param type="float"		id="lowest_price"/>
+	<param type="string"	id="remarks"/>
+	<param type="double"	id="first_amt"/>
+	<param type="double"	id="second_amt"/>
+	<param type="string" 	id="related_sbond_no"/>	
+	<param type="integer" 	id="mortgagee_id"/>
+	<param type="float" 	id="fix_rate"/>
+	<param type="string" 	id="zjyt"/>
+	<param type="string" 	id="stock_property"/>
+	<param type="string" 	id="circ_date"/>	
+	<param type="string" 	id="if_before"/>
+	<param type="string" 	id="earliest_bb_date"/>
+	<param type="double"	id="before_rate"/>
+	<param type="string" 	id="if_after"/>
+	<param type="string" 	id="latest_bb_date"/>
+	<param type="double"	id="after_rate"/>
+	<param type="double"	id="tqxs"/>
+	<param type="float"		id="section_hg_rate1"/>
+	<param type="integer"	id="section_days1"/>
+	<param type="float"		id="section_hg_rate2"/>
+	<param type="integer"	id="section_days2"/>
+	<param type="float"		id="section_hg_rate3"/>
+	<param type="integer"	id="section_days3"/>
+	<param type="string" 	id="zqlb"/>
+	<param type="string" 	id="ltlx"/>
+	<param type="string" 	id="qylb"/>
+	<param type="string" 	id="gpnf"/>
+	<param type="float" 	id="mv_discount_rate"/>
+	<param type="string" 	id="if_mand_nota"/>
+	<param type="string" 	id="if_per_interest"/>
+	<param type="string" 	id="project_code"/>
+	<param type="string" 	id="interest_set_dates1"/>
+	<param type="string" 	id="interest_set_dates2"/>
+	<param type="string" 	id="interest_set_dates3"/>	
+	<param type="string" 	id="interest_set_dates4"/>
+	<param type="string" 	id="interest_set_dates5"/>
+	<param type="string" 	id="interest_set_dates6"/>
+	<param type="string" 	id="interest_set_dates7"/>
+	<param type="string" 	id="interest_set_dates8"/>
+	<param type="string" 	id="interest_set_dates9"/>	
+	<param type="string" 	id="interest_set_dates10"/>
+	<param type="string" 	id="interest_set_dates11"/>
+  </service>
+  <output/>
+</function>

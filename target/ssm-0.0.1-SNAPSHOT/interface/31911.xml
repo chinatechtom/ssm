@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="31911" name="融资情况查询" >	
+  <input export="true">	
+		<item type="select" id="institution_id" name="营业部名称"  source="95000008"/>
+		<item type="text" 	id="cust_code" 		name="客户代码"/>
+		<item type="text" 	id="product_code" 	name="证券代码"/>
+		<item type="select" id="market_code" 	name="市场代码" source="039"/>
+		<item type="date" 	id="sdate" 			name="起始日期" default="last" nullable="false"/>
+		<item type="date" 	id="edate" 			name="结束日期" default="now"  nullable="false"/>
+		<group name="分页查询" page="true">		
+			<item type="text"   id="page_num"       name="页码"     integer="true" default="1"/>
+			<item type="select" id="rows_num"       name="每页行数" integer="true" source="95000012" nullable="false"/>
+		</group>
+  </input>  
+  <service type="procedure" id="p_report_financing_situation_query" process="911" style="77"> 
+		<param id="user_id"	type="integer" way="in"/>
+		<param id="page_num" type="integer"/>
+		<param id="rows_num" type="integer"/>	
+		<param id="institution_id" type="integer"/> 
+		<param id="sdate"/>
+		<param id="edate"/>
+		<param id="cust_code"/>
+		<param id="product_code"/>
+		<param id="market_code"/>
+  </service>  
+  <output export="true">
+		<column type="string" id="institution_name"   	name="营业部名称"/>
+		<column type="string" id="cust_no"   			name="客户代码"/>
+		<column type="string" id="cust_name"   			name="客户姓名"/>
+    	<column type="string" id="occur_date"   		name="发生日期"/>
+    	<column type="string" id="repay_date"   		name="偿还期限"/>
+    	<column type="string" id="market_code"   		name="市场"/>
+    	<column type="string" id="sec_code"   			name="证券代码"/>
+		<column type="number" id="buy_vol"   			name="融资买入数量"	precision="2"/>
+		<column type="number" id="price"   				name="成本价格"		precision="3"/>
+    	<column type="number" id="occur_bal"   			name="融资买入金额"	precision="2"/>
+    	<column type="number" id="payback_bal" 			name="融资偿还金额"	precision="2"/>
+		<!--<column type="number" id="real_financing_amt"	name="实时融资余额"	precision="2"/>-->
+    	<column type="string" id="last_payback_date"   	name="最近偿还日期"/>
+    	<column type="number" id="non_pay_fee_sum"   	name="融资利息费用"	precision="2"/>
+    	<column type="number" id="done_amt"   			name="成交金额"		precision="2"/>
+    	<column type="number" id="fee_flag"				name="费用标志"/>
+    	<column type="string" id="serial_no"   			name="流水号"/>
+    	<column type="string" id="note"   				name="备注"/>
+  </output>
+</function>

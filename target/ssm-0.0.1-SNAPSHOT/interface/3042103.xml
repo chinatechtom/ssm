@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3042103" name="评级因子内容修改" >	
+  <input>
+		<item type="select" id="cust_type"  name="所属客户类型" source="027" editable="false"/>
+		<item type="hidden" id="ratingfactor_type" name="评级因子类型"/>
+		<item type="text" id="ratingfactor_type_name"  name="评级因子类型名称" nullable="false" editable="false"/>
+		<item type="hidden" id="ratingfactor_sort" name="评级因子类别"/>
+		<item type="text" id="ratingfactor_name" name="评级因子名称" nullable="false" editable="false"/>
+		<item type="hidden" id="data_code"  name="数据编码"/>
+		<item type="text" id="data_content"  name="数据内容" nullable="false"/>
+		<item type="text" id="score"  name="参考分值" nullable="false"/>
+		<item type="text" id="lower_limit"  name="下限" number="true"/>
+		<item type="text" id="upper_limit"  name="上限" number="true"/>
+  </input>
+  <service type="procedure" id="p_ratingfactor_modify"  process="811" style="1"> 
+		<param id="user_id"			type="integer"/>		
+		<param id="ratingfactor_type" />
+		<param id="ratingfactor_type_name"/>
+		<param id="ratingfactor_sort"/>
+		<param id="ratingfactor_name"/>
+		<param id="data_code"/>
+		<param id="data_content"/>
+		<param id="score"/>
+		<param id="upper_limit"	type="float"/>
+		<param id="lower_limit"	type="float"/>
+  </service>
+  <output>	
+  </output>		
+</function>

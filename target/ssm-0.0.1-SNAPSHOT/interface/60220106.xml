@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="60220106" name="登记公司数据导入查询" >
+  <input>	
+	<item type="hidden"	id="id"		name="id" action="31381" default="1"/>		
+	<item type="date"	id="date"		name="日期" editable="false"/>
+  </input>
+  <service type="procedure" id="P60100107" process="933" style="77">
+	<param id="user_id" type="integer"/>
+	<param id="date"/>
+  </service>
+  <output export="true">  
+	<column type="string" id="in_name"  name="导入登记公司数据类型"/>
+	<column type="number" id="in_num"  name="数据记录数"/>   
+	<column type="string" id="status"	name="导入文件是否存在"/> <!--20150624 SECGPZY-306-->
+	</output>
+</function>

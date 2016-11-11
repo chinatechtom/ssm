@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="30767" name="平仓报告变更表" >
+	<input print="30767.jsp">		
+		<group name="客户基本信息">
+			<item type="hidden"	id="cust_id"	name="客户id" action="30101,30119,1888"/>
+			<item type="text"	id="institution_name"	name="营业部名称"	editable="false"/>
+			<item type="text"	id="cust_code"	name="客户代码"	editable="false"/> 
+			<item type="text"	id="cust_name"	name="客户姓名"	editable="false"/>	
+			<item type="text"	id="cust_type"	name="客户类型"	editable="false"/>	
+			<item type="text"	id="cust_sort"	name="客户类别"	editable="false"/>	
+			<item type="text"	id="gender"		name="性别"	editable="false"/>	
+			<item type="text"	id="cert_type"	name="证件类型"	editable="false"/>	
+			<item type="text"	id="cert_number"	name="证件号码"	editable="false"/>	
+			<item type="text"	id="area_code"	name="联系地址"	editable="false"/>	
+			<item type="text"	id="postalcode"	name="邮政编码"	editable="false"/>
+			<item type="text"	id="find_mode_value"	name="主联系方式"	editable="false"/>
+			<item type="text"	id="sh_acc"	name="上海信用证券账户"	editable="false"/>
+			<item type="text"	id="sz_acc"	name="深圳信用证券账户"	editable="false"/>
+			<item type="hidden" id="date"     name="打印日期"/>	<!--从1888.xml获得的打印日期-->
+			<item type="hidden" id="user_code"     name="打印柜员代码"/><!--从1888.xml获得的打印柜员代码-->
+			<item type="hidden" id="user_name"     name="打印柜员名称"/><!--从1888.xml获得的打印柜员名称-->
+			<item type="hidden" id="company"    name="券商名称"/><!--从1888.xml获得的券商名称-->
+		</group>
+		<group name="平仓信息">
+			<item type="text"  id="record_id"	name="平仓报告编号" editable="false"/>	
+			<item type="text" id="touch_date"	name="触发平仓日期"	editable="false"/>
+			<item type="text" id="ddate"		name="平仓预案制定日期"	editable="false"/>
+			<item type="text" id="pc_begin_date"	name="拟平仓日期"	editable="false"/>
+			<item type="text" id="pc_amt"		name="强制平仓额度"	editable="false"/>
+			<item type="text" id="order_no"		name="合同编号"	editable="false"/>
+			<item type="text" id="pc_reason_name"	name="平仓原因"	editable="false"/>
+		</group>
+		<group name="处理意见">
+			<item type="textarea"	id="accept_opinion2"	name="平仓预案变更申请人(签名)"/>	
+			<item type="textarea"	id="manage_opinon2"	name="平仓预案变更审核意见(签名)"/>
+			<item type="textarea"	id="approver_opinion2"	name="部门负责人审批意见"/>
+			<item type="textarea"	id="assessor_opinion2"	name="领导审批意见"/>
+		</group>
+	</input>
+    <service type="procedure" id="p_pc_report_modify_insert"  process="811" style="1">
+		<param id="user_id"	        type="integer" way="in"/> 
+		<param id="record_id"		type="integer" way="in"/>
+		<param id="accept_opinion2"	type="string"  way="in"/>
+		<param id="manage_opinon2"	type="string"  way="in"/>
+		<param id="approver_opinion2"	type="string"  way="in"/>
+		<param id="assessor_opinion2"	type="string"  way="in"/>
+    </service>
+    <output/>
+</function>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70040305" name="活期利率查询" >
+  <input>	
+  </input>
+  <service type="procedure" id="p70040301" process="922" style="77"> 
+    <param id="user_id" type="integer" way="in"/>
+	<param id="hq_code" type="string" way="in"/>
+  </service>
+  <output export="true">
+	<column type="string" id="hq_code"	name="活期利率代码" />	
+	<column type="number" id="hq_rate"	name="活期年利率(%)" precision="4"/>
+	<column type="string" id="if_default"			name="是否默认利率"	  display="false"/>
+	<column type="string" id="if_default_name"		name="是否默认利率"/>
+  </output>
+</function>

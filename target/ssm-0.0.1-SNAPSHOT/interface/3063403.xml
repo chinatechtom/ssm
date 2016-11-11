@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3063403" name="合约-融券上限查询" >
+	<input>
+		<item type="hidden" id="order_id" name="order_id"/>
+	</input>
+	<service type="procedure" id="p_order_borrow_stock2_query" process="911" style="77">
+		<param type="integer" id="user_id"/>	
+		<param type="integer" id="order_id"/>
+	</service>
+	<output>
+		<column type="number" id="order_id"     name="order_id" display="false"/>
+		<column type="number" id="bstock_limit" name="融券上限"/>
+		<column type="number" id="product_id3"  name="融券产品"/>
+		<column type="string" id="begin_time2"  name="开始日期"/>
+		<column type="string" id="return_time2" name="结束日期"/>
+		<column type="string" id="remarks"      name="备注"/>
+		<column type="number" id="bstock_limit_c" name="融券上限大写"/>
+		<column type="string" id="app_days"     name="申请天数"/>
+	</output>
+</function>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="34017" name="客户信息资产信息变更" >
+	<input>
+		<item type="hidden"	id="scust_no"	name="普通资金账户"/>
+		<item type="hidden"	id="scard1"	name="客户总资产"/>
+	</input>
+	<service type="procedure" id="P17000014" process="811" style="77">
+		<param id="user_id"	type="string" />
+		<param id="scust_no"	field="commness_cust_code" 	type="string"	way="in"/>
+		<param id="scard1"	field="total_commness_asset"	type="double" 	way="in"/>
+	</service>
+	<output/>	
+</function>

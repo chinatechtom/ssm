@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="gbk"?>
+<function id="30311" name="投资经验获取">
+	<input>
+		<item type="hidden" id="cust_type" name="客户类型"/>
+		<item type="hidden" id="cust_id" name="客户ID"/>
+	</input>
+	<service type="produrce" id="p_invest_exp_query" implement="p_invest_exp_query30311" process="911" style="77">
+	    <param id="user_id" type="integer" way="in"/>
+		<param id="cust_type" type="string" way="in"/>
+		<param id="cust_id" type="integer" way="in"/>
+	</service>
+	<output>
+		<column id="invest_exp" type="string" name="投资经验"/>
+		<column id="data_code_234"  type="string" name="数据代码"/>
+	</output>
+</function>

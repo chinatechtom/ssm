@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70010486" name="将任务明细同步到征信" >
+	<input>
+		<item type="hidden"	id="task_id_out"   name="任务代码"		/>
+		<item type="hidden"	id="task_type" name="任务类型"		/>
+	</input>
+	<service type="procedure" id="zx_prod.SP_ZX_TASK" adapter="netezza" process="844" style="1">
+		<param type="string"  id="task_id_out"   />
+		<param type="string"  id="task_type" />
+	</service>
+</function>

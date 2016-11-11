@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="27010129" name="1-11融资融券业务总收入状况表" >
+  <input>
+    <item type="select" id="insitution_id" name="营业部名称" source="95000008"/>
+	<item type="year"   id="begin_year"     name="起始年度" nullable="false"/>
+    <item type="month"  id="begin_month"    name="起始月份" nullable="false"/>
+	<item type="year"   id="end_year"       name="结束年度" nullable="false"/>
+    <item type="month"  id="end_month"      name="结束月份" nullable="false"/>	
+  </input>
+  <service type="procedure" id="P27010129"  process="955" style="77" implement="P2701012927010129">
+    <param id="user_id"        type="integer"   way="in"/>
+    <param id="insitution_id"  type="integer"   way="in"/>
+    <param id="begin_year"     type="string"	way="in"/>
+    <param id="begin_month"    type="string"	way="in"/>
+	<param id="end_year"       type="string"	way="in"/>
+    <param id="end_month"      type="string"	way="in"/>	
+  </service>
+ <output print="true">
+	<column type="number" id="id"   name="序号"/>	
+	<column type="string" id="institution_code"   name="营业部代码"/>        
+	<column type="string" id="institution_name"   name="营业部名称" />
+	<group name="融资融券业务总收入">
+	  <column type="number" id="this_fin_bnf"        name="本期融资业务收入"       precision="2" total="true"/>   
+	  <column type="number" id="this_fin_bnf_rate"   name="本期融资业务收入占比"   precision="6"/>   
+	  <column type="number" id="THIS_BS_BNF"         name="本期融券业务收入"       precision="2" total="true"/>   
+	  <column type="number" id="THIS_BS_BNF_RATE"    name="本期融券业务收入占比"       precision="6"/> 
+	  <column type="number" id="THIS_OTHER_BNF"      name="本期融资融券业务其他收入"   precision="2" total="true"/>   
+	  <column type="number" id="THIS_OTHER_BNF_RATE" name="本期融资融券业务其他收入占比"  precision="6"/>   
+	  <column type="number" id="THIS_COMM_BNF"       name="本期证券交易佣金收入"       precision="2" total="true"/> 
+      <column type="number" id="THIS_COMM_BNF_RATE"  name="本期证券交易佣金收入占比"   precision="6"/>   
+	  <column type="number" id="THIS_BS_FIN_BNF"     name="本期融资融券业务总收入"     precision="2" total="true"/> 
+      <column type="number" id="THIS_BS_FIN_BNF_RATE" name="本期融资融券业务总收入占比"   precision="6"/>
+      <column type="number" id="YEAR_BS_FIN_BNF"     name="本年融资融券业务总收入"     precision="2" total="true"/> 
+      <column type="number" id="YEAR_BS_FIN_BNF_RATE" name="本年融资融券业务总收入占比"   precision="6"/>  	  
+    </group>		
+</output>
+</function>  

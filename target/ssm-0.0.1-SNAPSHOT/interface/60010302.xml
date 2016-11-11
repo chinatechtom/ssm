@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="60010302" name="批量履约">
+	<input/>
+	<service type="drtp" id="777720" process="711" style="1">
+		<param id="lvol0" type="string"/>
+		<param id="sstatus1" type="string"/>
+		<param id="lvol1" type="string"/>
+		<param id="sbank_code2" type="string" default='GTWT'/>
+		<param id="sstation0" type="string" default='127.0.0.1'/>
+	</service>
+	<output target="60100157">
+		<column name="lvol0"	id="lvol0"   type="number"  field="number"/>
+		<column name="vsmess"	id="vsmess"   type="string"  field="vsmess"/>
+	</output>
+</function>

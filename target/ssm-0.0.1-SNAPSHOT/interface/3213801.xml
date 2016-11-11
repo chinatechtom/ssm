@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3213801" name="融券交易账户报备表" >
+   <input>
+ 		<item type="text"   id="cust_id" 		name="客户id" />
+   </input>
+   <service type="procedure" id="p_cust_borrow_stock_query" process="911" style="77">
+   		<param id="user_id" 		type="integer"/>
+   		<param id="cust_id" 		type="string"/>
+   </service>
+   <output>
+  		<column type="string" id="c1"   name="证券账户"  />
+   		<column type="string" id="c2"   name="账户名称"  />
+   		<column type="string" id="c3"   name="账户代码"  />
+   	</output>
+   	</function>

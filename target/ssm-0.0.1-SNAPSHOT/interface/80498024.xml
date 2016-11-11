@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="80498024" name="取信用产品">
+	<input>
+	</input>
+	<service type="drtp" id="413000" process="711" style="1">
+		<param id="sstatus0"        type="string"	 />
+		<param id="sserial1"	    type="string"	 />
+		<param id="scurrency_type"	type="string"	 />
+		<param id="sroom_no"	    type="string"	 />
+		<param id="sbranch_code0"	type="string"	 default="000"/>
+		<param id="semp"	        type="string"	 default="000000"/>
+		<param id="sstation0"	    type="string"	 default="0"/>
+		<param id="lvol9"           type="integer"   default="498024"/>
+	</service>
+	<output target="81498024">
+		<column type="string" id="sstatus0" name="产品类型"/>
+		<column type="string" id="sserial1" name="产品代码"/>
+		<column type="string" id="scurrency_type" name="币种"/>
+		<column type="string" id="sroom_no" name="费率代码"/>
+		<column type="number" id="damt0"    name="利率"/>
+		<column type="string" id="sstatus1" name="浮动方式"/>
+		<column type="string" id="sorder0"  name="属性"/>
+		<column type="number" id="damt1"    name="最低费用"/>
+		<column type="number" id="damt2"    name="最高费用"/>
+		<column type="string" id="sdate0"   name="开始日期"/>
+		<column type="string" id="sdate1"   name="结束日期"/>
+		<column type="string" id="schange_emp" name="设置职工"/>
+		<column type="string" id="sdate2"   name="设置日期"/>
+		<column type="string" id="stime0"   name="设置时间"/>
+		<column type="string" id="snote"    name="备注"/>
+	</output>
+</function>

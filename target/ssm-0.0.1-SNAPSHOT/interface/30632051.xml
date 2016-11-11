@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="30632051" name="授信申请" >
+	<input print="3063205.jsp">
+		<item type="hidden" id="last_open_date" alias="trade_date" name="开户日期"/>
+		<item type="hidden" id="commness_cust_code" name="普通资金账户" action="306013704"/>
+		<item type="hidden"       id="cust_code"          name="客户代码" editable="false"/> 
+		<item type="hidden"     id="paraid2"             action="32316" default="lrmmjy"/>
+		<item type="hidden"     id="paravalue2"         name="是否需要校验密码" default="0"/>
+		<item type="hidden"	id="cust_id" name="客户ID" action="30103"/>
+		<group name="密码校验">
+			<item type="password"   id="chk_cust_pwd" 	name="交易密码" 	pwdtype="2" point="cust_code" filter="paravalue2=1"/>
+		</group >
+	    <group name="客户信息" >
+			<item type="text" id="institution_name_report" name="营业部名称" editable="false"/>
+			<item type="text" id="cust_code" name="客户代码" editable="false"/>
+			<item type="text" id="cust_name" name="客户名称" editable="false"/>
+			<item type="text" id="cust_type" name="客户类型" editable="false"  />
+			<item type="text" id="cert_type" name="证件类型" editable="false"/>
+			<item type="text" id="cert_number" name="证件号码" editable="false"/>
+			<item type="hidden" id="family_address" name="联系地址"/>
+			<item type="hidden" id="move_tel"       name="联系电话"/>
+			<item type="hidden" id="emerg_contacts_man"       name="应急联系人"/>
+			<item type="hidden" id="emerg_contacts_tel"       name="应急联系人电话"/>
+			<item type="hidden" id="institution_code"          name="营业部代码"/>
+		</group>
+		<group name="资产评估" >
+			<item type="text"   id="asset_sum"     name="普通账户总资产"     editable="false"/>
+			<item type="text"   id="acc_open_date" name="普通账户开户日期"   editable="false"/>
+			<item type="hidden" id="cust_id" name="客户id" action="1888,30631"/>
+			<item type="hidden" id="if_allow" name="是否允许"/>
+			<item type="hidden" id="if_allow_name" name="是否允许"  editable="false"/>
+			<item type="hidden" id="if_blacklist" name="是否黑名单"/>
+			<item type="hidden" id="if_blacklist_name" name="是否黑名单" editable="false"/>
+			<item type="text" id="total_asset" name="总资产"  editable="false"/>
+			<item type="text" id="fund_amt" name="资金余额"  editable="false"/>
+			<item type="text" id="stock_market_value" name="证券市值" editable="false"/>
+			<item type="text" id="stock_convert_amt" name="证券折算金额" editable="false"/>
+			<item type="hidden" id="fund_convert_amt" name="资金折算金额" editable="false"/>
+			<item type="text" id="gage_value" name="担保品折算价值" editable="false"/>
+			<item type="hidden" id="usable_num" name="评估信用上限" editable="false"/>
+			<item type="hidden" id="credit_num" name="信用上限" editable="false"/>
+			<item type="text" id="total_debt" name="总负债" editable="false"/>
+			<item type="text" id="financing_amt" name="实际融资总额" editable="false"/>
+			<item type="text" id="borrow_stock_amt" name="实际融券总额" editable="false"/>
+			<item type="text" id="fee_all" name="总费用" editable="false"/>
+			<item type="text" id="guan_rate" name="维持担保比例" editable="false"/>
+		  <item type="hidden" id="date"     name="打印日期"/>	<!--从1888.xml获得的打印日期-->
+		  <item type="hidden" id="user_code"     name="打印柜员代码"/><!--从1888.xml获得的打印柜员代码-->
+		  <item type="hidden" id="user_name"     name="打印柜员名称"/><!--从1888.xml获得的打印柜员名称-->
+		  <item type="hidden" id="company"    name="券商名称"/><!--从1888.xml获得的券商名称-->			
+		</group>
+		<group name="融资明细" scope="group">
+			<item type="grid" id="cust_code" name="客户代码" source="31905"/>
+		</group>
+		<group name="融券明细" scope="group">
+			<item type="grid" id="cust_code" name="客户代码" source="31906"/>
+		</group>
+		<group name="授信额度申请与调整">
+		  <item type="hidden" id="cust_id" name="客户id" action="3063202"/>
+			<item type="select" id="product_id2" name="融资产品" source="95000004"  nullable="false" editable="false"/>
+			<item type="select" id="product_id3" name="融券产品" source="95000005"  nullable="false" editable="false"/>
+			<item type="button" id="assistant"	name="更多详情" action="3050102" multiple="0"/>			 
+			<item type="text" id ="credit_limit" name="授信额度" nullable="false" integer="true" action="3065005"/>
+			<item type="textarea" id="credit_limit_c" name="授信额度大写" editable="false"/>
+			<item type="text" id ="financing_limit" name="融资上限" nullable="false" integer="true" action="3065005"/>
+			<item type="textarea" id="financing_limit_c" name="融资上限大写" editable="false"/>
+			<item type="text" id ="bstock_limit" name="融券上限" nullable="false" integer="true" action="3065005"/>
+			<item type="textarea" id="bstock_limit_c" name="融券上限大写" editable="false"/>
+			<item type="textarea" id ="remarks" name="备注"/>			
+		</group>
+		<item type="hidden" id="paraid"	    name="杂项ID" action="32310" default="1030"/>
+		<item type="hidden" id="paravalue" 	name="杂项数值" 	  default="0"/>		
+		<group name="授信额度有效天数">   
+		   <item type="text"    id="days"  name="有效天数"  filter="paravalue=1" integer="true" default="730"/>		   
+		</group>
+		<!--20130407 海通个人不在需要资产状况
+		<group name="客户资产状况">   
+		   <item type="text" id="financial_asset"  name="金融资产总值(万元)"  nullable="false" />	
+           <item type="text" id="estate_asset"     name="房产价值(万元)"           nullable="false" />				   
+		</group>
+		-->
+		<item type="hidden" id="paraid1"	    name="杂项ID" action="32313" default="1052"/>
+		<item type="hidden" id="paravalue1" 	name="杂项数值" 	  default="0"/>	
+		<group name="私用额度设置">   
+		   <item type="select"  id="pvt_ctl_stauts"       name="私用额度权限状态"           filter="paravalue1=1"  source="523" nullable="false"/>		   
+		   <item type="text"    id="pvt_fin_lmt_modulus"  name="私用转融资比例系数"  filter="paravalue1=1" />
+		   <item type="text"    id="pvt_bs_lmt_modulus"   name="私用转融券比例系数"  filter="paravalue1=1" />
+		   <item type="text"    id="pvt_crd_lmt_modulus"  name="私用转融通授信比例系数"  filter="paravalue1=1" />
+		   <item type="select"  id="pvt_fin_product_id"   name="私用转融资产品"  filter="paravalue1=1" source="95000014" />		
+		   <item type="select"  id="pvt_bs_product_id"    name="私用转融券产品"  filter="paravalue1=1" source="95000015" />		
+		</group>
+	</input>
+	<service type="procedure" id="30632051"  process="888" style="1">
+		<param type="string" id="function_id" default="3042603"/>
+		<param type="string" id="function_id" default="30632054"/>	
+	</service>
+	<output/>
+</function>

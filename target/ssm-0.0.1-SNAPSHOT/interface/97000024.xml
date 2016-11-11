@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="97000024" name="信用级别自动关联" >	
+  <input>	
+  <item type="hidden" id="approve_valuation_score" name="评估客户总分" precision="2"/>
+  </input>
+  <service type="procedure" id="P97000024"  process="922" style="77"> 
+	<param id="user_id" 	type="integer"/>		
+	<param id="approve_valuation_score" type="double"/>
+  </service>
+  <output export="true">
+	<column type="number" id="CREDIT_LEVEL_ID"         name="信用级别" />
+  </output>		
+</function>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="31362" name="数据库备份路径查询">
+	<input/>		
+	<service type="procedure" id="p_database_backup_restore_path_browse"   process="911" style="77">
+		<param id="user_id"		type="integer"  way="in"/>
+	</service>
+	<output>
+		<column type="string"  id="path"	        name="数据库备份路径"/>	
+		<column type="string"  id="database_name"	name="数据库名称"/>	
+		<button type="add"  id="add"	name="增加" action="3136201" multiple="-1"/>
+		<button type="edit" id="edit"	name="修改" action="3136202" multiple="0"/>
+	</output>
+</function>

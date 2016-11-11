@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="gbk"?>
+<function id="60190121" name="股票质押业务交收数据汇总表">
+  <input>   
+	 <item type="date" id="trade_date" name="查询日期" nullable="false"/> 
+	 <item type="select"  id ="sum_type" name="汇总方式" source="840" nullable="false" default="1"/>
+  </input>
+  <service type="procedure" id="P60190121" process="933" style="77">
+	<param id="user_id"    type="integer"/>  
+	<param id="trade_date" type="string"/>
+	<param id="sum_type"   type="string"/>
+  </service>
+  <output export="true">
+    <column type="string"  id="SBOND_NO"               name="协议书编号"/>
+	<column type="string"  id="INSTITUTION_CODE"       name="营业部代码"/>
+	<column type="string"  id="INSTITUTION_NAME"       name="营业部名称"/>
+	<column type="string"  id="CUST_CODE"              name="客户代码"/>
+	<column type="string"  id="CUST_NAME"              name="客户姓名"/>
+	<column type="number"  id="NEED_INTEREST"          name="应计利息" precision="2"/>
+	<column type="number"  id="TODAY_PAYED_INTEREST"   name="当日付息" precision="2"/>
+	<column type="number"  id="RECEIVED_INTEREST"      name="累计付息" precision="2"/>
+	<column type="number"  id="TODAY_PENALTY_INTEREST" name="当日罚息" precision="2"/>
+	<column type="number"  id="UNPAYED_INTEREST"       name="应计未付利息" precision="2"/>
+	<column type="string"  id="OCCUR_DATE"             name="发生日期"/>
+  </output>
+</function>

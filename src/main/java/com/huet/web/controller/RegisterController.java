@@ -13,12 +13,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.huet.entity.RegiUser;
 
 @Controller
-@RequestMapping("/register")
+@RequestMapping("/register/register")
 public class RegisterController {
 
 	@RequestMapping(method = RequestMethod.POST)
 	public String post(HttpServletRequest request, HttpServletResponse response) {
-
+		
+		System.out.println("ddd");
 		String userName = request.getParameter("userName");
 		String email = request.getParameter("email");
 		String telephone = request.getParameter("telephone");
@@ -27,7 +28,7 @@ public class RegisterController {
 		System.out.println("post");
 		return "index";
 	}
-
+/*
 	@RequestMapping(method = RequestMethod.GET)
 	public String get(HttpServletRequest request, HttpServletResponse response) {
 
@@ -58,7 +59,7 @@ public class RegisterController {
 	public String getParamByPOJO( @ModelAttribute("regiUser") RegiUser regiUser) {
 		System.out.println(regiUser.getUserName());
 		return "index";
-	}
+	}*/
 	
 	
 }

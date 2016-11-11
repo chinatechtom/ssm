@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="96000003" name="风险类型" >
+	<input>	
+	</input>
+	<service type="table" id="vw_risk_type" process="111" style="12">
+	</service>
+	<output>
+		<column type="number" id="entry_value"   	field="guarantee_rate_id"		name="数据内容id"/>
+		<column type="string" id="entry_content"	field="guarantee_rate_name"    name="数据内容"/>
+  </output>
+</function>

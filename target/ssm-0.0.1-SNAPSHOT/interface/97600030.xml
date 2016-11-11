@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="97600030" name="信用级别自动关联" >	
+  <input> 
+	<item type="hidden"	id="total_score" name="total_score" nullable="false"/>
+  </input>
+  <service type="procedure" id="P97600030"  process="933" style="77"> 
+	<param id="total_score" type="float"/>
+  </service>
+  <output>
+	<column type="number" id="crdt_lvl_id" name="crdt_lvl_id"/>
+  </output>		
+</function>

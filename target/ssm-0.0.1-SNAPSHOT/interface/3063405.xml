@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3063405" name="根据客户评分自动确定信用等级" >
+	<input>	
+		<item type="hidden" id="valuation_score"	name="评估客户总分" precision="2"/>
+		<item type="hidden" id="total_capital"		name="普通账户总资产" precision="2"/>	<!--modify by SECREQ-1185-->
+		<item type="hidden" id="cust_id"			name="客户ID"/>
+	</input>
+	<service type="procedure" id="p_cust_credit_level_select" implement="p_cust_credit_level_auto_select3063405" process="911" style="77">
+		<param id="user_id"			type="integer"/>
+		<param id="valuation_score"	type="double"/>
+		<param id="total_capital"	type="double"/>	<!--modify by SECREQ-1185-->
+		<param id="cust_id"			type="integer"/>
+	</service>
+	<output export="true">  
+		<column type="number" id="auto_credit_level"		name="信用级别" />  
+		<column type="number" id="auto_credit_num_wy"		name="信用上限(万元)"	precision="0"/>  
+		<column type="number" id="origin_guarantee_rate"	name="初始保证金比例"	precision="2"/>
+		<column type="string" id="chinese"					name="授信额度大写"	precision="0"/>
+		<column type="number" id="auto_credit_num"			name="信用上限"			precision="0"/> <!--modify by SECREQ-1185-->
+		<column type="number" id="valuation_score"			name="评估客户总分"	precision="0"/> <!--modify by SECREQ-1185-->
+	</output>
+</function>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3060199" name="合约查询-remark部分" >
+	<input>    
+		<item type="hidden"  id="order_id"	  name="合约id"/> 
+	</input>
+  <service type="procedure" id="p_order_remark_browse" implement="p_order_remark_browse_3060199" process="911" style="77">
+	<param id="user_id"		type="integer"/>    
+    	<param id="order_id"		type="integer"/>
+  </service>
+  <output >
+	<column type="string" id="order_remark"					name="备注说明"/>	
+	<column type="number" id="accept_id"				name="受理员id"	display="false"/>
+	<column type="string" id="accept_name"  				name="受理员"/>
+	<column type="string" id="accept_time"				name="受理时间"/>
+	<column type="number" id="manage_id"  				name="处理员id" display="false"/>
+	<column type="string" id="manage_name"  				name="处理员"/>
+	<column type="string" id="manage_time"				name="处理日期"/>
+	<column type="string" id="manage_opinion"				name="处理意见"/>
+	<column type="number" id="approver_id"				name="审核员id"	display="false"/>
+	<column type="string" id="approver_name"  				name="审核员"/>
+	<column type="string" id="approver_opinion"		    name="审核意见"/>
+	<column type="string" id="approver_time"			name="审核日期"/>
+	<column type="number" id="assessor_id"  			name="审批员id" display="false"/>
+	<column type="string" id="assessor_name"  				name="审批员"/>
+	<column type="string" id="assessor_opinion"		    name="审批意见"/>
+	<column type="string" id="assessor_time"			name="审批日期"/>
+	<column type="string" id="effective_time"			name="生效日期"/>
+	<column type="number" id="DOUBLE_CHECK_ID"  			name="复核员id" display="false"/>
+	<column type="string" id="double_check_name"  				name="复核员"/>
+	<column type="string" id="DOUBLE_CHECK_OPIN"		    name="复核意见"/>
+	<column type="string" id="DOUBLE_CHECK_TIME"			name="复核日期"/>
+	<column type="string" id="FORCE_NAME"  				name="强制作废人员"/>
+	<column type="string" id="FORCE_OPINION"		    name="强制作废意见"/>
+	<column type="string" id="FORCE_TIME"			name="强制作废时间" />
+  </output> 
+</function>

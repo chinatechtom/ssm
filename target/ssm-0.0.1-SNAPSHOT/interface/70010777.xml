@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70010777" name="集中审核-查看审核意见">
+  <input>    
+	<item type="hidden"  id="order_id"			name="合约id"/> 
+	<item type="select"  id="order_type"	    name="合约类型" source="97000004"/> 
+  </input>
+  <service type="procedure" id="P70010777" process="922" style="77">
+	<param type="integer"	id="user_id"/>    
+    <param type="integer"	id="order_id"/>
+	<param type="string"	id="order_type"/>
+  </service>
+  <output>
+	<column type="number" id="order_id"				name="合约id" display="false"/>
+	<column type="number" id="audit_id"				name="审核人员id" display="false"/>
+	<column type="string" id="user_code"			name="审核员代码"/>
+	<column type="string" id="user_name"			name="审核员姓名"/>	
+	<column type="string" id="audit_level"			name="审核级别"/>
+	<column type="string" id="audit_status"			name="审核结果" display="false"/>
+	<column type="string" id="audit_status_name"	name="审核结果"/>
+	<column type="string" id="audit_idea"			name="审核意见"/>	
+  </output>
+</function>

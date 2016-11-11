@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="306013702" name="客户普通账户资料导入" >
+	<input>
+		<description>提示:批量导入的是尚未处理完成的征信客户
+		</description>
+	</input>
+	<service type="procedure" id="p_unfinished_credit_cust_query" process="911" style="1">
+	    <param id="user_id" type="integer" way="in" /> 
+	</service>
+	<output target="306013701">
+		<column type="string" id="commness_cust_code" name="普通资金账号"/>
+	</output>
+</function>

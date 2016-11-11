@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3031902" name="暂停融券" >
+	<description>确实要暂停融券?</description>
+	<input/>
+    <service type="procedure" id="p_start_or_stop_rq" process="911" style="1"> 
+		<param id="user_id"	type="integer" way="in"/>		
+		<param id="type"	type="string" way="in" default='0'/>
+	</service>
+	<output target="3030902">
+		<column name="市场代码"		id="smarket_code"  type="string"  field="smarket_code"/>
+		<column name="证券代码"		id="sstock_code"   type="string"  field="sstock_code"/>
+		<column name="证券折算率"		id="drate0"		   type="number"  field="drate0"/>
+		<column name="是否融资标的"	id="sstatus1"	   type="string"  field="sstatus1"/>
+		<column name="是否融券标的"	id="sstatus2"	   type="string"  field="sstatus2"/>
+		<column name="是否担保品标的" id="sstatus3"      type="string"  field="sstatus3"/>		
+		<column name="配股偿还标志" id="sstatus4"      type="string"  field="sstatus4"/>	
+  </output>	
+</function>

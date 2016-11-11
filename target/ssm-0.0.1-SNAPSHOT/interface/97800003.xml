@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="97800003" name="专属产品信息" >
+	<input/>
+	<service type="table" id="t_gpzy_project_property" process="133" style="12">
+		<param id="project_code" field="project_code" type="string"  operator="="/>
+	</service>
+	<output>
+		<column type="string" id="entry_value"   field="project_code"	name="数据内容code"/>
+		<column type="string" id="entry_content"	 field="project_code"    name="数据内容"/>
+    </output>
+</function>

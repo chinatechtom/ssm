@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="GBK" ?>
+<function id="1888" name="查询回单公共输出属性">
+	<input/>
+	<service type="procedure" id="nb_get_jspprint_property" process="911" style="77">
+		<param id="user_id" type="integer"/>
+	</service>
+	<output>
+		<column type="string" id="company" name="证券公司名称"/>
+		<column type="string" id="date" name="打印日期"/>
+		<column type="string" id="date1" name="打印日期1"/>
+		<column type="string" id="user_id" name="操作员id"/>
+		<column type="string" id="user_code" name="操作员代码"/>
+		<column type="string" id="user_name" name="操作员姓名"/>
+		<column type="string" id="last_trade_date" name="上一交易日"/>
+		<column type="string" id="print_time" name="打印时间"/>
+	</output>
+</function>

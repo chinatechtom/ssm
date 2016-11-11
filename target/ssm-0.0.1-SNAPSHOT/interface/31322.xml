@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="31322" name="交易所标的查询" >
+  <input/>  
+  <service type="procedure" id="p_stock_biaodi_jys_query"   process="911" style="77"> 
+    <param id="user_id"		   type="integer" way="in"/>
+  </service>
+	<output>
+		<column type="string" id="product_code"			   name="证券代码"/>
+		<column type="string" id="product_name"			   name="证券名称"/>
+		<column type="string" id="market_name"			   name="市场名称"/>	
+		<column type="number" id="stock_convert_rate"	   name="折算率(%)" precision="4"/>
+		<column type="number" id="borrow_sec_rate"		   name="融券冻结率(%)" precision="4"/>
+		<column type="string" id="if_financing"			   name="是否融资标的" />
+		<column type="string" id="if_borrow_stock"		   name="是否融券标的" />
+		<column type="string" id="if_guarantee"			   name="是否担保品标的" />	
+		<column type="string" id="if_financing_jys"		   name="是否交易所融资标的(JYS)"	/>
+		<column type="string" id="if_borrow_stock_jys"	   name="是否交易所融券标的(JYS)"	/>
+		<column type="string" id="if_guarantee_jys"		   name="是否交易所担保品标的(JYS)" /> 
+		<column type="number" id="stock_rate_jys"		   name="交易所折算率(JYS)(%)" precision="4"/>
+		<column type="string" id="if_financing_var"		   name="是否融资标的(VAR)"	/>
+		<column type="string" id="if_borrow_stock_var"	   name="是否融券标的(VAR)"	/>
+		<column type="string" id="if_guarantee_var"		   name="是否担保品标的(VAR)"	/>
+		<column type="number" id="convert_rate_var"		   name="交易所折算率(VAR)(%)" precision="4"/>	
+		<button type="set"	id="set"	name="导入交易所标的"	action="3030102"  multiple="-1"/>	
+	</output>
+</function>

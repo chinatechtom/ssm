@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="61010103" name="校验资金可用余额" >
+	<input/>
+    <service type="procedure" id="p61010103" adapter="psr" process="933" style="77">
+		<param type="integer" id="user_id"/>
+		<param type="string" id="branch_code"/>
+		<param type="string" id="cust_code"/>
+		<param type="float" id="avail_balance" />
+	</service>
+    <output target="66120111">
+		<column name="开户营业部"	id="sbranch_code0"  type="string"/>
+		<column name="发生营业部"	id="sbranch_code1"  type="string"/>
+		<column name="客户号"	id="scust_no"  type="string"/>
+		<column name="货币类型"	id="scurrency_type"  type="string"/>
+		<column name="资金序号"	id="scurrency_type2"  type="string"/>
+		<column name="临时冻结金额"	id="damt9" type="number"/>
+		<column name="备注"	id="snote" type="number"/>
+	</output>
+</function>

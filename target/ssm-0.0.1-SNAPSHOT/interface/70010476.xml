@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70010476" name="执行状态更新" >  
+	<input>
+		<item type="hidden" id="task_id"     name="任务编号" />
+		<item type="hidden" id="task_status" name="返回结果" />
+	</input>
+	<service type="procedure" id="p7001048706" adapter="bbs" process="822" style="1">
+		<param id="user_id" 					type="integer" 	way="in"/>
+		<param id="task_id" 			        type="string" 	way="in"/>
+		<param id="task_status" 			    type="string" 	way="in"/>
+		<param id="status_type" 			    type="string" 	way="in" default="3"/>
+	</service>
+	<output/>
+</function>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="306666662" name="调整担保率申请详细" >
+  <input>	
+    <group name="原合同担保率" scope="group">
+	<item type="hidden" id="bond_id" name="合同id" action="30642"/>  
+	<item type="text" id ="cust_code" name="客户代码" editable="false"/>
+	<item type="text" id ="cust_name" name="客户姓名" editable="false"/>
+	<item type="text"  name="担保率(%)" id="guarantee_rate" editable="false"/>
+	</group>
+	<group name="合约申请调整的担保率" scope="group">
+	<item type="text" id="order_no" name="合约编号" editable="false"/>
+	<item type="hidden" id="formerly_voucher_no" name="原始凭证号" editable="false"/>
+    <item type="hidden" id="order_id" name="合约id" action="30602"/>  
+	<item type="text"  name="申请担保率(%)" id="guarantee_rate" editable="false"/>
+	<item type="textarea" id="remark" name="备注说明" editable="false"/>
+	</group>
+	<group name="处理后申请调整的担保率" scope="group">
+	<item type="text" id="order_no" name="合约编号" editable="false"/>
+	<item type="hidden" id="formerly_voucher_no" name="原始凭证号" editable="false"/>
+    <item type="hidden" id="order_id" name="定单id" action="30602"/>  
+	<item type="text"  name="审批担保率(%)" id="approve_guarantee_rate" editable="false"/>
+	<item type="textarea" id="remark" name="备注说明" editable="false"/>
+	</group>
+  </input> 
+
+  <output/>
+</function>

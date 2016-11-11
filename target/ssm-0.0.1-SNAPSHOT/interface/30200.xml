@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="30200" name="机构客户的机构法人代理人基本信息获取" >
+  <input>
+	<item type="hidden" id="cust_id"   name="客户号"/>
+  </input>
+  <service type="procedure" id="p_cust_spec_query" process="911" style="77" implement="p_cust_spec_query30200">
+	<param id="user_id" type="integer" way="in" />
+	<param id="cust_id" type="integer" way="in" />
+  </service>
+  <output detail="true">    
+  	<column type="number" id="cust_id"     				name="客户号"  	 display="false" />	
+    <column type="string" id="cert_depart"   			name="发件机关"/>
+    <column type="string" id="spec_msg_003"				name="证件年检日期"/>
+    <column type="string" id="org_code"					name="组织机构代码证号码"/>
+	<column type="string" id="spec_msg_008"   			name="组织机构代码证检日期"/>
+    <column type="string" id="spec_msg_005"   			name="组织机构代码证生效起始日期"/>
+    <column type="string" id="spec_msg_007"   			name="组织机构代码证生效截至日期"/>
+    <column type="string" id="tax_reg_code"   			name="税务登记证号码"/>
+    <column type="string" id="holder_kind"   			name="法人性质"/> 
+    <column type="string" id="holder_kind_name"   		name="法人性质名称"/> 
+    <column type="string" id="spec_msg_900"   			name="法定代表人姓名"/> 
+	<column type="string" id="spec_msg_012"				name="法定代表人证件号码"/>
+	<column type="string" id="spec_msg_013"				name="法定代表人证件有效起始日期"/>
+	<column type="string" id="spec_msg_015"      		name="法定代表人证件有效截至日期"/>
+	<column type="string" id="agent_name"				name="授权代理人姓名"/>
+    <column type="string" id="agent_cert_no"  			name="授权代理人证件号码"/>
+    <column type="string" id="agent_cert_start_date"	name="授权代理人证件有效起始日期"/>
+    <column type="string" id="agent_cert_end_date"		name="授权代理人证件有效截至日期"/>
+	<column type="string" id="agent_move_tel"			name="授权代理人移动电话"/>
+	</output>
+  </function>

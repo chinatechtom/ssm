@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="27050163" name="3-9客户融资融券业务盈亏统计表" >
+  <input>
+    <item type="select" id="insitution_id" name="营业部名称" source="95000008"/>
+	<item type="text"   id="cost_code"     name="客户代码" />  
+	<item type="year"   id="begin_year"     name="起始年度" nullable="false"/>
+    <item type="month"  id="begin_month"    name="起始月份" nullable="false"/>
+	<item type="year"   id="end_year"       name="结束年度" nullable="false"/>
+    <item type="month"  id="end_month"      name="结束月份" nullable="false"/>	
+  </input>
+  <service type="procedure" id="P27050163"  process="955" style="77" implement="P2705016327050163">
+	<param id="user_id"	        type="integer" way="in"/>
+	<param id="insitution_id"	type="integer" way="in"/>
+	<param id="cost_code"	    type="string"  way="in"/>
+	<param id="begin_year"     type="string"	way="in"/>
+    <param id="begin_month"    type="string"	way="in"/>
+	<param id="end_year"       type="string"	way="in"/>
+    <param id="end_month"      type="string"	way="in"/>
+   </service>
+   <output export="true" print="true">
+	<column type="string"     id="row_id"				name="序号"		/>
+	<column type="string"     id="institution_code"		name="营业部代码"/>
+	<column type="string"     id="institution_name"		name="营业部名称"/>
+	<column type="string"     id="cust_code"			name="客户代码"/>
+	<column type="string"     id="cust_name"			name="客户名称"/>
+	<group name="融资盈亏">
+		<column type="number" id="fund_buy_stk_bal"		name="融资买入金额"	  precision="2" 	 />
+		<column type="number" id="fund_buy_stk_value"	name="融资买入证券市值"  precision="2"      />
+		<column type="number" id="fund_buy_stk_profit"	name="已实现盈亏"	  precision="2" 	 />
+		<column type="number" id="fin_interest"	        name="融资利息"    precision="2"      />
+		<column type="number" id="fin_takeup"			name="融资额度占用费"  precision="2" 	 />
+		<column type="number" id="fin_all_profit"		name="盈亏总额"    precision="2" 	 />			
+	</group>
+	<group name="融券盈亏">
+		<column type="number" id="bs_sell_stk_bal"		name="融券卖出金额"	  precision="2" 	 />
+		<column type="number" id="bs_sell_stk_value"	name="融券市值"      precision="2"      />
+		<column type="number" id="bs_sell_stk_profit"	name="已实现盈亏"	  precision="2" 	 />
+		<column type="number" id="bs_interest"	        name="融券费用"    precision="2"      />
+		<column type="number" id="bs_all_profit"		name="盈亏总额"  precision="2" 	 />		
+	</group>
+	<column type="number" id="all_profit"			name="盈亏合计"  precision="2" 	 />		
+   </output>
+</function>  

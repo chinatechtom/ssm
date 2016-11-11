@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="60100157" name="扣款后续" >
+  <input/>
+  <service type="procedure" id="P60100157" process="922" style="1">
+	<param type="integer" id="user_id"/>	
+	<param type="integer" id="lvol0"/>
+	<param type="string" id="vsmess"/>
+  </service>
+  <output/>
+</function>

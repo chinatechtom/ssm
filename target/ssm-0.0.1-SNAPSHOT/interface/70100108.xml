@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70100108" name="导入回购登记结算明细">
+	<input>
+		<item type="hidden"	id="id"		name="id" action="31381" default="1"/>		
+		<item type="date"	id="date"	alias="sdate3"	name="日期" editable="false"/>			
+	</input>
+	<service type="procedure" id="P70100108" process="922" style="1">
+		<param id="user_id"		type="integer"/>
+		<param id="sdate3"		type="string"/>		
+	</service>
+	<output target="70100109">
+		<column name="信息"		type="string"	id="vsmess"/>   
+		<column name="文件路径"	type="string"	id="vsvarstr0"/>   
+		<column name="文件名"	type="string"	id="snote"/>  
+		<column name="更新时间"	type="string"	id="scust_auth"/>	
+	</output>
+</function>

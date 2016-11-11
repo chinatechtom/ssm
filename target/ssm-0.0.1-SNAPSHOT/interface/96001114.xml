@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="96001114" name="交易协议书提前申请实时最近购回金额计算">
+	<input>
+		<item type="hidden"	id="sbond_id"	name="sbond_id"/>	
+		<item type="hidden"	id="second_amt_before"	name="second_amt_before"/>	
+		<item type="string" id="bb_date3"	name="bb_date3"/>
+	</input>
+	<service type="procedure" id="P96001114" process="933" style="77">
+		<param type="integer" id="sbond_id"/>
+		<param type="float" id="second_amt_before"/>
+		<param type="string" id="bb_date3"/>
+	</service>
+	<output>
+		<column type="number" id="second_amt_after"   name="变更后最新购回金额" />
+		<column type="string" id="second_amt_after_big"   name="变更后最新购回金额"/>
+    </output>
+</function>

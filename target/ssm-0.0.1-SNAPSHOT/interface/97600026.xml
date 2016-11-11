@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="97600026" name="协议书要素查询" >
+  <input>
+	<item type="text" id="stx_pwd" name="产品代码"/>
+	<item type="text" id="order_type" name="指令类别"/>
+	<item type="text"   id="sstock_code"   name="证券代码"/>
+	<item type="select" id="smarket_code"    name="市场"/>
+	<item type="date" 	id ="sdate0" name="初始交易日期"/>
+	<item type="date" 	id ="sdate1" name="购回交易日期"/>
+	<item type="text"   id="sect_interest_mode"   name="分段计息模式"/>
+	<item type="text"   id="hg_rate"   name="默认利率"/>
+	<item type="text"   id="convert_rate"   name="加成折算率"/>
+  </input>
+  <service type="procedure" id="P97600026" process="933" style="77">
+    <param id="user_id"		type="integer"    way="in"/>
+	<param id="stx_pwd" type="string"/>
+	<param id="order_type" type="string"/>
+	<param id="sstock_code" type="string"/>
+	<param id="smarket_code" type="string"/>
+	<param id="sdate0" type="string"/>
+	<param id="sdate1" type="string"/>
+	<param id="sect_interest_mode" type="string"/>
+	<param id="hg_rate" type="double"/>
+	<param id="convert_rate" type="double"/>
+  </service>
+  <output export="true">
+	<column type="number" id="damt4" name="购回价格(%)" precision="2"/>	
+	<column type="number" id="damt2" name="折算率(%)" precision="2"/>	
+	<column type="number" id="app_price" name="标的证券价格" precision="2"/>	
+	<column type="number" id="days" name="购回期限"/>	
+	<column type="number" id="section_days1" name="购回期限"/>	
+</output>
+</function>

@@ -1,29 +1,26 @@
 package com.huet.web.controller;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.huet.entity.MenuItem;
 import com.huet.entity.User;
 import com.huet.service.inter.IMenuService;
 import com.huet.service.inter.IUserService;
-import com.mysql.jdbc.log.LogFactory;
-
-import net.sf.json.JSONObject;
 
 @Controller
-@RequestMapping("/signin/login")
+@RequestMapping("login")
 public class LoginController {
-
-	private Logger logger =  Logger.getLogger(LoginController.class);
+ 
 	
 	@Autowired
 	private IUserService userService ;
@@ -39,11 +36,17 @@ public class LoginController {
 		String password = request.getParameter("password");
 
 		
-		User user = userService.getUserById(userName) ;
+		User user = userService.getUserByUserCode(userName) ;
 		
-		if(null == user || user.getUserStatus() !="0"){
+		if(null == user  ){
 			request.setAttribute("error_code", "-1");
-			request.setAttribute("error_msg",  "员工状态错误！");
+			request.setAttribute("error_msg",  "员工不存在！");
+			return "error";
+		}
+		
+		if(! "1".equals( user.getUserStatus()) ){
+			request.setAttribute("error_code", "-2");
+			request.setAttribute("error_msg",  "员工状态错误！"+user.getUserStatus());
 			return "error";
 		}
 		
@@ -51,8 +54,10 @@ public class LoginController {
 		session.setAttribute("login", true);
 		session.setAttribute("logintime", new Date().toString());
 		 
-		
-		request.setAttribute("menus", "menul_level");
+		ArrayList<MenuItem> menuItemList = (ArrayList<MenuItem>) menuService.getUserMenus(userName );
+		String jsonMenu = menuService.makeJsonMenu(menuItemList) ;
+		//menu 转换成 json 格式。
+		request.setAttribute("menus", jsonMenu);
 		
 		return "index";
 	}

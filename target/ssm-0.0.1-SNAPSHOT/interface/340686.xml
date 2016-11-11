@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="340686" name="保存当日展期仓单" > 
+	<input> 
+		<item  type="text" id="cust_code" name="信用账号"/>  
+		<item  type="text" id="order_type" name="仓单类型"/>  
+		<item  type="text" id="market_code" name="市场"/>  
+		<item  type="text" id="product_code" name="证券代码"/> 
+		<item  type="text" id="occur_date" name="开仓日期"/> 
+		<item  type="text" id="serial_no" name="开仓流水号"/> 
+		<item  type="text" id="expire_date" name="新到期日期"/>  
+	</input>
+	<service type="procedure" id="P17000085" process="811" style="1">
+		<param id="user_id"      type="integer" way="in" />
+		<param id="cust_code"    type="string" way="in"  />  
+		<param id="order_type"   type="string" way="in"  />  
+		<param id="market_code"  type="string" way="in"  />  
+		<param id="product_code" type="string" way="in"  />  
+		<param id="occur_date"   type="string" way="in"  />  
+		<param id="serial_no"    type="string" way="in"  />  
+		<param id="expire_date"  type="string" way="in"  />   	
+  </service> 
+ <output/>	
+</function>

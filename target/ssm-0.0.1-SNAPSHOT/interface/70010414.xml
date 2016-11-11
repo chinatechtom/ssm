@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70010414" name="客户评级因子查询-总部审批用" >  
+  <input>
+	<item type="select"	id="institution_id" name="营业部名称" source="97000001"/>
+	<item type="hidden" id="cust_id" 		name="客户id"/>
+	<item type="text" 	id="cust_code" 		name="客户代码"/>
+	<item type="select" id="credit_type1" 	name="业务类别" source="388"/>
+	<item type="select" id="status1"		name="状态" source="702" default="6"/>
+	<item type="select" id="credit_invest_type"	  name="征信类别" source="913"/>
+  </input>
+	<service type="procedure" id="P70010409" implement="P70010409_70010414" process="922" style="77">
+	<param id="user_id" 		type="integer"/>
+	<param id="institution_id" 	type="integer"/>
+	<param id="cust_id" 		type="integer"/> 
+	<param id="cust_code"/>
+	<param id="begin_date"/> 
+	<param id="end_date"/>
+	<param id="credit_type1"/>
+	<param id="status1"/>
+	<param id="credit_invest_type" />
+  </service> 
+  <output>
+	<column type="number" id="instutition_id" 		name="客户id" display="false"/>   
+	<column type="string" id="institution_code"   	name="营业部代码" display="false"/>
+	<column type="string" id="institution_name"   	name="营业部名称"/>
+	<column type="number" id="cust_id" 				name="客户id" display="false"/>   
+	<column type="string" id="cust_code"   			name="客户代码"/>
+	<column type="string" id="cust_name"   			name="客户姓名"/>
+	<column type="number" id="versionid" 			name="版本id" display="false"/>
+	<column type="string" id="versiondate"   		name="评级日期"/>
+	<column type="string" id="credit_type"   		name="业务类别" display="false"/>
+	<column type="string" id="credit_type_name"   	name="业务类别"/>
+	<column type="string" id="credit_level_id"   	name="信用级别id" display="false"/>
+	<column type="string" id="credit_level_name"   	name="信用级别"/>
+	<column type="string" id="status"   			name="状态" display="false"/>
+	<column type="string" id="status_name"   		name="状态"/>
+	<column type="string" id="score"   				name="核定信用评分"/>
+	<column type="string" id="active_date"   		name="生效日期"/>
+	<column type="string" id="user_name"   			name="操作员"/>
+	<column type="string" id="remark"   			name="备注"/>
+	<column type="string" id="approver_id"   		name="审核人员" display="false"/>
+	<column type="string" id="approver_name"   		name="审核人员"/>
+	<column type="string" id="approver_opinion"   	name="审核意见"/>
+	<column type="string" id="approver_time"   		name="审核时间"/>
+	<column type="string" id="assessor_id"   		name="审批人员" display="false"/>
+	<column type="string" id="assessor_name"   		name="审批人员"/>
+	<column type="string" id="assessor_opinion"   	name="审批意见"/>
+	<column type="string" id="assessor_time"   		name="审批时间"/>
+	<button type="mod"    id="mod" name="审批通过-生效"	action="70010417" multiple="0"/>
+	<button type="mod"    id="mod" name="审批不通过" 	 	action="70010418" multiple="0"/>
+  </output>
+  <assistant action="70010422">
+	<link src="cust_id"   target="cust_id"/>
+	<link src="versionid" target="version_id"/>
+  </assistant>
+</function>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="60068000" name="合约详情" >
+	<input>
+		<description>只能打印审批通过的交易协议书议价确认书!</description>
+	</input>
+</function>

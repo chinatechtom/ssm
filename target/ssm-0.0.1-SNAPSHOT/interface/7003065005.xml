@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="7003065005" name="生成大写中文" >
+	<input>	
+		<item type="hidden" id="credit_num" name="最大交易额度"/>
+		<item type="hidden" id="approve_num" name="审批最大交易额度"/>
+	</input>
+	<service type="procedure" id="P71600163"  process="922" style="77">
+		<param id="user_id" type="integer"/>	
+		<param type="float" id="cust_num"/>
+		<param type="float" id="credit_num"/>
+		<param type="float" id="approve_num"/>
+	</service>
+	<output export="true">  
+		<column type="string" id="cust_num_c"   		name="客户资金额度大写中文"/>
+		<column type="string" id="credit_num_c"   		name="最大交易额度大写中文"/>
+		<column type="string" id="approve_num_c"	name="最大交易额度大写中文"/>
+	</output>
+</function>

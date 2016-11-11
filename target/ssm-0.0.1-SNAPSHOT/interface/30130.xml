@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="30130" name="利息费率查询" >	
+  	<input>
+  		<item type="text" id="cust_id" name="客户ID"/>
+	</input>
+  	<service type="procedure" id="p_credit_charge_rate_query"   process="911" style="77" implement="p_credit_charge_rate_query30130"> 
+		<param id="user_id"			type="integer" 	way="in"/>
+		<param id="cust_id"			type="integer" way="in"/>
+  	</service>
+  	<output>
+		<column type="number" id="financing_interest_rate"			 name="融资利率"		    precision="4"/>
+		<column type="number" id="borrow_stock_interest_rate"		 name="融券费率"		    precision="4"/>
+  	</output>		
+</function>

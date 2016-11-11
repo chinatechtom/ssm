@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70011011" name="权益调账处理">
+	<input>
+		<item type="hidden"		id="serial_id"	name="serial_id"/>
+		<item type="grid"		id="serials"	name="权益对账信息" source="70011010"/>
+		<item type="select"		id="flag"		name="处理状态" nullable="false" source="734" default="1"/>	
+		<item type="textarea"	id="remark"		name="处理备注"/>		
+	</input>
+	<service type="procedure" id="P70011011" process="822" style="1">
+		<param id="user_id"		type="integer"/>
+		<param id="serial_id"	type="string"/>
+		<param id="flag"	type="string"/>
+		<param id="remark"	type="string"/>
+	</service>
+	<output/>
+</function>

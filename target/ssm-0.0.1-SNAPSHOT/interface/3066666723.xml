@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3066666723" name="查询合约信用产品修改申请" >
+  <input print="3066666723.jsp">
+  <item type="text" id ="cust_code" name="客户代码" editable="false" action="1888"/>
+	<item type="text" id ="cust_name" name="客户姓名" editable="false"/>
+    <item type="grid" id="order_id" name="信用产品" source="30682"/>
+  <item type="hidden" id="date"       name="打印日期"   editable="false"/>
+	<item type="hidden" id="user_code"  name="操作员代码" editable="false"/>
+	<item type="hidden" id="user_name"  name="操作员姓名" editable="false"/>
+	<item type="hidden" id="company"    name="证券公司名称" editable="false"/>	
+   <!-- <item type="hidden" id="product_id" name="产品id"  editable="false"/>  
+	<item type="text" id="product_name" name="信用产品名称" editable="false"/>
+	<item type="hidden" id="product_cyc" name="产品周期"  editable="false"/>  
+	<item type="text" id="cyc_unit" name="周期单位" editable="false"/>
+	<item type="hidden" id="availability_time" name="有效日期" editable="false"/>  
+	<item type="text" id="begin_time" name="起始日期"  editable="false"/>
+	<item type="text" id="return_time" name="到期日期"  editable="false"/>  
+	<item type="hidden" id="over_time" name="延长日期"  editable="false"/>
+	<item type="textarea" id="remark" name="备注说明" editable="false"/>
+	-->
+	<group name="备注说明">
+		<item type="hidden" id="order_id" name="orderid" action="30673"/>
+		<item type="textarea" id="manage_opinion"   name="处理意见" editable="false"/>
+		<item type="textarea" id="approver_opinion"   name="审核意见" editable="false"/>
+		<item type="textarea" id="assessor_opinion"   name="审批意见" editable="false"/>
+		<item type="textarea" id="double_check_opin"   name="复核意见" editable="false"/>
+		<item type="textarea" id="remark" name="备注说明" editable="false" />
+	</group>
+</input>
+  <output/>
+</function>

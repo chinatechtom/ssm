@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="gbk"?>
+<function id="32314" name="杂项参数显示修改">
+	<input>
+		<item type="text" 	id="paraid"   		name="参数符号"/>
+		<item type="text" 	id="paraname" 		name="参数名字"/>
+		<item type="select" id="display_flag" 	name="前台显示标志" source="601"/>
+	</input>
+	<service type="procedure" id="p_mixedconfig_query3" implement="p_mixedconfig_query332314" process="911" style="77">
+		<param id="user_id"  		type="integer" way="in"/>
+		<param id="paraid"   		type="string"  way="in"/>
+		<param id="paraname" 		type="string"  way="in"/>
+		<param id="display_flag" 	type="string"  way="in"/>
+	</service>
+    <output export="true">
+		<column type="string" 	id="paraid"   			name="参数符号"/>
+		<column type="string" 	id="paraname"			name="参数名字"/>
+		<column type="string" 	id="paravalue"			name="参数值"/>
+		<column type="string"   id="display_flag"   	name="前台显示标志" display="false"/>
+		<column type="string"   id="display_flag_name"  name="前台显示标志"/>
+		<column type="string" 	id="datatype"			name="参数数据类型"	display="false"/>
+		<column type="number" 	id="datalen"			name="数据长度"			display="false"/>
+		<column type="number" 	id="declen"				name="小数点长度"		display="false"/>
+		<column type="string" 	id="charset"			name="允许取值字符集"	display="false"/>
+		<column type="string" 	id="ctrltype"			name="控件类型"			display="false"/>	
+		<column type="string" 	id="Show"				name="控件中显示内容"	display="false"/>
+		<column type="string" 	id="biztype"			name="业务大类"			display="false"/>
+		<column type="string" 	id="paralevel"			name="参数分类"			display="false"/>
+		<column type="string" 	id="status"				name="参数状态"			display="false"/>
+		<column type="string" 	id="remark"   			name="备注信息"/>
+		<button type="add"		id="add"				name="前台显示修改"    action="32315"  multiple="0"/>
+	</output>
+
+</function>

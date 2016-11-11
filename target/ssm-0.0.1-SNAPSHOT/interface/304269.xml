@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="gbk" ?>
-<function id="304269" name="请先关联普通账户" >	
-<description>
-客户评级资料录入前请先关联普通账户！
-  </description>
-  <input/>
-  <output/>	
-</function>

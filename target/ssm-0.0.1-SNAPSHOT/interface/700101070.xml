@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="gbk" ?>
-<function id="700101070" name="同步客户后续资料">  
-  <description>客户不存在!不允许同步后续资料</description>
-  <input/>
-</function>

@@ -100,14 +100,14 @@
         </div>
         
         <div class="form-group">        
-	        <label class="col-sm-2 control-label" >二级密码</label>
+	        <label class="col-sm-2 control-label" >交易密码</label>
 	        <div class="col-sm-6">
 	        <input type="password" id="inputTradePassword" name="tradePassword" class="form-control" placeholder="二级密码"  >
 	        </div>
         </div>
         
          <div class="form-group">
-	        <label class="col-sm-2 control-label" >二级密码确认</label>
+	        <label class="col-sm-2 control-label" >交易密码确认</label>
 	         <div class="col-sm-6">
 	        <input type="password" id="inputCheckTradePassword" name="checkTradePassword" class="form-control" placeholder="二级密码确认"  >
 			</div>
@@ -192,7 +192,7 @@ $(document).ready(function() {
                         min: 6,
                         max: 20,
                         message: '密码最少6位'
-                    }
+                    },
                     identical: {//相同
                         field: 'loginPassword',
                         message: '两次登录密码不一致'
@@ -208,7 +208,7 @@ $(document).ready(function() {
                         min: 6,
                         max: 20,
                         message: '登录密码最少6位'
-                    }
+                    },
                     identical: {//相同
                         field: 'loginPassword',
                         message: '两次登录密码不一致'

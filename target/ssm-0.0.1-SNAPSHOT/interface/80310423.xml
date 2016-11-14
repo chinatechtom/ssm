@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="GBK" ?>
-<function id="80310423" name="证券类别同步">
-  <description>确实同步所有证券类别么?</description>
-  <input/>     
-  <service type="system" id="80310423" process="888" style="1">
-	  <param type="string" id="function_id" default="3030904"/>
-	  <param type="string" id="function_id" default="3030906"/>
-  </service>
-</function>

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="gbk" ?>
-<function id="3131701" name="查看角色权限">
-	<input>
-		<item type="hidden"		id="role_id"	name="角色id" action="90000010" />
-		<item type="tree" id="menu_id"	name="菜单" editable="false"/>			
-	</input>
-	<output/>
-</function>

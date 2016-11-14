@@ -27,12 +27,12 @@ public class MenuTest {
 	public void testMakeMenu() {
 		 
 		
-		List<MenuItem> listMenu = menuService.getUserMenus("admin");
+		//List<MenuItem> listMenu = menuService.getUserMenus("admin");
 		
-		String jsonMenu = menuService.makeJsonMenu(listMenu);
+		//String jsonMenu = menuService.makeJsonMenu(listMenu);
 		
 
-		System.out.println(jsonMenu);
+		//System.out.println(jsonMenu);
 		//JSONObject resultJson = JSONObject.fromObject(jsonMenu);
 		 
 		 

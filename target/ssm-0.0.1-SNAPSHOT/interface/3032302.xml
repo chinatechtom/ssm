@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="gbk" ?>
-<function id="3032302" name="转换公允价格" >	
-  <input> 
-  </input>
-  <service type="procedure" id="p_sec_public_price_convert" implement="p_sec_public_price_convert3032302" process="811" style="1" adapter="sysinfo"> 
-  </service>
-  <output>
-  </output>
-</function>

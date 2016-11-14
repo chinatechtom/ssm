@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="gbk" ?>
-<function id="700108362" name="不能冻结资金" >
-	<description>委托状态不对或者是特殊交易,不能同步冻结资金！</description>	
-	<input/>
-</function>

@@ -30,29 +30,40 @@ public class MyBatisTest {
 
 	@Test
 	public void testAddUser() {
-		// ApplicationContext ac = new ClassPathXmlApplicationContext(new
-		// String[]{"spring.xml","spring-mybatis.xml"});
-		// UserServiceI userService = (UserServiceI) ac.getBean("userService");
+		 
 		User user = null;
-		String userId =null;
+		String userName =null;
 		List<User> list = userService.getAllUser();
 		for (User temp : list) {
 			System.out.println(temp.getUserName());
 		}
 		 
-		userId = list.get(0).getUserCode();
-		
-		
-		user = userService.getUserByUserCode("admin");
-
-		System.out.println(user.getUserName());
-		
-		List<MenuItem> listMenu = menuService.getUserMenus("admin");
-		
-		for(MenuItem menu :listMenu){
-			System.out.println(menu.getMenuName());
+		if(list.size()>0){
+			userName = list.get(0).getUserName();
 		}
 		
+		if( null == userName){
+			user = new User();
+			user.setUserName("test");
+			user.setAddress("111");
+			user.setCheckLoginPassword("1234565");
+			user.setCheckTradePassword("1234545");
+			user.setEmail("111qqcom");
+			user.setLoginPassword("111111");
+			user.setMobile("11111");
+			user.setRealName("xxxxx");
+			user.setReference("hxx");
+			user.setTradePassword("11111");
+			user.setWeiChat("xxxx");
+			user.setDate("20161115");
+			user.setTime("10:40:00");
+			
+			userService.addUser(user);
+		}
+		
+		user = userService.getUser("test");
+
+		System.out.println(user.getUserName());
 		
 
 	}

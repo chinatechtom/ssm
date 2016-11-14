@@ -15,18 +15,33 @@ public class UserServiceImpl implements IUserService {
 
      
     @Autowired
-    private UserMapper userMapper; 
+    private UserMapper userMapper;
 
-  
-    public User getUserByUserCode(String userId) {
-        return userMapper.selectByPrimaryKey(userId);
-    }
-
-	public List<User> getAllUser() {
-		 
-		return userMapper.getAllUser();
+	@Override
+	public int deleteUser(String userName) {
+		return  userMapper.deleteUser(userName) ;
+		
 	}
 
-	 
+	@Override
+	public int updateUser(User user) { 
+		return userMapper.updateUser(user) ;
+	}
+
+	@Override
+	public User getUser(String userName) { 
+		return userMapper.selectByUserName(userName) ;
+	}
+
+	@Override
+	public int addUser(User user) { 
+		return userMapper.addUser( user);
+	}
+
+	@Override
+	public List<User> getAllUser() { 
+		return userMapper.getAllUser();
+	} 
+ 
 }
  

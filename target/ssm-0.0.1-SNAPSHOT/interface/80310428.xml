@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="GBK" ?>
-<function id="80310428" name="证券模板同步">
-  <description>确实同步所有证券模板么?</description>
-  <input/>     
-  <service type="system" id="80310428" process="888" style="1">
-	  <param type="string" id="function_id" default="3030604"/>
-	  <param type="string" id="function_id" default="3030606"/>
-  </service>
-</function>

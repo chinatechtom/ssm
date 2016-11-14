@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="gbk" ?>
-<function id="3093500" name="历史数据导出前校验">
-	<input/>	
-	<service type="procedure" id="p_his_data_output_chk_begin"  implement="p_his_data_output_chk_begin3093500" process="811" style="1">
-		<param id="user_id"		type="integer"/>	
-	</service>
-	<output/>		
-</function>

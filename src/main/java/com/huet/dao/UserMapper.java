@@ -6,18 +6,13 @@ import com.huet.entity.User;
 
 public interface UserMapper {
 	
-	    int deleteByPrimaryKey(String userId);
+	    int deleteUser(String userName);
 
-	    int insert(User record);
+	    int addUser(User record); 
 
-	    int insertSelective(User record);
-
-	    User selectByPrimaryKey(String userId);
-
-	    int updateByPrimaryKeySelective(User record);
-
-	    int updateByPrimaryKey(User record);
+	    int updateUser(User userName);
 	    
+	    User selectByUserName(String userName);
 	    List<User> getAllUser();
 	     
 }

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="GBK" ?>
+<function id="70770005" name="权益信息导入">
+	<description>确定导入权益信息吗?</description>
+	<input></input>
+	<service type="system" id="70770005" process="999" style="1">
+		<param type="string" id="function_id" default="70770006"/>
+		<param type="string" id="function_id" default="70770007"/>
+	</service>
+</function>

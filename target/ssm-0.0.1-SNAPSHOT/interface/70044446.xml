@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70044446" name="交易协议书处理" >
+	<input print="70044446.jsp">
+		<group name="合同信息" >
+			<item type="text" id ="institution_name" name="营业部名称" editable="false"/>
+			<item type="text" id ="institution_code" name="营业部代码" editable="false"/> 
+			<item type="hidden" id="cust_id" name="客户id" />			
+			<item type="text" id="bond_no" name="合同编号" editable="false"/>
+			<item type="text" id ="cust_name" name="客户姓名" editable="false"/>
+			<item type="text" id ="cust_code" name="客户代码" editable="false"/> 	
+		</group>
+        <item type="hidden" id="order_id"     name="合约ID" action="70044546"/>			
+		<item type="hidden" id="date"     name="打印日期"/>	<!--从1888.xml获得的打印日期-->
+		<item type="hidden" id="user_code"     name="打印柜员代码"/><!--从1888.xml获得的打印柜员代码-->
+		<item type="hidden" id="user_name"     name="打印柜员名称"/><!--从1888.xml获得的打印柜员名称-->
+		<item type="hidden" id="company"    name="券商名称"/><!--从1888.xml获得的券商名称-->			
+		<group name="交易协议书处理">
+		    <item type="text" id="sbond_no" name="交易协议书编号" editable="false"/>
+			<item type="text" id="related_sbond_no" name="主关联交易协议书编号" editable="false"/>
+		    <item type="text" id ="hg_code" name="初始交易代码" editable="false"/>
+			<item type="text" id ="hg_code2" name="购回交易代码" editable="false"/>
+		    <item type="select" id ="market_code" name="市场代码" editable="false" source="039"/>
+			<item type="text" id ="product_code" name="标的证券代码" editable="false"/>
+			<item type="text" id ="product_type" name="标的证券类型" editable="false"/>
+			<item type="text" id="product_name"   name="标的证券名称" editable="false"/>
+			<item type="text" id ="hg_num1" name="标的证券数量" nullable="false" integer="true"/>
+			<item type="text" id="first_amt1" name="初始交易金额" nullable="false" number="true" action="97000025"/>
+			<item type="text" id ="hg_convert_rate1" name="折扣比率(%)" nullable="false" number="true"/>
+			<item type="text" id ="app_price1" name="标的证券价格" nullable="false" number="true"/>
+			<item type="date" id="engage_trade_date1" name="初始交易日期" 	default="last" nullable="false"	action="97000026,97000025"/>
+			<item type="date" id="bb_date1" name="购回交易日期" 	default="last" nullable="false"	action="97000026,97000025"/>
+			<item type="text" id ="days1" name="购回期限(天)" nullable="false" editable="false"/>
+			<item type="text" id ="hg_rate1" name="购回价格（每100元年收益）" nullable="false" number="true"/>
+			<item type="text" id ="penalty_rate1" name="违约金比率(日利率%)" nullable="false" number="true"/>
+			<item type="text" id ="prewarning_price1" name="预警履约保障比率(%)" nullable="false" number="true"/>
+			<item type="text" id ="lowest_price1" name="最低履约保障比例(%)" nullable="false" number="true"/>
+			<item type="text" id="second_amt1" name="购回交易金额" nullable="false" number="true"/>
+			<item type="text" id="fix_rate1" name="固定交易费用比例(%)" nullable="false" number="true" action="97000025"/>
+			<item type="hidden" id="manual_chg"   name="购回金额手工调整" editable="false"/>
+			<item type="textarea" id ="hg_num_big1" name="标的证券数量大写" editable="false"/>
+			<item type="textarea" id ="first_amt_big1" name="初始交易金额大写" editable="false"/>
+			<item type="textarea" id ="second_amt_big1" name="购回交易金额大写" editable="false"/>
+			<item type="textarea" id ="zjyt" name="资金用途"/>
+			<item type="textarea" id ="remarks1" name="备注"/>
+		</group>		
+	</input>
+	<service type="procedure" id="P70044446" process="822" style="1">
+		<param type="integer" id="user_id" way="in" />
+		<param type="integer" id="order_id" way="in" />
+		<param type="string" id="sbond_no"/>
+		<param id="hg_code" way="in"/>
+		<param id="market_code" way="in"/>
+		<param id="product_code" way="in"/>
+		<param id="hg_num1" way="in" type="integer"/>
+		<param id="hg_convert_rate1" way="in" type="float"/>
+		<param id="app_price1" way="in" type="float"/>
+		<param id="engage_trade_date1" way="in"/>
+		<param id="days1" way="in" type="integer"/>
+		<param id="hg_rate1" way="in" type="float"/>
+		<param id="penalty_rate1" way="in" type="float"/>
+		<param id="prewarning_price1" way="in" type="float"/>
+		<param id="lowest_price1" way="in" type="float"/>
+		<param id="first_amt1" way="in" type="float"/>
+		<param id="remarks1" type="string" way="in"/>
+		<param id="fix_rate1" way="in" type="float"/>
+		<param id="manual_chg" way="in" type="float"/>
+		<param id="zjyt" type="string" way="in"/>
+	</service>
+	<output/>
+</function>

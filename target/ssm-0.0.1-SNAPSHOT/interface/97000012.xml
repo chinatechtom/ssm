@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="97000012" name="交易协议书信息" >
+	<input>
+		<item type="hidden"	id="bond_id"	name="bond_id"/>
+	</input>
+	<service type="table" id="vw_bond_sbond_active" process="122" style="12">
+	  <param id="bond_id" field="bond_id" type="integer"  operator="="/>
+	</service>
+	<output>
+		<column type="number" id="entry_value"   field="sbond_id"	name="数据内容id"/>
+		<column type="string" id="entry_content"	 field="sbond_no"    name="数据内容"/>
+    </output>
+</function>

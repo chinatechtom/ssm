@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="60250125" name="清算资金小额金额额度查询" >
+	<input>
+		<item type="hidden" id="trade_date" name="查询日期" />
+	</input>
+	<service type="procedure" id="p60250125" process="933" style="77">
+		<param id="user_id"  type="integer"/>
+		<param id="trade_date" type="string"/>
+	</service>
+	<output export="true">
+		<column type="string" id="market"   name="市场代码"/>
+		<column type="number" id="big_amt"   name="大额金额" precision="2"/>
+		<column type="number" id="small_amt"   name="小额金额" precision="2"/>
+		<column type="number" id="total_amt"   name="合计金额" precision="2"/>
+	</output>
+</function>

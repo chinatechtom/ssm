@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="30666667352" name="查看授信申请" >
+	<input print="30644444352.jsp">	
+	<item type="hidden" id="cust_id"  name="客户id" action="1888,30101,3063207,30672,3060199"/><!--1888:打印信息；30101：客户基本信息；3064409：信用资产台账；3063207：原融资融券信息（来自t_bond）；客户信息去掉原有的3062923-->
+	<item type="hidden" id="order_id" name="合约ID" action="3064407,3063203,3064402,3064405"/><!--3064405:客户资产状况,3063203:授信额度申请,3064402:评级因子编号.3064407:客户信用评分（信用柜台）-->
+	<group name="客户信息" >
+		<item type="text"   id="cust_name"          name="客户姓名" editable="false"/>
+		<item type="text"   id="institution_name"   name="营业部名称" editable="false"/>
+		<item type="text"   id="cust_code"          name="信用资金台账" editable="false"/>
+		<item type="text"   id="commness_cust_code" name="普通资金账号" editable="false"/>	  	
+		<item type="hidden" id="date"       name="打印日期"   editable="false"/>
+		<item type="hidden" id="user_code"  name="操作员代码" editable="false"/>
+		<item type="hidden" id="user_name"  name="操作员姓名" editable="false"/>
+		<item type="hidden" id="company"    name="证券公司名称" editable="false"/>
+	</group>
+	<group name="客户资产状况" >   
+	    <item type="text"   id ="total_asset_wy"  name="信用资金台账总资产(万元)" editable="false"/><!--来源3064405-->
+		<item type="text"   id ="total_debt_wy"   name="信用资金台账总负债(万元)" editable="false"/><!--来源3064405-->
+		<item type="text"   id ="commness_stock_asset"  name="普通资金账户资产(万元)" number="true" nullable="false" action="3064401,3064403" editable="false" />
+        <item type="text"   id ="net_assets"            name="客户净资产(万元)"       number="true" nullable="false" editable="false"/>		
+		<!--
+		<item type="text"   id ="financial_asset"       name="其他金融资产总值(万元)" number="true" nullable="false" action="3064401,3064403" editable="false" />
+		<item type="text"   id ="estate_asset"          name="房产价值(万元)" number="true" nullable="false" action="3064401,3064403" editable="false" />	  	
+		<item type="text"   id ="financial_asset_half"  name="金融资产的一半(万元)"   nullable="false" editable="false"/>
+		<item type="text"   id ="asset_quarter"         name="总资产的四分之一(万元)" nullable="false" editable="false"/>	
+		<item type="date"   id ="asset_over_date"       name="以上资产总值截止时间" nullable="false" editable="false" />
+		<item type="textarea"   id ="estate_condition"  name="个人房产状况" nullable="false" default="未提供" editable="false" />	
+		-->
+	</group>
+	<group name="原授信额度情况">
+	    <item type="select"   id="bond_product_id2"       name="原融资产品"   nullable="false" source="95000004" editable="false"/><!--3063207-->
+		<item type="select"   id="bond_product_id3"       name="原融券产品"   nullable="false" source="95000005" editable="false"/>
+		<item type="text"     id="bond_credit_limit"      name="原授信额度(元)"     editable="false"/>
+		<item type="textarea" id="bond_credit_limit_c"    name="原授信额度大写(元)" editable="false"/>
+		<item type="text"     id="bond_financing_limit"   name="原融资上限(元)"     editable="false"/>
+		<item type="textarea" id="bond_financing_limit_c" name="原融资上限大写(元)" editable="false"/>
+		<item type="text"     id="bond_bstock_limit"      name="原融券上限(元)"     editable="false"/>
+		<item type="textarea" id="bond_bstock_limit_c"    name="原融券上限大写(元)" editable="false"/>
+		<item type="text"     id="begin_time"             name="原授信生效日期"     editable="false"/>
+		<item type="text"     id="bond_days"              name="原有效天数"         editable="false"/>
+	</group>
+	<group name="营业部授信额度申请">   
+		<item type="select"   id="product_id2_institution"  name="融资产品"    source="95000004" editable="false"/>
+		<item type="select"   id="product_id3_institution"  name="融券产品"    source="95000005" editable="false"/>
+		<item type="button"   id="assistant"	name="更多详情" action="3050102" multiple="0"/>
+		<item type="text"     id="credit_limit_institution" name="授信额度(元)" nullable="false" number="true" editable="false"/>
+		<item type="textarea" id="credit_limit_institution_c" name="授信额度大写(元)" editable="false"/>
+		<item type="text"     id="financing_limit_institution" name="融资上限(元)" nullable="false" number="true" editable="false"/>
+		<item type="textarea" id="financing_limit_institution_c" name="融资上限大写(元)" editable="false"/>
+		<item type="text"     id="bstock_limit_institution" name="融券上限(元)" nullable="false" number="true" editable="false"/>
+		<item type="textarea" id="bstock_limit_institution_c" name="融券上限大写(元)" editable="false"/>
+	    <item type="hidden" id="paraid"	    name="杂项ID" action="32310" default="1030"/>
+		<item type="hidden" id="paravalue" 	name="杂项数值" 	  default="0"/>		
+		<group name="授信额度有效天数">   
+		   <item type="text"    id="app_date3063203_institution"  name="申请日期"  editable="false"/>	 		
+		   <item type="text"    id="days_institution"      name="申请有效天数"  editable="false" />
+		   <item type="text"    id="days"      name="处理后有效天数"   editable="false" />		   
+		</group>		
+	</group>
+	<group name="客户征信情况">
+	    <item type="grid"   id="cust_code"               name="客户代码" source="3060114" editable="false" />
+	    <item type="text"   id="report_version_id"       name="关联评级因子编号" nullable="false" action="3064402,3064403" editable="false" />	
+		<item type="text"   id="approve_valuation_score" name="客户信用评分"    action="3063401,3064403"  nullable="false" number="true" editable="false" />
+		<item type="select" id="auto_credit_level"       name="客户信用等级"    source="90000002" nullable="false" editable="false" />
+		<item type="text"   id="origin_guarantee_rate"   name="初始保证金比例"  nullable="false" editable="false" number="true"/>
+		<item type="hidden" id="versiondate"   name="评级因子生效日期" />
+	</group>
+		<group name="客户授信评分">
+		<item type="text" id="credit_abs_benefit_rate"      name="绝对收益率(%)" nullable="false" editable="false"/>
+		<item type="text" id="market300_rate"	       		name="同期沪深300年化收益率（%）"   nullable="false" editable="false"/>
+		<item type="text" id="relative_benefit_rate"     	name="相对收益率（%）"          nullable="false" editable="false"/>
+		<item type="text" id="relative_benefit_get_score"	name="相对收益得分"      nullable="false" editable="false"/>
+		<item type="text" id="credit_usage_rate"	        name="日均授信额度使用率（%）"  nullable="false" editable="false"/>
+		<item type="text" id="credit_usage_score"	   		name="日均授信额度使用得分"    nullable="false" editable="false"/>
+		<item type="text" id="credit_exchange_rate"	        name="授信额度换手率"  nullable="false" editable="false"/>
+		<item type="text" id="credit_exchange_score"		name="授信额度换手率得分"    nullable="false" editable="false"/>
+		<item type="text" id="credit_commission_charge"	    name="信用交易佣金（万元）"  nullable="false" editable="false"/>
+		<item type="text" id="credit_commission_score"		name="信用交易佣金得分"    nullable="false" editable="false"/>
+		<item type="text" id="credit_interest_charge"	    name="信用交易息费收入（万元）"  nullable="false" editable="false"/>
+		<item type="text" id="credit_interest_score"		name="信用交易息费收入得分"    nullable="false" editable="false"/>
+		<item type="text" id="net_assets_get_score_4407"    alias="net_assets_get_score_4406" name="净资产得分"    nullable="false" editable="false"/>
+		<item type="text" id="additional_score_4407"        alias="additional_score"     name="附加分值"      nullable="false" editable="false" />
+		<item type="text" id="credit_overall_score"	       	name="综合得分"      nullable="false" editable="false"/>
+		<item type="text" id="credit_limit_factor_changed"	name="信用上限系数（变更时）"  nullable="false" editable="false"/>
+		<item type="date" id="credit_begin_date"	   		name="以上数据统计起始日期"  nullable="false" editable="false"/>
+		<item type="date" id="credit_end_date"	   			name="以上数据统计结束日期"  nullable="false" editable="false"/>			
+	</group>
+	<group name="重要信息补充">
+		<item type="textarea" id="important_info" name="重要信息补充" editable="false" />
+	</group>
+	<group name="授信额度测算表">
+		<!--<item type="text" id="credit_limit"  name="客户申请的额度(元)"    nullable="false" editable="false"/> id不能重复,不然调用3065005会出问题-->
+		<item type="text" id="report_credit_num"    name="客户信用上限(万元)"     nullable="false" editable="false"/>
+		<!--<item type="text" id="max_asset_deal"	    name="MAX(资产)(万元)"       nullable="false" editable="false"/>--><!--3064401-->
+		<item type="text" id="first_credit_limit"	name="初步授信额度(万元)" nullable="false" editable="false"  />
+		<item type="text" id="first_financing_limit"	name="初步融资上限(万元)" nullable="false" editable="false"  />
+		<item type="text" id="first_bstock_limit"	name="初步融券上限(万元)" nullable="false" editable="false" />
+		<item type="select"   id="product_id4" name="融资产品"   nullable="false" source="95000004" editable="false" />
+		<item type="select"   id="product_id5" name="融券产品"   nullable="false" source="95000005" editable="false" />
+	</group>
+	
+	<group name="备注说明"><!--3060199-->
+		<item type="textarea" id="order_remark" name="备注说明" editable="false" />
+		<item type="textarea" id="manage_opinion"   name="处理意见" editable="false" />
+		<item type="textarea" id="approver_opinion"   name="审核意见" editable="false" />
+		<item type="textarea" id="assessor_opinion"   name="审批意见" editable="false" />
+		<item type="textarea" id="double_check_opinion"   name="复核意见" editable="false" />
+	</group>
+	</input>
+	<output/>
+</function>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="31307" name="机构浏览">
+	<input>
+		<item type="hidden"	id="institution_id"		name="机构id"/>
+		<item type="text"   id="institution_code"   name="机构代码"/>
+		<item type="text"   id="institution_name"   name="机构名称"/>
+		<!-- 新增参数 -->
+		<item type="select" id="system_type"   name="营业部类型" source="521"/>
+		<item type="text"   id="branchid"      name="BRANCH_ID"/>
+		<item type="text"   id="branch_sbm"    name="营业部识别码"/>	
+	</input>
+	<service type="procedure" id="p_institution_browse" implement="p_institution_browse31307"  process="911" style="77">
+		<param id="user_id"				type="integer"  way="in"/>
+		<param id="institution_id"		type="integer"  way="in"/>
+		<param id="institution_code"	type="string"   way="in"/>
+		<param id="institution_name"	type="string"   way="in"/>
+		<!-- 新增参数 -->
+		<param id="system_type"	type="string"   way="in"/>
+		<param id="branch_sbm"	type="string"   way="in"/>
+		<param id="branchid"	type="string"   way="in"/>
+	</service>
+	<output autoload="true">
+		<column type="number"  id="institution_id"			name="机构id" display="false"/>
+		<column type="string"  id="institution_code"		name="机构代码"/>
+		<column type="string"  id="institution_name"		name="机构名称"/>
+		<column type="string"  id="department_code"			name="部门代码"/>
+		<column type="number"  id="father_sort_id"			name="父节点id" display="false"/>
+		<column type="string"  id="father_institution_code"	name="上级机构代码"/>
+		<column type="string"  id="institution_type0"		name="机构类型" display="false"/>
+		<column type="string"  id="institution_type"		name="机构类型"/>
+		<!-- 新添加的字段 -->
+		<column type="string"  id="system_type"				name="营业部类型" display="false"/>
+		<column type="string"  id="system_type_name"        name="营业部类型"/>
+		<column type="string"  id="branchid"				name="BRANCH_ID"/>
+		<column type="string"  id="branch_sbm"				name="营业部识别码"/>		
+		<column type="string"  id="institution_kind"		name="机构性质"/>
+		<column type="string"  id="enrol_address"			name="注册地址"/>
+		<column type="string"  id="business_address"		name="营业地址"/>
+		<column type="string"  id="begin_time"				name="成立时间"/>
+		<column type="number"  id="enrol_amt"				name="注册资金" total="true"/>
+		<column type="string"  id="business_no"				name="工商执照号码"/>
+		<column type="string"  id="country_tax_no"			name="国税登记号"/>
+		<column type="string"  id="place_tax_no"			name="地税登记号"/>
+		<column type="string"  id="principal"				name="负责人"/>
+		<column type="string"  id="linkman"					name="联系人"/>
+		<column type="string"  id="contact_tel"				name="联系电话"/>
+		<column type="string"  id="web_address"				name="网站地址"/>
+		<column type="string"  id="email"					name="邮件地址"/>
+		<column type="string"  id="postalcode"				name="邮政编码"/>
+		<!--<column type="string"  id="market_code"				name="市场"/>
+		<column type="string"  id="seat"					name="席位"/>
+		<column type="string"  id="report_seat"				name="报盘席位"/>-->
+		<button type="add"     id="add"						name="增加" action="31308" multiple="-1"/>
+		<button type="edit"    id="edit"					name="修改" action="31308" multiple="0"/>
+	</output>
+</function>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="36000030" name="本月对单个客户融资规模与净资本比例居前五名及超过5%的客户情况" >
+<input>
+  <item type="select"  id="institution_id"  name="营业部名称" source="95000008"/> 
+  <item type="text"   id="cust_num"         name="客户数量" default="5"/>
+  <item type="text"   id="rate"             name="占净资本比例" />
+  <item type="year"  id="year"  name="年份" nullable="false"/>
+  <item type="month"  id="month"  name="月份" nullable="false"/>
+</input>
+<service type="procedure" id="P36000030" process="911" style="77">
+  <param id="user_id" type="integer"/>
+  <param id="institution_id" type="integer"/>
+  <param id="cust_num" type="double"/>
+  <param id="rate" type="double"/>
+  <param id="year" type="string"/>
+  <param id="month" type="string"/>
+</service>
+<output export="true">
+  <column type="number" id="id"              name="序号"  />
+  <column type="string" id="cust_name"       name="客户证券账户名称"  />  
+  <column type="string" id="cust_code"       name="证券账户代码"  />   
+  <column type="number" id="month_fin_scale" name="融资金额"  precision="2"/>
+  <column type="number" id="fin_scale_rate"  name="占净资本比例" precision="6" />
+  <column type="string" id="remark"          name="备注"  />
+</output>
+</function>

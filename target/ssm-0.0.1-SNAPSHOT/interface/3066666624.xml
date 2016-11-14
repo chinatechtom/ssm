@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3066666624" name="查询修改借贷模式申请" >
+  <input>
+    <item type="hidden" id="order_id" name="定单id" action="30673"/>
+	<item type="text" id ="cust_code" name="客户代码" editable="false"/>
+	<item type="text" id ="cust_name" name="客户姓名" editable="false"/>
+    <item type="hidden" id="dc_mode" name="借贷模式" />
+	<item type="hidden" id="dc_mode_name" name="借贷模式" editable="false"/>
+	<item type="textarea" id="remark" name="备注说明" editable="false"/>
+	<item type="textarea" id="manage_opinion"   name="处理意见" editable="false"/>
+	<item type="textarea" id="approver_opinion"   name="审核意见" editable="false"/>
+	<item type="textarea" id="assessor_opinion"   name="审批意见" editable="false"/>
+	<item type="textarea" id="double_check_opin"   name="复核意见" editable="false"/>
+</input>
+  <output/>
+</function>

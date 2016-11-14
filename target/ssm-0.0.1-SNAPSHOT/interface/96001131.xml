@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="96001131" name="交易协议书分段计息区间新增申请实时最近购回金额计算">
+	<input>
+		<item type="hidden"	id="sbond_id"	name="sbond_id"/>	
+		<item type="hidden"	id="second_amt_before"	name="second_amt_before"/>	
+		<item type="string" id="section_begin_date" name ="section_begin_date" />
+		<item type="string" id="section_end_date" name ="section_end_date" />
+		<item type="float" id="section_hg_rate"	name="section_hg_rate"/>
+	</input>
+	<service type="procedure" id="P96001131" process="933" style="77">
+		<param id="sbond_id" type="integer"/>
+		<param type="float" id="second_amt_before" />
+		<param type="string" id="section_begin_date" />
+		<param type="string" id="section_end_date" />
+		<param type="float" id="section_hg_rate" />
+	</service>
+	<output>
+		<column type="number" id="second_amt_after"   name="变更后最新购回金额" />
+		<column type="string" id="second_amt_after_big"   name="变更后最新购回金额"/>
+    </output>
+</function>

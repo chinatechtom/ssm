@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="60490031" name="取单个用户标识违约处置">
+	<input/>
+		<service type="drtp" id="490031" process="711" adapter="psr" style="1">
+		<param type="string"	id="snote"			 default=""/>
+		<param type="string"	id="semp"		 	 default="01"/>
+		<param type="string"	id="semp_no"		 default="SYSTEM"/>
+		<param type="string"	id="semp_no2"		 default=" "/>
+		<param type="string"	id="sbank_code"		 default="000015"/>
+		<param type="string"	id="scust_no"		/>
+		<param type="string"	id="sstation0"		 default="0"/>
+		<param type="string"    id="smarket_code" 	/>
+		<param type="string"	id="sholder_ac_no"	/>
+	</service>
+		<output target="60200405">
+		<column name="业务类别"			id="bus_type"		type="string"	field="semp"/>
+		<column name="错误码"			id="vsmess"			type="string"   field="vsmess"/>
+		<column name="流水号"			id="serial_no"  	type="string"   field="sserial0"/>
+		<column name="客户号"			id="cust_code"  	type="string"   field="scust_no"/>
+        <column name="股东账号"			id="acc_code"  	    type="string"   field="sholder_ac_no"/>
+	</output>
+</function>

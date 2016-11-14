@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="36000028" name="融资融券业务统计" >
+<input>
+  <item type="select"  id="institution_id"  name="营业部名称" source="95000008"/> 
+  <item type="year"  id="year"  name="年份" nullable="false"/>
+  <item type="month"  id="month"  name="月份" nullable="false"/>
+</input>
+<service type="procedure" id="P36000028" implement="P3600002836000028" process="955" style="77">
+  <param id="user_id" type="integer"/>
+  <param id="institution_id" type="integer"/>
+  <param id="year" type="string"/>
+  <param id="month" type="string"/>
+</service>
+<output export="true" >
+  <column type="string" id="cust_name"      name="客户名称"  />
+  <column type="string" id="product_code"   name="标的证券"  />
+  <column type="number" id="done_amt"       name="交易金额"  precision="2"/>
+  <!--<column type="string" id="date"           name="平仓日期"  />-->
+  <column type="string" id="remark"         name="备注"  />
+  <column type="number" id="begin_cust_num" name="期初开户"  display="false"/>
+  <column type="number" id="end_cust_num"   name="期末开户"  display="false"/>
+  <column type="number" id="month_profit"   name="月赢利"  precision="2" display="false"/>
+  <column type="number" id="year_profit"    name="年赢利"  precision="2" display="false"/>
+  <column type="number" id="institution_id" name="营业部ID"  display="false"/>
+  <column type="string" id="year"           name="年"  display="false"/>
+  <column type="string" id="month"           name="月"  display="false"/>
+  <column type="string" id="print_date"      name="时间"  display="false"/>
+  <button type="print" id="print" name="打印" action="36110028" multiple="1"/>
+</output>
+</function>

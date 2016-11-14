@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70100151" name="协议书推送到交易系统">
+	<input>
+		<item type="hidden"	id="id"		name="id" action="31381" default="1"/>		
+		<item type="date"	id="date"		name="日期" editable="false"/>			
+	</input>
+	<service type="procedure" id="p70100151" process="911" style="1">
+		<param id="user_id"		type="integer"/>	
+	</service>
+	<output target="78120611">
+		<column type="string" field="sys_date"   name="系统日期" id="sdate2"/>
+		<column type="string" field="institution_code"   name="营业部代码" id="sbranch_code0"/>
+		<column type="string" field="cust_code"   name="客户代码" id="scust_no"/>
+		<column type="string" field="sha_acc"  name="上海证券账户" id="sholder_ac_no"/>
+		<column type="string" field="sza_acc"  name="深圳证券账户" id="sholder_ac_no2"/>
+		<column type="string" field="bond_no"  name="合同编号" id="sbank_acc"/>
+		<column type="string" field="sbond_no"  name="协议书编号" id="sall_name"/>
+		<column type="string" field="market_code"   name="市场代码" id="smarket_code"/>
+		<column type="string" field="product_code"   name="证券代码" id="sstock_code"/>
+		<column type="number" field="hg_num"   name="证券数量" precision="0" id="lvol0"/>
+		<column type="string" field="engage_trade_date"   name="初始交易日期" id="sdate0"/>
+		<column type="string" field="last_bb_date"   name="最新购回日期" id="sdate1"/>
+		<column type="number" field="first_amt"   name="初始交易金额" precision="2" id="damt0"/>
+		<column type="number" field="second_amt"   name="购回交易金额" precision="2" id="damt5"/>
+		<column type="number" field="interest"   name="利息" precision="2" id="damt6"/>
+		<column type="number" field="penalty"   name="违约金" precision="2" id="damt7"/>
+		<column type="number" field="penalty_rate"   name="违约金率" precision="8" id="damt2"/>
+		<column type="number" field="gua_rate"   name="履约保障比例" precision="4" id="damt4"/>
+		<column type="string" field="sbond_status"   name="协议书状态" id="sstation1"/>
+		<column type="number" field="days2"   name="最新购回期限" precision="0" id="lvol1"/> 
+		<column type="number" field="hg_rate"   name="回购价格（每百元）" precision="8" id="damt1"/>
+		<column type="number" field="app_price"   name="申请价格" precision="3" id="damt3"/>
+		<column type="string" field="related_sbond_no"  name="关联协议书编号" id="scust_auth2"/>
+		<column type="string" field="first_delivery_result"  name="初始交收结果" id="sphone"/>
+		<column type="string" field="second_delivery_result"  name="购回交收结果" id="sphone2"/>
+	</output>
+</function>

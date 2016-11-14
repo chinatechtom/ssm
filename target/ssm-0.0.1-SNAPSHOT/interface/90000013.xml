@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="90000013" name="用户所能访问的机构">
+	<input/>
+	<service type="table" id="vw_user_institution" process="111" style="12">
+		<param id="user_id"	field="user_id" type="integer" operator="="/>
+	</service>
+	<output>
+		<column type="number" id="entry_value"   field="institution_id"	   name="机构id"/>
+		<column type="string" id="entry_content" field="institution_name"  name="机构名称"/>
+    </output>
+</function>

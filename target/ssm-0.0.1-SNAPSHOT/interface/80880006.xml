@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="80880006" name="约定购回式证券交易监管报表" >  
+  <input>
+  		<item type="year"    id="year_param"	name="年份" nullable="false"/>
+		<item type="month"   id="month_param"	name="月份" nullable="false"/>
+  </input>
+   <service type="procedure" id="sp_bond_monitor_report" process="922">
+		<param id="year_param"		type="string"   way="in"/>
+		<param id="month_param"		type="string"   way="in"/>	
+		<param id="in_type"			type="number"  way="in" default="0"/>
+  </service> 
+  <output  print="true">
+    	<column type="string"  id="name"   	     name="项目名称"/>
+		<column type="number"  id="vitem_row" 	 name="行  次"/>
+		<column type="number"  id="begin_cnt"	 name="期初数"   precision="2"/>
+    	<column type="number"  id="add_cnt"  	 name="本期增加" precision="2"/>
+		<column type="number"  id="red_cnt"	 	 name="本期减少" precision="2"/>
+		<column type="number"  id="end_cnt"  	 name="期末数"   precision="2"/>
+  </output>
+</function>

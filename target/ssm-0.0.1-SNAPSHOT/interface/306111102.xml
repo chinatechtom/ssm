@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="306111102" name="信用产品浏览" >	
+  <input> 
+		<item type="hidden"	id="bond_id"		 name="合同id" />
+		<item type="hidden"	id="order_id"		 name="合约id" />
+		<item type="hidden"	id="order_type"	 name="产品代码" />
+  </input>
+  <service type="procedure" id="p_bond_financing_feerate_query" implement="p_bond_financing_feerate_query306111102"  process="911" style="77"> 
+		<param id="user_id"			type="integer" 	way="in"/>
+		<param id="bond_id"			type="integer" 	way="in"/>
+		<param id="order_id"		type="integer" 	way="in"/>
+		<param id="order_type"	    type="integer"  way="in" default="22"/>
+  </service>
+  <output>
+		<column type="number" id="credit_product_id_bs_b"					 name="产品id"			display="false"/>
+		<column type="string" id="product_code_bs_b"						 name="产品代码"/>
+		<column type="string" id="credit_product_name_bs_b"				 name="产品名称"/>
+		<column type="string" id="product_sort_bs_b"						 name="产品类型1"		display="false"/>
+		<column type="string" id="product_sort_name_bs_b"				     name="产品类型"/>
+		<column type="number" id="borrow_stock_interest_rate_b"		     name="融券利息率"		precision="4" />
+		<column type="number" id="fix_borrow_stock_rate_b"			     name="融券固定额度费率"	precision="4" />
+		<column type="number" id="takeup_borrow_stock_rate_b"			     name="融券占用额度费率"	precision="4" />
+		<column type="number" id="borrow_stock_commission_charge_b"	     name="融券违约手续费"		precision="4" />
+		<column type="number" id="bef_ret_com_charge_bs_b"	             name="提前还贷手续费"	precision="4"/>
+		<column type="number" id="punish_interest_rate_bs_b"				 name="罚息率"			precision="4"/>
+		<column type="number" id="bad_punish_interest_rate_bs_b"			 name="坏帐罚息率"		precision="4"/>
+		<column type="number" id="basis_interest_rate"				     name="基准利率(年)(%)"	precision="4"/>
+  </output>		
+</function>

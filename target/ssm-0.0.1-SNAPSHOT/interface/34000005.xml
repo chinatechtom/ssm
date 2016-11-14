@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="GBK" ?>
+<function id="34000005" name="删除信用客户对应普通客户映射">
+  <description>确实需要删除该数据么?</description>
+  <input>
+  	<item type="hidden" id="cust_code" alias="scust_no" name="信用客户号"/>
+	<item type="hidden" id="lvol0" default="2" />
+  </input>
+  <service type="system" id="34000005" process="888" style="1">
+      <param type="string" id="function_id" default="34000003"/>
+  </service>
+</function>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="30733" name="作废平仓预案" >
+	<description>确定作废平仓预案?
+	</description>
+	<input>
+		<item type="hidden"	id="record_id"	name="记录id"/> 
+	</input>
+    <service type="procedure" id="p_pc_record_cancel"  process="811" style="1">
+		<param id="user_id"	  type="integer" way="in"/>
+		<param id="record_id"	  type="integer" way="in"/>
+    </service>
+    <output/>	
+</function>

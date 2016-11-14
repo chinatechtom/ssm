@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="30631" name="客户资产评估" >
+	<input>    
+		<item type="text"  id="cust_id" name="客户id"/> 
+	</input>
+	<service type="procedure" id="p_full_evaluate_query" process="911" style="77">
+		<param id="user_id" type="integer"/> 
+		<param id="cust_id" type="integer"/> <!--modify by SECREQ-1185 -->
+	</service>
+	<output >
+		<column type="number" id="if_allow"				name="是否允许"/>
+		<column type="string" id="if_allow_name"		name="是否允许"/>
+		<column type="number" id="if_blacklist"			name="是否黑名单"/>	
+		<column type="string" id="if_blacklist_name"	name="是否黑名单"/>
+		<column type="number" id="fund_amt"				name="资金余额" precision="2"/>
+		<column type="number" id="stock_market_value"	name="证券市值" precision="2"/>
+		<column type="number" id="stock_convert_amt"	name="证券折算金额" precision="2"/>
+		<column type="number" id="fund_convert_amt"		name="资金折算金额" precision="2"/>
+		<column type="number" id="gage_value"			name="担保品价值" precision="2"/>
+		<column type="number" id="usable_num"			name="可用额度" precision="2"/>
+		<column type="number" id="financing_amt"		name="融资总金额" precision="2"/>
+		<column type="number" id="borrow_stock_amt"		name="融券总市值" precision="2"/>
+		<column type="number" id="fee_all"				name="总费用" precision="2"/>
+		<column type="number" id="guan_rate"			name="维持担保比率" precision="2"/>
+		<column type="number" id="total_asset"			name="总资产" precision="2"/>
+		<column type="number" id="total_debt"			name="总负债" precision="2"/>
+		<column type="number" id="total_asset_wy"		name="总资产(万元)" precision="4"/>
+		<column type="number" id="total_debt_wy"		name="总负债(万元)" precision="4"/>
+		<column type="number" id="common_fund_amt"		name="普通A股账户资产总值" precision="2"/>
+		<column type="number" id="other_fund_amt"		name="其他金融资产总值" precision="4"/>
+		<column type="number" id="all_debt_amt"			name="回购等负债总值" precision="4"/>
+		<column type="number" id="net_asset_amt"		name="在公司内净资产总值" precision="4"/>
+		<column type="number" id="credit_net_asset"		name="净资产" precision="2" display="false"/>	<!--modify by SECREQ-1823 -->
+	</output> 
+</function>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="36110027" name="融券情况统计" >
+<input print="36110027.jsp">
+   <item type="hidden"   id="institution_id"   name="营业部名称" />
+   <item type="hidden"   id="cust_code"        name="客户代码" />
+   <item type="text"   id="year"        name="年份选择" />
+   <item type="text"   id="month"       name="月份选择" />
+   <item type="text" id="print_date"   name="时间" />
+  <group name="融券情况统计" >
+    <item type="grid" id="institution_id,cust_code,year,month" name="" source="36000027"/>
+  </group>
+  </input>
+</function>

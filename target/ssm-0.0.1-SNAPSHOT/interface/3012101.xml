@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3012101" name="客户代理人信息_单一最新" >
+	<input>	
+		<item type="hidden" id="cust_id"   name="客户号"/>
+		<item type="text"   id="cust_code" name="客户代码" nullable="false"/>
+	</input>
+	<service type="procedure" id="p_cust_agent_info_query_single" process="911" style="77">
+		<param id="user_id"   type="integer"/>
+		<param id="cust_id"   type="integer"/>	
+		<param id="cust_code" type="string"/>	
+	</service>
+	<output export="true">
+		<column type="number" id="agent_id" name="代理人id"  display="false" />
+		<column type="string" id="agent_name" name="代理人姓名" />
+		<column type="string" id="agent_cert_no" name="代理人证件号码"  />
+		<column type="string" id="agent_cert_type" name="证件类型"  />
+		<column type="string" id="agent_gender" name="性别"/>
+		<column type="string" id="agent_over_date" name="到期日期"  />
+		<column type="string" id="agent_post_code" name="邮政编码" /> 
+		<column type="string" id="agent_address" name="联系地址"/> 
+		<column type="string" id="agent_fix_phone" name="固定电话"/>
+		<column type="string" id="agent_cell_phone" name="手机"/>
+		<column type="string" id="agent_fax" name="传真"/>
+		<column type="string" id="agent_email" name="电子邮件"/>
+		<column type="string" id="agent_open_emp" name="开户人员" display="false"/>   
+		<column type="string" id="agent_open_date" name="开户日期" /> 
+		<column type="string" id="agent_open_time" name="开户时间" />   
+		<column type="string" id="agent_close_emp" name="销户人员"  display="false"/>   
+		<column type="string" id="agent_close_date" name="销户日期" display="false"/>   
+		<column type="string" id="agent_close_time" name="销户时间" display="false"/>
+	</output>
+</function>

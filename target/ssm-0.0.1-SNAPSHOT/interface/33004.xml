@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="33004" name="重点客户分类" >
+	<input>	
+		<item type="select" id="in_reason"	name="类别"  source="96000004"/>
+	</input>
+	<service type="procedure" id="p_risk_in_reason_query" process="911" style="77">
+		<param id="user_id" type="integer"/>
+		<param id="in_reason"/>
+	</service>
+	<output>
+    	<column type="string" id="reason_code"		name="重点客户分类1" display="false"/>
+		<column type="string" id="reason_name"		name="重点客户分类"/>
+		<column type="string" id="have_index_value"	name="是否有指标值" display="false"/>
+		<column type="string" id="direction"		name="比较符号" display="false"/>
+		<column type="string" id="direction_name"	name="比较符号(右边指标)" display="false"/>
+	</output>
+</function>

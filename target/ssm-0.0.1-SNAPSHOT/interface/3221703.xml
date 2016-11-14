@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3221703" name="查询组成员">
+	<input>
+		<item type="hidden"		id="group_id"		name="组ID"			source=""	/>
+		<item type="text" 		id="group_code" 	name="组代码" 		editable="false"	/>
+		<item type="text" 		id="group_name" 	name="组名称" 		editable="false"	/>
+		<item type="textarea"	id="group_desc"		name="组描述"		editable="false"	/>
+		<item type="select"		id="group_type"		name="组类别"		source="386"		nullable="false"	editable="false"	/>
+		<item type="select" 	id="institution_id"	name="所属营业部"	source="95000008" 	nullable="false"	editable="false"	/>
+		<item type="textarea"	id="group_member"	name="组成员(逗号分隔)"	editable="false"	/>
+	</input>	
+</function>

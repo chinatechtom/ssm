@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="30117" name="客户综合查询" >
+<input>
+    <group name="客户资金" scope="group">
+		<item type="hidden" id="cust_id"     name="客户id" action="30201"/>
+		<item type="text"  id="cust_code"				name="客户代码" editable="false"/>
+		<item type="text"  id="cust_name"				name="客户姓名" editable="false"/>
+		<item type="hidden"  id="acc_id"					name="账户id" editable="false"/>        
+		<item type="text"  id="acc_code"				name="资金账户" editable="false"/>        
+		<item type="hidden"  id="date"				    name="日期"	 editable="false"/>                    
+		<item type="hidden"  id="property_type"			name="资产种类"  editable="false"/>                     
+		<item type="text"  id="currency_type"			name="货币类型" editable="false"/>                
+		<item type="text"  id="fund_amt"   				name="资金余额" editable="false"/>           
+		<item type="text"  id="buy_frozen_amt"			name="买入冻结金额"  editable="false"/>            
+		<item type="text"  id="sell_done_amt"			name="卖出解冻金额"  editable="false"/>  
+		<item type="text"  id="frozen_amt"				name="冻结资金"	   editable="false"/>
+		<item type="text"  id="abnormal_frozen_amt"		name="异常冻结资金" editable="false"/> 
+		<item type="text"  id="deposit"					name="存入金额"	 editable="false"/>             	
+		<item type="text"  id="withdraw"				name="取出金额"	 editable="false"/> 
+		<item type="text"  id="real_buy_amt"		    name="实际买入金额"	 editable="false"/>      
+		<item type="hidden"  id="manual_frzn_amt"			name="手工冻结金额"  editable="false"/>
+		<item type="hidden"  id="manual_unfrzn_amt"		name="手工解冻金额"  editable="false"/>
+		<item type="hidden"  id="credit"					name="信用额"	   editable="false"/>
+		<item type="hidden"  id="forbid_amt"				name="禁用资金"	   editable="false"/>
+		<item type="hidden"  id="forbid_asset"			name="禁取资产"	   editable="false"/>
+		<item type="hidden"  id="interest"				name="利息"		  editable="false"/>
+		<item type="hidden"  id="interest_count"			name="利息积数"    editable="false"/>
+		<item type="hidden"  id="punish_interest"			name="罚息" editable="false"/>
+		<item type="hidden"  id="punish_interest_count"   name="罚息积数" editable="false"/>	
+    </group>
+    <group  name="客户证券"  scope="group">
+		<item type="grid" id="cust_id" source="30202" name="证券详情"/>
+    </group>
+	<group  name="客户融资"  scope="group">
+		<item type="hidden" id="cust_id" name="账户id" action="30205"/>
+		<item type="text" id="acc_code" name="资金账户" editable="false"/>
+		<item type="hidden" id="date" name="日期"  />
+		<item type="hidden" id="property_type" name="资产种类"  />
+		<item type="hidden" id="currency_type" name="货币类型" editable="false"/>
+		<item type="text" id="real_fund_amt" name="贷款余额" editable="false"/>
+		<item type="text" id="deposit" name="存入金额" editable="false"/>
+		<item type="text" id="withdraw" name="取出金额" editable="false"/>
+		<item type="hidden" id="frozen_amt" name="冻结资金" editable="false"/>
+		<item type="hidden" id="abnormal_frozen_amt" name="异常冻结资金" editable="false"/>
+		<item type="text" id="real_buy_amt" name="实际买入金额" editable="false"/>
+		<item type="text" id="buy_frozen_amt" name="买入金额" editable="false"/>
+		<item type="text" id="sell_done_amt" name="卖出金额" editable="false"/>
+		<item type="hidden" id="manual_frzn_amt" name="手工冻结金额" editable="false"/>
+		<item type="hidden" id="manual_unfrzn_amt" name="手工解冻金额" editable="false"/>
+		<item type="hidden" id="credit" name="信用额" editable="false"/>
+		<item type="hidden" id="forbid_amt" name="禁用资金" editable="false"/>
+		<item type="hidden" id="forbid_asset" name="禁取资产"	 editable="false"/>
+		<item type="hidden" id="interest" name="利息" editable="false"/>
+		<item type="hidden" id="interest_count" name="利息积数" editable="false"/>
+		<item type="hidden" id="punish_interest" name="罚息"	 editable="false"/>
+		<item type="hidden" id="punish_interest_count" name="罚息积数"	 editable="false"	/>
+    </group>
+	<group  name="客户融券"  scope="group">
+		<item type="grid" id="cust_id" source="30206" name="证券详情"/>
+    </group>
+	<group  name="客户维持担保比例"  scope="group">
+		<item type="hidden" id="cust_id" action="30118" name="客户id"/>
+		<item type="text" id="assure_rate" name="维持担保比例(计入场外担保品)" editable="false"/>
+		<item type="text" id="assure_rate_nomortgage" name="维持担保比例(不计入场外担保品)" editable="false"/>
+    </group>
+	<group  name="客户费用"  scope="group">
+		<item type="grid" id="cust_id" source="30207" name="费用详情"/>
+    </group>
+	<group  name="模拟试算区"  scope="group">
+		
+		<item type="grid" id="cust_id" source="3011701" name="试算详细"/>
+		<item type="hidden" id="cust_id" name="试算详细"/>
+		<item type="select" id="bs_fund" name="取钱方向" source="011"/>
+		<item type="text" id="bs_fund_amount" name="取补金额"/>
+		<item type="select" id="bs_stock" name="证券买卖方向" source="132"/>
+		<item type="select" id="market" name="市场代码" source="039"/>
+		<item type="text" id="product_code" name="证券代码"/>
+		<item type="text" id="product_amount" name="证券买卖数量"/>
+		<item type="text" id="product_price" name="证券买卖价格"/>
+		<item type="button" id="assistant"	name="模拟试算" action="3011702" multiple="0"/> 
+		<item type="button" id="assistant"	name="清空试算" action="3011703" multiple="0"/> 
+	</group>
+	</input>
+
+  <output/>  
+</function>

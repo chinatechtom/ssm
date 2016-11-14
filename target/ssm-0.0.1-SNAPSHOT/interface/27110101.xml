@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="gbk"?>
+<function id="27110101" name="融资融券额度业务汇总统计">
+<input print="27110101.jsp">
+  <item type="text"    id="fin_scale"      name="公司批准融资额度" />
+  <item type="text"    id="fin_app"        name="已发放额度" />
+  <item type="text"    id="fix_fin_app"    name="固定额度"/>
+  <item type="text"    id="fix_fin_use"    name="营业部名称"/>
+  <item type="text"    id="fix_fin_no_use" name="固定未用金额"/>  
+  <item type="text"    id="fix_use_rate"      name="固定额度使用率(%)" />
+  <item type="text"    id="unfix_fin_app"     name="非固定额度" />
+  <item type="text"    id="unfix_fin_use"     name="非固定已用金额"/>
+  <item type="text"    id="unfix_fin_no_use"  name="非固定未用金额"/>
+  <item type="text"    id="unfix_use_rate"    name="非固定额度使用率(%)"/>  
+  <item type="text"    id="fin_app_subtotal"  name="发放额度小计" />
+  <item type="text"    id="fin_use_subtotal"  name="使用金额小计" />
+  <item type="text"    id="fin_no_use_subtotal" name="未使用金额小计"/>
+  <item type="text"    id="remain_fin_scale"    name="剩余发放额度"/>
+  <item type="text"    id="bs_scale"      name="公司批准融券额度" />
+  <item type="text"    id="bs_app"        name="已发放融券额度" />
+  <item type="text"    id="fix_bs_app"    name="固定融券额度"/>
+  <item type="text"    id="fix_bs_use"    name="营业部名称"/>
+  <item type="text"    id="fix_bs_no_use" name="固定融券未用金额"/>  
+  <item type="text"    id="fix_use_rate_bs"      name="固定融券额度使用率(%)" />
+  <item type="text"    id="unfix_bs_app"     name="非固定融券额度" />
+  <item type="text"    id="unfix_bs_use"     name="非固定融券已用金额"/>
+  <item type="text"    id="unfix_bs_no_use"  name="非固定融券未用金额"/>
+  <item type="text"    id="unfix_use_rate_bs"    name="非固定融券额度使用率(%)"/>  
+  <item type="text"    id="bs_app_subtotal"  name="发放融券额度小计" />
+  <item type="text"    id="bs_use_subtotal"  name="使用融券金额小计" />
+  <item type="text"    id="bs_no_use_subtotal" name="未使用融券金额小计"/>
+  <item type="text"    id="remain_bs_scale"    name="剩余融券发放额度"/>
+  <!--<item type="text"    id="lack_fund_app"       name="专户资金不足的申请额度"/> -->  
+  <item type="text"    id="in_date"             name="查询日期"/>    
+</input>
+</function>

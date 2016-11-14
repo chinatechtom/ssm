@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3064444421" name="处理融资申请" >
+	<input>	
+	<group name="合同信息" scope="group">
+		<item type="hidden" id="cust_id" name="客户id" action="30104"/>			
+		<item type="text" id="bond_no" name="合同编号" editable="false"/>
+		<item type="text" id ="cust_name" name="客户姓名" editable="false"/>
+		<item type="text" id ="cust_code" name="客户代码" editable="false"/>
+		<item type="button" id="bond_id" name="融资详情" action="30689"/> 	
+	</group>	
+	<group name="资产评估" scope="group">
+		<item type="hidden" id="cust_id" name="客户id" action="30631"/>
+		<item type="hidden" id="if_allow" name="是否允许"/>
+		<item type="hidden" id="if_allow_name" name="是否允许"  editable="false"/>
+		<item type="hidden" id="if_blacklist" name="是否黑名单"/>
+		<item type="hidden" id="if_blacklist_name" name="是否黑名单" editable="false"/>
+		<item type="text" id="total_asset" name="总资产"  editable="false"/>
+		<item type="text" id="fund_amt" name="资金余额"  editable="false"/>
+		<item type="text" id="stock_market_value" name="证券市值" editable="false"/>
+		<item type="text" id="stock_convert_amt" name="证券折算金额" editable="false"/>
+		<item type="hidden" id="fund_convert_amt" name="资金折算金额" editable="false"/>
+		<item type="text" id="gage_value" name="担保品折算价值" editable="false"/>
+		<item type="hidden" id="usable_num" name="评估信用上限" editable="false"/>
+		<item type="hidden" id="credit_num" name="信用上限" editable="false"/>
+		<item type="text" id="total_debt" name="总负债" editable="false"/>
+		<item type="text" id="financing_amt" name="实际融资总额" editable="false"/>
+		<item type="text" id="borrow_stock_amt" name="实际融券总额" editable="false"/>
+		<item type="text" id="fee_all" name="总费用" editable="false"/>
+		<item type="text" id="guan_rate" name="维持担保比例" editable="false"/>
+	</group>
+	<group name="融资产品">
+		<item type="select" id="product_id" name="融资产品" source="95000004"  nullable="false"/>
+		<item type="button" id="assistant"	name="更多详情" action="3050102" multiple="0"/> 
+	</group>
+	<group name="融资申请">
+		<item type="hidden" id="order_id" name="定单id" action="30680"/>	
+		<item type="text" id ="cust_code" name="客户代码" editable="false"/>
+		<item type="text" id ="cust_name" name="客户姓名" editable="false"/>
+		<item type="select" id="order_model" name="信用使用模式" source="306" nullable="false"/> 
+		<item type="text" id="order_fix_qty" name="融资上限" alias="approve_credit_num" number="true"  action="3065003,3067811"/>
+		<item type="text" id ="exist_fix_qty" name="已申请融资上限" editable="false"/>
+		<item type="text" id ="order_fix_qty_all" name="总融资上限" editable="false"/>
+		<item type="text" id="begin_time11"   name="起始日期" nullable="false"/>
+		<item type="text" id="app_days" name="申请天数" action="3067812"/> 
+		<item type="text" id="return_time_df" name="结束日期" editable="false" nullable="false"/>
+		<item type="text" id="cust_factor" name="客户融资费率因子" number="true" default="1" nullable="false"/>	
+		<item type="textarea" id ="chinese" name="融资上限中文大写" editable="false"/>
+		<item type="hidden" id="cust_id" name="客户id" />
+		<item type="button" id="assistant"	name="融资规模" action="30691" multiple="0"/>
+	</group>
+	<group name="已有融资产品">
+		<item type="grid" id="cust_id" name="融资产品" source="305010201"/>
+	</group>
+	<group name="处理意见">
+		<item type="textarea" id="manage_idea" name="处理意见"/>
+	</group>
+	</input>
+	<service type="procedure" id="p_fix_qty_modi" process="811" style="1">
+		<param type="integer" id="user_id" way="in"/>
+		<param type="integer" id="order_id"  way="in"  />
+		<param id="order_model" />
+		<param id="begin_time11" />
+		<param id="return_time_df" />
+		<param id="approve_credit_num" type="double"/>
+		<param id="manage_idea"/>
+		<param id="cust_factor" type="double"  way="in"/>
+		<param id="app_days"    type="integer" way="in"/>
+		<param id="product_id"  type="integer" way="in"/>
+	</service>
+	<output/>
+</function>

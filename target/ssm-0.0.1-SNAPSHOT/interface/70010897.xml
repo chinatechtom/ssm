@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70010897" name="批量审核通过" >
+	<input>
+		<item type="hidden" id="order_id" name="合约idd"/>
+		<item type="grid"	id="recipients" name="合约信息" source="70010894"/>
+		<group name="审核意见">
+			<item type="textarea" id="approve_opin" name="审核意见" default="批量审核通过"/>
+		</group>
+	</input>
+	<service type="procedure" id="p70010897" process="822" style="1">
+		<param type="integer" id="user_id" way="in"/>
+		<param type="string" id="order_id"  way="in"/>
+		<param type="string" id="approve_opin" way="in"/>
+	</service>
+	<output/>
+</function>

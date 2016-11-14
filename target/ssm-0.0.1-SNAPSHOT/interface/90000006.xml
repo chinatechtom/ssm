@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="90000006" name="机构代码" >
+	<input>		
+	</input>
+	<service type="table" id="t_institution" process="111" style="12">		
+	</service>
+	<output>
+		<column type="number" id="entry_value"   field="institution_id"		name="机构id"/>
+		<column type="string" id="entry_content" field="institution_name"   name="机构名称"/>
+    </output>
+</function>

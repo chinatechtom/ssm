@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="97000013" name="获取交易协议书编号" >
+	<input/>
+	<service type="procedure" id="p_get_sbond_sno" process="922" style="77">
+		<param type="integer" 	id="cust_id"/>	
+	</service>
+	<output>
+		<column type="string" id="sbond_no"    name="交易协议书编号"/>
+	</output>
+</function>

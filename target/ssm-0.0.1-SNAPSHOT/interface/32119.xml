@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="32119" name="担保品统计表" >
+   <input>
+   	 <item type="select" id="institution_id" 	name="营业部名称"	source="95000008"/>
+ 		 <item type="select" id="market_code"   	name="市场代码"		source="039"/>
+ 		 <item type="text"   id="product_code" 		name="证券代码" />
+   </input>
+   <service type="procedure" id="p_information_report_32119_query" process="911" style="77">
+   	 <param id="user_id" 					type="integer"/>
+   	 <param id="institution_id" 		type="integer"/>
+   	 <param id="market_code" 			type="string"/>
+   	 <param id="product_code" 			type="string"/> 
+   </service>
+   	 <output export="true" print="true">
+   	 <column type="string" id="c1"   name="序号"  />
+   	 <column type="string" id="c8"   name="营业部名称"  />
+   	 <column type="string" id="c2"   name="担保物种类"  />
+   	 <column type="string" id="c3"   name="证券代码"  />
+   	 <column type="string" id="c4"   name="担保物市场"  />
+   	 <column type="string" id="c5"   name="数量" />
+   	 <column type="number" id="c6"   name="折算率" precision="2" />
+   	 <column type="string" id="c7"   name="备注"  />
+   </output>
+   </function>

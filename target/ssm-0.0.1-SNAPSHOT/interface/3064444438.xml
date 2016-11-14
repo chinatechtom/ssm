@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3064444438" name="处理客户延期合同申请" >
+	<input>		
+		<group name="合同基本信息" >	
+			<item type="hidden" id="bond_id"   name="合同id"  action="30672"/>
+			<item type="text"   id="begin_time"           name="合同起始日期" editable="false"/>
+			<item type="text"   id="return_time"          name="合同到期日期" editable="false"/>
+			<item type="text"   id="app_years"            name="延期年限"     editable="false"/>
+		</group>	
+		<group name="合约基本信息">
+			<item type="hidden"   id="order_id"            name="合约id"     action="30673"/>
+			<item type="text"     id ="cust_code"          name="客户代码"   editable="false"/>
+			<item type="text"     id ="cust_name"          name="客户姓名"   editable="false"/>
+			<item type="text"     id="order_no"            name="合约编号"   editable="false"/>
+			<item type="hidden"   id="formerly_voucher_no" name="原始凭证号" editable="false"/>	
+			<item type="textarea" id="manage_opinion2"     name="处理意见" />
+		</group>    
+    </input>
+    <service type="procedure" id="p_delay_bond_modi" process="811" style="1" implement="p_delay_bond_modi3064444438">
+	    <param type="integer" id="user_id"          way="in"/>	
+	    <param type="integer" id="order_id"         way="in"  />
+	    <param type="string"  id="manage_opinion2"  way="in"  />
+    </service>
+    <output/>
+</function>

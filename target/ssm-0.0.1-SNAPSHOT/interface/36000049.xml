@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="36000049" name="5.1.1营业部融资融券业务盈亏状况" >  
+  <input>
+   <item type="select" id="institution_id"       name="营业部名称"  source="95000008"/>
+   <item type="date"   id="begin_date"           name="起始日期"  default="last"/>
+   <item type="date"   id="end_date"             name="结束日期"  default="now"/> 
+  </input>
+   <service type="procedure" id="P36000049" process="911" style="77">
+   <param id="user_id" type="integer" way="in" />    
+   <param id="institution_id" type="integer" way="in" />
+   <param id="begin_date"    type="string" way="in" />
+   <param id="end_date"    type="string" way="in" />
+  </service> 
+  <output  print="true">
+    <column type="number" id="id"                 name="序号"/>
+    <column type="string" id="institution_name"   name="营业部"/> 
+   <group name="融资融券业务收入"> 
+    <column type="number" id="financing_fee"      name="本期融资业务收入"  precision="2" total="true"/> 
+    <column type="number" id="borrow_stock_fee"   name="本期融券业务收入"  precision="2" total="true"/>
+   </group>
+    <column type="number" id="rzrq_fee"           name="本期业务收入小计"  precision="2"  total="true"/>
+   <group name="期中"> 
+    <column type="number" id="unover_rzrq_fee"    name="未结费用"  precision="2" total="true"/>
+    <column type="number" id="over_rzrq_fee"      name="已结费用"  precision="2" total="true"/>
+   </group>
+    <column type="number" id="rzrq_comm_fee"      name="信用交易佣金收入" precision="2" total="true"/>
+    <column type="number" id="OVERDAY_PUNISH_INTEREST"          name="逾期罚息" precision="2" total="true"/>
+    <column type="number" id="BAD_PUNISH_INTEREST"              name="坏账罚息" precision="2" total="true"/>
+    <column type="number" id="all_fee"            name="合计" precision="4" total="true"/>
+  </output>
+</function>

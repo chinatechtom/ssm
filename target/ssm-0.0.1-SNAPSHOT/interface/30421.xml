@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="30421" name="评级因子浏览" >	
+	<input>
+		<item type="select"	id="cust_type"	 name="所属客户类型" source="027"/>
+		<item type="select"	id="ratingfactor_type"	 name="评级因子类型" source="309"/>
+	</input>
+	<service type="procedure" id="p_ratingfactor_query"  process="911" style="77"> 
+		<param id="user_id"	type="integer"/>
+		<param id="cust_type"/>
+		<param id="ratingfactor_type"/>
+	</service>
+	<output>
+		<column type="string" id="cust_type" name="客户类型"	display="false"/>
+		<column type="string" id="cust_type_name" name="客户类型"/>
+		<column type="number" id="ratingfactor_type" name="评级因子类型"	display="false"/>
+		<column type="string" id="ratingfactor_type_name"  name="评级因子类型名称" />
+		<column type="number" id="ratingfactor_sort" name="评级因子类别" display="false"/>
+		<column type="string" id="ratingfactor_name" name="评级因子名称"/>
+		<column type="number" id="data_code"  name="数据编码" display="false"/>
+		<column type="string" id="data_content"  name="数据内容"/>
+		<column type="string" id="score"  name="参考分值"/>
+		<column type="string" id="is_num" name="数值型" display="false"/>
+		<column type="string" id="auto_is_num" name="数值型"/>
+		<column type="number" id="upper_limit" name="上限" precision="2"/>
+		<column type="number" id="lower_limit" name="下限" precision="2"/>
+		<button type="add" id="add" name="新增评级因子名称" action="3042101" multiple="-1"/>
+		<button type="add" id="bdd" name="新增评级因子内容" action="3042102" multiple="-1"/>
+		<button type="edit" id="modi" name="修改评级因子名称" action="3042104" multiple="0"/>
+		<button type="edit" id="edit" name="修改评级因子内容" action="3042103" multiple="0"/>
+	</output>		
+</function>

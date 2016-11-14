@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="50066138" name="融资行权申请详细" >
+	<input>  
+		<item type="hidden" id="order_id"   name="orderid"  action="50044102"/>
+	<group name="合同基本信息" >	
+		<item type="text" id="bond_no"   name="合同编号" editable="false"/>
+		<item type="text" id ="cust_code" name="客户代码" editable="false"/>	
+		<item type="text" id="cust_name"   name="客户姓名" editable="false"/>	
+		<item type="text" id ="cert_no" name="证件号码" editable="false"/>
+		<item type="text" id="date"   name="合同签署日期" editable="false"/>
+		<item type="text" id="time"   name="合同签署时间" editable="false"/>
+		<item type="text" id="begin_time"   name="合同起始日期" editable="false"/>
+		<item type="text" id="return_time"   name="合同到期日期" editable="false"/>
+		<item type="hidden" id="currency_type"   name="货币类型"   editable="false"/>
+		<item type="text" id="currency_type_name"   name="货币类型" editable="false"/>
+	</group>
+	<group name="融出方信息">
+		<item type="select" id="lender_id" name="融出方" source="97600001" editable="false" action="60010101"/>
+		<item type="text" id="lender_code" name="融出方代码" editable="false" maxlen="6"/>
+		<item type="text" id="lender_name" name="融出方名称" editable="false" maxlen="100"/>
+		<item type="select" id="lender_type" name="融出方类别" source="800" editable="false"/>
+		<item type="select" id="if_valid" name="是否有效" source="802" editable="false" default="1"/>
+		<item type="date" id="found_date" name="设立日期" editable="false"/>
+	</group>
+	<group name="融资行权协议信息">
+		<item type="text" id="loan_no" 		name="融资协议编号" 			editable="false"/>
+		<item type="text" id="loan_amt" 	name="融资金额" 			editable="false" />
+		<item type="text" id="interest_rate" name="融资利率" 		editable="false" />
+		<item type="text" id="loan_date" 	name="融资日期" 			editable="false"/>
+		<item type="text" id="days" 		name="自动质押宽限天数" 		editable="false" />
+		<item type="text" id="market_code" 	name="市场代码" 		editable="false"/>
+		<item type="text" id="product_code" name="正股代码" 		editable="false" />
+		<item type="text" id="right_code" 	name="行权代码" 			editable="false"/>
+		<item type="text" id="right_num" 	name="行权数量" 			editable="false" />
+		<item type="text" id="right_price" 	name="行权价格" 			editable="false"/>
+		<item type="text" id="gpzy_days" 	name="股票质押期限"		 editable="false"/>
+		<item type="text" id="gpzy_rate" 	name="股票质押利率" 		editable="false" />
+		<item type="text" id="touch_rate" 	name="质押协议预警线" 	editable="false"/>
+		<item type="text" id="lowest_price" name="质押协议平仓线" 	editable="false" />
+		<item type="text" id="loan_rate" 	name="融资比例" 	editable="false" />
+		<item type="text" id="sbond_no" 	name="交易协议书编号" 	editable="false" />
+		<item type="select" id="rzxy_status" 	name="融资协议状态" 	source="952"	editable="false" /><!--20150714 SECGPZY-334 zyt-->
+	</group>
+	<group name="备注说明">
+		<item type="textarea" id="manage_opinion"   name="处理意见" editable="false"/>
+		<item type="textarea" id="approver_opinion"   name="审核意见" editable="false"/>
+		<item type="textarea" id="assessor_opinion"   name="审批意见" editable="false"/>
+		<item type="textarea" id="double_check_opinion"   name="复核意见" editable="false"/>
+		<item type="textarea" id="remark" name="备注说明" editable="false" />
+	</group>
+ </input>
+</function>

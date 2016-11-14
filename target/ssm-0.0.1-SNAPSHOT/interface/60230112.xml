@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="60230112" name="证券公司股票质押式证券交易月度专项统计表-基本情况" >
+  <input>
+	<item type="year" id="year_id" name="查询年份" nullable="false" default="now"/>
+	<item type="month" id="month_id" name="查询月份" nullable="false" default="last"/>
+  </input>
+  <service type="procedure" id="p60230112" process="933" style="77">
+	<param type="integer" id="user_id"/>
+	<param type="string"  id="year_id"/>
+	<param type="string"  id="month_id"/>
+  </service>
+  <output  export="true">  
+	<column type="string" id="s_name"   name="项目" />
+	<column type="number" id="line_num"   name="行次" precision="0"/>
+	<column type="number" id="s_value"   name="期末数（本期数）" precision="2"/>	
+	<column type="number" id="s_value_last"   name="期初数（本年累计数）" precision="2"/>
+  </output>
+</function>

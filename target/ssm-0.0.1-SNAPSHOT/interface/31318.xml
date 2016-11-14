@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="31318" name="权限审批">	
+	<input/>
+	<service type="procedure" id="p_user_approve_role_1_query" implement="p_user_approve_role_1_query31318"  process="911" style="77">
+		<param id="user_id"		type="integer"  way="in"/>
+	</service>
+	<output autoload="true">
+		<column type="string"  id="user_code"		name="用户代码"/>
+		<column type="string"  id="user_name"		name="用户姓名"/>
+		<column type="number"  id="role_id"			name="角色id"  display="false"/>
+		<column type="string"  id="role_name"		name="角色名称"/>
+		<column type="string"  id="role_descript"	name="角色描述"/>		
+		<button type="edit"    id="edit"			name="审批权限" action="31319"	multiple="0"/>
+	</output>
+</function>

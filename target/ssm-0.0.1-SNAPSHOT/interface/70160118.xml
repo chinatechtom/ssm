@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70160118" name="佣金与利息收入统计" >
+	<input>	
+		<item type="select" id="insitution_id" name="营业部名称" source="97000001"/>
+		<item type="text" id="cust_code" name="客户代码" />
+		<item type="text" id="cust_name" name="客户姓名" />
+		<item type="select" id="cust_type" name="客户类型" source="027"/>
+		<item type="date" id="begin_date" name="开始日期" />
+		<item type="date" id="end_date" name="结束日期" />
+	</input>
+	<service type="procedure" id="p70160118" process="922" style="77">
+		<param id="user_id" type="integer"/>
+		<param id="insitution_id" type="integer"/>
+		<param id="cust_code" type="string"/>
+		<param id="cust_name" type="string"/>
+		<param id="cust_type" type="string"/>
+		<param id="begin_date" type="string"/>
+		<param id="end_date" type="string"/>
+	</service>
+	<output export="true">
+		<column type="number" id="cust_id"   name="cust_id" display="false"/>
+		<column type="string" id="cust_name" name="客户名称"/>
+		<column type="string" id="cust_code" name="客户代码"/>  
+		<column type="string" id="cust_type" name="客户类型"/>  
+		<column type="number" id="institution_id"   name="institution_id" display="false"/>
+		<column type="string" id="institution_name" name="营业部名称"/>  
+		<column type="string" id="institution_code" name="营业部代码"/>  
+		<column type="number" id="comm_fee_begin"   name="期初佣金收入" total="true" precision="2"/>
+		<column type="number" id="comm_fee_during"   name="本期新增佣金收入" total="true" precision="2"/>
+		<column type="number" id="comm_fee_end"   name="期末佣金收入" total="true" precision="2"/>
+		<column type="number" id="received_interest_begin"   name="期初已收利息" total="true" precision="2"/>
+		<column type="number" id="received_interest_during"     name="本期新增已收利息" total="true" precision="2"/>
+		<column type="number" id="received_interest_end"     name="期末已收利息" total="true" precision="2"/>
+		<column type="number" id="calc_interest_begin"     name="期初应计利息" total="true" precision="2"/>
+		<column type="number" id="calc_interest_during"     name="本期新增应计利息" total="true" precision="2"/>
+		<column type="number" id="calc_interest_end"   name="期末应计利息" total="true" precision="2"/>		
+		<column type="number" id="unreceived_interest_begin"     name="期初应收未收利息" total="true" precision="2"/>
+		<column type="number" id="unreceived_interest_during"     name="本期新增应收未收利息" total="true" precision="2"/>
+		<column type="number" id="unreceived_interest_end"   name="期末应收未收利息" total="true" precision="2"/>
+		<column type="number" id="calc_penalty_begin"   name="期初应计违约金" total="true" precision="2" />
+		<column type="number" id="calc_penalty_during"   name="本期新增应计违约金" total="true" precision="2" />
+		<column type="number" id="calc_penalty_end"   name="期末应计违约金" total="true" precision="2" />
+	</output>
+</function>

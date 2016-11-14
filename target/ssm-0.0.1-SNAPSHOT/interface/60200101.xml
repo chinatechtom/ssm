@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="60200101" name="处置客户名单生成">
+	<input>	
+        <item type="hidden"	id="id"		name="id" action="31381" default="1"/>		
+		<item type="date"	id="date"	alias="sdate3"	name="日期" editable="false"/>	
+	</input>
+	<service type="procedure" id="P60200101" process="833" style="1">
+		<param type="integer" id="user_id"/>	
+	</service>
+	<output/>
+</function>

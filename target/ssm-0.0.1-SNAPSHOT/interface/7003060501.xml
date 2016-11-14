@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="7003060501" name="查看合约-信用级别" >
+	<input>    
+	 <item type="hidden"  id="order_id" name="客户id"/> 
+  </input>
+  <service type="procedure" id="p_order_credit_level_query2" process="911" style="77">
+	<param id="user_id" type="integer" way="in"/> 
+	<param id="order_id" type="ingeter" way="in"/>
+  </service>
+  <output detail="true">
+	<column type="string" id="date" name="合约生成日期"/>
+	<column type="string" id="time" name="合约生成时间"/>
+	<column type="string" id="order_no2" name="合约编号"/>
+	<column type="string" id="manage_status2" name="处理状态"/>
+	<column type="string" id="manage_opinion2" name="处理意见"/>
+	<column type="string" id="approver_opinion2" name="审核意见"/>
+	<column type="string" id="assessor_opinion2" name="审批意见"/>
+	<column type="number" id="consult_score2" name="原参考分值" precision="2"/>  
+	<column type="number" id="valuation_score2" name="评估分值" precision="2"/>
+	<column type="number" id="approve_valuation_score2" name="审核评估分值" precision="2"/>
+	<column type="number" id="credit_level_name2" name="信用级别id" display="false"/>
+	<column type="number" id="approve_credit_level_name2" name="审核信用id" display="false"/>
+  </output> 
+</function>

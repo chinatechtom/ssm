@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3062928" name="客户融资(券)保证金比例调整申请" >  
+  <input>
+	<item type="text" id="cust_code" name="客户代码" />
+	<item type="text" id="cust_name" name="客户姓名"  />
+	<item type="text" id="cert_no" name="证件号码" />
+  </input>
+   <service type="procedure" id="p_cust_rzrq_guarantee_rate_info" implement="p_cust_rzrq_guarantee_rate_info3062928" process="911" style="77">
+	<param id="user_id" type="integer" way="in"/> 
+	<param id="cust_code"/>
+	<param id="cust_name"/>
+	<param id="cert_no"/>
+  </service> 
+  <output >
+    <column type="number" id="cust_id"					name="客户id"	display="false" />
+	<column type="number" id="bond_id"				name="合同id"	display="false" />  	
+    	<column type="string" id="cust_code"				name="客户代码"/>
+    	<column type="string" id="cust_name"				name="客户姓名"/>
+    	<column type="string" id="cert_no"				name="证件号码"/>
+	<column type="string" id="commness_cust_code"			name="普通资金帐号" display="false"/>
+	<column type="string" id="if_exsist"				name="客户是否存在" display="false"/>
+	<column type="string" id="if_exsist_name"			name="客户是否存在"/>	
+	<column type="string" id="if_black_list"			name="是否黑名单" display="false" level="true"/>
+	<column type="string" id="if_black_list_name"			name="是否黑名单"/>
+	<column type="string" id="user_code"				name="普通资金帐号" display="false"/>
+	<column type="string" id="user_institution_code"		name="普通资金帐号" display="false"/>
+	<column type="string" id="guarantee_rate_13"			name="初始保证金比例"/>
+	<column type="string" id="guarantee_rate_5" 			name="融券卖出保证金比例"/>
+	<column type="string" id="guarantee_rate_6"			name="融资买入保证金比例"/>
+    <button type="add" id="add" name="客户融资(券)保证金比例调整申请" action="31009" multiple="0"/>
+  </output>
+</function>

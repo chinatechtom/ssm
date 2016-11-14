@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="60230101" name="日报-初始交易、补充质押" >
+  <input export="true">
+	<item type="select" id="institution_id" name="营业部名称" source="97000001"/>
+ 	<item type="hidden" id="cust_id" name="客户id"/>
+	<item type="text" id="cust_code" name="客户代码"/>
+	<item type="text" id="cust_name" name="客户姓名"/>
+	<item type="select" id="market_code" name="市场代码" source="039" default='1' editable="false"/>
+	<item type="text" id="product_code" name="证券代码"/>
+	<item type="date" id="trade_date" name="查询日期"/>
+	<group name="分页查询" page="true">		
+			<item type="text"   id="page_num"       name="页码"     integer="true" default="1"/>
+			<item type="select" id="rows_num"       name="每页行数" integer="true" source="95000012" nullable="false"/>
+	</group>
+  </input>
+  <service type="procedure" id="P60230101" process="933" style="77">
+	<param type="integer" id="user_id"/>	
+	<param type="integer" id="institution_id"/>
+ 	<param type="integer" id="cust_id"/>
+	<param type="string"  id="cust_code"/>
+	<param type="string"  id="cust_name"/>
+	<param type="string"  id="market_code"/>
+	<param type="string"  id="product_code"/>
+	<param type="string"  id="trade_date"/>
+	<param type="integer" id="page_num"   way="in"/>
+	<param type="integer" id="rows_num"   way="in"/>
+  </service>
+  <output  export="true">  
+	<column type="string" id="ywlx"   name="业务类型"/>
+	<column type="string" id="sbond_no"   name="合同编号"/>
+	<column type="string" id="sellacc"   name="融入方证券账号"/>
+	<column type="string" id="buyacc"   name="融出方证券账号"/>
+	<column type="string" id="entrust_date"   name="初始交易日"/>
+	<column type="string" id="oldorddate"   name="购回交易日"/>
+	<column type="number" id="days"   name="交易期限（天）"/>
+	<column type="string" id="done_no"   name="初始交易成交编号"/>
+	<column type="string" id="product_code"   name="标的证券代码"/>
+	<column type="string" id="product_name"   name="标的证券简称"/>
+	<column type="number" id="done_qty"   name="标的证券数量（股/份/张）"/>
+	<column type="number" id="first_amt"   name="初始交易金额（万元）" precision="4"/>
+	<column type="number" id="mortgage_rate"   name="质押率（%）" precision="2"/>
+	<column type="number" id="hg_rate"   name="购回利率（%）" precision="2"/>
+	<column type="string" id="lender_type_name"   name="融出方属性"/>
+	<column type="string" id="cust_type_name"   name="融入方属性"/>
+	<column type="string" id="if_limit"   name="是否属于限售股份"/>
+	<column type="string" id="if_success"   name="交收是否成功"/>
+	<column type="number" id="cust_id"   name="客户id"  display="false"/>	
+	<column type="string" id="cust_code"   name="客户代码" display="false"/>
+	<column type="string" id="cust_name"   name="客户名称" display="false"/>
+  </output>
+</function>

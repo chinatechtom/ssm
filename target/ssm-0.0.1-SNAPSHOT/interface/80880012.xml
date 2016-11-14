@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="80880012" name="股票质押清算明细查询" >
+	<input>
+		<item type="date" id="query_date" name="查询日期" default="now" />
+	</input>
+	<service type="procedure" id="P60880012" process="933" style="77">
+		<param type="integer" id="user_id"/>	
+		<param type="string"  id="query_date"/>
+	</service>
+	<output export="true">
+		<column type="string" id="market_code" name="市场" />
+		<group name="初始交易">
+			<column type="string" id="spn_first_amt" name="初始交易金额" />
+			<column type="string" id="spn_trade_fee" name="交易费用" />
+		</group>
+		<group name="购回交易">
+			<column type="string" id="spr_first_amt" name="初始交易金额" />
+			<column type="string" id="spr_trade_fee" name="交易费用" />
+			<column type="string" id="spr_interest" name="购回利息" />
+			<column type="string" id="spr_second_amt" name="实际收付金额" />
+		</group>
+		<group name="违约处置">
+			<column type="string" id="spb_capital" name="违约处置归还本金" />
+			<column type="string" id="spb_interest" name="违约处置归还利息" />
+		</group>
+		<group name="部分本金场外归还">
+			<column type="string" id="return_capital" name="部分本金场外归还（本金部分）" />
+			<column type="string" id="return_interest" name="部分本金场外归还（利息部分）" />
+		</group>
+		<group name="场外了结">
+			<column type="string" id="return_capital_outside" name="场外了结（本金部分）" />
+			<column type="string" id="return_interest_outside" name="场外了结（利息部分）" />
+		</group>
+	</output>
+</function>

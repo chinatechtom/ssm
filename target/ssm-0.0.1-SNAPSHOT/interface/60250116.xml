@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="60250116" name="清算资金额度调整审批" >
+	<input>
+		<item type="date" id="occur_date" name="发生日期"/>
+		<item type="select" id="market_code" name="市场代码" source="039"/>
+		<item type="select" id="credit_type" name="额度类型" source="807"/>
+		<item type="select" id="status" name="额度变动审批状态" source="808" default="1" editable="false"/>
+	</input>
+	<service type="procedure" id="p60250116" process="933" style="77">
+		<param id="user_id" type="integer"/>
+		<param id="occur_date" type="string"/>
+		<param id="market_code" type="string"/>
+		<param id="credit_type" type="string"/>
+		<param id="status" type="string"/>
+	</service>
+	<output export="true">
+		<column type="string" id="chg_id"   name="chg_id"  display="false"/>
+		<column type="string" id="occur_date"   name="发生日期"/>
+		<column type="string" id="market_code"   name="市场代码" display="false"/>
+		<column type="string" id="market_code_name"   name="市场代码"/>
+		<column type="string" id="credit_type"   name="额度类型1"  display="false"/>
+		<column type="string" id="credit_type_name"   name="额度类型"/>
+		<column type="number" id="credit_chg"   name="额度变动额"/>
+		<column type="number" id="credit_balance1"   name="调整前额度总额"/>
+		<column type="number" id="credit_balance2"   name="调整后额度总额"/>
+		<column type="string" id="user_name1"   name="申请人员"/>
+		<column type="string" id="time1"   name="申请时间"/>
+		<column type="string" id="user_name2"   name="申请人员"/>
+		<column type="string" id="time2"   name="审批时间"/>
+		<column type="string" id="status"   name="状态1" display="false"/>
+		<column type="string" id="status_name"   name="额度变动审批状态"/>
+		<button type="set" id="set" name="清算资金额度调整审批" action="60250117" multiple="0"/>
+	</output>
+</function>

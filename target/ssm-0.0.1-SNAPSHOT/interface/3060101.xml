@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3060101" name="处理中心" >
+	<input>    
+	 <item type="hidden" id="institution_id"	  name="机构id"/> 
+	 <item type="hidden" id="cust_id"			  name="客户id"/> 
+	 <item type="text"	 id="cust_code"			  name="客户代码"/> 
+	 <item type="text"	 id="cust_name"			  name="客户姓名"/>
+	 <item type="text"	 id="cert_no"			  name="证件号码"/>
+	 <item type="text"	 id="order_no"			  name="合约编号"/> 
+	 <item type="hidden" id="formerly_voucher_no" name="原始凭证号"/> 
+	 <item type="date"	 id="begin_date"		  name="起始日期" default="last"/> 
+	 <item type="date"	 id="end_date"			  name="终止日期" default="now"/> 
+	 <item type="hidden" id="order_id"			  name="合约id"/> 	  
+	 <item type="select" id="order_type"		  name="合约类型" source="010"/> 
+	 <item type="select" id="order_status"		  name="合约状态" source="024"/> 	
+	 <item type="select" id="zx_status"		  	  name="征信状态" source="510"  default="1"/> 
+  </input>
+  <service type="procedure" id="p_order_browse" implement="p_order_browse3060101" process="911" style="77">
+	<param id="user_id"		   type="integer"/>    
+    <param id="institution_id" type="integer"/>
+	<param id="cust_id"		   type="integer"/>
+	<param id="cust_code"/>
+	<param id="cust_name"/>
+	<param id="cert_no"/>
+	<param id="begin_date"/>
+	<param id="end_date"/>	
+    <param id="order_id" type="integer"/>
+    <param id="order_no"/>
+	<param id="formerly_voucher_no"/>	
+	<param id="order_type"/>
+	<param id="order_status"/>
+	<param id="manage_status" default=",02,06,09,19,26,"/>
+	<param id="zx_status" />
+  </service>
+  <output refresh="120">
+	<column type="number" id="order_type"			  name="合约类型id"	display="false"/>
+	<column type="number" id="cust_id"				  name="客户id" display="false"/>
+	<column	type="string" id="source_flag_name"		  name="来源标识"/>
+	<column type="string" id="cust_code"			  name="客户代码"/>
+	<column type="string" id="cust_name"			  name="客户姓名"/>
+	<column type="number" id="app_credit_limit"		  name="最新授信额度" precision="2"/>
+    <column type="string" id="zx_status"			  name="征信状态ID" display="false"/>
+	<column type="string" id="zx_status_name"		  name="征信状态"/>	
+	<column type="string" id="active_date"			  name="评级因子生效日期"/>
+	<column type="string" id="active_time"			  name="评级因子生效时间"/>
+	<column type="string" id="order_type_name"		  name="合约类型"/>
+	<column type="number" id="manage_status"		  name="处理状态id" display="false"/>
+	<column type="string" id="manage_status_name"	  name="处理状态"/>
+	<column type="string" id="order_no"				  name="合约编号"/>
+	<column type="string" id="formerly_voucher_no"	  name="原始凭证号" display="false"/>
+	<column type="string" id="app_date"				  name="生成合约日期"/>
+	<column type="string" id="app_time"				  name="生成合约时间"/>
+	<column type="number" id="order_id"				  name="合约id"	display="false"/>	
+	<column type="number" id="currency_type"		  name="币种" display="false"/>
+	<column type="string" id="currency_type_name"	  name="币种" display="false"/>
+	<column type="number" id="dc_mode"				  name="借贷模式" display="false"/>
+	<column type="string" id="dc_mode_name"			  name="借贷模式" display="false"/>
+	<column type="number" id="institution_id"		  name="机构id"	display="false"/>
+    <column type="string" id="institution_name"		  name="营业部名称"/>	
+	<column type="string" id="availability_time"	  name="有效日期" display="false"/>
+	<column type="string" id="begin_time"			  name="起始日期" display="false"/>
+	<column type="string" id="return_time"			  name="到期日期" display="false"/>
+	<column type="string" id="over_time"			  name="延长日期" display="false"/>
+	<column type="string" id="remark"				  name="备注说明"/>
+	<column type="number" id="order_status"			  name="合约状态" display="false"/>	
+	<column type="string" id="order_status_name"	  name="合约状态"/>	
+	<column type="number" id="regi_status"			  name="记录状态" display="false"/>	
+	<column type="string" id="regi_status_name"		  name="记录状态" display="false"/>	
+	<column type="number" id="accept_id"			  name="受理员id" display="false"/>
+	<column type="string" id="accept_name"			  name="受理员"/>
+	<column type="string" id="accept_time"			  name="受理日期"/>
+	<column type="number" id="manage_id"			  name="处理员id" display="false"/>
+	<column type="string" id="manage_name"			  name="处理员"/>
+	<column type="string" id="manage_opinion"		  name="处理意见"/>
+	<column type="string" id="manage_time"			  name="处理日期"/>
+	<column type="number" id="approver_id"			  name="审核员id" display="false"/>
+	<column type="string" id="approver_name"		  name="审核员"/>
+	<column type="string" id="approver_opinion"		  name="审核意见"/>
+	<column type="string" id="approver_time"		  name="审核日期"/>
+	<column type="number" id="assessor_id"			  name="审批员id" display="false"/>
+	<column type="string" id="assessor_name"		  name="审批员"/>
+	<column type="string" id="assessor_opinion"		  name="审批意见"/>
+	<column type="string" id="assessor_time"		  name="审批日期"/>
+	<column type="string" id="fk_approver_id"		  name="风控审核员ID" display="false"/>
+	<column type="string" id="fk_approver_name"		  name="风控审核员"/>
+	<column type="string" id="fk_approver_opinion"		  name="风控审核意见"/>
+	<column type="string" id="fk_approver_time"		  name="风控审核日期"/>
+	<column type="string" id="effective_time"		  name="生效日期"/>
+	<column type="number" id="double_check_id"		  name="复核员id" display="false"/>
+	<column type="string" id="double_check_name"	  name="复核员"/>
+	<column type="string" id="double_check_opin"	  name="复核意见"/>
+	<column type="string" id="double_check_time"	  name="复核日期"/>
+	<column type="number" id="bond_id"				  name="合同id" display="false"/>
+	<column type="string" id="application_begin_date" name="融资起始日期" display="false"/>
+	<column type="string" id="application_end_date"	  name="融资到期日期" display="false"/>
+	<column type="number" id="fix_qty"				  name="融资数量" display="false"/>
+	<column type="string" id="model"				  name="融资收费类型" display="false"/>
+	<column type="number" id="app_days"				  name="申请天数" display="false"/>
+	<column type="number" id="cust_factor"			  name="客户融资费率因子" display="false"/>
+	<column type="string" id="if_black_list"		  name="是否黑名单" display="false" level="true"/>
+	<column type="string" id="if_black_list_name"	  name="是否黑名单"/>
+	<column type="number" id="app_years"			  name="申请年数" display="false"/>
+	<column type="number" id="credit_product_id"	  name="融资产品ID" display="false"/>
+	<column type="string" id="credit_product_name"	  name="融资产品" display="false"/>
+	<column type="string" id="credit_product_sort"	  name="融资产品类别"	display="false"/>
+	<column type="string" id="sec_code"				  name="证券代码" display="false"/>
+	<column type="string" id="sec_name"				  name="证券名称" display="false"/>
+	<column	type="string" id="market_code"			  name="市场代码" display="false"/>
+	<column	type="string" id="market_name"			  name="市场名称" display="false"/>
+	<button type="view"   id="edit" name="查看合约"	action="30666667"  extendaction="order_type" multiple="0"/>
+	<button type="view"   id="edit" name="查看合同"	action="30655555"  extendaction="order_type" multiple="0"/>
+	<button type="refuse" id="edit" name="拒 绝"	action="306360101" multiple="0"/>
+	<button type="refuse" id="edit" name="拒绝并作废"	action="306360103" multiple="0"/>
+	<button type="edit"   id="edit" name="修 订"	action="306360102" multiple="0"/>
+	<button type="edit"   id="edit" name="处 理"	action="30644444"  extendaction="order_type" multiple="0"/>
+  </output>  
+<assistant action="30103,3200301,30102,30104,30109,30111,30201,30202,30205,30206,30207,30215,30673,30672,30667,30668">
+		<link src="cust_id" target="cust_id"/>
+    </assistant>
+</function>

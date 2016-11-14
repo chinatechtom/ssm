@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="97600031" name="信用级别自动关联" >	
+  <input> 
+	<item type="hidden"	id="approve_valuation_score2" name="approve_valuation_score2" nullable="false"/>
+  </input>
+  <service type="procedure" id="P97600031"  process="933" style="77"> 
+	<param id="approve_valuation_score2" type="float"/>
+  </service>
+  <output>
+	<column type="number" id="approve_credit_level_id" name="approve_credit_level_id"/>
+  </output>		
+</function>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="GBK" ?>
+<function id="80100000" name="证券标的同步">  
+  <input>
+	<item type="text" id="market_code"			alias="smarket_code" name="市场代码"/>
+	<item type="text" id="product_code"			alias="sstock_code"  name="产品代码"/>
+	<item type="text" id="stock_convert_rate"   alias="drate0"		 name="证券折算率"/>
+	<item type="text" id="if_financing"			alias="sstatus1"	 name="是否融资标的"/>
+	<item type="text" id="if_borrow_stock"	    alias="sstatus2"	 name="是否融券标的"/>
+	<item type="text" id="if_guarantee"			alias="sstatus3"	 name="是否担保品标的"/>  
+  </input>  
+  <service type="system" id="80100000" process="888" style="1">
+	  <param type="string" id="function_id" default="30309"/>
+	  <param type="string" id="function_id" default="303092"/>	
+  </service>
+</function>

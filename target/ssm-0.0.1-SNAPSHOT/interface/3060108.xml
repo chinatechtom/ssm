@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3060108" name="客户评级资料录入" >  
+   <input>
+	<item type="text"	id="cust_code"			  name="客户代码"/>			
+	<item type="text" 	id="commness_cust_code"	  name="普通资金账号"/>				<!-- modify by SECREQ-1427 20140710 -->
+	<item type="text"	id="cust_name"			  name="客户姓名"/>
+	<item type="text"	id="cert_no"			  name="证件号码"/>
+
+  </input>
+   <service type="procedure" id="p_cust_info_con" process="911" style="77">
+	<param id="user_id" type="integer" way="in" /> 
+	<param id="cust_code"/>
+	<param id="cust_name"/>
+	<param id="cert_no"/>
+	<param id="commness_cust_code"/>			<!-- modify by zjj 20140727 -->
+  </service> 
+  <output>
+    <column type="number" id="cust_id"				name="客户id" display="false" />   
+    <column type="string" id="cust_code"			name="客户代码"/>
+	<column type="string" id="commness_cust_code"   name="普通资金账户" />
+    <column type="string" id="cust_name"			name="客户姓名"/>
+    <column type="string" id="cert_no"   			name="证件号码"/>
+	<column type="string" id="cust_type_name"		name="客户类型"/>
+	<column type="string" id="cust_type"			name="客户类型2" display="false"/>
+	<column type="number" id="total_commness_asset"	name="客户总资产"/>								<!-- modify by SECREQ-1427 20140710 -->
+	<column type="number" id="age"					name="客户年龄"/>								<!-- modify by SECREQ-1427 20140710 -->
+	<column type="number" id="already_open_month"	name="投资经验"/>						<!-- modify by SECREQ-1427 20140710 -->
+	<column type="string" id="warning_level"		name="报警级别"	level="true" display="false"/>	<!-- modify by SECREQ-1427 20140710 -->
+	<button type="add" id="edit" name="客户评级资料录入" action="30426"  extendaction="cust_type"/>
+  </output>
+</function>

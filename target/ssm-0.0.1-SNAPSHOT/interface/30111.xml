@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="gbk"?>
+<function id="30111" name="资金证券变动" >  
+  <input>
+	<item type="hidden" id="cust_id" name="客户号"  />
+	<item type="hidden" id="acc_id" name="账户号" />
+	<item type="date" id="sdate" name="起始日期" nullable="false"/>
+	<item type="date" id="edate" name="终止日期" nullable="false"/>
+  </input>
+  <service type="procedure" id="p_cust_acc_fund_acc_query"  process="911" style="77">
+	<param id="user_id" type="integer"/>
+	<param id="cust_id" type="integer"/>
+	<param id="acc_id" type="integer"/>
+	<param id="sdate"/>
+	<param id="edate"/>
+  </service>
+  <output export="true">
+	<column type="number" id="cust_id"   name="客户号"  display="false" />
+    <column type="string" id="cust_code"   name="客户代码"  />
+    <column type="string" id="cust_name"   name="客户姓名"  />
+    <column type="string" id="acc_code"   name="账户代码"  />
+	<column type="number" id="acc_id"   name="账户号"  display="false" />
+	<column type="string" id="holder_acc_code"   name="证券账户"/>
+	<column type="string" id="date"    name="操作日期"  />
+    <column type="string" id="time"  name="操作时间"  />	
+	<column type="string" id="bill_no"   name="凭证号"/>
+	<column type="string" id="serial_no"   name="流水号"  />
+	<column type="string" id="entrust_type"   name="委托类型"  display="false"/>
+	<column type="string" id="entrust_type_name"   name="委托类型"  />
+	<column type="string" id="currency_type"   name="货币类型"  display="false"/>
+	<column type="string" id="currency_type_name"   name="货币类型"  />
+	<column type="string" id="debit_loan"   name="借贷方向"  display="false"/>
+	<column type="string" id="debit_loan_name"   name="借贷方向"  />
+    <column type="string" id="business_code"   name="业务代码"  />
+	<column type="string" id="change_type"   name="变动类别"  display="false"/>
+	<column type="string" id="change_type_name"   name="变动类别"  />	
+	<column type="string" id="note"    name="备注"/>
+    <column type="number" id="fund_chg"   name="资金发生"   precision="2"/>
+    <column type="number" id="fund_amt"   name="资金余额"   precision="2"/>
+	<column type="string" id="contract_no"   name="合同号码"  />
+    <column type="string" id="done_no"   name="成交编号"  />
+    <column type="string" id="market_code"    name="市场代码"  />
+    <column type="number" id="product_id"   name="产品id"  display="false"/>
+	<column type="string" id="product_code"   name="产品代码" />
+    <column type="string" id="mark"   name="标志"   display="false" />       		
+	<column type="string" id="mark_name"   name="标志" />  
+	<column type="string" id="in_out"    name="买卖方向"  display="false"/>
+	<column type="string" id="in_out_name"    name="买卖方向"  />
+    <column type="string" id="bs"   name="交易类别"  display="false" />
+	<column type="string" id="bs_name"   name="交易类别"  />
+    <column type="number" id="sec_chg"   name="证券发生"   precision="2"/>
+	<column type="number" id="sec_qty"   name="证券余额"   precision="2"/>
+    <column type="string" id="cancel_flag"   name="冲销标志"  display="false"/>
+    <column type="string" id="in_out_flag"    name="收付标志"   display="false"/>
+    <column type="string" id="in_acc_flag"   name="入帐标志"  display="false"/>
+	<column type="string" id="cancel_flag_name"   name="冲销标志"  />
+    <column type="string" id="in_out_flag_name"    name="收付标志"  />
+    <column type="string" id="in_acc_flag_name"   name="入帐标志" />
+	<column type="number" id="frst_fee"   name="一级费用"  precision="2"/>
+    <column type="number" id="secont_fee"   name="二级费用"  precision="2" />       		
+    <column type="number" id="clr_amt"   name="清算净额"  precision="2" />  
+  </output>
+</function>

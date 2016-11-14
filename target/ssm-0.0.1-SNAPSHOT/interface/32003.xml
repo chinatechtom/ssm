@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="32003" name="资产明细表" >
+  <input>	
+  <item type="select" id="institution_id" name="营业部名称" source="95000008"/>
+	<item type="text" id="cust_code" 		name="客户代码" />
+	<item type="hidden" id="acc_code" 		name="信誉账户" />
+  </input>
+  <service type="procedure" id="p_business_report_32003_query" process="911" style="77">
+	<param id="user_id" 		type="integer"/>
+	<param id="cust_code" 		type="string"/>
+	<param id="acc_code" 		type="string"/>	
+	<param id="institution_id" 	type="string"/>
+
+  </service>
+  <output export="true" print="true">    
+  	<column type="string" id="c1"   name="营业部名称"  />
+    <column type="string" id="c2"   name="客户代码"  />
+	<column type="string" id="c3"   name="客户姓名"  />
+    <column type="number" id="cust_asset_value"   name="总资产" 	precision="2"  total="true"/>
+    <column type="number" id="cust_fund_value"   name="资金余额"  precision="2" total="true"/>
+    <column type="number" id="c6"   name="融券卖出价款"  precision="2" display="false"/>
+    <column type="number" id="c7"   name="证券市值"  precision="2" total="true"/>
+    <column type="number" id="c8"   name="担保品证券市值"  precision="2" total="true"/> 
+    <column type="number" id="c9"   name="非担保品证券市值"  precision="2" total="true"/> 
+    <column type="number" id="c10"   name="昨日收市后保证金"  precision="2" display="false"/>
+    <column type="number" id="c11"   name="已用保证金"  precision="2" display="false"/>
+		<column type="number" id="cust_guarantee_amt"   name="可用保证金"  precision="2" display="false"/>   
+	</output> 	
+</function>

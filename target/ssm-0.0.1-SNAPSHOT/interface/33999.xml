@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="gbk"?>
+<function id="33999" name="功能点复核设置">
+	<input>
+		<item type="text"   id="func_id"   name="功能代码"/>
+		<item type="text"   id="func_name" name="功能名称"/>
+		<item type="select" id="funcchk"   name="是否需要复核" source="340"/>
+	</input>
+	<service type="procedure" id="p_function_check_query" implement="p_function_check_query33999" process="911" style="77">
+		<param id="user_id"   type="integer" way="in"/>
+		<param id="func_id"   type="integer" way="in"/>
+		<param id="func_name" type="string"  way="in"/>
+		<param id="funcchk"   type="string"  way="in"/>
+	</service>
+	<output export="true" autoload="true">
+		<column type="number" id="funcid"    	name="功能代码"/>
+		<column type="string" id="funcname" 	name="功能名称"/>
+		<column type="string" id="funcchk"      name="是否复核" display="false"/>
+		<column type="string" id="funcchk_name" name="是否复核"/>
+		<button type="edit"   id="edit"         name="设置"  action="3399901" multiple="0"/>
+	</output>
+</function>

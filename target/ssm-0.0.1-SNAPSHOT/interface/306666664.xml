@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="306666664" name="调整信用上限申请详细" >
+  <input print="306666664.jsp">
+  <group name="资产评估">  
+		<item type="text" id ="cust_code" name="客户代码" editable="false"/>
+		<item type="text" id ="cust_name" name="客户姓名" editable="false"/>
+		<item type="hidden" id="cust_id" name="客户id" action="30631,1888"/>
+		<item type="hidden" id="if_allow" name="是否允许"/>
+		<item type="hidden" id="if_allow_name" name="是否允许"  editable="false"/>
+		<item type="hidden" id="if_blacklist" name="是否黑名单"/>
+		<item type="hidden" id="if_blacklist_name" name="是否黑名单" editable="false"/>
+		<item type="text" id="total_asset" name="总资产"  editable="false"/>
+		<item type="text" id="fund_amt" name="资金余额"  editable="false"/>
+		<item type="text" id="stock_market_value" name="证券市值" editable="false"/>
+		<item type="text" id="stock_convert_amt" name="证券折算金额" editable="false"/>
+		<item type="hidden" id="fund_convert_amt" name="资金折算金额" editable="false"/>
+		<item type="text" id="gage_value" name="担保品折算价值" editable="false"/>
+		<item type="hidden" id="usable_num" name="评估信用上限" editable="false"/>
+		<item type="hidden" id="credit_num" name="信用上限" editable="false"/>
+		<item type="text" id="total_debt" name="总负债" editable="false"/>
+		<item type="text" id="financing_amt" name="实际融资总额" editable="false"/>
+		<item type="text" id="borrow_stock_amt" name="实际融券总额" editable="false"/>
+		<item type="text" id="fee_all" name="总费用" editable="false"/>
+		<item type="text" id="guan_rate" name="维持担保比例" editable="false"/>
+		<item type="hidden" id="user_code"  name="操作员代码" editable="false"/>
+		<item type="hidden" id="user_name"  name="操作员姓名" editable="false"/>
+		<item type="hidden" id="company" name="证券公司名称" editable="false"/>
+	</group>
+	<group name="信用评估">    
+		<item type="hidden" id="bond_id" name="合同id"  action="30672"/>
+		<item type="text" id="valuation_score" name="评估总分"  editable="false"/>	
+		<item type="text" id="credit_level_name" name="信用级别"   editable="false"/>	
+		<item type="text" id="credit_num" name="信用上限" editable="false"/>
+	</group>  
+	<group name="申请的信用上限" >
+		<item type="text" id="order_no" name="合约编号" editable="false"/>
+		<item type="hidden" id="formerly_voucher_no" name="原始凭证号" editable="false"/>
+		<item type="hidden" id="order_id" name="合约id" action="30603"/>
+		<item type="text" id="app_num" name="申请的信用上限" editable="false"/>
+	</group>
+	<group name="审批的信用上限">
+		<item type="hidden" id="order_id" name="合约id" action="30603"/>
+		<item type="text" id="order_no" name="合约编号" editable="false"/>
+		<item type="hidden" id="formerly_voucher_no" name="原始凭证号" editable="false"/>
+		<item type="text" id="approve_num" name="审批的信用上限" editable="false"/>
+	</group>
+	<group name="备注说明">
+		<item type="hidden" id="order_id" name="orderid" action="30673"/>
+		<item type="textarea" id="manage_opinion"   name="处理意见" editable="false"/>
+		<item type="textarea" id="approver_opinion"   name="审核意见" editable="false"/>
+		<item type="textarea" id="assessor_opinion"   name="审批意见" editable="false"/>
+		<item type="textarea" id="double_check_opin"   name="复核意见" editable="false"/>
+		<item type="textarea" id="remark" name="备注说明" editable="false" />
+	</group>
+  </input>
+  <output/>
+</function>

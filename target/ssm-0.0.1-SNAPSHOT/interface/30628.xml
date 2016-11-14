@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="gbk"?>
+<function id="30628" name="标准合同签署申请">
+	<input>
+		<item type="text"   id="cust_code" name="客户代码"/>
+		<item type="hidden" id="cust_name" name="客户姓名"/>
+		<item type="text"   id="cert_no"   name="证件号码"/>
+	</input>
+	<service type="procedure" id="p_cust_std_bond_legality_judge" implement="p_cust_std_bond_legality_judge30628" process="911" style="77">
+		<param type="integer" id="user_id"   way="in"/>
+		<param type="string"  id="cust_code" way="in"/>
+		<param type="string"  id="cust_name" way="in"/>
+		<param type="string"  id="cert_no"   way="in"/>
+	</service>
+	<output>
+		<column type="number" id="cust_id" 				  name="客户ID" 		   display="false"/>
+		<column type="string" id="cust_code"			  name="客户代码"/>
+		<column type="string" id="cust_name"			  name="客户姓名"/>
+		<column type="string" id="cert_no" 				  name="证件号码"/>
+		<column type="string" id="if_exists" 			  name="客户是否存在" 	   display="false"/>
+		<column type="string" id="if_exists_name" 		  name="客户是否存在"/>
+		<column type="string" id="availability_time" 	  name="合同有效日期"     display="false"/>
+		<column type="string" id="begin_time" 			  name="合同起始日期" 	   display="false"/>
+		<column type="string" id="return_time"      	  name="合同到期日期" 	   display="false"/>
+		<column type="string" id="over_time" 			  name="合同延长日期"     display="false"/>
+		<column type="string" id="if_black_list"          name="是否黑名单" 	   display="false" level="true"/>
+		<column type="string" id="if_black_list_name" 	  name="是否黑名单" />
+		<column type="number" id="app_years" 			  name="合同签署申请年数" display="false"/>
+		<column type="number" id="app_days" 			  name="默认融资申请天数" display="false"/>
+		<button type="add"    id="add"   				  name="标准合同签署申请" action="30630" extendaction="if_exists" multiple="0"/>		
+	</output>
+</function>

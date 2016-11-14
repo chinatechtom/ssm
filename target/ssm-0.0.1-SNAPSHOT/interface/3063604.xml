@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3063604" name="作废" >
+ <description>只能作废审批拒绝或审核拒绝的合约！</description> 
+  <input>
+  </input>
+</function>

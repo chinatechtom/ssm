@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="82130101" name="取普通买入委托参数">
+  <input>
+  	<item type="hidden" id="record_id" name="记录id"/>
+  </input>
+  <service type="procedure" id="p_stock_buy_params_search" process="911" style="77">
+	  <param type="integer" id="user_id"/>
+	  <param type="integer" id="record_id"/>
+  </service>
+  <output target="83130101">
+    <column name="客户代码"	type="string"  id="scust_no"/>
+    <column name="股东代码"	type="string"  id="sholder_ac_no"/>
+    <column name="市场代码"	type="string"  id="smarket_code"/>
+    <column name="业务代码" type="string"  id="scust_type"/>
+    <column name="证券代码"	type="string"  id="sstock_code"/>
+    <column name="委托价格"	type="number"  id="damt0"/>
+    <column name="委托数量"	type="number"  id="lvol0"/>
+    <column name="委托方式"	type="string"  id="sstatus0"/>
+    <column name="营业部"	type="string"  id="sbranch_code0"/>
+    <column name="调用模块"	type="string"  id="lvol1"/>
+    <column name="职工代码"	type="string"  id="semp"/>
+    <column name="信用标志"	type="string"  id="sstatus1"/>
+    <column name="强制标志"	type="string"  id="sstatus2"/>
+  </output>
+</function>

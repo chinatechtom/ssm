@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="gbk"?>
+<function	id="30601880" name="信用级别对应授信系数修改">
+	<input>
+		<item type="hidden" id="credit_level_code" 	name="信用级别代码"/>
+		<item type="text" 	id="credit_level_name" 	name="信用级别名称"	editable="false"/>
+		<item type="text" 	id="factor" 			name="授信系数"			nullable="false"/>
+	</input>
+	<service type="produrce"	id="p_factor_credit_level_set"	implement="p_factor_credit_level_set30601880"	process="811"	style="1">
+		<param id="user_id" 			type="integer" way="in"/>
+		<param id="credit_level_code" 	type="string"  way="in"/>
+		<param id="factor" 				type="double"  way="in"/>
+		<param id="model" 				type="string"  default="0" way="in"/><!-- 0修改 -->
+	</service>
+	<output/>
+</function>

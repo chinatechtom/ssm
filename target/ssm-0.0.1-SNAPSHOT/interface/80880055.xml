@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="80880055" name="快融宝延期客户现场回访-申请" >
+    <input>
+        <item type="hidden" id="cust_id" name="cust_id"/>
+        <group name="客户资料">
+            <item type="text" id="institution_name" name="营业部" editable="false"/>
+            <item type="text" id="cust_code" name="客户代码" editable="false"/>
+            <item type="text" id="cust_name" name="客户姓名" editable="false"/>
+            <item type="text" id="cust_type_name" name="客户类型" editable="false"/>
+            <item type="text" id="gender_name" name="性别" editable="false"/>
+            <item type="text" id="cert_type_name" name="证件类型" editable="false"/> 
+            <item type="text" id="cert_no" name="证件号码" editable="false"/>
+            <item type="text" id="ps_code" name="邮政编码" editable="false"/>
+            <item type="text" id="open_date" name="开户日期" editable="false"/>
+            <item type="text" id="open_acc" name="客户状态" editable="false"/>
+            <item type="text" id="move_tel" name="移动电话" editable="false"/>
+            <item type="text" id="fix_tel" name="固定电话" editable="false"/> 
+            <item type="text" id="email" name="电子邮件" editable="false"/>
+            <item type="textarea" id="family_address" name="联系地址" editable="false"/>
+        </group>
+        <group name="现场回访">
+            <item type="date" id="visit_date" name="回访日期" default="now"/>
+            <item type="select" id="visit_type" name="回访类别" source="881" default="2" nullable="false"/>
+            <item type="textarea" id="remark" name="备注"/>
+        </group>
+    </input>
+    <service type="procedure" id="P60880055" process="833" style="1">
+        <param type="integer" id="user_id"/>
+        <param type="integer" id="cust_id"/>
+        <param type="string"  id="visit_date"/>
+        <param type="string"  id="visit_type"/>
+        <param type="string"  id="remark"/>
+    </service>
+	<output/>
+</function>

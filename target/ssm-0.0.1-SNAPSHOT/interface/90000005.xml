@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="90000005" name="词典分类" >
+	<input>		
+	</input>
+	<service type="table" id="t_system_dict_sort" process="111" style="12">		
+	</service>
+	<output>
+		<column type="number" id="entry_value"   field="coding_sort"   name="词典分类代码"/>
+		<column type="string" id="entry_content" field="coding_name"   name="词典分类名称"/>
+    </output>
+</function>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="32218" name="特定条件客户查询">
+	<input>
+		<item type="select"	id="institution_id"		name="营业部"				source="95000008"	/>
+		<item type="text" 	id="cust_code"			name="客户代码"									/>
+		<item type="text" 	id="asset_rate" 		name="资产比例小于"							/>		
+		<item type="text"	id="asset"				name="资产小于"									/>
+		<item type="text"	id="trade"				name="至今为止成交量小于"						/>
+		<item type="text"	id="market_value"		name="持仓量总市值小于"						/>
+		<item type="text"	id="commision"			name="佣金小于"									/>
+        <item type="text"	id="bs_sec_code"        name="客户融出证券代码"		                />		
+		<item type="text"	id="gua_sec_code"       name="客户担保证券代码"		                />		
+		<item type="select"	id="financing_bond"		name="是否存在融资合约"	source="036"		/>
+		<item type="select"	id="bs_bond"			name="是否存在融券合约"	source="036"		/>
+		<item type="select"	id="financing_order"	name="是否存在融资定单"	source="036"		/>
+		<item type="select"	id="bs_order"			name="是否存在融券定单"	source="036"		/>				
+	</input>
+	<service type="procedure" id="p_cust_special_query" process="911" style="77">
+		<param id="user_id"			type="integer"	/>
+		<param id="institution_id"	type="string"	/>
+		<param id="cust_code"		type="string"	/>
+		<param id="asset_rate"		type="string"	/>
+		<param id="asset"			type="string"	/>
+		<param id="trade"			type="string"	/>
+		<param id="market_value"	type="string"	/>
+		<param id="bs_sec_code"	    type="string"	/>
+		<param id="gua_sec_code"	type="string"	/>
+		<param id="financing_bond"	type="string"	/>
+		<param id="bs_bond"			type="string"	/>
+		<param id="financing_order"	type="string"	/>
+		<param id="bs_order"		type="string"	/>
+	</service>
+	<output>
+		<column type="number" 	id="cust_id"				name="用户ID"				display="false"	/>
+		<column type="string" 	id="cust_code"				name="客户代码"	 							/>
+		<column type="string" 	id="cust_name"				name="客户名称"								/>
+		<column type="number" 	id="institution_id"			name="营业部ID"				display="false"	/>
+		<column type="string" 	id="institution_name"		name="营业部名称"							/>
+    	<column type="number" 	id="asset_rate"				name="资产比例情况"		precision="2"	/>
+		<column type="number" 	id="asset"					name="资产情况"				precision="2"	/>
+		<column type="number" 	id="trade"					name="至今为止成交量"		precision="2"	/>
+		<column type="number" 	id="market_value"			name="持仓量总市值"		precision="2"	/>
+		<column type="string" 	id="financing_bond"			name="是否存在融资合约"	display="false"	/>
+		<column type="string" 	id="financing_bond_name"	name="是否存在融资合约"					/>
+		<column type="string" 	id="bs_bond"				name="是否存在融券合约"	display="false"	/>
+		<column type="string" 	id="bs_bond_name"			name="是否存在融券合约"					/>
+		<column type="string"	id="financing_order"		name="是否存在融资定单"	display="false"	/>
+		<column type="string"	id="financing_order_name"	name="是否存在融资定单"					/>		
+		<column type="string"	id="bs_order"				name="是否存在融券定单"	display="false"	/>
+		<column type="string"	id="bs_order_name"			name="是否存在融券定单"					/>
+		<column type="string"	id="bs_sec_code"			name="客户融出证券代码"					/>
+		<button type="edit"		id="s_send_email_manually"	name="写邮件与短信"		action="3221801"	multiple="1"	/>
+		<button type="edit"		id="a_after_send_by_type"		name="手动选类型发送"		action="32240"		multiple="1"	/>
+	</output>
+</function>

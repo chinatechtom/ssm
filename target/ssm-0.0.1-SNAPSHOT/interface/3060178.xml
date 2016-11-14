@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3060178" name="营业部申请提交查询">  
+	<input>
+		<item type="hidden" id="cust_id"			name="客户ID"/>
+		<item type="text"	id="cust_code"			name="客户代码"/>
+		<item type="text"	id="cust_name"			name="客户姓名"/>
+		<item type="text"	id="cert_no"			name="证件号码"/>
+		<item type="text"	id="commness_cust_code" name="普通资金账户"/>
+	</input>
+	<service type="procedure" id="p_institution_apply_submit_select" implement="p_institution_apply_submit_select3060178" process="911" style="77">
+		<param id="user_id"			   type="integer" way="in"/> 
+		<param id="cust_id"			   type="integer" way="in"/> 
+		<param id="cust_code"		   type="string" way="in"/>
+		<param id="cust_name"		   type="string" way="in"/>
+		<param id="cert_no"			   type="string" way="in"/>
+		<param id="commness_cust_code" type="string" way="in"/>
+	</service> 
+	<output>
+		<column type="number" id="cust_id"				name="客户id" display="false" /> 
+		<column type="string" id="institution_code"		name="营业部代码" display="false" />	
+		<column type="string" id="institution_name"		name="营业部名称" display="false" />
+		<column type="string" id="cust_code"			name="客户代码"/>
+		<column type="string" id="commness_cust_code"   name="普通资金账号"/>
+		<column type="string" id="cust_name"			name="客户姓名"/>
+		<column type="string" id="cert_no"   			name="证件号码"/>
+		<column type="string" id="cust_type_name"		name="客户类型"/>
+		<column type="string" id="cust_type_flag"		name="客户类型" display="false"/>
+		<column type="string" id="submit_status"		name="提交状态" display="false"/>
+		<column type="string" id="submit_status_name"	name="提交状态"/>
+		<column type="number" id="total_commness_asset"	name="客户总资产"/>
+		<column type="number" id="age"					name="客户年龄"/>
+		<column type="number" id="already_open_month"	name="投资经验"/>
+		<column type="string" id="warning_level"		name="报警级别"	level="true" display="false"/>
+		<button type="add"	  id="edit" name="营业部申请提交" action="30601780"/>
+	</output>
+</function>

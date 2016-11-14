@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="31312" name="设置用户权限">
+	<input>
+		<item type="text"		id="user_code"	name="用户代码" editable="false" action="31314"/>
+		<item type="text"		id="user_name"	name="用户名称" editable="false"/>
+		<item type="checkbox"   id="role_id"	name="权限名称" source="90000007"/>			
+	</input>
+	<service type="procedure" id="p_privilege_set" implement="p_privilege_set31312"  process="811" style="1">
+		<param id="user_id"		type="integer"  way="in"/>
+		<param id="user_code"	type="string"   way="in"/>
+		<param id="user_name"	type="string"   way="in"/>
+		<param id="role_id"		type="string"   way="in"/>		
+	</service>
+	<output/>
+</function>

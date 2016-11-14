@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70770001" name="批量暂停恢复邮件发送">
+	<input>
+	  <group name="暂停:只暂停待发送且重试次数为0的记录,恢复:只恢复打上暂停标志的记录">
+		<item type="select" 	id="msg_type" 		    name="信息类型"			source="730" nullable="false"/>
+		<item type="select" 	id="operate_type" 		name="操作类型"			source="514" nullable="false"/>
+	  </group>
+	</input>
+	<service type="procedure" id="P70770001" implement="P70770001_70770001" process="822" style="1">
+		<param id="user_id" type="integer"/>
+		<param id="cont_meth"   default="1"/> <!--1 邮件 2 短信 -->
+		<param id="msg_type"/>
+		<param id="operate_type" /><!--1 暂停 2 恢复 -->
+	</service>
+</function>

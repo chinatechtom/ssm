@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="30696" name="合同签署申请" >  
+  <input> 
+	<item type="text"	id="cust_code"			name="客户代码"/>
+	<item type="hidden"	id="cust_name"			name="客户姓名"/>
+	<item type="text"	id="cert_no"			name="证件号码"/>
+	<item type="text"	id="commness_cust_code"	name="普通资金账号"/>	<!--modify by SECREQ-1427 20140716-->
+  </input>
+   <service type="procedure" id="p_cust_new_bond_legality_judge" process="911" style="77">
+	<param id="user_id" type="integer" way="in" />
+	<param id="cust_code"/>
+	<param id="cust_name"/>
+	<param id="cert_no"/>
+	<param id="commness_cust_code"/>	<!--modify by SECREQ-1427 20140716-->
+  </service> 
+  <output >
+    <column type="number" id="cust_id"				  name="客户id"	display="false"/>   
+    <column type="string" id="cust_code"			  name="客户代码"/>
+    <column type="string" id="commness_cust_code"	  name="普通资金账户"  />
+    <column type="string" id="cust_name"			  name="客户姓名"/>
+    <column type="string" id="cert_no"				  name="证件号码"/>
+	<column type="string" id="if_exsist"			  name="客户是否存在" display="false"/>
+	<column type="string" id="if_exsist_name"		  name="客户是否存在"/>	
+	<column type="string" id="availability_time"	  name="合同有效日期" display="false"/>
+	<column type="string" id="begin_time"			  name="合同起始日期" display="false"/>
+	<column type="string" id="return_time"			  name="合同到期日期" display="false"/>
+	<column type="string" id="over_time"			  name="合同延长日期" display="false"/>
+	<column type="string" id="application_begin_date" name="融资合同起始日期" display="false"/>
+	<column type="string" id="application_end_date"	  name="融资合同到期日期" display="false"/>
+	<column type="string" id="if_black_list"		  name="是否黑名单" display="false" level="true"/>
+	<column type="string" id="if_black_list_name"	  name="是否黑名单"/>
+	<column type="number" id="app_years"			  name="申请年数" display="false"/>
+	<column type="number" id="institution_id" name="营业部ID" display="false"/>
+	<column type="string" id="agent_name" 			name="代理人姓名" 	display="false"/>
+	<column type="string" id="agent_cert_no" 		name="代理人证件号码" display="false"/>
+	<column type="string"   id="legal_name"    name="法定代表人姓名" display="false"/>
+	<!--<button type="send" id="edit" name="客户资料同步" action="80413100" />-->
+    <button type="add" id="edit" name="合同签署申请" action="306960" extendaction="if_exsist" multiple="0"/>
+  </output>
+<assistant action="30103,3200301,30102,30104,30109,30111,30201,30202,30205,30206,30207,30215,30673,30672,30667,30668">
+		<link src="cust_id" target="cust_id"/>
+    </assistant>
+</function>

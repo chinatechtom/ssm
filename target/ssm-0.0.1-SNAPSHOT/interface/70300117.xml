@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70300117" name="取权益信息">
+	<input>
+		<item type="label"	id="qy"	name="同步权益信息" editable="false"/>
+			
+	</input>  
+	<service type="drtp" id="140280" process="711" adapter ='bbs' style="1">
+		<param id="sbranch_code0"	type="string"	default="000"/>
+		<param id="smarket_code"	type="string"	/>
+		<param id="sstock_code"	type="string"/>
+		<param id="sdate0"		type="string"/>
+		<param id="semp"		type="string"/>
+	</service>
+	<output target="71300117">
+		<column type="string" id="smarket_code" name="市场代码"/>
+		<column type="string" id="sstock_code" name="股票代码"/>
+		<column type="string" id="sdate0" name="股权登记日"/>
+		<column type="number" id="damt0" name="比例字段"/>
+		<column type="number" id="lvol1" name="业务类型"/>
+	</output>
+</function>

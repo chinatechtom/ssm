@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="30711" name="单客户融资总额占净资本比例监控" >	
+  <input>
+		<item type="text"	id="rate"	name="比例(%)"	nullable="false"	default="0.01"	number="true"/> 		
+  </input>
+  <service type="procedure" id="p_financing_value_all_query" implement="p_financing_value_all_query30711"  process="911" style="77"> 
+		<param type="integer" id="user_id"	way="in"/>
+		<param type="double"  id="rate"		way="in"/>			
+  </service>
+  <output refresh="120" export="true">
+		<column type="number" id="cust_id"					name="客户id"		display="false"/>
+		<column type="string" id="cust_code"				name="客户代码"/>
+		<column type="string" id="cust_name"				name="客户姓名"/>
+		<column type="number" id="financing_value"			name="客户融资总额"	precision="2"	total="true"/>
+		<column type="number" id="fund_amt"					name="净资本"		precision="2"/>
+		<column type="number" id="rate"						name="比例(%)"		precision="8" total="true"/>	
+		<column type="string" id="warning_level"			name="报警级别"	level="true"	display="false"/>
+  </output>
+  <assistant action="30103,3200301,30102,30104,30109,30111,30201,30202,30208,30601,30625,30667,30668,30669">
+		<link src="cust_id" target="cust_id"/>
+  </assistant>
+</function>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="32116" name="保证金比例" >
+   <input>
+ 	 	<item type="select" id="market_code"   name="市场名称"	source="039"/>
+ 		<item type="text"   id="product_code" 		name="证券代码" />
+   </input>
+   <service type="procedure" id="p_information_report_32116_query" process="911" style="77">
+  	 	<param id="user_id" 		type="integer"/>
+   		<param id="market_code" 	type="string"/>
+   		<param id="product_code" 		type="string"/>  
+   </service>
+   <output export="true" print="true">
+   <column type="string" id="c1"   name="序号"  display="false"/>
+   <group name="项目">
+   <column type="string" id="c2"   name="融资保证金比例"/>
+   <column type="string" id="c3"   name="证券代码"  />
+  </group>
+   <column type="number" id="c4"   name="比例" precision="2" />
+   <column type="string" id="c5"   name="备注"  />
+   </output>
+   </function>

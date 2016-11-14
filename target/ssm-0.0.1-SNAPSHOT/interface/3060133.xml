@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3060133" name="客户回访信息" >
+  <input>	
+	<item type="select" id="insitution_id" name="营业部名称" source="95000008"/>
+	<item type="text" id="cust_code" name="客户代码" />
+	<item type="text" id="cust_name" name="客户名称" />
+	<item type="select" id="review_status" name="回访状态" source="511" />
+  </input>
+  
+  <service type="procedure" id="p_cust_review_info_browse" process="911" style="77" implement="p_cust_review_info_browse3060133">
+	<param id="user_id" type="integer"/>
+	<param id="insitution_id" type="integer" />
+	<param id="cust_code"/>
+	<param id="cust_name"/>
+	<param id="review_status"/>
+  </service>
+  
+  <output export="true">  
+    <column type="string" id="institution_code"   name="营业部代码" />  
+    <column type="string" id="institution_name"   name="营业部名称" />  
+    <column type="number" id="institution_id"   name="营业部号"  display="false"/>
+    <column type="number" id="cust_id"   name="客户ID" display="false" />
+    <column type="string" id="cust_code"   name="客户代码"  />
+    <column type="string" id="cust_name"   name="客户姓名"  />
+    <column type="string" id="move_tel"   name="手机号码"  />
+    <column type="string" id="area_code"   name="联系地址"/>
+    <column type="string" id="review_status_id"   name="回访结果id" display="false"/>
+    <column type="string" id="review_status"   name="回访结果"/>
+	<column type="string" id="occur_date"    name="记录生成日期"  />	
+    <column type="string" id="occur_time"    name="记录生成时间"  display="false"/>	
+    <column type="string" id="review_date"   name="回访成功日期"  />
+    <column type="string" id="remark"   name="备注"  />
+    <button type="edit" id="edit" name="更新回访信息" action="30601331"  multiple="0"/>
+   </output>
+</function>

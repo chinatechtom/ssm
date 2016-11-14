@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="30604" name="查看合约-资产评估" >
+	<input>    
+	 <item type="hidden"  id="order_id" name="客户id"/> 
+  </input>
+  <service type="procedure" id="p_order_full_evaluate_query" process="911" style="77">
+	<param id="user_id"				type="integer" way="in"/> 
+	<param id="order_id"				type="ingeter" way="in"/>
+  </service>
+  <output detail="true">
+	<column type="number" id="order_id" name="合约id"	display="false"/>
+	<column type="string" id="if_allow" name="是否允许"/>
+	<column type="string" id="if_blacklist" name="是否黑名单" precision="4"/>
+	<column type="number" id="fund_amt" name="资金余额"/>
+	<column type="number" id="stock_market_value" name="证券市值"/>
+	<column type="number" id="stock_convert_amt" name="证券折算金额"/>
+	<column type="number" id="fund_convert_amt" name="资金折算金额"/>
+	<column type="number" id="gage_value" name="担保品价值"/>
+	<column type="number" id="usable_num" name="可用额度"/>
+	<column type="string" id="remark" name="备注说明"/>
+  </output> 
+</function>

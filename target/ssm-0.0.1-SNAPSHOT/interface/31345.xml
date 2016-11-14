@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="31345" name="日志查询"><!--modify by SECREQ-2360-->
+	<input>
+		<item type="select"	id="institution_id"	name="营业部名称" source="95000008"/>
+		<item type="text"	id="cust_code"		name="客户代码"/>
+		<item type="text"	id="cust_name"		name="客户姓名"/>
+		<item type="text"	id="product_code"	name="证券代码"/>
+		<item type="text"	id="product_name"	name="证券名称"/>
+		<item type="text"	id="bond_no"		name="合同编号"/>
+		<item type="date"	id="begin_date"		name="操作起始日期"  default="last"/>
+		<item type="date"	id="end_date"		name="操作终止日期"  default="now"/>
+		<item type="text"	id="user_code"		name="操作人代码"/>
+	</input>
+	<service type="procedure" id="p_system_log_query_his" imlement="p_system_log_query_his31345" process="955" style="77">
+		<param id="user_id"			type="integer"/>
+		<param id="institution_id"	type="integer"/>
+		<param id="cust_code"/>
+		<param id="cust_name"/>
+		<param id="product_code"/>
+		<param id="product_name"/>
+		<param id="bond_no"/>
+		<param id="begin_date"/>
+		<param id="end_date"/>
+		<param id="user_code"/>
+  </service>
+	<output export="true">
+		<column type="number" id="sno"			name="系统流水号" display="false"/>
+		<column type="string" id="cust_code"	name="客户代码"/>
+		<column type="string" id="cust_name"	name="客户姓名"/>
+		<column type="string" id="busitype"		name="业务种类"/>
+		<column type="string" id="digestname"	name="摘要名称"/>
+		<column type="string" id="operdate"		name="操作日期"/>
+		<column type="string" id="opertime"		name="操作时间"/>
+		<column type="string" id="bond_no"		name="合同编号"/>
+		<column type="string" id="product_code"	name="证券代码"/>
+		<column type="string" id="product_name"	name="证券名称"/>
+		<column type="string" id="netaddr"		name="操作站点" display="false"/>
+		<column type="string" id="user_code"	name="操作人代码"/>
+	</output>
+	<assistant action="3134501">
+		<link src="operdate,sno" target="operdate,sno"/>
+	</assistant>
+</function>

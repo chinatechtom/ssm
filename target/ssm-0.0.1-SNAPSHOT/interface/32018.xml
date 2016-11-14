@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="32018" name="单客户单证券担保证券数量占总股本监控" >
+	<input>
+		<item type="text"	id="cust_code"		name="客户代码"/>
+		<item type="select"	id="market_code"	name="市场"	source="039"/>
+		<item type="text"	id="product_code"	name="证券代码"/>	
+		<item type="text"	id="rate"			name="比例(%)"	default="1.0"/>
+		<item type="select"	id="choice"			name="占比选择"	source="397" nullable="false"/>
+	</input>
+    <service type="procedure" id="p_share_stock_index"  process="911" style="77" implement="p_share_stock_index32018">
+		<param id="user_id"			type="integer"	way="in"/>
+		<param id="market_code"		type="string"	way="in"/> 
+		<param id="product_code"	type="string"	way="in"/>
+		<param id="rate"			type="double"	way="in"/>
+		<param id="choice"			type="string"	way="in"/>
+		<param id="cust_code"		type="string"	way="in"/>
+    </service>
+    <output export="true" >
+		<column type="string" id="institution_name"	name="营业部名称"/>	<!--MODIFY BY ZYT 20140825 SECREQ-1419-->
+		<column type="string" id="cust_name"		name="客户姓名"/>		<!--MODIFY BY ZYT 20140825 SECREQ-1419-->
+	    <column type="string" id="cust_code"     	name="客户代码"/>
+		<column type="number" id="product_id"	 	name="证券id"	display="false"/>
+		<column type="string" id="market_code"	 	name="市场"/>
+		<column type="string" id="product_code"	 	name="证券代码"/>
+		<column type="string" id="product_name"	 	name="证券名称"/>
+		<column type="number" id="stock_value"		name="担保证券数量"	precision="0"/>
+		<column type="number" id="circulated_a"	 	name="总流通数量"		precision="0"/>
+		<column type="number" id="all_stock"	 	name="总股本数量"		precision="0"/>
+		<column type="number" id="rate"			 	name="比例(%)"			precision="8"/>
+		<column type="string" id="warning_level" 	name="报警级别"			level="true"	display="false"/>
+		<column type="number" id="payback_vol"		name="当日还券"			precision="0"/> <!--MODIFY BY ZYT 20140825 SECREQ-1419-->
+		<column type="number" id="occur_vol"		name="当日融出"			precision="0"/> <!--MODIFY BY ZYT 20140825 SECREQ-1419-->
+    </output>
+</function>

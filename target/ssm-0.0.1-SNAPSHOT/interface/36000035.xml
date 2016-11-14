@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="36000035" name="3.1.3前X名单个客户融券占净资本比例统计" >
+  <input>   
+  <item type="select" id="choice"      name="查询选择"  source="356" nullable="false"/>
+  <item type="text"  id="number"      name="查询数据"  />
+  <item type="select" id="institution_id" name="营业部名称" source="95000008"/> 
+  <item type="date"  id="date"      name="日期"   default="now"/>
+  </input>
+  <service type="procedure" id="P36000035" process="911" style="77">
+  <param id="user_id"      type="integer"    way="in"/>
+  <param id="date"        type="string"    way="in"/>
+  <param id="choice"      type="integer"  way="in"/>
+  <param id="number"      type="double"  way="in"/>
+   <param id="institution_id"   type="integer"  way="in"/>
+  </service>
+  <output export="true" print="true">   
+    <column type="number" id="id"                  name="序号"                 /> 
+    <column type="string" id="cust_code"            name="客户代码"               /> 
+    <column type="string" id="cust_name"            name="客户名称"                   />
+    <column type="string" id="institution_name"     name="营业部名称"                 />
+    <column type="number" id="bs_value"             name="融券总额"           precision="2" />
+    <column type="number" id="FUND_AMT"             name="净资本额"             precision="2" />
+    <column type="number" id="RATE"                 name="占净资本比例(%)"      precision="6" />
+    <column type="string" id="remark"              name="备注"                 />
+    </output>
+</function>

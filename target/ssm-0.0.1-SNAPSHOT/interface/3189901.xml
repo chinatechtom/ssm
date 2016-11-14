@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3189901" name="查看角色合约处理权限">
+	<input>
+		<item type="hidden"			id="role_id"			name="角色ID" 	editable="false" />
+		<item type="text"			id="role_name"		name="角色名称" editable="false" action="90000017"/>
+		<item type="checkbox" id="data_code"		name="订单类型" source="90000016" editable="false"/>			
+	</input>
+	<output/>
+</function>

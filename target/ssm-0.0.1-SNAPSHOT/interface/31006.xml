@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="31006" name="利息统计" >  
+  <input>
+	<item type="date" id="date" name="日期" default="now"/>
+  </input>
+   <service type="procedure" id="p_interest_addup" process="911" style="77">
+	<param id="user_id" type="integer" way="in" /> 
+	<param id="date"/>	
+  </service> 
+  <output>
+    <column type="string" id="date" name="日期"/>   
+    <column type="number" id="borrow_stock_interest"   name="融券利息" precision="2" total="true"/>
+    <column type="number" id="loan_interest"   name="贷款利息" precision="2" total="true"/>
+    <column type="number" id="punish_interest"   name="逾期罚息" precision="2" total="true"/>
+	<column type="number" id="commission_charge"   name="手续费" precision="2" total="true"/>
+    <column type="number" id="borrow_stock_interest_sum"   name="融券利息合计" precision="2" total="true"/>
+    <column type="number" id="loan_interest_sum"   name="贷款利息合计" precision="2" total="true"/>
+	<column type="number" id="punish_interest_sum"   name="罚息合计" precision="2" total="true"/>
+    <column type="number" id="commission_charge_sum"   name="手续费合计" precision="2" total="true"/>
+    <column type="number" id="borrow_stock_interest_total"   name="融券利息累计" precision="2" total="true"/>
+	<column type="number" id="loan_interest_total"   name="贷款利息累计" precision="2" total="true"/>
+    <column type="number" id="punish_interest_total"   name="罚息累计" precision="2" total="true"/>
+    <column type="number" id="commission_charge_total"   name="手续费累计" precision="2" total="true"/>
+  </output>
+</function>

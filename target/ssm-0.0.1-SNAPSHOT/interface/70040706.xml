@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70040706" name="更新证券标的" >
+	<input>
+	<description>要更新证券标的？</description>
+	</input>
+	<service type="procedure" id="P70040706"  process="822" style="1"> 
+		<param id="user_id" type="integer" way="in"/>	
+	</service>
+	<output/>	
+</function>

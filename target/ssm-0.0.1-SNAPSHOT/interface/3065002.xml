@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3065002" name="生成大写中文" >
+  <input>	
+  <item type="hidden" id="rz_or_rq" 	name="交易种类" 	default="1" />
+  <item type="hidden" id="chinese_type" name="是否大写" default="1"/>	
+	<item type="hidden" id="credit_num" name="信用上限"/>
+  </input>
+  <service type="procedure" id="p_digit_convert_chinese" implement="p_digit_convert_chinese3065002" process="911" style="77">
+	<param id="user_id" type="integer"/>
+	<param type="integer" id="rz_or_rq" 		default="1"/>
+	<param type="integer" id="chinese_type" default="1"/>
+	<param type="double" id="credit_num"/>
+  </service>
+  <output export="true">  
+  	<column type="string" id="chinese"   name="大写中文" />  
+	</output>
+</function>

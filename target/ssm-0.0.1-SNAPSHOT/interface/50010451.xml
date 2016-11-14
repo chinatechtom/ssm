@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="50010451" name="复核通过" >
+	<description>
+		确定复核通过？
+	</description>
+	<input>	
+		<item type="hidden" id="order_id" name="合约id" />
+		<item type="hidden" id="order_type" name="合约类型"   nullable="false"/>
+		<item type="hidden" id="manage_status" name="处理状态"   nullable="false"/>
+	</input>
+	<service type="procedure" id="P50010451" process="866" style="1">
+		<param type="integer" id="user_id"/>	
+		<param type="integer" id="order_id"/>
+		<param id="order_type"/>
+		<param id="manage_status"/>
+	</service>	
+	<output/>
+</function>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3067701" name="融券标的信息" >
+  <input>		
+  <item type="hidden" id="cust_id" name="客户id" />
+  </input>
+  <service type="procedure" id="p_all_stock_biaodi_query" process="911" style="77">
+	<param id="user_id" type="integer"/>	
+  </service>
+  <output >    
+    <column type="string" id="product_code"   name="证券代码"  />
+	<column type="string" id="product_name"   name="证券名称"  />
+    <column type="string" id="market_name"   name="市场名称"  />
+    <column type="string" id="market_code"   name="市场代码"  display="false"/>
+    <column type="string" id="if_financing"   name="是否融资标的"  />
+    <column type="string" id="if_borrow_stock"   name="是否融券标的"  />
+    <column type="string" id="if_guarantee"   name="是否担保品" /> 
+    <column type="number" id="stock_convert_rate"   name="证券折算率"  precision="2"/>    
+	</output>  
+</function>

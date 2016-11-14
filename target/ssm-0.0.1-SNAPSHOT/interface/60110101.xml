@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="60110101" name="交易流水手工录入" >
+	<input>	
+		<item type="text" id="cust_code" name="客户代码" />
+		<item type="text" id="cust_name" name="客户姓名" />
+		<item type="text" id="sbond_no" name="交易协议书编号" />
+	</input>
+	<service type="procedure" id="P60110101" process="933" style="77">	
+        <param id="user_id"	   type="integer"/>  
+		<param id="cust_code"  type="string"/>
+		<param id="cust_name"  type="string"/>
+		<param id="sbond_no"   type="string"/>
+	</service>
+	<output >
+		<column type="number" id="institution_id"        name="营业部id" display="false"/>  
+		<column type="string" id="institution_name"      name="营业部名称"/>  
+		<column type="string" id="institution_code"      name="营业部代码"/>  
+		<column type="number" id="cust_id"               name="客户号"  display="false"/>
+		<column type="string" id="cust_code"             name="客户代码"/>
+		<column type="string" id="cust_name"             name="客户姓名"/>
+        <column type="number" id="sbond_id"              name="sbond_id" display="false"/>
+        <column type="string" id="sbond_no"              name="交易协议书编号"/>
+		<column type="string" id="engage_trade_date"     name="初始交易日"/>
+        <column type="number" id="first_amt"             name="初始交易金额" precision="2"/>
+		<column type="number" id="curr_debt_amt"         name="当前负债金额"/>
+		<column type="string" id="last_bb_date"          name="购回日期"/>
+        <column type="number" id="second_amt"            name="购回交易金额" precision="2"/>
+		<column type="string" id="product_code"          name="证券代码"/>
+		<column type="string" id="product_name"          name="证券名称"/>
+		<column type="number" id="curr_stk_vol"          name="证券数量" precision="0"/>
+		<button type="view" id="edit" name="交易流水录入" action="60110102" multiple="0"/>
+	</output>
+</function>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70066456" name="子合约详细" >
+	<input>	
+		<item type="hidden" id="order_no"     name="合约no"/>
+		<item type="hidden" id="order_type"     name="合约类型"/>
+	</input>
+	<service type="procedure" id="P70066456" process="922" style="77" adapter="bbs">
+		<param type="integer" id="user_id" way="in" />
+		<param type="string"  id="order_no" way="in"/>
+		<param type="string"  id="order_type" way="in"/>
+	</service>
+	<output   export="true">	
+		<column type="string" id="sbond_no"   name="交易协议书编号"/>
+		<column type="string" id="product_code"   name="标的证券代码"/>
+		<column type="number" id="hg_num"   name="标的证券数量" precision="0"/>
+		<column type="number" id="app_price"   name="标的证券价格" precision="2"/>
+		<column type="number" id="hg_convert_rate"   name="折扣比率(%)" precision="3"/>
+		<column type="number" id="days"   name="原期限" precision="0"/>
+		<column type="number" id="first_amt"   name="初始交易金额" precision="2"/>
+		<column type="string" id="first_amt_big"   name="初始交易金额大写"/>
+		<column type="number" id="second_amt"   name="购回交易金额" precision="2"/>
+		<column type="string" id="second_amt_big"   name="购回交易金额大写"/>
+		<column type="number" id="days2"   name="新期限" precision="0"/>
+	</output>
+</function>

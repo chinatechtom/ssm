@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70100164" name="利息扣款">
+	<input>
+		<item type="text" id="sbranch_code1" name="开户营业部" />
+		<item type="text" id="scust_no" name="客户号"/>
+		<item type="text" id="damt0" name="扣款金额"/>
+		<item type="text" id="snote" name="备注"/>
+	</input>     
+	<service type="drtp" id="423150" process="711" style="77">
+		<param type="string" id="scust_no"/>
+		<param type="string" id="snation_code" default="2250"/>
+		<param type="string" id="scurrency_type" default="01"/>
+		<param type="float" id="damt0"/>
+		<param type="string" id="snote"/>
+		<param type="string" id="sstation0" default="YDGHGL"/>
+		<param type="string" id="semp" default="SYSTEM"/>
+	</service>
+	<output target="70100165">
+		<column name="客户号"	id="scust_no"  type="string"/>
+		<column name="发生日期"	id="sdate0" type="string"/>
+		<column name="流水号"	id="sserial0" type="string"/>
+	</output>
+</function>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70040719" name="证券标的权益信息浏览" >
+	<input>
+		<item type="hidden" id="product_id"     name="证券id" />
+		<item type="text"   id="product_code"   name="证券代码" />
+		<item type="text"   id="product_name"   name="证券名称" />
+	</input> 
+	<service type="procedure" id="p70040719"  process="922" style="77">
+		<param id="user_id"			type="integer" way="in"/>
+		<param id="product_id"		type="integer" way="in"/> 
+		<param id="product_code"	type="string"  way="in"/>
+		<param id="product_name"	type="string"  way="in"/>  
+	</service>
+	<output>
+		<column type="number" id="product_id"		name="证券id" display="false"/>
+		<column type="string" id="product_code"		name="证券代码"/>
+		<column type="string" id="product_name"		name="证券名称"/>	
+		<column type="string" id="market_code"		name="市场代码" display="false"/>
+		<column type="string" id="market_code_name"	name="市场代码"/>				
+		<column type="number" id="send_off_10"		name="每10股送股" precision="6"/>
+		<column type="number" id="send_qz_10"		name="每10股送配股权证数" precision="6"/>		
+		<column type="number" id="allot_10"			name="每10股配股" precision="5" display="false"/>
+		<column type="number" id="every_bonus_10"	name="每10股红利" precision="6"/>
+		<column type="number" id="every_bonus_10_after_tax"		name="每10股税后红利" precision="6"/>
+		<column type="string" id="bonus_arrive"		name="红利到账日"/>
+		<column type="string" id="register_date"	name="登记日期"/>
+		<column type="string" id="remove_date"		name="除权日期"/>
+		<column type="string" id="pg_code"			name="权证代码"/>
+		<column type="string" id="ss_date"			name="红股上市日"/>
+		<column type="string" id="pg_arrive_date"	name="配股权到账日"/>
+		<column type="string" id="tax_unit_name"	name="代扣税主体"/>
+		<column type="string" id="tax_unit"			name="代扣税主体" display="false"/>
+		<column type="number" id="tax_rate"			name="红利税率（%）" precision="4"/>	
+	</output>	
+</function>

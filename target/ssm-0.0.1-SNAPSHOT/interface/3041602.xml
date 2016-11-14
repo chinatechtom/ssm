@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3041602" name="信用级别担保率同步" >
+ <description>
+   确定同步所有信用级别担保率？
+  </description>
+  <input>
+	 </input>
+  <service type="procedure" id="p_syn_all_assure_rate_query"  process="911" style="1"> 
+    <param id="user_id"				type="integer" way="in"/> 	
+  </service>
+  <output  target="@func_no">
+	<column type="string" id="sserial0"	    name="信用级别代码" display="false"/>	
+	<column type="number" id="drate0"		name="担保率"	  precision="4"/>	
+	<column type="string" id="sserial1"		name="交易指令1"  display="false"/>
+	<column type="string" id="sbank_acc"	name="信用级别名称"  display="false"/>
+	<column type="number" id="damt0"        name="融资上限标准"  display="false" precision="4"/>
+	<column type="number" id="damt1"        name="融券上限标准"  display="false" precision="4"/>
+	<column type="string" id="scusttypes"   name="备注"  display="false"/>
+	<column type="string" id="func_no"		name="功能号"/>
+  </output>
+</function>

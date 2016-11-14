@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="80130101" name="平仓报告发送委托" >
+	<description>确定要按平仓报告下委托?
+	</description>
+	<input>
+		<item type="hidden"	id="record_id"	name="record_id"/> 
+	</input>
+    <service type="system" id="80130101"  process="888" style="1">
+		<param type="string" id="function_id" default="81130101"/>
+		<param type="string" id="function_id" default="82130101"/>
+		<!--无法判断应该还多少资金,直接还款功能去除
+		<param type="string" id="function_id" default="81420126"/>-->
+    </service>
+    <output/>	
+</function>

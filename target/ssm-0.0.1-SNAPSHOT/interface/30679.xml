@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="30679" name="新增修信用使用模式申请" >
+  <input>
+    <group name="合同信息" scope="group">
+	<item type="hidden" id="cust_id" name="客户id"/>
+	<item type="text" id="bond_no" name="合同编号" editable="false"/>
+	<item type="text" id="bond_name" name="合同名称" editable="false"/>
+	<item type="text" id="dc_mode_name" name="信用使用模式" editable="false"/>	
+	<item type="textarea" id="remark" name="备注说明" editable="false"/>	
+  </group>   
+   <group name="修改借贷模式申请">
+	<item type="hidden" id="cust_id" name="客户id"/>
+	<item type="hidden" id="bond_id" name="合同id"/>
+	<item type="text" id="order_no" name="合约编号" nullable="false"/>
+	<item type="hidden" id="formerly_voucher_no" name="原始凭证号" />	
+	<item type="select" id="dc_mode" name="信用使用模式" source="306" nullable="false" default="last"/>
+	<item type="textarea" id="remark11" name="备注说明" />	
+  </group>
+  </input>
+  <service type="procedure" id="p_dc_mode_insert" process="811" style="1">
+	<param type="integer" id="user_id" way="in" />
+	<param type="integer" id="cust_id" way="in" />
+	<param type="integer" id="bond_id" way="in" />
+	<param id="order_no" />
+	<param id="formerly_voucher_no" />
+	<param id="dc_mode"/>	
+	<param id="remark11"/>
+  </service>
+  <output/>
+</function>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="30203" name="客户信用级别担保率浏览" >
+	<input>    
+	 <item type="text"  id="cust_id"                  name="客户id"/> 
+	 <item type="text"  id="order_id"                 name="合约id"/> 
+  </input>
+  <service type="procedure" id="p_cust_credit_level_gua_query" process="911" style="77">
+  	<param id="user_id"				type="ingeter"	way="in"/>
+	  <param id="cust_id"				type="ingeter"	way="in"/>
+	  <param id="order_id"				type="ingeter"	way="in"/>
+  </service>
+  <output >
+	  <column type="number" id="cust_id"		            name="客户ID" display="false"/>
+	  <column type="string" id="cust_code"				      name="客户代码"/>
+	  <column type="string" id="cust_name"				      name="客户名称" />
+	  <column type="number" id="credit_level_id"				name="信用级别ID" display="false"/>
+	  <column type="string" id="credit_level_name"		  name="信用级别名称"/>
+	  <column type="string" id="credit_level_code"			name="信用级别代码" display="false"/>	
+	  <column type="string" id="risk_level"		          name="风险级别" display="false"/>	
+	  <column type="string" id="risk_level_name"				name="风险级别名称" />	
+	  <column type="string" id="if_estop"			          name="是否禁止" display="false"/>	
+	  <column type="string" id="if_estop_name"				  name="是否禁止"	display="false"/>
+	  <column type="number" id="init_gua_rate"		      name="初始担保率"      precision="2" />
+    <column type="number" id="normal_bs_gua_rate"		  name="普通买卖担保率"  precision="2" />
+    <column type="number" id="take_money_gua_rate"		name="取款担保率"      precision="2" />
+    <column type="number" id="manage_gua_rate"		    name="转托管担保率"    precision="2" />
+    <column type="number" id="borrow_gua_rate"		    name="融券卖出担保率"  precision="2" />
+    <column type="number" id="financing_gua_rate"		  name="融资买入担保率"  precision="2" />
+    <column type="number" id="normal_risk_gua_rate"		name="一般风险担保率"  precision="2" />
+    <column type="number" id="high_risk_gua_rate"		  name="高级风险担保率"  precision="2" />
+    <column type="number" id="warning_gua_rate"		    name="预警"            precision="2" />
+    <column type="number" id="pc_gua_rate"		        name="平仓"            precision="2" />
+    <column type="number" id="safty_gua_rate"		      name="安全"            precision="2" />
+    <column type="number" id="mormal_gua_rate"		    name="普通"            precision="2" />
+    <column type="number" id="init_moeny_gua_rate"		name="初始保证金比例"  precision="2" />
+    <column type="number" id="bc_gua_rate"		        name="补仓"            precision="2" />
+    <column type="number" id="other_gua_rate"		      name="其他"            precision="2" />
+  </output>
+</function>

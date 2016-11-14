@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="700108364" name="同步冻结证券并报盘" >
+	<description>确定要同步冻结客户证券并报盘?</description>
+	<input>
+		<item type="hidden" id="cust_id" name="客户号"/>
+		<item type="hidden" id="entrust_date" name="entrust_date" />
+		<item type="hidden" id="sqbh" name="sqbh" />
+	</input>
+    <service type="procedure" id="P700108360"  process="922" style="1">
+		<param id="user_id"		type="integer" way="in"/>
+		<param id="cust_id"		type="integer" way="in"/>
+		<param id="entrust_date"	type="string" way="in"/>
+		<param id="sqbh"		type="string" way="in"/>
+    </service>
+	<output target="700108361">
+	  <column name="营业部代码"		type="string"	field="institution_code" id="sbranch_code1"/>
+		<column name="客户代码"			type="string"	field="cust_code" 			 id="scust_no"/> 
+		<column name="市场代码"		  type="string"	field="market_code" 	   id="smarket_code"/>
+		<column name="证券账号"			type="string"	field="sellacc"    			 id="sholder_ac_no"/>  
+		<column name="证券代码"			type="string"	field="product_code" 		 id="sstock_code"/>
+	</output>
+</function>

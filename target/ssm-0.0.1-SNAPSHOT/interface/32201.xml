@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="32201" name="融资融券余额排名" >
+	<input>	
+		<item type="text" id="cust_code" name="客户代码" />
+		<item type="select" id="institution_id" name="营业部名称" source="95000008"/>
+  	</input>
+	<service type="procedure" id="p_test_02"    process="911" style="77">
+		<param id="user_id"	            type="integer" way="in"/> 
+		<param id="cust_code" 		type="string"/>
+		<param id="institution_id" 	type="string"/>
+	</service>
+	 <output export="true">
+		<column type="string" id="c1"   name="营业部名称"  />
+    	<column type="string" id="c2"   name="信用账户号"  />
+		<column type="string" id="c3"   name="客户姓名"  />
+    	<column type="number" id="c4"   name="自有资金"  	precision="2"/>
+    	<column type="number" id="c5"   name="账户资产"  	precision="2"/>
+    	<column type="number" id="c6"   name="账户股票市值"  	precision="2"/>
+    	<column type="number" id="c7"   name="授信额度"  	precision="2"/>
+    	<column type="number" id="c8"   name="融资金额"  	precision="2"/>
+    	<column type="number" id="c9"   name="融资已用信用上限"  	precision="2"/>     	
+    	<column type="number" id="c10"   name="融券卖出价款"  	precision="2"/>
+    	<column type="number" id="c11"   name="融券市值"  	precision="2"/> 
+    	<column type="number" id="c12"   name="维持担保比例"  		precision="2"/> 
+    	<column type="number" id="c13"   name="融券融券费用"  precision="2"/>
+	 </output>
+</function>

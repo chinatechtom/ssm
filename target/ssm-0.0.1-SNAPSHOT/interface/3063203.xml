@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3063203" name="合约-授信额度查询" >
+	<input>
+		<item type="hidden" id="order_id" name="order_id"/>
+	</input>
+	<service type="procedure" id="p_order_credit_num2_query" process="911" style="77">
+		<param type="integer" id="user_id"/>	
+		<param type="integer" id="order_id"/>
+	</service>
+	<output>
+		<column type="number" id="order_id" name="order_id" display="false"/>
+		<column type="number" id="credit_limit" name="授信额度"/>
+		<column type="number" id="product_id2" name="融资产品"/>
+		<column type="number" id="product_id3" name="融券产品"/>
+		<column type="number" id="financing_limit" name="融资上限"/>
+		<column type="number" id="bstock_limit" name="融券上限"/>
+		<column type="string" id="remarks" name="备注"/>
+		<column type="number" id="days" name="有效天数"/>
+		<column type="string" id="credit_limit_c" name="授信额度大写"/>
+		<column type="string" id="financing_limit_c" name="融资上限大写"/>
+		<column type="string" id="bstock_limit_c" name="融券上限大写"/>
+		<column type="string" id="manage_remarks" name="处理备注"/>
+		<column type="string" id="app_date3063203" name="申请日期"/>
+		<column type="string" id="begin_date3063203" name="起始日期"/>
+		<column type="string" id="end_date3063203" name="结束日期"/>
+		<column type="string" id="manage_date3063203" name="合约处理日期"/>
+		<!--私用额度权限状态私用额度权限状态始数据 haofugang 20110321-->
+		<column type="number" id="credit_limit_approve_institution" name="授信额度_批准" display="false"/>
+		<column type="number" id="credit_limit_institution_wan" name="授信额度_申请（万元）" display="false"/>
+		<column type="number" id="credit_limit_institution" name="授信额度_申请" display="false"/>
+		<column type="string" id="credit_limit_institution_c" name="授信额度大写_申请"/>
+		<column type="number" id="product_id2_institution" name="融资产品_申请" display="false"/>
+		<column type="number" id="product_id3_institution" name="融券产品_申请" display="false"/>
+		<column type="number" id="financing_limit_institution" name="融资上限_申请" display="false"/>
+		<column type="string" id="financing_limit_institution_c" name="融资上限大写_申请" display="false"/>
+		<column type="number" id="bstock_limit_institution" name="融券上限_申请" display="false"/>
+		<column type="string" id="bstock_limit_institution_c" name="融券上限大写" display="false"/>
+		<column type="number" id="days_institution" name="有效天数_申请"  display="false"/>
+		<column type="string" id="app_date3063203_institution" name="申请日期_申请" display="false"/>
+		<column type="string" id="begin_date3063203_institution" name="起始日期_申请" display="false"/>
+		<column type="string" id="end_date3063203_institution" name="结束日期_申请" display="false"/>
+		<!--end by haofugang 20110321-->
+	    <column type="string" id="pvt_ctl_stauts"       name="私用额度私用额度权限状态"  display="false" />
+		<column type="number" id="pvt_fin_lmt_modulus"  name="私用转融资比例系数"   display="false"/>
+		<column type="number" id="pvt_bs_lmt_modulus"   name="私用转融券比例系数"   display="false"/>
+		<column type="number" id="pvt_crd_lmt_modulus"  name="私用转融通授信比例系数"   display="false"/>
+		<column type="number" id="pvt_fin_product_id"   name="私用转融资信用产品ID"   display="false"/>
+		<column type="string" id="pvt_fin_product_code" name="私用转融资信用产品代码" display="false"/>
+		<column type="number" id="pvt_bs_product_id"    name="私用转融券信用产品ID"   display="false"/>
+		<column type="string" id="pvt_bs_product_code"  name="私用转融券信用产品代码" display="false"/>
+		
+	</output>
+</function>

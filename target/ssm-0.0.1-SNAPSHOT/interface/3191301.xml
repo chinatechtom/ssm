@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3191301" name="到期未还融资明细查询" >	
+  <input>	
+		<item type="select" id="institution_id" name="营业部名称"  source="95000008"/>
+		<item type="text"   id="cust_code"      name="客户代码" />
+  </input>  
+  <service type="procedure" id="p_fund_noback_detail_query" implement="p_fund_noback_detail_query3191301" process="911" style="77"> 
+    <param id="user_id" 				type="integer" />
+		<param id="institution_id" 	type="integer"/>
+		<param id="cust_code"     	type="string"	way="in"/>
+  </service>  
+  <output export="true">  	
+  <column type="string"  id="institution_name"           name="营业部名称" display="false"/>
+	<column type="string"  id="cust_no"                  	 name="客户代码" display="false"/>
+	<column type="string"  id="cust_name"                  name="客户姓名" display="false"/>
+	<column type="string"  id="serial_no"                  name="流水号" display="false"/>
+	<column type="string"  id="BEGIN_TIME"                 name="起始时间"/>    
+	<column type="string"  id="RETURN_TIME"                name="到期时间"		/>
+	<column type="string"  id="MARKET_CODE"        				 name="市场名称"		/>
+	<column type="string"  id="SEC_CODE"              		 name="证券代码"		/>
+	<column type="number"  id="OCCUR_BAL"    							 name="融资买入金额"	  precision="2"/>	
+	<column type="number"  id="PAYBACK_BAL"      					 name="融资偿还金额"	  precision="2"/>
+	<column type="string"  id="LAST_PAYBACK_DATE"          name="最近偿还日期"	/>
+	<column type="number"  id="non_pay_fee_sum"            name="融资利息费用总额"    precision="2"/>
+	<column type="string"  id="fee_flag"                   name="费用标志"        display="false"/>
+	<column type="number"  id="DONE_AMT"                   name="成交金额"        precision="2"/>
+	<column type="string"  id="note"                       name="备注" />
+  </output>
+</function>

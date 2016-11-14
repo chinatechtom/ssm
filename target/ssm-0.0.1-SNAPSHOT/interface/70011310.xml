@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70011310" name="网上交易业务时间限制参数设置">
+	<input>
+		<item type="text" 		id="cust_code" 		name="客户代码"  	nullable="true" editable="false"/>
+		<item type="select" 	id="market_code" 	name="市场代码"		source="039"	nullable="false" editable="false"/>
+		<item type="select"		id="busi_type"		name="业务类型"	  	source="743"	nullable="false" editable="false"/>
+		<item type="select"		id="limit_type"		name="限制类型" 	source="742"	nullable="true"  editable="false"/>
+		<item type="text"		id="early_days"		name="提前天数" 	nullable="false" integer="true"/>
+		<item type="text"		id="limit_time"		name="截止时间" 	nullable="false" default="14:30:00" minlen="8" maxlen="8" tip="hh:mm:ss"/>
+		<item type="text"		id="limit_time_early" name="开始时间" nullable="false" default="09:30:00" minlen="8" maxlen="8" tip="hh:mm:ss"/>
+	</input>
+	<service type="procedure" id="P70011310" process="822" style="1">
+		<param id="user_id"			type="integer"/>
+		<param id="cust_code"		type="string"/>
+		<param id="market_code"		type="string"/>
+		<param id="busi_type"		type="string"/>
+		<param id="limit_type"		type="string"/>
+		<param id="early_days"		type="integer"/>
+		<param id="limit_time"		type="string" default="14:30:00"/>
+		<param id="limit_time_early"		type="string" default="09:30:00"/>
+	</service>
+	<output/>
+</function>
+		
+		

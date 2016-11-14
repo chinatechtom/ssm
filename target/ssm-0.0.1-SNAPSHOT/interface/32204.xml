@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="32204" name="风控指标值" >
+	<input>	
+		<item type="select" id="institution_id" name="机构"  source="95000008"/>
+  	</input>
+  	<service type="procedure" id="p_test_05" process="911" style="77">
+		<param id="user_id" type="integer" way="in" /> 
+		<param id="institution_id" />
+  	</service>
+  	 <output export="true">
+		<column type="number" id="c1"   name="正常担保率"  />
+    	<column type="number" id="c2"   name="警戒担保率"  />
+		<column type="number" id="c3"   name="补仓担保率"  />
+    	<column type="number" id="c4"   name="单只股票净资本比例"  	precision="2"/>
+    	<column type="number" id="c5"   name="融资融券总额占净资本比例"  	precision="2"/>
+    	<column type="number" id="c6"   name="单客户融资融券总额占净资本比例"  	precision="2"/>    	  
+	 </output>
+</function> 

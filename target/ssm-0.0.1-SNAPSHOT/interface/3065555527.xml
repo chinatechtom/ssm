@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3065555527" name="合同详细" >
+ <input>  
+  <item type="hidden" id="bond_id"   name="合同id"  action="3042203,30672,30686"/>
+  <group name="合同基本信息" >	
+	<item type="text" id="bond_no"   name="合同编号" editable="false"/>
+	<item type="hidden" id="bond_name"   name="合同名称" editable="false"/>
+	<item type="hidden" id="cust_id" name="客户id"   editable="false"/>
+    <item type="text" id="cust_name"   name="客户姓名" editable="false"/>	
+	<item type="text" id="date"   name="合同签署日期" editable="false"/>
+	<item type="text" id="time"   name="合同签署时间" editable="false"/>
+	<item type="hidden" id="availability_time"   name="合同有效日期" editable="false"/>
+	<item type="text" id="begin_time"   name="合同起始日期" editable="false"/>
+	<item type="text" id="return_time"   name="合同到期日期" editable="false"/>
+	<item type="hidden" id="over_time"   name="合同延长日期" editable="false"/>
+	<item type="hidden" id="dc_mode"   name="借贷模式id"   editable="false"/>
+	<item type="hidden" id="dc_mode_name"   name="借贷模式" editable="false"/>   
+	<item type="hidden" id="currency_type"   name="货币类型"   editable="false"/>
+	<item type="text" id="currency_type_name"   name="货币类型" editable="false"/>
+	</group>
+	<group name="融资申请情况" >
+	<item type="grid" id="bond_id" source="30689" name="融资详细"/>
+   </group>
+	<group name="融券申请情况" scope="group">
+	<item type="grid" id="bond_id" source="30690" name="融券详细"/> 
+  </group>
+	<group name="信用产品" scope="group">
+	 <item type="grid" id="cust_id" source="305010203" name="信用产品"/>
+	<!--<item type="text" id="product_name" name="信用产品"  editable="false"/>
+	<item type="text" id="product_cyc" name="产品周期" editable="false"/>
+	<item type="text" id="cyc_unit" name="周期单位" editable="false"/>	
+	<item type="hidden" id="availability_time1" name="有效日期"  editable="false"/>
+	<item type="text" id="begin_time1" name="起始日期"   editable="false"/>
+	<item type="text" id="return_time1" name="到期日期"  editable="false"/>	
+	<item type="hidden" id="over_time1" name="延长日期" editable="false"/>	
+	-->
+	<item type="button" id="assistant"	name="更多详情" action="3050102" multiple="0"/> 
+	</group>
+	<group name="自然情况">
+	<item type="grid" id="cust_id" source="30422" name="自然情况"/>
+	<!--<item type="grid" id="cust_id" source="30424" name="交易情况"/>
+	<item type="grid" id="cust_id" source="30424" name="融资融券情况"/>-->
+	<!--<item type="text" id="trade_amt_all" name="总交易量"  editable="false"/>  
+	<item type="text" id="fee_amt" name="总佣金贡献"  editable="false"/>
+	<item type="text" id="velocity_rate" name="周转率"   editable="false"/>  
+	<item type="text" id="profit_loss" name="总盈亏"  editable="false"/>
+	<item type="text" id="one_a_stkcode" name="交易量最大的证券"  editable="false"/>  
+	<item type="hidden" id="match_one_amt" name="排名第一的证券成交额"  editable="false"/>
+	<item type="text" id="two_a_stkcode" name="交易量第二证券" editable="false"/>  
+	<item type="text" id="three_a_stkcode" name="交易量第三证券"  editable="false"/>
+	<item type="text" id="four_a_stkcode" name="交易量第四证券" editable="false"/>
+	<item type="text" id="five_a_stkcode" name="交易量第五证券" editable="false"/>
+	<item type="text" id="oper_style_name" name="操作风格" editable="false"/>  
+	<item type="text" id="financing_status_name" name="融资情况"  editable="false"/>
+	<item type="text" id="borrow_stock_status_name" name="融券情况"  editable="false"/>  
+	<item type="text" id="pc_status_name" name="平仓情况" editable="false"/>
+	<item type="text" id="if_blacklist_name" name="是否黑名单" editable="false"/>
+	<item type="text" id="law_status_name" name="诉讼情况" editable="false"/>
+	<item type="text" id="total_score" name="参考评级总分"  editable="false" default="0.0"/>	
+	<item type="text" id="total_score1" name="评估总分"  editable="false"/>	
+	<item type="select" id="credit_level_id" name="信用级别"  source="90000002"/>	
+	<item type="text" id="credit_level_name" name="信用级别"  editable="false"/>	
+	<item type="button" id="assistant"	name="评级详情" action="30422" multiple="0"/> -->
+	<item type="text" id="total_score" name="自然情况总分"  editable="false" default="0.0"/>	
+	</group>
+	<group name="交易情况" scope="group">
+    <item type="text" id="trade_amt_all" name="总交易量" editable="false"/>  
+	<item type="text" id="fee_amt" name="总佣金贡献"  editable="false"/>
+	<item type="text" id="velocity_rate" name="周转率" editable="false"/>  
+	<item type="text" id="profit_loss" name="总盈亏"  editable="false"/>
+	<item type="text" id="cust_fund_amt" name="资金余额"  editable="false"/>
+	<item type="text" id="asset_value" name="证券市值"  editable="false"/>	  
+	<item type="hidden" id="match_one_amt" name="排名第一的证券成交额"  editable="false"/>
+	<item type="text" id="one_a_stkcode" name="交易量最大证券"  editable="false"/>
+	<item type="text" id="two_a_stkcode" name="交易量第二证券" editable="false"/>  
+	<item type="text" id="three_a_stkcode" name="交易量第三证券"  editable="false"/>
+	<item type="text" id="four_a_stkcode" name="交易量第四证券" editable="false"/>
+	<item type="text" id="five_a_stkcode" name="交易量第五证券" editable="false"/>
+	</group>
+	<!--<group name="融资融券情况" scope="group">
+	<item type="text" id="financing_status_name" name="融资情况"  editable="false"/>
+	<item type="text" id="financing_amt" name="融资余额"  editable="false"/>		
+	<item type="text" id="fiancing_all_amt" name="融资累积" editable="false"/>
+
+	<item type="text" id="borrow_stock_status_name" name="融券情况"  editable="false"/>
+	<item type="text" id="borrow_stock_amt" name="融券市值"  editable="false"/>
+	<item type="text" id="borrow_stock_all_amt" name="融券累计"  editable="false"/>
+	<item type="text" id="rank" name="融券排名" editable="false"/>
+
+	<item type="text" id="borrow_stock_one" name="融券第一证券"  editable="false"/>
+	<item type="text" id="borrow_stock_two" name="融券第二证券" editable="false"/>  
+	<item type="text" id="borrow_stock_three" name="融券第三证券"  editable="false"/>
+	<item type="text" id="borrow_stock_four" name="融券第四证券" editable="false"/>
+	<item type="text" id="borrow_stock_five" name="融券第五证券" editable="false"/>
+	<item type="text" id="fef_amt" name="未结利息"  editable="false"/>	
+	<item type="text" id="fee_all_amt" name="利息累计"  editable="false"/>
+
+	<item type="text" id="oper_style_name" name="操作风格" editable="false"/>  
+	<item type="text" id="pc_status_name" name="平仓情况" editable="false"/>
+	<item type="text" id="if_blacklist_name" name="是否黑名单" editable="false"/>
+	<item type="text" id="law_status_name" name="诉讼情况" editable="false"/>
+  </group>-->
+   <group name="信用评估">    
+	<item type="text" id="valuation_score" name="评估总分" editable="false"/>	
+	<item type="text" id="credit_level_name" name="信用级别"   editable="false"/>	
+	<item type="text" id="credit_num" name="信用上限"  editable="false"/>
+	</group> 
+	<!--<item type="text" id="loan_interest_rate"   name="融资利息率(%)" editable="false"/>  
+	<item type="text" id="borrow_stock_interest_rate"   name="融券利息率(%)" editable="false"/>	
+	<item type="text" id="punish_interest_rate"   name="罚息率(%)" editable="false"/>
+	<item type="text" id="commission_charge"   name="手续费" editable="false"/>-->
+	<group name="合约参数">
+	<item type="hidden" id="credit_control_mode"   name="信用控制模式"   editable="false"/>
+	<item type="hidden" id="credit_control_mode_name"   name="信用控制模式" editable="false"/>
+	<item type="text" id="return_mode_name" name="还款模式"  editable="false"/>
+	<!--<item type="hidden" id="account_fee_mode"   name="计费模式"   editable="false"/>
+	<item type="text" id="account_fee_mode_name"   name="计费模式" editable="false"/>-->
+	<item type="hidden" id="pc_mode"   name="平仓顺序"   editable="false"/>
+	<item type="text" id="pc_mode_name"   name="平仓顺序" editable="false"/>	
+	<item type="hidden" id="borrow_stock_pg"   name="融券复权模式"   editable="false"/>
+	<item type="text" id="borrow_stock_pg_name"   name="融券复权模式" editable="false"/>
+	<item type="hidden" id="borrow_stock_hg"   name="融券红股模式"   editable="false"/>
+	<item type="hidden" id="borrow_stock_hg_name"   name="融券红股模式" editable="false"/>
+	<item type="hidden" id="borrow_stock_tspc"   name="融券退市平仓日期"   editable="false"/>
+	<item type="text" id="borrow_stock_tspc_name"   name="融券退市平仓日期" editable="false"/>
+	</group>
+	<group name="资产评估" scope="group">
+		<item type="hidden" id="cust_id" name="客户id" action="30631"/>
+		<item type="hidden" id="if_allow" name="是否允许"/>
+		<item type="hidden" id="if_allow_name" name="是否允许"  editable="false"/>
+		<item type="hidden" id="if_blacklist" name="是否黑名单"/>
+		<item type="hidden" id="if_blacklist_name" name="是否黑名单" editable="false"/>
+		<item type="text" id="total_asset" name="总资产"  editable="false"/>
+		<item type="text" id="fund_amt" name="资金余额"  editable="false"/>
+		<item type="text" id="stock_market_value" name="证券市值" editable="false"/>
+		<item type="text" id="stock_convert_amt" name="证券折算金额" editable="false"/>
+		<item type="hidden" id="fund_convert_amt" name="资金折算金额" editable="false"/>
+		<item type="text" id="gage_value" name="担保品折算价值" editable="false"/>
+		<item type="hidden" id="usable_num" name="评估信用上限" editable="false"/>
+		<item type="hidden" id="credit_num" name="信用上限" editable="false"/>
+		<item type="text" id="total_debt" name="总负债" editable="false"/>
+		<item type="text" id="financing_amt" name="实际融资总额" editable="false"/>
+		<item type="text" id="borrow_stock_amt" name="实际融券总额" editable="false"/>
+		<item type="text" id="fee_all" name="总费用" editable="false"/>
+		<item type="text" id="guan_rate" name="维持担保比例" editable="false"/>
+  </group>
+	<!--<item type="text" id="restrict_amt"   name="禁取资金" editable="false"/>-->
+	<group name="客户联系方式">
+	<item type="text" id="move_tel"   name="移动电话" editable="false"/>
+	<item type="text" id="fix_tel"   name="固定电话" editable="false"/>
+	<item type="text" id="meet_tel"   name="应急电话" editable="false"/>
+	<item type="text" id="family_address"   name="联系地址" editable="false"/>
+	<item type="text" id="ps_code"   name="邮政编码" editable="false"/>
+	<item type="text" id="fax"   name="传真" editable="false"/>
+	<item type="text" id="email"   name="电子邮件" editable="false"/>
+	<item type="text" id="find_mode_name"   name="主联系方式" editable="false"/>
+	<item type="hidden" id="find_mode"   name="主联系方式"   editable="false"/>
+	</group>
+	<group name="备注说明">
+		<item type="textarea" id="manage_opinion"   name="处理意见" editable="false"/>
+		<item type="textarea" id="approver_opinion"   name="审核意见" editable="false"/>
+		<item type="textarea" id="assessor_opinion"   name="审批意见" editable="false"/>
+		<item type="textarea" id="remark" name="备注说明" editable="false" />
+	</group>
+	<!--<item type="text" id="guarantee_rate"   name="担保率" editable="false"/>-->
+  </input> 
+  <output />
+</function>

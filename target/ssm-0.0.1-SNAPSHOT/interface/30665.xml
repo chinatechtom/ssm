@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="30665" name="新增客户解冻合同申请" >  
+  <input>
+	<item type="hidden" id="order_no" name="定单编号"/>
+	<item type="hidden" id="formerly_voucher_no" name="原始凭证号" />
+	<item type="hidden" id="cust_id" name="客户id"  nullable="false"/>	
+	<item type="hidden" id="bond_id" name="合同id"  nullable="false"/>
+	<item type="text" id ="cust_name" name="客户姓名" editable="false"/>
+		<item type="text" id ="cust_code" name="客户代码" editable="false"/>
+	<item type="textarea" id="remark1" name="备注说明"/>
+  </input>
+   <service type="procedure" id="p_no_frozen_bond_insert" process="811" style="1">
+	<param id="user_id" type="integer" way="in" /> 
+	<param id="order_no"/>
+	<param id="formerly_voucher_no"/>
+	<param type="integer" id="cust_id"/>
+	<param id="remark1"/>
+	<param type="integer" id="bond_id"/>
+  </service> 
+  <output >  
+  </output>
+</function>

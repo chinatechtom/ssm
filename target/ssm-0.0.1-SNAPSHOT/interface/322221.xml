@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="322221" name="客户柜员关联" >
+  <input>
+	<item type="text" id="cust_code" name="客户代码" />
+	<item type="text" id="user_code" name="柜员代码" />
+  </input>
+  <service type="procedure" id="p_cust_user_relation" process="911" style="77">
+	<param id="user_id" type="integer" way="in" />
+	<param id="cust_code" />
+	<param id="user_code"/>
+  </service>
+  <output>    
+    <column	type="number"	id="cust_id"			name="客户id"		display="false"						/>
+    <column type="string"	id="institution_name"	name="营业部名称"										/>
+    <column type="string"	id="cust_code"			name="客户代码"											/>
+	<column type="string"	id="cust_name"			name="客户名称"											/>
+    <column type="string"	id="user_code"			name="柜员代码"  										/>	
+    <column type="string"	id="user_name"			name="柜员名称"  										/>
+    <button type="add"		id="add"				name="增加关联"		action="32222101"	multiple="-1"	/>
+    <button type="edit"		id="edit"				name="删除关联"		action="32222102"	multiple="0"	/>    
+    
+   </output>
+  </function>

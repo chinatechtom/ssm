@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="32011" name="融券集中度" >
+  <input>	
+	<item type="text" id="product_code" name="证券代码" />
+	<item type="text" id="product_name" name="证券名称" />
+	<item type="select" id="market_code"  name="市场代码" source="039"/>
+  </input>
+  <service type="procedure" id="p_business_report_32011_query" process="911" style="77">
+	<param id="user_id" 	type="integer"	/>
+	<param id="product_code" 	/>
+	<param id="product_name" 	/>	
+	<param id="market_code" 	type="string"	way="in"/>
+  </service>
+  <output export="true" print="true">    
+  	<column type="string" id="c1"   name="证券代码"  />
+    <column type="string" id="c2"   name="证券名称"  />
+    <column type="string" id="c3"   name="市场名称"  />
+	<column type="number" id="c4"   name="融券卖出股数"  	precision="0"/>
+    <column type="number" id="c5"   name="流通股数"  precision="0"/>
+    <column type="number" id="c6"   name="集中度(%)"  	precision="10"/>
+    <column type="number" id="product_id"   name="股票ID"  display="false"/>
+	</output> 	
+   <assistant action="3201101">
+    <link  src="product_id"  target="product_id"/>
+   </assistant>
+</function>

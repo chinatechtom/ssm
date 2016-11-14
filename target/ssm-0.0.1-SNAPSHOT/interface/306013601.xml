@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="306013601" name="征信评级信息设置" >
+	<input>
+		<description>确定要提交征信评级吗?
+		</description>		
+		<item type="hidden" id="capital_account" 		name="信用资金账号"/>
+		<item type="hidden" id="year_yield" 			name="信用交易绝对收益率"/>
+		<item type="hidden" id="hs300_yield_year" 		name="沪深300年化收益率" />
+		<item type="hidden" id="credit_use_rate" 		name="日均授信额度使用率" />
+		<item type="hidden" id="credit_turn_over_rate" 	name="授信额度换手率"/>
+		<item type="hidden" id="total_rzrq_commission" 	name="信用交易佣金" />
+		<item type="hidden" id="itst_ctb" 				name="信用交易息费收入"/>
+		<item type="hidden" id="start_date" 			name="起始日期" />
+		<item type="hidden" id="end_date" 				name="结束日期"/>
+	</input>
+	<service type="procedure" id="p_set_cust_credit_info" implement="p_set_cust_credit_info306013601"  process="811" style="1"> 
+		<param id="user_id" 					type="integer" 	way="in"/>
+		<param id="capital_account" 			type="string" 	way="in"/>
+		<param id="year_yield" 					type="float" 	way="in"/>
+		<param id="hs300_yield_year" 			type="float" 	way="in"/>
+		<param id="credit_use_rate" 			type="float" 	way="in"/>
+		<param id="credit_turn_over_rate" 		type="float" 	way="in"/>
+		<param id="total_rzrq_commission" 		type="float" 	way="in"/>
+		<param id="itst_ctb" 					type="float" 	way="in"/>
+		<param id="start_date" 					type="string" 	way="in"/>
+		<param id="end_date" 					type="string" 	way="in"/>		
+	</service>
+	<output/>	
+</function>

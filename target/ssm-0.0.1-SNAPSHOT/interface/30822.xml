@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="gbk"?>
+<function id="30822" name="客户强制还款查询">
+	<input>
+		<item type="text" id="cust_id" 	 name="客户ID"/>
+		<item type="text" id="pc_amt" 	name="平仓金额"/>
+	</input>
+	<service type="procedure" id="p_pc_force_payback_value_query" implement="p_pc_force_payback_value_query30822" process="911" style="77">
+		<param id="user_id"			type="integer" way="in"/>
+    	<param id="cust_id"   		type="integer" way="in"/>  
+		<param id="pc_amt"			type="string"  way="in"/>  
+	</service>
+	<output>
+		<column type="number" id="force_payback_value"				name="强制还款" />
+	</output>
+</function>

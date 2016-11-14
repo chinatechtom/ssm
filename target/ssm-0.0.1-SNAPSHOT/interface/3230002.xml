@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3230002" name="对帐单" >
+  <input>	
+	<item type="text"   id="cust_id" 		name="客户ID" /> 
+  </input>
+  <service type="procedure" id="P10000" process="911" style="77">
+	<param id="user_id" 		type="integer"/>
+   	<param id="cust_id" 		type="integer"/>
+  </service>
+  <output >
+	<column type="number" id="cust_id"   			name="客户ID"    display="false"/>
+    <column type="string" id="cust_code"   			name="客户代码"  />
+    <column type="string" id="cust_name"   			name="客户姓名"  />   
+    <column type="number" id="credit_num"   		name="授信额度"  precision="2"/>
+    <column type="number" id="can_credit_num"       name="可用授信额度" precision="2" />
+    <column type="number" id="fund_amt"   			name="总资产"    precision="2"/>
+    <column type="number" id="debt_amt"   			name="总负债"    precision="2"/>
+    <column type="number" id="stock_value"   		name="担保证券市值"  precision="2"/>
+	<column type="number" id="stock_convert_value"  name="担保证券市值"  precision="2"/>
+    <column type="number" id="assure_rate"   		name="维持担保比例"  precision="4"/>
+    <column type="number" id="avail_assure_val_rate"  name="初始保证金比例"  precision="3" />
+    <column type="number" id="can_fund_value"         name="可取资金"  precision="2"/>
+	<column type="string" id="credit_order_no"   	  name="授信额度合约编号"  />
+	<column type="string" id="credit_level_name"   	  name="信用级别名称"  />
+	<column type="string" id="return_time"   	      name="截止日期"  />
+	<column type="string" id="product_name_fin"   	  name="融资信用产品"  />
+	<column type="string" id="product_name_bs"   	  name="融券信用产品"  />
+	<column type="number" id="fix_qty"   		      name="融资上限"  precision="2"/>
+	<column type="number" id="application_borrow_qty" name="融券上限"  precision="2"/>
+	<column type="number" id="pure_financing"   	  name="已使用融资额度"  precision="2"/>
+	<column type="number" id="remain_fix_qty"   	  name="剩余融资额度"    precision="2"/>
+	<column type="number" id="financing_value"   	  name="负债资金"         precision="2"/>
+	<column type="number" id="bs_value"               name="已使用融券额度"  precision="2"/>
+	<column type="number" id="remain_bs_qty"          name="剩余融券额度"    precision="2"/>
+	<column type="number" id="money_total"   		  name="总金额"      precision="2"/>
+	<column type="number" id="gua_fund_amt"           name="现金保证金"  precision="2"/>
+	<column type="number" id="crdt_sell_frzn_amt"     name="融券卖出冻结款"  precision="2"/>
+	<column type="number" id="intr_fee"               name="融资融券利费"    precision="2"/>
+	<column type="number" id="other_fee"              name="其他费用"    precision="2"/>
+  </output>
+</function>

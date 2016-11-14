@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="80420126" name="平仓报告直接还款" >
+	<description>确定要按平仓报告进行直接还款?</description>
+	<input>
+		<item type="hidden"	id="record_id"	name="record_id"/> 
+	</input>
+    <service type="system" id="80420126"  process="888" style="1">
+		<param type="string" id="function_id" default="81420126"/>
+		<param type="string" id="function_id" default="83420126"/>
+    </service>
+    <output/>	
+</function>

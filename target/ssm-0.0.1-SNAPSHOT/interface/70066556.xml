@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70066556" name="延期合约批量打印" >
+	<input print="70066456.jsp">		
+		<item type="hidden" id="order_no"     name="合约编号"/> 
+		<item type="hidden" id="order_type"     name="合约类型"/> 
+		<item type="hidden" id="cust_id"     name="客户id" action="70010102,70001888"/>
+		<item type="hidden"	id="company"   name="公司名称" editable="false" />
+		<item type="hidden" id="date" 			name="打印日期"/><!--从1888.xml获得的打印日期-->
+		<item type="hidden" id="user_code" 		name="打印柜员代码"/><!--从1888.xml获得的打印柜员代码-->
+		<item type="hidden" id="user_name" 		name="打印柜员名称"/><!--从1888.xml获得的打印柜员名称-->
+	 <group name="客户基本信息">
+		<item type="text" id="institution_name"     name="营业部名称" editable="false"/> 
+		<item type="text" id="institution_code"     name="营业部代码" editable="false"/> 
+		<item type="text" id="cust_name"     name="客户名称" editable="false"/> 
+		<item type="text" id="cust_code"     name="客户资金账号" editable="false"/> 
+		<item type="text" id="stock_holder_sh"  name="沪A证券帐户" editable="false"/>
+		<item type="text" id="stock_holder_sz"  name="深A证券帐户" editable="false"/>
+	 </group>
+	 <group name="合约详情">
+		<item type="grid" id="orders"     name="合约详情" source="70066456"/>
+		<item type="text" id="hg_rate"  name="购回价格(每100元年收益)" editable="false"/>
+		<item type="text" id="fix_rate"  name="固定交易费用比例(%)" editable="false"/>
+		<item type="text" id="penalty_rate"  name="违约金比率(日利率%)" editable="false"/>
+	</group>
+	</input>
+</function>

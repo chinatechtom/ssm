@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="36110025" name="担保品统计表" >
+<input print="36110025.jsp">
+   <item type="hidden"   id="institution_id" name="营业部名称" />
+   <item type="hidden"   id="market_code"    name="市场代码"   />
+   <item type="hidden"   id="product_code"   name="证券代码" />
+   <item type="text"   id="year"        name="年份选择" />
+   <item type="text"   id="month"       name="月份选择" />
+   <item type="text" id="print_date"   name="时间" />
+   <group name="担保品统计表" >
+    <item type="grid" id="institution_id,market_code,product_code,year,month" name="" source="36000025"/>
+  </group>
+</input>
+</function>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="GBK" ?>
+<function id="80413102" name="取客户股东帐号资料">
+  <input>
+  	<item type="text" id="scust_no" name="客户号"/>
+  </input>
+  <service type="drtp" id="413102" process="711" style="77">
+	  <param type="string" id="scust_no"/>
+  </service>
+  <output target="81413102">
+    <column name="客户代码"   id="cust_code"    type="string" field="scust_no"     />
+    <column name="账户代码"   id="acc_code"     type="string" field="sholder_ac_no"/>
+    <column name="账户类型"   id="acc_type"     type="string" field="sholder_type"  /> 
+    <column name="市场"       id="acc_sort"     type="string" field="smarket_code"   /> 
+    <column name="客户姓名"   id="acc_name"     type="string" field="sname"        />
+    <column name="证件类型"   id="cert_type"    type="string" field="lcert_code"   />    
+    <column name="证件号码"   id="cert_no"      type="string" field="scert_no"     />
+    <column name="主登录标志" id="mostly_mark"  type="string" field="smain_flag"     /> 
+    <column name="账户状态"   id="acc_status"   type="string" field="sstatus1"     /> 
+    <column name="开户日期"   id="open_date"    type="string" field="sdate1"       /> 
+    <column name="开户人员"   id="open_oper"    type="string" field="sopen_emp"    /> 
+  </output>
+</function>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="27050119" name="单客户净资产周转率" >
+     <input>
+      <item type="select"  id="institution_id"        name="营业部名称" source="95000008"/> 
+      <item type="text"  id="cust_num"        name="客户数量*" default="1000"/>  
+       <item type="date"  id="start_date"        name="开始日期*" default="last"/> 
+       <item type="date"  id="end_date"        name="结束日期*" default="now"/>         
+     </input>
+  <service type="procedure" id="P27050119"  process="911" style="77">
+      <param id="user_id"               type="integer" way="in"/> 
+       <param id="institution_id"      type="integer" way="in"/> 
+       <param id="cust_num"      type="integer" way="in"/> 
+              <param id="start_date"      type="string" way="in"/> 
+                     <param id="end_date"      type="string" way="in"/>                     
+   </service>
+ <output print="true">
+        <column type="string" id="institution_name"   name="营业部名称"/>   
+        <column type="string" id="cust_code" name="客户号" />        
+        <column type="string" id="cust_name"   name="客户姓名"/>
+           <column type="number" id="buy_amt" name="普通买入金额" precision="2" />        
+           <column type="number" id="sell_amt"   name="普通卖出金额" precision="2" />  
+             <column type="number" id="fin_amt"   name="融资买入金额" precision="2" />               
+           <column type="number" id="bs_amt" name="融券卖出金额" precision="2"/>        
+           <column type="number" id="pay_amt"   name="卖券还款金额" precision="2" />         
+                 <column type="number" id="buy_stock_amt" name="买券还券金额" precision="2" />   
+                  <column type="number" id="rzrq_trade_amt"   name="融资融券交易量" precision="2" />   
+                 <column type="number" id="trade_amt"   name="总交易量" precision="2" />  
+                 <column type="number" id="rzrq_trade_amt_rate"   name="融资融券交易量占比" precision="6" />    
+                 <column type="number" id="comm_fee"   name="佣金收入" precision="2" />  
+                 <column type="number" id="asset_amt"   name="平均净资产" precision="2" />  
+                 <column type="number" id="rate"   name="净资产周转率" precision="6" />            
+</output>
+</function>  

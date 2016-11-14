@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="30632050" name="授信申请" >
+  <input>
+	<description>请用授信额度申请与调整进行额度的申请!
+	</description>
+  </input>
+</function>

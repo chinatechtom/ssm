@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="GBK" ?>
+<function id="70770006" name="查询导入文件">
+	<input></input>
+	<service type="procedure" id="P70770006" process="922" style="77">
+		<param id="user_id"			type="integer"/>
+	</service>
+	<output	target="7077000601">
+		<column name="导入方式"			type="string"	id="sstatus0"/>   
+		<column name="路径"				type="string"	id="vsvarstr0"/>   
+		<column name="文件名"			type="string"	id="saddr"/>  
+		<column name="数据库表名"		type="string"	id="saddr2"/>	
+		<column name="数据格式名"		type="string"	id="snote"/>   
+		<column name="机构代码"			type="string"	id="sstation1"	display="false"/>   
+		<column name="分支号"			type="string"	id="sdate3"		display="false"/>  
+		<column name="柜员号"			type="string"	id="scheck_emp"	display="false"/>
+		<column name="柜员密码"			type="string"	id="semp_pwd"	display="false"/>
+	</output>
+</function>

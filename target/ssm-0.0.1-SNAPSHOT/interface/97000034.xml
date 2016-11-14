@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="97000034" name="生成购回价格(每100元年收益)" >
+	<input/>
+	<service type="procedure" id="P97000034"  process="922" style="77">
+		<param id="user_id" type="integer"/>
+		<param type="string" id="if_hg_rate"/>	
+		<param type="double" id="first_amt"/>
+		<param type="integer" id="days"/>
+	</service>
+	<output export="true">  
+		<column type="number" id="hg_rate"  name="购回价格(每100元年收益)" precision="4"/>
+		<column type="string" id="if_editable"  name="控制可编辑"/>
+	</output>
+</function>

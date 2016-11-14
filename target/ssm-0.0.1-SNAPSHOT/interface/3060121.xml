@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3060121" name="征信系统评级因子关联查询" >  
+	<input>
+		<item type="select" id="ratingfactor_sort" name="管理系统评级因子" source="95000031"/>
+		<item type="select" id="ratingfactor_sort_fk" name="征信系统评级因子" source="95000032" />
+	</input>
+	<service type="procedure" id="p_ratingfactor_fk_conn_query" process="911" style="77">
+		<param id="user_id" type="integer" way="in" /> 
+		<param id="ratingfactor_sort" type="integer" way="in"/>
+		<param id="ratingfactor_sort_fk" type="integer" way="in"/>
+	</service> 
+	<output>
+		<column type="string"	id="cust_type" 			name="客户类型"/>
+		<column type="number"	id="ratingfactor_sort" name="管理系统评级因子ID"	display="false"/>
+		<column type="number"	id="ratingfactor_sort_fk" name="征信系统评级因子ID"	display="false"/>
+		<column type="string"	id="ratingfactor_name" name="管理系统评级因子"/>
+		<column type="string"	id="ratingfactor_name_fk" name="征信系统评级因子"/>
+<!--
+		<button type="add"		id="add" 	name="增加评级因子关联"	action="306012101"	multiple="-1"/>
+		<button type="delete"	id="delete" name="删除评级因子关联"	action="306012102"	multiple="0"/>
+-->
+	</output>
+</function>

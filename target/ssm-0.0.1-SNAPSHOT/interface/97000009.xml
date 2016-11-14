@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="97000009" name="购回期限查询" >
+	<input>	
+	</input>
+	<service type="procedure" id="P97000009" process="922" style="77">
+		<param type="string" id="hg_code"/>
+	</service>
+	<output>
+		<!--<column type="number" id="days"  name="购回期限"/>-->
+		<column type="string" id="hg_code2"  name="购回代码"/>
+  </output>
+</function>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70070716" name="邮件模板查询">
+	<input>
+		<item type="select" 	id="cont_meth" 		name="信息通知方式"  source="331" nullable="false" />
+		<item type="select" 	id="msg_type" 		name="信息类型"  source="730" nullable="false" />		
+	</input>
+	<service type="procedure" id="P70070716" process="922" style="77">
+		<param id="user_id"		type="integer"/>
+		<param id="cont_meth"	type="string"/>
+		<param id="msg_type"	type="string"/>		
+	</service>
+	<output export="true">
+		<column type="string" 	id="cont_meth"	name="信息通知方式1"	display="false"/>
+		<column type="string" 	id="cont_meth_name"	name="信息通知方式"/>
+    	<column type="string" 	id="msg_type"	name="信息类型1"		display="false"/>
+		<column type="string" 	id="msg_type_name"	name="信息类型"/>
+		<column type="number" 	id="row"		name="行号"	/>
+		<column type="string" 	id="content"	name="模板内容"	/>
+    	<button type="add"		id="add" 		  name="新增模板内容"    action="70070717"  multiple="-1"/>
+		<button type="edit"		  id="edit" 		name="修改模板内容"    action="70070718"  multiple="0"/>
+		<button type="delete"		id="delete"   name="模板冗余数据清理"    action="70070752"  multiple="-1"/>
+	</output>
+</function>
+		
+		

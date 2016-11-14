@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="27030113" name="营业部客户开销户统计" >
+	<input>	
+		<item type="select" id="insitution_id"	name="营业部名称" source="95000008"/>
+		<item type="date"	id="begin_date"		name="开始日期" nullable="false"/>
+		<item type="date"	id="end_date"		name="结束日期" nullable="false"/>
+	</input>
+	<service type="procedure" id="p27030113" process="911" style="77">
+		<param id="user_id"			type="integer"	/>
+		<param id="insitution_id"	type="integer"	/>
+		<param id="begin_date"		type="string"	/>
+		<param id="end_date"		type="string"	/>
+	</service>
+	<output export="true">  
+		<column type="string" id="row_no"   		name="序号"  />
+		<column type="string" id="institution_id"   name="营业部ID"		display="false" />
+		<column type="string" id="institution_code"	name="营业部分支号"	/> 
+		<column type="string" id="institution_name"	name="营业部"	/>
+		<group name="期初开户数量">
+			<column type="string" id="begin_open_personal"		name="个人"	/>
+			<column type="string" id="begin_open_institution"	name="机构"	/>
+			<column type="string" id="begin_open_total"			name="合计"	/>
+		</group>		
+		<group name="本期新开客户数量">
+			<column type="string" id="current_open_personal"	name="个人"	/>
+			<column type="string" id="current_open_institution"	name="机构"	/>
+			<column type="string" id="current_open_total"		name="合计"	/>
+		</group>		
+		<group name="本期新开客户数公司占比">
+			<column type="number" id="current_personal_company_percent"		name="个人"		precision="4"/>
+			<column type="number" id="current_institution_company_percent"	name="机构"		precision="4"/>
+		</group>		
+		<group name="本期销户客户数量">
+			<column type="string" id="current_close_personal"		name="个人"	/>
+			<column type="string" id="current_close_institution"	name="机构"	/>
+			<column type="string" id="current_close_total"			name="合计"	/>
+		</group>		
+		<group name="期末累计开户数量">
+			<column type="string" id="end_open_personal"	name="个人"	/>
+			<column type="string" id="end_open_institution"	name="机构"	/>
+			<column type="string" id="end_open_total"		name="合计"	/>
+		</group>		
+		<group name="期末累计开户数量公司占比">
+			<column type="number" id="end_personal_company_percent"		name="个人"		precision="4"/>
+			<column type="number" id="end_institution_company_percent"	name="机构"		precision="4"/>
+		</group>
+	</output>
+</function>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3212903" name="融资融券强制平仓情况" >
+   <input>
+ 		<item type="text"   id="institution_id" 		name="客户id" />
+   </input>
+   <service type="procedure" id="p_information_report_32128_pc_query" process="911" style="77">
+   		<param id="user_id" 			type="integer"/>
+   		<param id="institution_id" 		type="string"/>
+   </service>
+   <output>
+  		
+  		<column type="string" id="c1"   name="客户证券账户名称"  />
+   		<column type="string" id="c2"   name="标的证券"  />
+   		<column type="string" id="c3"   name="交易金额"  />
+   		<column type="string" id="c4"   name="备注（融资或融券)"  />
+   	</output>
+   	</function>

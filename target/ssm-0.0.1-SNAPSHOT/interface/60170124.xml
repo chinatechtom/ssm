@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="60170124" name="股票质押资金存取" >
+  <input>
+	<item type="text" id="fund_no" name="资金编号"/>
+	<item type="text" id="fund_name" name="资金名称"/>
+	<item type="select" id="business_type" name="业务类型" source="914"/>
+	<item type="date" id="begin_date" name="开始日期"/>
+	<item type="date" id="end_date" name="结束日期"/>
+  </input>
+  <service type="procedure" id="P60170124" process="933" style="77">
+	<param id="user_id" type="integer"/>
+	<param id="fund_no" type="string"/>
+	<param id="fund_name" type="string"/>
+	<param id="business_type" type="string"/>
+	<param id="begin_date" type="string"/>
+	<param id="end_date" type="string"/>
+  </service>
+  <output export="true">  
+  	<column type="string" id="fund_no"   name="资金编号" />
+    <column type="string" id="fund_name"   name="资金名称"/>
+    <column type="string" id="serial_no"   name="流水编号" />
+	<column type="string" id="occur_date"   name="发生日期" />
+	<column type="string" id="business_type"   name="业务类型" display="false"/>
+	<column type="string" id="business_type_name"   name="业务类型" />
+	<column type="number" id="occur_amt"   name="发生金额" precision="2"/>
+	<column type="number" id="balance"   name="余额" precision="2"/>
+	<column type="string" id="sbond_no"   name="协议书编号" />
+	<column type="hidden" id="user_code"   name="操作人员" display="false"/>
+    <column type="string" id="user_name"   name="操作人员"/>
+	<column type="string" id="set_date"   name="录入日期" />
+	<column type="string" id="remark"   name="备注" />
+	<button type="add" id="add" name="股票质押资金存取" action="60170125" multiple="-1"/>
+	</output>
+</function>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="97000007" name="生成大写中文" >
+	<input/>
+	<service type="procedure" id="P97000007"  process="922" style="77">
+		<param type="integer" id="user_id"/>	
+		<param type="integer" id="hg_vol"/>
+		<param type="double"  id="first_amt"/>
+		<param type="integer" id="days"/>
+		<param type="string" id="engage_trade_date"/>
+		<param type="string" id="ywlx_code"/>
+		<param type="double" id="zt_hl"/>
+		<param type="double" id="zt_hg"/>
+		<param type="double" id="rz_hl"/>
+		<param type="double" id="rz_hg"/>
+		<param type="double" id="hg_rate"/>
+		<param type="string" id="entrust_date"/>
+	</service>
+	<output export="true">  
+		<column type="number" id="first_amt"   name="初始交易金额小写" precision="0"/>
+		<column type="number" id="second_amt"  name="购回交易金额小写" precision="0"/>
+		<column type="string" id="first_amt_big"  name="购回交易金额大写"/>
+		<column type="string" id="second_amt_big"  name="购回交易金额大写"/>
+		<column type="string" id="end_date"  name="交易到期日"/>
+		<column type="number" id="hl_num"  name="累计应付现金红利"/>
+		<column type="number" id="hg_vol"  name="购回数量"/>
+	</output>
+</function>

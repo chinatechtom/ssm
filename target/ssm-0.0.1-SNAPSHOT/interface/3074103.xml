@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="gbk" ?>
+	<function id="3074103" name="违约者姓名及证券账户查询">
+	<input>
+		<item type="hidden"	id="wyscdm"	name="市场"/>
+		<item type="hidden"	id="wysfzh"	name="身份证号"	/>
+	</input>
+	<service type="procedure" id="p_credit_violation_info"  process="911" style="1"> 
+		<param id="user_id"		type="integer" way="in"/>
+		<param id="wyscdm"		type="string"  way="in"/>
+		<param id="wysfzh"		type="string"  way="in"/>
+	</service>
+	<output>
+		<column type="string" id="wygddm"	name="违约者证券账户"/>
+		<column type="string" id="wygdxm"	name="违约者姓名"/>
+	</output>
+</function>

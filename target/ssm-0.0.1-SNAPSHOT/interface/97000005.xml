@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="97000005" name="回购参数查询" >
+  <input/>
+  <service type="procedure" id="P97000005" process="922" style="77">
+	<param id="user_id" type="integer"/>
+  </service>
+  <output>  
+  	<column type="string" id="company"		name="公司名称" />
+    <column type="number" id="para3000"		name="回购专户资金账号"/>	
+  	<column type="number" id="para3001"		name="回购专户沪A证券账号"/>
+    <column type="string" id="para3002"		name="回购专户深A个人证券账号"/>
+    <column type="string" id="para3003"		name="回购专户沪A证券账号名称"/>
+	<column type="string" id="para3004"		name="回购专户深A证券账号名称"/>
+	<column type="string" id="para3005"		name="回购专户沪A席位"/>
+	<column type="string" id="para3006"		name="回购专户深A席位"/>
+	<column type="string" id="para3007"		name="回购专户深A机构证券账号"/>
+	<column type="number" id="para3010"		name="平仓担保率(%)"/>
+	<column type="number" id="para3011"		name="预警担保率(%)"/>
+	<column type="string" id="system_date"	name="系统日期"/>
+	<column type="number" id="para3016"		name="违约金比率(日利率%)"/>
+	<column type="number" id="para3034"		name="固定交易费用比例(%)"/>
+    </output>
+</function>

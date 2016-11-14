@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="gbk"?>
+<function id="70010776" name="集中审核-查看审核意见">
+  <input>    
+	<item type="hidden"   id="order_id"			name="合约id"   editable="false"/>
+	<item type="hidden"   id="order_no"			name="合约编号" editable="false"/>
+	<item type="select"   id="order_type"	    name="合约类型" editable="false" source="97000004"/>
+	<item type="select"   id="order_status"		name="合约状态" editable="false" source="024"/> 
+	<item type="select"   id="manage_status"	name="处理状态" editable="false" source="062"/> 	
+	<group name="集中审核意见">
+		<item type="grid" 	  id="order_id" 	source="70010777" name="集中审核意见"/>	
+	</group>
+  </input>
+  <output/>
+</function>

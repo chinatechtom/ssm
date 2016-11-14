@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="80413105" name="取客户信用资料">
+  <input>
+    <item type="hidden" id="institution_id" name="机构id"/>
+  	<item type="hidden" id="cust_id"        name="客户id"/>
+  	<item type="text"   id="cust_code"      name="客户代码"/>
+  	<item type="text"   id="cust_name"      name="客户姓名"/>
+  	<item type="text"   id="cert_no"        name="证件号码"/>
+  </input>
+  <service type="procedure" id="p_cust_credit_info_query_syn" implement="p_cust_credit_info_query_syn80413105"  process="911" style="77">
+    <param type="integer"   id="user_id"/>
+	<param type="integer"   id="institution_id"/>
+	<param type="integer"   id="cust_id"/>
+	<param type="string"    id="cust_code"/>
+	<param type="string"    id="cust_name"/>
+	<param type="string"    id="cert_no"/>
+  </service>
+  <output>
+    <column name="有效数据项"	       id="avai_data_item"      type="string"   display="false"/>    
+    <column name="客户代码"	       id="cust_code"           type="string"   />   
+    <column name="营业部代码"	   id="institution_code"    type="string"   />    
+    <column name="信用级别代码"	   id="credit_level_code"   type="string"   />    
+    <column name="平仓标志1"	       id="pc_mode"             type="string"   display="false"/>  
+	<column name="平仓标志"	       id="pc_mode_name"        type="string"   />  
+    <column name="信用上限使用模式1"  id="credit_usemode"      type="string"   display="false"/> 
+	<column name="信用上限使用模式"  id="credit_usemode_name"  type="string"   />  
+    <column name="是否黑名单1"	   id="if_blacklist"        type="string"	display="false"/>  
+	<column name="是否黑名单"	       id="if_blacklist_name"   type="string"	/>  
+    <column name="还款模式1"	       id="hk_mode"             type="string"   display="false"/> 
+	<column name="还款模式"	       id="hk_mode_name"        type="string"   /> 
+    <column name="合同编号"	       id="bond_no"             type="string"   />    
+    <column name="合同状态1"	       id="bond_status"         type="string"   display="false"/> 
+	<column name="合同状态"	       id="bond_satus_name"    type="string"   />
+	<column name="起始日期"	       id="begin_date"    type="string"   />
+	<column name="终止日期"	       id="end_date"    type="string"   />
+	<column name="融资产品"	       id="product_code1"    type="string"   />
+	<column name="融券产品"	       id="product_code2"    type="string"   />
+	<column name="信用上限"	       id="credit_num2"    type="number"   precision="2"/>
+	<column name="授信额度"       id="credit_num"          type="number"   precision="2" /> 
+	<column name="融资上限"	       id="financing_amt"    type="number"   precision="2"/>
+	<column name="融券上限"	       id="bstock_amt"    type="number"  precision="2" />
+	<column type="string" id="if_risk"              name="是否风险客户"   />
+	<column type="string" id="pvt_ctl_stauts"       name="私用额度私用额度权限状态"/>
+	<column type="number" id="pvt_fin_lmt_modulus"  name="私用转融资比例系数"			precision="2"/>
+	<column type="number" id="pvt_bs_lmt_modulus"   name="私用转融券比例系数"			precision="2"/>
+	<column type="number" id="pvt_crd_lmt_modulus"  name="私用转融通授信比例系数"		precision="2"/>
+	<column type="string" id="pvt_fin_product_code" name="私用转融资信用产品代码" />
+	<column type="string" id="pvt_bs_product_code"  name="私用转融券信用产品代码" />
+    <button type="edit" id="edit" name="同步" action="81413105"  multiple="0"/>     
+  </output>
+</function>

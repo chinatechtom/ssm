@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70044560" name="子合约详细" >
+	<input>	
+        <item type="hidden" id="order_id"     name="合约ID"/>
+		<item type="hidden" id="order_no"     name="合约no"/>
+	</input>
+	<service type="procedure" id="P70044560" process="922" style="77">
+		<param type="integer" id="user_id" way="in" />
+		<param type="integer" id="order_id" way="in" />
+		<param type="string"  id="order_no" way="in"/>
+	</service>
+	<output>
+        <column type="string" id="institution_code"   name="营业部代码"/>	
+		<column type="string" id="institution_name"   name="营业部名称"/>
+		<column type="string" id="cust_code"   name="客户代码"/>	
+		<column type="string" id="cust_name"   name="客户名称"/>
+		<column type="string" id="order_no"   name="合约编号"/>	
+		<column type="string" id="bond_no"   name="合同编号"/>	
+		<column type="string" id="market_code"   name="市场代码"/>
+		<column type="string" id="report_status"   name="客户使用信息申报状态"/>
+		<column type="string" id="remark"   name="备注"/>		
+	</output>
+</function>

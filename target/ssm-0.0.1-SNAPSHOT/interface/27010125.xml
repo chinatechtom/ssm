@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="27010125" name="融券业务额度汇总统计表" >
+     <input>
+        <item type="date"  id="in_date"        name="日期选择" />  
+     </input>
+  <service type="procedure" id="P27010125" implement="P2701012527010125" process="955" style="77">
+      <param id="user_id"               type="integer" way="in"/>        
+	  <param id="in_date"               type="string"  way="in"/> 
+   </service>
+ <output print="true">
+        <column type="number" id="project_id"   name="序号"/>
+        <group name="项目">
+            <column type="string" id="product_code" name="证券代码"/>        
+            <column type="string" id="product_name"   name="证券名称"/>
+        </group>
+		<group name="可融出证券额度">
+			<group name="融券账户余额">
+				<column type="number" id="now_vol"     name="数量" precision="0" />        
+				<column type="number" id="now_value"   name="市值" precision="2" />
+			</group>
+		</group>
+		<group name="已融出证券">
+            <group name="已融出证券">
+				<column type="number" id="sell_vol"     name="数量" precision="0"/>        
+				<column type="number" id="sell_value"   name="市值" precision="2"/>
+            </group>    
+			<column type="number" id="sell_rate"    name="融出证券使用率" precision="6" />	
+        </group>        
+</output>
+</function>  

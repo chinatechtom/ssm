@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70066946" name="合约详情" >
+	<input print="70066946.jsp">
+		<item type="hidden" id="order_id"     name="合约ID" action="70044646"/>
+		<item type="text" 	id ="institution_name" name="营业部名称" editable="false"/>
+		<item type="text" 	id ="institution_code" name="营业部代码" editable="false"/>
+		<item type="text" 	id ="cust_name" name="客户姓名" editable="false"/>
+		<item type="text" 	id ="full_name" name="客户全称" editable="false"/>
+		<item type="text" 	id ="cust_code" name="客户代码" editable="false"/> 	
+		<item type="text" id="sbond_no" name="交易协议书编号" editable="false"/>
+		<item type="text" id="related_sbond_no" name="主关联交易协议书编号" editable="false"/>
+		<item type="text" id ="hg_code" name="初始交易代码" editable="false"/>
+		<item type="select" id ="market_code" name="市场代码" editable="false" source="039"/>
+		<item type="text" id ="product_code" name="标的证券代码" editable="false"/>
+		<item type="text" id="product_name"   name="标的证券名称" editable="false"/>
+		<item type="text" id="product_type"   name="标的证券种类" editable="false"/>
+		<item type="text" id ="hg_num" name="回购证券数量" editable="false" integer="true"/>
+		<item type="textarea" id ="hg_num_big" name="标的证券数量大写" editable="false" integer="true"/>
+		<item type="date" id="engage_trade_date"  name="初始交易日期" 	default="last" editable="false"	/>
+		<item type="text" id ="days" name="购回期限(天数)" editable="false" integer="true"/>
+		<item type="date" id="bb_date" name="购回交易日期" 	default="last" editable="false"	/>
+		<item type="text" id ="first_amt" name="初始交易金额" editable="false" number="true"/>
+		<item type="textarea" id ="first_amt_big" name="初始交易金额大写" editable="false" number="true"/>
+		<item type="text" id ="second_amt" name="购回交易金额" editable="false" number="true"/>
+		<item type="textarea" id ="second_amt_big" name="购回交易金额大写" editable="false" number="true"/>
+		<item type="hidden" id="abc"	name="杂项ID"    default="1"    action="97000005"/>
+		<item type="hidden"	id="company"   name="公司名称" editable="false" />
+		<item type="hidden" id="para3000"  name="杂项3000" editable="false"/>
+		<item type="hidden" id="para3001"  name="杂项3001" editable="false"/>
+		<item type="hidden" id="para3002"  name="杂项3002" editable="false"/>
+		<item type="hidden" id="para3003"  name="杂项3003" editable="false"/>
+		<item type="hidden" id="para3004"  name="杂项3004" editable="false"/>
+		<item type="hidden" id="para3005"  name="杂项3005" editable="false"/>
+		<item type="hidden" id="para3006"  name="杂项3006" editable="false"/>
+		<item type="hidden" id="system_date"  name="系统日期" editable="false"/>
+		<item type="hidden" id="cust_id"	name="cust_id"      action="70010102"/>
+		<item type="hidden" id="stock_holder_sh"  name="沪A证券帐户" editable="false"/>
+		<item type="hidden" id="stock_holder_sz"  name="深A证券帐户" editable="false"/>
+		<item type="hidden" id="seat_code_sh"  name="沪A席位代码" editable="false"/>
+		<item type="hidden" id="seat_code_sz"  name="深A席位代码" editable="false"/>
+	</input>
+</function>

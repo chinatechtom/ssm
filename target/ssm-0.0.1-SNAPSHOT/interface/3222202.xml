@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3222202" name="删除邮件组" >
+	<description>确实要删除该关联吗？</description>	
+	<input>
+		<item type="hidden"  id="user_id"      name="用户ID"	/> 
+		<item type="hidden"  id="msg_type"     name="邮件类型"	/> 
+		<item type="hidden"  id="group_id"     name="组ID"		/> 
+	</input>
+	<service type="procedure" id="p_msg_type_group_del" process="811" style="1">
+		<param id="user_id"		type="integer"	way="in"	/>    
+		<param id="msg_type"	type="string"	way="in"	/> 
+		<param id="group_id"	type="integer"	way="in"	/>
+	</service>
+</function>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70770008" name="中征码录入-查询" >
+	<input>
+		<item type="select" id="insitution_id" name="营业部名称" source="97000001"/>
+		<item type="text" id="cust_code" name="客户代码"/>
+		<item type="text" id="cust_name" name="客户姓名"/>
+		<item type="select" id="cust_type" name="客户类别" source="027" editable="false" default="1"/>
+		<item type="hidden" id="operation_type" name="操作类型" default="0"/> <!--0:新增，1:修改-->
+		<group name="分页查询" page="true">
+			<item type="text" id="page_num" name="页码" integer="true" default="1"/>
+			<item type="select" id="rows_num" name="每页行数" integer="true" source="95000012" nullable="false"/>
+		</group>
+	</input>
+	<service type="procedure" id="P70770008" implement="P70770008_70770008" process="922" style="77">
+		<param id="user_id" type="integer"/>
+		<param id="insitution_id" type="integer"/>	
+		<param id="cust_code" type="string"/>
+		<param id="cust_name" type="string"/>
+		<param id="cust_type" type="string"/>
+		<param id="operation_type" type="string"/>
+		<param id="page_num"  type="integer" way="in"/>
+		<param id="rows_num"  type="integer" way="in"/>
+	</service>
+	<output export="true">
+		<column type="number" id="institution_id" name="营业部id"/>
+		<column type="string" id="institution_name" name="营业部名称"/>
+		<column type="number" id="cust_id"    name="客户号"  display="false"/>
+		<column type="string" id="cust_code"  name="客户代码"/>
+		<column type="string" id="cust_name"  name="客户姓名"/>
+		<column type="string" id="full_name"  name="客户全称"/>
+		<column type="string" id="loancard_code"   name="中征码"/>
+		<column type="string" id="national_tax_no"  name="国税号"/>
+		<column type="string" id="cust_type"   name="客户类型"/>
+		<column type="string" id="cust_type_name"   name="客户类型"/>
+		<column type="string" id="cust_sort_name"  name="客户类别"/>
+		<column type="string" id="cert_type_name"  name="证件类型"/>
+		<column type="string" id="cert_no"    name="证件号码"/>
+		<column type="string" id="org_code"   name="组织机构代码"/>
+		<column type="string" id="legal_man_name" name="法定代表人姓名"/>
+		<column type="string" id="legal_man_type" name="法定代表人性质"/>
+		<button type="add" id="edit" name="录入中征码" action="70770009" multiple="0"/>
+	</output>
+</function>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="gbk"?>
+<function id="30127" name="标准合同默认参数查询" >  
+	<input>
+	</input>
+	<service type="procedure" id="p_default_mixedconfig_query" implement="p_default_mixedconfig_query30127" process="911" style="77">
+		<param id="user_id" type="integer"/>
+	</service>
+	<output>
+		<column type="string" id="currency"					name="货币类型"/>
+		<column type="string" id="currency_name"				name="货币类型"/>
+		<column type="integer" id="app_years"				name="申请年数"/>
+		<column type="string" id="pc_mode_name"				name="平仓模式"/>
+		<column type="string" id="pc_mode"					name="平仓模式"/>
+		<column type="string" id="return_mode_name"			name="还款模式"		/>
+		<column type="string" id="return_mode"				name="还款模式"			/>
+		<column type="string" id="borrow_stock_pg_name"		name="融券复权模式"		/>
+		<column type="string" id="borrow_stock_pg"			name="融券复权模式"	/>
+		<column type="string" id="borrow_stock_tspc_name"	name="融券退市平仓日期" />	
+		<column type="string" id="borrow_stock_tspc"		name="融券退市平仓日期"	/>
+		<column type="string" id="days"						name="有效天数"		/>
+		<column type="string" id="product_id1"				name="融资产品ID"			/>
+		<column type="string" id="product_name1"			name="融资产品名称"			/>
+		<column type="string" id="product_id2"				name="融券产品ID"			/>
+		<column type="string" id="product_name2"			name="融券产品名称"			/>
+	</output>
+</function>

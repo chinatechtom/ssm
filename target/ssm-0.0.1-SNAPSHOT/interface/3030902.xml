@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3030902" name="同步标的" >	
+	<input>
+		<item type="text" id="smarket_code"	name="市场代码"/>
+		<item type="text" id="sstock_code"	name="产品代码"/>
+		<item type="text" id="drate0"		name="证券折算率"/>
+		<item type="text" id="drate1"		name="证券负债利率"/>
+		<item type="text" id="sstatus1"		name="是否融资标的"/>
+		<item type="text" id="sstatus2"		name="是否融券标的"/>
+		<item type="text" id="sstatus3"		name="是否担保品标的"/>
+		<!-- 20141017
+		<item type="text" id="sstatus4"		name="配股偿还标志"/>
+		<item type="text" id="smain_flag"	name="暂停标的券提交买入控制"/>
+		<item type="text" id="sstat_type"	name="配债偿还标志"/>
+		<item type="text" id="sstat_type2"	name="派发权证偿还标志"/>
+		-->
+		<item type="text" id="sphone"		name="权益补偿方式"/>	<!--add 20141017-->
+		<item type="text" id="sphone2"		name="标的风险标示"/>	<!--add 20141017-->
+		<item type="text" id="damt0"		name="提交比例"/>		<!--add 20141017-->
+		<item type="text" id="damt1"		name="总股本"/>			<!--add 20141017-->
+	</input>
+    <service type="drtp" id="413109" process="611" style="1">
+		<param id="smarket_code"	type="string"	way="in"/>
+		<param id="sstock_code"		type="string"	way="in"/>
+		<param id="drate0"			type="double"	way="in"/>
+		<param id="drate1"			type="double"	way="in"/>
+		<param id="sstatus1"		type="string"	way="in"/>
+		<param id="sstatus2"		type="string"	way="in"/>
+		<param id="sstatus3"		type="string"	way="in"/>
+		<!-- 20141017
+		<param id="sstatus4"		type="string"	way="in"/>
+		<param id="smain_flag"		type="string"	way="in"/>
+		<param id="sstat_type"		type="string"	way="in"/>
+		<param id="sstat_type2"		type="string"	way="in"/>
+		-->
+		<param id="sphone"			type="string"	way="in"/>	<!--add 20141017-->
+		<param id="sphone2"			type="string"	way="in"/>	<!--add 20141017-->
+		<param id="damt0"			type="double"	way="in"/>	<!--add 20141017-->
+		<param id="damt1"			type="double"	way="in"/>	<!--add 20141017-->
+		<param id="lsafe_level2"	type="double"	way="in" default="1"/>	<!--add by zsj 20161019-->
+	</service>
+	<output/>
+</function>

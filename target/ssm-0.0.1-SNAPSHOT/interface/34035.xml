@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="34035" name="单客户证券集中度查询" >
+<input>
+	<item type="text"	id="cust_code" name="客户账号"/>  
+	<item type="text"	id="rate" name="集中度(%)" default="90"/>  
+	<group name="分页查询" page="true"> 		
+	<item type="text"   id="page_num"       name="页码"     integer="true" default="1"/>
+	<item type="select" id="rows_num"       name="每页行数" integer="true" source="95000012" nullable="false"/>
+	</group>
+</input>
+	<service type="procedure" id="P17000031" process="911" style="77">
+		<param id="user_id" type="integer" way="in" /> 
+		<param id="cust_code" way="in"/>
+		<param type="number" id="rate" way="in"/> 
+		<param type="integer" id="page_num"/>	
+	  <param type="integer" id="rows_num"/> 
+	</service> 	
+  <output>     
+		<column type="string" id="institution_code" name="营业部代码"/>   
+		<column type="string" id="institution_name" name="营业部名称" />   
+		<column type="string" id="cust_code" name="信用账号"/>   
+		<column type="string" id="cust_name" name="客户名称" />  
+    <column type="string" id="gua_asset" name="资产(万元)" />  
+		<column type="string" id="debt_values" name="负债(万元)" />
+		<column type="string" id="guarantee_rate" name="维持担保比例" /> 
+		<column type="string" id="product_code" name="证券代码"/>
+    <column type="string" id="product_name" name="证券名称"/>  
+		<column type="string" id="stock_value" name="证券市值(万元)" />   
+		<column type="string" id="concentration_rate" name="单证券集中度" />   
+		<column type="string" id="fund_amt" name="资金余额(万元)" />   
+   	<column type="string" id="gua_stock_values" name="所有担保品市值(万元)" />   
+		<column type="string" id="all_stock_values" name="所有证券市值(万元)"/> 
+</output>
+</function>

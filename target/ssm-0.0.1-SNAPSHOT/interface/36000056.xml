@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="36000056" name="6.2.2担保率分布情况统计" >  
+  <input>
+  <item type="select"  id="institution_id" name="营业部名称" source="95000008"/> 
+  <item type="date"    id="date"        name="查询日期"/> 
+  </input>
+ <service type="procedure" id="P36000056" process="911" style="77">
+  <param id="user_id"         type="integer" way="in"/> 
+  <param id="institution_id" type="integer" way="in"/>
+  <param id="date"         type="string"  way="in"/> 
+  </service> 
+  <output  print="true">
+     <column type="number" id="id" name="序号"/>  
+     <column type="string" id="institution_name" name="营业部"/>
+   <group name="担保率∈[300%,+∞)"> 
+     <column type="number" id="safe_num"   name="户数" precision="0" total="true"/> 
+     <column type="number" id="safe_amt"   name="资产差额" precision="2" total="true"/> 
+   </group>  
+   <group name="担保率∈[150%,300%)"> 
+     <column type="number" id="normal_num" name="户数"   precision="0" total="true"/> 
+     <column type="number" id="normal_amt" name="资产差额"   precision="2" total="true"/> 
+   </group>   
+   <group name="担保率∈[130%,150%)"> 
+     <column type="number" id="warning_num" name="户数" precision="0" total="true"/> 
+     <column type="number" id="warning_amt" name="资产差额" precision="2" total="true"/> 
+   </group> 
+   <group name="担保率∈(-∞,130%)"> 
+     <column type="number" id="pc_num" name="户数" precision="0" total="true"/> 
+     <column type="number" id="pc_amt" name="资产差额" precision="2" total="true"/> 
+   </group>  
+  </output>
+</function>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="80880032" name="股票质押直接扣款">
+	<input>
+		<item type="select"	id="sstatus1" name="业务类别" source="743" default="1" nullable="false" editable="false"/>
+	</input>
+	<service type="procedure" id="P60880032" process="922" style="1">
+		<param id="user_id" type="integer"/>
+		<param id="sstatus1" type="string"/>
+	</service>
+	<output target="80880033">  
+		<column type="string" id="vsvarstr0"   name="vsvarstr0"/>
+		<column type="string" id="vsvarstr1"   name="vsvarstr1"/>
+		<column type="string" id="vsvarstr2"   name="vsvarstr2"/>
+		<column type="string" id="vsvarstr3"   name="vsvarstr3"/>
+		<column type="string" id="sbranch_code1"   name="sbranch_code1"/>
+		<column type="string" id="sbranch_code0"   name="sbranch_code0"/>
+		<column type="string" id="scurrency_type"   name="scurrency_type"/>
+		<column type="string" id="scurrency_type2"   name="scurrency_type2"/>
+		<column type="string" id="scust_no"   name="scust_no"/>
+		<column type="string" id="semp"   name="semp"/>
+	</output>
+</function>

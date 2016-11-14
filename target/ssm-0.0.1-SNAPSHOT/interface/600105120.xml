@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="600105120" name="委托详情" >
+	<input>
+		<item type="hidden" id="institution_id" name="营业部id"/>
+		<item type="text" id="institution_code" name="营业部代码" editable="false"/>
+		<item type="text" id="institution_name" name="营业部名称" editable="false"/>
+		<item type="hidden" id="cust_id" name="客户号"/>
+		<item type="text" id="cust_code" name="客户代码" editable="false"/>
+		<item type="text" id="cust_name" name="客户名称" editable="false"/>
+		<item type="text" id="entrust_date" name="委托日期" editable="false"/>
+		<item type="text" id="entrust_time" name="委托时间" editable="false"/>
+		<item type="text" id="entrust_no" name="委托编号" editable="false"/>
+		<item type="text" id="sqbh" name="申请编号"  editable="false"/>
+		<item type="text" id="sbond_no" name="交易协议书编号"  editable="false"/>
+		<item type="text" id="buyacc" name="买方证券账户"  editable="false"/>
+		<item type="text" id="buypbu" name="买方交易单元"  editable="false"/>
+		<item type="text" id="sellacc" name="卖方证券账户"  editable="false"/>
+		<item type="text" id="sellpbu" name="卖方交易单元"  editable="false"/>
+		<item type="text" id="status_name" name="报盘状态"  editable="false"/>
+		<item type="hidden" id="owflag" name="订单类型"  editable="false"/>
+		<item type="text" id="owflag_name" name="订单类型"  editable="false"/>
+		<item type="text" id="market_code" name="市场代码"  editable="false"/>
+		<item type="text" id="product_code" name="证券代码"  editable="false"/>
+		<item type="text" id="product_name" name="证券名称"  editable="false"/>
+		<item type="text" id="first_amt" name="初始交易金额"  editable="false"/>
+		<item type="text" id="qty" name="标的证券数量"  editable="false"/>
+		<item type="text" id="second_amt" name="购回交易金额"  editable="false"/>
+		<item type="text" id="entrust_price" name="委托价格"  editable="false"/>
+		<item type="text" id="delflag" name="撤单标志"  editable="false"/>
+		<item type="text" id="stock_property" name="股份性质"  editable="false"/>
+		<item type="text" id="yhtxh" name="原始合同序号"  editable="false"/>
+		<item type="text" id="mortgagee_name" name="质权人名称"  editable="false"/>
+		<item type="hidden" id="abc"	   name="杂项ID"   default="1" action="97000005"/>
+		<item type="hidden"	id="company"   name="公司名称" editable="false" />
+	</input>
+</function>

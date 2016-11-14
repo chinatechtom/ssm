@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="30507" name="客户内控维持担保比例查询" >	
+  <input> 
+		<item type="select" id="insitution_id" name="营业部名称" source="95000008"/>
+		<item type="hidden"	id="cust_id"	   name="客户ID"/>
+		<item type="text"	id="cust_code"	   name="客户代码"/>
+  </input>
+  <service type="procedure" id="p_cust_special_gua_rate_query" implement="p_cust_special_gua_rate_query30507"  process="911" style="77"> 
+		<param id="user_id"				type="integer" way="in"/>
+		<param id="insitution_id"       type="integer" way="in"/>
+		<param id="cust_id"				type="integer" way="in"/>
+		<param id="cust_code"	        type="string"  way="in"/>
+  </service>	
+  <output export="true"> 
+    <column type="number" id="institution_id"   name="营业部ID"      display="false"/>
+	<column type="string" id="institution_code" name="营业部代码"   />
+	<column type="number" id="cust_id"          name="客户ID"        display="false"/>  
+	<column type="string" id="cust_code"        name="客户代码"     />
+	<column type="string" id="cust_name"        name="客户名称"     />
+	<column type="number" id="spec_gua_rate"    name="内控维持担保率"   precision="4"/> 
+	<column type="string" id="time"             name="设置时间"  />
+  </output>  
+</function>

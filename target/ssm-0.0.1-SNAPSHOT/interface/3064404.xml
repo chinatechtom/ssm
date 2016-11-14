@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3064404" name="获取信用上限系数" >
+  <input>	
+    <item type="hidden" id="approve_valuation_score"   name="客户信用评分" />
+    <item type="hidden" id="abs_benefit_get_score"     name="绝对收益得分" />
+	<item type="hidden" id="money_cycle_get_score"     name="资金周转次数得分" />
+	<item type="hidden" id="commission_get_score"      name="佣金得分" />
+	<item type="hidden" id="trade_amt_get_score"       name="交易量得分" />
+	<item type="hidden" id="net_assets_get_score_4408" name="净资产得分" />
+	<item type="hidden" id="additional_score"          name="附加分值" />
+  </input>
+  <service type="procedure" id="p_order_crd_rpt_crd_fct_query" process="911" style="77">
+	<param id="user_id"                  type="integer"/>
+	<param id="approve_valuation_score"  type="double"/>
+	<param id="abs_benefit_get_score"    type="double"/>
+	<param id="money_cycle_get_score"    type="double"/>
+	<param id="commission_get_score"     type="double"/>
+	<param id="trade_amt_get_score"      type="double"/>
+	<param id="net_assets_get_score_4408" type="double"/>
+	<param id="additional_score"         type="double"/>
+  </service>
+  <output export="true">  
+    <column type="number" id="ratingfactor_get_score" name="客户信用评分得分"       precision="2"/>  
+  	<column type="number" id="overall_score"          name="综合得分"       precision="2"/>  
+	<column type="number" id="credit_limit_factor"    name="信用上限系数"   precision="2"/>  
+  </output>
+</function>

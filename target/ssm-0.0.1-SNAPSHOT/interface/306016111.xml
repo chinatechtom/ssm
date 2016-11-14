@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="306016111" name="批量授信征信情况导入" >
+	<input>
+		<item type="hidden" id="task_id" 		        name="任务编号"      />
+	    <item type="hidden" id="capital_account" 		name="信用资金账号"      />
+		<item type="hidden" id="related_capital_account" name="普通资金账号"      />
+		<item type="hidden" id="year_yield" 			name="信用交易绝对收益率(%)"/>
+		<item type="hidden" id="hs300_yield_year" 	    name="沪深300年化收益率(%)" />
+		<item type="hidden" id="credit_use_rate" 		name="日均授信额度使用率(%)" />
+		<item type="hidden" id="credit_turn_over_rate" 	name="授信额度换手率(%)"/>
+		<item type="hidden" id="total_rzrq_commission" 	name="信用交易佣金(元)" />
+		<item type="hidden" id="itst_ctb" 			    name="信用交易息费收入(元)"/>	
+	</input>
+	<service type="procedure" id="p_ratingfactor_sxzx_import" adapter="sysinfo" implement="p_ratingfactor_sxzx_import306016111" process="811" style="1">
+		<param id="user_id" 					type="integer" 	way="in"/>
+		<param id="task_id" 			        type="string" 	way="in"/>
+		<param id="capital_account" 			type="string" 	way="in"/>
+		<param id="related_capital_account"     type="string" 	way="in"/>
+		<param id="year_yield" 					type="double" 	way="in"/>
+		<param id="hs300_yield_year" 			type="double" 	way="in"/>
+		<param id="credit_use_rate" 			type="double" 	way="in"/>
+		<param id="credit_turn_over_rate" 		type="double" 	way="in"/>
+		<param id="total_rzrq_commission" 		type="double" 	way="in"/>
+		<param id="itst_ctb" 					type="double" 	way="in"/>
+	</service>
+</function>

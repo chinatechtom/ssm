@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70100162" name="客户资金余额信息同步">
+	<input>
+		<item type="text" id="sbranch_code1" name="开户营业部" />
+		<item type="text" id="scust_no" name="客户号"/>
+	</input>     
+	<service type="drtp" id="100313" process="711" style="77">
+		<param type="string" id="sbranch_code1" />
+		<param type="string" id="sbranch_code0" default="000"/>
+		<param type="string" id="scust_no"/>
+		<param type="string" id="scurrency_type2" default="01"/>
+		<param type="string" id="scurrency_type" default="01"/>
+		<param type="string" id="semp" default="SYSTEM"/>
+	</service>
+	<output target="70100163">
+		<column name="客户号"	id="capital_account"  type="string"  field="scust_no"/>
+		<column name="资金余额"	id="balance" type="number"  field="damt4"/>
+		<column name="可取余额"	id="avail_fund" type="number"  field="damt6"/>
+		<column name="总市值"	id="total_capital" type="number"  field="damt29"/>
+	</output>
+</function>

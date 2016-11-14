@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70070706" name="邮件内容查询(自定义内容)" >
+	<input>
+		<item type="hidden"	id="c1"	name="信息编号"	/>		
+	</input>
+	<service type="procedure" id="P70070706" process="922" style="77">
+		<param id="user_id"	type="integer"  way="in"/>
+		<param id="c1"	type="integer"  way="in"/>
+	</service>
+	<output>
+	  <column type="number"	id="msg_id"		  	name="信息编号"			display="false"	/>
+	  <column type="string"	id="subject"			name="信息主题"		display="false"	/>
+		<column type="string"	id="content"			name="内容"			display="true"	/>		
+	</output>
+</function>

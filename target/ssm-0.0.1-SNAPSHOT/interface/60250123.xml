@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="60250123" name="清算资金额度审批权限增加" >
+	<input>
+		<item type="text" id="user_code" name="用户代码"/>
+		<item type="select" id="credit_type" name="额度类型" source="807"/>
+		<item type="select" id="status" name="权限状态" source="810" nullable="false"/>
+	</input>
+	<service type="procedure" id="p60250123" process="833" style="1">
+		<param id="user_id" type="integer"/>
+		<param id="user_code" type="string"/>
+		<param id="credit_type" type="string"/>
+		<param id="status" type="string"/>
+	</service>
+	<output/>
+</function>

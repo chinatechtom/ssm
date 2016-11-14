@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3061116" name="授信额度变更确认单" >
+ <input print="3061116.jsp">
+    <item type="hidden" id ="cust_id"     name="客户ID" action="30119,1888,30101,30728" />
+	<item type="text"   id ="cust_code"   name="客户代码" editable="false"/>
+    <item type="text"   id ="cust_name"   name="客户姓名" editable="false"/>
+	<item type="text"	id="cert_number"	name="证件号码" editable="false"/>
+	<item type="text"	id="sh_acc"		  name="上海证券账户" editable="false"/>
+	<item type="text"	id="sz_acc"		  name="深圳证券账户" editable="false"/>	
+	<item type="hidden"	id="user_code"	  name="打印柜员代码"/><!--从1888.xml获得的打印柜员代码-->
+	<item type="hidden"	id="user_name"	  name="打印柜员名称"/><!--从1888.xml获得的打印柜员名称-->
+	<item type="hidden"	id="company"	  name="证券公司名称"/><!--从1888.xml获得的证券公司名称名称-->
+	<group name="客户资产状况" >
+		<item type="text"   id="asset_amt"       name="资产余额"   editable="false"/>
+		<item type="text"   id="stock_amt"       name="证券市值"   editable="false"/>
+		<item type="text"   id="guarantee_amt"   name="担保品价值" editable="false"/>
+		<item type="text"   id="stock_convert_amt"   name="证券折算金额" editable="false"/>
+		<item type="text"   id="fund_amt"        name="资金折算金额" editable="false"/>
+	</group>
+	<group name="原合同授信额度" >
+		<item type="hidden" id="bond_id"      name="合同ID"   action="30644"/>
+		<item type="text"   id="credit_num"   name="原授信额度" editable="false"/>
+		<item type="text"   id="credit_num_chinese"   name="原授信额度大写" editable="false"/>
+		
+	</group>
+	<group name="申请调整授信额度详细" >	
+	    <item type="hidden" id="order_id" name="合约id"   action="30603"/>
+		<item type="text"   id="order_no" name="合约编号" editable="false"/>
+		<item type="text"   id="approve_num" name="申请授信额度" editable="false"/>
+		<item type="text"   id="approve_num_chn" name="申请授信额度大写" editable="false"/>
+		<item type="text"	id="credit_date" name="申请日期" editable="false"/>
+	</group>
+ </input>
+</function>

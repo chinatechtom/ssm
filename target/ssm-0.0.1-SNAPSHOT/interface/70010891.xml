@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70010891" name="场外归还证券信息录入" >
+	<input>
+		<group name="基本信息">  
+			<item type="hidden" id="sbond_id" name="交易协议书id"/>
+			<item type="hidden" id="cust_id" name="客户id"/>
+			<item type="text" id="sbond_no" name="交易协议书编号" editable="false"/>
+			<item type="text" id ="cust_code" name="客户代码" editable="false"/>	
+			<item type="text" id="cust_name" name="客户姓名" editable="false"/>	
+			<item type="text" id="market_code" name="市场代码" editable="false"/>	
+			<item type="text" id="product_code" name="证券代码" editable="false"/>
+			<item type="text" id="hg_num" name="交易数量" editable="false"/>	
+			<item type="text" id="first_amt" name="交易金额" editable="false"/>	
+			<item type="text" id="engage_trade_date" name="约定交易日期" editable="false"/>
+			<item type="text" id="days" name="回购期限" editable="false"/>
+			<item type="text" id="bond_status_name" name="交易协议书状态" editable="false"/>
+			<item type="text" id="hg_rate" name="回购价格(年利率%)" editable="false"/>
+			<item type="text" id="penalty_rate" name="违约金比率(%)" editable="false"/>
+			<item type="text" id="lowest_price" name="最低履约保障比例(%)" editable="false"/>
+			<item type="text" id="touch_rate" name="触发比率(%)" editable="false"/>
+			<item type="text" id="hg_convert_rate" name="折扣比率(%)" editable="false"/>
+			<item type="textarea" id ="remarks" name="备注" editable="false"/>
+		</group>
+		<group name="需场外归还证券信息">  
+			<item type="hidden" id="product_id_bc"   name="补仓证券ID" />
+			<item type="hidden" id="market_code_bc"   name="需场外归还市场代码" />
+			<item type="text" id="market_code_bc_name"   name="需场外归还市场名称" editable="false"/>
+			<item type="text" id="product_code_bc"   name="需场外归还证券代码" editable="false" />
+			<item type="text" id="product_name_bc"   name="需场外归还证券名称" editable="false" />
+			<item type="text" id="stock_vol"   name="需场外归还数量" editable="false" />
+		</group>
+		<group name="场外归还证券信息录入">
+			<item type="text" id="stock_vol1" name="本次场外归还证券数量" integer="true" nullable="false"/>
+			<item type="textarea" id ="remark1" name="备注"/>
+		</group>
+	</input>
+	<service type="procedure" id="P70010891" process="822" style="1">
+		<param type="integer" id="user_id" way="in"/>
+		<param type="integer" id="cust_id" way="in"/>
+		<param type="integer" id="sbond_id" way="in"/>
+		<param type="string" id="market_code_bc" way="in"/>
+		<param type="string" id="product_code_bc" way="in"/>
+		<param type="integer" id="stock_vol1" way="in" default="0"/>
+		<param type="string" id="remark1"  way="in"/>
+	</service>
+	<output/>
+</function>

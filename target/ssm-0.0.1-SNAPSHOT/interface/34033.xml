@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="34033" name="海通关联人查询" >
+	<input>
+		<item type="text"	id="glr_name" name="关联人名称"/>  
+		<item type="select"	id="glr_type" name="关联人类别" source="027"/> 
+		<item type="select"	id="cert_type" name="证件类别类别" source="029"/>  
+		<item type="text"	id="glr_cert_no" name="证件号码"/>
+		<item type="select"	id="status" name="是否生效" source="002"/>
+	</input>
+	<service type="procedure" id="P17000028" process="911" style="77">
+		<param id="user_id" type="integer" way="in" /> 
+		<param id="glr_name" way="in"/>
+		<param id="glr_type" way="in"/>
+		<param id="cert_type" way="in"/>
+		<param id="glr_cert_no" way="in"/>  
+		<param id="status" way="in"/>  
+	</service> 	
+  <output>   
+  	<column type="string" id="glr_id" name="关联人ID" display="false"/>  
+		<column type="string" id="glr_name" name="关联人名称"/>   
+		<column type="string" id="glr_type" name="关联人类别" display="false"/>   
+		<column type="string" id="glr_type_name" name="关联人类别"/>   
+		<column type="string" id="cert_type" name="证件类别字典" display="false"/>
+		<column type="string" id="cert_type_name" name="证件类别"/>
+  	<column type="string" id="glr_cert_no" name="证件号码"/>  
+		<column type="string" id="status_name" name="是否有效" />   
+		<column type="string" id="remark" name="备注" />   
+		<column type="string" id="status" name="状态" display="false"/> 
+		<column type="string" id="add_user_name" name="增加人" />   
+		<column type="string" id="modify_user_name" name="修改人" />   
+		<column type="string" id="add_time" name="增加时间" />   
+		<column type="string" id="modify_time" name="修改时间" />   
+		<button type="add" id="add" name="新增" action="340330" multiple="-1"/>
+    <button type="del" id="del" name="修改" action="340331" multiple="0"/>
+	</output>
+</function>

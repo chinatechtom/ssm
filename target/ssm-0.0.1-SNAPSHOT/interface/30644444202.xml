@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="30644444202" name="处理标准化信用级别调整">
+	<input>	
+		<group name="原合同信用级别" scope="group">
+			<item type="text"	id ="cust_code"			name="客户代码" editable="false"/>
+			<item type="text"	id ="cust_name"			name="客户姓名" editable="false"/>
+			<item type="hidden" id="bond_id"			name="合约id" action="30647"/>
+			<item type="text"	id="consult_score"		name="参考分值" editable="false" number="true"/>
+			<item type="text"	id="valuation_score"	name="评估得分" editable="false" number="true"/>
+			<item type="text"	id="credit_level_name"	name="信用级别" editable="false"/>
+		</group>
+		<group name="合约申请信用级别" scope="group">
+			<item type="hidden" id="order_id"				name="合约id" action="30605"/>
+			<item type="text"	id="order_no"				name="合约编号" editable="false"/>
+			<item type="hidden" id="formerly_voucher_no"	name="原始凭证号" editable="false"/>
+			<item type="text"	id="consult_score1"			name="参考分值" editable="false"/>
+			<item type="text"	id="valuation_score1"		name="申请评估得分" editable="false"/>
+			<item type="text"	id="credit_level_name1"		name="申请信用级别" editable="false"/>
+		</group>
+		<group name="处理后申请信用级别">
+			<item type="hidden"	id="order_id"					name="合约id" />
+			<item type="text"	id="approve_valuation_score"	name="审批评估得分" action="3063401"	nullable="false"/>
+			<item type="select" id="auto_credit_level"			name="审批信用级别" source="90000002"	nullable="false"/>
+		</group>
+		<group name="处理意见">
+			<item type="textarea" id="manage_idea" name="处理意见"/>
+		</group>
+	</input>
+	<service type="procedure" id="p_credit_level_modi" process="811" style="1">
+		<param type="integer"	id="user_id"					way="in"/>
+		<param type="integer"	id="order_id"					way="in"/>
+		<param type="string"	id="approve_valuation_score"	way="in"/>
+		<param type="string"	id="auto_credit_level"			way="in"/>
+		<param type="string"	id="manage_idea"				way="in"/>
+	</service>
+	<output/>
+</function>

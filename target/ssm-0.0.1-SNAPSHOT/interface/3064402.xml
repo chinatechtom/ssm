@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3064402" name="查询授信申请的各个得分情况" >
+  <input>	
+	<item type="hidden" id="order_id"   name="合约ID" />
+	<item type="hidden" id="report_version_id" name="评级因子编号" />
+  </input>
+  <service type="procedure" id="p_order_credit_report_score_query_his" process="911" style="77">
+	<param id="user_id"    type="integer"/>
+	<param id="order_id"   type="integer"/>
+	<param id="report_version_id" type="integer"/>
+  </service>
+  <output export="true">  
+    <column type="number" id="report_version_id"         name="评级因子编号"   precision="0"/>  
+  	<column type="number" id="approve_valuation_score"   name="评级因子总分"   precision="2"/>  
+	<column type="string" id="versiondate"               name="评级因子生效日期"   />  
+  	<column type="string" id="auto_credit_level"         name="信用级别自动"               />  
+  	<column type="string" id="auto_credit_level_name"    name="信用级别名称"     display="false" />  --add by haofugang 20110328
+	<column type="number" id="origin_guarantee_rate"     name="初始保证金比例" precision="2"/>
+	<column type="number" id="ratingfactor_get_score"    name="评级因子总分得分" precision="2"/>
+	<column type="number" id="abs_benefit_rate"          name="绝对收益率"     precision="2"/>
+	<column type="number" id="abs_benefit_get_score"     name="绝对收益得分"   precision="2"/>
+	<column type="number" id="money_cycle_num"           name="资金周转次数"   precision="2"/>
+	<column type="number" id="money_cycle_get_score"     name="资金周转次数得分" precision="2"/>
+	<column type="number" id="commission_charge"         name="佣金(万元)" precision="4"/>
+	<column type="number" id="commission_get_score"      name="佣金得分"   precision="2"/>
+	<column type="number" id="trade_amt"                 name="交易量(万元)" precision="4"/>
+	<column type="number" id="trade_amt_get_score"       name="交易量得分" precision="2"/>
+	<column type="number" id="overall_score"             name="综合得分"   precision="2"/>
+	<column type="number" id="credit_limit_factor"       name="信用上限系数" precision="2"/>
+	<column type="string" id="rgfct_tj_begin_date"       name="以上数据统计起始日期"  />  
+  	<column type="string" id="rgfct_tj_end_date"    	name="以上数据统计结束日期"  />
+	<column type="number" id="net_assets_get_score_4402" field="net_assets_get_score" name="净资产得分"  precision="2"/>
+	<column type="number" id="additional_score_4402"     field="additional_score"     name="附加分值"    precision="2"/>
+	<column type="number" id="credit_abs_benefit_rate"       name="信用账号绝对收益率" precision="2"/>
+	<column type="number" id="credit_commission_charge"             name="信用账号佣金(元)"   precision="2"/>
+	<column type="number" id="credit_interest_charge"       name="信用账号息费(元)" precision="2"/>
+	</output>
+</function>

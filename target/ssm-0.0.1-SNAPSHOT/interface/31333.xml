@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="31333" name="客户基本资料" >
+  <input >	
+	<item type="select" id="insitution_id" name="营业部名称" source="95000008"/>
+	<item type="text" id="user_code" name="用户代码"/>
+	<item type="text" id="role_name" name="角色名称" />
+  </input>
+  <service type="procedure" id="p_user_role_relation_query" process="911" style="77" implement="p_user_role_relation_query31333">
+	<param id="user_id"     type="integer"/>
+	<param id="insitution_id" type="integer" />
+	<param id="user_code"   type="string"/>
+	<param id="role_name"   type="string"/>
+  </service>
+  <output export="true">  
+  	<column type="string" id="institution_code"   name="营业部代码" />  
+	<column type="string" id="institution_name"   name="营业部名称" />  
+  	<column type="string" id="user_code"   name="用户代码"  />
+    <column type="string" id="user_name"   name="用户名称"  />
+    <column type="string" id="role_name"   name="角色名称"  />
+    <column type="string" id="user_status_name"   name="用户状态"  />
+  </output>
+</function>

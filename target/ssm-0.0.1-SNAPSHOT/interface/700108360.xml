@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="700108360" name="不能冻结证券" >
+	<description>委托状态不对,不能同步冻结证券！</description>	
+	<input/>
+</function>

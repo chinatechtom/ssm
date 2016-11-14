@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70011320" name="定价/议价申请报价参数设置" >
+  <input>
+    <item type="hidden" id="product_id"     name="证券id"/>
+	<item type="text"   id="sstock_code"   name="证券代码"/>
+	<item type="select" id="smarket_code"    name="市场"	source="039"/>
+    <item type="select"   id="busi_type"   name="业务类别" source="743"/>	
+    <item type="select"   id="order_type"   name="指令类别" source="739"/>
+	<item type="text"   id="days"   name="期限"/>
+  </input>
+  <service type="procedure" id="P70011320" process="922" style="77"> 
+    <param id="user_id"		type="integer"    way="in"/>
+    <param id="product_id"	type="integer"   way="in"/>
+	<param id="smarket_code"     way="in"/>
+    <param id="sstock_code"   way="in"/>
+	<param id="busi_type"  way="in" default="1"/>
+	<param id="order_type"  way="in"/>
+	<param id="days" type="integer" way="in"/>
+  </service>
+  <output>
+	<column type="number" id="app_price"	name="交易价格默认值" precision="2"/>	
+	<column type="number" id="hg_convert_rate"	name="标的折扣率默认值(%)" precision="2"/>
+  </output>
+</function>

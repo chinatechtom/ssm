@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3130602" name="词典内容设置" >	
+	<input>
+		<item type="hidden"	id="systemid"		name="系统id"/>
+		<item type="select"	id="coding_sort"	name="词典分类名称"	source="90000005" nullable="false"/>	
+		<item type="text"	id="data_code"		name="词典内容代码"	maxlen="6"/>
+		<item type="text"	id="data_name"		name="词典内容名称"	maxlen="40"/>
+	</input>
+	<service type="procedure" id="p_dictionary_content_modi" implement="p_dictionary_content_modi3130602"  process="811" style="1">
+		<param type="integer"	id="user_id"		way="in"/>
+		<param type="integer"	id="systemid"		way="in"/>
+		<param type="string"	id="coding_sort"	way="in"/>
+		<param type="string"	id="data_code"		way="in"/>
+		<param type="string"	id="data_name"		way="in"/>
+	</service>
+	<output>		
+	</output>	
+</function>

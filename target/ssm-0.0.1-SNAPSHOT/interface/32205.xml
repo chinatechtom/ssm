@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="32205" name="融资融券盈亏状况" >
+	<input>			
+		<item type="date" id="begin_time" name="起始时间"  default="last"/>
+		<item type="date" id="end_time" name="结束时间"  default="now"/>
+		<item type="select" id="institution_id" name="机构"  source="95000008"/>
+  	</input>
+  	<service type="procedure" id="p_test_06" process="911" style="77">
+		<param id="user_id" type="integer" way="in" /> 
+		<param id="begin_time" />
+		<param id="end_time" />
+		<param id="institution_id" />
+  	</service>
+  	 <output export="true">
+		<column type="string" id="c1"   name="营业部名称"  	precision="2"/>
+    	<column type="number" id="c2"   name="利息总额"  	precision="2"/>
+		<column type="number" id="c3"   name="坏账总额"  	precision="2"/>
+    	<column type="number" id="c4"   name="盈利总额"  	precision="2"/>  	  
+	 </output>
+</function> 

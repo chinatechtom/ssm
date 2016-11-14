@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="307261" name="提前了解平仓预案生成" >
+  <input>
+	<description>融券分红送股不能生成平仓预案
+	</description>
+  </input>
+	<output/>	
+</function>

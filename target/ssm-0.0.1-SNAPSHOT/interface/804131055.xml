@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="804131055" name="更新客户信用资料">
+<description>确实要同步客户信用资料？</description>
+ <input>
+ 		<item type="hidden"	id="avai_data_item"	    name="有效数据项"/>
+ 		<item type="hidden"	id="cust_code"		 	name="客户代码"/>
+ 		<item type="hidden"	id="institution_code"	name="营业部代码"/>
+ 		<item type="hidden"	id="credit_level_code"	name="信用级别代码"/>
+ 		<item type="hidden"	id="credit_num"			name="信用上限"/>
+ 		<item type="hidden"	id="pc_mode"			name="平仓标志"/>
+ 		<item type="hidden"	id="credit_usemode"	 	name="信用上限使用模式"/>
+ 		<item type="hidden"	id="if_blacklist"	 	name="是否黑名单"/>
+ 		<item type="hidden"	id="hk_mode"			name="还款模式"/>
+ 		<item type="hidden"	id="bond_no"			name="合同编号"/>
+ 		<item type="hidden"	id="bond_status"		name="合同状态"/>
+		<item type="hidden"	id="begin_date"		 	name="开始日期"/>
+		<item type="hidden"	id="end_date"		 	name="结束日期"/>
+		<item type="hidden"	id="product_code1"		name="融资产品"/>
+		<item type="hidden"	id="product_code2"		name="融券产品"/>
+		<item type="hidden"	id="credit_num2"		name="授信额度"/>
+		<item type="hidden"	id="financing_amt"		name="融资上限"/>
+		<item type="hidden"	id="bstock_amt"		    name="融券上限"/>
+		<item type="hidden"	id="if_risk"		                name="是否风险客户"/>
+		<item type="hidden"	id="pvt_ctl_stauts"		            name="私用额度控制状态"/>
+		<item type="hidden"	id="pvt_fin_lmt_modulus"		    name="私用转融资比例系数"/>
+		<item type="hidden"	id="pvt_bs_lmt_modulus"		        name="私用转融券比例系数"/>
+		<item type="hidden"	id="pvt_crd_lmt_modulus"		    name="私用转融通授信比例系数"/>
+		<item type="hidden"	id="pvt_fin_product_code"		    name="私用转融资信用产品"/>
+		<item type="hidden"	id="pvt_bs_product_code"		    name="私用转融券信用产品"/>
+ </input>
+  <service type="drtp"  id="413105" process="611" style="1">
+	  <param field="scust_limit"	id="avai_data_item"    type="string"/>
+	  <param field="scust_no"	id="cust_code"	type="string"/>
+	  <param field="sbranch_code0"  id="institution_code"  type="string"/>
+	  <param field="sbranch_code1"  id="institution_code"  type="string"/>
+	  <param field="sserial0"	id="credit_level_code"     type="string"/>
+	  <param field="damt23"		id="credit_num"	type="double"/>
+	  <param field="sstatus4"	id="pc_mode"	type="string"/>
+	  <param field="sstatus2"	id="credit_usemode"	type="string"/>
+	  <param field="sstatus0"	id="if_blacklist"	type="string"/>
+	  <param field="sstatus3"	id="hk_mode"	type="string"/>
+	  <param field="sname"		id="bond_no"	type="string"/>
+	  <param field="sstatus1"	id="bond_status"	type="string"/>
+	  <param field="sdate0"		id="begin_date"	type="string"/>
+	  <param field="sdate1"		id="end_date"	type="string"/>
+	  <param field="sorder0"	id="product_code1"	type="string"/>
+	  <param field="sorder1"	id="product_code2"	type="string"/>
+	  <param field="damt24"     id="credit_num2"	type="double"/>
+	  <param field="damt25"     id="financing_amt"	type="double"/>
+	  <param field="damt26"     id="bstock_amt"	type="double"/>
+	  <param field="smain_flag2"		id="if_risk"	          type="string"/>
+	  <param field="smarket_code2"		id="pvt_ctl_stauts"	      type="string"/>
+	  <param field="damt11"	            id="pvt_fin_lmt_modulus"  type="double"/>
+	  <param field="damt12"	            id="pvt_bs_lmt_modulus"	  type="double"/>
+	  <param field="damt13"             id="pvt_crd_lmt_modulus"  type="double"/>
+	  <param field="sserial1"           id="pvt_fin_product_code" type="string"/>
+	  <param field="sserial2"           id="pvt_bs_product_code"  type="string"/>
+  </service>
+  <output/>
+</function>

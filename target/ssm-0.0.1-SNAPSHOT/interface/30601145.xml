@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="30601145" name="评级征信批量审核生效" >
+  <input>
+    <description>是否进行评级征信批量审核生效
+	</description>  
+	<item type="select" id="force_active_flag" name="强制生效标志" nullable="false" source="522" default="0"/>
+  </input>
+  <service type="procedure" id="p_cust_rating_batch_act"  implement="p_cust_rating_batch_act30601145" process="811" style="1">
+	<param type="integer" id="user_id"/>
+	<param type="integer" id="force_active_flag" /> <!--0正常生效 1强制生效-->
+	<param type="integer" id="func_type"   default="1"/> <!--1表明是审核生效-->
+  </service>
+</function>

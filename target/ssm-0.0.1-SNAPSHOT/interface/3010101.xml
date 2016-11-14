@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3010101" name="客户基本资料" >
+	<input>	
+		<item type="text" id="scust_no" name="客户代码" />
+	</input>
+	<service type="procedure" id="p_cust_browse" process="911" style="77">
+		<param id="user_id" type="integer"/>	
+		<param id="scust_no"/>
+	</service>
+	<output target="80100301">
+		<column type="number" id="institution_id"		name="机构号"  display="false"/>
+		<column type="string" id="sbranch_code1"		name="营业部代码"	field="institution_code"/>
+		<column type="string" id="institution_name"		name="营业部名称"/>
+		<column type="number" id="cust_id"				name="客户号"  display="false"/>
+		<column type="string" id="scust_no"				name="客户代码"	field="cust_code"/>
+		<column type="string" id="cust_name"			name="客户姓名"/>    
+	</output>
+</function>

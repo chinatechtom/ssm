@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="30698" name="融资合约统计" >
+	<input>
+		<item type="select"	id="order_status"	name="合约状态" source="024"/>
+		<item type="select"	id="manage_status"	name="处理状态" source="062"/>
+		<item type="date"	id="begin_date"		name="起始日期" default="last"/> 
+		<item type="date"	id="end_date"		name="终止日期" default="now"/> 
+		<item type="text"	id="rate1"			name="融资利率下限" default="0.0"/>
+		<item type="text"	id="rate2"			name="融资利率上限" default="10.0"/>
+	</input>
+	<service type="procedure" id="p_statistic_undeal_rz_order" process="911" style="77">
+		<param type="integer"	id="user_id"		way="in"/>
+		<param type="integer"	id="order_status"	way="in"/>
+		<param type="integer"	id="manage_status"	way="in"/>
+		<param type="string"	id="begin_date"		way="in"/>
+		<param type="string"	id="end_date"		way="in"/>
+		<param type="doubule"	id="rate1"			way="in"/>
+		<param type="doubule"	id="rate2"			way="in"/>
+	</service>
+	<output>
+		<column type="number" id="order_id"			name="合约id" display="false"/>
+		<column type="number" id="bond_id"			name="bondid" display="false"/>
+		<column type="number" id="cust_id"			name="客户id"	display="false"/>
+		<column type="string" id="cust_code"		name="客户代码"/>
+		<column type="string" id="cust_name"		name="客户姓名"/>
+		<column type="string" id="date"				name="申请日期"/>
+		<column type="number" id="app_days"			name="申请天数"/>
+		<column type="string" id="model_name"		name="信用使用模式"/>
+		<column type="number" id="fix_qty"			name="申请上限"	precision="2" total="true"/>
+		<column type="number" id="cust_factor"		name="融资费率因子"	precision="2" display="false"/>
+		<column type="number" id="financing_rate"	name="融资利率"	precision="4"/>
+		<column type="string" id="order_type"		name="合约类型" display="false"/>
+		<column type="string" id="manage_status_name"		name="处理状态"/>
+		<button type="view" id="edit" name="查看合约" action="30666667" extendaction="order_type" multiple="0"/>
+		<button type="view" id="edit" name="查看合同" action="30655555" extendaction="order_type" multiple="0"/>
+	</output>
+</function>

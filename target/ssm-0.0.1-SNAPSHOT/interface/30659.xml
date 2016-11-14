@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="30659" name="客户结清利息" >  
+	<input  print="30659.jsp">
+	<group name="利息费用详细(元)">
+		<item type="text" id ="cust_name" name="客户姓名" editable="false"/>
+		<item type="text" id ="cust_code" name="客户代码" editable="false"/>
+		<item type="hidden" id="cust_id" action="30225,1888" name="客户id"/>
+		<item type="text" id="account_interest_date"     name="计息日期" editable="false" />
+		<!--<item type="text" id="over_interest_flag"    name="结息标志" editable="false"/>-->
+		<item type="text" id="financing_interest_sum"    name="融资利息合计" editable="false"/> 
+		<item type="text" id="borrow_stock_interest_sum" name="融券利息合计"  editable="false"/> 
+		<item type="text" id="financing_fix_sum"         name="融资固定额度费合计" editable="false"/> 
+		<item type="text" id="borrow_stock_fix_sum"      name="融券固定额度费合计"  editable="false"/> 
+		<item type="text" id="financing_takeup_sum"      name="融资占用额度费合计"  editable="false"/> 
+		<item type="text" id="borrow_stock_takeup_sum"   name="融券占用额度费合计" editable="false"/> 
+		<item type="text" id="financing_bef_rtn_sum"     name="融资提前还贷手续费合计" editable="false"/> 
+		<item type="text" id="borrow_stock_bef_rtn_sum"  name="融券提前还贷手续费合计"  editable="false"/> 
+    <item type="text" id="financing_punish_sum"      name="融资预期罚息合计"  editable="false"/> 
+    <item type="text" id="borrow_stock_punish_sum"   name="融券逾期罚息合计"  editable="false"/> 
+    <item type="text" id="financing_bad_punish_sum"  name="融资坏账罚息合计"  editable="false"/> 
+    <item type="text" id="borrow_stock_bad_punish_sum" name="融券坏账罚息合计"  editable="false"/> 
+		<item type="hidden" id="date"                      name="打印日期"/>	<!--从1888.xml获得的打印日期-->
+		<item type="hidden" id="user_code"                 name="打印柜员代码"/><!--从1888.xml获得的打印柜员代码-->
+		<item type="hidden" id="user_name"                 name="打印柜员名称"/><!--从1888.xml获得的打印柜员名称-->
+		<item type="hidden" id="company"                   name="券商名称"/><!--从1888.xml获得的券商名称-->
+	</group>
+	<group name="客户结清利息">
+		<item type="hidden" id="order_no" name="定单编号" />
+		<item type="hidden" id="formerly_voucher_no" name="原始凭证号"/>
+		<item type="hidden" id="bond_id" name="合同id" />
+		<item type="textarea" id="remark1" name="备注说明"/>
+	</group>
+	</input>
+	<service type="procedure" id="30659" process="888" style="1">
+	  <param type="string" id="function_id" default="80200102"/>
+	  <param type="string" id="function_id" default="3065902"/>
+	</service> 
+	<output >  
+	</output>
+</function>

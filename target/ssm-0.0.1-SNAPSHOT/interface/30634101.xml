@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="30634101" name="客户后续评级得分查询" >
+	<input>
+		<item type="hidden" id="cust_code"	name="客户代码"/>
+	</input>
+	<service type="procedure" id="p_valuation_score_query" process="911" style="77">
+		<param id="user_id"		type="integer"/>
+		<param id="cust_code"	type="string"/>
+	</service>
+	<output>
+		<column type="number" id="auto_valuation_score"	name="评估客户总分"	precision="2"/>
+		<column type="number" id="auto_credit_level"	name="信用级别"/>
+    </output>
+</function>

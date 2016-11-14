@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="30422010" name="不允许评级因子修改" >
+<description>网厅来源的评级因子信息不可修改!</description> 
+<input/>
+</function>

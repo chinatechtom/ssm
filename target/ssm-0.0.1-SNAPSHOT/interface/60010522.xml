@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="60010522" name="外围私人定制产品委托" >
+  <input print="60010520.jsp">
+	<group name="合同信息" >
+		<item type="hidden" id ="cust_id" name="客户id" action="97000013"/>
+		<item type="hidden" id ="institution_id" name="营业部id" />
+		<item type="text" 	id ="institution_name" name="营业部名称" editable="false"/>
+		<item type="text" 	id ="institution_code" name="营业部代码" editable="false"/> 
+		<item type="text" 	id ="bond_no" name="合同编号" editable="false" alias="sname"/>
+		<item type="text" 	id ="cust_name" name="客户姓名" editable="false"/>
+		<item type="text" 	id ="full_name" name="客户全名" editable="false"/>
+		<item type="text" 	id ="cust_code" name="客户代码" editable="false" alias="scust_no"/>
+	</group>
+	<group name="融出方信息">
+		<item type="select" id="lender_id" name="融出方" source="97600001" editable="false" action="60010102,97600050"/>
+		<item type="text" id="lender_code" name="融出方代码" editable="false" maxlen="6"/>
+		<item type="text" id="lender_name" name="融出方名称" editable="false" maxlen="100"/>
+		<item type="text" id="lender_cust_code" name="融出方资金帐号" editable="false" maxlen="100"/>
+		<item type="text" id="plan_contract" name="资产管理合同号" editable="false" maxlen="100"/>
+		<item type="select" id="lender_type" name="融出方类别" source="800" editable="false"/>
+		<item type="select" id="if_valid" name="是否有效" source="802" editable="false" default="1"/>
+		<item type="date" id="found_date" name="设立日期" editable="false"/>
+		<item type="text" id="lender_acc_sh"   name="融出方沪A证券账户" editable="false"/>
+		<item type="text" id="lender_seat_sh" name="融出方沪A席位代码" editable="false" maxlen="100"/>
+		<item type="text" id="lender_acc_sz"   name="融出方深A证券账户" editable="false"/>
+		<item type="text" id="lender_seat_sz" name="融出方深A席位代码" editable="false" maxlen="100"/>
+		<item type="text" id="mortgagee_name" name="质权人名称" editable="false" maxlen="100"/>
+	</group>		
+	<group name="交易协议书要素">
+		<item type="hidden" id ="bond_id" name="bondid"/>
+		<item type="hidden" id ="lender_id" name="lenderid"/>
+		<item type="text" 	id ="sbond_no" alias="scust_auth2" name="交易协议书编号" nullable="false" editable="false"/>
+		<item type="select" id ="sstatus3" name="交易类别" nullable="false" source="934" default="0"/>
+		<item type="select" id ="scust_auth" name="主关联交易协议书编号" nullable="false" source="97600029" filter="bond_id"/>
+		<item type="select" id ="order_type" name="指令类型" editable="false" nullable="false"  source="739" default="4"/>
+		<item type="hidden" id ="zllx"  name="指令类型" default="4"/>
+		<item type="select"   id ="stx_pwd" name="产品代码" nullable="false" source="97800004" filter="zllx" action="60170109"/> 
+	</group>
+	<group name="网上交易产品信息">
+		<item type="text" id="deadline_lower" name="期限下限" editable="false"/>
+		<item type="text" id="deadline_upper" name="期限上限" editable="false"/>
+		<item type="text" id="hg_rate" name="默认利率（%）" editable="false"/>
+		<item type="text" id="hg_rate_lower" name="利率下限（%）" editable="false"/>
+		<item type="text" id="hg_rate_upper" name="利率上限（%）" editable="false"/>
+		<item type="text" id="convert_rate" name="加成折算率（%）" editable="false"/>
+		<item type="hidden" id="sect_interest_mode" name="分段计息模式" editable="false"/>
+		<item type="text" id="trade_amt_lower" name="交易起点金额" editable="false"/>
+		<item type="text" id="trade_amt_unit" name="交易金额取整单位" editable="false"/>
+		<item type="text" id="interest_set_name" name="结息模式" editable="false"/>
+		<item type="hidden" id="interest_set_mode" name="结息模式id" editable="false"/>
+	</group>
+	<group name="标的证券信息">		
+		<item type="select" id ="smarket_code" name="市场代码" nullable="false" source="039" action="97600013,97600011"/>
+		<item type="text" 	id ="sstock_code" name="标的证券代码" nullable="false" action="97600013,97600021,97600011" minlen="6" maxlen="6"/>
+		<item type="text"	id ="product_name" name="标的证券名称" editable="false"/>
+		<item type="text"	id ="product_type" name="标的证券类别" editable="false"/>		
+		<item type="select" id ="scust_type" name="股份性质" nullable="false" source="803" default="00" editable="false"/>
+		<item type="date" 	id ="circ_date" name="流通日期" alias="sdate2" editable="false"/>
+		<item type="text" 	id ="lvol0" name="标的证券数量" nullable="false" integer="true" action="97600026,96000017,97600010,96000008"/>
+		<item type="textarea" id ="hg_num_big" name="标的证券数量大写" editable="false"/>
+		<item type="select" id ="zqlb" name="证券类别" source="816" action="97600021" alias="scurrency_type" editable="false"/>
+		<item type="select" id ="ltlx" name="流通类型" source="817" action="97600011" alias="sstatus0" editable="false"/>
+		<item type="select" id ="qylb" name="权益类别" source="818" alias="scurrency_type2" editable="false"/>
+		<item type="text" 	id ="gpnf" name="挂牌年份" alias="schange_emp" editable="false"/>
+		<item type="text" 	id ="jys_stock_vol" name="昨日可用数量" editable="false"/>
+		<item type="text" 	id ="YE1" name="总数量" editable="false"/>
+		<item type="text" 	id ="app_price" name="标的证券价格" nullable="false" number="true" editable="false" alias="damt1"/>
+	</group>	
+	<group name="交易要素">			
+		<item type="date" 	id ="sdate0" name="初始交易日期" default="now" nullable="false"  editable="false"/>
+		<item type="date" 	id ="sdate1" name="购回交易日期" nullable="false" action="97600026,96000017,97600010,96000008"/>
+		<item type="text" 	id ="days" name="购回期限(天)" nullable="false" integer="true" editable="false"/>	
+		<item type="text"	id ="prewarning_price" name="预警履约保障比率(%)" nullable="false" number="true" editable="false"/>
+		<item type="text" 	id ="lowest_price" name="最低履约保障比例(%)" nullable="false" number="true" editable="false"/>
+		<item type="text" 	id ="mv_discount_rate" name="市值折扣比率(%)" nullable="false" number="true" alias="damt10" editable="false"/>
+		<item type="text" 	id ="damt2" name="折算率(%)" nullable="false" number="true" editable="false"/>
+		<item type="text" 	id ="first_amt" name="初始交易金额小写" nullable="false" number="true" alias="damt0" editable="false"/>
+		<item type="textarea" id ="first_amt_big" name="初始交易金额大写" editable="false"/>
+		<item type="text" 	id ="second_amt" name="购回交易金额小写" editable="false" alias="damt3"/>
+		<item type="textarea" id ="second_amt_big" name="购回交易金额大写" editable="false"/>
+		<item type="text" 	id ="fix_rate" name="固定交易费用比例(%)" default="0" nullable="false" number="true" editable="false"/>
+		<item type="select" id ="if_before" name="是否允许提前购回" nullable="false" source="813" default="1" alias="sholder_type" editable="false"/>
+		<item type="date" 	id ="earliest_bb_date" name="被允许的最早购回时点" nullable="false" alias="sdate3" editable="false"/>
+		<item type="text"	id ="before_rate" name="提前购回补偿费率(%)" nullable="false" number="true" default="0" alias="damt5" editable="false"/>
+		<item type="select" id ="if_after" name="是否允许延期购回" nullable="false" source="815" default="1" alias="sholder_type2" editable="false"/>
+		<item type="date" 	id ="latest_bb_date" name="被允许的最晚购回时点" nullable="false" alias="stime0" editable="false"/>
+		<item type="text"	id ="after_rate" name="延期购回补偿费率(%)" nullable="false" number="true" default="0" alias="damt6" editable="false"/>
+		<item type="text"	id ="tqxs" name="提取系数" nullable="false" number="true" alias="damt7" editable="false"/>
+		<item type="text" 	id ="penalty_rate" 	name="违约金比率(日利率%)" editable="false"/>
+		<!--<item type="select"	id ="if_mand_nota" name="是否强制公证" nullable="false" source="827" default="0"/>-->
+	</group>	
+	<group name="利息要素">		
+		<!--<item type="select"	id ="if_per_interest" name="是否个性化结息" nullable="false" source="828" default="0"/>-->
+		<item type="textarea"	id ="interest_set_dates" name="个性化结息日期" tip="以英文分号分隔" alias="vsvarstr0"/>
+		<item type="text" 	id ="section_days1" name="购回期限(天)1" default="0" nullable="false" integer="true" editable="false" alias="lvol2"/>
+		<item type="text" 	id ="section_begin_date1" name="起息日期1"  nullable="false" editable="false" />
+		<item type="text" 	id ="damt4" name="购回价格1(每100元年收益)" default="0" nullable="false" number="true" editable="false"/>		
+		<item type="text" 	id ="section_days2" name="购回期限(天)2" default="0" integer="true" editable="false" alias="lvol3"/>
+		<item type="text" 	id ="section_begin_date2" name="起息日期2"  editable="false"  />
+		<item type="text" 	id ="damt8" name="购回价格2(每100元年收益)" default="0" number="true" editable="false"/>		
+		<item type="text" 	id ="section_days3" name="购回期限(天)3" default="0" integer="true" editable="false" alias="lvol4"/>
+		<item type="text" 	id ="section_begin_date3" name="起息日期3" editable="false" />
+		<item type="text" 	id ="damt9" name="购回价格3(每100元年收益)" default="0" number="true" editable="false"/>
+	</group>
+	<group name="资金用途">		
+		<item type="textarea" id ="vsmess" name="资金用途" nullable="false" default="其他" action="96000017,96000008"/>
+	</group>
+	<item type="hidden" id="abc"	   name="杂项ID"   default="1" action="97000005"/>
+	<item type="hidden"	id="company"   name="公司名称" editable="false" />
+	<item type="hidden" id="para3000"  name="杂项3000" editable="false"/>
+	<item type="hidden" id="para3001"  name="杂项3001" editable="false"/>
+	<item type="hidden" id="para3002"  name="杂项3002" editable="false"/>
+	<item type="hidden" id="para3003"  name="杂项3003" editable="false"/>
+	<item type="hidden" id="para3004"  name="杂项3004" editable="false"/>
+	<item type="hidden" id="para3005"  name="杂项3005" editable="false"/>
+	<item type="hidden" id="para3006"  name="杂项3006" editable="false"/>
+	<item type="hidden" id="para3034"  name="杂项3034" editable="false"/>
+	<item type="hidden" id="system_date"  name="系统日期" editable="false"/>
+	<item type="hidden" id="cust_id"	name="cust_id"      action="70010102"/>
+	<item type="hidden" id="stock_holder_sh"  name="沪A证券帐户" editable="false"/>
+	<item type="hidden" id="stock_holder_sz"  name="深A证券帐户" editable="false"/>
+	<item type="hidden" id="seat_code_sh"  name="沪A席位代码" editable="false"/>
+	<item type="hidden" id="seat_code_sz"  name="深A席位代码" editable="false"/>
+	<item type="hidden" id="sbond_no"  name="交易协议书编号" editable="false"/>
+	<item type="hidden" id ="zqlb" name="证券类别"/>
+	<item type="hidden" id ="ltlx" name="流通类型"/>
+	<item type="hidden" id ="qylb" name="权益类别"/>
+	<item type="hidden" id ="gpnf" name="挂牌年份"/>
+	<item type="hidden" id ="order_type" name="指令类别"/>
+	<item type="hidden" id ="first_amt" name="初始交易金额小写"/>
+	<item type="hidden" id ="hg_convert_rate" name="折扣比率(%)"/>
+	<item type="hidden" id ="app_price" name="标的证券价格"/>
+	<item type="hidden" id ="second_amt" name="购回交易金额小写"/>
+	<item type="hidden" id ="if_before" name="是否允许提前购回"/>
+	<item type="hidden" id ="earliest_bb_date" name="被允许的最早购回时点"/>
+	<item type="hidden"	id ="before_rate" name="提前购回补偿费率(%)"/>
+	<item type="hidden" id ="if_after" name="是否允许延期购回"/>
+	<item type="hidden" id ="latest_bb_date" name="被允许的最晚购回时点"/>
+	<item type="hidden"	id ="after_rate" name="延期购回补偿费率(%)"/>
+	<item type="hidden"	id ="tqxs" name="提取系数"/>
+	<item type="hidden" id ="section_days1" name="购回期限(天)1"/>
+	<item type="hidden" id ="section_days2" name="购回期限(天)2"/>
+	<item type="hidden" id ="mv_discount_rate" name="市值折扣比率(%)"/>
+	<item type="hidden" id="date"   name="业务协议签署日期"/>
+	<item type="hidden" id="cert_type_name"   name="甲方证件类别"/>
+	<item type="hidden" id="cert_no"   name="甲方证件号码"/>
+	<item type="hidden" id="bfjydy"   name="丙方交易单元(深A)"/>
+</input>
+  <service type="procedure" id="p60010524" process="922" style="1">
+    <param id="user_id" type="integer"/>
+    <param type="string" 	id="scust_no"/>	  			  <!--客户账户-->
+	<param type="string" 	id="sstatus1" default="1"/>	  <!--业务类别-->
+	<param type="string" 	id="sstatus3" default="0"/>	  <!--交易类别-->
+	<param type="string" 	id="sstatus2" default="4"/>	  <!--指令类别-->
+	<param type="string" 	id="smarket_code"/>           <!--市场-->
+	<param type="string" 	id="sstock_code"/>            <!--证券代码-->
+	<param type="number" 	id="lvol0"/>                  <!--数量-->
+	<param type="number" 	id="damt0"/>	              <!--初始交易金额-->
+	<param type="string" 	id="sdate0"/>	              <!--初始交易日期-->
+	<param type="string" 	id="sdate1"/>	              <!--购回交易日期-->
+	<param type="number" 	id="damt4"/>	              <!--购回价格-->
+	<param type="number" 	id="damt1"/>	              <!--交易价格-->
+	<param type="number" 	id="damt2"/>	              <!--折算率-->
+	<param type="number" 	id="damt3"/>	              <!--购回交易金额-->
+	<param type="string" 	id="vsmess"/>	              <!--资金用途-->
+	<param type="string" 	id="scust_auth"/>	          <!--主交易协议书编号-->
+	<param type="string" 	id="sbank_code2" default="GTWT"/>	<!--委托方式-->
+	<param type="string" 	id="sstation0"/>	          <!--委托站点-->
+	<param type="string" 	id="scust_auth2"/>	          <!--交易协议书编号-->
+	<param type="string" 	id="scust_type"/>	          <!--股份性质-->
+	<param type="string" 	id="sdate2"/>	              <!--解除限售日期-->
+	<param type="string" 	id="sstatus4"/>	    		  <!--质权人类型-->
+	<param type="string" 	id="scurrency_type"/>		  <!--证券类别-->
+	<param type="string" 	id="sstatus0"/>               <!--流通类型-->
+	<param type="string" 	id="scurrency_type2"/>        <!--权益类别-->
+	<param type="string" 	id="schange_emp"/>            <!--挂牌年份-->
+	<param type="string" 	id="sname"/>                  <!--合同编号-->
+	<param type="string" 	id="sholder_type"/>           <!--是否允许提前购回-->
+	<param type="string" 	id="sdate3"/>                 <!--被允许的最早购回时点-->
+	<param type="number" 	id="damt5"/>                  <!--提前购回补偿费率-->
+	<param type="string" 	id="sholder_type2"/>          <!--是否允许延期购回-->
+	<param type="string" 	id="stime0"/>                 <!--被允许的最晚购回时点-->
+	<param type="number" 	id="damt6"/>                  <!--延期购回补偿费率-->
+	<param type="number" 	id="damt7"/>                  <!--提取系数-->
+	<param type="number" 	id="lvol2"/>                  <!--区间回购天数1-->
+	<param type="number" 	id="damt8"/>                  <!--购回价格2-->
+	<param type="number" 	id="lvol3"/>                  <!--区间回购天数2-->
+	<param type="number" 	id="damt9"/>                  <!--购回价格3-->
+	<param type="number" 	id="lvol4"/>                  <!--区间回购天数3-->
+	<param type="number" 	id="damt10"/>                 <!--市值折扣率-->
+	<param type="number" 	id="vsvarstr0"/>              <!--个性化结息日-->
+	<param type="number" 	id="stx_pwd"/>                <!--产品代码-->
+</service>
+    <output target="60010524"> 
+    <column type="string" 	id="scust_no"  name="scust_no" />	  		   	  <!--客户账户-->
+	<column type="string" 	id="sstatus1"  name="sstatus1"/>     	  <!--业务类别-->
+	<column type="string" 	id="sstatus3"  name="sstatus3"/>	      <!--交易类别-->
+	<column type="string" 	id="sstatus2"  name="sstatus2"/>	      <!--指令类别-->
+	<column type="string" 	id="smarket_code" name="smarket_code"/>          <!--市场-->
+	<column type="string" 	id="sstock_code" name="sstock_code"/>           <!--证券代码-->
+	<column type="number" 	id="lvol0" name="lvol0"/>                 <!--数量-->
+	<column type="number" 	id="damt0" name="damt0"/>	             <!--初始交易金额-->
+	<column type="string" 	id="sdate0" name="sdate0"/>	             <!--初始交易日期-->
+	<column type="string" 	id="sdate1" name="sdate1"/>	             <!--购回交易日期-->
+	<column type="number" 	id="damt4" name="damt4"/>	             <!--购回价格-->
+	<column type="number" 	id="damt1" name="damt1"/>	             <!--交易价格-->
+	<column type="number" 	id="damt2" name="damt2"/>	             <!--折算率-->
+	<column type="number" 	id="damt3" name="damt3"/>	             <!--购回交易金额-->
+	<column type="string" 	id="vsmess" name="vsmess"/>	             <!--资金用途-->
+	<column type="string" 	id="scust_auth" name="scust_auth"/>	          <!--主交易协议书编号-->
+	<column type="string" 	id="sbank_code2"  name="sbank_code2"/>	      <!--委托方式-->
+	<column type="string" 	id="sstation0" name="sstation0"/>	          <!--委托站点-->
+	<column type="string" 	id="scust_auth2" name="scust_auth2"/>	          <!--交易协议书编号-->
+	<column type="string" 	id="scust_type" name="scust_type"/>	          <!--股份性质-->
+	<column type="string" 	id="sdate2" name="sdate2"/>	             <!--解除限售日期-->
+	<column type="string" 	id="sstatus4" name="sstatus4"/>	    		  <!--质权人类型-->
+	<column type="string" 	id="scurrency_type" name="scurrency_type"/>		  <!--证券类别-->
+	<column type="string" 	id="sstatus0" name="sstatus0"/>              <!--流通类型-->
+	<column type="string" 	id="scurrency_type2" name="scurrency_type2"/>       <!--权益类别-->
+	<column type="string" 	id="schange_emp" name="schange_emp"/>           <!--挂牌年份-->
+	<column type="string" 	id="sname" name="sname"/>                 <!--合同编号-->
+	<column type="string" 	id="sholder_type" name="sholder_type"/>          <!--是否允许提前购回-->
+	<column type="string" 	id="sdate3" name="sdate3"/>                <!--被允许的最早购回时点-->
+	<column type="number" 	id="damt5" name="damt5"/>                 <!--提前购回补偿费率-->
+	<column type="string" 	id="sholder_type2" name="sholder_type2"/>         <!--是否允许延期购回-->
+	<column type="string" 	id="stime0" name="stime0"/>                <!--被允许的最晚购回时点-->
+	<column type="number" 	id="damt6" name="damt6"/>                 <!--延期购回补偿费率-->
+	<column type="number" 	id="damt7" name="damt7"/>                 <!--提取系数-->
+	<column type="number" 	id="lvol2" name="lvol2"/>                 <!--区间回购天数1-->
+	<column type="number" 	id="damt8" name="damt8"/>                 <!--购回价格2-->
+	<column type="number" 	id="lvol3" name="lvol3"/>                 <!--区间回购天数2-->
+	<column type="number" 	id="damt9" name="damt9"/>                 <!--购回价格3-->
+	<column type="number" 	id="lvol4" name="lvol4"/>                 <!--区间回购天数3-->
+	<column type="number" 	id="damt10" name="damt10"/>                <!--市值折扣率-->
+	<column type="number" 	id="vsvarstr0" name="vsvarstr0"/>             <!--个性化结息日-->
+	<column type="number" 	id="stx_pwd" name="stx_pwd"/>               <!--产品代码-->
+  	</output>
+</function>

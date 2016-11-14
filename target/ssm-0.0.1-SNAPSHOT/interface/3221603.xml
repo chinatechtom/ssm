@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3221603" name="模板冗余数据清理">
+	<input>
+	    <description>
+		确认删除?
+		</description>
+		<item type="hidden" 	id="msg_type" 		name="信息类型"  />
+		<item type="hidden" 	id="row" 		    name="行号"  />
+	</input>
+	<service type="procedure" id="p_msg_model_clean" process="811" style="1">
+		<param id="user_id"		type="integer"/>
+		<param id="msg_type"    type="string"/>
+		<param id="row"         type="integer"/>
+	</service>
+	<output/>
+</function>
+		
+		

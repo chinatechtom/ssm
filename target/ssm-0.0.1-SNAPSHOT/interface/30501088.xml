@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="30501088" name="信用产品浏览" >	
+  <input/> 
+  <service type="procedure" id="p_credit_product_brow" implement="p_credit_product_brow30501088"  process="911" style="77"> 
+		<param id="user_id"			type="integer" way="in"/>
+		<param id="product_id2"		type="integer" way="in"/>
+		<param id="product_code2"	type="string"  way="in"/>
+		<param id="product_name2"	type="string"  way="in"/>
+  </service>
+  <output>
+		<column type="number" id="product_cyc2"	field="product_cyc"					 name="产品周期" />
+		<column type="string" id="cyc_unit2"	field="cyc_unit"						 name="周期单位"/>
+		
+ </output>		
+</function>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70010120" name="客户市值查询" >
+  <input/>
+  <service type="procedure" id="P70010120" process="922" style="77">
+	<param type="integer" 	id="user_id"/>
+ 	<param type="integer" 	id="cust_id"/>
+  </service>
+  <output>
+	<column type="string" id="xy_cust_code" 	name="客户信用资金账号"/>	
+	<column type="number" id="cust_num" 	name="客户净资产"/>	
+	<column type="number" id="pt_asset" 	name="客户普通账户总资产"/>	
+	<column type="number" id="xy_asset" 	name="客户信用账户总资产"/>
+	<column type="number" id="xy_debt" 	name="客户信用账户总负债"/>	
+  </output>
+</function>

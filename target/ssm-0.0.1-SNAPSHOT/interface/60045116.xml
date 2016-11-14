@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="60045116" name="客户使用信息申报申请处理">
+  <input print="60045116.jsp">
+	<group name="合同信息" >
+		<item type="hidden" id="cust_id"  	name="客户id"/>			
+		<item type="hidden" id="order_id" 	name="合约id"	action="60044116"/>
+		<item type="text"	id="institution_code"	name="营业部代码" editable="false"/>
+		<item type="text" 	id="institution_name"	name="营业部名称" editable="false"/> 	
+		<item type="text"	id="cust_name"	name="客户姓名" editable="false"/>
+		<item type="text" 	id="cust_code"	name="客户代码" editable="false"/> 	
+	</group>
+	<item type="select" id="market_code" 	name="市场代码" source="039"	nullable="false"/>
+	<item type="select" id="report_status" 	name="客户使用信息申报状态" source="703" nullable="false"/>
+	<item type="hidden" id="date" 			name="打印日期"/>
+	<item type="hidden" id="user_code"		name="打印柜员代码"/>
+	<item type="hidden" id="user_name"		name="打印柜员名称"/>
+	<item type="hidden" id="company"		name="券商名称"/>			
+	<group name="处理意见">
+		<item type="textarea" id ="remark" 	name="处理意见"/>
+	</group>
+  </input>
+  <service type="procedure" id="P60045116" process="833" style="1">
+	<param type="integer" id="user_id"/>
+	<param type="integer" id="cust_id"/>
+	<param type="integer" id="order_id"/>
+	<param type="string" id="market_code"/>
+	<param type="string" id="report_status"/>
+	<param type="string"  id="remark"/>
+  </service>
+  <output/>
+</function>

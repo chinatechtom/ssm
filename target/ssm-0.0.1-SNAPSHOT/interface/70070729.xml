@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70070729" name="特定条件客户群发邮件">
+	<input>
+		<item type="hidden"		id="cust_code"		name="客户代码"	/>
+		<item type="grid"		id="recipients"		name="收件人"		source="70070730"	/>
+		<item type="text"		id="subject"		name="主题"	/>
+		<item type="select"		id="send_type"		name="发送方式" 	source="331"	nullable="false"	/>
+		<item type="select"		id="msg_type2"		name="信息类型" 	source="730"	nullable="false"	/>
+		<item type="textarea"	id="content"		name="内容" />
+		<item type="hidden"		id="recipient_type"	name="收件人类型"	default="1" />	
+	</input>
+	<service type="procedure"	id="p70070729" process="822" style="77">
+		<param id="user_id"			type="integer"	/>				
+		<param id="cust_code"		type="string"	/>
+		<param id="user_code"		type="string"	/>
+		<param id="group_code"		type="string"	/>
+		<param id="recipient_type"	type="string"	/>		
+		<param id="send_type"		type="string"	/>
+		<param id="msg_type2"		type="string"	/>
+		<param id="subject"			type="string"	/>
+		<param id="content"			type="string"	/>
+	</service>
+	<output/>
+</function>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3221180" name="融资仓单到期汇总列表">
+	<input>
+		<item type="hidden" 	id="c1" 		name="信息编号" />	
+	</input>
+	<service type="procedure" id="p10011" process="911" style="77">
+		<param id="c1" type="integer"/>	
+	  </service>
+	<output export="true">
+	 	<column type="number" 	id="current_bal"    name="融资负债金额(元)" precision="2"/>
+    	<column type="number" 	id="interest_fee"   name="应付未付利息(元)" precision="2" display="false"/>
+		<column type="number" 	id="fin_all_debt"   name="合计(元)"         precision="2" display="false"/>
+    	<column type="string" 	id="occur_date"     name="负债起始日期"     />
+    	<column type="string" 	id="expire_date"   	name="负债到期日期"     />
+    	<column type="string" 	id="remark"   		name="备注"              />
+	</output>
+</function>
+		
+		

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="36110029" name="担保证券集中度统计" >
+<input print="36110029.jsp">
+  <item type="hidden" id="product_code" name="产品代码" />
+  <item type="hidden" id="market_code"  name="市场代码" />
+  <item type="hidden" id="control_values" name="阀值大于" />
+   <item type="text"   id="year"        name="年份选择" />
+   <item type="text"   id="month"       name="月份选择" />
+  <item type="text" id="print_date"   name="时间" />
+  <group name="担保证券集中度统计" >
+    <item type="grid" id="product_code,market_code,control_values,year,month" name="" source="36000029"/>
+  </group>
+</input>
+</function>

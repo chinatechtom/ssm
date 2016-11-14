@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="60100183" name="批量生成付息通知">
+	<input>
+		<item type="hidden"		id="cust_code"		name="客户代码"	/>
+		<item type="select"		id="msg_type2"	name="信息类型"		source="832"	nullable="false"  default="16"/>
+		<item type="select"		id="msg_type"	name="模板类型"		source="833"	nullable="false"	/>
+	</input>
+	<service type="procedure"	id="p60100183" process="833" style="77">
+		<param id="user_id"			type="integer"	/>				
+		<param id="cust_code"		type="string"	/>	
+		<param id="msg_type2"	    type="string"	/>
+		<param id="msg_type"	    type="string"	/>
+	</service>
+	<output/>
+</function>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3130901" name="机构账户设置">
+	<input>
+		<item type="select"	id="institution_id"		name="机构名称" source="90000006" nullable="false"/>		
+		<item type="hidden"	id="acc_id"				name="账户id"/>
+		<item type="select" id="acc_type"			name="账户类型" source="043" nullable="false"/>
+		<item type="select" id="acc_sort"			name="账户类别" source="044" nullable="false"/>	
+		<item type="text"   id="acc_code"			name="账户代码"	nullable="false"	maxlen="20"/>	
+		<item type="select" id="cert_type"			name="证件类型" source="029" nullable="false"/>	
+		<item type="text"   id="cert_no"			name="证件号码"	nullable="false"	maxlen="20"/>	
+		<item type="select" id="acc_status"			name="账户状态" source="048" nullable="false"/>	
+		<item type="date"   id="open_date"			name="开户日期" default="now"/>	
+		<item type="text"   id="open_oper"			name="开户人员"	maxlen="20"/>
+	</input>
+	<service type="procedure" id="p_institution_acc_1_set" implement="p_institution_acc_1_set3130901"  process="811" style="1">
+		<param type="integer" id="user_id"			way="in"/>
+		<param type="integer" id="institution_id"	way="in"/>		
+		<param type="integer" id="acc_id"			way="in"/>
+		<param type="string"  id="acc_type"			way="in"/>
+		<param type="string"  id="acc_sort"			way="in"/>	
+		<param type="string"  id="acc_code"			way="in"/>	
+		<param type="string"  id="cert_type"		way="in"/>	
+		<param type="string"  id="cert_no"			way="in"/>	
+		<param type="string"  id="acc_status"		way="in"/>	
+		<param type="string"  id="open_date"		way="in"/>	
+		<param type="string"  id="open_oper"		way="in"/>
+	</service>
+	<output/>	
+</function>

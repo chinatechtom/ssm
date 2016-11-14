@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3222201" name="新增邮件组" >
+	<input>
+		<item type="hidden"		id="user_id"		name="用户ID"						/> 
+		<item type="select"		id="msg_type"		name="邮件类型"		source="333"		nullable="false"	/> 
+		<item type="select"		id="group_id"		name="组名"			source="95000009"	nullable="false"	/> 
+	</input>
+	<service type="procedure" id="p_msg_type_group_insert" process="811" style="1">
+		<param id="user_id"		type="integer"	way="in"	/>    
+		<param id="msg_type"	type="string"	way="in"	/> 
+		<param id="group_id"	type="integer"	way="in"	/>
+	</service>
+</function>

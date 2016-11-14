@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="37425" name="获取客户原始保证金比例" >	
+  <input> 
+		<item type="hidden" id="cust_id"			name="客户id"/>
+		<item type="hidden"	id="order_id"   	name="合约id"/>
+		<item type="hidden" id="total_score"	name="综合得分"/>
+  </input>
+  <service type="procedure" id="p_order_guarantee_rate"  implement="p_order_guarantee_rate37425" process="911" style="77"> 
+		<param id="user_id"		type="integer"/>
+		<param id="cust_id"		type="integer"/>
+		<param id="order_id"		type="integer"/>
+		<param id="total_score"		type="number"/>
+  </service>
+  <output>
+		<column type="number" id="applay_guarantee_rate_13"	name="变更初始保证金比例"	precision="2"/>
+		<column type="number" id="applay_guarantee_rate_5"	name="变更融券卖出保证金比例"	precision="2"/>
+		<column type="number" id="applay_guarantee_rate_6"	name="变更融资买入保证金比例"	precision="2"/>
+		<column type="number" id="now_guarantee_rate_13"		name="当前初始保证金比例"	precision="2"/>
+		<column type="number" id="now_guarantee_rate_5"			name="当前融券卖出保证金比例"	precision="2"/>
+		<column type="number" id="now_guarantee_rate_6"			name="当前融券卖出保证金比例"	precision="2"/>
+		<column type="number" id="credit_num"								name="当前授信额度"			precision="2"/>
+  </output>		
+</function>

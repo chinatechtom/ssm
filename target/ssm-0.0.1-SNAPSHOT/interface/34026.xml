@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="34026" name="获取客户总资产" >  
+	<input>
+		<item type="hidden"	id="commness_cust_code"	name="普通资金账户"/>
+	</input>
+	<service type="drtp" id="200102" process="711" style="77">
+		<param type="string"	field="scust_no" id="commness_cust_code"/>
+		<param type="int"	id="lvol2"	default="1"/>
+		<param type="string"	id="scurrency_type"	default="01"/>
+	</service> 
+	<output>
+		<column type="string" id="scust_no" name="普通资金账户"/>
+		<column type="number" id="total_commness_asset" field="scard1" name="普通账户总资产"/>
+	</output>
+</function>

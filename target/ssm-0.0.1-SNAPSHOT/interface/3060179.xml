@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3060179" name="客户其他资料录入" >
+	<input>
+		<item type="hidden" id="cust_type_flag" 	name="客户类型" />
+		<item type="hidden" id="cust_id" 			name="客户ID" action="30601781"/>
+		<item type="hidden" id="commness_cust_code" name="普通资金账户"/>
+		<item type="text"	id="cust_code"			name="客户代码"/>
+		<item type="text"	id="cust_name"			name="客户姓名"/>
+		<item type="hidden" id="cert_no"			name="证件号码"/>
+		<group name="融资融券业务讲解(日期格式为YYYYMMDD,时间到分,格式为HH:MM:SS)">
+			<item type="date"	id="explain_begin_date"	name="讲解开始日期"/>
+			<item type="text"	id="explain_begin_time"	name="讲解开始时间"/>
+			<item type="date"	id="explain_end_date"	name="讲解结束日期"/>
+			<item type="text"	id="explain_end_time"	name="讲解结束时间"/>
+		</group>
+		<group name="基本情况">
+			<item type="select" 	id="work_company"			name="工作单位"	source="613" nullable="false"/>
+			<item type="textarea"	id="work_company_detail"	name="工作单位详情"/>
+			<item type="select"		id="family_state"		  	name="家庭状况"	source="614"/>
+			<item type="textarea"	id="business_content"		name="业务详情" default="1:期货; 2:权证; 3:外汇; 4:黄金; 5:均未参与" editable="false" />
+			<item type="text"		id="part_business"			name="曾参与业务(分号分隔)" source="615"/>
+			<item type="select" 	id="if_pro_credit_report" 	name="是否提供信用报告"	source="616" nullable="false"/>
+		</group>
+		<group name="财务情况">
+			<item type="text" 		id="finance_asset_wy"	name="金融资产(不含海通资金账户内资产)(万元)" number="true"/>
+			<item type="text" 		id="bank_debt_wy"		name="银行负债(万元)" number="true"/>
+			<item type="text" 		id="other_debt_wy"		name="其他负债(万元)" number="true"/>
+			<item type="textarea"	id="asset_oledge_state" name="个人资产抵押情况"/>
+			<item type="textarea"	id="other_gura_state"	name="个人其他对外担保情况"/>	
+		</group>
+	</input>
+	<service type="procedure" id="p_cust_other_info_insert" implement="p_cust_other_info_insert3060179" process="811" style="1">
+		<param type="integer"	id="user_id"				way="in"/>
+		<param type="integer"	id="cust_id"				way="in"/>
+		<param type="string"	id="commness_cust_code"		way="in"/>
+		<param type="string"	id="cust_code"				way="in"/>
+		<param type="string"	id="cust_name"				way="in"/>
+		<param type="string"	id="cert_no" 				way="in"/>
+		<param type="string"	id="explain_begin_date"		way="in"/>
+		<param type="string"	id="explain_begin_time"		way="in"/>
+		<param type="string"	id="explain_end_date"		way="in"/>
+		<param type="string"	id="explain_end_time"		way="in"/>
+		<param type="string" 	id="work_company"			way="in"/>
+		<param type="string"	id="work_company_detail"	way="in"/>
+		<param type="string"	id="family_state"		  	way="in"/>
+		<param type="string"	id="part_business"			way="in"/>
+		<param type="string" 	id="if_pro_credit_report" 	way="in"/>
+		<param type="double" 	id="finance_asset_wy"		way="in"/>
+		<param type="double" 	id="bank_debt_wy"			way="in"/>
+		<param type="double" 	id="other_debt_wy"			way="in"/>
+		<param type="string"	id="asset_oledge_state" 	way="in"/>
+		<param type="string"	id="other_gura_state"		way="in"/>
+	</service> 
+	<output>
+	</output>
+</function>

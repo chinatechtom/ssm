@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3064444431" name="处理修改融券产品申请" >
+	<input>
+		<item	type="hidden"	id="credit_product_sort" name="融券产品类别" default="2" />
+		<item type="hidden" id="cust_id" name="客户id" action="1888"/>		
+		<item	type="hidden"	id="order_id"	name="定单ID"	/>
+		<group name="合约">
+			<item type="hidden" id="order_no" name="合约编号"/>
+			<item type="hidden" id="formerly_voucher_no" name="原始凭证号"/>			
+			<item type="text" id ="cust_name" name="客户姓名" editable="false"/>
+			<item type="text" id ="cust_code" name="客户代码" editable="false"/>
+			<item type="hidden" id="date"     name="打印日期"/>	<!--从1888.xml获得的打印日期-->
+			<item type="hidden" id="user_code"  name="打印柜员代码"/><!--从1888.xml获得的打印柜员代码-->
+			<item type="hidden" id="user_name"  name="打印柜员名称"/><!--从1888.xml获得的打印柜员名称-->
+			<item type="hidden" id="company"    name="券商名称"/><!--从1888.xml获得的券商名称-->
+		</group>
+		<group name="融券信息">
+			<item type="text"		id="sec_code"	name="证券代码" editable="false"/>
+			<item	type="text"		id="sec_name"	name="证券名称" editable="false"/>
+			<item	type="hidden"	id="market_code"	name="市场代码" editable="false"/>
+			<item	type="text"		id="market_name"	name="市场名称" editable="false"/>
+		</group>
+		<group name="合同信息" scope="group">			
+<!--			<item	type="hidden"	id="credit_product_sort" name="融券产品类别" default="2" />
+			<item type="hidden" id="cust_id" name="客户id" action="1888"/>	
+			<item type="hidden" id="bond_id" name="合同id"  action="3068701" />
+			<item type="text" id="credit_product_name" name="原融券产品" editable="false"/>			
+			<item type="grid" id="financing_product" name="已有融券产品" source="305010203"/>
+			<item type="hidden" id="credit_product_id" alias="old_credit_product_id" name="原融券产品ID" />
+			<item type="hidden"		id="sec_code"	name="证券代码" />
+ -->
+ 			<item	type="hidden"	id="order_id"	name="定单ID" action="305010206"	/>
+			<item type="text" id="product_name" name="原融券产品" editable="false"/>			
+			<item type="grid" id="financing_product" name="原融券产品详情" source="305010206"/>
+		</group>		
+		<group name="修改后融券产品信息">	
+<!--			<item type="select" id="credit_product_id" name="融资产品" source="95000004" action="30501" nullable="false" editable="false"/> -->
+			<item type="hidden" id="credit_product_id" name="融券产品ID" alias="product_id"/>
+			<item type="text" id="credit_product_name" name="融券产品" editable="false"/>			
+			<item type="grid" id="financing_product1" name="融券产品详情" source="305010205"/>
+			<item type="hidden" id="product_cyc"  name="产品周期" editable="false"/>
+			<item type="hidden" id="cyc_unit"   name="周期单位" editable="false"/>	
+			<item type="hidden" id="availability_time" name="生效日期" default="last"/>
+			<item type="hidden" id="begin_time" name="起始日期" default="now" />
+			<item type="hidden" id="return_time" name="到期日期"/>	
+			<item type="hidden" id="over_time" name="延长日期"/>				
+<!--			<item type="button" id="assistant"	name="更多详情" action="3050102" multiple="0"/>  -->
+		</group>
+		<group name="备注说明">
+			<item type="textarea" id="remark" name="备注说明" editable="false"/>
+		</group>
+		<group name="处理意见">	
+			<item type="textarea" id="manage_opinion" name="处理意见"/>
+		</group>
+		
+	</input>
+	<service type="procedure" id="p_bs_product_change_modi" impliment="p_bs_product_change_modi3064444431" process="811" style="1">
+		<param type="integer" 	id="user_id" 		way="in" 	/>
+		
+		<param type="string" 		id="order_id" 	way="in" 	/>
+		<param type="integer" 	id="cust_id" 		way="in" 	/>
+		<param type="string"		id="remark"			way="in"	/>
+		<param type="integer" 	id="bond_id" 		way="in" 	/>
+		<param type="integer" 	id="product_id" way="in" 	/>	
+		<param type="integer"		id="old_credit_product_id"	way="in" />
+		<param type="string"		id="manage_opinion"	way="in" />	
+	</service>
+	<output/>
+</function>

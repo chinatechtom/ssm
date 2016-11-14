@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="27110119" name="客户新增融资融券额度统计表" >
+     <input>
+      <item type="select"  id="institution_id"        name="营业部名称" source="95000008"/>      
+      <item type="date"    id="start_date"            name="起始日期*"  default="last"/>
+      <item type="date"    id="end_date"              name="结束日期*"  default="now"/>      
+     </input>
+  <service type="procedure" id="P27110119"  process="911" style="77">
+      <param id="user_id"               type="integer" way="in"/> 
+      <param id="institution_id"        type="integer" way="in"/>
+      <param id="start_date"            type="string"  way="in"/> 
+      <param id="end_date"              type="string"  way="in"/>           
+   </service>
+ <output print="true">
+    <column type="string" id="remark"            name="提示"/>     
+	<column type="string" id="institution_id"    name="营业部名称"/>
+	<column type="string" id="start_date"        name="起始日期"/>        
+	<column type="string" id="end_date"          name="结束日期"/>        
+	<button type="print" id="print" name="打印" action="27110121" multiple="1"/>         
+</output>
+</function>  

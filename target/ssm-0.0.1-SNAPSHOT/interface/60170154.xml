@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="60170154" name="申请报价参数的信息查询" >
+  <input>
+	<item type="text"   id="product_code"   name="证券代码"/>
+    <item type="text"   id="product_name"   name="证券名称"/>
+	<item type="select" id="market_code"    name="市场"	source="039"/>
+    <item type="select"   id="busi_type"   name="业务类别" source="743"/>	
+    <item type="select"   id="order_type"   name="指令类别" source="739"/>	
+  </input>
+  <service type="procedure" id="P60170154" process="933" style="77"> 
+    <param id="user_id"		    way="in"/>
+	<param id="market_code"     way="in"/>
+    <param id="product_code"   way="in"/>  
+	<param id="product_name"  way="in"/>
+	<param id="busi_type"  way="in"/>
+	<param id="order_type"  way="in"/>
+  </service>
+  <output>
+	<column type="string" id="product_code"		name="证券代码"/>
+	<column type="string" id="product_name"		name="证券名称"/>	
+	<column type="string" id="market_code"		name="市场代码" display="false"/>
+	<column type="string" id="market_code_name"	name="市场代码"/>	
+	<column type="string" id="busi_type"	name="业务类别" display="false"/>	
+	<column type="string" id="busi_type_name"	name="业务类别"/>
+	<column type="string" id="order_type"	name="we指令类别" display="false"/>	
+	<column type="string" id="order_type_name"	name="指令类别"/>
+	<column type="number" id="lower_limit"	name="期限下限(含)"/>	
+	<column type="number" id="upper_limit"	name="期限上限"/>	
+	<column type="number" id="hg_rate"	name="购回价格默认值(%)" precision="2"/>	
+	<column type="number" id="hg_rate_lower"	name="购回价格下限(%)" precision="2"/>
+	<column type="number" id="hg_rate_upper"	name="购回价格上限(%)" precision="2"/>	
+	<column type="number" id="zsl"	name="标的折扣率默认值(%)" precision="2"/>	
+	<column type="number" id="zsl_lower"	name="标的折扣率下限(%)" precision="2"/>	
+	<column type="number" id="zsl_upper"	name="标的折扣率上限(%)" precision="2"/>
+	<button type="edit" id="edit" name="导入申请报价参数的信息" action="60170155" multiple="-1"/>
+  </output>
+</function>

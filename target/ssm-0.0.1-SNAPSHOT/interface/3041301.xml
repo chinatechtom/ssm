@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3041301" name="交易指令担保率浏览" >
+  <input>   
+    <item type="hidden"	id="guarantee_rate_id"		name="担保率类id"/>
+	<item type="text"	id="guarantee_rate_name"	name="担保率类名称"/>
+    <item type="select"	id="trade_code"				name="交易指令" source="310"/>   
+  </input>
+  <service type="procedure" id="p_guarantee_rate_browse" implement="p_guarantee_rate_browse41301"  process="911" style="77"> 
+    <param id="user_id"				type="integer" way="in"/>    
+    <param id="guarantee_rate_id"   type="integer" way="in"/>
+	<param id="guarantee_rate_name" type="string" way="in"/>
+    <param id="trade_code"			type="string"  way="in"/>		
+  </service>
+  <output export="true" autoload="true">
+	<column type="number" id="guarantee_rate_id"	 name="担保率类id"    display="false"/>
+	<column type="string" id="guarantee_rate_name"	 name="担保率名称"/>
+	<column type="string" id="instruction_name"		 name="交易指令"/>
+	<column type="string" id="guarantee_rate_use"	 name="担保率说明"/>	
+	<column type="string" id="instruction"			 name="交易指令1"	     display="false"/>	
+  </output>
+</function>

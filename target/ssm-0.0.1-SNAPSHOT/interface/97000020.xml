@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="97000020" name="计算天数" >
+	<input/>
+	<service type="procedure" id="P97000016"  process="922" style="77">
+		<param id="user_id" type="integer"/>	
+		<param type="string" id="engage_trade_date2"/>
+		<param type="string" id="bb_date2"/>
+	</service>
+	<output export="true">  
+		<column type="number" id="days2"   name="购回期限" precision="0"/>
+	</output>
+</function>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3021301" name="融资专户额度查询" >
+	<input/>
+    <service type="procedure" id="p_financing_quantum_browse" implement="p_financing_quantum_browse3021301" process="911" style="77">
+		<param id="user_id"	            type="integer" way="in"/> 			
+    </service>
+    <output autoload="true" export="true">
+		<column type="number" id="acc_id"				name="账户id"				display="false"/>	
+		<column type="number" id="all_credit_amt"		name="可申请总额度"			precision="2"/>
+		<column type="number" id="credit_amt_total"		name="可融资总额度"			precision="2"/>
+		<column type="number" id="credit_amt_single"	name="单客户最大融资上限"		precision="2"/>
+		<column type="number" id="credit_frozen_amt"	name="冻结金额"		precision="2"/>
+    </output>
+</function>

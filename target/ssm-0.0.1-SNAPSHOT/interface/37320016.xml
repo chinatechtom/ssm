@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="37320016" name="2.4加权费率日报表" >
+	<input>
+		<item type="date" id="date" name="选择日期" default="last"/>
+	</input>
+	<service type="procedure" id="P37320016"  implement="P3732001637320016" process="911" style="77"> 
+		<param id="user_id"       type="integer" way="in"/>
+		<param id="date"          type="string"  way="in"/>
+	</service>
+	<output export="true" print="true" unit="元">
+		<column type="string" id="business_type"	name="业务类型"/>
+		<column type="number" id="balance"		    name="余额(亿元)"  precision="4"/>			
+		<column type="number" id="weight_rate"		name="加权费率(%)" precision="2"/>
+	</output>	
+</function>

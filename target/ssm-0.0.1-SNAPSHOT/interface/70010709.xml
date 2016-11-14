@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70010709" name="合同签署申请">  
+  <input>
+	<item type="text" 	id="cust_code" name="客户代码" nullable="false"/>
+	<item type="hidden" id="cert_no" name="证件号码"/>
+  </input>
+   <service type="procedure" id="P70010104" implement="p70010104_70010709" process="922" style="77">
+	<param type="integer" 	id="user_id"/> 
+	<param type="string"	id="cust_code"/>
+	<param type="string"	id="cert_no"/>
+  </service> 
+  <output>
+    <column type="number" id="cust_id" name="客户id" display="false"/>   
+    <column type="string" id="cust_code" name="客户代码"/>
+	<column type="string" id="cust_name" name="客户姓名"/>
+	<column type="string" id="cert_type" name="证件类型1" display="false"/>
+	<column type="string" id="cert_type_name" name="证件类型"/>
+    <column type="string" id="cert_no" name="证件号码"/>
+	<column type="string" id="if_exsist" name="客户是否存在" display="false"/>
+	<column type="string" id="if_exsist_name" name="客户是否存在"/>
+	<column type="string" id="cust_type" name="客户类型1" display="false"/>
+	<column type="string" id="cust_type_name" name="客户类型"/>
+	<column type="string" id="move_tel" name="移动电话"/>
+	<column type="string" id="fix_tel" name="固定电话"/>
+	<column type="string" id="family_address" name="家庭地址"/>
+	<column type="string" id="email" name="电子邮箱"/>
+	<column type="string" id="ps_code" name="邮政编码"/>
+	<column type="string" id="fax" name="传真"/>
+	
+	<button type="edit"   id="edit" name="合同签署申请" action="7001071" extendaction="if_exsist" multiple="0"/>
+  </output>
+</function>

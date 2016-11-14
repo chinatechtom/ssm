@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3100501" name="账户类—客户资料重要项目修改" >  
+  <input>
+	<item type="date" id="date" name="日期"  default="now"/>
+	<item type="select" id="property_type" name="资产种类"  source="129"/>
+	<item type="select" id="credit_level_id" source="90000002" name="信用级别" />
+  </input>
+   <service type="procedure" id="p_statistics_3100501_query" process="911" style="77">
+	<param id="user_id" type="integer" way="in" /> 
+	<param id="date"/>
+	<param id="property_type" />
+	<param id="credit_level_id" />
+  </service> 
+  <output  print="true">
+    <column type="string" id="c1" name="信用账户"/>  
+	<column type="string" id="c2" name="账户名称"/>
+	<column type="string" id="c3" name="修改类别"/>
+	<column type="number" id="c4" name="修改次数"/>
+	<column type="string" id="c5" name="修改内容说明"/>
+	<column type="string" id="c6" name="操作员"/>
+  </output>
+</function>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3213501" name="单个客户融资规模" >
+   <input>
+ 		<item type="text"   id="institution_id" 		name="客户id" />
+   </input>
+   <service type="procedure" id="p_information_report_32134_financing_query" process="911" style="77">
+   		<param id="user_id" 		type="integer"/>
+   		<param id="institution_id" 		type="string"/>
+   </service>
+   <output>
+  		<column type="string" id="c1"   name="序号"  />
+   		<column type="string" id="c2"   name="客户证券账户名称"  />
+   		<column type="string" id="c3"   name="证券账户代码"  />
+   		<column type="number" id="c4"   name="融资金额"  precision="2"/>
+   		<column type="number" id="c5"   name="融资金额占净资本比例"  precision="6"/>
+   		<column type="string" id="c6"   name="备注"  />
+   	</output>
+   	</function>

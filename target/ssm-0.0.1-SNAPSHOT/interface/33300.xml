@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="33300" name="融资融券收入查询" >
+	<input>	
+		
+		<item type="select" id="institution_id" name="营业部名称"  source="95000008"/>
+		<item type="text" 	id="cust_code" 		name="客户代码" />
+		<item type="date" 	id="start_date" 	name="起始时间" default="last"/>
+		<item type="date" 	id="end_date" 		name="结束时间" default="now"/>
+  	</input>
+  	<service type="procedure" id="p_institution_cust_rzrq_query" implement="p_institution_cust_rzrq_query33300" process="955" style="77">
+		<param id="user_id" type="integer" way="in" /> 
+		<param id="cust_code"/>
+		<param id="institution_id" />
+		<param id="start_date" />
+		<param id="end_date" />
+	</service>
+	<output export="true" print="true">
+		<column type="string" id="c1"   name="营业部名称"  />
+    	<column type="string" id="c2"   name="客户代码"  />
+		<column type="string" id="c3"   name="客户姓名"  />
+    	<column type="number" id="c4"   name="客户交易量"  	    precision="2" total="true" />    
+    	<column type="number" id="c5"   name="融资买入金额"  	precision="2" total="true" />
+    	<column type="number" id="c6"   name="融券卖出金额"  	precision="2" total="true" />
+    	<column type="number" id="c7"   name="融资还款金额"  	precision="2" total="true" />
+    	<column type="number" id="c8"   name="融券还券数量"  	precision="2" total="true" />     	
+    	<column type="number" id="c9"   name="利息收入"  	    precision="2" total="true" />
+		<column type="number" id="c10"  name="佣金收入"  	    precision="2" total="true" />
+	 </output>
+	 </function>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3060161120" name="征信导入" >
+<description>只有执行成功的任务可以导入！</description>
+  <input>	   
+  </input>  
+</function>

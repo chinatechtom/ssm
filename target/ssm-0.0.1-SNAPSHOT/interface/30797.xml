@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="30797" name="修改私用额度参数" >
+  <input>	
+   <group name="原合同私用额度参数">
+    <item type="hidden"    id="cust_id"       name="客户id" action="1888"/>	
+	<item type="hidden"    id="bond_id"       name="合同id" />	
+    <item type="text"      id="cust_name"     name="客户姓名" editable="false"/>
+	<item type="text"      id="cust_code"     name="客户代码" editable="false"/>
+	<item type="select"    id="pvt_ctl_stauts_1"           name="私用额度私用额度权限状态" editable="false" source="523"/>
+	<item type="text"      id="pvt_fin_lmt_modulus_1"      name="私用转融资比例系数" editable="false"/>
+	<item type="text"      id="pvt_bs_lmt_modulus_1"       name="私用转融券比例系数" editable="false"/>
+	<item type="text"      id="pvt_crd_lmt_modulus_1"      name="私用转融通授信比例系数" editable="false"/>
+	<item type="select"    id="pvt_fin_product_id_1"       name="私用转融资信用产品" editable="false" source="95000014"/>
+	<item type="select"    id="pvt_bs_product_id_1"        name="私用转融券信用产品" editable="false" source="95000015"/>
+	<item type="textarea"  id="remark"         name="备注说明" editable="false"/>
+	<item type="hidden"    id="date"           name="打印日期"/>	<!--从1888.xml获得的打印日期-->
+	<item type="hidden"    id="user_code"      name="打印柜员代码"/><!--从1888.xml获得的打印柜员代码-->
+	<item type="hidden"    id="user_name"      name="打印柜员名称"/><!--从1888.xml获得的打印柜员名称-->
+	<item type="hidden"    id="company"        name="券商名称"/><!--从1888.xml获得的券商名称-->
+   </group>
+   <group name="修改私用额度参数">
+		<item type="hidden"    id="cust_id"                  name="客户id"            nullable="false" action="3063203"/>
+		<item type="select"    id="pvt_ctl_stauts"           name="私用额度私用额度权限状态" nullable="false"  source="523"/>
+		<item type="text"      id="pvt_fin_lmt_modulus"      name="私用转融资比例系数" nullable="false" />
+		<item type="text"      id="pvt_bs_lmt_modulus"       name="私用转融券比例系数" nullable="false" />
+		<item type="text"      id="pvt_crd_lmt_modulus"      name="私用转融通授信比例系数" nullable="false" />
+		<item type="select"    id="pvt_fin_product_id"       name="私用转融资信用产品" source="95000014"/>
+		<item type="hidden"    id="pvt_fin_product_code"     name="私用转融资信用产品代码" />
+		<item type="select"    id="pvt_bs_product_id"        name="私用转融券信用产品" source="95000015"/>
+		<item type="hidden"    id="pvt_bs_product_code"      name="私用转融券信用产品代码" />
+		<item type="textarea"  id="remark2"                  name="备注"/>
+   </group>
+   
+  </input>
+  <service type="procedure" id="p_private_modulus_insert" process="811" style="1">
+	<param type="integer" id="user_id"             way="in"/>
+	<param type="integer" id="cust_id"             way="in"/>
+	<param type="integer" id="bond_id"             way="in"/>
+	<param type="string"  id="pvt_ctl_stauts"      way="in"/>
+	<param type="double"  id="pvt_fin_lmt_modulus" way="in"/>
+	<param type="double"  id="pvt_bs_lmt_modulus"  way="in"/>
+	<param type="double"  id="pvt_crd_lmt_modulus" way="in"/>
+	<param type="integer" id="pvt_fin_product_id"  way="in"/>
+	<param type="integer" id="pvt_bs_product_id"   way="in"/>
+	<param type="string"  id="remark2"             way="in"/>
+  </service>
+  <output/>
+</function>

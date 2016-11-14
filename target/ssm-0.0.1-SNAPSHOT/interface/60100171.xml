@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="60100171" name="批量结息扣款明细表">
+	<input>
+		<item type="date" id="end_date" name="查询日期" />
+	</input>
+	<service type="procedure" id="p60100171" process="933" style="77">
+		<param id="user_id"   type="integer"/>
+		<param id="end_date"  type="string"/>
+	</service>  
+	<output export="true">
+		<column type="string" id="cust_code"   name="客户代码"/>  
+		<column type="string" id="cust_name"   name="客户名称"/>
+		<column type="string" id="sbond_no"    name="交易协议书编号"/>  
+		<column type="string" id="first_amt"   name="初始交易金额"/>
+        <column type="number" id="hg_rate"     name="当前执行利率" precision="4"/>  
+		<column type="string" id="unreceived_interest"   name="应付利息总额"/>
+        <column type="string" id="trade_amt"   name="扣息金额"/>  
+		<column type="string" id="occur_date"  name="扣息日期"/>  
+	</output>
+</function>

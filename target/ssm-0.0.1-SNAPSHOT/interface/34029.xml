@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="34029" name="获取征信任务ID" >  
+	<input>
+		<item type="hidden" id="zx_type" name="征信任务类型"/> 
+	</input>
+	<service type="procedure" id="kingstar.pr_get_zx_task_id" process="155" style="1">
+		<param type="string" id="zx_type"/> 		
+	</service> 
+<output>
+		<column type="string" id="task_id" name="任务编号"/>
+</output>	
+</function>

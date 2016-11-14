@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="37422" name="客户评价项目明细得分" >	
+  <input> 
+		<item type="hidden"	id="cust_id"						name="客户ID" />
+		<item type="hidden"	id="origin_lower_guarantee_rate"	name="原始最低保证金比例"/>
+		<item type="hidden" id="cur_asset"						name="净资产(万元)"/>
+		<item type="hidden" id="hs300_year_profit_rate"			name="同期沪深300年化收益率(%)"/>
+		<item type="hidden" id="abs_profit_rate"				name="绝对收益率(%)"/>
+		<item type="hidden" id="cp_profit_rate"					name="相对收益率(%)"/>
+		<item type="hidden" id="rzrq_commission"				name="信用交易佣金(万元)"/>
+		<item type="hidden" id="rzrq_fee"						name="信用交易息费收入(万元)"/>
+  </input>
+  <service type="procedure" id="p_cust_guarantee_rate_count"  implement="p_cust_guarantee_rate_count37422" process="911" style="77"> 
+		<param id="user_id"						type="integer"/>
+		<param id="cust_id"						type="integer"/>
+		<param id="origin_lower_guarantee_rate"	type="double"/>
+		<param id="cur_asset"					type="double"/>
+		<param id="hs300_year_profit_rate"		type="double"/>
+		<param id="abs_profit_rate"				type="double"/>
+		<param id="cp_profit_rate"				type="double"/>
+		<param id="rzrq_commission"				type="double"/>
+		<param id="rzrq_fee"					type="double"/>
+		<param id="apply_lower_guarantee_rate"	type="number"/>
+  </service>	
+   <output>
+		<column type="number" id="abs_profit_score"				name="绝对收益率得分"				precision="0"/>
+		<column type="number" id="hs300_year_profit_score"		name="同期沪深300年化收益率得分"	precision="0"/>
+		<column type="number" id="cp_profit_score"				name="相对收益率得分"				precision="0"/>
+		<column type="number" id="cur_asset_score"				name="净资产得分"					precision="0"/>
+		<column type="number" id="rzrq_commission_score"		name="信用交易佣金得分"			precision="0"/>
+		<column type="number" id="rzrq_fee_score"				name="信用交易息费收入得分"		precision="0"/>	
+		<column type="number" id="total_score"					name="综合得分" 					precision="2"/>
+		<column type="number" id="lower_guarantee_rate"			name="最低融资/融券保证金比例" 	precision="2"/>
+		<column type="number" id="suggest_lower_guarantee_rate" name="建议融资/融券保证金比例" 	precision="2"/>
+		<column type="number" id="adjuest_value"				name="调整值" 						precision="2"/>		
+  </output>	
+</function>

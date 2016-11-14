@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="60044113" name="子合约详细" >
+	<input>	
+        <item type="hidden" id="order_id"     name="合约ID"/>
+		<item type="hidden" id="order_no"     name="合约no"/>
+	</input>
+	<service type="procedure" id="P60044113" process="933" style="77">
+		<param type="integer" id="user_id" way="in" />
+		<param type="integer" id="order_id" way="in" />
+		<param type="string"  id="order_no" way="in"/>
+	</service>
+	<output>
+		<column type="hidden" id="order_id"   name="order_id"/>
+		<column type="hidden" id="sbond_id"   name="sbond_id"/>
+		<column type="string" id="sbond_no"   name="交易协议书编号"/>
+		<column type="string" id="trade_date"   name="处置日期"/>
+        <column type="number" id="stock_vol"   name="处置数量" precision="0"/>
+		<column type="number" id="return_amt1"   name="归还金额" precision="2"/>
+		<column type="number" id="jsf"   name="经手费" precision="2"/>
+		<column type="number" id="zgf"   name="证管费" precision="2"/>
+		<column type="number" id="ghf"   name="过户费" precision="2"/>
+		<column type="number" id="yhs"   name="印花税" precision="2"/>
+		<column type="number" id="qtfy"   name="其他费用" precision="2"/>
+		<column type="string" id="remark_cz"   name="处置备注"/>
+		<column type="number" field="second_amt_before" id="second_amt_before" 	name="变更前购回交易金额"/>
+		<column type="number" field="second_amt_after" 	id="second_amt_after" 	name="变更后购回交易金额"/>
+	</output>
+</function>

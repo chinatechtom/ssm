@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="31331" name="文件路径设置">
+	<input>
+		<item type="select"		id="pathid"			name="接口种类标识"	source="313"	nullable="false"/>
+		<item type="select"		id="data_type"		name="文件类型"		source="314"	nullable="false"/>
+		<item type="text"		id="pathname"		name="数据文件名称"	nullable="false"	maxlen="40"/>	
+		<item type="text"		id="filename"		name="文件名称"		nullable="false"	maxlen="80"/>	
+		<item type="text"		id="path"			name="路径名"		nullable="false"	maxlen="255"/>
+		<item type="text"		id="tablename"		name="数据库表名"	 	nullable="false"	maxlen="40"/>	
+		<item type="text"		id="f_snote"		name="数据格式名"		nullable="false"	maxlen="80"/>	
+		<item type="select"		id="pathtype"		name="接口类型"		source="315"	nullable="false"/>	
+		<item type="textarea"   id="remark"			name="备注"	maxlen="64"/>		
+	</input>
+	<service type="procedure" id="p_file_path_set" implement="p_file_path_set31331"  process="811" style="1">
+		<param id="user_id"		type="integer" way="in"/>
+		<param id="pathid"		type="string"  way="in"/>
+		<param id="data_type"	type="string"  way="in"/>
+		<param id="pathname"	type="string"  way="in"/>
+		<param id="filename"	type="string"  way="in"/>
+		<param id="path"		type="string"  way="in"/>
+		<param id="tablename"	type="string"  way="in"/>
+		<param id="f_snote"		type="string"  way="in"/>
+		<param id="pathtype"	type="string"  way="in"/>
+		<param id="remark"		type="string"  way="in"/>
+	</service>
+	<output>		
+	</output>
+</function>

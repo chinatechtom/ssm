@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3042901" name="授信申请参数设置" >	
+  <input> 				
+		<item type="hidden" id="param_id"			 name="参数ID"/>
+		<item type="select"	id="param_code"			 name="参数名称"      nullable="false"	 source="509"/>		
+		<item type="text"	id="param_low_limit"     name="参数下限"      nullable="false"   number="ture"/>
+		<item type="text"	id="param_high_limit"    name="参数上限"      nullable="false"   number="ture"/>			
+		<item type="text"	id="param_value"		 name="对应参数值"    nullable="false"   number="ture"/>
+  </input>
+  <service type="procedure" id="p_credit_report_param_set" implement="p_credit_report_param_set3042901"  process="811" style="1"> 
+		<param id="user_id"						type="integer" way="in"/>
+		<param id="param_id"				    type="integer" way="in"/>
+		<param id="param_code"			        type="string"  way="in"/>			
+		<param id="param_low_limit"			    type="double"  way="in"/>
+        <param id="param_high_limit"			type="double"  way="in"/>			
+		<param id="param_value"					type="double"  way="in"/>	
+		<param id="operation_type"			    type="integer" way="in" default='1'/> <!--1 新增或者修改 2 删除-->
+  </service>
+  <output/>
+</function>

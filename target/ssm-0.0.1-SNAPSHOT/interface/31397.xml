@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="31397" name="互斥岗位设置">
+	<input>
+		<item	type="select"	id="role_type"	name="角色类型" source="401"/>
+		<item	type="select"	id="rold_id"	name="角色名称"	source="90000007"/>
+	</input>
+	<service type="produrce" id="p_role_split_query" implement="p_role_split_query31397" process="911" style="77">
+		<param id="user_id"		type="integer"  way="in"/>
+		<param id="role_type"	type="string"   way="in"/>
+		<param id="rold_id"		type="integer"  way="in"/>
+	</service>
+	<output>
+		<column type="string"  id="role_type1"		name="角色类型1" display="false"/>
+		<column type="string"  id="role_type_name1"	name="角色类型1"/>
+		<column type="string"  id="role_type2"		name="角色类型2" display="false"/>
+		<column type="string"  id="role_type_name2"	name="角色类型2"/>
+		<column type="number"  id="role_id1"		name="角色id1"	display="false"/>
+		<column type="number"  id="role_id2"		name="角色id2"	display="false"/>
+		<column type="string"  id="role_name1"		name="角色1"/>
+		<column type="string"  id="role_name2"		name="角色2"/>
+		<column type="string"  id="set_emp"			name="设置职工" />	
+		<column type="string"  id="set_date"		name="设置日期" />	
+		<column type="string"  id="set_time"		name="设置日期" />
+		<button type="add"     id="add"				name="增加" action="3139701" multiple="-1"/>
+		<button type="del"     id="del"				name="删除" action="3139702" multiple="0"/>
+	</output>
+</function>

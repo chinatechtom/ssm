@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3066666611" name="调整费率申请详细" >
+  <input>       
+  <group name="原合同费率" scope="group">
+    <item type="hidden" id="bond_id" name="合约id 1" action="30645"/>
+	<item type="text" id ="cust_code" name="客户代码" editable="false"/>
+	<item type="text" id ="cust_name" name="客户姓名" editable="false"/>
+	<item type="text" id="loan_interest_rate" name="融资利息率(%)" editable="false"/>
+	<item type="text" id="borrow_stock_interest_rate" name="融券利息率(%)" editable="false"/>
+	<item type="text" id="punish_interest_rate" name="罚息率(%)" editable="false"/>
+	<item type="text" id="commission_charge" name="手续费" editable="false"/>
+  </group>
+  <group name="原申请费率" scope="group">
+	 <item type="hidden"  id="order_id"	name="合约id" action="30608"/> 	 
+	<item type="text" id="order_no" name="合约编号" editable="false"/>
+	<item type="hidden" id="formerly_voucher_no" name="原始凭证号" editable="false"/>
+	<item type="text" id="loan_interest_rate" name="申请融资利息率(%)" editable="false"/>
+	<item type="text" id="borrow_stock_interest_rate" name="申请融券利息率(%)" editable="false"/>
+	<item type="text" id="punish_interest_rate" name="申请罚息率(%)" editable="false"/>
+	<item type="text" id="commission_charge" name="申请手续费" editable="false"/>
+	<item type="textarea" id="remark" name="备注说明" editable="false"/>
+   </group>   
+   <group name="处理后申请费率" scope="group">
+	 <item type="hidden"  id="order_id"	name="合约id" action="30608"/> 	 
+	<item type="text" id="order_no" name="合约编号" editable="false"/>
+	<item type="hidden" id="formerly_voucher_no" name="原始凭证号" editable="false"/>
+	<item type="text" id="approve_financing_interest_rate" name="审批融资利息率(%)" editable="false"/>
+	<item type="text" id="approve_borrow_stock_interest_rate" name="审批融券利息率(%)" editable="false"/>
+	<item type="text" id="approve_punish_interest_rate2" name="审批罚息率(%)" editable="false"/>
+	<item type="text" id="approve_commission_charge" name="审批手续费" editable="false"/>
+	<item type="textarea" id="remark" name="备注说明" editable="false"/>
+    </group>   
+  </input>
+
+  <output>
+  </output> 
+</function>

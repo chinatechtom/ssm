@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="36000094" name="融资融券业务融资融券总额上限监控报告表" >
+  <input>
+	<item type="date" id="date" name="日期"/>
+  </input>
+  <service type="procedure" id="P36000094" process="911" style="77">
+	<param type="integer" id="user_id"/>	
+	<param type="string" id="date"/>
+  </service>
+  <output print="true">    
+        <column type="string" id="sec_code"           name="监控内容"/>
+	<column type="number" id="sec_name"           name="上限" precision="2"/>  
+	<column type="number" id="asset"              name="实际使用数量" precision="2"/>
+        <column type="number" id="rate"               name="比例(%)" precision="6"/>  
+	<column type="string" id="yj"                 name="预警值" />
+        <column type="string" id="level_name"         name="上限" />  
+	<column type="string" id="beizhu"             name="备注" />
+  </output> 
+</function>

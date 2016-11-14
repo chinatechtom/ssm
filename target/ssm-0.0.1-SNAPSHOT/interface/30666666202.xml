@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="30666666202" name="标准化信用级别调整详细">
+	<input print="30666666202.jsp">
+		<group name="原合同信用级别">
+			<item type="hidden"	id="order_id"			name="bond_id" action="3060502,1888"/>
+			<item type="text"	id ="cust_code"			name="客户代码" editable="false"/>
+			<item type="text"	id ="cust_name"			name="客户姓名" editable="false"/>
+			<item type="text"	id="consult_score3"		name="参考分值" editable="false"/>
+			<item type="text"	id="valuation_score3"	name="审批评估得分" editable="false"/>
+			<item type="text"	id="credit_level_name3"	name="审批信用级别" editable="false"/>
+			<item type="hidden" id="date"				name="打印日期"   editable="false"/>
+			<item type="hidden" id="user_code"			name="操作员代码" editable="false"/>
+			<item type="hidden" id="user_name"			name="操作员姓名" editable="false"/>
+			<item type="hidden" id="company"			name="证券公司名称" editable="false"/>
+			<item type="button" id="bond_id"			name="其他详情" action="30686"/>
+		</group>
+		<group name="申请信用级别">
+			<item type="hidden"		id="order_id"				name="order_id" action="30605"/>
+			<item type="text"		id="order_no"				name="合约编号" editable="false"/>
+			<item type="hidden"		id="formerly_voucher_no"	name="原始凭证号" editable="false"/>
+			<item type="text"		id="consult_score1"			name="参考分值" editable="false"/>
+			<item type="text"		id="valuation_score1"		name="申请评估得分" editable="false"/>
+			<item type="text"		id="credit_level_name1"		name="申请信用级别" editable="false"/>
+			<item type="button"		id="cust_id"				name="其他详情" action="30684"/>
+			<item type="textarea"	id="remark"					name="备注说明" editable="false"/>
+		</group>
+		<group name="处理后申请信用级别">
+			<item type="text"		id="order_no"					name="合约编号" editable="false"/>
+			<item type="hidden"		id="formerly_voucher_no"		name="原始凭证号" editable="false"/>
+			<item type="text"		id="consult_score1"				name="参考分值" editable="false"/>
+			<item type="text"		id="approve_valuation_score1"	name="审批评估得分" editable="false"/>
+			<item type="text"		id="approve_credit_level_name1"	name="审批信用级别" editable="false"/>
+			<item type="textarea"	id="remark"						name="备注说明" editable="false"/>
+		</group>
+		<group name="备注说明">
+			<item type="hidden"		id="order_id"			name="orderid" action="30673"/>
+			<item type="textarea"	id="manage_opinion1"	name="处理意见" editable="false"/>
+			<item type="textarea"	id="approver_opinion1"	name="审核意见" editable="false"/>
+			<item type="textarea"	id="assessor_opinion1"	name="审批意见" editable="false"/>
+			<item type="textarea"	id="double_check_opin1"	name="复核意见" editable="false"/>
+			<item type="textarea"	id="remark1"			name="备注说明" editable="false"/>
+	</group>
+	</input>
+	<output/>
+</function>

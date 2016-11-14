@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3212901" name="融资融券业务开户数量" >
+   <input>
+ 		<item type="text"   id="institution_id" 		name="客户id" />
+   </input>
+   <service type="procedure" id="p_information_report_32128_account_query" process="911" style="77">
+   		<param id="user_id" 		type="integer"/>
+   		<param id="institution_id" 		type="string"/>
+   </service>
+   <output>
+  		<column type="string" id="c1"   name=""  />
+   		<column type="string" id="cust_num_begin"   name="期初"  />
+   		<column type="string" id="cust_num_end"   name="期未"  />
+   	</output>
+   	</function>

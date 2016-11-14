@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70010102" name="客户股东账户查询" >
+	<input/>
+	<service type="procedure" id="P70010102" process="922" style="77">
+		<param id="user_id" type="integer"/>
+		<param id="cust_id" type="integer"/>
+	</service>
+	<output export="true">  
+		<column type="number" id="cust_id"   name="客户号"  display="false" />
+		<column type="string" id="stock_holder_sh"   name="沪A证券帐户"/>
+		<column type="number" id="seat_code_sh"   name="沪A席位代码"  precision="0"/>
+		<column type="string" id="stock_holder_sz"   name="深A证券帐户"/>
+		<column type="number" id="seat_code_sz"   name="深A席位代码"  precision="0"/>
+	</output>
+</function>

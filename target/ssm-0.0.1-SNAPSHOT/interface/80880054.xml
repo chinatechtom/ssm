@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="80880054" name="快融宝延期客户现场回访-查询" >
+    <input export="true">
+        <item type="select" id="institution_id" name="营业部" source="97000001"/>
+        <item type="text" id="cust_code" name="客户代码"/>
+        <item type="text" id="cust_name" name="客户姓名"/>
+        <item type="select" id="sbond_status" name="交易协议书状态" source="700" default="4" editable="false"/>
+        <item type="select" id="resource_type" name="交易类型" source="744" default="1" editable="false"/>
+        <group name="分页查询" page="true">
+            <item type="text" id="page_num" name="页码" integer="true" default="1"/>
+            <item type="select" id="rows_num" name="每页行数" integer="true" source="95000012" nullable="false"/>
+        </group>
+    </input>
+    <service type="procedure" id="P60880054" process="933" style="77">
+        <param type="integer" id="user_id"/>	
+        <param type="integer" id="institution_id"/>
+        <param type="string"  id="cust_code"/>
+        <param type="string"  id="cust_name"/>
+        <param type="string"  id="sbond_status"/>
+        <param type="string"  id="resource_type"/>
+        <param type="integer" id="page_num"/>	
+        <param type="integer" id="rows_num"/>
+    </service>
+	<output export="true">  
+		<column type="string" id="institution_name" name="营业部名称"/>
+		<column type="number" id="cust_id" name="客户id" display="false"/>
+		<column type="string" id="cust_code" name="客户代码"/>
+		<column type="string" id="cust_name" name="客户姓名"/>
+		<column type="string" id="cust_type" name="客户类型" display="false"/>
+		<column type="string" id="cust_type_name" name="客户类型"/>
+		<column type="string" id="gender_name" name="性别"/>
+		<column type="string" id="cert_type_name" name="证件类型"/> 
+		<column type="string" id="cert_no" name="证件号码"/>
+		<column type="string" id="family_address" name="联系地址"/>
+		<column type="string" id="ps_code" name="邮政编码"/>
+		<column type="string" id="open_date" name="开户日期"/>
+		<column type="string" id="open_acc" name="客户状态"/>
+		<column type="string" id="move_tel" name="移动电话"/>
+		<column type="string" id="fix_tel" name="固定电话"/> 
+		<column type="string" id="email" name="电子邮件"/>
+		<button type="add" id="apply" name="现场回访" action="80880055"/>
+	</output>
+</function>

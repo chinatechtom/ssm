@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="340699" name="授信额度到期日联动" >
+	<input>  
+		<item type="hidden" id="order_id" name="合约ID"/> <!-- 3063301 使用-->
+		<item type="hidden" id="days_3063301" name="天数"/> <!-- 3063301 使用-->
+		<item type="hidden" id="return_time_3063301" name="结束日期"/> <!-- 3063301 使用-->
+		<item type="hidden" id="days"  name="天数"/> <!-- 3064444433 使用-->
+		<item type="hidden" id="end_date3063203"  name="结束日期"/> <!-- 3064444433 使用-->
+	</input>
+	<service type="procedure" id="P17000099" process="911" style="77">
+		<param type="integer"	id="user_id"/>	
+		<param type="integer"	id="order_id"/>	
+		<param type="integer"	id="days_3063301"/>
+		<param type="string"	id="return_time_3063301"/>
+		<param type="integer"	id="days"/>
+		<param type="string"	id="end_date3063203"/>
+	</service>
+	<output> 
+		<column type="string" id="return_time_3063301" name="结束日期" precision="0"/><!-- 3063301 使用-->
+		<column type="string" id="end_date3063203" name="结束日期" precision="0"/><!-- 3064444433 使用-->
+	</output>
+</function>

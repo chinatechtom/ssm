@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70011316" name="指令权限控制参数设置查询">
+	<input>
+		<item type="hidden" 	id="cust_id" 		name="客户id"  />
+		<item type="text" 		id="cust_code" 		name="客户代码" />
+		<item type="text" 		id="cust_name" 		name="客户名称" />
+		<item type="select" 	id="busi_type" 		name="业务类型"  source="743" />
+		<item type="select" 	id="order_type" 	name="指令类别"  source="739" />
+	</input>
+	<service type="procedure" id="P70011316" process="922" style="77">
+		<param id="user_id"		type="integer"/>
+		<param id="cust_id"		type="integer"/>
+		<param id="cust_code"	type="string"/>
+		<param id="cust_name"	type="string"/>
+		<param id="busi_type"	type="string"/>	
+		<param id="order_type"	type="string"/>
+	</service>
+	<output export="true">
+		<column type="number" 	id="cust_id"			name="客户ID"	 display="false"/>
+		<column type="string" 	id="cust_code"			name="客户代码"/>
+    	<column type="string" 	id="cust_name"			name="客户名称"	/>
+		<column type="string" 	id="cust_type"			name="客户类型"	 display="false"/>
+		<column type="string" 	id="cust_type_name"		name="客户类型"	/>
+		<column type="string" 	id="busi_type"			name="业务类型"	 display="false"/>
+		<column type="string" 	id="busi_type_name"		name="业务类型"	/>
+		<column type="string" 	id="order_type"			name="指令类别"	 display="false"/>
+		<column type="string" 	id="order_type_name"	name="指令类别"	 />
+    	<button type="add"		id="add" 		  		name="新增"    action="70011313"  multiple="-1"/>
+		<button type="delete"	id="delete"   			name="删除"    action="70011315"  multiple="0"/>
+	</output>
+</function>
+		
+		

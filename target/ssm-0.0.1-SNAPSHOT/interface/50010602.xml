@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="50010602" name="标识融资行权">
+<description>标识融资行权?</description>
+	<input>
+		<item type="hidden"	id="cust_code"		name="客户代码"/>
+		<item type="hidden"	id="market_code"	name="市场代码"/>
+		<item type="hidden"	id="holder_ac_no"	name="股东代码"/>
+	</input>
+		<service type="drtp" id="490031" process="711" adapter="rzxq" style="1">
+		<param type="string"	id="snote"			 default=""/>
+		<param type="string"	id="semp"		 	 default="01"/>
+		<param type="string"	id="semp_no"		 default="SYSTEM"/>
+		<param type="string"	id="semp_no2"		 default=" "/>
+		<param type="string"	id="sbank_code"		 default="000011"/>
+		<param type="string"	id="cust_code"		 field="scust_no"/>
+		<param type="string"	id="sstation0"		 default="0"/>
+		<param type="string"    id="market_code" 	 field="smarket_code"/>
+		<param type="string"	id="holder_ac_no"	 field="sholder_ac_no"/>
+	</service>
+		<output target="50010603">
+		<column name="业务类别"			id="bus_type"		type="string"	field="semp"/>
+		<column name="错误码"			id="vsmess"			type="string"   field="vsmess"/>
+		<column name="流水号"			id="serial_no"  	type="string"   field="sserial0"/>
+		<column name="客户号"			id="cust_code"  	type="string"   field="scust_no"/>
+	</output>
+</function>

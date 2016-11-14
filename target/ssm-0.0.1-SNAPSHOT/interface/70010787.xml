@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70010787" name="集中审核权限设置-修改" >
+  <input>
+	<item type="select" id="order_type"	 name="合约类型"		nullable="false" editable="false" source="97000004"/>
+	<item type="text" 	id="audit_code"	 name="审核人员代码"	nullable="false" editable="false"/>
+	<item type="text" 	id="audit_level" name="审核级别"		nullable="false"/> 
+  </input>
+  <service type="procedure" id="P70010785" process="822" style="1">
+	<param type="integer" 	id="user_id"/>
+	<param type="string"	id="order_type"/>
+	<param type="string"	id="audit_code"/>
+	<param type="string"	id="audit_level"/>	
+  </service>
+  <output>      	
+  </output>
+</function>

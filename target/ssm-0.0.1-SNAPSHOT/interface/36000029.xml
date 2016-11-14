@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="36000029" name="担保证券集中度统计" >
+<input>
+  <item type="text"   id="product_code" name="产品代码" />
+  <item type="select" id="market_code"  name="市场代码" source="039"/>
+  <item type="text"   id="control_values" name="阀值大于" default="0.2"/>
+  <item type="year"   id="year"        name="年份选择" nullable="false"/>
+  <item type="month"  id="month"       name="月份选择" nullable="false"/>
+</input>
+<service type="procedure" id="P36000029" implement="P3600002936000029" process="955" style="77">
+  <param id="user_id" type="integer"/>
+  <param id="product_code" type="string"/>
+  <param id="market_code" type="string"/>
+  <param id="control_values" type="double"/>
+  <param id="year"           type="integer"/>
+  <param id="month"          type="integer"/>
+</service><output export="true" >
+  <column type="string" id="c1"   name="证券代码" display="false" />
+  <column type="string" id="product_name"   name="担保股票名称"  />
+  <column type="string" id="c2"   name="市场代码" display="false" />
+  <column type="string" id="c3"   name="担保股票市值"  precision="2"/>
+  <column type="string" id="c4"   name="该股票总市值"  precision="2"/>
+  <column type="number" id="c5"   name="担保股票市值占总市值比例" precision="6" />
+  <column type="string" id="product_code"   name="产品代码"  display="false"/>
+  <column type="string" id="market_code"   name="市场代码"  display="false"/>
+  <column type="string" id="control_values"   name="阀值"  display="false"/>
+  <column type="string" id="year"           name="年份选择"  display="false"/>
+  <column type="string" id="month"          name="月份选择"  display="false"/>
+  <column type="string" id="print_date"   name="时间"  display="false"/>
+  <button type="print" id="print" name="打印" action="36110029" multiple="1"/>
+</output>
+</function>

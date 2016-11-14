@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="34056" name="待审核通知防遗漏查询">
+	<input > 	
+		<item type="date"   id="msg_date" name="通知日期"  nullable="false" default="last" />
+		<!--item type="select" 	id="msg_type2" 		name="信息类型"  			source="333" />
+		<item type="select" 	id="send_flg" 		name="发送标志"				source="334"/-->   
+	</input>
+	<service type="procedure" id="p_need_verify_msg_lost_query" implement="p_custom_msg_log_status_chg34055" process="911" style="77">
+		<param id="user_id" type="integer"/>
+    <param id="msg_date"/> 
+  </service> 
+	<output refresh="120">
+			<column type="string" id="msg_type2"   	name="msg_type2"	display="false" />
+			<column type="string" id="cont_meth"   	name="cont_meth"	display="false" />
+			<column type="string" id="sys_type"   	name="系统类型"	 />
+			<column type="string" id="msg_date"   	name="消息日期"	 />
+			<column type="string" id="msg_type2_name"   	name="信息类型"	 />
+			<column type="string" id="cont_meth_name"   	name="信息通知方式"	 />
+			<column type="string" id="warning_level"   	name="警告级别"	 level="true" />
+			<column type="string" id="msg_rows"   	name="全部信息条数"	 />
+			<column type="string" id="check_rows"   	name="待审核信息条数"	 />
+			<column type="string" id="not_send_rows"   	name="待发送信息条数"	 />
+			<column type="string" id="send_rows"   	name="已发送信息条数"	 />
+	</output>
+</function>
+		
+		

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="27030109" name="2-2融资融券集中度统计" >
+  <input>
+    <item type="select" id="insitution_id" name="营业部名称" source="95000008"/>
+	<item type="text"   id="sec_code"      name="证券代码" />
+    <item type="date"   id="date"          name="结束日期" default="now"/> 	
+  </input>
+  <service type="procedure" id="P27030109"  implement="P2703010927030109" process="955" style="77">
+    <param id="user_id"               type="integer" way="in"/>
+    <param id="insitution_id"         type="integer" way="in"/>
+    <param id="sec_code"              type="string" way="in"/>
+    <param id="date"                  type="string" way="in"/>	
+  </service>
+ <output print="true">
+	<column type="number" id="id"   name="序号"/>	
+	<column type="string" id="institution_code"   name="营业部代码"/>        
+	<column type="string" id="institution_name"   name="营业部名称" />
+	<column type="string" id="sec_code"           name="证券代码"/>        
+	<column type="string" id="sec_name"           name="证券名称" />
+	<group name="融资集中度">
+	  <column type="number" id="FIN_SEC_NUM"     name="融资负债数量"  precision="0"/>   
+      <column type="number" id="FIN_AMT"         name="融资负债金额"  precision="2"/>  
+	  <column type="number" id="FIN_RATE"        name="占比"          precision="6"/>   
+      <column type="number" id="FIN_CUST_NUM"    name="客户数量"      precision="0"/> 
+	</group>
+	<group name="融券集中度">
+	  <column type="number" id="BS_SEC_NUM"     name="融券负债数量"  precision="0"/>   
+      <column type="number" id="BS_AMT"         name="融券负债市值"  precision="2"/>  
+	  <column type="number" id="BS_RATE"        name="占比"          precision="6"/>   
+      <column type="number" id="BS_CUST_NUM"    name="客户数量"      precision="0"/> 
+	</group>
+	
+</output>
+</function>  

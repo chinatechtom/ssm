@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="gbk" ?> 
+<function id="80413106" name="同步融资数据">
+<description>确定要发送同步请求么？
+  </description>
+<input>
+	<item type="hidden" id="cust_code" name="客户代码"/>
+    <item type="hidden" id="fix_qty"  name="融资数额" precision="2"/>  
+	<item type="hidden" id="begin_time"  name="起始日期"/>
+	<item type="hidden" id="return_time" name="结束日期"/>
+	<item type="hidden" id="order_no" name="合约编号"/>
+	<item type="hidden" id="interest_rate" name="利息率"/>
+	<item type="hidden" id="model" name="使用模式"/>
+	<item type="hidden" id="currency" name="币种"/>
+	<item type="hidden" id="order_status" name="合约状态"/>
+	<item type="hidden" id="financing_product_code" name="融资信用产品"/>
+  </input>
+<service type="drtp" id="413106" process="611" style="1">
+  <param field="scust_no" id="cust_code" type="string" way="in" /> 
+  <param field="damt1" id="fix_qty" type="double" way="in" /> 
+  <param field="sdate0" id="begin_time" type="string" way="in" /> 
+  <param field="sdate1" id="return_time" type="string" way="in" />
+  <param field="sphone" id="order_no" type="string" way="in" />
+  <param field="damt2" id="interest_rate" type="double" way="in" />
+  <param field="sstat_type" id="model" type="string" way="in" />
+  <param field="scurrency_type" id="currency" type="string" way="in" />
+  <param field="sstatus1" id="order_status" type="string" way="in" />
+  <param field="sserial3" id="financing_product_code" type="string" way="in" />
+  </service>
+  <output /> 
+</function>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="GBK" ?>
+<function id="77100301" name="取代理人信息">
+  <input>
+  	<item type="hidden" id="scust_no"      name="客户号"/>
+	<item type="hidden" id="sbranch_code1" name="营业部代码" />
+  </input>
+  <service type="drtp" id="100301" process="711" style="77">
+	  <param type="string"	id="sbranch_code1"/>
+	  <param type="string"	id="scust_no"/>
+	  <param type="string"	id="scust_type"/>
+	  <param type="string"	id="semp"	default="000000"/>
+  </service>
+  <output target="78100301">
+	<column id="cust_code"		name="客户代码"	type="string" field="scust_no"/>
+	<column id="agent_name"		name="代理姓名"	type="string" field="sname2"/>
+	<column id="nation_code"	name="国籍"		type="string" field="snation_code"/>
+	<column id="cert_type"		name="证件类型"	type="string" field="lsafe_level"/>
+	<column id="cert_no"		name="证件号码"	type="string" field="scert_no2"/>
+	<column id="gender"			name="性别"		type="string" field="sstatus1"/>
+	<column id="over_date"		name="到期日期"	type="string" field="sdate0"/>
+	<column id="post_code"		name="邮政编码"	type="string" field="spost_code"/>
+	<column id="address"		name="地址"		type="string" field="saddr"/>
+	<column id="fix_phone"		name="固定电话"	type="string" field="sphone"/>
+	<column id="cell_phone"		name="移动电话"	type="string" field="sphone3"/>
+	<column id="fax"			name="传真"		type="string" field="sphone2"/>
+	<column id="email"			name="电子邮箱"	type="string" field="semail"/>
+	<column id="open_emp"		name="开户员工"	type="string" field="sopen_emp"/>
+	<column id="open_date"		name="开户日期"	type="string" field="sdate1"/>
+	<column id="open_time"		name="开户时间"	type="string" field="stime0"/>
+	<column id="close_emp"		name="销户员工"	type="string" field="scheck_emp"/>
+	<column id="close_date"		name="销户日期"	type="string" field="sdate3"/>
+	<column id="close_time"		name="销户时间"	type="string" field="stime2"/>
+	<column id="agent_status"	name="代理状态"	type="string" field="sstatus3"/>
+	<column id="scust_limit2"	name="代理权限"	type="string" field="scust_limit2"/>
+  </output>
+</function>

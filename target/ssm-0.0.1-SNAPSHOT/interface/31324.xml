@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="31324" name="用户浏览">
+	<input>
+		<item type="hidden" id="user_id2"	      name="用户id"/>
+		<item type="select" id="institution_id"	name="营业部名称" source="95000008"/>
+		<item type="text"   id="user_code"	    name="用户代码"/>
+		<item type="text"   id="user_name"	    name="用户名称"/>
+		<item type="select"	id="role"			name="角色"	source="95000040"/>
+	</input>
+	<service type="procedure" id="p_user_query" implement="p_user_query31324"  process="911" style="77">
+		<param id="user_id"		      type="integer"  way="in"/>	
+		<param id="user_id2"	      type="integer"  way="in"/>
+		<param id="institution_id"	type="integer"  way="in"/>	
+		<param id="user_code"	      type="string"   way="in"/>
+		<param id="user_name"	      type="string"   way="in"/>
+		<param id="role"	      type="integer"   way="in"/>
+	</service>
+	<output>
+		<column type="number"  id="user_id2"		name="用户id"	display="false"/>	
+		<column type="string"  id="user_code"		name="用户代码"/>
+		<column type="string"  id="staff_code"		name="职工工号"/>
+		<column type="string"  id="user_name"		name="用户名称"/>	
+		<column type="string"  id="user_status"		name="用户状态" display="false"/>	
+		<column type="string"  id="user_status_name" name="用户状态"/>	
+		<column type="string"  id="password"		name="用户密码"	display="false"/>	
+		<column type="number"  id="dept_id"			name="部门id"	display="false"/>
+		<column type="string"  id="institution_name"		name="机构名称"/>	
+		<column type="string"  id="role_name"			name="岗位集合"/>	<!-- modify by 20141106 SECREQ-941 -->
+		<column type="string"  id="dept_code"		name="部门代码"	display="false"/>
+		<column type="string"  id="dept_name"		name="部门名称"/>
+		<column type="number"  id="user_type"		name="用户类型"	display="false"/>	
+		<column type="number"  id="father_node_id"	name="父节点id"	display="false"/>
+		<column type="string"  id="gender"			name="性别1"		display="false"/>
+		<column type="string"  id="gender_name"		name="性别"	/>
+		<column type="string"  id="nation"			name="民族"		display="false"/>
+		<column type="string"  id="finish_school"	name="毕业学校"	display="false"/>
+		<column type="string"  id="edu_level"		name="学历1"		display="false"/>
+		<column type="string"  id="edu_level_name"	name="学历"/>
+		<column type="string"  id="cert_type"		name="证件类型1"	display="false"/>
+		<column type="string"  id="cert_type_name"	name="证件类型"/>
+		<column type="string"  id="cert_no"			name="证件代码"/>
+		<column type="string"  id="marr_status"		name="婚姻状况1"	display="false"/>
+		<column type="string"  id="marr_status_name" name="婚姻状况"/>
+		<column type="string"  id="dqdm"			name="地区代码"	display="false"/>
+		<column type="string"  id="area_code"		name="联系地址"	display="false"/>
+		<column type="string"  id="postalcode"		name="邮政编码"	display="false"/>
+		<column type="string"  id="job_date"		name="入职日期"	display="false"/>
+		<column type="string"  id="change_date"		name="转正日期"	display="false"/>
+		<column type="string"  id="dimission_date"	name="离职日期"	display="false"/>	
+		<column type="string"  id="regi_state"		name="记录状态"	display="false"/>	
+		<column type="string"  id="telephone"		name="家庭电话"/>	
+		<column type="string"  id="office"			name="办公电话"/>	
+		<column type="string"  id="mobile"			name="移动电话"/>	
+		<column type="string"  id="email_address"	name="电子邮件"/>	
+		<column type="string"  id="ip_address"		name="ip地址"	display="false"/>	
+		<column type="string"  id="mac_address"		name="mac地址"	display="false"/>	
+		<column type="number"  id="institution_id"	name="机构id"	display="false"/>
+		<column type="string"  id="set_user_code"	name="设置人员代码"	       />
+		<column type="string"  id="set_user_name"	name="设置人员名称"	       />
+		<column type="string"  id="set_date"	    name="设置日期"                />	
+        <column type="string"  id="pwd_expire_date"	name="密码到期日期"                />	
+        <column type="number"  id="lock_time"		name="密码输错次数"                />		
+	</output>
+</function>

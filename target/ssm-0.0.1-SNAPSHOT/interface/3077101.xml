@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3077101" name="客户证券查询" >
+	<input>	
+		<item type="hidden"	id="record_id"	name="平仓报告编号"/>
+	</input>
+    <service type="procedure" id="p_pc_execute_report_stock_query"  process="911" style="77">
+		<param id="user_id"		type="integer" way="in"/> 
+		<param id="record_id"	type="integer" way="in"/>
+    </service>
+    <output export="true">
+		<column type="number"  id="record_id"			name="平仓报告编号" display="false"/>
+		<column type="number"  id="cust_id"				name="客户id"		display="false"/>
+		<column type="string"  id="cust_code"			name="客户代码" display="false"/>
+		<column type="string"  id="cust_name"			name="客户名称" display="false"/>
+		<column type="number"  id="acc_id"				name="帐户id"		display="false"/>
+		<column type="string"  id="market_code_name"	name="市场"/>		
+		<column type="string"  id="acc_code"			name="证券账户"/>
+		<column type="number"  id="product_id"			name="证券id"		display="false"/>
+		<column type="string"  id="product_code"		name="证券名称"/>
+		<column type="string"  id="market_code"			name="市场1"		display="false"/>
+		<column type="number"  id="asset_qty"			name="证券数量"		precision="0" total="true"/>
+		<column type="number"  id="asset_value"			name="证券市值"		precision="2" total="true"/>
+		<column type="number"  id="stock_convert_rate"	name="证券折算率"	precision="4"/>
+    </output>
+</function>

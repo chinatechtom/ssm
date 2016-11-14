@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="33301" name="特别关注客户设置" >
+	<input export="true">	
+		<item type="select" id="institution_id"		name="营业部名称"	source="95000008"/>	
+	    <item type="text" 	id="cust_code" 			name="客户代码" />
+		<item type="text" 	id="cust_name" 			name="客户姓名" />
+		<item type="text"	id="commness_cust_code"	name="普通资金账户"/>
+		<item type="select"	id="attention_level"	name="关注级别" source="622"/>
+		<group name="分页查询" page="true">		
+			<item type="text"   id="page_num"       name="页码"     integer="true" default="1"/>
+			<item type="select" id="rows_num"       name="每页行数" integer="true" source="95000012" nullable="false"/>
+		</group>
+	</input>
+	<service type="procedure" id="p_cust_special_attention_query" implement="p_cust_special_attention_query33301" process="911" style="77">
+		<param id="user_id"				type="integer"/>
+		<param id="page_num"			type="integer"/>
+		<param id="rows_num"			type="integer"/>
+		<param id="institution_id"		type="integer"/>		
+		<param id="cust_code"			type="string"/>
+		<param id="cust_name"			type="string"/>
+		<param id="commness_cust_code"	type="string"/>
+		<param id="attention_level"		type="integer"/>
+	</service>
+	<output>
+		<column type="number" id="cust_id"					name="客户id" display="false"/>
+		<column type="string" id="institution_id"			name="所属营业部"	display="false"/>
+		<column type="string" id="institution_name"			name="所属营业部"/>
+		<column type="string" id="cust_code"				name="客户代码"	 />
+    	<column type="string" id="cust_name"				name="客户姓名"/>
+		<column type="string" id="commness_cust_code"		name="普通资金账户"/>
+		<column type="string" id="holder_acc_sh"			name="上海股东帐户"/>
+		<column type="string" id="holder_acc_sz"			name="深圳股东帐户"/>
+		<column type="string" id="attention_level"			name="关注级别"	display="false"/>
+		<column type="string" id="attention_level_name"		name="关注级别"/>
+		<column type="string" id="attention_date"			name="进入日期"/>
+		<column type="string" id="attention_opinion"		name="关注原因"/>
+		<column type="string" id="adjust_direction"			name="调整方向" display="false"/>
+		<column type="string" id="adjust_direction_name"	name="调整方向"/>
+		<column type="string" id="adjust_opinion"			name="调整原因"/>
+    	<button type="add" 	  id="add"		name="增加关注客户"	action="3330101"  multiple="-1"/>
+    	<button type="delete" id="delete"	name="删除关注客户" 	action="3330102"  multiple="0"/>
+    	<button type="edit"   id="edit"		name="修改关注客户" 	action="3330103"  multiple="0"/>
+	</output>
+</function>
+  

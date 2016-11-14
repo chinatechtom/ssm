@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="97000015" name="客户信用级别" >
+	<input>		
+	</input>
+	<service type="table" id="t_credit_level" process="122" style="12">
+		<param id="if_estop" field="if_estop" type="string" operator="=" default="1"/>
+	</service>
+	<output>
+		<column type="number" id="entry_value"   field="credit_level_id"   name="客户信用级别id"/>
+		<column type="string" id="entry_content" field="credit_level_name" name="客户信用级别名字"/>
+    </output>
+</function>

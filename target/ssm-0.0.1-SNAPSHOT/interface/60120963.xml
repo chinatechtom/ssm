@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="60120963" name="交易流水手工录入-违约金偿还" >
+	<input/>
+	<service type="drtp" id="120963" process="711" adapter="psr" style="1">
+		<param type="string"    id="scust_no"/>
+		<param type="string"    id="scurrency_type"/>
+		<param type="float"     id="damt2"/>
+		<param type="string"    id="sstation0"/>
+		<param type="string"    id="snote"/>
+		<param type="string"    id="sstatus0"/>
+		<param type="string"    id="semp" default="SYSTEM"/>
+        <param type="integer"   id="sbond_id"/>
+        <param type="string"    id="flow_type"/>
+        <param type="number"    id="return_amt"/>
+        <param type="string"    id="remark"/>
+	</service>
+	<output target="60110112">
+		<column name="客户代码"		id="cust_code"  	type="string"  field="scust_no"/>
+		<column name="发生日期"		id="occur_date"  	type="string"  field="sdate0"/>
+		<column name="流水号"		id="serial_no"  	type="string"   field="sserial0"/>
+        <column name="协议书ID"	    id="sbond_id"  	    type="integer"/>
+        <column name="流水类型"		id="flow_type"  	type="string" />
+        <column name="归还金额"    id="return_amt"		type="float"/>
+        <column name="备注"		    id="remark"  	    type="string" />
+	</output>
+</function>

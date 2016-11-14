@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="36100072" name="7.1.5营业部融资融券证券交易集中度统计" >  
+  <input>
+  <item type="select" id="institution_id" name="营业部名称"  source="95000008"/>
+  <item type="text"   id="stock_code"   name="证券代码"  />
+  <item type="select" id="market_code"    name="市场代码" source="039" />
+  <item type="text"   id="num_line"       name="成交量阀值" default="300000" />
+  <item type="text"   id="trade_amt_line" name="成交金额阀值" default="300000" />
+ <item type="date"   id="begig_date"     name="起始日期"  default="last"/>
+ <item type="date"   id="end_date"       name="结束日期"  default="now"/>
+ <item type="select"  id="order_choice"    name="排序选择"  source="380"/>
+  </input>
+   <service type="procedure" id="P36100072" process="911" style="77">
+ <param id="user_id"         type="integer" way="in" /> 
+ <param id="institution_id"  type="integer" way="in" />
+  <param id="market_code"     type="string" way="in" />
+  <param id="stock_code"      type="string" way="in" />
+  <param id="num_line"        type="double" way="in" />
+  <param id="trade_amt_line"  type="double" way="in" />
+  <param id="begig_date"      type="string" way="in" />
+  <param id="end_date"        type="string" way="in" />
+  <param id="order_choice"     type="string"  way="in"/>
+  </service> 
+  <output  print="true">
+    <column type="number" id="id"  name="序号"/>
+    <column type="string" id="institution_name"  name="营业部"/> 
+    <column type="string" id="product_code" name="证券代码"/>  
+   <column type="string" id="product_name"  name="证券名称"/>
+   <column type="string" id="buy_vol" name="买入股数" precision="0" total="true"/>
+    <column type="string" id="sell_vol" name="卖出股数"   precision="0" total="true"/>
+     <column type="string" id="vol_total" name="买卖股数合计"  precision="0" total="true"/>
+     <column type="string" id="buy_amt" name="买入金额"  precision="2" total="true"/>
+    <column type="string" id="sell_amt" name="卖出金额" precision="2" total="true"/>
+     <column type="number" id="amt_total" name="买卖金额合计"  precision="2" total="true"/> 
+  </output>
+</function>

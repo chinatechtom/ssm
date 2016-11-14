@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="31003" name="成交统计" >  
+  <input>
+	<item type="date" id="date" name="日期"  default="now"/>
+	<item type="select" id="credit_level_id" source="90000002" name="信用级别" />
+  </input>
+   <service type="procedure" id="p_trade_addup" process="911" style="77">
+	<param id="user_id" type="integer" way="in" /> 
+	<param id="date" />
+	<param id="credit_level_id" />
+  </service> 
+  <output>
+    <column type="string" id="date" name="日期"/> 
+	<column type="number" id="institution_id" name="机构id" display="false"/>
+	<column type="string" id="institution_code" name="机构代码"/>
+    <column type="number" id="credit_level_id"   name="信用级别" display="false"/>
+    <column type="string" id="credit_level_name"   name="信用级别名称"/>
+    <column type="string" id="currency_type"   name="货币类型"/>
+	<column type="number" id="fund_amt"   name="资金余额" precision="2"/>
+    <column type="number" id="deposit"   name="存入金额" precision="2"/>
+    <column type="number" id="withdraw"   name="取出金额" precision="2"/>
+	<column type="number" id="buy_frozen_amt"   name="买入冻结金额" precision="2"/>
+    <column type="number" id="sell_done_amt"   name="卖出解冻金额" precision="2"/>
+    <column type="number" id="taday_qty"   name="当日变动数量" precision="2"/>
+	<column type="number" id="interest"   name="利息" precision="2"/>
+    <column type="number" id="interest_count"   name="利息积数" precision="2"/>
+    <column type="number" id="punish_interest"   name="罚息" precision="2"/>
+	<column type="number" id="punish_interest_count"   name="罚息积数" precision="2"/>
+  </output>
+</function>

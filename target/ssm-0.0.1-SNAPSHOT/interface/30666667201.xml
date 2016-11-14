@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="30666667201" name="处理客户融资(券)保证金比例调整申请" >
+	<input print="30666667201.jsp">		
+	<item type="hidden" id="order_id" name="合约ID" action="1889"/>
+	<item type="hidden" id="cust_id" name="客户ID" action="37424,1888,30110,37425"/>
+		<group name="客户基本情况" >
+			<item type="hidden"	id="user_code"						name="操作员代码"/>
+			<item type="text"	id="cust_name"						name="客户姓名"				editable="false"/>
+			<item type="hidden"	id="order_no"						name="合约编号"	/>
+			<item type="hidden"	id="institution_id"					name="机构id"/>
+			<item type="hidden"	id="institution_code"				name="机构代码"/>
+			<item type="text"	id="institution_name"				name="营业部"				editable="false"/>
+			<item type="text"	id="cust_code"						name="信用资金账户"		editable="false"/>
+			<item type="text"	id="commness_cust_code"				name="普通资金账号"		editable="false"/>
+			<item type="text"	id="credit_num"						name="当前授信额度"		editable="false"/> <!--add 20140909-->
+			<item type="date"	id="date"							name="报告日期"				editable="false"/>	
+			<item type="text"	id="accept_name"					name="申请人"				editable="false"/> <!--add 20140910-->			
+			<item type="text"	id="remark"							name="备注"					editable="false"/>
+		</group>
+		<group name="当前保证金比例">
+			<item type="text" id="now_guarantee_rate_13"	name="当前初始保证金比例"	editable="false"/>
+			<item type="text"	id="now_guarantee_rate_5"	name="当前融券卖出保证金比例"	editable="false"/>
+			<item type="text"	id="now_guarantee_rate_6"	name="当前融资买入保证金比例"	editable="false"/>
+		</group>
+		<group name="申请保证金比例">
+			<item type="text"   id="applay_guarantee_rate_13"	name="申请变更初始保证金比例"	 	editable="false"/>
+			<item type="text" 	id="applay_guarantee_rate_5"	name="申请变更融券卖出保证金比例"	editable="false"/>
+			<item type="text" 	id="applay_guarantee_rate_6"	name="申请变更融资买入保证金比例"	editable="false"/>
+		</group>
+		<group name="处理意见">
+			<item type="textarea"	id="manage_opinion"		name="处理意见" editable="false"/>
+			<item type="hidden"		id="manage_date"		name="处理日期"/> <!--add 20140904-->
+			<item type="textarea"	id="approver_opinion"	name="审核意见" editable="false"/>
+			<item type="hidden"		id="approver_date"		name="审核日期"/> <!--add 20140904-->
+			<item type="textarea"	id="assessor_opinion"	name="审批意见" editable="false"/>
+			<item type="hidden"		id="assessor_date"		name="审批日期"/> <!--add 20140904-->
+		</group>
+    </input>
+	<output/>
+</function>

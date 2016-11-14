@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70066663" name="新增违约申请合约详情" >
+	<input>
+		<group name="合同信息" >
+			<item type="hidden" id="cust_id" name="客户id" />			
+			<item type="text" id="bond_no" name="合同编号" editable="false"/>
+			<item type="text" id ="cust_name" name="客户姓名" editable="false"/>
+			<item type="text" id ="cust_code" name="客户代码" editable="false"/> 	
+		</group>
+        <item type="hidden" id="order_id"     name="合约ID" action="70044563"/>			
+		<item type="hidden" id="date"     name="打印日期"/>	<!--从1888.xml获得的打印日期-->
+		<item type="hidden" id="user_code"     name="打印柜员代码"/><!--从1888.xml获得的打印柜员代码-->
+		<item type="hidden" id="user_name"     name="打印柜员名称"/><!--从1888.xml获得的打印柜员名称-->
+		<item type="hidden" id="company"    name="券商名称"/><!--从1888.xml获得的券商名称-->			
+		<group name="交易协议书信息">
+		    <item type="text" 	id ="hg_code" 		name="初始交易代码" 	editable="false"/>
+			<item type="text" 	id ="hg_code2" 		name="购回交易代码" 	editable="false"/>
+			<item type="select" id ="market_code" 	name="市场代码" 		editable="false" source="039"/>
+			<item type="text" 	id ="product_code" 	name="标的证券代码" 	editable="false"/>
+			<item type="text" 	id ="product_name" 	name="标的证券名称" 	editable="false"/>
+			<item type="text" 	id ="product_type" 	name="标的证券类型" 	editable="false"/>
+			<item type="hidden" id ="related_sbond_id"	name="related_sbond_id"/>
+			<item type="text" 	id ="related_sbond_no" 	name="关联(主)交易协议书编号"	editable="false"/>
+			<item type="text" 	id ="hg_num" 			name="标的证券数量" 	editable="false"/>
+			<item type="text" 	id ="hg_convert_rate" 	name="折扣比率(%)" 		editable="false"/>
+			<item type="hidden" id ="app_price" 			name="标的证券价格" 	editable="false"/>
+			<item type="date" 	id ="engage_trade_date" 	name="初始交易日期" editable="false"/>
+			<item type="date" 	id ="bb_date" 			name="购回交易日期" editable="false"/>
+			<item type="text" 	id ="days"				name="回购期限(天)" 	editable="false"/>
+			<item type="text" 	id ="hg_rate" 			name="购回价格(每100元年收益)" editable="false"/>
+			<item type="text" 	id ="first_amt"		name="初始交易金额" 	editable="false"/>
+			<item type="text" 	id ="second_amt"		name="购回交易金额" 	editable="false"/>
+			<item type="text" 	id ="penalty_rate" 	name="违约金比率(日利率%)" editable="false"/>
+			<item type="text" 	id ="prewarning_price" 	name="预警履约保障比率(%)" editable="false" precision="2"/>
+			<item type="text" 	id ="lowest_price" 	name="最低履约保障比例(%)" editable="false"/>
+			<item type="text" 	id ="fix_rate" 	name="固定交易费用比例(%)" editable="false"/>
+			<item type="text" id="manual_chg"   name="购回金额手工调整" editable="false"/>
+		</group>
+		<group name="违约信息">
+			<item type="select" id="violate_type" name="违约类型" source="731" editable="false"/>
+			<item type="text" id="begin_date" name="违约开始日期" editable="false"/>
+			<item type="text" id="end_date" name="违约结束日期" editable="false"/>
+			<item type="textarea" id ="remark" name="违约备注" editable="false"/>			
+		</group>
+	</input>
+</function>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="60010115" name="质权人查询" >
+  <input>
+	<item type="hidden" id="lender_id" name="融出方id"/>
+	<item type="hidden" id="mortgagee_id" name="质权人id"/>
+	<item type="text" id="lender_code" name="融出方代码"/>
+	<item type="text" id="lender_name" name="融出方名称"/>	
+	<item type="text" id="mortgagee_name" name="质权人名称"/>
+	<item type="select" id="mortgagee_type" name="质权人类型" source="801"/>
+  </input>
+  <service type="procedure" id="P60010115" process="933" style="77">
+	<param id="user_id" type="integer"/>
+	<param id="lender_id" type="integer"/>	
+	<param id="mortgagee_id" type="integer"/>
+	<param id="lender_code" type="string"/>
+	<param id="lender_name" type="string"/>	
+	<param id="mortgagee_name" type="string"/>
+	<param id="mortgagee_type" type="string"/>
+  </service>
+  <output export="true">  
+  	<column type="number" id="mortgagee_id"   name="质权人id"  display="false"/>
+  	<column type="number" id="lender_id"   name="融出方id"  display="false"/>
+    <column type="string" id="lender_code"   name="融出方代码"/>
+    <column type="string" id="lender_name"   name="融出方名称"/>
+	<column type="hidden" id="lender_type"   name="融出方类别1" display="false"/>
+	<column type="string" id="lender_type_name"   name="融出方类别"/>
+	<column type="string" id="mortgagee_name"   name="质权人名称"/>
+	<column type="string" id="mortgagee_type"   name="质权人类型id" display="false"/>	
+	<column type="string" id="mortgagee_type_name"   name="质权人类型"/>
+	<column type="string" id="mortgagee_type2"   name="质权人类型2" display="false"/>
+    <column type="string" id="user_code"   name="设置人员"/>
+    <column type="string" id="time"   name="设置时间"/>
+	</output>
+</function>

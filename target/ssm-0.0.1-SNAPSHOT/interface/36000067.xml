@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="36000067" name="6.4通知统计" >  
+  <input>
+  <item type="select" id="institution_id" name="营业部名称"  source="95000008"/>
+ <item type="date"   id="begin_date"     name="起始日期"  default="last"/> 
+ <item type="date"   id="end_date"       name="结束日期"  default="now"/>
+  </input>
+   <service type="procedure" id="P36000067" process="911" style="77">
+ <param id="user_id"       type="integer" way="in" /> 
+ <param id="institution_id"    type="integer" way="in" />
+ <param id="begin_date"    type="string" way="in" />
+ <param id="end_date"      type="string" way="in" />
+  </service> 
+  <output  print="true">
+    <column type="number" id="id" name="序号"/> 
+    <column type="string" id="c7" name="通知类型"/>  
+   <column type="string" id="c20" name="营业部"/>
+   <column type="string" id="cust_code" name="客户代码"/>
+    <column type="string" id="cust_name" name="客户名称"/>
+   <column type="string" id="c15" name="通知时间"/>
+    <column type="string" id="c16" name="通知日期"/> 
+   <column type="string" id="c5" name="通知方式"/>
+   <column type="string" id="c21" name="有无反馈"/>
+   <column type="string" id="c11" name="处置情况"/>
+  </output>
+</function>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="95000010" name="客户组查询" >
+	<input>
+		<item type="hidden"	id="group_type"	default="1" />
+	</input>
+	<service type="procedure" id="p_group_query" process="911" style="77">
+		<param id="user_id"			type="integer"	/>
+		<param id="group_code"		type="string"	/>
+		<param id="group_name"		type="string"	/>
+		<param id="group_type"		type="integer"	default="1" />
+		<param id="institution_id" 	type="integer"	/>
+		<param id="group_member"	type="string"	/>
+	</service>
+	<output>
+		<column type="number" id="entry_value"		field="group_id"		name="组ID"		/>
+		<column type="string" id="entry_content"	field="group_name"		name="组名称"	/>
+	</output>
+</function>

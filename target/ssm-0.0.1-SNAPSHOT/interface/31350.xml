@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="31350" name="操作员浏览">
+	<input>
+		<item type="hidden"	id="user_id2"		name="操作员id"/>
+		<item type="text"   id="user_code"   name="操作员代码"/>
+		<item type="text"   id="user_name"   name="操作员名称"/>
+	</input>
+	<service type="procedure" id="p_user_browse"   process="911" style="77">
+		<param id="user_id"				type="integer"  way="in"/>
+		<param id="user_id2"		type="integer"  way="in"/>
+		<param id="user_code"	type="string"   way="in"/>
+		<param id="user_name"	type="string"   way="in"/>
+	</service>
+	<output autoload="true">
+		<column type="string"  id="user_code"			name="用户代码" display="false"/>
+		<column type="string"  id="user_name"		name="用户名称"/>
+		<column type="string"  id="gender"		name="性别"/>
+		<column type="string"  id="nation"			name="民族"/>
+		<column type="string"  id="finish_school"			name="毕业学校" display="false"/>
+		<column type="string"  id="edu_level"	name="学历"/>
+		<column type="string"  id="cert_type"		name="证件类型"/>
+		<column type="string"  id="cert_no"		name="证件号码"/>
+		<column type="string"  id="marr_status"			name="婚姻状况"/>
+		<column type="string"  id="dqdm"		name="地区代码"/>
+		<column type="string"  id="area_code"				name="联系地址"/>
+		<column type="string"  id="postalcode"				name="邮政编码"/>
+	</output>
+</function>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="60163923" name="股票质押式回购交易业务清算表（业务主管部门适用）" >
+<input print="60163923.jsp">
+   <item type="text"    id="institution_id"        name="营业部名称" />
+   <item type="text"    id="institution_name"      name="营业部名称" />
+   <item type="text"    id="trade_date"  name="日期"  />
+<group name="股票质押式回购交易业务清算表（业务主管部门适用）" >
+   <item type="grid" id="" name="institution_id,institution_name,trade_date" source="60163903"/>
+</group>
+</input>
+</function>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="31370" name="系统初始化">
+	<description>确定要进行系统初始化?</description>
+	<input>
+		<item type="hidden"	id="id"		name="id" action="31381" default="1"/>		
+		<item type="date"	id="next_day"	name="系统初始化日期" editable="false"/>
+	</input>		
+	<service type="procedure" id="p_system_init"   process="811" style="1">
+		<param id="user_id"		type="integer"/>	
+		<param id="next_day" type="string"/>
+	</service>
+	<output/>		
+</function>

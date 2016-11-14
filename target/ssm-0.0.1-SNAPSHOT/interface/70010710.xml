@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70010710" name="合同签署申请" >
+  <input print="70010710.jsp" >
+  	<item type="hidden" id="cust_id" name="客户id" action="1888,70010101,70010430,97000018"/>	
+    <group name="合同基本信息">
+		<item type="text"   id="cust_name" 	name="客户姓名" editable="false"/>
+		<item type="text"   id="cust_code" 	name="客户代码" editable="false"/>
+		<item type="text"   id="cert_type" 	name="证件类型" editable="false"/>
+		<item type="text"   id="cert_no"   	name="证件号码" editable="false"/>
+		<item type="hidden"	id="order_no"   name="合约编号" editable="false"/>
+		<item type="text"   id="bond_no"    name="合同编号" editable="false"/>
+		<item type="select" id="currency"   name="货币类型" source="018" editable="false" nullable="false" default="01"/>
+		<item type="hidden" id="dc_mode"  	name="信用使用模式" source="306" default="1"/>
+		<item type="hidden" id="availability_time" name="生效日期"/>
+		<item type="hidden" id="begin_time" name="起始日期"/>
+		<item type="hidden" id="return_time" name="到期日期"/>
+		<item type="text"   id="app_years" 	name="申请年数" integer="true" nullable="false" default="99"/>
+		<item type="date"   id="over_time" 	name="客户协议签署日期" nullable="false"/>
+		<item type="hidden" id="date"       name="打印日期"/>
+		<item type="hidden" id="user_code"  name="打印柜员代码"/>
+		<item type="hidden" id="user_name"  name="打印柜员名称"/>
+		<item type="hidden" id="company"    name="券商名称"/>
+		<item type="hidden" id="remark1"    name="备注说明"/>
+		<item type="text"   id="agent_name" 	name="代理人姓名" editable="false"/>
+		<item type="text"   id="agent_cert_type" 	name="代理人证件类型" editable="false"/>
+		<item type="text"   id="agent_cert_no"   	name="代理人证件号码" editable="false"/>
+    </group>
+    <group name="联系资料">			
+		<item type="text" 	id="move_tel" name="移动电话" minlen="5" nullable="false" editable="false"/>
+		<item type="text" 	id="fix_tel" name="固定电话" editable="false"/>
+		<item type="hidden"	id="move_tel" alias="meet_tel" name="应急电话"  nullable="false"/>
+		<item type="text" 	id="family_address" name="联系地址" nullable="false" editable="false"/>
+		<item type="text"   id="email" name="电子邮件" editable="false"/>
+		<item type="text" 	id="ps_code" name="邮政编码" nullable="false" editable="false"/>	
+		<item type="text" 	id="fax" name="传    真" editable="false"/>		
+		<item type="select" id="find_mode" name="主联系方式" source="312" nullable="false" default="1" editable="false"/>
+		<item type="text" 	id="emerg_contacts_man" name="应急联系人" nullable="false"/>
+		<item type="text" 	id="emerg_contacts_tel" name="应急联系人电话" nullable="false"/>	
+		<item type="hidden"	id="cust_code" name="客户代码" editable="false"/>	
+    </group>     
+    <group name="自然情况">
+		<item type="grid" 	id="cust_id" source="70030422" name="自然情况"/>		
+	</group>   
+	<!--<group name="信用评估">
+		<item type="hidden" id="cust_id" name="客户id" action="7003063401" />
+		<item type="text" 	id="total_score"  name="信用评估总分" editable="false" number="true"/>	
+		<item type="text" 	id="credit_level_name" name="信用级别" editable="false"/>
+		<item type="hidden" id="credit_level_id" name="信用级别" editable="false"/>
+		<item type="hidden" id="credit_num" name="信用上限"	number="true"/>
+	</group>-->
+	<group name="备    注">
+		<item type="textarea" id="remark" name="备注说明" />
+	</group>
+  </input>
+  <service type="procedure" id="p70010710" process="822" style="1">
+	<param type="integer" 	id="user_id" way="in"/>
+	<param type="string" 	id="order_no"  way="in" />
+	<param type="string" 	id="bond_no"  way="in"/>
+	<!--<param type="string" id="dc_mode" way="in" />-->
+	<param type="string" 	id="currency" way="in" />
+	<param type="integer" 	id="cust_id" way="in"  />
+	<param type="string" 	id="availability_time" way="in" />
+	<param type="string" 	id="begin_time" way="in"  />
+	<param type="string" 	id="return_time" way="in" />
+	<param type="string" 	id="over_time" way="in" />
+	<param type="string" 	id="remark" way="in" />
+	<param type="string" 	id="move_tel" way="in"/>	
+	<param type="string" 	id="fix_tel" way="in"/>
+	<param type="string" 	id="meet_tel" way="in"/>
+	<param type="string" 	id="family_address" way="in"/>
+	<param type="string" 	id="ps_code" way="in"/>
+	<param type="string" 	id="email" way="in"/>
+	<param type="string" 	id="fax" way="in"/>
+	<param type="string" 	id="find_mode" way="in"/>
+	<param type="string" 	id="credit_num" way="in" />
+	<param type="double" 	id="total_score" way="in" />
+	<param type="double" 	id="total_score" way="in" />
+	<param type="string" 	id="credit_level_id" way="in"/>
+	<param type="string" 	id="if_allow" way="in" default="1"/>
+	<param type="string" 	id="if_blacklist" way="in" default="2"/>
+	<param type="integer" 	id="app_years" way="in" />
+	<param type="string" 	id="emerg_contacts_man" way="in" />
+	<param type="string" 	id="emerg_contacts_tel" way="in" />
+	<param type="string" 	id="credit_num" way="in" />
+  </service>
+  <output/>
+</function>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70010407" name="客户评级因子设置" >	
+  <input> 
+	<item type="hidden" id="cust_id" 	name="客户id"/>
+	<item type="hidden" id="ratingfactor_type" 		name="评级因子类型"/>
+	<item type="text" id="ratingfactor_type_name" name="评级因子类型" editable="false"/>
+	<item type="hidden" id="ratingfactor_sort" 		name="评级因子类别" />	
+	<item type="text" 	id="ratingfactor_name"		name="评级因子类别" editable="false"/>		
+	<item type="select" id="data_code"  name="客户数据内容" filter="ratingfactor_sort" source="97000003" nullable="false"/>
+	<item type="text" 	id="into_data" 	name="客户实际信息" action="70010408"/>
+	<item type="hidden" id="versionid" 	name="versionid"/>
+  </input>
+  <service type="procedure" id="P70010407"  process="822" style="1"> 
+	<param id="user_id"	type="integer"/>
+	<param id="cust_id"	type="integer"/>
+	<param id="ratingfactor_type" />
+	<param id="ratingfactor_sort"/>
+	<param id="ratingfactor_name"/>
+	<param id="into_data"/>
+	<param id="data_code"/>
+	<param id="versionid" type="integer"/>
+  </service>
+  <output>	
+  </output>		
+</function>

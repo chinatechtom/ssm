@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="60370105" name="历史交易协议书查询" >
+  <input  export="true">
+	<item type="hidden" id="institution_id" name="机构id"/>
+ 	<item type="hidden" id="cust_id" name="客户id"/>
+	<item type="select" id="lender_type" name="融出方类别" source="800"/>
+	<item type="text" id="cust_code" name="客户代码" />
+	<item type="text" id="cust_name" name="客户姓名"/>
+	<item type="text" id="cert_no" name="证件号码"/>
+	<item type="text" id="bond_no" name="合同编号"/>
+	<item type="hidden" id="bond_id" name="合同id"/>	
+	<item type="select" id="bond_status" name="合同状态" source="022"/>
+	<item type="text"  id="sbond_no" name="交易协议书编号"/>
+	<item type="select"  id="market_code" name="市场代码" source="039"/>
+	<item type="text"  id="product_code" name="证券代码"/>
+	<item type="select" id="sbond_status" name="交易协议书状态" source="700"/>
+	<item type="select" id="resource_type" name="数据来源" source="744"/>	
+	<group name="分页查询" page="true"> 		
+	<item type="text"   id="page_num"       name="页码"     integer="true" default="1"/>
+	<item type="select" id="rows_num"       name="每页行数" integer="true" source="95000012" nullable="false"/>
+	</group>
+  </input>
+  <service type="procedure" id="p60370105" process="977" style="77">
+	<param type="integer" id="user_id"/>	
+	<param type="integer" id="institution_id"/>
+ 	<param type="integer" id="cust_id"/>
+	<param type="string"  id="cust_code"/>
+	<param type="string"  id="cust_name"/>
+	<param type="string"  id="cert_no"/>
+	<param type="integer" id="bond_id"/>
+	<param type="string"  id="bond_no"/>
+	<param type="string"  id="bond_status"/>
+	<param type="string"  id="sbond_no"/>
+	<param type="string"  id="market_code"/>
+	<param type="string"  id="product_code"/>
+	<param type="string"  id="sbond_status"/>
+	<param type="string"  id="lender_type"/>
+    <param type="string"  id="resource_type"/>	
+	<param type="integer" id="page_num"/>	
+	<param type="integer" id="rows_num"/>
+  </service>
+  <output  export="true">  
+    <column type="number" id="bond_id"   name="合同id"   display="false"/>
+    <column type="number" id="sbond_id"   name="交易协议书id" display="false"/>     
+	<column type="number" id="institution_id"   name="机构号" display="false"/>	
+	<column type="string" id="institution_code"   name="营业部代码"/>
+	<column type="string" id="institution_name"   name="营业部名称"/>
+  	<column type="number" id="cust_id"   name="客户id"  display="false"/>	
+	<column type="string" id="cust_code"   name="客户代码" />
+	<column type="string" id="cust_name"   name="客户姓名" />
+	<column type="string" id="cust_type_name" name="客户类型"/>
+	<column type="number" id="lender_id"   name="融出方ID" display="false"/>
+	<column type="string" id="lender_code"   name="融出方代码" />
+	<column type="string" id="lender_name"   name="融出方名称" />
+	<column type="string" id="lender_type"   name="融出方类别" display="false"/>
+	<column type="string" id="lender_type_name"   name="融出方类别" />
+	<column type="string" id="acc_code"   name="融出方证券账号" />
+	<column type="string" id="acc_name"   name="融出方证券账号名称" />
+	<column type="string" id="seat_code"   name="融出方席位代码" />
+	<column type="string" id="bond_no"   name="合同编号"  display="false"/>
+	<column type="string" id="sbond_no"   name="交易协议书编号" />
+	<column type="string" id="sbond_status"   name="交易协议书状态"/>
+	<column type="number" id="related_sbond_id"   name="关联(主)交易协议书编号" display="false"/>
+	<column type="string" id="related_sbond_no"   name="关联(主)交易协议书编号" />
+	<column type="integer" id="product_id"   name="productid" display="false"/>
+	<column type="string" id="market_code"   name="市场代码" display="false"/>
+	<column type="string" id="market_code_name"   name="市场代码"/>
+	<column type="string" id="product_code"   name="证券代码"/>
+	<column type="string" id="product_name"   name="证券名称"/>
+	<column type="string" id="product_type"   name="证券类型"/>
+	<column type="string" id="stock_property"   name="股份性质"/>
+	<column type="string" id="mortgagee_name"   name="质权人名称"/>
+	<column type="string" id="circ_date"   name="流通日期"/>
+	<column type="number" id="hg_num"   name="证券数量" precision="0"/>
+	<column type="string" id="hg_num_big"   name="证券数量大写" display = "false"/>
+	<column type="number" id="first_amt"   name="初始交易金额" precision="2"/>
+	<column type="string" id="first_amt_big"   name="初始交易金额大写" display="false"/>
+	<column type="number" id="payback_amt"   name="本金归还额" precision="2"/>
+	<column type="number" id="bc_amt"   name="现金补仓额" precision="2"/>
+	<column type="number" id="hg_rate"   name="当前执行利率(每100元年收益)" precision="4"/>
+	<column type="string" id="if_fd"   name="是否分段"/>
+	<column type="number" id="penalty_rate"   name="违约金比率(日利率%)" precision="4"/>
+	<column type="string" id="engage_trade_date"   name="初始交易日期"/>
+	<column type="number" id="days"   name="原购回期限(天)"/>
+	<column type="string" id="bb_date"   name="原购回交易日期"/>
+	<column type="number" id="second_amt"   name="原购回交易金额" precision="2"/>
+	<column type="string" id="second_amt_big"   name="原购回交易金额大写" display="false"/>
+	<column type="number" id="days2"   name="最新购回期限(天)"/>
+	<column type="string" id="bb_date2"   name="最新购回交易日期"/>
+	<column type="number" id="second_amt2"   name="最新购回交易金额" precision="2"/>
+	<column type="string" id="second_amt_big2"   name="最新购回交易金额大写" display="false"/>
+	<column type="number" id="second_amt_before"   name="最新购回交易金额" display="false"/>
+	<column type="string" id="second_amt_before_big"   name="最新购回交易金额大写" display="false"/>
+	<column type="string" id="remarks"   name="备注"/>
+	<column type="number" id="app_price"   name="标的证券价格" precision="3" display="false"/>
+	<column type="number" id="prewarning_price"   name="预警履约保障比率(%)" precision="3" />
+	<column type="number" id="lowest_price"   name="最低履约保障比例(%)" precision="3"/>
+	<column type="number" id="hg_convert_rate"   name="折扣比率(%)" precision="4" display="false"/>
+	<column type="number" id="fix_rate"   name="固定交易费用比例(%)" precision="2" display="false"/>
+	<column type="number" id="manual_chg"   name="购回金额手工调整" precision="2"/>
+	<column type="string" id="mtm_remark"   name="提前或延期备注"/>
+	<column type="string" id="violate_type"   name="违约类型" display="false" />
+	<column type="string" id="begin_date"   name="违约开始日期" display="false" />
+	<column type="string" id="end_date"   name="违约结束日期" display="false" />
+	<column type="string" id="remark1"   name="违约备注" display="false" />
+	<column type="string" id="zjyt"   name="资金用途" display="false" />
+	<column type="number" id="curr_stk_vol"   name="当前证券数量" precision="0"/>
+	<column type="number" id="curr_debt_amt"   name="当前负债金额" precision="2"/>
+	<column type="number" id="frzn_stk_vol"   name="证券冻结数量" precision="0"/>
+	<column type="number" id="zt_hl"   name="在途红利金额" precision="2"/>
+	<column type="number" id="zt_hl_tax"   name="在途红利税金额" precision="2"/>
+	<column type="number" id="zt_hg"   name="在途红股数量" precision="0"/>
+	<column type="number" id="zt_pg"   name="在途配股权数量" precision="0"/>
+	<column type="string" id="pg_code"   name="配股权代码"/>
+	<column type="number" id="rz_hl"   name="入账红利金额" precision="2"/>
+	<column type="number" id="rz_hl_tax"   name="入账红利税金额" precision="2"/>
+	<column type="string" id="zt_hl_rzr"   name="红利入账日"/>
+	<column type="number" id="rz_hg"   name="入账红股数量" precision="0"/>
+	<column type="string" id="zt_hg_rzr"   name="红股入账日"/>
+	<column type="number" id="rz_pg"   name="入账配股权数量" precision="0"/>
+	<column type="string" id="rz_pg_rzr"   name="配股权入账日"/>
+	<column type="number" id="cz_pg"   name="出账配股权数量" precision="0"/>
+	<column type="string" id="pg_cz_rq"   name="配股权出账日"/>
+	<column type="number" id="real_interest"   name="实时借款利息" precision="2"/>
+	<column type="number" id="fix_fee"   name="固定费用" precision="2"/>
+	<column type="number" id="real_penalty"   name="实时违约金" precision="2"/>
+	<column type="number" id="unreceived_interest"   name="已结未收利息" precision="2"/>
+	<column type="number" id="received_interest"   name="已收利息" precision="2"/>
+	<column type="number" id="unreceived_penalty"   name="已结未收违约金" precision="2"/>
+	<column type="number" id="received_penalty"   name="已收违约金" precision="2"/>
+	<column type="string" id="mortgagee_type"   name="质权人类型1" display="false"/>
+	<column type="string" id="mortgagee_type_name"   name="质权人类型"/>
+	<column type="string" id="zqlb"   name="证券类别(SH)"/>
+	<column type="string" id="ltlx"   name="流通类型(SH)"/>
+	<column type="string" id="qylb"   name="权益类别(SH)"/>
+	<column type="string" id="gpnf"   name="挂牌年份(SH)"/>
+	<column type="number" id="zybl"   name="质押比例(%)" precision="2"/>
+	<column type="number" id="mv_discount_rate"   name="市值折扣比率(%)" precision="4"/>
+	<column type="string" id="if_handle"   name="是否进行过处置" display="false"/>
+	<column type="string" id="if_handle_name"   name="是否进行过处置" />
+	<column type="string" id="if_mand_nota"   name="是否强制公证" display="false"/>
+	<column type="string" id="if_mand_nota_name"   name="是否强制公证" />
+	<column type="string" id="if_per_interest"   name="是否个性化结息" display="false"/>
+	<column type="string" id="if_per_interest_name"   name="是否个性化结息" />
+	<column type="string" id="interest_set_dates"   name="个性化结息日期" />
+	<column type="string" id="resource_type"   name="resource_type" display="false"/>
+	<column type="string" id="resource_type_name"   name="数据源"/>
+	<column type="string" id="order_type2"   name="order_type2" display="false"/>
+	<column type="string" id="order_type2_name"   name="指令类别"/>
+	<column type="string" id="entrust_type"   name="entrust_type" display="false"/>
+	<column type="string" id="entrust_type_name"   name="委托方式"/>
+	<column type="string" id="entrust_station"   name="委托站点"/>
+	<button type="view" id="edit" name="查看交易协议书详细" action="60370408" multiple="0"/>
+  </output>
+</function>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3065011" name="生成大写中文" >
+	<input>	
+		<item type="hidden" id="net_credit_limit" name="授信额度"/>
+		<item type="hidden" id="net_fin_limit" name="融资上限"/>
+		<item type="hidden" id="net_bs_limit" name="融券上限"/>
+	</input>
+	<service type="procedure" id="p_limit_value_4_chinese"  implement="p_limit_value_4_chinese3065011" process="911" style="77">
+		<param id="user_id" type="integer"/>	
+		<param type="double" id="net_credit_limit"/>
+		<param type="double" id="net_fin_limit"/>
+		<param type="double" id="net_bs_limit"/>
+	</service>
+	<output export="true">  
+		<column type="string" id="net_credit_limit_c"   name="授信额度大写中文" />
+		<column type="string" id="net_fin_limit_c"      name="融资上限大写中文" />
+		<column type="string" id="net_bs_limit_c"       name="融券上限大写中文" />
+	</output>
+</function>

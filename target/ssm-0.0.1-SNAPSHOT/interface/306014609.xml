@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="306014609" name="二次征信数据查询" >
+	<input>
+		<item type="text"	id="branch_code_zx"		name="征信营业部代码" nullable="false" />
+		<item type="text"	id="commness_cust_code"	name="普通资金账号"   nullable="true"/>
+		<item type="date"	id="zx_begin_date"			name="起始日期"		   default="now"/>
+		<item type="date"	id="zx_end_date"			name="结束日期"		   default="now"/>
+	</input>
+	<service type="procedure" id="kingstar.P37819011_rzrq" process="155" style="77">
+		<param type="string"  id="commness_cust_code"/><!--普通资金账号-->
+		<param type="string"  id="client_date"/>
+		<param type="string"  id="zx_begin_date"/>
+		<param type="string"  id="zx_end_date"/>
+		<param type="string"  id="user_code" default="rzrqgl"/>
+	</service>
+	<output>
+		<column type="string"	id="branch_code"		        name="营业部代码"	/>
+		<column type="string"	id="branch_abbrev"		        name="营业部名称"	/>
+		<column type="string"	id="capital_account"			name="信用资金账号"	/>
+		<column type="string"	id="related_capital_account"	name="普通资金账号"	/>
+		<column type="string"	id="client_name"				name="客户名称"	/>
+		<column type="string"	id="client_date"				name="评定日期"	/>
+		<column type="string"	id="start_date"					name="起始日期"	/>
+		<column type="string"	id="end_date"					name="结束日期"	/>
+		<column type="string"	id="asset_total_pdr"			name="资产规模(元)"	/>
+		<column type="string"	id="year_yield"					name="账户整户年化收益率(%)"	/>
+		<column type="string"	id="hs300_yield_year"			name="沪深300年化收益率(%)"	/>
+		<column type="string"	id="rz_year_yield"			    name="融资业务年化收益率(%)"	/>
+		<column type="string"	id="rq_year_yield"			    name="融券业务年化收益率(%)"	/>
+		<column type="string"	id="min_gurantee_rate"			name="最低维持担保比例(%)"	/>
+		<column type="string"	id="credit_use_rate"			name="日均授信额度使用率(%)"	/>
+		<column type="string"	id="itst_ctb"					name="息费贡献(元)"	/>
+		<column type="string"	id="itst_ctb_rate"				name="息费贡献率(%)"	/>
+		<column type="string"	id="total_rzrq_commission"		name="总信用交易佣金(元)"	/>
+		<column type="string"	id="comm_rate"				    name="信用交易佣金贡献率(%)"	/>
+		<column type="string"	id="turn_over_rate"		        name="信用账户换手率(%)"	/>
+		<column type="string"	id="credit_turn_over_rate"		name="授信额度换手率(%)"	/>
+	</output>
+</function>

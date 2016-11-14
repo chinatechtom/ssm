@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70041005" name="购回利率产品查询" >
+  <input>
+	<item type="hidden" id="item_id"   name="产品id"/>  
+	<item type="text"   id="item_name"   name="产品大类代码"/>
+    <item type="text"   id="item_code"   name="产品小类代码"/>
+	<item type="text" 	id="days"    name="购回期限"/>
+    <item type="text"   id="first_amt"   name="初始交易金额"/>	
+	<item type="select"	id="busi_type"	name="业务类型"	  	source="743"/>
+	<item type="select"	id="order_type"	name="指令类别" 	source="739"/>	
+  </input>
+  <service type="procedure" id="P70041001" process="922" style="77"> 
+    <param id="user_id"		    way="in"/>
+    <param id="item_id"	   		way="in"/>
+    <param id="item_name"	   	way="in"/>
+	<param id="item_code"     	way="in"/>
+    <param id="days"   			way="in"/>  
+	<param id="first_amt"  		way="in"/>
+	<param id="busi_type"		type="string"/>
+	<param id="order_type"		type="string"/>
+  </service>
+  <output>
+	<column type="number" id="item_id"			name="产品id" display="false"/>
+	<column type="string" id="busi_type_name"		name="业务类型"/>
+	<column type="string" id="order_type_name"		name="指令类别"/>
+	<column type="string" id="busi_type"		name="业务类型" display="false"/>
+	<column type="string" id="order_type"		name="指令类别" display="false"/>
+	<column type="string" id="item_name"		name="产品大类代码"/>
+	<column type="string" id="item_code"		name="产品小类代码"/>	
+	<column type="number" id="lower_days"		name="购回期限下限"/>	
+	<column type="number" id="upper_days"		name="购回期限上限"/>	
+	<column type="number" id="hg_rate"			name="购回利率（%）" precision="3"/>	
+	<column type="number" id="lower_first_amt"	name="初始交易金额下限" precision="2"/>	
+	<column type="number" id="upper_first_amt"	name="初始交易金额上限（含）" precision="2"/>
+	<column type="string" id="set_date"			name="设置日期"/>	
+	<column type="string" id="set_time"			name="设置时间"/>	
+	<column type="string" id="user_code"		name="设置人员"/>	
+  </output>
+</function>

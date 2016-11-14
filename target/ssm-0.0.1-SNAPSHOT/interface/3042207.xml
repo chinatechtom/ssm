@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3042207" name="客户评级因子浏览-营业部用" >	
+  <input> 
+		<item type="hidden"	id="cust_id"	 name="客户id" />
+		<item type="hidden"	id="versionid"	 name="version_id" nullable="false"/>
+  </input>
+  <service type="procedure" id="p_cust_ratingfactor_2_query"  process="911" style="77"> 
+		<param id="user_id" type="integer"/>		
+		<param id="cust_id" type="integer"/>
+		<param id="versionid" type="integer"/>
+  </service>
+  <output>
+        <column type="number" id="cust_id" name="客户id"	display="false"/>
+		<column type="string" id="cust_name"  name="客户姓名" 	display="false"/>
+		<column type="string" id="cust_code" name="客户代码"	display="false"/>
+		<column type="number" id="ratingfactor_type" name="评级因子类型"	display="false"/>
+		<column type="string" id="ratingfactor_type_name"  name="评级因子类型名称" display="false"/>
+		<column type="number" id="ratingfactor_sort" name="评级因子类别" display="false"/>
+		<column type="string" id="ratingfactor_name" name="评级因子名称"/>
+		<column type="number" id="data_code"  name="数据编码" display="false"/>
+		<column type="string" id="data_content"  name="客户数据内容" />
+		<column type="string" id="into_data"  name="客户实际信息" />
+		<column type="number" id="score"  name="客户参考分值"  precision="2" display="false"/>
+		<column type="number" id="total_score" name="客户参考总分值"  precision="2" display="false"/>
+		<column type="number" id="versionid" name="versionid"  display="false"/>
+  </output>		
+</function>

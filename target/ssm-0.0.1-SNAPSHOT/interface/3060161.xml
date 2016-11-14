@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3060161" name="批量征信任务查询" >  
+	<input>
+		<item type="date"     id="begin_date"       name="起始日期"/>
+		<item type="date"     id="end_date"         name="结束日期"/>
+		<item type="text"     id="task_id"          name="任务编号"/>
+		<item type="select"   id="task_type"        name="任务类型" source="526"/>
+		<item type="select"   id="task_status"      name="任务状态" source="527"/> 
+	</input>
+	<service type="procedure" id="p_cust_batch_zx_task_query" implement="p_cust_batch_zx_task_query3060161" process="911" style="77">
+		<param id="user_id" type="integer"/>
+		<param id="task_id"/>
+		<param id="task_type" />
+		<param id="task_status" />
+		<param id="begin_date"/>
+		<param id="end_date"/>  
+	</service> 
+	<output>
+	    <column type="string" id="task_id"         name="任务编号"/>
+		<column type="string" id="task_type"       name="任务类型" display="false"/>
+		<column type="string" id="task_type_name"  name="任务类型"/>
+		<column type="string" id="task_status"     name="任务状态" display="false"/>
+		<column type="string" id="task_status_name" name="任务状态" />
+		<column type="string" id="begin_date"     name="开始日期"/>
+		<column type="string" id="end_date"     name="结束日期"/>
+		<column type="string" id="evaluate_date"     name="评估日期"/>
+		<column type="string" id="export_date"     name="导出日期"/>
+		<column type="string" id="export_time"     name="导出时间"/>
+		<column type="string" id="export_user_id"  name="导出人员"/> 
+		<column type="string" id="import_date"     name="导入日期"/>
+		<column type="string" id="import_time"     name="导入时间"/>
+		<column type="string" id="import_user_id"  name="导入人员"/>
+		<column type="string" id="occur_date"      name="设置日期"/>
+		<column type="string" id="occur_time"      name="设置时间"/>
+		<column type="string" id="occur_user_id"   name="设置人员"/>
+		<column type="string" id="remark"          name="备注"/>
+		<column type="string" id="import_status"   name="是否可以导入"/>
+		<button type="add"    id="add"             name="同步任务到征信"   action="306016101" multiple="0"/>
+		<button type="view"   id="view"            name="更新任务状态"     action="306016102" multiple="0"/>
+		<button type="ipt"    id="ipt"             name="批量导入征信数据" action="306016112"  extendaction="import_status"  multiple="0"/>
+		<assistant action="3060164">
+			<link src="task_id" target="task_id"/>
+		</assistant>
+	</output>
+</function>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="34009" name="网厅变更保证金比例请求查询" >
+	<input>
+		<item type="select"	id="institution_id" 	name="营业部名称" source="95000008"/>
+		<item type="text"	id="cust_code" name="客户代码"/> 
+		<item type="date"	 id="begin_date" name="起始日期" default="last"/> 
+	  <item type="date"	 id="end_date"   name="终止日期" default="now"/>   
+	</input>
+	<service type="procedure" id="P17000009" process="911" style="77">
+		<param id="user_id" type="integer" way="in" /> 
+		<param id="institution_id" type="integer" way="in" />  
+		<param id="cust_code"/> 
+		<param id="begin_date"/> 
+		<param id="end_date"/> 
+		<param id="manage_status" default="01"/> 
+	</service> 	
+  <output>  
+		<column type="number" id="cust_id"  name="客户id" display="false"/>   
+		<column type="number" id="order_id" name="合约编号" display="false"/>	 
+		<column type="string" id="order_no" name="合约编号"/>
+		<column type="string" id="cust_code" name="客户代码"/>
+		<column type="string" id="cust_name" name="客户姓名"/>
+		<column type="string" id="commness_cust_code"	name="普通资金账号"/>   
+		<column type="string" id="credit_limit"		name="授信额度"/>  
+		<column type="string" id="institution_code"   	name="营业部代码"/>
+		<column type="string" id="institution_name"		name="营业部名称"/>
+		<column type="string" id="trade_date" name="交易日期" display="false"/>  
+		<column type="string" id="status_name"		name="处理状态"/>
+		<column type="string" id="applay_guarantee_rate_12" name="申请初始保证金比例"/>
+		<column type="string" id="now_guarantee_rate_12" name="当前初始保证金比例"/>
+		<column type="string" id="now_guarantee_rate_4" name="当前融券卖出保证金比例"/>
+		<column type="string" id="applay_guarantee_rate_4" name="申请融券卖出保证金比例" display="false"/>
+		<column type="string" id="now_guarantee_rate_5" name="当前融资买入保证金比例"/>
+		<column type="string" id="applay_guarantee_rate_5" name="申请融资买入保证金比例" display="false"/>
+		<column type="string" id="station"		name="站点信息"/>
+		<column type="string" id="remark"		name="备注"/> 
+		<column type="string" id="time"		name="申请时间"/>
+		<column type="string" id="source_flag" name="来源标志" />
+		<column type="string" id="total_commness_asset"		name="普通资金账号资产" display="false"/>  
+		<column type="string" id="warning_level"		name="报警级别"	level="true" display="false"/><!--对黑名单客户和重点监控客户进行高亮显示-->
+		<button type="add" id="add" name="批量提交" action="34012" multiple="1" />
+    <button type="del" id="del" name="拒绝并作废" action="306360103" multiple="0"/>
+	</output>
+</function>

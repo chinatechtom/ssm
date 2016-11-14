@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3050102" name="利息费率浏览" >	
+  <input> 
+		<item type="hidden"	id="product_id"		 name="产品id" />
+		<item type="text"	id="product_code"	 name="产品代码" />
+		<item type="text"	id="product_name"	 name="产品名称" />
+		<item type="text"	id="fee_code"	     name="费率代码" />
+		<item type="select"	id="product_type"	 name="产品类型" source="324"/>
+  </input>
+  <service type="procedure" id="p_credit_charge_rate_brow"   process="911" style="77"> 
+		<param id="user_id"			type="integer" 	way="in"/>
+		<param id="product_id"		type="integer" way="in"/>
+		<param id="product_code"	type="string"  way="in"/>
+		<param id="product_name"	type="string"  way="in"/>
+		<param id="fee_code"	    type="string"  way="in"/>
+		<param id="product_type"	type="string"  way="in"/>
+  </service>
+  <output>
+        <column type="string" id="product_sort"						 name="产品类型1"       display="false"/>
+		<column type="string" id="product_sort_name"				 name="产品类型" />
+		<column type="number" id="product_id"						 name="产品id"			display="false"/>
+		<column type="string" id="product_code"						 name="产品代码"/>
+		<column type="string" id="product_name"						 name="产品名称"/>
+		<column type="string" id="fee_code"						     name="费率代码"/>
+		<column type="string" id="fee_code_name"					 name="费率类型"/>
+		<column type="number" id="origin_fee_rate"			         name="初始费率"		precision="4"/>
+		<column type="string" id="calc_method"						 name="浮动方式"/>
+		<column type="string" id="basic_rate"						 name="基准费率"       precision="4"/>
+		<column type="number" id="final_fee_rate"					 name="实际利率"       precision="4"/>
+		<column type="string" id="attribute"			             name="属性1"           display="false"/>
+		<column type="string" id="attribute_name"			         name="属性"            />
+		<column type="number" id="min_fee"			                 name="最小费用"       precision="4"/>
+		<column type="number" id="max_fee"		                     name="最大费用"		precision="4"/>
+		<column type="string" id="begin_date"					     name="起始日期"/>
+		<column type="string" id="end_date"					         name="结束日期"/>
+		<column type="string" id="set_date"					         name="设置日期"/>
+		<column type="string" id="set_time"					         name="设置时间"/>
+		<column type="string" id="note"				                 name="备注"	        precision="4"/>
+        <button type="view"   id="view"                              name="同步交易信用利率" action="80777777"  multiple="-1"/>		
+  </output>		
+</function>

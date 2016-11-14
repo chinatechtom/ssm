@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="32221" name="客户基本资料" >
+  <input>		
+		<item type="hidden" id="cust_id" name="客户号"/>		
+  </input>
+  <service type="procedure" id="p_test_multi_records" process="811" style="77" implement="p_test_multi_records32221">		
+  	<param id="user_id" type="integer"/>
+		<param id="cust_id" type="string"/>		
+  </service>
+  <output/>  	
+  	
+</function>

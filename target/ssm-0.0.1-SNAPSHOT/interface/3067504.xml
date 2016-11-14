@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3067504" name="判断是否可修改" >
+	<input>
+		<item type="hidden" id="system_id" 	name="系统标识" 	source="608"/>
+		<item type="hidden" id="order_type"	name="合约类型"		nullable="false" source="010"/>
+	</input>
+  	<service type="procedure" id="p_approve_process_judge"  implement="p_approve_process_judge3067504"  process="911" style="77">
+		<param type="integer" 	id="user_id"/>
+		<param type="integer"	id="system_id"/>
+		<param type="string"	id="order_type"/>
+  	</service>
+  	<output>    
+  		<column type="string" id="order_type"   name="合约类型"  	/>
+		<column type="string" id="if_set"		name="合约类型名称"/>  	
+  	</output>
+</function>

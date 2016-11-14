@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="27000119" name="1-9融资融券业务其他收入状况表" >
+  <input>
+    <item type="select" id="insitution_id" name="营业部名称" source="95000008"/>
+	<item type="year"   id="begin_year"     name="起始年度" nullable="false"/>
+    <item type="month"  id="begin_month"    name="起始月份" nullable="false"/>
+	<item type="year"   id="end_year"       name="结束年度" nullable="false"/>
+    <item type="month"  id="end_month"      name="结束月份" nullable="false"/>	
+  </input>
+  <service type="procedure" id="P27000119"  process="955" style="77" implement="P2700011927000119">
+    <param id="user_id"               type="integer" way="in"/>
+    <param id="insitution_id"         type="integer" way="in"/>
+    <param id="begin_year"     type="string"	way="in"/>
+    <param id="begin_month"    type="string"	way="in"/>
+	<param id="end_year"       type="string"	way="in"/>
+    <param id="end_month"      type="string"	way="in"/>	
+  </service>
+ <output print="true">
+	<column type="number" id="id"   name="序号"/>	
+	<column type="string" id="institution_code"   name="营业部代码"/>        
+	<column type="string" id="institution_name"   name="营业部名称" />
+	<group name="融资融券业务其他收入">
+	  <column type="number" id="punish_all"     name="罚息"       precision="2" total="true"/>   
+	  <column type="number" id="takeup_borrow"  name="占用费"     precision="2" total="true"/>   
+	  <column type="number" id="fix_borrow"     name="固定额度费" precision="2" total="true"/>   
+	  <column type="number" id="bef_rtn_commission"   name="提前还贷手续费" precision="2" total="true"/> 
+	  <column type="number" id="this_date_all"        name="本期合计"       precision="2" total="true"/>   
+	  <column type="number" id="rate"                 name="本期融资融券业务其他收入占比"   precision="6"/>   
+	  <column type="number" id="this_year_interest_all" name="本年度累计"   precision="2" total="true"/>  
+    </group>		
+</output>
+</function>  

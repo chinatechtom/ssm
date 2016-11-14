@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="306666675" name="修订客户参数详细" >
+  <input print="306666675.jsp">	
+<!--  <item type="hidden" id="order_id" name="orderid" action="30673"/>  -->
+	<group name="原合同客户参数" >
+		<item type="text" id ="cust_code" name="客户代码" editable="false"/>
+		<item type="text" id ="cust_name" name="客户姓名" editable="false"/>
+		<item type="hidden" id="bond_id" name="bond_id" action="30672,1888"/>
+		<item type="hidden" id="credit_control_mode_name" name="信用控制模式" source="128" editable="false"/>
+		<!--<item type="text" id="account_fee_modename" name="计费模式" source="125" editable="false"/>-->
+		<item type="text" id="pc_mode_name" name="平仓顺序" editable="false"/>
+		<item type="text" id="return_mode_name" name="还款模式" editable="false"/>
+		<item type="text" id="borrow_stock_pg_name" name="融券复权模式" editable="false"/>
+		<item type="hidden" id="borrow_stock_hg_name" name="融券红股模式"  editable="false"/>
+		<item type="text" id="borrow_stock_tspc_name" name="融券退市平仓日期"  editable="false"/>
+		<item type="hidden" id="remark" name="备注说明" editable="false"/>
+    <item type="hidden" id="date"       name="打印日期"   editable="false"/>
+	  <item type="hidden" id="user_code"  name="操作员代码" editable="false"/>
+	  <item type="hidden" id="user_name"  name="操作员姓名" editable="false"/>
+	  <item type="hidden" id="company"    name="证券公司名称" editable="false"/>		
+	</group>
+	<group name="客户参数" >
+		<item type="hidden" id="order_id" name="合约id" action="30621"/>
+		<item type="text" id="order_no" name="合约编号" editable="false"/>
+		<item type="hidden" id="formerly_voucher_no" name="原始凭证号" editable="false"/>
+		<item type="hidden" id="approve_credit_control_mode_name" name="申请信用控制模式"  editable="false"/>
+		<!--<item type="text" id="account_fee_modename" name="申请计费模式"  editable="false"/>-->
+		<item type="text" id="approve_pc_mode_name" name="申请平仓顺序" editable="false"/>
+		<item type="text" id="approve_return_mode2_name" name="申请还款模式" editable="false"/>
+		<item type="text" id="approve_borrow_stock_pg_name" name="申请融券复权模式" editable="false"/>
+		<item type="hidden" id="approve_borrow_stock_hg_name" name="申请融券红股模式" editable="false" default="1"/>
+		<item type="text" id="approve_borrow_stock_tspc_name" name="申请融券退市平仓日期" editable="false"/>
+	</group>
+	<group name="备注说明">
+		<item type="hidden" id="order_id" name="orderid" action="30673"/>
+		<item type="textarea" id="manage_opinion1"   name="处理意见" editable="false"/>
+		<item type="textarea" id="approver_opinion1"   name="审核意见" editable="false"/>
+		<item type="textarea" id="assessor_opinion1"   name="审批意见" editable="false"/>
+		<item type="textarea" id="double_check_opin1"   name="复核意见" editable="false"/>
+		<item type="textarea" id="remark1" name="备注说明" editable="false" />
+	</group>
+  </input>
+  <output/>
+</function>

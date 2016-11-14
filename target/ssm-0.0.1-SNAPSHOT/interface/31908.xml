@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="31908" name="融资规模查询" >	
+  <input>		
+  </input>  
+  <service type="procedure" id="P_financing_size" process="911" style="77">
+	<param id="user_id" type="integer"/>	
+  </service>  
+  <output export="true" autoload="true">
+	<column type="number" id="fund_amt1"       		name="净资本" precision="2"/>  	
+	<column type="number" id="CREDIT_AMT_TOTAL" 	name="融资规模" precision="2"/>
+	<column type="number" id="CREDIT_NUM_TOTAL" 	name="信用上限总额" precision="2"/>	
+	<column type="number" id="CREDIT_NUM2"			name="授信总额" precision="2"/>
+	<column type="number" id="FIANCING_APP_LINE"	name="融资上限总额" precision="2"/>
+	<column type="number" id="BS_LIMIT"        		name="融券上限总额" precision="2"/>
+	<column type="number" id="FINANCING1" 	name="浮动融资申请总额" precision="2" display="false"/>
+	<column type="number" id="FINANCING2"	name="固定融资申请总额" precision="2" display="false"/>
+	<column type="number" id="REAL_FIX_FINACING_SUM" name="实际固定融资总额" precision="2" display="false"/>
+	<column type="number" id="FUND_AMT"               	name="融资专户余额" precision="2"/>
+	<column type="number" id="ECURITY_ASSET_SUM"    	name="担保资产总额" precision="2"/>	
+	<column type="number" id="REAL_BORROW_STOCK_SUM"	name="实际融券总额" precision="2"/>
+	<column type="number" id="REAL_BORROW_STOCK_amt"	name="实际融券规模" precision="2"/>	
+    <column type="number" id="BEGIN_FINANCING_TOTAL"   	name="期初融资总额" precision="2"/>		
+	<column type="number" id="REAL_UNFIX_FINACING_SUM" 	name="实际融资总额" precision="2"/>	
+	<column type="number" id="SHOULD_DEBT_FEE_SUM"     	name="已结未付利费总额" precision="2"/>
+    <column type="number" id="SHOULD_BS_DIVISION"      	name="未付融券红利总额" precision="2"/>	
+	<column type="number" id="DEBT_FUND_SUM"           	name="负债资金总额" precision="2"/>	
+  </output>
+</function>

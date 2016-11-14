@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="32213" name="查询信息的内容" >
+	<input  print="32213.jsp">
+		<item type="text" 		id="c1" 	name="信息编号"	 		editable="false"/>
+		<item type="text" 		id="cust_code" 	name="收件人代码" 	action="1888"	editable="false"/>
+		<item type="text" 		id="cust_name" 	name="收件人姓名" 		editable="false"/>
+		<item type="text" 		id="c5" 	name="信息通知方式" 		editable="false"/>
+		<item type="text" 		id="c7" 	name="信息类型" 		editable="false"/>
+		<item type="text" 		id="c6" 	name="信息通知对象" 		editable="false"/>
+		<item type="text" 		id="c12" 	name="信息生成时间" 		editable="false"/>
+		<item type="text" 		id="c15" 	name="信息发送日期" 		editable="false"/>
+		<item type="text" 		id="c16" 	name="信息发送时间" 		editable="false"/>
+		<item type="hidden" id="date"     name="打印日期"/>	<!--从1888.xml获得的打印日期-->
+	  <item type="hidden" id="user_code"     name="打印柜员代码"/><!--从1888.xml获得的打印柜员代码-->
+	  <item type="hidden" id="user_name"     name="打印柜员名称"/><!--从1888.xml获得的打印柜员名称-->
+	  <item type="hidden" id="company"    name="券商名称"/><!--从1888.xml获得的券商名称-->
+		<group name="短信信息内容" scope = "group">
+			<item type="hidden" 		id="c1" 		action="32214" 		name="信息编号"/>
+			<item type="textarea" 	id="content" 		 		name="短信信息"/>
+		</group>	
+	</input>
+<output/>
+ </function>

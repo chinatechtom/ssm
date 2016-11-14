@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3063607" name="作废" >
+  <input>
+    <item type="hidden" id="order_id" name="定单id" />    
+    <item type="textarea" id="manage_opinion" name="处理意见" nullable="false"/>
+  </input>
+  <service type="procedure" id="p_manage_status_modi" process="911" style="1">
+	<param type="integer" id="user_id" way="in"/>
+	<param type="integer" id="order_id"  way="in"  />
+	<param type="string" id="manage_type" way="in"  default="5"/>
+	<param type="string" id="manage_status" way="in" default="12"/>
+	<param type="string" id="manage_opinion" way="in"/>
+  </service>
+  <output target="@func_no">
+	<column type="string" id="cust_code"         name="客户代码"/>
+    <column type="string" id="market_code"       name="市场代码"/>  
+	<column type="string" id="product_code"      name="证券代码"/>  
+	<column type="number" id="borrow_qty"        name="证券数量"/>
+    <column type="number" id="fix_qty"           name="融资数额" precision="2"/>
+	<column type="string" id="begin_time"        name="起始日期"/>
+	<column type="string" id="return_time"       name="结束日期"/> 
+	<column type="string" id="func_no"           name="功能号"/> 
+	<column type="string" id="order_no"			 name="合约编号"/>
+	<column type="number" id="interest_rate"	 name="利率"/>
+	<column type="string" id="model"			 name="使用模式"/>
+	<column type="string" id="currency"			 name="货币类型"/>
+	<column type="string" id="order_status"		 name="合约状态"/>
+  <column type="string" id="financing_product_code"		     name="融资信用产品"/>	
+  <column type="string" id="borrow_stock_product_code"		 name="融券信用产品"/>	
+  </output>
+</function>

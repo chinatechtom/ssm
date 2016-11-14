@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="36110903" name="融券交易账户报备表" >
+<input print="36110903.jsp">
+  <item type="text"    id="institution_id"        name="营业部名称" />
+  <item type="text"    id="date_choice"           name="日期"  />
+  <item type="text"    id="acc_code_input"       name="账户代码"  />
+<group name="融券交易账户报备表" >
+  <item type="grid" id="" name="" source="36010903"/>
+</group>
+</input>
+</function>

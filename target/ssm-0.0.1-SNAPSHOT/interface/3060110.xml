@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3060110" name="融资融券授信确认书" >
+	<input print="3060110.jsp">
+	    <group name="融资融券授信确认">		
+			<item type="hidden" id="cust_id" 		name="客户id"	action="3062903,30101,1888,30119,30203"/>
+			<item type="hidden" id="bond_id" 		name="合同ID"	editable="false" action="306011001,306011002"/>
+			<item type="hidden" id="order_id"		name="合约ID"	editable="false" action="30680,30681,30607,306111101,306111102"/>	
+			<group name="客户基本信息">
+				<item type="text"   id="cust_code" 		name="客户代码" editable="false" />
+				<item type="text"   id="cust_name" 		name="客户姓名" editable="false"/>
+				<item type="text"	id="sh_acc"	        name="信用证券账户(沪)"	editable="false"/>
+				<item type="text"	id="sz_acc"	        name="信用证券账户(深)"	editable="false"/>
+				<item type="text"	id="cert_type"	    name="证件类型"	editable="false"/>				
+				<item type="text"   id="cert_number" 	name="证件号码" editable="false"/>
+				<item type="hidden" id="institution_id" name="营业部ID" editable="false" /> 
+				<item type="hidden" id="institution_code_1888" name="营业部代码" editable="false" /> 
+				<item type="hidden" id="institution_name" 	name="营业部名称" editable="false"/>
+				<item type="text"   id="bond_no" 		    name="合同编号"	editable="false" />	
+				<item type="text"   id="order_no"		name="合约编号"	editable="false" />
+			</group>
+			  <group name="授信额度">			  
+				<item type="text"   id="approve_num" 	name="当前申请授信额度" editable="false"/>             <!--30607-->	
+                <item type="hidden"   id="approve_num_chn" 	name="审批额度中文" editable="false"/>				
+				<item type="hidden"   id="credit_limit" name="原授信额度" editable="false"/>
+				<item type="hidden"   id="credit_limit_chm_bond" name="合同授信额度中文" editable="false"/>
+				<item type="text"   id="order_begin_time" 	name="开始日期" editable="false"/>             <!--30680-->
+				<item type="text"   id="order_return_time" 	name="结束日期" editable="false"/>
+				<item type="hidden"   id="begin_time_origin" 	name="原授信起始日期" editable="false"/>             <!--30680-->
+				<item type="hidden"   id="return_time_oringin" name="原授信结束日期" editable="false"/>
+				<item type="text"   id="punish_interest_rate_fin" 	name="逾期年利率" editable="false"/>
+			  </group>
+			  <group name="融资">
+				<item type="text"   id="order_fix_qty" 	name="当前融资申请上限" editable="false"/>			<!--30680-->	
+                <item type="text"   id="order_model" 	name="当前融资信用模式" editable="false"/>				
+				<item type="hidden" id="big_fix_qty" 	name="大写中文融资申请上限" editable="false"/>
+				<item type="hidden" id="small_fix_qty" 	name="小写中文融资申请上限" editable="false"/>
+				<item type="hidden"   id="bond_fix_qty" 	name="原融资申请上限" editable="false"/>
+                <item type="hidden"   id="order_model_origin" name="原融资信用模式" editable="false"/>				
+				<item type="hidden" id="big_fix_qty_bond" 	name="大写中文原融资申请上限" editable="false"/>
+				<item type="hidden" id="small_fix_qty_bond" name="小写中文原融资申请上限" editable="false"/>				
+				<item type="text"   id="credit_product_name_fin" 	name="当前融资信用产品" editable="false"/>
+				<item type="hidden"   id="credit_product_name_fin_b" 	name="原融资信用产品" editable="false"/>
+				<item type="text"   id="financing_interest_rate" 	name="当前融资年利率"     editable="false"/>
+				<item type="text"   id="takeup_borrow_fund_rate" 	name="当前额度占用年费率" editable="false"/>
+				<item type="hidden"   id="financing_interest_rate_b" 	name="原融资年利率"     editable="false"/>
+				<item type="hidden"   id="takeup_borrow_fund_rate_b" 	name="原额度占用年费率" editable="false"/>				
+			  </group>
+			  <group name="融券">
+				<item type="text"   id="borrow_qty" 	    name="当前融券申请上限" editable="false"/>			<!--30681-->				
+				<item type="hidden" id="big_borrow_qty" 	name="大写中文融券申请上限" editable="false"/>
+				<item type="hidden" id="small_borrow_qty" 	name="小写中文融券申请上限" editable="false"/>
+				<item type="hidden" id="bs_bond_qty" 	    name="原融券申请上限" editable="false"/>							
+				<item type="hidden" id="big_bs_qty_bond" 	name="大写中文原融券申请上限" editable="false"/>
+				<item type="hidden" id="small_bs_qty_bond" 	name="小写中文原融券申请上限" editable="false"/>
+				<item type="text"   id="credit_product_name_bs" 	name="当前融券信用产品" editable="false"/>
+				<item type="hidden"   id="credit_product_name_bs_b" 	name="原融券信用产品" editable="false"/>
+				<item type="hidden" id="model" 	            name="融券信用模式" editable="false"/>
+				<item type="text"   id="borrow_stock_interest_rate"  name="当前融券年费率" editable="false"/>
+				<item type="hidden" id="borrow_stock_interest_rate_b"  name="原融券年费率" editable="false"/>
+			  </group>   
+              <group name="风险阀值" >
+				<item type="text"     id="init_moeny_gua_rate" 	      name="初始保证金比例" editable="false"/>
+				<item type="text"     id="bc_gua_rate" 	              name="补仓维持担保比例" editable="false"/>
+				<item type="text"     id="pc_gua_rate" 	              name="平仓维持担保比例" editable="false"/>
+				<item type="text"     id="take_money_gua_rate" 	      name="提取担保物维持担保比例" editable="false"/>
+			  </group>			  
+			  <group name="备注" >
+				<item type="hidden" id="paraid" 	   name="杂项ID"   editable="false" default="2002"    action="95000026"/>
+				<item type="hidden" id="paravalue_2002"  name="杂项参数" editable="false" />		
+                <item type="hidden" id="paraid" 	   name="杂项ID"   editable="false" default="pc_time" action="95000027"/>
+				<item type="hidden"   id="paravalue_pc"  name="杂项参数" editable="false" />				
+				<item type="textarea"   id="remark"    name="备注"		editable="false"/>		
+				<item type="hidden"	id="company"       name="公司名称"	editable="false"/>
+			  </group>		
+        </group>			  
+	</input>
+	<output/>
+</function>

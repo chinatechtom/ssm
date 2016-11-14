@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="30685" name="合约-客户交易记录" >
+  <input>
+	<item type="hidden" id="order_id" name="id"/>
+  </input>
+  <service type="procedure" id="p_order_cust_trade_his" process="911" style="77">
+	<param type="integer" id="user_id"/>	
+	<param type="integer" id="order_id"/>	
+  </service>
+  <output>    
+    <column type="number" id="order_id" name="合同id" display="false"/>
+     <column type="number" id="trade_amt_all" name="总交易量" precision="2"/>  
+	<column type="number" id="fee_amt" name="总佣金贡献" precision="2"/>
+	<column type="number" id="velocity_rate" name="周转率"  precision="2"/>  
+	<column type="number" id="profit_loss" name="总盈亏" precision="2"/>
+	<column type="number" id="cust_fund_amt" name="资金余额" precision="2"/>
+	<column type="number" id="asset_value" name="证券市值" precision="2"/>	  
+	<column type="string" id="match_one_amt" name="排名第一的证券成交额" />
+	<column type="string" id="one_a_stkcode" name="交易量最大的a股" />
+	<column type="string" id="two_a_stkcode" name="交易量第二证券"/>  
+	<column type="string" id="three_a_stkcode" name="交易量第三证券" />
+	<column type="string" id="four_a_stkcode" name="交易量第四证券"/>
+	<column type="string" id="five_a_stkcode" name="交易量第五证券"/>
+	<column type="number" id="financing_amt" name="融资余额" precision="2"/>
+	<column type="number" id="borrow_stock_amt" name="融券市值" precision="2"/>	
+	<column type="string" id="financing_status" name="融资情况" display="false" />
+	<column type="string" id="financing_status_name" name="融资情况" />
+	<column type="number" id="fiancing_all_amt" name="融资累积" precision="2"/>
+	<column type="number" id="borrow_stock_all_amt" name="融券累计" precision="2"/>
+	<column type="number" id="fef_amt" name="未结利息" precision="2"/>	
+	<column type="number" id="fee_all_amt" name="利息累计" precision="2"/>
+	<column type="number" id="rank" name="融券排名"/>
+	<column type="string" id="borrow_stock_status" name="融券情况" display="false" />  
+	<column type="string" id="borrow_stock_status_name" name="融券情况" />
+	<column type="string" id="borrow_stock_one" name="融券第一的证券" />
+	<column type="string" id="borrow_stock_two" name="融券第二的证券"/>  
+	<column type="string" id="borrow_stock_three" name="融券第三的证券" />
+	<column type="string" id="borrow_stock_four" name="融券第四的证券"/>
+	<column type="string" id="borrow_stock_five" name="融券第五的证券"/>
+	<column type="string" id="oper_style" name="操作风格" display="false"/>  
+	<column type="string" id="oper_style_name" name="操作风格"/>  
+	<column type="string" id="pc_status" name="平仓情况" display="false"/>
+	<column type="string" id="pc_status_name" name="平仓情况"/>
+	<column type="string" id="if_black" name="是否黑名单"  display="false"/>
+	<column type="string" id="if_blacklist_name" name="是否黑名单"/>
+	<column type="string" id="law_status" name="诉讼情况" display="false"/>
+	<column type="string" id="law_status_name" name="诉讼情况"/>
+  </output> 
+</function>

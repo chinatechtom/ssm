@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="97600080" name="股票质押参数查询" >
+	<input/>
+	<service type="procedure" id="P97600080" process="933" style="77">
+		<param id="user_id" type="integer"/>
+	</service>
+	<output>  
+		<column type="string" id="company"		name="公司名称" />
+		<column type="number" id="para4046"		name="违约金比率(日利率%)"/>
+	</output>
+</function>

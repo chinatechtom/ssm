@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3320301" name="融券明细查询" >
+	<input>
+		<item type="text" 	id="cust_id" 		name="客户ID"/>
+		<item type="date" 	id="sdate" 			name="起始日期" default="last" nullable="false"/>
+		<item type="date" 	id="edate" 			name="结束日期" default="now"  nullable="false"/>		
+	</input>
+	<service type="procedure" id="P10006" process="911" style="77">
+		<param id="user_id" 	type="integer" way="in" /> 
+		<param id="cust_id"     type="integer" way="in" />		
+		<param id="sdate" 	/>
+		<param id="edate"  	/> 
+  	</service>
+  	<output >
+		<column type="string" id="cust_no"			name="客户代码"  display="false"	/>
+		<column type="string" id="cust_name"		name="客户姓名"  display="false"	/>
+		<column type="string" id="occur_date"		name="发生日期"/>
+		<column type="string" id="repay_date"		name="到期日期"/>
+		<column type="string" id="market_code"		name="市场"/>
+		<column type="string" id="sec_code"			name="证券代码"/>
+		<column type="string" id="sec_name"   		name="证券名称"/>
+		<column type="number" id="occur_vol"		name="融券卖出数量"	precision="2"/>    	
+		<column type="number" id="price"			name="卖出价格"		    precision="3"	/>   	
+		<column type="number" id="occur_bal"		name="融券卖出金额"	precision="2"	/>
+		<column type="number" id="payback_vol"		name="融券已还数量"	precision="2"/>
+		<column type="string" id="last_payback_date"	name="最近偿还日期"/>  	
+		<column type="number" id="done_amt"			name="成交金额"/>
+		<column type="string" id="serial_no"		name="流水号"/>
+		<column type="number" id="bs_gua_rate"		name="融券保证金比例(%)" precision="2"/>
+	</output>
+</function>

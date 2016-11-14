@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3100701" name="指标类—净资本" >  
+  <input>
+	<item type="date" id="date" name="日期"  default="now"/>
+  </input>
+   <service type="procedure" id="p_statistics_3100701_query" process="911" style="77">
+	<param id="user_id" type="integer" way="in" /> 
+	<param id="date"/>
+  </service> 
+  <output  print="true">
+    <column type="string" id="c1" name="统计日期"/> 		
+	<column type="number" id="c2" name="净资本" precision="2"/>	
+	<column type="number" id="c3" name="融资规模" precision="2"/>
+	<column type="number" id="c4" name="融资占净资本限制(%)" precision="2"/>
+	<column type="number" id="c5" name="实际融资占净资本(%)" precision="2"/>
+	<column type="number" id="c6" name="融券规模" precision="2"/>
+	<column type="number" id="c7" name="融券占净资本限制(%)" precision="2"/>	
+	<column type="number" id="c8" name="实际融券占净资本(%)" precision="2"/>
+	<column type="number" id="c9" name="单个客户占净资本(%)" precision="2"/>
+	<column type="number" id="c10" name="单个证券占净资本(%)" precision="2"/>
+  </output>
+</function>

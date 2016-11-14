@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="60010101" name="融出方查询" >
+  <input>
+	<item type="hidden" id="lender_id" name="融出方id"/>
+	<item type="text" id="lender_code" name="融出方代码"/>
+	<item type="text" id="lender_name" name="融出方名称"/>
+  </input>
+  <service type="procedure" id="P60010101" process="933" style="77">
+	<param id="user_id" type="integer"/>
+	<param id="lender_id" type="integer"/>
+	<param id="lender_code" type="string"/>
+	<param id="lender_name" type="string"/>
+  </service>
+  <output export="true">  
+  	<column type="number" id="lender_id"   name="融出方id"  display="false"/>
+    <column type="string" id="lender_code"   name="融出方代码"/>
+    <column type="string" id="lender_name"   name="融出方名称"/>
+	<column type="hidden" id="lender_type"   name="融出方类别1" display="false"/>
+	<column type="string" id="lender_type_name"   name="融出方类别"/>
+	<column type="string" id="link_name"   name="联系人姓名"/>
+	<column type="string" id="link_email"   name="联系人邮箱"/>
+	<column type="string" id="link_mobile"   name="联系人手机"/>
+	<column type="string" id="fix_phone"	name="固定电话"/>
+	<column type="string" id="fax"		name="传 真"/>
+	<column type="string" id="bank_code"   name="银行代码" display="false"/>	
+	<column type="string" id="bank_code_name"   name="银行名称"/>
+	<column type="string" id="bank_branch_name"   name="银行分支营业部"/>
+	<column type="string" id="bank_account_name"   name="银行账户名称"/>
+	<column type="string" id="bank_card_no"   name="银行账号"/>
+    <column type="string" id="found_date"   name="设立日期"/>
+    <column type="hidden" id="if_valid"   name="是否有效1" display="false"/>
+	<column type="string" id="if_valid_name"   name="是否有效"/>
+    <column type="string" id="user_code"   name="设置人员"/>
+    <column type="string" id="time"   name="设置时间"/>
+	<column type="string" id="pt_cust_code"   name="集中交易资金账号"/>
+	<column type="string" id="pt_institution_code"   name="集中交易营业部代码"/>
+	<column type="string" id="plan_contract"   name="资产管理合同号"/>
+	<column type="hidden" id="lender_type2"   name="融出方业务类型1" display="false"/>
+	<column type="string" id="lender_type2_name"   name="融出方业务类型"/>
+	</output>
+</function>

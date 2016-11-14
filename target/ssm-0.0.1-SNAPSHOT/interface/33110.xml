@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="33110" name="平仓预案查询" >
+	<input>
+		<item type="hidden" 	id="record_id" 		name="记录ID"/>
+		<item type="hidden" 	id="cust_id" 		  name="股东帐号"/>
+		<item type="text" 		id="cust_code" 		name="客户代码"/>
+		<item type="text" 		id="cust_name" 		name="客户姓名"/>
+		<item type="date" 		id="begin_date"   name="起始日期" default="last"/>
+    <item type="date" 		id="end_date"   name="起始日期" default="now"/>
+	</input>
+	<service type="procedure" id="p_pc_record_query" process="911" style="77">
+		<param id="user_id" 	type="integer" way="in" /> 
+		<param id="record_id" ype="integer"/>
+		<param id="cust_id"  	type="integer"/>
+		<param id="cust_code" />
+		<param id="cust_name" />
+		<param id="begin_date" />
+		<param id="end_date" />
+  	</service>
+  	<output print="ture">
+			<column type="number" id="record_id"   		name="记录ID"   	display="false"/>
+			<column type="number" id="cust_id"   		name="客户ID"  	display="false"/>
+    	<column type="string" id="cust_code"   		name="客户代码"   />
+    	<column type="string" id="cust_name"   		name="客户姓名"   />
+			<column type="string" id="ddate"   		name="日期"   />
+			<column type="string" id="ttime"   		name="时间"   />
+			<column type="string" id="move_tel"   		name="移动电话"   display="false"/>
+    	<column type="string" id="move_tel"   		name="移动电话"   display="false"/>
+    	<column type="string" id="fix_tel"   		name="固定电话"   display="false"/>
+    	<column type="string" id="family_address"   name="联系地址"   display="false"/>
+			<column type="string" id="find_mode"   		name="主联系方式" display="false"/>
+    	<column type="string" id="acc_code"   		name="账户代码"  display="false" />
+    	<column type="number" id="bond_id"   		name="合同ID" 	display="false" />
+    	<column type="string" id="bond_no"   		name="合同代码"  display="false" />
+    	<column type="number" id="FINANCING_AMT"   	name="融资余额"  		precision="2"/>
+    	<column type="number" id="BORROW_STOCK_AMT" name="融券余额"  	precision="2"/>
+    	<column type="number" id="GUARANTEE_AMT"   	name="客户担保品价值"  	precision="2"/>
+    	<column type="number" id="CREDIT_CHARGE"    name="利息费用"     precision="2"  />
+    	<column type="number" id="asset_gap"    name="资产差额"      precision="2" />
+    	<column type="string" id="pc_mode"   		name="平仓顺序"     />
+    	<column type="string" id="pc_reason"   		name="平仓理由"   />
+    	<column type="string" id="MANAGE_STATUS"   	name="平仓处理状态"   display="false" />
+    	<column type="string" id="PC_RESULT"   		name="平仓结果"   display="false"/>
+    	<column type="string" id="bc_begin_date"   		name="补仓开始时间"     />
+    	<column type="string" id="bc_end_date"   		name="补仓结束时间"     />
+    	<column type="string" id="MANAGE_ID"   		name="处理人员"   />
+			<column type="string" id="user_id"   		name="操作员"   />
+	</output>
+</function>

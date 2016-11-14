@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="97600034" name="资金代码信息" >
+	<input/>
+	<service type="table" id="t_gpzy_fund_info" process="133" style="12">
+		<param id="fund_no" field="fund_no" type="string"  operator="="/>
+	</service>
+	<output>
+		<column type="string" id="entry_value" field="fund_no"    name="数据内容"/>
+		<column type="string" id="entry_content" field="fund_name"    name="数据内容"/>
+    </output>
+</function>

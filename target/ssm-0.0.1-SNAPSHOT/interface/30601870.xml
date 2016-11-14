@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="30601870" name="信息申报资料修改-个人" > 
+  <input>
+	<item type="hidden" id="cust_id"	name="客户ID" action="30110,30119,306016911"/>
+	<group name="客户基本资料">
+		<item type="text"		id="cust_name"			name="客户姓名/名称" editable="false"/>
+		<item type="text"		id="cert_no"			name="证件号码"	editable="false"/>
+		<item type="hidden"		id="cert_type_flag"		name="证件类型"/>
+		<item type="text"		id="cert_start_date"	name="证件有效起始日期" editable="false"/>
+		<item type="text"		id="cert_end_date"		name="证件有效截至日期" editable="false"/>
+		<item type="text"		id="commness_cust_code"	name="普通资金账户" editable="false"/>
+		<item type="text"		id="sh_acc"				name="沪市A股证券账户" alias="security_code_sh" editable="false"/>   
+		<item type="text"		id="sz_acc"				name="深市A股证券账户" alias="security_code_sz" editable="false"/>
+		<item type="textarea"	id="work_units"			name="工作单位"/>
+	</group>
+	<group name="联系方式">
+		<item type="text"	id="move_tel"			name="移动电话"	editable="false"/>
+		<item type="text"	id="fix_tel"			name="固定电话"	editable="false"/>
+		<item type="text"	id="meet_tel"			name="应急电话"	editable="false"/>
+		<item type="text"	id="family_address"		name="联系地址"	editable="false"/>
+		<item type="text"	id="ps_code"			name="邮政编码"	editable="false"/>
+		<item type="text"	id="email"				name="指定电子邮箱" editable="false"/>
+		<item type="text"	id="fax"				name="传真号码"	editable="false"/>
+		<item type="text"	id="emerg_contacts_man"	name="应急联系人姓名" editable="false"/>
+		<item type="text"	id="emerg_contacts_tel"	name="应急联系人电话" editable="false"/>
+	</group>
+	<group name="本人接受的投资者教育(A、B项为必须通过项)">
+		<item type="textarea" id="content_e" name="教育项内容" default="A:面对面讲解合同、风险揭示书及交易规则;
+			B:融资融券投资者教育测试并通过测试;
+			C:培训讲座、资料派发、宣传栏、视频、网站等宣传及其它教育方式" editable="false" />
+		<item type="text" id="accept_edu" name="教育项(分号分隔)"/>
+	</group>
+	<group name="申报事项(是、否) ">
+		<item type="text" id="key_info_if_fit"		name="关键资料是否一致"/>						<!--输入是否,插入 T_CUST_DECLARE_BASE_INFO.KEY_INFO_IF_FIT字段-->
+		<item type="text" id="holder_acc_4"			name="本人非光大证券股东(5%以上)及关联人"/>	<!--输入是否，插入 T_CUST_DECLARE_ACC_INFO.HOLDER_ACC 字段  acc_type = '4'-->
+		<item type="text" id="if_pc_record"			name="在其他券商无强制平仓记录"/>				<!--输入是否,插入T_CUST_DECLARE_BASE_INFO.IF_PC_RECORD 字段-->
+		<item type="text" id="holder_acc_3"			name="在其他券商无信用证券账户"/>				<!--输入是否,T_CUST_DECLARE_ACC_INFO.HOLDER_ACC 字段 acc_type = '3' -->
+		<item type="text" id="if_violation_record"	name="无重大违约"/>								<!--输入是否,插入T_CUST_DECLARE_BASE_INFO.IF_VIOLATION_RECORD 字段-->
+	</group>	
+	<group name="持有上市公司5%以上股票情况">
+		<item type="text"	id="listed_company_code"	name="上市公司"/>					<!--T_CUST_DECLARE_HOLDER_STK_INFO.PRODUCT_CODE字段-->
+		<item type="text"	id="product_amt"			name="股数" number="true"/>			<!--T_CUST_DECLARE_HOLDER_STK_INFO.PRODUCT_AMT字段 HOLD_STOCK_RATIO:0.05-->
+	</group>
+	<group name="本人及关联人应当申报的其他证券账户情况">
+		<item type="text" id="other_holder_acc"				name="证券账户"/>			<!--T_CUST_DECLARE_ACC_INFO.OTHER_HOLDER_ACC 字段 acc_type = '2'-->
+		<item type="text" id="other_holder_acc_name"		name="姓名"/>				<!--T_CUST_DECLARE_ACC_INFO.ACC_NAME 字段-->
+		<item type="text" id="other_holder_acc_relation"	name="关系"/>				<!--T_CUST_DECLARE_ACC_INFO.RELATION 字段-->
+		<item type="text" id="company_and_institution"		name="开户券商及营业部"/>	<!--T_CUST_DECLARE_ACC_INFO.COMPANY_AND_INSTITUTION 字段-->
+	</group>
+	<group name="担任上市公司董事、监事及高级管理人员情况">
+		<item type="text"		id="listed_product_code"	name="上市公司"/>				<!--T_CUST_DECLARE_HOLDER_STK_INFO.PRODUCT_CODE 字段-->
+		<item type="textarea"	id="content_pos"			name="职位内容" default="0:董事;1:监事;2:高级管理人员;3:大股东" editable="false" />
+		<item type="text"		id="position"				name="职位(分号分隔)"/>		<!--T_CUST_DECLARE_HOLDER_STK_INFO.POSITION 字段-->
+		<item type="text"		id="product_amt2"			name="持股数量" number="true"/>	<!--T_CUST_DECLARE_HOLDER_STK_INFO.PRODUCT_AMT 字段-->
+	</group>
+	<group name="持有上市公司限售股情况">
+		<item type="text"	id="product_code"	name="上市公司"/>
+		<item type="text"	id="stock_amt"		name="股份数量" number="true"/>
+		<item type="select" id="product_type"	name="股票类型" source="600"/>
+		<item type="select" id="market_code"	name="市场代码" source="039"/>
+		<item type="text"	id="escrow_company"	name="托管券商"/>
+		<item type="text"	id="escrow_ac"		name="托管账户"/>
+		<item type="button"	id="add"	name="增加"	action="3060175"	multiple="0"/>
+		<item type="button"	id="delete" name="删除"	action="3060176"	multiple="0"/>
+		<item type="button"	id="view"	name="查询"	action="306016913"	multiple="0"/>
+	</group>
+	</input>
+	<service type="procedure" id="p_cust_info_declare_insert"  implement="p_cust_info_declare_insert30601780" process="811" style="1">
+		<param type="integer" id="user_id"/>
+		<param type="integer" id="cust_id"/>
+		<param type="string"  id="cust_name"/>
+		<param type="string"  id="cert_no"/>
+		<param type="string"  id="cert_type_flag"/>
+		<param type="string"  id="security_code_sh"/>
+		<param type="string"  id="security_code_sz"/>
+		<param type="string"  id="work_units"/>
+		<param type="string"  id="accept_edu"/>
+		<param type="string"  id="key_info_if_fit"/>
+		<param type="string"  id="holder_acc_4"/>
+		<param type="string"  id="if_pc_record"/>
+		<param type="string"  id="holder_acc_3"/>
+		<param type="string"  id="if_violation_record"/>
+		<param type="string"  id="listed_company_code"/>
+		<param type="double"  id="product_amt"/>
+		<param type="string"  id="other_holder_acc"/>
+		<param type="string"  id="other_holder_acc_name"/>
+		<param type="string"  id="other_holder_acc_relation"/>
+		<param type="string"  id="company_and_institution"/>
+		<param type="string"  id="listed_product_code"/>
+		<param type="string"  id="position"/>
+		<param type="double"  id="product_amt2"/>
+		<param type="string"  id="model"	default="2"/>
+	</service> 
+	<output/>
+</function>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="36110022" name="可充抵保证金证券" >
+<input print="36110022.jsp">
+  <item type="hidden"   id="product_code" name="证券代码" />
+  <item type="hidden"   id="product_name" name="证券名称" />
+  <item type="hidden"   id="market_code"   name="市场名称" />
+  <item type="hidden"   id="if_guarantee" name="是否担保品" />
+  <item type="text"   id="year"        name="年份选择" />
+  <item type="text"   id="month"       name="月份选择" />
+  <item type="text"     id="print_date" name="时间" />
+  <group name="可充抵保证金证券" >
+    <item type="grid" id="product_code,product_name,market_code,if_financing,year,month" name="" source="36000022"/>
+  </group>
+</input>
+
+</function>

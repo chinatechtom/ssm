@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="30633" name="处理调整担保率申请" >
+  <input>	
+    <item type="text" id="order_id" name="定单id" action="30602"/>  
+	<item type="text" id="approve_guarantee_rate" name="担保率(%)"  nullable="false"/>
+  </input>
+  <service type="procedure" id="p_ guarantee_rate_modi" process="811" style="1">
+	<param type="integer" id="user_id" way="in"/>
+	<param type="integer" id="order_id" way="in" />
+	<param type="double" id="approve_guarantee_rate" way="in" />
+  </service>
+  <output/>
+</function>

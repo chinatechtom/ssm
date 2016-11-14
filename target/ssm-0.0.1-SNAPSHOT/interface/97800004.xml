@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="97800004" name="产品信息" >
+	<input>
+		<item type="hidden"	id="zllx"	name="zllx"/>
+	</input>
+	<service type="table" id="t_gpzy_project_property" process="133" style="12">
+		<param id="zllx" field="order_type" type="string" operator="="/>
+	</service>
+	<output>
+		<column type="string" id="entry_value"   field="project_code"	name="数据内容code"/>
+		<column type="string" id="entry_content"	 field="project_name"    name="数据内容"/>
+    </output>
+</function>

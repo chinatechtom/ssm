@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3300105" name="重点客户详细信息" >
+	<input>	
+		<item type="text" 	id="cust_id" 	name="客户ID"	   />	
+		<item type="text" 	id="cust_code" 	name="客户代码"   />	
+	</input>
+	<service type="procedure" id="p_risk_cust_detaile_query" process="911" style="77">
+		<param id="user_id" type="integer"/>
+		<param id="cust_id" type="integer"/>	
+		<param id="cust_code"/>
+	</service>
+	<output>
+	 	<column type="number" id="cust_id" name="客户id"	display="false"/>		
+		<column type="number" id="gua_rate" name="维持担保比例(计入场外抵押资产)" precision="6"/>
+		<column type="number" id="gua_rate_nomortgage" name="维持担保比例(不计入场外抵押资产)" precision="6"/>
+		<column type="number" id="mortgage_value"  name="场外资产抵押折算金额" precision="4"/>
+		<column type="number" id="margin_ratio" name="Margin_Ratio"  precision="4"/>
+		<column type="number" id="all_gua_value" name="今日总市值" precision="2"/>
+		<column type="number" id="money_value" name="资金余额" precision="2"/>
+		<column type="number" id="debt_value" name="今日总负债" precision="2"/>
+		<column type="number" id="yest_debt_value" name="昨日总负债" precision="2"/>
+		<column type="number" id="debt_minus" name="负债减少" precision="2"/>
+		<column type="number" id="bank_in_out" name="补仓资金" precision="2"/>
+		<column type="number" id="stock_in" name="补仓证券市值" precision="2"/>
+		<column type="number" id="risk_stock_value" name="风险股票市值" precision="2"/>
+		<column type="number" id="high_con_stk_value" name="集中度较高的股票市值" precision="2"/>
+	</output>
+</function>

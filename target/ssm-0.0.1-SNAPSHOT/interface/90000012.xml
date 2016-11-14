@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="90000012" name="担保率">
+	<input/>
+	<service type="table" id="t_guarantee_rate" process="111" style="12">
+	</service>
+	<output>
+		<column type="number" id="entry_value"   field="guarantee_rate_id"	  name="担保率id"/>
+		<column type="string" id="entry_content" field="guarantee_rate_name"  name="担保率名称"/>
+    </output>
+</function>

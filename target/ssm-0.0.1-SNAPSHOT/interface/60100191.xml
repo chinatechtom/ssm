@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="60100191" name="股票质押利息发票开具明细表查询" >
+    <input>
+		<item type="date"	id="begin_date"	name="起始日期"      default="last"/>
+        <item type="date" 	id="end_date"   name="终止日期"      default="now"/>
+	</input>
+  <service type="procedure" id="P60100191" process="933" style="77">
+	<param id="user_id"           type="integer"/>
+    <param id="begin_date"        type="string"/>
+    <param id="end_date"          type="string"/>
+  </service>
+  <output export="true">  
+	<column type="string" id="cust_code"             name="客户号"/>
+	<column type="string" id="full_name"             name="客户名称"/>
+    <column type="string" id="sbond_no"              name="交易协议书编号"/>
+	<column type="float"  id="trade_amt"             name="扣息金额"/> 
+    <column type="string" id="occur_date"            name="扣息日期"/> 
+  </output>
+</function>

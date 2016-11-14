@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="50010505" name="员工类型" >
+	<input>	
+	<item type="hidden"	  id="employee_type"	name="激励员工类型"  />
+	</input>
+	<service type="procedure" id="P50010505"  implement="P50010505"  process="966" style="1"> 
+		<param id="user_id"			type="integer" way="in"/>	
+		<param id="employee_type"	type="string"  way="in"/>  	
+	</service> 
+	<output>
+  	<column type="string" id="touch_rate"		name="预警履约保障比例" />	
+	<column type="string" id="lowest_rate"		name="最低履约保障比例"/>
+	<column type="string" id="loan_rate"		name="最高融资比例"/>	
+  </output>
+</function>  

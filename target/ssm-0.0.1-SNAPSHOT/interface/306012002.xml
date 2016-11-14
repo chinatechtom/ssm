@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="306012002" name="修改征信系统评级因子" >  
+	<input>
+		<item type="hidden"	id="type"	name="操作类型"	default="1"/>	<!--0:新增  1:修改  2:删除-->
+		<item type="hidden" id="ratingfactor_sort" name="评级因子ID"/>
+		<item type="text"	id="ratingfactor_name" name="评级因子名称"/>
+	</input>
+	<service type="procedure" id="p_ratingfactor_fk_modify" process="811" style="77">
+		<param id="user_id" type="integer" way="in" /> 
+		<param id="ratingfactor_sort"	type="string" way="in" />
+		<param id="ratingfactor_name" type="string" way="in"/>
+		<param id="type" type="string" way="in"/>
+	</service>
+</function>

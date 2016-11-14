@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70010472" name="待征信客户查询" >  
+	<input>
+		<item type="select"	id="institution_id" name="营业部名称" source="95000008"/>
+		<item type="text"   id="cust_code"      name="客户代码"/>
+		<item type="select" id="task_type"      name="业务类别"   source="526" editable="false" default="A"/>
+	</input>
+	<service type="procedure" id="p70010472" process="922" style="77">
+		<param id="user_id" type="integer"/>
+		<param id="institution_id" type="integer"/>
+		<param id="cust_code"/>
+		<param id="task_type" />
+	</service> 
+	<output>
+		<column type="string" id="task_type"          name="任务类别" display="false"/>
+		<column type="string" id="task_type_name"     name="任务类别"/>
+	    <column type="number" id="task_id"            name="最新任务编号"/>
+		<column type="number" id="instutition_id"     name="营业部ID" display="false" />   	
+		<column type="string" id="institution_code"   name="营业部代码"/>
+		<column type="string" id="institution_name"   name="营业部名称"/>
+		<column type="number" id="cust_id"            name="客户id" display="false" />   
+		<column type="string" id="cust_code"          name="客户代码"/>
+		<column type="string" id="cust_name"          name="客户姓名"/>
+		<button type="batchadd" id="batchadd"   name="任务新增(复选)"   action="70010473" multiple="1"/>
+	</output>
+</function>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70011314" name="指令权限控制参数设置">
+	<input>
+		<item type="text" 		id="cust_code" 		name="客户代码"  	nullable="true" editable="false"/>
+		<item type="select"		id="busi_type"		name="业务类型"	  	source="743"	nullable="false" editable="false"/>
+		<item type="select"		id="order_type"		name="指令类别" 	source="739"	nullable="true"/>
+	</input>
+	<service type="procedure" id="P70011314" process="822" style="1">
+		<param id="user_id"			type="integer"/>
+		<param id="cust_code"		type="string"/>
+		<param id="busi_type"		type="string" default="0"/>
+		<param id="order_type"		type="string" default="1"/>
+	</service>
+	<output/>
+</function>
+		
+		

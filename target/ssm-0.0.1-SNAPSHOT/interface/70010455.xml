@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70010455" name="客户评级因子明细查询">  
+	<input/>
+	<service type="procedure" id="p70010455" process="922" style="77">
+		<param id="user_id"		type="integer"/>
+		<param id="cust_id"		type="integer"/>
+		<param id="version_id"	type="integer"/>
+	</service> 
+	<output>
+		<column type="string" id="company"	name="公司名称"/>   
+		<column type="string" id="cust_type"	name="客户类型"/>   
+		<column type="string" id="n1"	name="评级因子名称"/>   
+		<column type="string" id="c1"	name="评级因子客户选择内容"/>
+		<column type="string" id="v1"	name="评级因子客户输入内容"/>
+		<column type="number" id="s1"	name="评级因子得分" precision="2"/>
+		<column type="string" id="n2"	name="评级因子名称"/>   
+		<column type="string" id="c2"	name="评级因子客户选择内容"/>
+		<column type="string" id="v2"	name="评级因子客户输入内容"/>
+		<column type="number" id="s2"	name="评级因子得分" precision="2"/>
+		<column type="string" id="n3"	name="评级因子名称"/>   
+		<column type="string" id="c3"	name="评级因子客户选择内容"/>
+		<column type="string" id="v3"	name="评级因子客户输入内容"/>
+		<column type="number" id="s3"	name="评级因子得分" precision="2"/>
+		<column type="string" id="n4"	name="评级因子名称"/>   
+		<column type="string" id="c4"	name="评级因子客户选择内容"/>
+		<column type="string" id="v4"	name="评级因子客户输入内容"/>
+		<column type="number" id="s4"	name="评级因子得分" precision="2"/>
+		<column type="string" id="n5"	name="评级因子名称"/>   
+		<column type="string" id="c5"	name="评级因子客户选择内容"/>
+		<column type="string" id="v5"	name="评级因子客户输入内容"/>
+		<column type="number" id="s5"	name="评级因子得分" precision="2"/>
+		<column type="string" id="n6"	name="评级因子名称"/>   
+		<column type="string" id="c6"	name="评级因子客户选择内容"/>
+		<column type="string" id="v6"	name="评级因子客户输入内容"/>
+		<column type="number" id="s6"	name="评级因子得分" precision="2"/>
+		<column type="string" id="n7"	name="评级因子名称"/>   
+		<column type="string" id="c7"	name="评级因子客户选择内容"/>
+		<column type="string" id="v7"	name="评级因子客户输入内容"/>
+		<column type="number" id="s7"	name="评级因子得分" precision="2"/>
+		<column type="string" id="n8"	name="评级因子名称"/>   
+		<column type="string" id="c8"	name="评级因子客户选择内容"/>
+		<column type="string" id="v8"	name="评级因子客户输入内容"/>
+		<column type="number" id="s8"	name="评级因子得分" precision="2"/>
+		<column type="string" id="n9"	name="评级因子名称"/>   
+		<column type="string" id="c9"	name="评级因子客户选择内容"/>
+		<column type="string" id="v9"	name="评级因子客户输入内容"/>
+		<column type="number" id="s9"	name="评级因子得分" precision="2"/>
+		<column type="string" id="n10"	name="评级因子名称"/>   
+		<column type="string" id="c10"	name="评级因子客户选择内容"/>
+		<column type="string" id="v10"	name="评级因子客户输入内容"/>
+		<column type="number" id="s10"	name="评级因子得分" precision="2"/>
+		<column type="string" id="n11"	name="评级因子名称"/>   
+		<column type="string" id="c11"	name="评级因子客户选择内容"/>
+		<column type="string" id="v11"	name="评级因子客户输入内容"/>
+		<column type="number" id="s11"	name="评级因子得分" precision="2"/>
+		<column type="string" id="n12"	name="评级因子名称"/>   
+		<column type="string" id="c12"	name="评级因子客户选择内容"/>
+		<column type="string" id="v12"	name="评级因子客户输入内容"/>
+		<column type="number" id="s12"	name="评级因子得分" precision="2"/>
+		<column type="string" id="n13"	name="评级因子名称"/>   
+		<column type="string" id="c13"	name="评级因子客户选择内容"/>
+		<column type="string" id="v13"	name="评级因子客户输入内容"/>
+		<column type="number" id="s13"	name="评级因子得分" precision="2"/>
+		<column type="string" id="n14"	name="评级因子名称"/>   
+		<column type="string" id="c14"	name="评级因子客户选择内容"/>
+		<column type="string" id="v14"	name="评级因子客户输入内容"/>
+		<column type="number" id="s14"	name="评级因子得分" precision="2"/>
+		<column type="string" id="n15"	name="评级因子名称"/>   
+		<column type="string" id="c15"	name="评级因子客户选择内容"/>
+		<column type="string" id="v15"	name="评级因子客户输入内容"/>
+		<column type="number" id="s15"	name="评级因子得分" precision="2"/>
+		<column type="string" id="n16"	name="评级因子名称"/>   
+		<column type="string" id="c16"	name="评级因子客户选择内容"/>
+		<column type="string" id="v16"	name="评级因子客户输入内容"/>
+		<column type="number" id="s16"	name="评级因子得分" precision="2"/>
+		<column type="number" id="ts1"	name="分类总分" precision="2"/>
+		<column type="number" id="ts2"	name="分类总分" precision="2"/>
+		<column type="number" id="ts3"	name="分类总分" precision="2"/>
+		<column type="number" id="ts4"	name="分类总分" precision="2"/>
+	</output>
+</function>

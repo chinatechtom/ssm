@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3011703" name="清空该用户模拟试算" >
+  <input>	
+	<item type="hidden" id="cust_id" name="客户号"/>	
+  </input>
+  <service type="procedure" id="p_test_calculate_assure_rate_clear" process="911" style="77">
+	<param id="user_id" type="integer"/>
+	<param id="cust_id" type="integer"/>	
+  </service>
+  <output >    
+  
+   </output>
+</function>

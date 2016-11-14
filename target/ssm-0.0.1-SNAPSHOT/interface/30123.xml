@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="30123" name="信用上限获取">
+	<input>
+		<item type="hidden" id="cust_id" name="客户id"/>
+	</input>
+	<service type="procedure" id="p_net_asset_to_credit_num"  process="911" style="77">
+		<param id="user_id"	type="integer"/>
+		<param id="cust_id"	type="integer"/>
+	</service>
+	<output>
+		<column type="number" id="total_score"			name="客户参考总分值"/>
+		<column type="number" id="auto_credit_level"	name="信用级别"			precision="2"/>
+		<column type="number" id="auto_credit_num"		name="信用上限"			precision="2"/>
+		<column type="number" id="auto_credit_num_wy"	name="信用上限(万元)"	precision="2"/>
+		<column type="string" id="product_id1"			name="融资产品ID"/>
+		<column type="string" id="product_id2"			name="融券产品ID"/>
+	</output>
+</function>

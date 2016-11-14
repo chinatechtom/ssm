@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70770013" name="约定购回、股票质押清算前同步证券公允价格" >
+	<input/>
+	<service type="procedure" id="P70770013" process="822" style="1" adapter="bbs">
+		<param type="integer"	id="user_id"	way="in"/>
+	</service>
+	<output/>
+</function>

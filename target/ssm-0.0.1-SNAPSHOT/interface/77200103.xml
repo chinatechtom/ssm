@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="77200103" name="客户证券余额信息同步">
+	<description>确实同步客户证券余额信息吗？</description>
+	<input>
+		<item type="hidden" id="institution_code" alias="sbranch_code1" name="开户营业部"/>
+		<item type="text" id="cust_code" alias="scust_no" name="客户号"/>
+		<item type="hidden" id="market_code" alias="smarket_code" name="市场"/>
+		<item type="hidden" id="acc_code" alias="sholder_ac_no" name="股东代码"/>
+		<item type="hidden" id="stock_code" alias="sstock_code" name="证券代码"/>
+	</input>     
+	<service type="drtp" id="200103" process="711" style="77">
+		<param type="string" id="sbranch_code1"/>
+		<param type="string" id="scust_no" default="0"/>
+		<param type="string" id="smarket_code" />
+		<param type="string" id="sholder_ac_no"/>
+		<param type="string" id="sstock_code"/>
+		<param type="string" id="lvol0" default="1"/>
+		<param type="string" id="lvol1" default="0"/>
+		<param type="string" id="lvol2" default="0"/>
+		<param type="string" id="semp" default="SYSTEM"/>
+		<param type="string" id="lvol12" default="0"/>
+		<param type="string" id="lvol11" default="1"/>
+	</service>
+	<output target="78200103">
+		<column name="客户号"	id="cust_code"  type="string"  field="scust_no"/>
+		<column name="市场代码"	id="market_code"  type="string"  field="smarket_code"/>
+		<column name="股东代码"	id="stock_holder" type="string"  field="sholder_ac_no"/>
+		<column name="席位号"	id="seat_no"  type="string"  field="sdate0"/>
+		<column name="证券代码"	id="stock_code"  type="string"  field="sstock_code"/>
+		<column name="库存数"	id="inventory_qty"  type="number"  field="lsafe_level"/>
+		<column name="库存数（份额）"	id="inventory_share"  type="number"  field="damt23"/>
+		<column name="可用数量"	id="current_inventory_qty"  type="number"  field="lserial0"/>
+		<column name="可用数量（份额）"	id="current_inventory_share"  type="number"  field="damt18"/>
+	</output>
+</function>

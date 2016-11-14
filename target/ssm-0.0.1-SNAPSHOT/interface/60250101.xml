@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="60250101" name="清算资金额度查询" >
+	<input>
+		<item type="select" id="market_code" name="市场代码" source="039"/>
+		<item type="select" id="credit_type" name="额度类型" source="807"/>
+	</input>
+	<service type="procedure" id="p60250101" process="933" style="77">
+		<param id="user_id" type="integer"/>
+		<param id="market_code" type="string"/>
+		<param id="credit_type" type="string"/>
+	</service>
+	<output export="true">
+		<column type="string" id="market_code"   name="市场代码" display="false"/>
+		<column type="string" id="market_code_name"   name="市场代码"/>
+		<column type="string" id="credit_type"   name="额度类型1"  display="false"/>
+		<column type="string" id="credit_type_name"   name="额度类型"/>
+		<column type="number" id="credit_init"   name="初始额度"/>
+		<column type="number" id="credit_real_time"   name="实时剩余额度"/>
+		<column type="number" id="credit_real_used"   name="实时使用额度"/>
+		<column type="string" id="if_control"   name="是否控制" display="false"/>
+		<column type="string" id="if_control_name"   name="是否控制"/>
+	</output>
+</function>

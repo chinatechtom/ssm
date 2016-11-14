@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="36000013" name="4.3.4融券卖出证券市值前十名" >
+ <input>
+  <item type="select"  id="institution_id"           name="营业部名称" source="95000008"/> 
+  <item type="date"    id="date"                  name="查询日期"/>
+  <item type="text"    id="bs_sec_value"          name="融券卖出证券市值"  default="5000000"/>
+  <item type="select"  id="order_choice"           name="排序选择" source="369"/>
+ </input>
+ <service type="procedure" id="P36000013"  process="911" style="77">
+  <param id="user_id"         type="integer" way="in"/> 
+  <param id="institution_id" type="integer" way="in"/>
+  <param id="date"         type="string"  way="in"/> 
+  <param id="bs_sec_value"   type="number"  way="in"/>
+  <param id="order_choice"   type="string"  way="in"/>
+  </service>
+  <output export="true" print="true" unit="元">
+    <column type="string" id="product_type_name"       name="证券种类"/>
+    <column type="string" id="product_code"            name="证券代码"          />
+    <group name="期末数">
+      <column type="number" id="product_num"            name="证券数量"   precision="0"/>
+      <column type="number" id="product_market_value"    name="证券市值"  precision="2"/>
+    </group>    
+    <column type="number" id="circulating_value"      name="流通市值"  precision="2" display="false"/>
+    <column type="number" id="concentration"          name="集中度"    precision="4" display="false"/>
+  </output>
+</function>

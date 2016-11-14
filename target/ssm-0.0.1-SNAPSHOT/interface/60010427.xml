@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="60010427" name="批量履约交易" >
+	<description>是否进行批量履约交易?
+		</description>  
+	<input>
+		<item type="hidden" id="sbond_id" name="交易协议书id"/>
+	</input>
+	<service type="procedure" id="P60010427" process="833" style="1">
+		<param type="integer" id="user_id"  way="in" />
+		<param type="string" id="sbond_id"  way="in" />
+  	</service>
+	<output/>
+</function>

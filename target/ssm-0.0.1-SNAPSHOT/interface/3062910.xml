@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3062910" name="客户解冻合同" >  
+  <input>
+	<item type="hidden" id="cust_id" name="客户id" />
+	<item type="text" id="cust_code" name="客户代码" />
+	<item type="text" id="cust_name" name="客户姓名"  />
+	<item type="text" id="cert_no" name="证件号码" />
+	<item type="hidden" id="bond_id" name="合同id" />
+	<item type="text" id="bond_no" name="合同编号" />
+  </input>
+   <service type="procedure" id="p_bond_5_query" process="911" style="77">
+	<param id="user_id" type="integer"/> 
+	<param id="cust_id" type="integer"/> 
+	<param id="cust_code"/>
+	<param id="cust_name" />
+	<param id="cert_no" />
+	<param id="bond_id" type="integer"/> 
+	<param id="bond_no" />
+  </service> 
+  <output>
+	<column type="number" id="bond_id"   name="合同id" display="false"/>
+	
+	<column type="string" id="bond_name"   name="合同名称"	display="false"/>
+	<column type="number" id="cust_id" name="客户id" display="false"/>
+	<column type="string" id="cust_code"   name="客户代码" />
+  <column type="string" id="cust_name"   name="客户姓名"/>	
+  <column type="string" id="bond_no"   name="合同编号"/> 
+	<column type="string" id="date"   name="合同签署日期"/>
+	<column type="string" id="time"   name="合同签署时间"/>
+	<column type="string" id="availability_time"   name="合同有效日期" display="false"/>
+	<column type="string" id="begin_time"   name="合同起始日期"/>
+	<column type="string" id="return_time"   name="合同到期日期"/>
+	<column type="string" id="over_time"   name="合同延长日期" display="false"/>
+	<column type="number" id="dc_mode"   name="借贷模式id" display="false"/>
+	<column type="string" id="dc_mode_name"   name="借贷模式" display="false"/>   
+	<column type="string" id="currency_type"   name="货币类型" display="false"/>
+	<column type="string" id="currency_type_name"   name="货币类型"/>
+	<column type="number" id="product_id"  name="产品id" display="false"/>
+	<!--<column type="string" id="product_code" name="产品代码"/>   
+	<column type="string" id="product_name" name="产品名称"/>
+	<column type="number" id="product_cyc"   name="产品周期"/>
+	 <column type="string" id="cyc_unit"   name="产品周期单位"/>	
+	<column type="string" id="availability_time1"   name="产品有效日期"/>
+	<column type="string" id="begin_time1"   name="产品起始日期"/>
+	<column type="string" id="return_time1"   name="产品到期日期"/>
+	<column type="string" id="over_time1"   name="产品延长日期"/>-->
+	<column type="string" id="remark"   name="备注说明"/>
+	<column type="number" id="credit_num"   name="信用上限" display="false"/>
+	<column type="number" id="credit_level_id"   name="信用级别" display="false"/>
+	<column type="string" id="credit_level_name" name="信用级别"/>
+	<column type="number" id="consult_score" name="参考分值" precision="2"/>
+	<column type="number" id="valuation_score" name="审批分值" precision="2"/>
+	<!--<column type="number" id="loan_interest_rate"   name="融资利息率(%)"/>  
+	<column type="number" id="borrow_stock_interest_rate"   name="融券利息率(%)"/>	
+	<column type="number" id="punish_interest_rate"   name="罚息率(%)"/>
+	<column type="number" id="commission_charge"   name="手续费"/>-->
+	<column type="number" id="credit_control_mode"   name="信用控制模式" display="false"/>
+	<column type="string" id="credit_control_mode_name"   name="信用控制模式" display="false"/>
+	<column type="number" id="account_fee_mode"   name="计费模式" display="false"/>
+	<column type="string" id="account_fee_mode_name"   name="计费模式"  display="false"/>
+	<column type="number" id="pc_mode"   name="平仓顺序" display="false"/>
+	<column type="string" id="pc_mode_name"   name="平仓顺序"/>
+	<column type="number" id="return_mode"   name="还款id" display="false"/>
+	<column type="string" id="return_mode_name"   name="还款模式"/>
+	<column type="number" id="borrow_stock_pg"   name="融券复权模式" display="false"/>
+	<column type="string" id="borrow_stock_pg_name"   name="融券复权模式"/>
+	<column type="number" id="borrow_stock_hg"   name="融券红股模式" display="false"/>
+	<column type="string" id="borrow_stock_hg_name"   name="融券红股模式" display="false"/>
+	<column type="string" id="borrow_stock_tspc"   name="融券退市平仓日期" display="false"/>
+	<column type="string" id="borrow_stock_tspc_name"   name="融券退市平仓日期"/>
+ 	<column type="number" id="fund_amt"   name="资金余额" precision="2"/>	
+	<column type="number" id="stock_market_value"   name="证券市值" precision="2"/>
+	<column type="number" id="stock_convert_amt"   name="证券折算金额" precision="2"/>
+	<column type="number" id="fund_convert_amt"   name="资金折算金额" precision="2"/>
+	<column type="number" id="guarantee_value"   name="担保品价值" precision="2"/>
+	<column type="number" id="usable_num"   name="可用额度" display="false"/>
+	<!--<column type="number" id="restrict_amt"   name="禁取资金"/>-->
+	<column type="string" id="move_tel"   name="移动电话"/>
+	<column type="string" id="fix_tel"   name="固定电话"/>
+	<column type="string" id="meet_tel"   name="应急电话"/>
+	<column type="string" id="family_address"   name="联系地址"/>
+	<column type="string" id="ps_code"   name="邮政编码"/>
+	<column type="string" id="fax"   name="传真"/>
+	<column type="string" id="email"   name="电子邮件"/>	
+	<column type="string" id="find_mode"   name="主联系方式id" display="false"/>
+	<column type="string" id="find_mode_name"   name="主联系方式"/>
+	<!--<column type="number" id="guarantee_rate"   name="担保率"/>-->
+	<column type="string" id="if_black_list" name="是否黑名单" display="false" level="true"/>
+	<column type="string" id="if_black_list_name" name="是否黑名单"/>
+	<button type="view" id="edit" name="查看合同详细" action="3065555510" multiple="0"/>
+    <button type="edit" id="edit" name="客户解冻合同" action="30665" multiple="0"/>
+  </output>
+<assistant action="30103,3200301,30102,30104,30109,30111,30201,30202,30205,30206,30207,30215,30673,30672,30667,30668">
+		<link src="cust_id" target="cust_id"/>
+    </assistant>
+</function>

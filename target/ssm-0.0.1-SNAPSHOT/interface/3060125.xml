@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="3060125" name="临时征信情况导入" >
+	<input>
+		<item type="hidden"	id="tmp_id"				name="tmp_id"			action="95000050" default="1"/>
+		<item type="text"	id="i_fund_no"			name="普通资金账号"		nullable="false"/>
+		<item type="text"	id="i_data_begin_date"	alias="i_begin_date"	name="统计起始日期"	editable="false"/>
+		<item type="text"	id="i_data_end_date"	alias="i_end_date"		name="统计结束日期"	editable="false"/>
+	</input>
+	<service type="procedure" id="base.P_INTERF_CUSTINDEX" process="155" style="77">	
+		<param type="string"	id="i_fund_no"/>
+		<param type="string"	id="i_begin_date"/>
+		<param type="string"	id="i_end_date"/>
+		<param type="string"	id="i_type"	default="0"/>
+	</service>
+	<output>
+		<column type="string"	id="fund_no"	name="普通资金账号"/>
+		<column type="string"	id="begin_date"	name="开始日期"/>
+		<column type="string"	id="end_date"	name="结束日期"	/>
+		<column type="string"	id="asset_avg"	name="平均资产"/>
+		<column type="string"	id="asset_end"	name="期末资产"/>
+		<column type="string"	id="done_amt"	name="A股成交量"/>
+		<column type="string"	id="commision"	name="A股交易佣金"/>
+		<column type="string"	id="rate"		name="年化收益率"/>
+		<column type="string"	id="rate_300"	name="沪深300年化收益率"/>
+		<button type="view"		id="btnImport"	name="导入临时征信资料"	action="306012501" multiple="0"/>
+	</output>
+</function>

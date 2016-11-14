@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="30676" name="修改信用产品申请" >
+	<input print="30676.jsp">
+		<item type="hidden" id="cust_id" name="客户id" action="1888,3068701"/>
+		<group name="合同信息" >
+			<item type="text" id ="fin_product_name" name="原融资产品" display="false"/>
+			<item type="text" id ="bs_product_name"  name="原融券产品" display="false"/>
+			<item type="grid" id="cust_id" source="305010203" name="信用产品"/>
+		</group>
+		<group name="合约">
+			<item type="hidden" id="order_no" name="合约编号"/>
+			<item type="hidden" id="formerly_voucher_no" name="原始凭证号"/>
+			<item type="hidden" id="bond_id" name="合同id"/>
+			<item type="text" id ="cust_name" name="客户姓名" editable="false"/>
+			<item type="text" id ="cust_code" name="客户代码" editable="false"/>
+			<item type="hidden" id="date"     name="打印日期"/>	<!--从1888.xml获得的打印日期-->
+			<item type="hidden" id="user_code"  name="打印柜员代码"/><!--从1888.xml获得的打印柜员代码-->
+			<item type="hidden" id="user_name"  name="打印柜员名称"/><!--从1888.xml获得的打印柜员名称-->
+			<item type="hidden" id="company"    name="券商名称"/><!--从1888.xml获得的券商名称-->
+		</group>
+		<group name="信用产品">	
+			<item type="select" id="product_id1" name="融资产品" source="95000004" action="30501" nullable="false"/>
+			<item type="hidden" id="product_cyc"  name="产品周期" editable="false"/>
+			<item type="hidden" id="cyc_unit"   name="周期单位" editable="false"/>	
+			<item type="hidden" id="availability_time1" name="生效日期" default="last"/>
+			<item type="hidden" id="begin_time1" name="起始日期" default="now" />
+			<item type="hidden" id="return_time1" name="到期日期"/>	
+			<item type="hidden" id="over_time1" name="延长日期"/>	
+			<item type="select" id="product_id2" name="融券产品" source="95000005" action="30501088" nullable="false"/>
+			<item type="hidden" id="product_cyc2" name="产品周期" editable="false"/>
+			<item type="hidden" id="cyc_unit2"  name="周期单位" editable="false"/>	
+			<item type="hidden" id="availability_time2" name="生效日期" default="last"/>
+			<item type="hidden" id="begin_time2" name="起始日期"   default="now"/>
+			<item type="hidden" id="return_time2" name="到期日期"/>	
+			<item type="hidden" id="over_time2" name="延长日期"/>	
+			<item type="button" id="assistant"	name="更多详情" action="3050101" multiple="0"/> 
+		</group>
+		<group name="备注说明">
+			<item type="textarea" id="remark11" name="备注说明"/>
+		</group>
+	</input>
+	<service type="procedure" id="p_creditproduct_insert" process="811" style="1">
+		<param type="integer" id="user_id" way="in" />
+		<param type="integer" id="cust_id" way="in" />
+		<param type="integer" id="bond_id" way="in" />
+		<param id="order_no" />
+		<param id="formerly_voucher_no"/>
+		<param type="integer" id="product_id1" way="in" />
+		<param id="product_cyc" way="in" />
+		<param id="cyc_unit" way="in" />
+		<param id="avaliability_time1" way="in"  />
+		<param id="begin_time1" way="in"  />
+		<param id="return_time1" way="in" />
+		<param id="over_time1" way="in" />
+		<param type="integer" id="product_id2" way="in" />
+		<param id="product_cyc2" way="in" />
+		<param id="cyc_unit2" way="in" />
+		<param id="avaliability_time2" way="in"  />
+		<param id="begin_time2" way="in"  />
+		<param id="return_time2" way="in" />
+		<param id="over_time2" way="in" />
+		<param id="remark11"/>
+	</service>
+	<output/>
+</function>

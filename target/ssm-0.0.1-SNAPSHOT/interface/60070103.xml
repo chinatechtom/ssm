@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="60070103" name="资金专户额度设置" >
+	<input>
+		<item type="hidden" id="acc_id" name="账户id"/>
+		<item type="text" id="fund_credit" name="公司授权业务规模" number="true"/>
+		<item type="text" id="sh_fund_credit" name="沪A授权业务规模" number="true"/>
+		<item type="text" id="one_max" name="单笔交易协议书最大金额" number="true"/>
+		<item type="text" id="all_stock_pna" name="所有协议书金额占净资本比例(%)" number="true"/>
+		<item type="text" id="zy_credit" name="自营业务规模" number="true"/>
+		<item type="text" id="zy_credit_pna" name="自营业务规模占净资本比例(%)" number="true"/>
+		<item type="text" id="nsf_fund_credit" name="新股融通授权规模" number="true"/>
+		<item type="text" id="nsf_daily_credit" name="当日新股融通可用额度" number="true"/>
+	</input>
+    <service type="procedure" id="P60070103" process="833" style="1">
+		<param id="user_id" type="integer" way="in"/> 	
+		<param id="acc_id" type="integer" way="in"/> 		
+		<param id="fund_credit" type="float" way="in"/>
+		<param id="sh_fund_credit" type="float" way="in"/>
+		<param id="one_max" type="float" way="in"/>
+		<param id="all_stock_pna" type="float" way="in"/>
+		<param id="zy_credit" type="float" way="in"/>
+		<param id="zy_credit_pna" type="float" way="in"/>
+		<param id="nsf_fund_credit" type="float" way="in"/>
+		<param id="nsf_daily_credit" type="float" way="in"/>
+    </service>
+    <output/>
+</function>

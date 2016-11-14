@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="60170162" name="小额质押证券价格校验" >
+  <input>
+	<item type="text"   id="product_code"   name="证券代码"/>
+    <item type="text"   id="product_name"   name="证券名称"/>
+	<item type="select" id="market_code"    name="市场"	source="039"/>
+	<item type="select" id="compare_symb"    name="筛查条件"	source="936"/>
+  </input>
+  <service type="procedure" id="P60170162" process="933" style="77"> 
+    <param id="user_id"		    way="in"/>
+	<param id="market_code"     way="in"/>
+    <param id="product_code"   way="in"/>  
+	<param id="product_name"  way="in"/>
+	<param id="compare_symb"  way="in"/>
+  </service>
+  <output>
+	<column type="string" id="product_code"		name="证券代码"/>
+	<column type="string" id="product_name"		name="证券名称"/>	
+	<column type="string" id="market_code"		name="市场代码" display="false"/>
+	<column type="string" id="market_code_name"	name="市场代码"/>	
+	<column type="number" id="app_price"	name="交易价格默认值" precision="3"/>	
+	<column type="number" id="app_price_imp"	name="交易价格导入值" precision="3"/>	
+	<column type="number" id="app_price_diff"	name="交易价格相差值" precision="3"/>	
+	<button type="edit"   id="edit"				name="以导入值批量调整" action="60170163" multiple="-1"/>	
+  </output>
+</function>

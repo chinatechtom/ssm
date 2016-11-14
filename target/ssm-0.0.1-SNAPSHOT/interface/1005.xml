@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="GBK" ?>
+<function id="1005" name="判断密码是否过期">
+  <input/>
+  <service type="procedure" id="p_user_password_expire_query" implement="p_user_password_expire_query1005" process="911" style="77">
+  	<param id="user_id" type="integer"/>
+  </service>
+  <output/>
+</function>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="30323" name="证券公允价格查询" >
+	<input>
+		<item type="select" id="market_code"	name="市场代码"	source="039"/>
+		<item type="text"   id="product_code"	name="证券代码"/>
+		<item type="date"   id="begin_date"		name="起始日期"	default="null"/>
+		<item type="date"   id="end_date"		name="结束日期"	default="null"/>
+	</input>
+	<service type="procedure" id="p_public_product_browse"  implement="p_public_product_browse30323" process="911" style="77">
+		<param id="user_id"			type="integer"	way="in"/>
+		<param id="market_code"		type="string"	way="in"/>
+		<param id="product_code"	type="string"	way="in"/>
+		<param id="begin_date"		type="string"	way="in"/>
+		<param id="end_date"		type="string"	way="in"/>
+	</service>
+	<output>
+		<column type="string" id="market_code"				name="市场代码" display="false"/>
+		<column type="string" id="market_code_name"			name="市场代码"/>
+		<column type="string" id="product_code"				name="证券代码"/>
+		<column type="string" id="product_name"				name="证券名称"/>
+		<column type="string" id="asset_type"				name="调整类型" display="false"/>
+		<column type="number" id="asset_price"				name="调整价格" precision="3"/>	
+		<column type="string" id="start_date"				name="起始日期"/>
+		<column type="string" id="end_date"					name="结束日期"/>
+		<column type="string" id="set_emp"					name="设置职工"/>
+		<column type="string" id="set_date"					name="设置日期"/>
+		<column type="string" id="set_time"					name="设置时间"/>
+		<column type="string" id="set_price_method"			name="价格设置方式" display="false"/>	<!-- modify by SECREQ-2299 20150313 zyt -->
+		<column type="string" id="set_price_method_name"	name="价格设置方式"/>	<!-- modify by SECREQ-2299 20150313 zyt -->
+		<button type="send"   id="send"	name="同步公允价格"	action="80777778"	multiple="-1"/>
+	</output>
+</function>

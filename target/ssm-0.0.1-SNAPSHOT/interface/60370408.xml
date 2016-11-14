@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="60370408" name="交易协议书详细" >
+	<input>
+		<item type="hidden" id="sbond_id" name="交易协议书id"  action="60370406"/>
+		<group name="交易协议书要素">    
+			<item type="hidden" id="cust_id" name="客户id"/>
+			<item type="text" id="sbond_no" name="交易协议书编号" editable="false"/>
+			<item type="text" id="related_sbond_no" name="关联(主)交易协议书编号" editable="false"/>
+			<item type="text" id="mortgagee_type_name" name="质权人类型" editable="false"/>
+			<item type="text" id="mortgagee_name" name="质权人名称" editable="false"/>			
+			<item type="text" id ="cust_code" name="客户代码" editable="false"/>	
+			<item type="text" id="cust_name" name="客户姓名" editable="false"/>	
+			<item type="text" id="bond_status_name" name="合同状态" editable="false"/>			
+		</group>
+		<group name="融出方信息">			
+			<item type="text" id="lender_code"   name="融出方代码" editable="false"/>
+			<item type="text" id="lender_name"   name="融出方名称" editable="false"/>
+			<item type="text" id="lender_type_name"   name="融出方类别" editable="false"/>
+			<item type="text" id="acc_code"   name="融出方证券账号" editable="false"/>
+			<item type="text" id="acc_name"   name="融出方证券账号" editable="false"/>
+			<item type="text" id="seat_code"   name="融出方席位代码" editable="false"/>
+		</group>
+		<group name="标的证券信息">			
+			<item type="text" id="market_code" name="市场代码" editable="false"/>	
+			<item type="text" id="product_code" name="证券代码" editable="false"/>
+			<item type="text" id="product_name" name="证券名称" editable="false"/>
+			<item type="text" id="product_type" name="证券类型" editable="false"/>
+			<item type="text" id="stock_property" name="股份性质" editable="false"/>
+			<item type="text" id="hg_num" name="交易数量" editable="false"/>
+			<item type="select" id ="zqlb" name="证券类别" source="816" editable="false"/>
+			<item type="select" id ="ltlx" name="流通类型" source="817" editable="false"/>
+			<item type="select" id ="qylb" name="权益类别" source="818" editable="false"/>
+			<item type="text" 	id ="gpnf" name="挂牌年份" editable="false"/>
+		</group>
+		<group name="交易要素">			
+			<item type="text" id="first_amt" name="初始交易金额" editable="false"/>	
+			<item type="text" id="second_amt" name="购回交易金额" editable="false"/>	
+			<item type="text" id="engage_trade_date" name="初始交易日期" editable="false"/>
+			<item type="text" id="days" name="购回期限(天)" editable="false"/>
+			<item type="text" id="bb_date" name="购回交易日期" editable="false"/>
+			<item type="text" id="sbond_status_name" name="交易协议书状态" editable="false"/>
+<!--			<item type="text" id=""hg_rate"" name="购回价格(每100元年收益)" editable="false"/>-->
+			<item type="text" id="manual_chg"   name="购回金额手工调整" editable="false"/>
+			<item type="text" id="penalty_rate" name="违约金比率(日利率%)" editable="false"/>
+			<item type="text" id="fix_rate" name="固定交易费用比例(%)" editable="false"/>
+			<item type="select" id ="if_before" name="是否允许提前购回" editable="false" source="813"/>
+			<item type="date" 	id ="earliest_bb_date" name="被允许的最早购回时点" editable="false"/>
+			<item type="text"	id ="before_rate" name="提前购回补偿费率(%)" editable="false"/>
+			<item type="select" id ="if_after" name="是否允许延期购回" editable="false" source="815"/>
+			<item type="date" 	id ="latest_bb_date" name="被允许的最晚购回时点" editable="false"/>
+			<item type="text"	id ="after_rate" name="延期购回补偿费率(%)" editable="false"/>
+			<item type="text"	id ="tqxs" name="提取系数" editable="false"/>
+			<item type="text"	id ="zybl" name="质押比率(%)" editable="false"/>
+			<item type="text" 	id ="mv_discount_rate" 	name="市值折扣比率(%)"	editable="false"/>
+			<item type="text"	id ="jz_rate" name="提取履约保障比例(%)" editable="false"/>
+			<item type="text"	id ="payback_amt" name="本金归还额" editable="false"/>
+			<item type="text"	id ="bc_amt" name="现金补仓额" editable="false"/>
+			<item type="text" id="zyywbh" name="质押业务编号" editable="false"/>
+			<item type="text" id="djxh" name="冻结序号" editable="false"/>
+			<item type="select"	id ="if_mand_nota" name="是否强制公证" editable="false" source="827"/>
+			<!--<item type="text" id="touch_rate" name="触发比率(%)" editable="false"/>-->
+			<item type="text" id="real_trade_date" name="交易日期" editable="false"/>
+			<item type="text" id="app_no" name="申请编号" editable="false"/>
+			<item type="text" id="op_id" name="交易执行人员" editable="false"/>			
+		</group>
+		<group name="利息要素">				
+			<item type="select"	id ="if_per_interest" name="是否个性化结息" editable="false" source="828"/>
+			<item type="textarea"	id ="interest_set_dates" name="个性化结息日期" editable="false"/>
+		</group>
+		<group name="资金用途">				
+			<item type="textarea" id ="zjyt" name="资金用途" editable="false"/>
+			<item type="textarea" id ="remarks" name="备注" editable="false"/>
+		</group>
+		<group name="初始清算信息">
+			<item type="text" id="done_no" name="成交编号" editable="false"/>
+			<item type="text" id="done_vol" name="成交数量" editable="false"/>
+			<item type="text" id="done_amt" name="成交金额" editable="false"/>
+			<item type="text" id="done_fees" name="各项费用" editable="false"/>
+			<item type="text" id="settle_amt1" name="清算金额" editable="false"/>
+			<item type="text" id="bb_trade_date" name="初始约定购回日期" editable="false"/>
+		</group>
+		<group name="初始交收信息">
+			<item type="text" id="delivery_result1" name="初始交收结果" editable="false"/>
+			<item type="text" id="delivery_vol1" name="初始交收数量" editable="false"/>
+			<item type="text" id="delivery_amt1" name="初始交收金额" editable="false"/>
+		</group>
+		<group name="分段计息区间">
+			<item type="grid" id="sbond_id" source="60370600" name="分段计息区间"/>	
+		</group>
+		<group name="逐日盯市信息">
+			<item type="text" id="curr_stk_vol" name="当前证券数量" editable="false"/>
+			<item type="text" id="hl_remain" name="红利剩余金额" editable="false"/>
+			<item type="text" id="days2" name="最新购回期限(天)" editable="false"/>
+			<item type="text" id="second_amt2" name="最新购回交易金额" editable="false"/>
+			<item type="text" id="last_bb_date" name="最新约定购回日期" editable="false"/>
+			<item type="text" id="last_bb_reason" name="最新购回日期变更原因" editable="false"/>
+			<item type="text" id="bring_forward" name="是否需要提前回购" editable="false"/>
+			<item type="text" id="fulfillment_rate" name="履约能力指标" editable="false"/>
+<!--			<item type="text" id=""interest_count"" name="已计利息积数" editable="false"/>-->
+			<item type="text" id="interest" name="累计利息" editable="false"/>
+			<item type="text" id="penalty_count" name="已计违约金积数" editable="false"/>
+			<item type="text" id="penalty" name="累计违约金" editable="false"/>
+			<item type="text" id="unreceived_interest" name="已结未收利息" editable="false"/>
+			<item type="text" id="unreceived_penalty" name="已结未收违约金" editable="false"/>
+			<item type="text" id="received_interest" name="已收利息" editable="false"/>
+			<item type="text" id="received_penalty" name="已收违约金" editable="false"/>
+			<item type="text" id="real_interest" name="实时利息" editable="false"/>
+			<item type="text" id="real_penalty" name="实时违约金" editable="false"/>
+			<item type="select" id="violate_type" name="违约类型" editable="false" source="731"/>
+			<item type="textarea" id="mtm_remark" name="备注" editable="false"/>
+		</group>
+		<group name="到期购回或部分解质信息">
+			<item type="grid" 	id="sbond_id" source="60370409" name="到期购回或部分解质信息"/>
+		</group>
+		<group name="权益数据结算信息">
+			<item type="text" id="zt_hl" name="在途红利金额" editable="false"/>
+			<item type="text" id="zt_hg" name="在途红股数量" editable="false"/>
+			<item type="text" id="rz_hl" name="入账红利金额" editable="false"/>
+			<item type="text" id="rz_hg" name="入账红股数量" editable="false"/>
+			<item type="text" id="zt_pg" name="在途配股数量" editable="false"/>
+			<item type="text" id="rz_pg" name="入账配股数量" editable="false"/>
+			<item type="text" id="zt_hl_tax" name="在途红利税金" editable="false"/>
+			<item type="text" id="rz_hl_tax" name="入账红利税金" editable="false"/>
+		</group>
+		<group name="处置信息">
+			<item type="text" id="payback_vol" name="已处置数量" editable="false"/>
+			<item type="text" id="return_amt" name="已归还金额" editable="false"/>
+			<item type="text" id="beyond_amt" name="剩余资金" editable="false"/>
+		</group>
+		<group name="合同了结信息">
+			<item type="text" id="over_value" name="合同回收价值" editable="false"/>
+			<item type="text" id="over_type" name="合同了结类型" editable="false"/>
+			<item type="text" id="release_com_credit" name="回收公司规模额度" editable="false"/>
+			<item type="text" id="release_cust_credit" name="释放客户信用额度" editable="false"/>
+			<item type="text" id="profit" name="合同实现利润" editable="false"/>
+			<item type="text" id="over_date" name="了结日期" editable="false"/>
+			<item type="text" id="over_op" name="了结操作人员" editable="false"/>
+			<item type="text" id="over_audit" name="了结审核人员" editable="false"/>
+			<item type="text" id="over_remark" name="了结备注" editable="false"/>
+		</group>
+	</input> 
+	<output />
+</function>

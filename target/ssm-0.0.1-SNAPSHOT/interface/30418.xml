@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="30418" name="信用级别担保率设置" >
+  <input>   
+    <item type="select"	id="credit_level_id"		name="信用级别名称"	source="90000002" editable="false"/>
+	<item type="select" id="guarantee_rate_id"		name="担保率名称"		source="90000012" editable="false"/>
+	<item type="text"	id="guarantee_rate"			name="担保率"		    nullable="false"  number="true"/>	
+  </input>
+  <service type="procedure" id="p_credit_guarantee_rate_set" implement="p_credit_guarantee_rate_set418"  process="911" style="1"> 
+    <param id="user_id"				type="integer" way="in"/>    
+    <param id="credit_level_id"		type="integer" way="in"/>
+    <param id="guarantee_rate_id"	type="integer" way="in"/>
+	<param id="guarantee_rate"		type="double"  way="in"/>
+  </service>
+  <output  target="@func_no">
+	<column type="string" id="sserial0"	    name="信用级别代码" display="false"/>	
+	<column type="number" id="drate0"		name="担保率"	  precision="4"/>	
+	<column type="string" id="sserial1"		name="交易指令1"  display="false"/>
+	<column type="string" id="sbank_acc"	name="信用级别名称"  display="false"/>
+	<column type="number" id="damt0"        name="融资上限标准"  display="false" precision="4"/>
+	<column type="number" id="damt1"        name="融券上限标准"  display="false" precision="4"/>
+	<column type="string" id="scusttypes"   name="备注"  display="false"/>
+	<column type="string" id="func_no"  name="功能号"/>
+  </output> 
+</function>

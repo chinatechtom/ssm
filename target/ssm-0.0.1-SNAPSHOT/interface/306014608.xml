@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="306014608" name="二次征信批量复核生效" >
+  <input>
+    <description>是否进行二次征信批量复核生效
+	</description>  
+  </input>
+  <service type="procedure" id="p_cust_scd_crd_batch_act"  implement="p_cust_scd_crd_batch_act306014608" process="811" style="1">
+	<param type="integer" id="user_id"/>
+	<param type="integer" id="cust_id"/>
+	<param type="integer" id="versionid"/>	
+	<param type="integer" id="func_type" default="2"/><!--2表明是复核生效-->
+  </service>
+</function>

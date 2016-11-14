@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="306013701" name="客户普通账户资料导入" >
+	<input>
+		<description>是否要导入客户普通账户资料？
+		</description>
+		<item type="hidden"	id="data_unit_code"		name="营业部"		/>
+		<item type="hidden"	id="commness_cust_code"	name="普通资金账号"  nullable="false"/>
+		<item type="hidden"	id="trade_date"	        name="交易日期"      nullable="false"/>
+	</input>
+	<service type="procedure" id="kingstar.P37810091" adapter="newzhengxin" implement="P37810091_306013701" process="155" style="1">
+		 <param type="string"  id="commness_cust_code"/><!--普通资金账号--> 
+		<param type="string"  id="user_code" default="admin"/>
+	</service>
+	<output target="306013703">
+		<column type="string"	id="capital_account"		    name="普通资金账号"	/>
+		<column type="string"	id="asset_sum"          	    name="普通账户总资产"	/>
+		<column type="string"	id="acc_open_date"				name="普通账户开户日期"	/>
+		<column type="string"	id="statis_date"                name="统计日期"	/>
+	</output>
+</function>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="gbk"?>
+<function id="82423135" name="平仓报告直接还券">
+	<input/>
+  	<service type="drtp" id="413000" process="711" style="1">
+		<param type="string" id="sbranch_code0" />
+	  	<param type="string" id="scust_no" 	/>    
+	  	<param type="string" id="sholder_ac_no"  />
+	  	<param type="string" id="sstock_code" />  
+	  	<param type="string" id="smarket_code"  />
+	  	<param type="string" id="scust_type" />	
+	  	<param type="number" id="lvol0" />	
+	  	<param type="string" id="sstation0"/>	
+	  	<param type="string" id="semp" 	/>	    
+	  	<param type="string" id="lsafe_level" default="1"/>  
+	  	<param type="integer" id="lvol9"  default="423135"/>
+  	</service>                                  
+  	<output/>
+</function>

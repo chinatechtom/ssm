@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70010125" name="客户担保证券查询" >
+  <input/>
+  <service type="procedure" id="P70010125" process="922" style="77">
+	<param type="integer" 	id="user_id"/>
+ 	<param type="integer" 	id="cust_id"/>
+  </service>
+  <output>  
+	<column type="number" id="product_id" 	name="product_id" display="false"/>
+	<column type="string" id="product_code" 	name="证券代码"/>
+	<column type="string" id="product_name" 	name="证券名称"/>
+	<column type="string" id="market_code" 	name="市场代码" display="false"/>
+	<column type="string" id="market_code_name" 	name="市场代码"/>
+	<column type="number" id="stock_vol" 	name="证券数量" precision="0"/>
+	<column type="number" id="last_price" 	name="证券价格" precision="3"/>
+	<column type="number" id="stock_amt" 	name="证券市值" precision="2"/>
+  </output>
+</function>

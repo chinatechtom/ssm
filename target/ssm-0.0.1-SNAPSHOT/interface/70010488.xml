@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70010488" name="任务执行状态查询" >
+	<input>
+		<item type="hidden"	id="task_id_out" name="任务代码"		/>
+	</input>
+	<service type="procedure" id="zx_prod.SP_ZX_STATUS" adapter="netezza" process="944" style="77">
+		<param type="string" id="task_id_out"/>
+	</service>
+	<output >
+		<column type="string" id="task_id_115" name="任务代码"	/>  	
+		<column type="string" field="stat_cd"  id="task_status" name="返回结果"	/>  		
+	</output>
+</function>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70011307" name="设置验股开关信息" >
+	<input>
+		<item type="hidden" 	id="cust_id"	name="客户id" nullable="false"/>
+		<item type="text" 	id="cust_code"	name="客户代码" nullable="false" editable="false"/>
+		<item type="text" 	id="product_code"	name="证券代码" minlen="6" maxlen="6" editable="false"/>
+		<item type="select" id="market_code"	name="市场代码"  source="039" editable="false"/>
+		<item type="select" 	id="busi_type"	name="业务类别" default="0" source="743" nullable="false"/>
+		<item type="select" 	id="order_type"	name="指令类别" default="1" source="739"/>
+	</input>
+	<service type="procedure" id="p70011307"  process="822" style="1"> 
+		<param id="user_id"	 way="in"/>
+		<param id="cust_id"	 way="in"/>
+		<param id="cust_code"	 way="in"/>
+		<param id="product_code" way="in"/>
+		<param id="market_code"  way="in"/> 
+		<param id="busi_type" way="in"/>
+		<param id="order_type"  way="in"/> 
+	</service>
+	<output/>
+</function>

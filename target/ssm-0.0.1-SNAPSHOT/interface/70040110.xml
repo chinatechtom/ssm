@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70040110" name="证券专户额度查询" >
+	<input>
+		<item type="select" id="market_code"  name="市场代码" source="039"/>
+		<item type="text"   id="product_code" name="证券代码"/>
+	</input>
+    <service type="procedure" id="P70040110"  process="922" style="77">
+		<param id="user_id"			type="integer" way="in"/>
+		<param id="market_code"		type="string"  way="in"/>
+		<param id="product_code"	type="string"  way="in"/>
+    </service>
+    <output export="true">
+		<column type="number" id="acc_id"		name="账户id"	display="false"/>	
+		<column type="string" id="acc_code"		name="证券账户"/>
+		<column type="number" id="product_id"	name="证券id"	display="false"/>
+		<column type="string" id="market_code"	name="市场代码"/>
+		<column type="string" id="product_code"	name="证券代码"/>
+		<column type="string" id="product_name"	name="证券名称"/>
+		<column type="string" id="adjust_date"	name="指标调整日期"/>
+		<column type="string" id="user_code"	name="调整人员"/>
+		<column type="number" id="all_stock"	name="总股本数量" precision="0"/>
+		<column type="number" id="circulated_a"	name="流通A数量" precision="0"/>
+		<column type="number" id="rate"			name="集中度指标(%)占总股本" precision="6"/>
+		<column type="number" id="credit_vol"	name="标的股票可接受数量占总股本" precision="0"/>
+		<column type="number" id="one_stock_pca"			name="集中度指标(%)占流通股" precision="6"/>
+		<column type="number" id="credit_vol_pca"	name="标的股票可接受数量占流通股" precision="0"/>
+		<column type="number" id="stock_vol1"	name="已收担保数量" precision="0"/>
+		<column type="number" id="stock_vol2"	name="合同预留数量" precision="0"/>
+		<column type="number" id="stock_vol3"	name="合同违约待处置数量" precision="0"/>
+    </output>
+</function>

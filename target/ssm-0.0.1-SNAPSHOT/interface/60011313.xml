@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="60011313" name="单客户融资规模占净资本比例监控" >
+	<input>
+		<item type="hidden"  id="cust_id"	name="客户id"/>
+		<item type="text"  id="cust_code"	name="客户代码"/>
+		<item type="text"    id="cust_name"	name="客户名称"/>
+		<item type="text"    id="rate"			name="比例(%)"	default="0" nullable="false"/>
+	</input>
+    <service type="procedure" id="p60011313"  process="933" style="77">
+		<param id="user_id"	   	type="integer" way="in"/>
+		<param id="cust_id"   	 type="integer"  way="in"/> 
+		<param id="cust_code"    type="string" way="in"/>
+		<param id="cust_name"    type="string"  way="in"/>
+		<param id="rate"		 type="double"  way="in"/>
+    </service>
+    <output export="true" autoload="true" refresh="120">
+		<column type="number" id="cust_id"	name="客户id"		display="false"/>
+		<column type="string" id="cust_code"	name="客户代码"/>
+		<column type="string" id="cust_name"	name="客户名称"/>
+		<column type="number" id="first_amt"	name="融资规模" precision="2"/>
+		<column type="number" id="nb_net_asset"	name="净资本"	precision="2"/>
+		<column type="number" id="rate"			name="比例(%)"	precision="4"/>
+		<column type="string" id="warning_level" name="报警级别"	level="true"	display="false"/>
+    </output>
+</function>

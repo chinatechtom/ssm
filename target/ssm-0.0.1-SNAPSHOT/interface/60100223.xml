@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="60100223" name="结息日删除" >
+  <input>
+    <item type="hidden" id="id"  name="id" />
+  	<item type="date" id="bat_jx_date"        name="当前季度结息日" />
+  	<item type="date" id="last_bat_jx_date"   name="上一季度结息日" />
+  </input>
+  <service type="procedure" id="p60100223" process="833" style="1">
+	<param id="user_id" type="integer"/>
+	<param id="id" type="integer"/>
+	<param id="bat_jx_date" type="date"/>
+	<param id="last_bat_jx_date" type="date"/>
+  </service>
+  <output/>
+</function>

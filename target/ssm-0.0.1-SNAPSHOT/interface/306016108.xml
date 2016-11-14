@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="306016108" name="执行状态更新" >  
+	<input>
+		<item type="hidden" id="task_id"     name="任务编号" />
+		<item type="hidden" id="task_status" name="返回结果" />
+	</input>
+	<service type="procedure" id="p_task_status_set" adapter="sysinfo" implement="p_task_status_set306016108" process="811" style="1">
+		<param id="user_id" 					type="integer" 	way="in"/>
+		<param id="task_id" 			        type="string" 	way="in"/>
+		<param id="task_status" 			    type="string" 	way="in"/> 
+	</service>
+	<output/>
+</function>

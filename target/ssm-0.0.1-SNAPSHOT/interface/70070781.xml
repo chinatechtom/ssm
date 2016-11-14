@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70070781" name="邮件收件人查询" >
+	<input print="70070761.jsp">
+		<item type="text" 		id="cust_code" 	name="收件人代码" 		editable="false" action="70001888"/>
+		<item type="text"		id="c1" 		name="信息编号"		action="70070706" 	editable="false"		/>
+		<item type="text" 		id="c5" 		name="信息通知方式" 	editable="false"/>
+		<item type="text" 		id="c7" 		name="信息类型" 		editable="false"/>
+		<item type="text" 		id="c6" 		name="信息通知对象" 	editable="false"/>
+		<item type="text" 		id="c12" 		name="信息生成时间" 	editable="false"/>
+		<item type="text" 		id="c15" 		name="信息发送日期" 	editable="false"/>
+		<item type="text" 		id="c16" 		name="信息发送时间" 	editable="false"/>
+		<item type="text"		  id="subject"	name="信息主题"				editable="false"	/>
+		<item type="grid" 		id="c1" 		source="70070703"		name="收件人信息"/>
+		<item type="hidden" 	id="date"     	name="打印日期"/>	
+		<item type="hidden" 	id="user_code"	name="打印柜员代码"/>
+		<item type="hidden" 	id="user_name"	name="打印柜员名称"/>
+		<item type="hidden" 	id="company"	name="券商名称"/>
+	</input>
+	<output/>
+ </function>

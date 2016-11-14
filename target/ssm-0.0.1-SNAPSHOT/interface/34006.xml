@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="34006" name="批量授信处理" >
+	<description>批量处理授信申请合约吗?</description>
+	<input> 
+		<item  type="hidden" id="cust_id" name="客户代码"/>
+	</input>
+	<service type="procedure" id="p_cust_auto_handle_batch" adapter="sysinfo" process="911" style="1">
+	<param id="user_id" type="integer" way="in" />
+	<param id="cust_id" type="string" way="in"/> 
+  </service>
+   <output target="@func_no">
+		<column type="string" id="commness_cust_code"	name="普通资金账号"/>  
+		<column type="string" id="client_date" name="评定日期" display="false"/> 
+		<column type="string" id="credit_begin_date" name="开始日期" display="false"/> 
+		<column type="string" id="credit_end_date" name="结束日期" display="false"/> 
+		<column type="string" id="func_no" name="功能号" display="false"/> 
+   </output>
+</function>

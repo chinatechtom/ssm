@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="306561" name="修改联系资料" >
+  <input print="306561.jsp">	
+   <group name="原合约联系资料">
+   <item type="hidden" id="cust_id" name="客户id" action="3060109,1888"/>	
+   <item type="text" id ="cust_name" name="客户姓名" editable="false"/>
+	<item type="text" id ="cust_code" name="客户代码" editable="false"/>
+	<!--item type="text" id ="cert_number" name="证件号码" editable="false"/--><!--来自于30101-->
+	<!--item type="text"	id="sh_acc"	        name="信用证券账户(沪)"	editable="false"/--><!--来自于30119-->
+	<!--item type="text"	id="sz_acc"	        name="信用证券账户(深)"	editable="false"/--><!--来自于30119-->
+	<item type="text" id="move_tel" name="移动电话" editable="false"/>
+	<item type="text" id="fix_tel" name="固定电话" editable="false"/>
+	<item type="text" id="meet_tel" name="应急电话"  editable="false"/>
+	<item type="text" id="family_address" name="联系地址"  editable="false"/>
+	<item type="text" id="ps_code" name="邮政编码"  editable="false"/>
+	<item type="text" id="fax" name="传真" editable="false"/>
+	<item type="text" id="email" name="电子邮件" editable="false"/>
+	<item type="text" id="find_mode_name" name="主联系方式" editable="false"/>
+	<item type="text" id="emerg_contacts_man" name="应急联系人" editable="false"/>
+	<item type="text" id="emerg_contacts_tel" name="应急联系人电话" editable="false"/>
+	<item type="textarea" id="remark" name="备注说明" editable="false"/>
+	<item type="hidden" id="date"     name="打印日期"/>	<!--从1888.xml获得的打印日期-->
+	<item type="hidden" id="user_code"     name="打印柜员代码"/><!--从1888.xml获得的打印柜员代码-->
+	<item type="hidden" id="user_name"     name="打印柜员名称"/><!--从1888.xml获得的打印柜员名称-->
+	<item type="hidden" id="company"    name="券商名称"/><!--从1888.xml获得的券商名称-->
+   </group>
+   <group name="修改联系资料">
+    <item type="hidden" id="cust_id" name="客户id" nullable="false" action="306560"/>
+	<item type="hidden" id="bond_id" name="合同id" />
+	<item type="hidden" id="order_no" name="定单编号"/>
+    <item type="hidden" id="formerly_voucher_no" name="原始凭证号" /> 
+	<item type="text" id="move_tel1" name="移动电话" nullable="false" editable="false"/>
+	<item type="text" id="fix_tel1" name="固定电话" nullable="false" editable="false"/>
+	<item type="text" id="meet_tel1" name="应急电话"  nullable="false" editable="false"/>
+	<item type="text" id="family_address1" name="联系地址" nullable="false" editable="false"/>
+	<item type="text" id="ps_code1" name="邮政编码"  nullable="false" editable="false"/>
+	<item type="text" id="fax1" name="传真" editable="false"/>
+	<item type="text" id="email1" name="电子邮件" editable="false"/>
+	<item type="select" id="find_mode1" name="主联系方式" source="312" nullable="false" editable="false"/>
+	<item type="text" id="emerg_contacts_man1" name="应急联系人" nullable="false"/>
+	<item type="text" id="emerg_contacts_tel1" name="应急联系人电话" nullable="false"/>
+	<item type="textarea" id="remark1" name="备注说明"/>
+   </group>
+  </input>
+  <service type="procedure" id="p_connect_info_insert" process="811" style="1">
+	<param type="integer" id="user_id" way="in"/>
+	<param type="string" id="order_no"  way="in"  />
+	<param type="string" id="formerly_voucher_no" way="in" />
+	<param type="integer" id="cust_id" way="in"/>
+	<param type="string" id="remark1" way="in"/>
+	<param type="integer" id="bond_id" way="in"/>
+	<param type="string" id="move_tel1" way="in"/>
+	<param type="string" id="fix_tel1" way="in"/>
+	<param type="string" id="meet_tel1" way="in"/>
+	<param type="string" id="family_address1" way="in"/>
+	<param type="string" id="ps_code1" way="in"/>
+	<param type="string" id="fax1" way="in"/>
+	<param type="string" id="email1" way="in"/>
+	<param type="string" id="find_mode1" way="in"/>
+	<param type="string" id="emerg_contacts_man1" way="in"/>
+	<param type="string" id="emerg_contacts_tel1" way="in"/>	
+  </service>
+  <output/>
+</function>

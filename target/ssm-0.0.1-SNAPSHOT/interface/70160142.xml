@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="70160142" name="当日应收利息增减变动及余额汇总报表" >
+	<input>	
+		<item type="hidden"	id="id"	    name="id" action="31381" default="1"/>		
+		<item type="date"   id="date" 	name="查询日期"  nullable="false"/>
+	</input>
+	<service type="procedure" id="p70160142" process="922" style="77">
+		<param id="user_id" type="integer"/>
+		<param id="date" type="string"/>
+	</service>
+	<output export="true">
+	  <column type="string" id="item"     name="项目"/>
+		<column type="number" id="total_amount"     name="金额"  precision="2"/>
+		<column type="string" id="note"     name="备注"/>
+		</output>
+</function>

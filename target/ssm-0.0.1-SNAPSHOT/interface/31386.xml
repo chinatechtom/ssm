@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="gbk" ?>
+<function id="31386" name="交易日查询">
+	<input>
+		<item type="date"	id="date1"	name="起始日期" nullable="false"/>
+		<item type="date"	id="date2"	name="结束日期" nullable="false"/>			
+	</input>
+	<service type="procedure" id="p_trade_date_query" process="911" style="77">
+		<param id="user_id"	type="integer"/>
+		<param id="date1"	type="string"/>
+		<param id="date2"	type="string"/>
+	</service>
+	<output>
+		 <column name="交易日" id="trade_date" type="string"/>
+		 <column name="设置人员" id="user_code" type="string"/>
+		 <column name="设置时间" id="time" type="string"/>
+	</output>
+</function>
